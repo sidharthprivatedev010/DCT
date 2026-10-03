@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident and AI model</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1200px}
+.tr > div{padding:7px 10px;border-top:1px solid #E2E6EB;font-size:12.5px;line-height:18px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.grp > div{background:#E6EAF0;color:#0F1E3A;font-weight:600;font-size:13px;border-top:1px solid #CDD3DB}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Deliverable 11 (added in v0.2, CX-04 / CX-08)</div>
+      <h1>Incident, case, war-room and AI specification</h1>
+      <p class="q">Every field the brief requires for alerts, cases, incidents and war rooms, enumerated and mapped to a component, an editing role and the AI boundary. Also the operating specification of the four AI assistants and the eight-section explanation model.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.2 · FOR APPROVAL</span>
+      <span class="chip syn">CLOCKS, CADENCES, THRESHOLDS: PLACEHOLDER</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>11a · Alert and case information model (22 fields)</h2>
+    <p class="sub">Shown on S-04 and carried into S-05 when ownership is accepted. One ID lineage (D-01).</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div>#</div><div>Field</div><div>Definition / treatment</div><div>Component</div><div>Set or edited by</div><div>AI role</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Alert ID</div><div>ALT-SYN-nnnn; persists as the parent of the case and incident IDs</div><div class="id" style="font-weight:500">WK-03</div><div>System</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Title</div><div>Plain-language issue statement: scope + effect + cause</div><div class="id" style="font-weight:500">WK-03</div><div>System draft; owner may edit</div><div class="muted">Drafts title</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">State</div><div>Incident states 01–13 (09 · 9d)</div><div class="id" style="font-weight:500">WK-03</div><div>Rules + permitted roles</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Severity</div><div>Intrinsic seriousness of the event (A-16)</div><div class="id" style="font-weight:500">WK-03</div><div>Rule; owner adjusts with reason</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Materiality</div><div>Critical / High / Medium / Low with driving dimensions (placeholder model)</div><div class="id" style="font-weight:500">DS-18</div><div>Materiality engine (rule)</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Detected time</div><div>Timestamp of detection</div><div class="id" style="font-weight:500">WK-03</div><div>System</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Source type</div><div>Category placeholder, e.g. 'Supplier signal [PH]'</div><div class="id" style="font-weight:500">DS-05</div><div>System</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Fact / forecast / scenario label</div><div>Whether the trigger is an actual, a forecast or a scenario</div><div class="id" style="font-weight:500">DS-05</div><div>System</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Affected scope</div><div>Hierarchy nodes affected; restricted nodes not rendered</div><div class="id" style="font-weight:500">SH-11</div><div>System; owner may extend</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Current impact</div><div>Impact grid, current column</div><div class="id" style="font-weight:500">WK-06</div><div>Owner / Functional Leader validate</div><div class="muted">Drafts estimate</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">11</div><div style="font-weight:600;color:#0F1E3A">Forecast impact</div><div>Impact grid, forecast column; days to breach</div><div class="id" style="font-weight:500">WK-06, DS-19</div><div>Forecast service; owner of assumptions</div><div class="muted">Drafts estimate</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">12</div><div style="font-weight:600;color:#0F1E3A">Confidence</div><div>High / Medium / Low with the reason</div><div class="id" style="font-weight:500">WK-05</div><div>Validation rules; owner</div><div class="muted">Validation Assistant suggests</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">13</div><div style="font-weight:600;color:#0F1E3A">Evidence</div><div>Evidence register and completeness</div><div class="id" style="font-weight:500">WK-10</div><div>Owner, action owners, analyst</div><div class="muted">Checks completeness</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">14</div><div style="font-weight:600;color:#0F1E3A">Linked KPIs</div><div>Governed KPI IDs with trust state</div><div class="id" style="font-weight:500">DS-01</div><div>System; owner may add</div><div class="muted">Suggests links</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">15</div><div style="font-weight:600;color:#0F1E3A">Named human owner role</div><div>Accepted owner; shown as 'Unowned' until accepted</div><div class="id" style="font-weight:500">WK-04</div><div>Human acceptance only</div><div class="muted">Recommends a role (draft)</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">16</div><div style="font-weight:600;color:#0F1E3A">Due date</div><div>Response due</div><div class="id" style="font-weight:500">WK-01</div><div>Owner / Core Group</div><div class="muted">Drafts a due date</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">17</div><div style="font-weight:600;color:#0F1E3A">Escalation clock</div><div>Time to the next ladder level</div><div class="id" style="font-weight:500">WK-14</div><div>Rule only (D-08)</div><div class="muted">Never sets</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">18</div><div style="font-weight:600;color:#0F1E3A">Recommended actions</div><div>Candidate actions awaiting acceptance</div><div class="id" style="font-weight:500">AI-05, WK-09</div><div>Owner accepts / rejects</div><div class="muted">Drafts</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">19</div><div style="font-weight:600;color:#0F1E3A">Decision required</div><div>Decision, authority role, due, options</div><div class="id" style="font-weight:500">AI-04, WK-13</div><div>Decision authority</div><div class="muted">Drafts framing; never decides</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">20</div><div style="font-weight:600;color:#0F1E3A">Updates</div><div>Chronological updates</div><div class="id" style="font-weight:500">WK-07</div><div>Owner, commander, action owners</div><div class="muted">Drafts summaries</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">21</div><div style="font-weight:600;color:#0F1E3A">Audit trail</div><div>Append-only record</div><div class="id" style="font-weight:500">WK-23, S-08</div><div>System</div><div class="muted">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 210px 1fr 140px 200px 220px"><div class="id">22</div><div style="font-weight:600;color:#0F1E3A">Closure criteria</div><div>Measurable conditions to close</div><div class="id" style="font-weight:500">WK-12</div><div>Owner proposes; approver accepts</div><div class="muted">Drafts; checks if met</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>11b · Incident experience: all blocks and fields</h2>
+    <p class="sub">Template E. Field counts match the brief: header 12, live facts 7, impact 11, timeline 10, ownership and governance 10, actions 8, communications 6, closure 9, primary actions 10.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:44px 230px 1fr 130px 220px"><div>#</div><div>Field</div><div>Treatment</div><div>Component</div><div>Edited by</div></div>
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Incident header (12)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Incident ID</div><div>INC-SYN-nnnn, linked to ALT and CASE</div><div class="id" style="font-weight:500">WK-03</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Title</div><div>Inherited from the alert</div><div class="id" style="font-weight:500">WK-03</div><div class="muted">Commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">State</div><div>13 states</div><div class="id" style="font-weight:500">WK-03</div><div class="muted">Rules + roles</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Severity</div><div>See A-16</div><div class="id" style="font-weight:500">WK-03</div><div class="muted">Rule; commander with reason</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Materiality</div><div>With driver dimensions</div><div class="id" style="font-weight:500">DS-18</div><div class="muted">Rule</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Affected scope</div><div>Hierarchy nodes</div><div class="id" style="font-weight:500">SH-11</div><div class="muted">System / commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Detected time</div><div>Timestamp</div><div class="id" style="font-weight:500">WK-03</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Last update</div><div>Timestamp + who (role)</div><div class="id" style="font-weight:500">WK-03</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Fact / forecast / scenario label</div><div>Trigger basis</div><div class="id" style="font-weight:500">DS-05</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Source category</div><div>Placeholder category</div><div class="id" style="font-weight:500">DS-05</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">11</div><div style="font-weight:600;color:#0F1E3A">Incident commander role</div><div>Governance assignment</div><div class="id" style="font-weight:500">WK-04</div><div class="muted">Core Group / Entity Executive (D-23)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">12</div><div style="font-weight:600;color:#0F1E3A">Escalation level</div><div>L0–L3 placeholder ladder</div><div class="id" style="font-weight:500">WK-15</div><div class="muted">Rule; escalate action</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Live facts (7)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Certified facts</div><div>CERT tag; source and certification time</div><div class="id" style="font-weight:500">WK-05</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Preliminary facts</div><div>PRELIM tag</div><div class="id" style="font-weight:500">WK-05</div><div class="muted">System / commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Missing facts</div><div>What is unknown, who is finding out, by when</div><div class="id" style="font-weight:500">WK-05</div><div class="muted">Commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">External signals</div><div>EXT tag; source category</div><div class="id" style="font-weight:500">WK-05</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Assumptions</div><div>Forecast and scenario assumptions with owner role</div><div class="id" style="font-weight:500">WK-05</div><div class="muted">Assumption owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Confidence</div><div>Overall + per fact</div><div class="id" style="font-weight:500">WK-05</div><div class="muted">Commander (AI suggests)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Supporting evidence</div><div>Links to the evidence register</div><div class="id" style="font-weight:500">WK-10</div><div class="muted">Contributors</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Impact (11): current and forecast columns, known / estimated / unknown</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Production impact</div><div>kt / units vs plan</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Functional Leader</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Dispatch impact</div><div>Volume and days delayed</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Functional Leader</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Quality impact</div><div>Rejections, rework</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Functional Leader</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Financial impact</div><div>EBITDA effect (CU)</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Finance (FNL)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Billing impact</div><div>Deferred billing (CU)</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Finance (FNL)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Cash impact</div><div>Collections / cash effect</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Finance (FNL)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Working-capital impact</div><div>DSO / inventory effect</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Finance (FNL)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">EHS impact</div><div>Safety / environment</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">EHS (FNL)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Regulatory impact</div><div>Obligations affected</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Compliance (FNL)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Reputation impact</div><div>Qualitative [PH]</div><div class="id" style="font-weight:500">WK-06</div><div class="muted">Commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">11</div><div style="font-weight:600;color:#0F1E3A">Forecast impact</div><div>Change in period-end forecast</div><div class="id" style="font-weight:500">WK-06, DS-08</div><div class="muted">Forecast owner</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Timeline (10 event types)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Detection</div><div>Auto</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Validation</div><div>Validation result</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">System / AI-06</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Ownership acceptance</div><div>Who (role), when</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">System</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Key updates</div><div>Human updates</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">Contributors</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Decisions</div><div>Linked to the decision record</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">Decision authority</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Escalations</div><div>Level change + reason</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">Rule / roles</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Recovery milestones</div><div>Planned vs actual</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">Commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Evidence submissions</div><div>Linked evidence</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">Contributors</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Closure request</div><div>Requester + criteria status</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">Owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Closure approval</div><div>Approver + rationale</div><div class="id" style="font-weight:500">WK-07</div><div class="muted">Approver</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Ownership and governance (10)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Named human owner role</div><div>Accepted owner</div><div class="id" style="font-weight:500">WK-04</div><div class="muted">Human acceptance</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Incident commander</div><div>Assignment</div><div class="id" style="font-weight:500">WK-04</div><div class="muted">D-23</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Action owners</div><div>Per action</div><div class="id" style="font-weight:500">WK-08</div><div class="muted">Owner / commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Due dates</div><div>Per item</div><div class="id" style="font-weight:500">WK-01</div><div class="muted">Owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Dependencies</div><div>Per action</div><div class="id" style="font-weight:500">WK-09</div><div class="muted">Action owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Escalation clock</div><div>Rule-based</div><div class="id" style="font-weight:500">WK-14</div><div class="muted">Rule</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Disclosure clock</div><div>Where applicable [PH]</div><div class="id" style="font-weight:500">WK-16</div><div class="muted">Rule / Disclosure Authority [PH]</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Decision authority</div><div>Per decision</div><div class="id" style="font-weight:500">WK-13</div><div class="muted">Rule from DoA [PH]</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Watchers</div><div>View-only participants</div><div class="id" style="font-weight:500">WK-04</div><div class="muted">Owner / Core Group</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Role-based visibility</div><div>Who can see what (06)</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Entitlement service</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Actions (8)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Recommended actions</div><div>AI or human proposals</div><div class="id" style="font-weight:500">AI-05</div><div class="muted">Draft → owner accepts</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Accepted actions</div><div>Committed actions</div><div class="id" style="font-weight:500">WK-08</div><div class="muted">Owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Milestones</div><div>Per action</div><div class="id" style="font-weight:500">WK-09</div><div class="muted">Action owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Blocked actions</div><div>With dependency</div><div class="id" style="font-weight:500">WK-08</div><div class="muted">Action owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Overdue actions</div><div>Auto from due date</div><div class="id" style="font-weight:500">WK-08</div><div class="muted">Rule</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Evidence required</div><div>Per action</div><div class="id" style="font-weight:500">WK-09</div><div class="muted">Owner sets</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Action completion</div><div>% and done criteria</div><div class="id" style="font-weight:500">WK-09</div><div class="muted">Action owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Next action</div><div>Single most important next step</div><div class="id" style="font-weight:500">WK-01</div><div class="muted">Owner / commander</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Communications (6)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Executive update</div><div>Cross-lens summary</div><div class="id" style="font-weight:500">WK-17</div><div class="muted">Commander drafts; Core Group approves</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Entity update</div><div>Entity audience</div><div class="id" style="font-weight:500">WK-17</div><div class="muted">Entity Executive approves</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Core Group update</div><div>Core Group audience</div><div class="id" style="font-weight:500">WK-17</div><div class="muted">Core Group approves</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Owner update</div><div>Owner audience</div><div class="id" style="font-weight:500">WK-17</div><div class="muted">Core Group approves</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Disclosure-review state</div><div>Not applicable / under review / approved [PH]</div><div class="id" style="font-weight:500">WK-16</div><div class="muted">Disclosure Authority [PH]</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Communication approvals</div><div>Approval log</div><div class="id" style="font-weight:500">WK-17</div><div class="muted">Approvers</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Closure (9)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Closure criteria</div><div>Measurable conditions</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">Owner proposes</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Recovery confirmation</div><div>Evidence that recovery held</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">Commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Residual risk</div><div>Stated and owned</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">Owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Evidence completeness</div><div>% with gaps listed</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">System (AI-06 checks)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Lessons learned</div><div>Text</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">Owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Root-cause record</div><div>Cause + category</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">Owner / analyst</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Preventive action</div><div>Linked initiative or action</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">Owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Human closure approver</div><div>Per D-06; never self</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">Approver</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Reopen control</div><div>Who, window [PH]</div><div class="id" style="font-weight:500">WK-12</div><div class="muted">D-18</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Primary actions (10, role-gated per 06)</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Accept ownership</div><div>06 row 2</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Entity roles</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Assign supporting action</div><div>06 row 3</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Owner / commander / Core Group</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Update status</div><div>06 row 4</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Scope</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Attach evidence</div><div>06 row 5</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Scope</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Run scenario</div><div>06 row 6</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Scope</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Escalate</div><div>06 row 8</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Scope</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Open war room</div><div>06 row 9</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Core Group / commander</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Draft executive update</div><div>06 row 13</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Commander / Core Group</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Request closure</div><div>06 row 15</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Owner roles</div></div>
+        
+          <div class="tr" style="grid-template-columns:44px 230px 1fr 130px 220px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Approve or reject closure</div><div>06 row 16</div><div class="id" style="font-weight:500">WK-25</div><div class="muted">Approver per D-06</div></div>
+        
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>11c · War-room mode</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:200px 1fr"><div>Aspect</div><div>Specification</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Entry criteria</div><div>Materiality Critical, or High at the commander's request. Opened by the Core Group Executive or the Incident Commander (06 row 9).</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Participants</div><div>Commander (edit), action owners (edit own actions), Core Group (coordinate), Entity Executive, watchers (view), Owner (view, intervene, request analysis).</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Layout</div><div>Template E war-room arrangement (WK-18): header + accountability strip; live facts | impact grid; timeline | actions; decisions log; communications with approvals.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Cadence</div><div>Update interval [UPDATE CADENCE — PH]; the board shows 'Update overdue' when it is missed.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Decisions log</div><div>Every decision with authority role, options, rationale and evidence (06 row 30).</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Owner view</div><div>No edit of facts or actions; intervene and request-analysis controls only.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Exit</div><div>Commander moves to Recovery monitoring; the war room closes and its record is kept in S-08.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr"><div style="font-weight:600;color:#0F1E3A">Visibility</div><div>Members and scope-entitled roles only; restricted nodes are hidden (GR-09).</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>11d · AI assistant specification</h2>
+    <p class="sub">All four assistants inherit the requester's scope (GR-06). Every output carries the AI-generated label (AI-02) until a human accepts it.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:170px 180px 1fr 1fr 150px 200px 220px"><div>Assistant</div><div>Trigger</div><div>Inputs</div><div>Outputs</div><div>Surfaces</div><div>Human gate</div><div>Never</div></div>
+      
+        <div class="tr" style="grid-template-columns:170px 180px 1fr 1fr 150px 200px 220px"><div style="font-weight:600;color:#0F1E3A">Validation Assistant</div><div>New alert; KPI refresh; evidence submitted; closure requested</div><div>Governed sources in scope; tolerances [PH]; evidence register</div><div>Consistency result, trust-state warning, completeness %, gaps</div><div class="id" style="font-weight:500">S-03, S-04, E-08, E-10, S-05</div><div>Certifier certifies; approver closes</div><div>Certify; set a trust state to Certified; close; approve a number</div></div>
+      
+        <div class="tr" style="grid-template-columns:170px 180px 1fr 1fr 150px 200px 220px"><div style="font-weight:600;color:#0F1E3A">Explanation Assistant</div><div>'Why?' on any KPI or alert; Ask Control Tower</div><div>Governed data in scope; drivers; forecast assumptions; external signals</div><div>Eight-section explanation (11e)</div><div class="id" style="font-weight:500">S-07, S-13, O-02</div><div>Reader judges; business explanation added by a human</div><div>Present interpretation as fact; reveal out-of-scope data</div></div>
+      
+        <div class="tr" style="grid-template-columns:170px 180px 1fr 1fr 150px 200px 220px"><div style="font-weight:600;color:#0F1E3A">Executive Briefing Assistant</div><div>Schedule [BRIEF TIME — PH]; pack request</div><div>Material changes, alerts, decisions, war rooms in scope</div><div>Owner Brief draft; pack sections with source chips</div><div class="id" style="font-weight:500">O-07, G-10, O-02</div><div>Core Group releases (brief releaser)</div><div>Release a brief; include unsourced statements; push sub-threshold items to the Owner</div></div>
+      
+        <div class="tr" style="grid-template-columns:170px 180px 1fr 1fr 150px 200px 220px"><div style="font-weight:600;color:#0F1E3A">Escalation Routing Assistant</div><div>Validated alert; blocked action; clock nearing expiry</div><div>Alert, scope, role directory (roles only), ladder</div><div>Draft issue, recommended owner role, due date, escalation path, decision required</div><div class="id" style="font-weight:500">S-04, E-09, G-09, S-05</div><div>Human acceptance or reassignment</div><div>Assign accountability; start or stop clocks; escalate silently</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>11e · AI explanation model (S-07, S-13, O-02 summaries)</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:44px 230px 160px 1fr"><div>#</div><div>Section</div><div>Provenance tag</div><div>Content rule</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Certified facts used</div><div class="id" style="font-weight:500">CERT</div><div>Only certified values, with period and certification time.</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Preliminary facts</div><div class="id" style="font-weight:500">PRELIM</div><div>Flagged as subject to change.</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Forecast assumptions</div><div class="id" style="font-weight:500">FCST</div><div>Each assumption with its owner role and date.</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">External signals</div><div class="id" style="font-weight:500">EXT</div><div>Source category placeholder; never merged with internal facts.</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Scenario assumptions</div><div class="id" style="font-weight:500">SCN</div><div>Only when a scenario is referenced, with its ID.</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">AI interpretation</div><div class="id" style="font-weight:500">AI · NOT APPROVED</div><div>Reasoning that links the facts; confidence stated; written as an interpretation, not as fact.</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Recommended next questions</div><div class="id" style="font-weight:500">AI</div><div>Questions that would reduce uncertainty, each linked to a drill-down.</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 230px 160px 1fr"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Human decision required</div><div class="id" style="font-weight:500">HUMAN</div><div>The decision, authority role and due date. AI never fills it.</div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-11-IncidentAIModel.js"></script>
+<script>DCLite.mount("dc-root", "P1-11-IncidentAIModel", {});</script>
+</body>
+</html>

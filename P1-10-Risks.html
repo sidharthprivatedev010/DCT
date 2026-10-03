@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risks of building early</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1200px}
+.tr > div{padding:9px 10px;border-top:1px solid #E2E6EB;font-size:13px;line-height:19px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+.lvl{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:600}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Deliverable 10 of 10</div>
+      <h1>Risks of generating the application before these decisions are approved</h1>
+      <p class="q">What goes wrong if Phase 2 starts on unapproved architecture, and the decision or gate that removes each risk. Likelihood and impact are design-team judgements, not measured values.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div>ID</div><div>Risk</div><div>If we build now</div><div>Likelihood</div><div>Impact</div><div>Mitigation / gate</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-01</div><div style="font-weight:600;color:#0F1E3A">Materiality model unapproved</div><div>Owner visibility, red usage, escalation and the six-card status strip are all driven by a model nobody approved. Screens imply thresholds that look real.</div><div class="lvl">High</div><div class="lvl">Critical</div><div class="muted">Gate D-03: approve the dimension list; keep weights and thresholds as labelled placeholders</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-02</div><div style="font-weight:600;color:#0F1E3A">Object model ambiguity (alert / case / incident / war room)</div><div>Template E diverges per route; states, IDs and counts disagree (e.g., EFF-002 counted differently on O-01 and G-09).</div><div class="lvl">High</div><div class="lvl">High</div><div class="muted">Gate D-01</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-03</div><div style="font-weight:600;color:#0F1E3A">Authority not defined</div><div>Buttons imply authority that does not exist (who certifies, who closes, who accepts risk). This creates audit exposure and later rework of every T-D/T-E screen.</div><div class="lvl">High</div><div class="lvl">Critical</div><div class="muted">Gates D-02, D-06; permission matrix 06 sign-off</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-04</div><div style="font-weight:600;color:#0F1E3A">Trust and performance conflated</div><div>Executives read an untrusted number as a bad result, or a bad result as a data glitch. The core TRUST promise fails.</div><div class="lvl">Medium</div><div class="lvl">Critical</div><div class="muted">Approve the two-axis card model (09 · 9a/9b) before Phase 2</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-05</div><div style="font-weight:600;color:#0F1E3A">Least-privilege leakage</div><div>Restricted counts, search suggestions, AI answers, notifications or aggregates reveal other entities' data.</div><div class="lvl">Medium</div><div class="lvl">Critical</div><div class="muted">Gate D-12; GR-06 and GR-09 applied to search, AI and notifications</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-06</div><div style="font-weight:600;color:#0F1E3A">AI overreach in the UI</div><div>AI-generated text sits beside approval buttons and reads as an approval; recommended options look pre-selected.</div><div class="lvl">Medium</div><div class="lvl">High</div><div class="muted">GR-01; AI components AI-02 and AI-04 mandatory; audit check in Phase 5</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-07</div><div style="font-weight:600;color:#0F1E3A">KPI wall / catalogue creep</div><div>Without a fixed six-card selection, each page grows into a chart catalogue and the exception-led design is lost.</div><div class="lvl">High</div><div class="lvl">High</div><div class="muted">Approve the per-page card selections in 05 and the placement in R1</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-08</div><div style="font-weight:600;color:#0F1E3A">Duplicate KPI definitions</div><div>FCF, FX, sustainability and production show different values on different pages, which destroys trust.</div><div class="lvl">Medium</div><div class="lvl">High</div><div class="muted">Canonical IDs and aliases (R1, C-06, C-08)</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-09</div><div style="font-weight:600;color:#0F1E3A">Template drift</div><div>41 bespoke layouts; inconsistent navigation; higher cost; harder audit.</div><div class="lvl">High</div><div class="lvl">Medium</div><div class="muted">Templates A–F fixed (04); route → template map approved (05)</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-10</div><div style="font-weight:600;color:#0F1E3A">Truth and confidentiality breach</div><div>Invented names, values, sources, thresholds or legal rules are mistaken for client facts or commitments.</div><div class="lvl">Medium</div><div class="lvl">Critical</div><div class="muted">Synthetic or placeholder labelling rules (R3); Phase 5 truth audit</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-11</div><div style="font-weight:600;color:#0F1E3A">Misread truncated requirements</div><div>Garbled sections (materiality, 'Preventive-', Theme 2 tail) are built on guesses.</div><div class="lvl">High</div><div class="lvl">Medium</div><div class="muted">Confirm C-09, C-10, C-11</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-12</div><div style="font-weight:600;color:#0F1E3A">Scenario sprawl</div><div>Different screens invent different crises, so the journeys cannot be followed end to end.</div><div class="lvl">Medium</div><div class="lvl">Medium</div><div class="muted">Scenario bible R3 is the single source; no unrelated crises</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-13</div><div style="font-weight:600;color:#0F1E3A">Accessibility retrofitted</div><div>Status by colour alone, small targets and focus order are fixed late at high cost.</div><div class="lvl">Medium</div><div class="lvl">High</div><div class="muted">State model with icon + label (09); 44 px targets; focus order defined in Phase 2</div></div>
+      
+        <div class="tr" style="grid-template-columns:64px 230px 1fr 90px 90px 320px"><div class="id">RK-14</div><div style="font-weight:600;color:#0F1E3A">Unapproved added routes</div><div>S-09 to S-13 are built and then removed, which breaks the primary journey (B4 to B6) and Theme 3 coverage.</div><div class="lvl">Medium</div><div class="lvl">High</div><div class="muted">Gate D-20</div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-10-Risks.js"></script>
+<script>DCLite.mount("dc-root", "P1-10-Risks", {});</script>
+</body>
+</html>

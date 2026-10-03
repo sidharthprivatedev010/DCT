@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personas and decisions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1100px}
+.tr > div{padding:9px 10px;border-top:1px solid #E2E6EB;font-size:13px;line-height:19px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+.tr > div.m{text-align:center;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;border-left:1px solid #E2E6EB}
+.th > div.m{text-align:center}
+.tr > div.mA{background:#0F1E3A;color:#fff}
+.tr > div.mE{box-shadow:inset 0 0 0 2px #0F1E3A;color:#0F1E3A}
+.tr > div.mR,.tr > div.mC{background:#E3E7ED;color:#1B2433}
+.tr > div.mI{color:#3D4756}
+.tr > div.mN{color:#6B7380}
+.tr > div.mD,.tr > div.mV{background:repeating-linear-gradient(135deg,#fff 0 5px,#EDF0F3 5px 10px);box-shadow:inset 0 0 0 1px #6B7686;color:#1B2433}
+.key{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 12px;font-size:12.5px}
+.key span.k{display:inline-block;min-width:26px;text-align:center;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-size:12px;padding:2px 4px;margin-right:6px}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Deliverable 03 of 10</div>
+      <h1>Personas and decision matrix</h1>
+      <p class="q">Ten governed roles grouped into three lenses, plus the AI assistants as a bounded non-human actor. Roles are role names only; no individuals or organisational units are invented.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip syn">ROLE NAMES ONLY · NO PERSONAL DATA</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Role personas</h2>
+    <p class="sub">"Lens" is the default home and depth. A role may open other lenses only if their entitlement scope allows it (06).</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div>Code</div><div>Role</div><div>Home lens</div><div>Primary job</div><div>Key decisions</div><div>Daily questions</div><div>Main routes</div><div>Must not</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">OWN</div><div style="font-weight:600;color:#0F1E3A">Owner</div><div>Owner</div><div>Steward enterprise value; intervene only where it is material.</div><div>Permitted strategic decisions under [DoA — PLACEHOLDER]; intervene in critical escalations; request analysis.</div><div class="muted">Is the enterprise healthier than yesterday? What crossed materiality? What needs me today?</div><div class="id" style="font-weight:500">O-01 to O-08</div><div>Certify operational KPIs (default); work plant queues; close cases.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">CGE</div><div style="font-weight:600;color:#0F1E3A">Core Group Executive (finance, strategy, operations, risk heads: one role family)</div><div>Core Group</div><div>Compare entities, govern certification, coordinate cross-functional response.</div><div>Route and escalate; approve material closure (D-06); publish briefing pack and scenarios; open war room.</div><div class="muted">Which entity drives the variance? Which numbers are uncertified? Which escalations are stuck?</div><div class="id" style="font-weight:500">G-01 to G-10</div><div>Alter source facts; certify unless separately assigned.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">ENX</div><div style="font-weight:600;color:#0F1E3A">Entity Executive</div><div>Entity</div><div>Accountable for entity performance and recovery.</div><div>Accept entity accountability; initiate response; approve local actions within authority; request escalation.</div><div class="muted">Are we on plan? What is at risk this week? What must I accept or approve?</div><div class="id" style="font-weight:500">E-01, E-09, E-05, S-05</div><div>See other entities or portfolio-confidential data.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">FNL</div><div style="font-weight:600;color:#0F1E3A">Functional Leader (supply, production, maintenance, finance, EHS, commercial)</div><div>Entity (domain)</div><div>Investigate the assigned domain; drive supporting actions.</div><div>Accept and assign supporting actions in scope; add business explanation and evidence.</div><div class="muted">What in my domain is causing this? Which actions are blocked?</div><div class="id" style="font-weight:500">E-02 to E-07, E-09</div><div>Approve closure of own actions; act outside the domain.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">MOC</div><div style="font-weight:600;color:#0F1E3A">Metric Owner / Certifier (two assignments, one family)</div><div>Number Assurance</div><div>Own the definition; certify numbers in assigned scope.</div><div>Certify; certify with exception; request correction; approve override.</div><div class="muted">Can I sign this number? What breaks are open? What changed in lineage?</div><div class="id" style="font-weight:500">E-08, S-03, G-08</div><div>Certify outside scope; certify own leadership KPI (D-02).</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">ANL</div><div style="font-weight:600;color:#0F1E3A">Analyst / Investigator</div><div>Any (scoped)</div><div>Investigate breaks and deviations; prepare evidence.</div><div>Recommend correction; prepare evidence; run scenarios.</div><div class="muted">Where does the number diverge? What evidence proves it?</div><div class="id" style="font-weight:500">E-08, S-03, S-06, S-08</div><div>Certify unless separately authorised.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">ACO</div><div style="font-weight:600;color:#0F1E3A">Action Owner</div><div>Entity (assigned)</div><div>Deliver assigned actions with evidence.</div><div>Accept the action; update it; record dependencies; submit evidence; request closure.</div><div class="muted">What is due? What is blocking me? Is my evidence enough?</div><div class="id" style="font-weight:500">E-09, E-10</div><div>Self-approve closure unless explicitly authorised.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">INC</div><div style="font-weight:600;color:#0F1E3A">Incident Commander</div><div>Incident scope</div><div>Coordinate a severe incident end to end.</div><div>Maintain live facts, actions, decisions log and communications; open war room; escalate.</div><div class="muted">Is it contained? Who is blocked? What do we tell leadership, and when?</div><div class="id" style="font-weight:500">S-05 (war-room mode), O-08</div><div>Accept material risk; approve disclosure; close a material incident alone.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">ASR</div><div style="font-weight:600;color:#0F1E3A">Assurance Reviewer</div><div>Assurance (scoped)</div><div>Independent review of certification, controls, evidence, overrides and closure.</div><div>Sample; challenge; reopen (D-18).</div><div class="muted">Is the evidence sufficient? Are overrides justified? Do findings affect leadership KPIs?</div><div class="id" style="font-weight:500">G-08, S-08, E-08 (read)</div><div>Change business data.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">ADM</div><div style="font-weight:600;color:#0F1E3A">Administrator</div><div>None (admin console, A-15)</div><div>Maintain approved mappings and technical configuration.</div><div>Execute approved mapping and config changes.</div><div class="muted">Which mappings changed, and what re-certification did they trigger?</div><div class="id" style="font-weight:500">Admin console (out of scope)</div><div>Certify, accept risk, close incidents; no automatic business authority.</div></div>
+      
+        <div class="tr" style="grid-template-columns:60px 170px 110px 220px 240px 240px 140px 1fr"><div class="id">AI</div><div style="font-weight:600;color:#0F1E3A">AI assistants: Validation, Explanation, Executive Briefing, Escalation Routing (not a role)</div><div>Inherits requester</div><div>Detect, summarise, explain, draft, recommend, route.</div><div>None. Outputs are drafts that a human must accept.</div><div class="muted">—</div><div class="id" style="font-weight:500">S-07, O-07, G-10, S-04, S-13</div><div>Certify a KPI; approve a financial number; accept material risk; approve disclosure; close a material case; assign accountability.</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Decision matrix</h2>
+    <p class="sub">Who decides what. Superscripts: * = within assigned scope only; † = only when materiality is Critical and above the [DoA LIMIT — PLACEHOLDER]. The AI column can never contain A or E.</p>
+    <div class="key">
+      <div><span class="k" style="background:#0F1E3A;color:#fff">A</span>Approve / decide</div>
+      <div><span class="k" style="box-shadow:inset 0 0 0 2px #0F1E3A">E</span>Execute</div>
+      <div><span class="k" style="background:#E3E7ED">R</span>Recommend / request</div>
+      <div><span class="k" style="background:#E3E7ED">C</span>Consulted</div>
+      <div><span class="k">I</span>Informed</div>
+      <div><span class="k" style="color:#6B7380">—</span>No right</div>
+      <div><span class="k" style="box-shadow:inset 0 0 0 1px #6B7686">D</span>AI drafts</div>
+      <div><span class="k" style="box-shadow:inset 0 0 0 1px #6B7686">V</span>AI validates (no authority)</div>
+    </div>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:44px 1fr repeat(11,70px)"><div>#</div><div>Decision</div>
+        <div class="m">OWN</div><div class="m">CGE</div><div class="m">ENX</div><div class="m">FNL</div><div class="m">MOC</div><div class="m">ANL</div><div class="m">ACO</div><div class="m">INC</div><div class="m">ASR</div><div class="m">ADM</div><div class="m">AI</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">01</div><div>Accept ownership of an alert or case</div>
+          <div class="m mN">—</div><div class="m mR">R</div><div class="m mA">A</div><div class="m mA">A*</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mA">A*</div><div class="m mA">A*</div><div class="m mI">I</div><div class="m mN">—</div><div class="m mD">D</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">02</div><div>Assign a supporting action</div>
+          <div class="m mN">—</div><div class="m mA">A</div><div class="m mA">A</div><div class="m mA">A*</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mA">A</div><div class="m mI">I</div><div class="m mN">—</div><div class="m mD">D</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">03</div><div>Alternate-sourcing decision within local authority [PLACEHOLDER]</div>
+          <div class="m mI">I</div><div class="m mC">C</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mE">E</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">04</div><div>Alternate-sourcing decision above local authority [PLACEHOLDER]</div>
+          <div class="m mA">A†</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">05</div><div>Run a scenario</div>
+          <div class="m mR">R</div><div class="m mE">E</div><div class="m mE">E</div><div class="m mE">E</div><div class="m mN">—</div><div class="m mE">E</div><div class="m mN">—</div><div class="m mE">E</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">D</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">06</div><div>Publish a scenario as the basis for a decision</div>
+          <div class="m mI">I</div><div class="m mA">A</div><div class="m mA">A*</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">07</div><div>Escalate a matter</div>
+          <div class="m mR">R</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mD">D</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">08</div><div>Open a war room</div>
+          <div class="m mR">R</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mA">A</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">09</div><div>Intervene in a critical escalation</div>
+          <div class="m mA">A</div><div class="m mC">C</div><div class="m mI">I</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">10</div><div>Certify a KPI</div>
+          <div class="m mN">—</div><div class="m mI">I</div><div class="m mI">I</div><div class="m mN">—</div><div class="m mA">A*</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mV">V</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">11</div><div>Certify a KPI with exception</div>
+          <div class="m mN">—</div><div class="m mI">I</div><div class="m mI">I</div><div class="m mN">—</div><div class="m mA">A*</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mV">V</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">12</div><div>Request a data correction</div>
+          <div class="m mN">—</div><div class="m mR">R</div><div class="m mR">R</div><div class="m mR">R</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mE">E</div><div class="m mV">V</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">13</div><div>Approve a manual KPI override</div>
+          <div class="m mN">—</div><div class="m mI">I</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mA">A*</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">14</div><div>Change an approved mapping or configuration</div>
+          <div class="m mN">—</div><div class="m mI">I</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mA">A</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mI">I</div><div class="m mE">E</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">15</div><div>Accept a material risk</div>
+          <div class="m mA">A†</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">16</div><div>Approve disclosure (Disclosure Authority — PLACEHOLDER, D-07)</div>
+          <div class="m mI">I</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">17</div><div>Approve an executive or Owner update</div>
+          <div class="m mI">I</div><div class="m mA">A</div><div class="m mA">A*</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">D</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">18</div><div>Request closure</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">19</div><div>Approve closure, non-material case</div>
+          <div class="m mN">—</div><div class="m mI">I</div><div class="m mA">A</div><div class="m mA">A*</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mC">C</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mV">V</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">20</div><div>Approve closure, material case (D-06 tiers)</div>
+          <div class="m mI">I</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mR">R</div><div class="m mC">C</div><div class="m mN">—</div><div class="m mV">V</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">21</div><div>Reopen a closed case</div>
+          <div class="m mR">R</div><div class="m mA">A</div><div class="m mR">R</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mA">A</div><div class="m mN">—</div><div class="m mN">—</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,70px)"><div class="id">22</div><div>Release the daily Owner brief</div>
+          <div class="m mI">I</div><div class="m mA">A</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">D</div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Governance assignments (v0.2, CX-01)</h2>
+    <p class="sub">These are not roles. They are per-item assignments that a governed role holds for a specific KPI, case or incident. Each assignment is recorded with the assigning role, the time and an audit entry.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:200px 1fr 260px 260px 120px"><div>Assignment</div><div>Responsibility</div><div>Eligible roles</div><div>Assigned by</div><div>Decision</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Named owner</div><div>Accountable for an alert or case from acceptance to closure</div><div>Entity Executive · Functional Leader · Action Owner (assigned)</div><div class="muted">Self-acceptance of the AI or Core Group routing draft</div><div class="id">D-19</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Incident Commander</div><div>Coordinates a severe incident: live facts, actions, decisions log, communications</div><div>Entity Executive · Functional Leader</div><div class="muted">Core Group Executive (Critical) · Entity Executive (High)</div><div class="id">D-23</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Action owner</div><div>Delivers one action with evidence</div><div>Any Entity-lens role in scope</div><div class="muted">Named owner · Incident Commander · Core Group (cross-entity)</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Decision authority</div><div>Takes a recorded decision on a case</div><div>Owner · Core Group Executive · Entity Executive, per [DoA — PH]</div><div class="muted">Rule from materiality + DoA placeholder</div><div class="id">D-05</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Closure approver</div><div>Approves or rejects closure; never the action owner</div><div>Entity Executive (Medium) · Core Group Executive (High / Critical)</div><div class="muted">Rule from materiality</div><div class="id">D-06</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Watcher</div><div>Receives updates and has view access only</div><div>Any role with scope</div><div class="muted">Named owner · Core Group · auto for cross-functional impact</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Metric owner / Certifier</div><div>Owns the definition / certifies the value for a KPI × scope</div><div>Metric Owner / Certifier family</div><div class="muted">Core Group (governance) via the certification calendar</div><div class="id">D-02, D-22</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Disclosure Authority [PH]</div><div>Approves disclosure where a disclosure clock applies</div><div>PLACEHOLDER: not in the role model</div><div class="muted">Owner office / legal (placeholder)</div><div class="id">D-07</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 1fr 260px 260px 120px"><div style="font-weight:600;color:#0F1E3A">Brief releaser</div><div>Releases the AI-drafted Owner Brief and briefing packs</div><div>Core Group Executive</div><div class="muted">Core Group</div><div class="id">D-11</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Home route by role (v0.2, CX-02)</h2>
+    <p class="sub">Every role has a defined landing route and its main working routes, so no supporting role is left to navigate a lens built for someone else.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:80px 220px 260px 1fr"><div>Role</div><div>Landing</div><div>Working routes</div><div>Variant applied</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">OWN</div><div style="font-weight:600;color:#0F1E3A">O-01 Enterprise Health Home</div><div class="id" style="font-weight:500">O-02 to O-08, S-09 to S-11</div><div class="muted">Owner depth everywhere; S-10 summary mode; G-08 Owner trust summary</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">CGE</div><div style="font-weight:600;color:#0F1E3A">G-01 Portfolio Home</div><div class="id" style="font-weight:500">G-02 to G-10, S-12, S-06</div><div class="muted">Comparative depth</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">ENX</div><div style="font-weight:600;color:#0F1E3A">E-01 Entity Home</div><div class="id" style="font-weight:500">E-02 to E-10, S-05</div><div class="muted">Own entity, full depth</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">FNL</div><div style="font-weight:600;color:#0F1E3A">E-09 My Alerts, Cases and Actions (domain filter)</div><div class="id" style="font-weight:500">Domain route of E-02 to E-07</div><div class="muted">Domain-filtered Entity lens</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">MOC</div><div style="font-weight:600;color:#0F1E3A">E-08 Number Assurance Workbench (assigned scope)</div><div class="id" style="font-weight:500">S-03, G-08 (status)</div><div class="muted">Entity or group scope per assignment (D-22)</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">ANL</div><div style="font-weight:600;color:#0F1E3A">E-08 investigation queue</div><div class="id" style="font-weight:500">S-03, S-06, S-08</div><div class="muted">Assigned scope</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">ACO</div><div style="font-weight:600;color:#0F1E3A">E-09 My Alerts, Cases and Actions</div><div class="id" style="font-weight:500">E-10, S-05</div><div class="muted">Assigned items only</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">INC</div><div style="font-weight:600;color:#0F1E3A">S-05 Case Detail in war-room mode</div><div class="id" style="font-weight:500">E-09, G-09, S-06, S-08</div><div class="muted">Incident scope</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">ASR</div><div style="font-weight:600;color:#0F1E3A">G-08 Certification Governance (Assurance variant)</div><div class="id" style="font-weight:500">S-08, S-03, E-08 (read)</div><div class="muted">Read-only with sampling tasks; review scope</div></div>
+      
+        <div class="tr" style="grid-template-columns:80px 220px 260px 1fr"><div class="id">ADM</div><div style="font-weight:600;color:#0F1E3A">Admin console (out of scope, A-15)</div><div class="id" style="font-weight:500">—</div><div class="muted">No business lens</div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-03-Personas.js"></script>
+<script>DCLite.mount("dc-root", "P1-03-Personas", {});</script>
+</body>
+</html>

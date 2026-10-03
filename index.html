@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DCT Phase 1 index</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+h3{font-size:15px;line-height:22px;margin:0 0 6px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1100px}
+.tr > div{padding:9px 10px;border-top:1px solid #E2E6EB;font-size:13px;line-height:19px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.card{background:#fff;border:1px solid #CDD3DB;border-radius:3px;padding:16px 18px}
+.muted{color:#5A6576}
+.ix{display:block;background:#fff;border:1px solid #CDD3DB;border-radius:3px;padding:14px 16px;text-decoration:none;color:#1B2433;min-height:44px}
+.ix:hover{border-color:#0F1E3A;color:#1B2433}
+.ix:focus-visible{outline:3px solid #0B5E6B;outline-offset:2px}
+.step{background:#fff;border:1px solid #CDD3DB;border-top:3px solid #0F1E3A;padding:12px 12px 14px;display:flex;flex-direction:column;gap:6px}
+.lbl{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;line-height:14px;letter-spacing:.05em;text-transform:uppercase;color:#5A6576;font-weight:600}
+.ai{border:1px dashed #6B7686;padding:6px 8px;font-size:12.5px;line-height:17px;background:#F7F8FA}
+.hu{border:1px solid #0F1E3A;padding:6px 8px;font-size:12.5px;line-height:17px}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <div class="top">
+    <div>
+      <div class="eyebrow">Digital Control Tower · Diversified industrial enterprise (placeholder client) · Phase 1 of 6</div>
+      <h1>Phase 1 architecture pack</h1>
+      <p class="q">An executive decision-support application for repeated daily use. It answers four questions (Trust, Detect, Predict, Act) for three lenses (Owner, Core Group, Entity). This pack fixes the architecture, vocabulary, role model, KPI catalogue and synthetic scenario that every later phase reuses.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip">2026-10-03 · NO VISUAL SCREENS IN PHASE 1</span>
+      <span class="chip syn">ALL NAMES, VALUES, THRESHOLDS: SYNTHETIC OR PLACEHOLDER</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Pack index</h2>
+    <p class="sub">Ten required Phase 1 deliverables plus three master references (R1–R3) that later phases must not fork. Open any card in Play or full view to jump to it.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">
+      
+        <a class="ix" href="P2-O01-EnterpriseHealth.html">
+          <div class="id">TOUR</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Guided tour · Primary business journey</div>
+          <div class="muted" style="font-size:13px;line-height:18px">10 steps from the Owner home to evidence-based closure, with what to notice at each step. Use the Lens menu in any screen header to switch role.</div>
+        </a>
+      
+        <a class="ix" href="P2-G01-Portfolio.html">
+          <div class="id">TOUR</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Guided tour · Number Assurance journey</div>
+          <div class="muted" style="font-size:13px;line-height:18px">8 steps from an untrusted KPI card to a human certification decision and the updated leadership view.</div>
+        </a>
+      
+        <a class="ix" href="#interp">
+          <div class="id">01</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Product interpretation</div>
+          <div class="muted" style="font-size:13px;line-height:18px">What the Control Tower is, the four questions, the decision flow and the design stance. Below on this board.</div>
+        </a>
+      
+        <a class="ix" href="P1-02-Assumptions.html">
+          <div class="id">02</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Assumptions, unresolved decisions, conflicts</div>
+          <div class="muted" style="font-size:13px;line-height:18px">16 design assumptions, 23 decisions awaiting approval, 14 conflicts in the brief.</div>
+        </a>
+      
+        <a class="ix" href="P1-03-Personas.html">
+          <div class="id">03</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Personas and decision matrix</div>
+          <div class="muted" style="font-size:13px;line-height:18px">10 roles plus the AI boundary. 22 decisions mapped as Approve / Execute / Recommend / Consult / Inform; governance assignments; home route per role.</div>
+        </a>
+      
+        <a class="ix" href="P1-04-Architecture.html">
+          <div class="id">04</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Architecture and sitemap</div>
+          <div class="muted" style="font-size:13px;line-height:18px">Layered architecture, object model, lens × navigation sitemap, hierarchy drill rules, templates.</div>
+        </a>
+      
+        <a class="ix" href="P1-05-Pages.html">
+          <div class="id">05</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Page inventory → templates</div>
+          <div class="muted" style="font-size:13px;line-height:18px">41 routes, each with business question, ≤6 primary KPIs, dominant visual, drill-downs, scenario state.</div>
+        </a>
+      
+        <a class="ix" href="P1-06-Permissions.html">
+          <div class="id">06</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Visibility and action permissions</div>
+          <div class="muted" style="font-size:13px;line-height:18px">Data scope by role, 32 actions by role, 10 hard governance rules.</div>
+        </a>
+      
+        <a class="ix" href="P1-07-SupplierJourney.html">
+          <div class="id">07</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Supplier-delay journey</div>
+          <div class="muted" style="font-size:13px;line-height:18px">Signal → alert → ownership → materiality → Owner journey → evidence-based closure.</div>
+        </a>
+      
+        <a class="ix" href="P1-08-TrustJourney.html">
+          <div class="id">08</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Number-assurance journey</div>
+          <div class="muted" style="font-size:13px;line-height:18px">KPI card → lineage → reconciliation break → workbench → human certification → updated view.</div>
+        </a>
+      
+        <a class="ix" href="P1-09-Components.html">
+          <div class="id">09</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Component inventory and states</div>
+          <div class="muted" style="font-size:13px;line-height:18px">80 components, KPI card state model, provenance encoding, incident and non-happy-path states.</div>
+        </a>
+      
+        <a class="ix" href="P1-10-Risks.html">
+          <div class="id">10</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Risks of building before approval</div>
+          <div class="muted" style="font-size:13px;line-height:18px">14 risks with consequence, likelihood, impact and the gate that removes each.</div>
+        </a>
+      
+        <a class="ix" href="P1-11-IncidentAIModel.html">
+          <div class="id">11</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Incident, case, war-room and AI specification</div>
+          <div class="muted" style="font-size:13px;line-height:18px">Added in v0.2: 22-field alert model, every incident block field by field, war-room mode, AI assistant specification, explanation model.</div>
+        </a>
+      
+        <a class="ix" href="P2-00-Index.html">
+          <div class="id">P2</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Phase 2 · Greyscale low-fidelity application</div>
+          <div class="muted" style="font-size:13px;line-height:18px">Batch tracker for all 41 routes, the wireframe component kit and template skeletons. Batch 1: Owner lens.</div>
+        </a>
+      
+        <a class="ix" href="P1-R1-KPICatalogue.html">
+          <div class="id">R1</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">KPI catalogue placement</div>
+          <div class="muted" style="font-size:13px;line-height:18px">Every KPI in the brief with an ID: landing card, drill-down location, shared definitions.</div>
+        </a>
+      
+        <a class="ix" href="P1-R2-Traceability.html">
+          <div class="id">R2</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Requirement traceability matrix (v0.2 completeness check)</div>
+          <div class="muted" style="font-size:13px;line-height:18px">170 requirements across 12 coverage areas: theme, persona, route, template, treatment, status, open assumption. Corrections CX-01 to CX-09.</div>
+        </a>
+      
+        <a class="ix" href="P1-R3-Scenario.html">
+          <div class="id">R3</div>
+          <div style="font-weight:600;font-size:15px;line-height:21px;margin:2px 0 4px;color:#0F1E3A">Scenario bible, materiality, glossary</div>
+          <div class="muted" style="font-size:13px;line-height:18px">Master synthetic scenario facts, IDs and timeline, placeholder materiality model, controlled vocabulary.</div>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="sec" id="interp">
+    <div class="eyebrow">Deliverable 01</div>
+    <h2 style="font-size:26px;line-height:34px;margin-top:4px">Product interpretation</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px;margin-top:14px">
+      <div class="card">
+        <h3>What it is</h3>
+        <p style="margin:0 0 8px">A role-governed decision-support system. For each lens it shows one defensible version of performance, what changed, what is likely to breach and when, and who is accountable for the response. Its working unit is a <b>material issue moving to closure</b>, not a chart.</p>
+        <p style="margin:0" class="muted">Daily rhythm (Design assumption): Owner, 5–10 min (brief, change report, decisions). Core Group, daily portfolio scan plus period-close certification. Entity, several times a day (work queue, plants, certification).</p>
+      </div>
+      <div class="card">
+        <h3>What it is not</h3>
+        <p style="margin:0 0 6px">Not a departmental BI catalogue, a marketing site, a transaction system of record, a data-entry tool or an AI autopilot.</p>
+        <p style="margin:0" class="muted">It reads from governed sources (all named as placeholders) and writes only decisions, ownership, actions, evidence, certifications and comments. Every write is audited.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:28px">The four questions → product capabilities</h3>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:110px 300px 1fr 190px 210px">
+        <div>Question</div><div>Executive asks</div><div>The product answers with</div><div>Primary routes</div><div>Signature component</div>
+      </div>
+      
+        <div class="tr" style="grid-template-columns:110px 300px 1fr 190px 210px">
+          <div class="id">TRUST</div><div>Can I trust and defend the number?</div><div>A trust status on every value, kept separate from performance status. Approved definition, lineage, reconciliation, certification decision and evidence are one click away.</div><div class="id" style="font-weight:500">S-03 · G-08 · E-08</div><div>Trust badge · KPI detail</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:110px 300px 1fr 190px 210px">
+          <div class="id">DETECT</div><div>What materially changed in the last 24 hours?</div><div>A change ledger ranked by materiality, leading signals by segment, and alerts carrying a fact / forecast / scenario label.</div><div class="id" style="font-weight:500">O-02 · S-12 · S-04</div><div>Change-ledger row</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:110px 300px 1fr 190px 210px">
+          <div class="id">PREDICT</div><div>What is likely to happen, and when could a threshold be breached?</div><div>Prediction outputs (days to breach, probability of plan miss, projected gaps, covenant breach) plus scenario comparison. Always shown in the forecast style.</div><div class="id" style="font-weight:500">S-12 · S-06 · forecast panels</div><div>Days-to-breach clock</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:110px 300px 1fr 190px 210px">
+          <div class="id">ACT</div><div>Who owns the response, what decision is required, and is it moving to evidence-based closure?</div><div>Ownership is accepted by a human. Actions have dependencies, escalation runs on a clock, war rooms are available, and closure is approved by a human.</div><div class="id" style="font-weight:500">O-06 · G-09 · E-09 · S-05 · E-10</div><div>Accountability strip</div>
+        </div>
+      
+    </div>
+
+    <h3 style="margin-top:28px">Core decision flow: which product object carries each step, and where AI stops</h3>
+    <p class="sub">Each step is a real object in the application. The dashed box is what AI may do. The solid box is the human act that AI can never take.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:10px">
+      
+        <div class="step">
+          <div class="id">01</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Performance</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">KPI card on a governed definition</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Detect variance, summarise</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Certifier certifies the number</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">02</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Deviation</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Variance check → Alert record</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Detect and flag deviation</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Confirm it is real (validation)</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">03</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Cause</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Driver analysis · AI explanation</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Explain with facts kept separate</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Add business explanation</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">04</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Business impact</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Impact grid (11 dimensions)</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Draft impact estimate</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Validate impact</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">05</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Forecast exposure</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Forecast · days to breach</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Project and compute days to breach</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Own forecast assumptions</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">06</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Materiality</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Materiality score (placeholder logic)</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Score against placeholder rules</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Approve model and thresholds</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">07</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Named human owner</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Ownership panel</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Recommend owner role</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Accept ownership</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">08</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Action</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Action record · dependencies</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Draft recommended actions</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Accept, assign, execute</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">09</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Escalation</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Escalation clock and ladder</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Draft escalation path</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Escalate · intervene</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">10</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Evidence</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Evidence record · audit trail</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Check completeness</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Submit and attest evidence</div>
+        </div>
+      
+        <div class="step">
+          <div class="id">11</div>
+          <div style="font-weight:600;color:#0F1E3A;font-size:15px">Closure</div>
+          <div class="muted" style="font-size:12.5px;line-height:17px;min-height:34px">Closure criteria · approval</div>
+          <div class="lbl">AI may</div>
+          <div class="ai">Check criteria are met</div>
+          <div class="lbl">Human must</div>
+          <div class="hu">Approve closure (never self)</div>
+        </div>
+      
+    </div>
+
+    <h3 style="margin-top:28px">Interpretation principles (binding on every phase)</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px">
+      
+        <div class="card">
+          <div class="id">P1</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">Two status axes, never merged</div>
+          <div class="muted" style="font-size:13px;line-height:19px">Business status (how it performs) and trust status (whether we can defend it) are separate badges. An untrusted number is never painted as a red poor result.</div>
+        </div>
+      
+        <div class="card">
+          <div class="id">P2</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">Provenance on every value</div>
+          <div class="muted" style="font-size:13px;line-height:19px">Certified actual, preliminary actual, forecast, scenario, external signal and AI-generated each get their own tag and line style, never colour alone.</div>
+        </div>
+      
+        <div class="card">
+          <div class="id">P3</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">Lens = depth, entitlement = scope</div>
+          <div class="muted" style="font-size:13px;line-height:19px">Switching lens changes how summarised the view is. It never widens what a person may see.</div>
+        </div>
+      
+        <div class="card">
+          <div class="id">P4</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">One governed KPI, many contexts</div>
+          <div class="muted" style="font-size:13px;line-height:19px">Each KPI has one ID, definition and owner. Pages reuse the same component and add only decision context (see R1).</div>
+        </div>
+      
+        <div class="card">
+          <div class="id">P5</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">Exception-led landing pages</div>
+          <div class="muted" style="font-size:13px;line-height:19px">At most six primary KPI cards per page. Every other catalogue measure sits in a named sub-theme drill-down.</div>
+        </div>
+      
+        <div class="card">
+          <div class="id">P6</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">Accountability strip on every material issue</div>
+          <div class="muted" style="font-size:13px;line-height:19px">Severity, exposure, named human role, due date, escalation clock, evidence state and next action, always together.</div>
+        </div>
+      
+        <div class="card">
+          <div class="id">P7</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">AI has a visible boundary</div>
+          <div class="muted" style="font-size:13px;line-height:19px">AI detects, summarises, explains, drafts, recommends and routes. Approval controls are human-only and never pre-filled by AI.</div>
+        </div>
+      
+        <div class="card">
+          <div class="id">P8</div>
+          <div style="font-weight:600;color:#0F1E3A;margin:2px 0 4px">Six templates, 41 routes</div>
+          <div class="muted" style="font-size:13px;line-height:19px">Every route uses one of templates A–F. No bespoke layout per page. Restricted and error states are patterns, not pages.</div>
+        </div>
+      
+    </div>
+
+    <h3 style="margin-top:28px">Delivery phases and approval gates</h3>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:90px 260px 1fr 330px">
+        <div>Phase</div><div>Output</div><div>Built on</div><div>Gate to proceed</div>
+      </div>
+      
+        <div class="tr" style="grid-template-columns:90px 260px 1fr 330px">
+          <div class="id">1</div><div>Architecture pack (this canvas)</div><div>Brief</div><div>APPROVED 2026-10-03: all recommendations adopted; completeness check v0.2 done (R2)</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:90px 260px 1fr 330px">
+          <div class="id">2</div><div>Greyscale low-fidelity application (IN PROGRESS: see P2-00 tracker)</div><div>Templates A–F, page inventory 05, KPI placement R1</div><div>Template and content review by lens owners</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:90px 260px 1fr 330px">
+          <div class="id">3</div><div>Design system and high-fidelity screens</div><div>Component inventory 09, visual system in the brief</div><div>Accessibility contrast check, state coverage</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:90px 260px 1fr 330px">
+          <div class="id">4</div><div>Two connected prototype journeys</div><div>Journeys 07 and 08, scenario R3</div><div>Walkthrough with Owner and Core Group proxies</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:90px 260px 1fr 330px">
+          <div class="id">5</div><div>Formal audit and corrections</div><div>RTM R2, permissions 06</div><div>All critical and high findings closed</div>
+        </div>
+      
+        <div class="tr" style="grid-template-columns:90px 260px 1fr 330px">
+          <div class="id">6</div><div>Presentation Mode frames</div><div>Audited screens</div><div>Management sign-off</div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/Main.js"></script>
+<script>DCLite.mount("dc-root", "Main", {});</script>
+</body>
+</html>

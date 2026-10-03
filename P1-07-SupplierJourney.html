@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supplier-delay journey</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1260px}
+.tr > div{padding:9px 9px;border-top:1px solid #E2E6EB;font-size:12.5px;line-height:18px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.grp > div{background:#E6EAF0;color:#0F1E3A;font-weight:600;font-size:13px;border-top:1px solid #CDD3DB}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+.ai{display:block;border:1px dashed #6B7686;padding:4px 6px;background:#F7F8FA}
+.st{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;border:1px solid #0F1E3A;padding:1px 5px;display:inline-block;color:#0F1E3A;background:#fff}
+.chain{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:16px}
+.chain a{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;background:#0F1E3A;color:#fff;padding:6px 10px;text-decoration:none;min-height:20px}
+.chain span{font-family:'IBM Plex Mono',ui-monospace,monospace;color:#0F1E3A}
+.tr > div.lv{text-align:center;border-left:1px solid #E2E6EB;font-size:12px}
+.tr > div.on{background:#0F1E3A;color:#fff;font-weight:600}
+.tr > div.part{background:#E3E7ED;color:#1B2433}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Deliverable 07 of 10</div>
+      <h1>Supplier-delay journey</h1>
+      <p class="q">A critical raw-material supplier delays a scheduled delivery. Material cover falls, Plant 02 faces a forecast production shortfall, dispatch and billing slip, cash-upstream exposure rises, and an alternate-sourcing decision is needed. Part A is the backstage flow before the Owner sees anything. Part B is the primary clickable Owner journey.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip syn">SYNTHETIC SCENARIO · ALL VALUES AND TIMES SYNTHETIC</span>
+      <span class="chip syn">THRESHOLDS: PLACEHOLDER</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Primary clickable journey (Phase 4 prototype path)</h2>
+    <div class="chain">
+      <a href="#B1">Owner Home</a><span>→</span><a href="#B2">24-Hour Change</a><span>→</span><a href="#B3">Material Alert</a><span>→</span><a href="#B4">Entity Contribution</a><span>→</span><a href="#B5">Operations Impact</a><span>→</span><a href="#B6">Cash Exposure</a><span>→</span><a href="#B7">Case Detail</a><span>→</span><a href="#B8">Accepted Human Ownership</a><span>→</span><a href="#B9">Action</a><span>→</span><a href="#B10">Evidence-Based Closure</a><span></span>
+    </div>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div>Step</div><div>Time (SYN)</div><div>Route</div><div>Role</div><div>What they see</div><div>Human decision / action</div><div>AI involvement (bounded)</div><div>Issue state</div></div>
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Part A · Backstage: Entity and Core Group, before the Owner sees anything</div></div>
+        
+          <div class="tr" id="A1" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">A1</div><div class="id" style="font-weight:500">D-1 21:40</div><div><b style="color:#0F1E3A">E-04 · E-01 signal</b></div><div>Functional Leader (supply)</div><div>Supplier S-07 delivery notice for raw material RM-1 slips 6 days. SIG-009 Critical-material shortage risk goes to Elevated. Plant 02 cover is projected at 3.5 days against a 9-day replenishment lead time. SIG-010 single-source flag. Tag: LEADING · PRELIMINARY.</div><div>Review the signal</div><div><span class="ai">Detection only</span></div><div><span class="st">Signal: Elevated</span></div></div>
+        
+          <div class="tr" id="A2" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">A2</div><div class="id" style="font-weight:500">D-1 22:05</div><div><b style="color:#0F1E3A">S-04 Alert Detail</b></div><div>Entity Executive (notified)</div><div>ALT-SYN-2041 'Forecast production shortfall, Plant 02, RM-1 supply delay'. Label FORECAST. Source category: Supplier signal [PH]. Confidence Medium. Linked KPIs: OPS-001, SIG-009, SIG-007.</div><div>—</div><div><span class="ai">Validation Assistant checks supplier notice vs inventory vs production plan: 'Consistent across 3 sources; inventory figure preliminary'.</span></div><div><span class="st">Detected → Validating</span></div></div>
+        
+          <div class="tr" id="A3" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">A3</div><div class="id" style="font-weight:500">D-1 22:30</div><div><b style="color:#0F1E3A">S-04 · E-09</b></div><div>Entity Executive</div><div>Routing draft: owner role Entity Executive (Entity A1); supporting Functional Leader (supply); due D0 12:00; path L0 → L1 → L2. Escalation clock starts [ACCEPTANCE CLOCK — PH].</div><div>Accept or reassign the draft</div><div><span class="ai">Escalation Routing Assistant drafts owner role, due date, path and decision required. It does not assign.</span></div><div><span class="st">Unowned</span></div></div>
+        
+          <div class="tr" id="A4" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">A4</div><div class="id" style="font-weight:500">D-1 23:15</div><div><b style="color:#0F1E3A">E-09 → S-05</b></div><div>Entity Executive</div><div>Accepts ownership. CASE-SYN-0388 opens; the Functional Leader (supply) accepts the supporting action. Core Group becomes a watcher because the impact is cross-functional (production + cash).</div><div>Accept ownership (audited)</div><div><span class="ai">—</span></div><div><span class="st">Owned → Investigating</span></div></div>
+        
+          <div class="tr" id="A5" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">A5</div><div class="id" style="font-weight:500">D0 05:10</div><div><b style="color:#0F1E3A">S-04 materiality panel</b></div><div>System (rule) · Core Group notified</div><div>Forecast refresh: days to breach 4; projected shortfall 18.4 kt; dispatch delay 2–4 days; billing deferral CU 31 m; cash-upstream exposure CU 26 m; projected EBITDA gap CU 9.2 m; probability of plan miss 64%. Materiality drivers: Production High · Liquidity High · Financial Medium · Regulatory Low · EHS None → Critical (PLACEHOLDER logic).</div><div>Core Group Executive opens war room WR-SYN-0142 at D0 06:00; Entity names an Incident Commander</div><div><span class="ai">Explanation Assistant drafts the 'why' (S-07), with facts, assumptions and interpretation kept separate</span></div><div><span class="st">Critical · Incident INC-SYN-0142</span></div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Part B · Primary clickable Owner journey (Owner sees the issue only after the threshold crossing in A5)</div></div>
+        
+          <div class="tr" id="B1" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B1</div><div class="id" style="font-weight:500">D0 06:30</div><div><b style="color:#0F1E3A">O-01 Enterprise Health Home</b></div><div>Owner</div><div>Status strip: Operations 'Intervention required'. Banner: '1 new material issue since yesterday'. EBITDA card: actual On track (certified P06 / preliminary P07) with a separate forecast-breach marker in forecast style. Open critical alerts +1.</div><div>Open the 24-Hour Change Report</div><div><span class="ai">The Daily Brief (O-07) was drafted by the Briefing Assistant and released by a Core Group role</span></div><div><span class="st">War room active</span></div></div>
+        
+          <div class="tr" id="B2" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B2</div><div class="id" style="font-weight:500">D0 06:32</div><div><b style="color:#0F1E3A">O-02 24-Hour Change Report</b></div><div>Owner</div><div>Rank #1: ALT-SYN-2041 moved Not material → Critical at 05:10; before/after values with provenance tags; owner role shown as accepted.</div><div>Open the material alert</div><div><span class="ai">AI summary paragraph, labelled AI-generated, with source chips</span></div><div><span class="st">—</span></div></div>
+        
+          <div class="tr" id="B3" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B3</div><div class="id" style="font-weight:500">D0 06:33</div><div><b style="color:#0F1E3A">S-04 Alert Detail</b></div><div>Owner</div><div>Header: ID · state · severity Critical · materiality Critical (drivers: Production, Liquidity) · detected · FORECAST · source category · commander role · escalation level L2. Current vs forecast impact. Decision required: alternate sourcing above [DoA LIMIT — PH].</div><div>View entity contribution</div><div><span class="ai">'Why did this happen?' opens S-07</span></div><div><span class="st">—</span></div></div>
+        
+          <div class="tr" id="B4" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B4</div><div class="id" style="font-weight:500">D0 06:35</div><div><b style="color:#0F1E3A">S-09 Entity Contribution</b></div><div>Owner</div><div>Projected EBITDA gap by entity (bars, sorted): Entity A1 = 82% (SYN); others small. Breadcrumb Group → Business A → Entity A1. Each bar carries its trust state.</div><div>Drill to Plant 02</div><div><span class="ai">—</span></div><div><span class="st">—</span></div></div>
+        
+          <div class="tr" id="B5" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B5</div><div class="id" style="font-weight:500">D0 06:36</div><div><b style="color:#0F1E3A">S-10 Operations Impact</b></div><div>Owner</div><div>Plant 02 production actual vs plan vs forecast; forecast falls below plan from D+4; Line L2 most affected; material cover vs lead time. Owner depth: no work queues (C-14).</div><div>View cash exposure</div><div><span class="ai">—</span></div><div><span class="st">—</span></div></div>
+        
+          <div class="tr" id="B6" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B6</div><div class="id" style="font-weight:500">D0 06:38</div><div><b style="color:#0F1E3A">S-11 Cash Exposure</b></div><div>Owner</div><div>Lifecycle Production → Dispatch → Billing → Collection → Cash → Upstreaming for Entity A1. Leakage at Dispatch and Billing; Billing trust Preliminary; Cash trust Certified (P06); upstream exposure CU 26 m.</div><div>Open the case</div><div><span class="ai">—</span></div><div><span class="st">—</span></div></div>
+        
+          <div class="tr" id="B7" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B7</div><div class="id" style="font-weight:500">D0 06:40</div><div><b style="color:#0F1E3A">S-05 Case Detail (war-room mode)</b></div><div>Owner (view + intervene)</div><div>Live facts (certified / preliminary / missing / external / assumptions), 11-dimension impact grid, timeline, actions, communications. Scenario SCN-SYN-0031: A = alternate supplier S-12 at a premium; B = reallocate RM-1 from Plant 03; C = accept the shortfall.</div><div>Request analysis or intervene</div><div><span class="ai">Recommendation drafted with rationale and confidence; tagged 'AI recommendation · not a decision'</span></div><div><span class="st">Action in progress</span></div></div>
+        
+          <div class="tr" id="B8" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B8</div><div class="id" style="font-weight:500">D0 06:41</div><div><b style="color:#0F1E3A">S-05 Ownership panel</b></div><div>Owner sees; Entity Executive owns</div><div>Ownership accepted by the Entity Executive role at D-1 23:15 (audited), Incident Commander role assigned, decision authority for DEC-SYN-0219 shown as Owner (Critical + above DoA). Watchers: Core Group.</div><div>Owner approves Option A + B (permitted strategic decision) with rationale, via O-06</div><div><span class="ai">AI cannot select an option; the decision control is human-only</span></div><div><span class="st">Decision recorded</span></div></div>
+        
+          <div class="tr" id="B9" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B9</div><div class="id" style="font-weight:500">D0 → D+6</div><div><b style="color:#0F1E3A">S-05 Actions · E-09</b></div><div>Action Owners · Incident Commander</div><div>ACT-SYN-1107 Qualify alternate supplier S-12 · ACT-SYN-1108 Expedite logistics · ACT-SYN-1109 Re-sequence Line L2 · ACT-SYN-1110 Reprioritise customer dispatch. Each has owner role, due date, dependency and evidence required. 1108 Blocked at D+1 → escalated L1; cleared D+2.</div><div>Accept, update, attach evidence, escalate when blocked</div><div><span class="ai">Routing Assistant drafts updates; Executive and Owner updates drafted, then approved by Core Group</span></div><div><span class="st">Action in progress → Recovery monitoring</span></div></div>
+        
+          <div class="tr" id="B10" style="grid-template-columns:52px 100px 160px 140px 1fr 210px 210px 130px"><div class="id">B10</div><div class="id" style="font-weight:500">D+9</div><div><b style="color:#0F1E3A">E-10 · S-05 Closure</b></div><div>Action Owner → Core Group Executive (approver, D-06)</div><div>Closure criteria: cover restored ≥ [PH] days; Plant 02 forecast back on plan; dispatch backlog cleared; upstream exposure within [PH]. Evidence completeness 100% (SYN). Residual risk: single-source dependency. Root cause recorded. Preventive action: dual-sourcing initiative (proposed in O-04). Reopen control shown.</div><div>Action Owner requests closure; Core Group Executive approves; Assurance Reviewer samples</div><div><span class="ai">Validation Assistant confirms evidence completeness; it cannot close</span></div><div><span class="st">Closure requested → Closed</span></div></div>
+        
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Who sees the issue, and when</h2>
+    <p class="sub">The issue reaches each lens only when the rule for that lens fires. Filled = visible and actionable. Grey = visible as a summary or watcher. Blank = not shown (no push, not in landing pages).</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:200px repeat(7,minmax(0,1fr))"><div>Lens</div><div class="lv">A1 Signal</div><div class="lv">A2 Alert</div><div class="lv">A3 Unowned</div><div class="lv">A4 Owned</div><div class="lv">A5 Critical</div><div class="lv">B9 Actions</div><div class="lv">B10 Closed</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px repeat(7,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Entity</div>
+          <div class="lv on">Visible</div><div class="lv on">Visible</div><div class="lv on">Act</div><div class="lv on">Act</div><div class="lv on">Act</div><div class="lv on">Act</div><div class="lv on">Visible</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px repeat(7,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Core Group</div>
+          <div class="lv "></div><div class="lv part">· Watcher if cross-functional</div><div class="lv part">· Watcher</div><div class="lv part">· Watcher</div><div class="lv on">Act (war room)</div><div class="lv on">Coordinate</div><div class="lv on">Approve closure</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px repeat(7,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Owner</div>
+          <div class="lv "></div><div class="lv "></div><div class="lv "></div><div class="lv "></div><div class="lv on">Visible (pushed)</div><div class="lv part">· Decision + view</div><div class="lv part">· Informed</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Non-happy branches in this journey</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:70px 260px 1fr 260px"><div>ID</div><div>Branch</div><div>What the user sees</div><div>Rule (not AI)</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 260px 1fr 260px"><div class="id">BR-1</div><div style="font-weight:600;color:#0F1E3A">Nobody accepts ownership in time</div><div>'Alert without owner' state: amber clock and an 'Unowned' label in E-09 and G-09; EFF-006 increments.</div><div class="muted">Auto-escalate to the next level when [ACCEPTANCE CLOCK — PH] expires</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 260px 1fr 260px"><div class="id">BR-2</div><div style="font-weight:600;color:#0F1E3A">Forecast unavailable</div><div>Forecast area shows grey 'Forecast unavailable', with the reason and the last available forecast time. Materiality is computed on actuals with confidence Low.</div><div class="muted">No interpolation shown as a forecast</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 260px 1fr 260px"><div class="id">BR-3</div><div style="font-weight:600;color:#0F1E3A">Billing data stale</div><div>The lifecycle Billing stage shows trust 'Stale · as of [time]'. Leakage figure greyed and labelled 'Unverified'.</div><div class="muted">Stale after [FRESHNESS WINDOW — PH]</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 260px 1fr 260px"><div class="id">BR-4</div><div style="font-weight:600;color:#0F1E3A">Source unavailable (supplier feed)</div><div>Signal tile shows 'Source unavailable'; the last known value is greyed and the source category is named as a placeholder.</div><div class="muted">No silent fallback</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 260px 1fr 260px"><div class="id">BR-5</div><div style="font-weight:600;color:#0F1E3A">Escalation overdue</div><div>Escalation clock turns to 'Overdue +[h]' with an icon and label; the item moves to the top of G-09.</div><div class="muted">Ladder per D-08</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 260px 1fr 260px"><div class="id">BR-6</div><div style="font-weight:600;color:#0F1E3A">Closure rejected</div><div>Approver rejects with a reason; state returns to Recovery monitoring and the missing evidence items are highlighted.</div><div class="muted">Rejection reason mandatory</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 260px 1fr 260px"><div class="id">BR-7</div><div style="font-weight:600;color:#0F1E3A">Reopened</div><div>A recurrence within [REOPEN WINDOW — PH] reopens the case with a link to the prior closure; EFF-004 Repeat issues increments.</div><div class="muted">D-18</div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-07-SupplierJourney.js"></script>
+<script>DCLite.mount("dc-root", "P1-07-SupplierJourney", {});</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scenario bible and glossary</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1100px}
+.tr > div{padding:8px 10px;border-top:1px solid #E2E6EB;font-size:13px;line-height:19px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(560px,1fr));gap:20px}
+.tree{background:#fff;border:1px solid #CDD3DB;padding:14px 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;line-height:22px;white-space:pre;overflow-x:auto}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Master reference R3</div>
+      <h1>Scenario bible, materiality model and glossary</h1>
+      <p class="q">The single source for every synthetic fact, ID, time and value used in any later phase, plus the placeholder materiality model and the controlled vocabulary. If a screen needs a fact that is not here, add it here first and label it.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip syn">EVERYTHING ON THIS BOARD IS SYNTHETIC OR PLACEHOLDER</span>
+    </div>
+  </div>
+
+  <div class="sec two">
+    <div>
+      <h2>Synthetic hierarchy</h2>
+      <p class="sub">Neutral labels only. No industry, geography or client branding is invented.</p>
+      <div class="tree">Group (SYNTHETIC)
+├─ Business A
+│  ├─ Entity A1  ← scenario entity
+│  │  ├─ Plant 01
+│  │  ├─ Plant 02  ← affected plant
+│  │  │  ├─ Line L1
+│  │  │  ├─ Line L2  ← most affected line
+│  │  │  └─ Line L3
+│  │  └─ Plant 03  ← Option B donor plant
+│  └─ Entity A2
+├─ Business B
+│  ├─ Entity B1
+│  └─ Entity B2
+└─ Business C
+   ├─ Entity C1
+   └─ Entity C2</div>
+    </div>
+    <div>
+      <h2>Scenario facts (SYNTHETIC)</h2>
+      <p class="sub">Currency: CU m = synthetic currency units, millions. Times are relative to D0 = the Owner's morning.</p>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:230px 1fr;min-width:0"><div>Fact</div><div>Value</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Supplier</div><div style="font-weight:500">Supplier S-07 (single source for RM-1)</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Material</div><div style="font-weight:500">Raw material RM-1 (critical)</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Delivery slip</div><div style="font-weight:500">6 days</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Plant 02 material cover</div><div style="font-weight:500">9.0 d → 3.5 d</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Replenishment lead time</div><div style="font-weight:500">9 d</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Days to breach (PRD-001)</div><div style="font-weight:500">4</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Projected production shortfall</div><div style="font-weight:500">18.4 kt</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Dispatch delay</div><div style="font-weight:500">2–4 days</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Billing deferral</div><div style="font-weight:500">CU 31 m</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Cash-upstream exposure</div><div style="font-weight:500">CU 26 m</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Projected EBITDA gap (PRD-003)</div><div style="font-weight:500">CU 9.2 m</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Probability of plan miss (PRD-002)</div><div style="font-weight:500">64%</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Entity A1 share of projected gap</div><div style="font-weight:500">82%</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Confidence</div><div style="font-weight:500">Medium (inventory figure preliminary)</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Options (SCN-SYN-0031)</div><div style="font-weight:500">A alternate supplier S-12 at a premium · B reallocate RM-1 from Plant 03 · C accept the shortfall</div></div>
+        
+          <div class="tr" style="grid-template-columns:230px 1fr;min-width:0"><div class="muted">Decision (DEC-SYN-0219)</div><div style="font-weight:500">A + B approved by Owner role (Critical, above [DoA LIMIT — PH])</div></div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Timeline (SYNTHETIC)</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:120px 1fr 260px 160px"><div>Time</div><div>Event</div><div>Object / ID</div><div>Visible to</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D-2</div><div>Administrator role changes mapping M-SYN-L2 (Line L2 meter); KPI goes to Pending certification</div><div class="id" style="font-weight:500">M-SYN-L2</div><div>Entity, Assurance</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D-1 21:40</div><div>Supplier delivery notice slips; shortage-risk signal elevated</div><div class="id" style="font-weight:500">SIG-009, SIG-010</div><div>Entity</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D-1 22:05</div><div>Alert created and validated</div><div class="id" style="font-weight:500">ALT-SYN-2041</div><div>Entity; Core Group watcher</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D-1 22:30</div><div>AI routing draft; acceptance clock starts</div><div class="id" style="font-weight:500">ALT-SYN-2041</div><div>Entity</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D-1 23:15</div><div>Entity Executive accepts ownership; case opens</div><div class="id" style="font-weight:500">CASE-SYN-0388</div><div>Entity; Core Group watcher</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D0 05:10</div><div>Forecast refresh; materiality crosses Owner threshold [PH] → Critical</div><div class="id" style="font-weight:500">INC-SYN-0142</div><div>Entity, Core Group, Owner</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D0 06:00</div><div>War room opened by Core Group Executive (moved from 08:00 in Phase 2 so the Owner sees it at 06:30)</div><div class="id" style="font-weight:500">WR-SYN-0142</div><div>Members, Owner (view)</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D0 06:30</div><div>Daily Executive Brief released</div><div class="id" style="font-weight:500">O-07</div><div>Owner</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D0 06:30–06:41</div><div>Owner primary journey B1–B8</div><div class="id" style="font-weight:500">—</div><div>Owner</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D0 10:20</div><div>Break resolved; OPS-001 certified with exception (trust journey)</div><div class="id" style="font-weight:500">BRK-SYN-0071</div><div>All in scope</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D0 11:00</div><div>Owner decision on alternate sourcing</div><div class="id" style="font-weight:500">DEC-SYN-0219</div><div>All in scope</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D+1</div><div>Logistics expedite blocked → escalated L1; cleared D+2</div><div class="id" style="font-weight:500">ACT-SYN-1108</div><div>Entity, Core Group</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D+6</div><div>Recovery monitoring begins</div><div class="id" style="font-weight:500">INC-SYN-0142</div><div>All in scope</div></div>
+      
+        <div class="tr" style="grid-template-columns:120px 1fr 260px 160px"><div class="id">D+9</div><div>Closure requested and approved; preventive dual-sourcing initiative proposed</div><div class="id" style="font-weight:500">ACT-SYN-1107..1110 · INC-SYN-0142</div><div>All in scope; Owner informed</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>ID registry</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:150px 140px 1fr"><div>Pattern</div><div>Example</div><div>Meaning</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">KPI domain-nnn</div><div class="id" style="font-weight:500">OPS-001</div><div>Governed KPI (R1)</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">SIG-nnn / PRD-nnn</div><div class="id" style="font-weight:500">SIG-009</div><div>Leading signal / prediction output</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">ALT-SYN-nnnn</div><div class="id" style="font-weight:500">ALT-SYN-2041</div><div>Alert</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">CASE-SYN-nnnn</div><div class="id" style="font-weight:500">CASE-SYN-0388</div><div>Case (after ownership acceptance)</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">INC-SYN-nnnn</div><div class="id" style="font-weight:500">INC-SYN-0142</div><div>Incident (case ≥ High with commander)</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">WR-SYN-nnnn</div><div class="id" style="font-weight:500">WR-SYN-0142</div><div>War room of an incident</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">ACT-SYN-nnnn</div><div class="id" style="font-weight:500">ACT-SYN-1107</div><div>Action</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">DEC-SYN-nnnn</div><div class="id" style="font-weight:500">DEC-SYN-0219</div><div>Decision record</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">SCN-SYN-nnnn</div><div class="id" style="font-weight:500">SCN-SYN-0031</div><div>Scenario</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">BRK-SYN-nnnn</div><div class="id" style="font-weight:500">BRK-SYN-0071</div><div>Reconciliation break</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">EVD-SYN-nnnn</div><div class="id" style="font-weight:500">EVD-SYN-0510</div><div>Evidence item</div></div>
+      
+        <div class="tr" style="grid-template-columns:150px 140px 1fr"><div class="id">M-SYN-xx</div><div class="id" style="font-weight:500">M-SYN-L2</div><div>Approved mapping</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Materiality model (PLACEHOLDER: pending D-03)</h2>
+    <p class="sub">Dimensions were reconstructed from a garbled section of the brief (C-10). Scoring logic, weights and thresholds are placeholders and must show a 'Placeholder, pending approval' label wherever they appear. The UI always shows which dimensions drove the level.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:240px 1fr 200px 180px"><div>Dimension</div><div>Measures used (from R1)</div><div>Scenario rating (SYN)</div><div>Source of dimension</div></div>
+      
+        <div class="tr" style="grid-template-columns:240px 1fr 200px 180px"><div style="font-weight:600;color:#0F1E3A">Financial impact</div><div>FIN-001, PRD-003</div><div class="id" style="font-weight:500">Medium</div><div class="muted">Brief (partial)</div></div>
+      
+        <div class="tr" style="grid-template-columns:240px 1fr 200px 180px"><div style="font-weight:600;color:#0F1E3A">Liquidity / cash impact</div><div>CSH-006, PRD-004, WCP-001</div><div class="id" style="font-weight:500">High</div><div class="muted">Brief ('Liquidity…', garbled)</div></div>
+      
+        <div class="tr" style="grid-template-columns:240px 1fr 200px 180px"><div style="font-weight:600;color:#0F1E3A">Production exposure</div><div>OPS-001, SIG-007, PRD-001</div><div class="id" style="font-weight:500">High</div><div class="muted">Brief</div></div>
+      
+        <div class="tr" style="grid-template-columns:240px 1fr 200px 180px"><div style="font-weight:600;color:#0F1E3A">Regulatory impact</div><div>REG-005, REG-009</div><div class="id" style="font-weight:500">Low</div><div class="muted">Brief</div></div>
+      
+        <div class="tr" style="grid-template-columns:240px 1fr 200px 180px"><div style="font-weight:600;color:#0F1E3A">Reputation impact</div><div>Qualitative [PH]</div><div class="id" style="font-weight:500">Low</div><div class="muted">Brief ('Reputatior', garbled)</div></div>
+      
+        <div class="tr" style="grid-template-columns:240px 1fr 200px 180px"><div style="font-weight:600;color:#0F1E3A">EHS impact</div><div>EHS-004, EHS-005</div><div class="id" style="font-weight:500">None</div><div class="muted">Design assumption</div></div>
+      
+        <div class="tr" style="grid-template-columns:240px 1fr 200px 180px"><div style="font-weight:600;color:#0F1E3A">Time-to-breach modifier</div><div>PRD-001</div><div class="id" style="font-weight:500">Raises by one level ≤ [PH] d</div><div class="muted">Design assumption</div></div>
+      
+    </div>
+    <div class="tbl" style="margin-top:14px">
+      <div class="tr th" style="grid-template-columns:140px 1fr 1fr"><div>Level</div><div>Rule (placeholder)</div><div>Visibility consequence</div></div>
+      
+        <div class="tr" style="grid-template-columns:140px 1fr 1fr"><div class="id">Critical</div><div>Any dimension ≥ [CRIT THRESHOLD — PH], or composite ≥ [PH]</div><div>Pushed to Owner (O-01 banner, O-02, O-07); war room eligible; Core Group approves closure</div></div>
+      
+        <div class="tr" style="grid-template-columns:140px 1fr 1fr"><div class="id">High</div><div>Composite ≥ [HIGH THRESHOLD — PH]</div><div>Core Group pushed; Owner pull only (D-04); incident eligible</div></div>
+      
+        <div class="tr" style="grid-template-columns:140px 1fr 1fr"><div class="id">Medium</div><div>Composite ≥ [MED THRESHOLD — PH]</div><div>Entity owns; Core Group sees in comparisons; Entity Executive approves closure</div></div>
+      
+        <div class="tr" style="grid-template-columns:140px 1fr 1fr"><div class="id">Low</div><div>Below Medium</div><div>Entity work queue only</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Labelling rules</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:220px 1fr"><div>Label</div><div>Use</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div class="id">SYNTHETIC</div><div>Every demonstration name, date, time, value, forecast and ID.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div class="id">PLACEHOLDER / [PH]</div><div>Thresholds, authority limits, source systems, schedules, covenant terms, legal rules: anything that needs a client decision.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div class="id">Design assumption</div><div>Any detail the brief does not support (A-xx), shown where it affects a screen.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div class="id">AI-generated · not approved</div><div>Every AI-produced text, recommendation or draft until a human accepts it.</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Glossary (controlled vocabulary)</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:220px 1fr"><div>Term</div><div>Definition in this product</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Lens</div><div>A depth of view (Owner, Core Group, Entity). It never grants scope.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Scope</div><div>The hierarchy nodes and domains a user is entitled to see.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Business status</div><div>How a measure performs: On track, Improving, Deteriorating, Breached, Forecast breach.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Trust status</div><div>Whether a number is defensible: Certified, Certified with exception, Pending certification, Reconciliation break, Stale, Missing, Restricted.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Provenance</div><div>Class of a value: certified actual, preliminary actual, forecast, scenario, external signal, AI-generated.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Leading signal</div><div>An early indicator that may predict an outcome; not itself an outcome.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Prediction output</div><div>A modelled forward value (days to breach, probability, projected gap). Always shown in forecast style.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Alert</div><div>A system-detected, validated deviation or forecast breach.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Case</div><div>An alert with an accepted human owner, holding actions and evidence.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Incident</div><div>A case at materiality ≥ High with an Incident Commander.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">War room</div><div>Collaboration mode of an incident.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Materiality</div><div>Placeholder-scored significance (Critical, High, Medium, Low) with visible drivers.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Owner threshold</div><div>The materiality level at which an issue is pushed to the Owner [PH].</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Accountability strip</div><div>Severity, exposure, owner role, due date, escalation clock, evidence state, next action.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Escalation clock</div><div>Rule-based time remaining before automatic escalation to the next level.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Disclosure clock</div><div>Time and state of disclosure review, where applicable [PH]; no legal rule is modelled.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Certification</div><div>A human Certifier's decision that a KPI value for a period is defensible.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Certified with exception</div><div>Certified, with a recorded limitation and a due date for its resolution.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Reconciliation break</div><div>A variance between two reconciled points that exceeds tolerance [PH].</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Lineage</div><div>The path from source placeholder to KPI to leadership views.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Evidence</div><div>An immutable file, link or attestation supporting a fact, action or closure.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Closure</div><div>Human-approved end of a case once its criteria are met; reopenable under control.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Decision</div><div>A recorded human choice with authority role, rationale and options considered.</div></div>
+      
+        <div class="tr" style="grid-template-columns:220px 1fr"><div style="font-weight:600;color:#0F1E3A">Scenario</div><div>A labelled what-if with explicit assumptions; never the base forecast.</div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-R3-Scenario.js"></script>
+<script>DCLite.mount("dc-root", "P1-R3-Scenario", {});</script>
+</body>
+</html>

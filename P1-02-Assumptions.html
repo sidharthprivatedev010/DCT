@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assumptions and decisions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1100px}
+.tr > div{padding:9px 10px;border-top:1px solid #E2E6EB;font-size:13px;line-height:19px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Deliverable 02 of 10</div>
+      <h1>Assumptions, unresolved decisions and conflicts</h1>
+      <p class="q">What we assumed in order to proceed, what must be decided before Phase 2, and where the brief contradicts itself or arrived incomplete. Each item has an ID that the traceability matrix (R2) references.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip syn">EVERY ITEM BELOW IS A DESIGN ASSUMPTION OR PLACEHOLDER</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Design assumptions (A-xx)</h2>
+    <p class="sub">Used to proceed; each one is labelled "Design assumption" wherever it surfaces in a screen.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:70px 1fr 300px 320px"><div>ID</div><div>Assumption</div><div>Basis</div><div>Impact if wrong</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-01</div><div>Desktop-first at 1440 px, minimum supported 1280 px. Owner brief and alert acknowledgement are also readable at tablet and phone widths. Workbenches are desktop-only.</div><div class="muted">Executive daily use; dense workbenches</div><div>Owner mobile-first would reorder O-01/O-07 priorities</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-02</div><div>All monetary values are shown in synthetic currency units ('CU m'). FX appears as an exposure, never as translation logic.</div><div class="muted">No client currency given; truth rules</div><div>Multi-currency display requires a currency selector in the header</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-03</div><div>The reporting period is monthly with a daily flash, YTD and a rolling forecast. Period labels such as 'P07' are synthetic.</div><div class="muted">Common for industrial MIS (assumption)</div><div>Weekly cadence changes trend charts and certification calendar</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-04</div><div>Refresh cadences are shown as [REFRESH CADENCE — PLACEHOLDER] per source category. The header shows the oldest relevant refresh for the page.</div><div class="muted">No source systems may be named</div><div>Near-real-time plant feeds need a 'live' indicator variant</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-05</div><div>The hierarchy is Group → Business → Entity → Plant → Production Line. Synthetic structure: 3 businesses, 6 entities; Entity A1 has Plants 01–03; Plant 02 has Lines L1–L3.</div><div class="muted">Brief's required drill hierarchy</div><div>Matrix organisations (business × region) need a second hierarchy</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-06</div><div>'Owner' is a role (controlling shareholder or chair office), not a named person. One role, possibly several users.</div><div class="muted">Brief uses role names only</div><div>None to layout; affects notification routing</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-07</div><div>Entitlements come from enterprise identity management (placeholder). The app enforces scope by hierarchy node and by domain.</div><div class="muted">Least-privilege requirement</div><div>If scope is not node-based, the scope selector changes</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-08</div><div>Materiality is a multi-dimension score that maps to Critical / High / Medium / Low. All weights and thresholds are placeholders.</div><div class="muted">Brief: do not invent thresholds</div><div>Rule-based (non-scored) materiality changes the breakdown component</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-09</div><div>AI assistants read only governed data within the requester's entitlements. Their outputs are stored as AI-generated artefacts with provenance and are never auto-applied.</div><div class="muted">Brief's AI boundary</div><div>—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-10</div><div>Notifications are in-app plus a daily digest (channel placeholder). No messaging product is named.</div><div class="muted">Truth rules</div><div>Chat-ops integration would add acknowledge-from-message flows</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-11</div><div>English UI with locale-neutral number formatting (placeholder). Thousands separators and units are shown on every value.</div><div class="muted">Not specified</div><div>Localisation adds width to KPI cards</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-12</div><div>Evidence can be a file, a link to a source record (placeholder) or a structured attestation. Evidence is immutable once submitted; corrections are new versions.</div><div class="muted">Audit expectations</div><div>If evidence is externally stored, show link state (available / broken)</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-13</div><div>The audit trail is append-only and visible according to role. Platform capability is assumed.</div><div class="muted">Brief: evidence and audit trail route</div><div>—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-14</div><div>Production unit is kt (synthetic) and cost is shown per tonne. Other businesses use 'unit' as a placeholder.</div><div class="muted">Diversified industrial; no product given</div><div>Unit labels per business need configuration</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-16</div><div>Severity and materiality are different fields. Severity is the intrinsic seriousness of the event (rule-assigned at detection; the owner may adjust it with a reason). Materiality is the business-significance score (placeholder model). Both appear in the header (v0.2).</div><div class="muted">Brief lists both without defining them</div><div>If they are the same concept, one header field and DS-18 change</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 300px 320px"><div class="id">A-15</div><div>An Administrator console (mappings, configuration) exists but is outside this design scope. Only its effects (mapping change → re-certification) are shown.</div><div class="muted">Brief lists the Administrator role but no admin route</div><div>Adds a route family if it is in scope</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Unresolved decisions (D-xx)</h2>
+    <p class="sub">Decisions that change screens, states or permissions. Each has a recommendation; the deciding role is a role name, not a person. Items marked GATE blocked Phase 2.</p>
+    <p class="sub" style="border:1px solid #0F1E3A;background:#fff;padding:10px 12px;color:#0F1E3A"><b>Status 2026-10-03:</b> accepted by the user. All recommendations below are adopted as the working architecture. Thresholds, authority limits and similar values stay PLACEHOLDER until the named role approves them.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div>ID</div><div>Decision</div><div>Options</div><div>Recommendation</div><div>Decided by (role)</div><div>Gate</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-01</div><div style="font-weight:600;color:#0F1E3A">Alert, Case, Incident and War Room object model</div><div class="muted">(a) one object with states; (b) Alert → Case → Incident → War Room as escalating objects</div><div>(b): Alert is system-detected. Case begins when a human accepts ownership. Incident is a Case at materiality ≥ High with a commander. War Room is a collaboration mode of an Incident. Keeps one ID lineage.</div><div>Core Group Executive + product owner</div><div class="id">GATE</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-02</div><div style="font-weight:600;color:#0F1E3A">Can a Metric Owner certify their own KPI?</div><div class="muted">(a) allowed; (b) never; (c) never for leadership KPIs</div><div>(c): separation of duties for leadership KPIs; same-person allowed elsewhere with Assurance Reviewer sampling.</div><div>Assurance Reviewer + Core Group (finance)</div><div class="id">GATE</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-03</div><div style="font-weight:600;color:#0F1E3A">Materiality dimensions, weights, thresholds</div><div class="muted">Brief text truncated; see C-10</div><div>Approve the dimension list in R3. Weights and thresholds stay PLACEHOLDER until risk and finance approve.</div><div>Core Group (risk, finance)</div><div class="id">GATE</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-04</div><div style="font-weight:600;color:#0F1E3A">Can the Owner pull sub-threshold issues?</div><div class="muted">(a) push and pull only above threshold; (b) pull allowed, labelled 'below materiality'</div><div>(b): no push below threshold, but Ask and search may return in-scope items labelled 'Below materiality threshold'.</div><div>Owner office</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-05</div><div style="font-weight:600;color:#0F1E3A">Owner's permitted strategic decisions</div><div class="muted">Needs a delegation-of-authority matrix</div><div>Use [DoA LIMIT — PLACEHOLDER] on decision cards. Route above-limit decisions to the Owner only when materiality is Critical.</div><div>Owner office + Core Group</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-06</div><div style="font-weight:600;color:#0F1E3A">Closure approver for material cases</div><div class="muted">(a) Entity Executive; (b) Core Group; (c) tiered</div><div>(c): Medium → Entity Executive; High → Core Group Executive; Critical → Core Group Executive with Assurance Reviewer evidence check. The action owner never self-approves.</div><div>Core Group</div><div class="id">GATE</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-07</div><div style="font-weight:600;color:#0F1E3A">Disclosure-review authority</div><div class="muted">The role is missing from the role model</div><div>Add a placeholder governance assignment 'Disclosure Authority (PLACEHOLDER)'. No legal rule is modelled; only the clock and state are shown.</div><div>Owner office / legal (placeholder)</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-08</div><div style="font-weight:600;color:#0F1E3A">Escalation ladder and clock durations</div><div class="muted">Levels and durations unspecified</div><div>Ladder L0 Entity → L1 Business → L2 Core Group → L3 Owner. Durations [PLACEHOLDER]. Clocks are rule-based, never AI-set.</div><div>Core Group</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-09</div><div style="font-weight:600;color:#0F1E3A">Who may save and publish scenarios</div><div class="muted">(a) anyone runs, Core Group publishes; (b) entity publishes locally</div><div>Anyone in scope may run. Entity Executive publishes for local decisions; Core Group publishes for cross-entity decisions. Owner requests.</div><div>Core Group</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-10</div><div style="font-weight:600;color:#0F1E3A">Source of the 'Board number' for the variance KPI</div><div class="muted">Placeholder in brief</div><div>[BOARD-REPORTED FIGURE — PLACEHOLDER], read-only, shown in G-08 drill only.</div><div>Core Group (finance)</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-11</div><div style="font-weight:600;color:#0F1E3A">Daily brief time and channel</div><div class="muted">Not specified</div><div>[BRIEF TIME — PLACEHOLDER], shown as 06:30 (SYNTHETIC). In-app plus digest.</div><div>Owner office</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-12</div><div style="font-weight:600;color:#0F1E3A">Restricted state: show existence or hide?</div><div class="muted">(a) hide entirely; (b) show 'restricted' with no detail; (c) show to parent scope only</div><div>(c): show the restricted placeholder only where the user's parent scope already implies the item exists. Never show counts, names or values. Search and AI never confirm existence.</div><div>Assurance Reviewer</div><div class="id">GATE</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-13</div><div style="font-weight:600;color:#0F1E3A">Does the six-card limit apply to workbenches?</div><div class="muted">(a) yes; (b) workbenches use counters plus tables</div><div>(b): main pages ≤6 KPI cards; workbench (T-E) pages ≤4 workflow counters plus an action table.</div><div>Product owner</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-14</div><div style="font-weight:600;color:#0F1E3A">'Briefing Pack' versus 'Inquiry Pack'</div><div class="muted">Different names in lens list and route list</div><div>One route, G-10 'Briefing and Inquiry Pack'.</div><div>Product owner</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-15</div><div style="font-weight:600;color:#0F1E3A">One or two routes for Reliability / Supply</div><div class="muted">Brief joins them in the route list, separates them in the lens list</div><div>Two routes (E-03, E-04) on the same template C.</div><div>Product owner</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-16</div><div style="font-weight:600;color:#0F1E3A">Peer benchmarks for Entity users</div><div class="muted">(a) none; (b) anonymised quartiles</div><div>(a) by default (least privilege). (b) only with Core Group approval per KPI.</div><div>Core Group</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-17</div><div style="font-weight:600;color:#0F1E3A">What can be overridden and by whom</div><div class="muted">Manual overrides are counted but not defined</div><div>KPI value override only by the Certifier in scope with a mandatory reason and evidence; counted in GOV-002 and reviewed by Assurance.</div><div>Assurance Reviewer</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-18</div><div style="font-weight:600;color:#0F1E3A">Reopen control</div><div class="muted">Who can reopen and for how long</div><div>Core Group Executive or Assurance Reviewer, within [REOPEN WINDOW — PLACEHOLDER]. The entity may request it.</div><div>Core Group</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-19</div><div style="font-weight:600;color:#0F1E3A">Unaccepted AI routing</div><div class="muted">What happens if no human accepts?</div><div>After [ACCEPTANCE CLOCK — PLACEHOLDER] the alert goes to 'Unowned', counts in EFF-006 and escalates by rule to the next level. AI never assigns.</div><div>Core Group</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-20</div><div style="font-weight:600;color:#0F1E3A">Added routes S-09 to S-13</div><div class="muted">Not in the brief's route list but needed by the journeys and Theme 3</div><div>Approve: Entity Contribution, Operations Impact and Cash Exposure drills, the No-Surprises Signal Board and Ask Control Tower.</div><div>Product owner</div><div class="id">GATE</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-21</div><div style="font-weight:600;color:#0F1E3A">Owner access to the Core Group lens (v0.2)</div><div class="muted">(a) Owner lens only; (b) Core Group lens read-only</div><div>(b) read-only, no workbench controls; the Owner's own landing pages remain summary-depth.</div><div>Owner office</div><div class="id">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-22</div><div style="font-weight:600;color:#0F1E3A">Where consolidated (group) KPIs are certified (v0.2)</div><div class="muted">(a) separate group workbench route; (b) E-08 parameterised by scope</div><div>(b): one Number Assurance Workbench whose scope comes from the certifier's assignment; group scope is opened from G-08. Avoids a 42nd route.</div><div>Core Group (finance) + Assurance Reviewer</div><div class="id">GATE</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 250px 290px 1fr 170px 70px"><div class="id">D-23</div><div style="font-weight:600;color:#0F1E3A">Who may be appointed Incident Commander (v0.2)</div><div class="muted">Brief names the role but not its source</div><div>Appointed per incident by the Core Group Executive (Critical) or Entity Executive (High) from Functional Leader or Entity Executive roles; recorded as a governance assignment.</div><div>Core Group</div><div class="id">—</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Conflicts and gaps in the brief (C-xx)</h2>
+    <p class="sub">Contradictions, duplicate measures and text that arrived truncated or garbled. The proposed resolution applies until it is explicitly overruled.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:70px 1fr 220px 1fr"><div>ID</div><div>Conflict or gap</div><div>Where in the brief</div><div>Proposed resolution</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-01</div><div>The six-card rule versus Theme 1, which lists 18 measures and requires risk and strategic coverage on the Owner home.</div><div class="muted">Theme 1, Principles</div><div>Six selected cards (05, O-01); the rest go into four named drill tabs: Financial, Operational, Strategic, Risk.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-02</div><div>Owner 'cannot certify operational KPIs by default' implies the Owner could certify some KPIs.</div><div class="muted">Role-based action rights</div><div>The Owner certifies nothing in-app. Any exception requires an explicit certifier assignment.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-03</div><div>Core Group 'governs certification', but certification belongs to the Metric Owner/Certifier.</div><div class="muted">Lenses vs roles</div><div>Core Group sees the calendar, coverage and overdue items and can escalate. It certifies only if separately assigned.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-04</div><div>The Administrator maintains mappings, and mapping changes can alter certified numbers.</div><div class="muted">Admin rights</div><div>Any mapping change moves affected KPIs to 'Pending certification' and records an audit entry. Admin cannot certify.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-05</div><div>Entity sees Production-to-Cash including Upstreaming, but upstreaming is a group treasury concern.</div><div class="muted">Theme 4, Entity lens</div><div>Entity sees its own upstream obligation and status only; group treasury positions are restricted.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-06</div><div>Sustainability (water, emissions, energy) is in both Theme 5 and Theme 7.</div><div class="muted">Themes 5 and 7</div><div>One governed KPI each (SUS-001..003), reused with page context (R1).</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-07</div><div>'Recovery percentage' and 'Yield or recovery' both appear under Plant.</div><div class="muted">Theme 5</div><div>Two definitions: PLT-004 Recovery % and PLT-005 Yield. Confirm whether they are the same measure.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-08</div><div>FX exposure, Free Cash Flow, Capacity utilization, Open critical alerts and Production vs plan each appear in two or more themes.</div><div class="muted">Themes 1, 3, 4, 5, 8</div><div>One canonical KPI ID each; alias rows in R1 point to the canonical ID.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-09</div><div>Theme 5 reliability list is cut off at 'Preventive-'.</div><div class="muted">Theme 5</div><div>Assumed REL-005 'Preventive-maintenance compliance' (Design assumption).</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-10</div><div>The materiality section is garbled ('calculate or dispe; Production exposure: Liguidient…').</div><div class="muted">Materiality model</div><div>Dimensions reconstructed in R3: Financial, Liquidity, Production, Regulatory, Reputation, EHS, plus a time-to-breach modifier. All need confirmation (D-03).</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-11</div><div>Theme 2 list is cut off at 'related break or'.</div><div class="muted">Theme 2</div><div>Read as 'related break or finding'.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-12</div><div>Stray characters and broken arrows: 'I' in route lists, '-7-Action', 'Cash Exposure - Case Detail', '(PI Card', 'issurance', 'Vlew'.</div><div class="muted">Routes, journeys</div><div>Read as typos: KPI Card, Number Assurance, View, and → between steps.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-13</div><div>The ACT question is truncated: 'is the matter moving to evidence-based'.</div><div class="muted">Four questions</div><div>Read as '…moving to evidence-based closure'.</div></div>
+      
+        <div class="tr" style="grid-template-columns:70px 1fr 220px 1fr"><div class="id">C-14</div><div>Owner journey needs Operations Impact, but Owner must not see plant work queues.</div><div class="muted">Owner lens, primary journey</div><div>S-10 shows Owner-depth plant summary down to plant level, with no queues and no line-level transactions.</div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-02-Assumptions.js"></script>
+<script>DCLite.mount("dc-root", "P1-02-Assumptions", {});</script>
+</body>
+</html>

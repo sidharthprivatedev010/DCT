@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KPI catalogue placement</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:36px}
+.sub{color:#4A5568;margin:0 0 12px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1200px}
+.tr > div{padding:7px 10px;border-top:1px solid #E2E6EB;font-size:12.5px;line-height:18px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.grp > div{background:#E6EAF0;color:#0F1E3A;font-weight:600;font-size:12.5px;border-top:1px solid #CDD3DB}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+.cls{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.03em}
+.th2{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Master reference R1</div>
+      <h1>KPI catalogue placement</h1>
+      <p class="q">Every measure in the brief has one governed ID. The table shows where it is a primary card (≤6 per page) and where it lives as a drill-down, so no category is lost. An alias row points to the canonical ID, so the same measure never gets a second definition.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip syn">DEFINITIONS AND FORMULAS: PLACEHOLDER UNTIL APPROVED</span>
+    </div>
+  </div>
+  <div class="sec" style="margin-top:20px">
+    <p class="sub"><b>Class:</b> ACTUAL = outcome measure (certified or preliminary) · LEADING = leading signal · PREDICTION = prediction output (always forecast style) · EXTERNAL = external signal · WORKFLOW = operating-effectiveness measure. <b>Alias</b> = same governed KPI shown under another theme.</p>
+  </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T1</span><h2>Enterprise Health</h2><span class="muted">Business question: Is the enterprise healthier today than yesterday?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Financial</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">FIN-001</div><div>EBITDA and variance</div><div class="cls">ACTUAL</div><div>O-01 · G-01 · G-03 · E-01 (entity)</div><div class="muted">S-03; G-03 bridge</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">FIN-002</div><div>EBIT</div><div class="cls">ACTUAL</div><div>G-03</div><div class="muted">O-01 drill: Financial</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">FIN-003</div><div>Revenue and variance</div><div class="cls">ACTUAL</div><div>G-01 · G-03</div><div class="muted">O-01 drill: Financial; G-02</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">FIN-004</div><div>Free Cash Flow</div><div class="cls">ACTUAL</div><div>O-01 · O-03 · G-01</div><div class="muted">G-04</div><div>Canonical; aliased in T4 as CSH-005</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">FIN-005</div><div>ROCE</div><div class="cls">ACTUAL</div><div>G-03</div><div class="muted">O-01 drill: Financial; G-01 drill: Financial</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">FIN-006</div><div>Net Debt</div><div class="cls">ACTUAL</div><div>O-01 · G-03</div><div class="muted">O-03 drill: Liquidity</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">FIN-007</div><div>Shareholder-value indicator [PLACEHOLDER]</div><div class="cls">ACTUAL</div><div>G-03</div><div class="muted">O-01 drill: Financial</div><div>Definition pending</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Operational</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">OPS-001</div><div>Production vs plan</div><div class="cls">ACTUAL</div><div>O-01 · G-01 · G-05 · E-01 · E-02 · E-05</div><div class="muted">Hierarchy drill Group → Line; S-10</div><div>Canonical; reused in T5 Plant</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">OPS-002</div><div>Sales vs plan</div><div class="cls">ACTUAL</div><div>E-01</div><div class="muted">O-01 drill: Operational; G-03 Volume</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">OPS-003</div><div>Capacity utilization</div><div class="cls">ACTUAL</div><div>G-05 · E-02</div><div class="muted">O-01 drill: Operational</div><div>Canonical; reused in T5 Plant</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Strategic</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">STR-001</div><div>Capex progress</div><div class="cls">ACTUAL</div><div>O-01 (as CPX-004)</div><div class="muted">O-04</div><div>Alias → CPX-004 Physical progress</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">STR-002</div><div>Transformation progress</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-04 drill: Programmes; G-06</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Risk</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">RSK-001</div><div>Open critical alerts</div><div class="cls">WORKFLOW</div><div>O-01 (as EFF-002)</div><div class="muted">—</div><div>Alias → EFF-002</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">RSK-002</div><div>EHS severity events</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-01 drill: Risk; O-05 drill: EHS</div><div>Alias → EHS-002</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">RSK-003</div><div>Regulatory breaches</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-01 drill: Risk; O-05; G-07</div><div>Related: REG-005, SIG-021</div></div>
+          
+        
+      </div>
+    </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T2</span><h2>Number Assurance and Certification</h2><span class="muted">Business question: Can leadership defend the number?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Per-KPI trust attributes (on every KPI, via S-03): approved definition · source placeholder · calculation · unit · period · owner role · certifier role · certification status · variance · confidence · last refresh · last certified · lineage · tolerance · evidence · related break or finding</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Data trust</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-001</div><div>Certified KPI percentage</div><div class="cls">ACTUAL</div><div>G-01 · G-08</div><div class="muted">Header trust summary (all lenses)</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-002</div><div>Uncertified KPI count</div><div class="cls">ACTUAL</div><div>G-08</div><div class="muted">Header trust summary</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-003</div><div>Variance against Board number [PLACEHOLDER]</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Reconciliation</div><div>D-10</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-004</div><div>Open reconciliation breaks</div><div class="cls">ACTUAL</div><div>E-08</div><div class="muted">G-08 drill: Reconciliation</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-005</div><div>KPI certification coverage</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Reconciliation</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-006</div><div>Overdue certifications</div><div class="cls">ACTUAL</div><div>G-08 · E-08</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-007</div><div>Material reconciliation breaks</div><div class="cls">ACTUAL</div><div>G-08</div><div class="muted">S-03 Reconciliation tab</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-008</div><div>Source-to-Lake reconciliation rate</div><div class="cls">ACTUAL</div><div>E-08</div><div class="muted">G-08 drill</div><div>'Lake' = data-platform placeholder</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-009</div><div>Flash-to-MIS reconciliation rate</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Reconciliation; E-08</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRU-010</div><div>Flash-to-Close variance</div><div class="cls">ACTUAL</div><div>G-08</div><div class="muted">—</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Governance</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-001</div><div>Ageing certification approvals</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Governance</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-002</div><div>Override count (KPI overrides)</div><div class="cls">ACTUAL</div><div>E-08</div><div class="muted">G-08 drill: Governance</div><div>Distinct from CTL-010 (operational overrides)</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-003</div><div>Recurring data-quality issues</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Governance</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-004</div><div>Open audit findings</div><div class="cls">ACTUAL</div><div>G-07</div><div class="muted">G-08 drill: Governance</div><div>Canonical; aliased in T7 as CTL-001</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-005</div><div>Overdue assurance actions</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Governance</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-006</div><div>Repeat findings</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Governance</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-007</div><div>Leadership KPIs affected by findings</div><div class="cls">ACTUAL</div><div>G-08</div><div class="muted">Header trust summary (Owner)</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-008</div><div>Evidence completeness rate</div><div class="cls">ACTUAL</div><div>E-08</div><div class="muted">G-08 drill; S-08</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">GOV-009</div><div>Average finding-closure time</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Governance</div><div></div></div>
+          
+        
+      </div>
+    </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T3</span><h2>No-Surprises Intelligence</h2><span class="muted">Business question: What can materially hurt the business before period end?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Leading signals: Operations</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-001</div><div>Plant downtime</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-03</div><div>Alias → REL-003</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-002</div><div>Production yield</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-02</div><div>Alias → PLT-005</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-003</div><div>Recovery percentage</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-02</div><div>Alias → PLT-004</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Leading signals: Finance and exposure</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-004</div><div>Collections slippage</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-05; G-04</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-005</div><div>Payment delays</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-05; G-04</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-006</div><div>Cash burn</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; O-03 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-007</div><div>Production at risk</div><div class="cls">LEADING</div><div>E-05 · S-10</div><div class="muted">S-12</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-008</div><div>Critical plant-state alerts</div><div class="cls">LEADING</div><div>E-03</div><div class="muted">S-12</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-009</div><div>Critical-material shortage risk</div><div class="cls">LEADING</div><div>E-01 · S-10</div><div class="muted">S-12; E-04</div><div>Scenario trigger</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-010</div><div>Single-source supply risk</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-04</div><div>Scenario trigger</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-011</div><div>Capex value at risk</div><div class="cls">LEADING</div><div>O-04 · E-06</div><div class="muted">S-12; G-06</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Leading signals: Commercial</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-012</div><div>Dispatch delays</div><div class="cls">LEADING</div><div>E-05 · S-11</div><div class="muted">S-12</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-013</div><div>Pricing pressure</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; G-03 drill: Price</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>External signals</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-014</div><div>Commodity-price movement</div><div class="cls">EXTERNAL</div><div>—</div><div class="muted">S-12; G-03 drill: External</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-015</div><div>FX exposure</div><div class="cls">EXTERNAL</div><div>—</div><div class="muted">S-12; G-03 drill: External</div><div>Alias → TRS-001</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-016</div><div>Freight exposure</div><div class="cls">EXTERNAL</div><div>—</div><div class="muted">S-12; G-03 drill: External</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-017</div><div>Fuel exposure</div><div class="cls">EXTERNAL</div><div>—</div><div class="muted">S-12; G-03 drill: External</div><div>Related: CST-003</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-018</div><div>Power-cost exposure</div><div class="cls">EXTERNAL</div><div>—</div><div class="muted">S-12; G-03 drill: External</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Leading signals: Risk and compliance</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-019</div><div>Regulatory deadlines</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-07</div><div>Alias → REG-002</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-020</div><div>Licence expiry</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-07</div><div>Alias → REG-003</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SIG-021</div><div>Environmental violations</div><div class="cls">LEADING</div><div>—</div><div class="muted">S-12; E-07; O-05 drill: EHS</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Prediction outputs (forecast style, never shown as actuals)</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRD-001</div><div>Days to breach</div><div class="cls">PREDICTION</div><div>S-12 · S-10</div><div class="muted">O-01 forecast panel; every alert header</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRD-002</div><div>Probability of plan miss</div><div class="cls">PREDICTION</div><div>S-12</div><div class="muted">O-01 forecast panel</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRD-003</div><div>Projected EBITDA gap</div><div class="cls">PREDICTION</div><div>S-12</div><div class="muted">O-01 forecast panel; G-03</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRD-004</div><div>Projected liquidity gap</div><div class="cls">PREDICTION</div><div>S-12</div><div class="muted">O-03 forecast panel</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRD-005</div><div>Forecast covenant breach</div><div class="cls">PREDICTION</div><div>S-12</div><div class="muted">O-03; G-04 drill: Liquidity</div><div></div></div>
+          
+        
+      </div>
+    </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T4</span><h2>Cash and Liquidity Command Center</h2><span class="muted">Business question: Can cash move where it needs to move?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Working capital</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">WCP-001</div><div>DSO</div><div class="cls">ACTUAL</div><div>G-04 · E-05 · S-11</div><div class="muted">O-03 drill: Working capital</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">WCP-002</div><div>DPO</div><div class="cls">ACTUAL</div><div>G-04</div><div class="muted">O-03 drill: Working capital</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">WCP-003</div><div>Inventory days</div><div class="cls">ACTUAL</div><div>G-04</div><div class="muted">O-03 drill: Working capital</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">WCP-004</div><div>Net working capital</div><div class="cls">ACTUAL</div><div>O-03 · G-04</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">WCP-005</div><div>Working-capital movement</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-04 bridge; G-04 drill: Cash</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">WCP-006</div><div>Working-capital days</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-04 drill: Cash</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Cash</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CSH-001</div><div>Cash position</div><div class="cls">ACTUAL</div><div>O-03</div><div class="muted">G-04</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CSH-002</div><div>Cash released</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-04 drill: Cash; O-03 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CSH-003</div><div>Daily collections</div><div class="cls">ACTUAL</div><div>E-01 · E-05 · S-11</div><div class="muted">G-04 drill: Cash</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CSH-004</div><div>Cash-conversion cycle</div><div class="cls">ACTUAL</div><div>G-04</div><div class="muted">O-03 drill: Working capital</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CSH-005</div><div>Free Cash Flow</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">—</div><div>Alias → FIN-004</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CSH-006</div><div>Cash-upstream exposure</div><div class="cls">ACTUAL</div><div>O-03 · G-04 · E-05 · S-11</div><div class="muted">—</div><div>Entity sees own obligation only (C-05)</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Liquidity</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">LIQ-001</div><div>Liquidity runway</div><div class="cls">ACTUAL</div><div>O-03</div><div class="muted">G-04 drill: Liquidity</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">LIQ-002</div><div>Covenant headroom</div><div class="cls">ACTUAL</div><div>O-03</div><div class="muted">G-04 drill: Liquidity</div><div>Covenant terms: PLACEHOLDER</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">LIQ-003</div><div>Debt-maturity exposure</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-03 drill: Liquidity; G-04</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">LIQ-004</div><div>Financing exposure</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-03 drill: Liquidity; G-04</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Treasury</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRS-001</div><div>FX exposure</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-03 drill: Treasury; G-04 drill</div><div>Canonical; aliased as SIG-015</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">TRS-002</div><div>Hedging effectiveness</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-03 drill: Treasury; G-04 drill</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Lifecycle (E-05, S-11, O-03 summary): Production → Dispatch → Billing → Collection → Cash → Upstreaming. Each stage shows actual, plan, forecast, leakage, constraint, trust state and owner role.</div></div>
+          
+        
+      </div>
+    </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T5</span><h2>Operations and Asset Performance</h2><span class="muted">Business question: Are assets producing what they promised?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Plant (hierarchy Group → Business → Entity → Plant → Line)</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">OPS-001</div><div>Production vs plan</div><div class="cls">ACTUAL</div><div>see T1</div><div class="muted">—</div><div>Alias row, canonical in T1</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PLT-001</div><div>Asset utilization</div><div class="cls">ACTUAL</div><div>E-02</div><div class="muted">G-05 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PLT-002</div><div>OEE</div><div class="cls">ACTUAL</div><div>G-05 · E-02</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">OPS-003</div><div>Capacity utilization</div><div class="cls">ACTUAL</div><div>see T1</div><div class="muted">—</div><div>Alias row, canonical in T1</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PLT-004</div><div>Recovery percentage</div><div class="cls">ACTUAL</div><div>E-02</div><div class="muted">S-12 (as SIG-003)</div><div>C-07</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PLT-005</div><div>Yield (or recovery)</div><div class="cls">ACTUAL</div><div>E-02</div><div class="muted">S-12 (as SIG-002)</div><div>C-07</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Reliability</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REL-001</div><div>MTBF</div><div class="cls">ACTUAL</div><div>E-03</div><div class="muted">G-05 drill: Reliability</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REL-002</div><div>Mean Time to Repair</div><div class="cls">ACTUAL</div><div>E-03</div><div class="muted">G-05 drill: Reliability</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REL-003</div><div>Unplanned downtime</div><div class="cls">ACTUAL</div><div>G-05 · E-03</div><div class="muted">S-12 (as SIG-001)</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REL-004</div><div>Production loss from downtime</div><div class="cls">ACTUAL</div><div>E-03</div><div class="muted">G-05 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REL-005</div><div>Preventive-maintenance compliance [ASSUMED]</div><div class="cls">ACTUAL</div><div>E-03</div><div class="muted">G-05 drill</div><div>C-09: brief truncated</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Cost</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CST-001</div><div>Cost per tonne / unit</div><div class="cls">ACTUAL</div><div>G-05</div><div class="muted">E-02 drill: Cost</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CST-002</div><div>Variable cost</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-02 drill: Cost; G-03 drill: Cost</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CST-003</div><div>Fuel cost</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-02 drill: Cost</div><div>Related: SIG-017</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Sustainability (canonical here; reused in T7)</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUS-001</div><div>Water usage</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUS-002</div><div>Emissions</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUS-003</div><div>Energy intensity</div><div class="cls">ACTUAL</div><div>G-05</div><div class="muted">E-02 drill: Sustainability; O-05 drill; E-07</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Operational supplier performance</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUP-001</div><div>Supplier on-time delivery</div><div class="cls">ACTUAL</div><div>E-04</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUP-002</div><div>Supplier fill rate</div><div class="cls">ACTUAL</div><div>E-04</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUP-003</div><div>Supplier quality-rejection rate</div><div class="cls">ACTUAL</div><div>E-04</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUP-004</div><div>Supplier lead-time variance</div><div class="cls">ACTUAL</div><div>E-04</div><div class="muted">—</div><div>Scenario: S-07</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUP-005</div><div>Critical supplier exposure</div><div class="cls">ACTUAL</div><div>E-04</div><div class="muted">G-05 drill: Supply</div><div>Scenario: S-07</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">SUP-006</div><div>Contractor slippage</div><div class="cls">ACTUAL</div><div>E-04 · E-06</div><div class="muted">G-06 drill</div><div></div></div>
+          
+        
+      </div>
+    </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T6</span><h2>Capex and Strategic Initiatives</h2><span class="muted">Business question: Are we spending money and creating value?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Capex (chain: Approved → Committed → Spent → Physical Progress → Benefit Realized)</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CPX-001</div><div>Approved budget</div><div class="cls">ACTUAL</div><div>O-04 · G-06</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CPX-002</div><div>Committed Capex</div><div class="cls">ACTUAL</div><div>O-04 · G-06 · E-06</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CPX-003</div><div>Actual spend</div><div class="cls">ACTUAL</div><div>O-04 · G-06 · E-06</div><div class="muted">—</div><div>Never shown without CPX-004</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CPX-004</div><div>Physical progress</div><div class="cls">ACTUAL</div><div>O-01 · O-04 · G-06 · E-06</div><div class="muted">—</div><div>Canonical for STR-001</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Programmes</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRG-001</div><div>Initiative status</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-04 drill: Programmes; G-06 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRG-002</div><div>Benefits realization</div><div class="cls">ACTUAL</div><div>O-04 · G-06</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">PRG-003</div><div>Delayed projects</div><div class="cls">ACTUAL</div><div>G-06 · E-06</div><div class="muted">O-04</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Value</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">VAL-001</div><div>EBITDA benefit</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-04 drill: Value; G-06 drill: Value</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">VAL-002</div><div>Cash benefit</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-04 drill: Value; G-06 drill: Value</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">VAL-003</div><div>Cost savings delivered</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-04 drill: Value; G-06 drill: Value</div><div></div></div>
+          
+        
+      </div>
+    </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T7</span><h2>Risk, Compliance and EHS</h2><span class="muted">Business question: What can stop the business tomorrow?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Regulatory</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-001</div><div>Pending filings</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-07 drill: Regulatory; G-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-002</div><div>Regulatory deadlines</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-07; S-12 (as SIG-019)</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-003</div><div>Licence expirations</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-07; S-12 (as SIG-020)</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-004</div><div>Regulatory obligations due</div><div class="cls">ACTUAL</div><div>E-07</div><div class="muted">G-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-005</div><div>Overdue regulatory obligations</div><div class="cls">ACTUAL</div><div>O-05 · G-07 · E-07</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-006</div><div>Licence or permit expiry clock</div><div class="cls">ACTUAL</div><div>O-05 · E-07</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-007</div><div>Open regulatory actions</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-07 drill; G-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-008</div><div>Overdue compliance actions</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-07 drill; G-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">REG-009</div><div>Disclosure-clock status</div><div class="cls">ACTUAL</div><div>O-05</div><div class="muted">S-05 header</div><div>No legal rule modelled (D-07)</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>EHS</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-001</div><div>TRIR</div><div class="cls">ACTUAL</div><div>O-05</div><div class="muted">G-07 drill: EHS; E-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-002</div><div>Severity incidents</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">O-05 drill: EHS; G-07 drill</div><div>Canonical for RSK-002</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-003</div><div>Near misses</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-07 drill: EHS</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-004</div><div>Critical safety incidents</div><div class="cls">ACTUAL</div><div>O-05 · G-07</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-005</div><div>Environmental excursions</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-07 drill; O-05 drill: EHS</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-006</div><div>Open EHS corrective actions</div><div class="cls">ACTUAL</div><div>E-07</div><div class="muted">G-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-007</div><div>Overdue EHS actions</div><div class="cls">ACTUAL</div><div>E-07</div><div class="muted">G-07 drill; G-09</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-008</div><div>EHS escalation-clock status</div><div class="cls">WORKFLOW</div><div>—</div><div class="muted">S-05; G-09; E-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EHS-009</div><div>EHS investigation completion</div><div class="cls">ACTUAL</div><div>E-07</div><div class="muted">G-07 drill</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Compliance and controls</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-001</div><div>Open audit findings</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">—</div><div>Alias → GOV-004</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-002</div><div>Control failures</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Controls</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-003</div><div>Assurance reviews</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-08 drill: Governance; G-07 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-004</div><div>High-severity control failures</div><div class="cls">ACTUAL</div><div>O-05 · G-07</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-005</div><div>Policy-exception count</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Controls</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-006</div><div>Unauthorized-vendor usage</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Controls; E-04</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-007</div><div>Segregation-of-duties exceptions</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Controls</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-008</div><div>Unauthorized-access events</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Controls</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-009</div><div>Data-sharing exceptions</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Controls</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CTL-010</div><div>Manual overrides (operational / system)</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Controls; G-08 drill</div><div>Distinct from GOV-002</div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Contracts</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CON-001</div><div>Contracts expiring</div><div class="cls">ACTUAL</div><div>G-07</div><div class="muted">E-04</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CON-002</div><div>Contract-compliance rate</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">G-07 drill: Contracts; E-04</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">CON-003</div><div>Supplier EHS non-compliance</div><div class="cls">ACTUAL</div><div>—</div><div class="muted">E-04; E-07 drill: Contracts</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Sustainability: alias rows → SUS-001 Water usage, SUS-002 Emissions, SUS-003 Energy intensity (shown in O-05, G-07 and E-07 drill tabs with risk context)</div></div>
+          
+        
+      </div>
+    </div>
+  
+    <div class="sec">
+      <div class="th2"><span class="id">T8</span><h2>Decision, Action, Escalation and AI</h2><span class="muted">Business question: Who owns the response, what must happen next, and is the issue moving to closure?</span></div>
+      <div class="tbl">
+        <div class="tr th" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div>KPI ID</div><div>Measure</div><div>Class</div><div>Primary card on</div><div>Drill-down / diagnostic location</div><div>Alias / note</div></div>
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>Operating effectiveness</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-001</div><div>Alert-resolution time</div><div class="cls">WORKFLOW</div><div>—</div><div class="muted">G-09 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-002</div><div>Open critical alerts</div><div class="cls">WORKFLOW</div><div>O-01 · G-01 · G-07 · G-09</div><div class="muted">—</div><div>Canonical for RSK-001</div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-003</div><div>Closed escalations</div><div class="cls">WORKFLOW</div><div>—</div><div class="muted">G-09 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-004</div><div>Repeat issues</div><div class="cls">WORKFLOW</div><div>—</div><div class="muted">G-09 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-005</div><div>Root causes eliminated</div><div class="cls">WORKFLOW</div><div>—</div><div class="muted">G-09 drill</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-006</div><div>Alerts without accepted owners</div><div class="cls">WORKFLOW</div><div>G-09</div><div class="muted">E-09 counter</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-007</div><div>Overdue actions</div><div class="cls">WORKFLOW</div><div>G-09 · E-01 · E-09</div><div class="muted">—</div><div></div></div>
+          
+            <div class="tr" style="grid-template-columns:96px 1fr 100px 260px 330px 220px"><div class="id">EFF-008</div><div>Average resolution time</div><div class="cls">WORKFLOW</div><div>G-09</div><div class="muted">—</div><div></div></div>
+          
+        
+          <div class="tr grp" style="grid-template-columns:1fr"><div>AI assistant functions → surfaces: Validation (S-03, E-08, E-10 evidence check) · Explanation (S-07 from every KPI and alert) · Executive Briefing (O-07, G-10) · Escalation Routing (S-04 draft owner, due date, path, decision required). None of them can approve.</div></div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-R1-KPICatalogue.js"></script>
+<script>DCLite.mount("dc-root", "P1-R1-KPICatalogue", {});</script>
+</body>
+</html>

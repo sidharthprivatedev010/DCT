@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Component inventory</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+h3{font-size:15px;line-height:22px;margin:0 0 6px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1200px}
+.tr > div{padding:8px 10px;border-top:1px solid #E2E6EB;font-size:12.5px;line-height:18px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.grp > div{background:#E6EAF0;color:#0F1E3A;font-weight:600;font-size:13px;border-top:1px solid #CDD3DB}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+.card{background:#fff;border:1px solid #CDD3DB;border-radius:3px;padding:16px 18px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sw > div{background:#fff;border:1px solid #CDD3DB}
+.sw .c{height:44px}
+.sw .t{padding:8px 10px;font-size:12px;line-height:16px}
+ul.f{margin:0;padding-left:18px;font-size:13px;line-height:20px}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Deliverable 09 of 10</div>
+      <h1>Component inventory and states</h1>
+      <p class="q">80 components in six families, the KPI card model with all 12 required states on two independent axes, provenance encoding, the 13 incident states and the 12 required non-happy-path states. Phase 2 builds these in greyscale; Phase 3 applies the visual system.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip syn">COLOUR VALUES: PROPOSAL FOR PHASE 3</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>9a · KPI card model</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:14px">
+      <div class="card"><h3>Collapsed card (on pages; at most six per page)</h3>
+        <ul class="f"><li>Name and KPI ID</li><li>Primary value and unit</li><li>Target / plan</li><li>Variance (absolute and %)</li><li>Trend (sparkline, provenance-encoded)</li><li>Forecast (forecast style)</li><li>Business status badge (axis 1)</li><li>Trust status badge (axis 2)</li><li>Last refresh</li></ul></div>
+      <div class="card"><h3>Expanded card / S-03 header</h3>
+        <ul class="f"><li>Approved definition and version</li><li>Formula / calculation</li><li>Source placeholder</li><li>Lineage (link to graph)</li><li>Metric owner role · certifier role</li><li>Comparison values (prior period, plan, peers in scope)</li><li>Drivers</li><li>Related alert or case</li><li>Evidence · last certified · tolerance · confidence</li></ul></div>
+      <div class="card"><h3>Rules</h3>
+        <ul class="f"><li>Business status and trust status are separate badges, each with icon + text label + colour.</li><li>When trust is Break, Stale or Missing, the value is muted, labelled 'Unverified', and the business badge drops to outline-only.</li><li>Restricted renders no value, variance, trend or name beyond scope.</li><li>The same component and ID everywhere (R1); pages add context only.</li><li>Red is used only for Breached with material exposure.</li></ul></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>9b · KPI card states (12 required, on two axes)</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div>Axis</div><div>State</div><div>Colour role</div><div>Icon (one stroke set)</div><div>Treatment</div><div>Example in scenario</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">BUSINESS</div><div style="font-weight:600;color:#0F1E3A">On track</div><div>Green</div><div>Check</div><div>Badge 'On track'. Value in standard ink.</div><div class="muted">FIN-004 FCF at O-01</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">BUSINESS</div><div style="font-weight:600;color:#0F1E3A">Improving</div><div>Green</div><div>Trend-up arrow</div><div>Badge 'Improving' with period-over-period delta.</div><div class="muted">Plant 02 recovery D+5</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">BUSINESS</div><div style="font-weight:600;color:#0F1E3A">Deteriorating</div><div>Amber</div><div>Trend-down arrow</div><div>Badge 'Deteriorating' with delta and trend.</div><div class="muted">OPS-001 Entity A1</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">BUSINESS</div><div style="font-weight:600;color:#0F1E3A">Breached</div><div>Red (material only)</div><div>Octagon with !</div><div>Badge 'Breached' with threshold reference [PH]. Red is reserved for this state and critical exposure.</div><div class="muted">— (no actual breach in scenario)</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">BUSINESS</div><div style="font-weight:600;color:#0F1E3A">Forecast breach</div><div>Purple</div><div>Clock</div><div>Separate marker 'Forecast breach in N d' in forecast style. Never replaces the actual status.</div><div class="muted">FIN-001 EBITDA at O-01: actual On track + forecast breach</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">TRUST</div><div style="font-weight:600;color:#0F1E3A">Certified</div><div>Navy</div><div>Shield with check</div><div>'Certified · P06' plus the certifier role on hover.</div><div class="muted">CSH-001 Cash position</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">TRUST</div><div style="font-weight:600;color:#0F1E3A">Certified with exception</div><div>Navy + amber mark</div><div>Shield with small exception mark</div><div>Label, plus exception text and due date in a tooltip and in S-03.</div><div class="muted">OPS-001 after T7</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">TRUST</div><div style="font-weight:600;color:#0F1E3A">Pending certification</div><div>Grey</div><div>Hollow shield + clock</div><div>'Pending certification · due [date]'. Value shown as preliminary.</div><div class="muted">P07 flash KPIs</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">TRUST</div><div style="font-weight:600;color:#0F1E3A">Reconciliation break</div><div>Grey</div><div>Broken link</div><div>Value muted and labelled 'Unverified'; business badge outline-only; link to the break.</div><div class="muted">OPS-001 · BRK-SYN-0071</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">TRUST</div><div style="font-weight:600;color:#0F1E3A">Stale</div><div>Grey</div><div>Hourglass</div><div>'Stale · as of [time]'. Value muted.</div><div class="muted">Billing stage (BR-3)</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">TRUST</div><div style="font-weight:600;color:#0F1E3A">Missing</div><div>Grey</div><div>Dash in circle</div><div>Value '—', label 'Missing', no variance, trend or status.</div><div class="muted">TB-4</div></div>
+      
+        <div class="tr" style="grid-template-columns:90px 200px 120px 170px 1fr 260px"><div class="id">TRUST</div><div style="font-weight:600;color:#0F1E3A">Restricted</div><div>Grey</div><div>Lock</div><div>'Restricted'. No value, variance, trend or entity name; request-access link.</div><div class="muted">Entity A2 user (S-02)</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>9c · Provenance and signal encoding</h2>
+    <p class="sub">Shape and label carry the meaning; colour reinforces it. The six provenance classes come from the brief. Leading signal and prediction output are signal roles that Theme 3 must distinguish from certified actuals.</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:200px 120px 260px 1fr"><div>Class</div><div>Tag text</div><div>Line / mark</div><div>Rule</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">Certified actual</div><div class="id">CERT</div><div>Solid navy line; solid value</div><div>Only after a human certification decision.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">Preliminary actual</div><div class="id">PRELIM</div><div>Solid teal line, outlined tag</div><div>Flash or uncertified actuals. Never styled as certified.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">Forecast</div><div class="id">FCST</div><div>Purple dashed line + light uncertainty band</div><div>Starts where actuals end; shows the forecast date and assumptions link.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">Scenario</div><div class="id">SCN · id</div><div>Purple dotted line, scenario ID label</div><div>Only in S-06 or when a published scenario is referenced; never shown as the base forecast.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">External signal</div><div class="id">EXT</div><div>Teal outlined tag, separate axis or panel</div><div>Never blended into internal actual lines; source category placeholder shown.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">AI-generated</div><div class="id">AI · NOT APPROVED</div><div>Dashed grey frame around the text region</div><div>Text only; never a number of record; always next to the 'Human decision required' block.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">Leading signal (role)</div><div class="id">LEADING</div><div>Signal tile, outlined teal tag</div><div>Shown on S-12's left side; links to the prediction it feeds.</div></div>
+      
+        <div class="tr" style="grid-template-columns:200px 120px 260px 1fr"><div style="font-weight:600;color:#0F1E3A">Prediction output (role)</div><div class="id">PREDICTION</div><div>Dashed purple tile frame</div><div>Shown on S-12's right side; carries confidence and model date; never in an actuals table.</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>9d · Incident states (13 required)</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:44px 190px 1fr 140px 300px"><div>#</div><div>State</div><div>Meaning</div><div>Colour role</div><div>Primary action shown (by role)</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Detected</div><div>System has detected a deviation or forecast breach</div><div>Teal</div><div class="muted">View · acknowledge</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">Validating</div><div>Validation Assistant and rules are checking consistency and completeness</div><div>Grey</div><div class="muted">View validation result</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Unowned</div><div>Validated but no accepted human owner; clock running</div><div>Amber</div><div class="muted">Accept ownership (Entity roles) · reassign (Core Group)</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Owned</div><div>Named human role has accepted</div><div>Navy</div><div class="muted">Assign supporting action · update status</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Investigating</div><div>Cause and impact being established</div><div>Navy</div><div class="muted">Attach evidence · run scenario · ask why</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Action in progress</div><div>Accepted actions underway</div><div>Navy</div><div class="muted">Update · attach evidence · escalate</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Blocked</div><div>At least one critical-path action is blocked by a dependency</div><div>Amber</div><div class="muted">Record dependency · escalate</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Escalated</div><div>Raised to the next ladder level (L0–L3)</div><div>Amber + level</div><div class="muted">Intervene (receiving level) · draft update</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">War room active</div><div>Incident in collaboration mode with a commander</div><div>Red if Critical</div><div class="muted">Maintain live facts · decisions log · approve communications</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Recovery monitoring</div><div>Actions done; watching that recovery holds</div><div>Green outline</div><div class="muted">Confirm recovery · request closure</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">11</div><div style="font-weight:600;color:#0F1E3A">Closure requested</div><div>Awaiting human closure approval with evidence</div><div>Navy outline</div><div class="muted">Approve or reject closure (approver per D-06)</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">12</div><div style="font-weight:600;color:#0F1E3A">Closed</div><div>Approved closure; root cause and preventive action recorded</div><div>Grey</div><div class="muted">Reopen (per D-18)</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 190px 1fr 140px 300px"><div class="id">13</div><div style="font-weight:600;color:#0F1E3A">Reopened</div><div>Recurrence or failed review within the reopen window</div><div>Amber</div><div class="muted">Re-accept ownership</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>9e · Required non-happy-path states (12)</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:44px 220px 1fr 280px 110px"><div>#</div><div>State</div><div>Message pattern</div><div>User action</div><div>Component</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">01</div><div style="font-weight:600;color:#0F1E3A">Loading</div><div>Skeleton in the final layout; the title and business question render first; no spinners on KPI values</div><div class="muted">—</div><div class="id">SY-01</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">02</div><div style="font-weight:600;color:#0F1E3A">No data</div><div>'No [measure] recorded for [scope] in [period]' plus the reason if known</div><div class="muted">Change period or scope</div><div class="id">SY-02</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">03</div><div style="font-weight:600;color:#0F1E3A">Partial data</div><div>Banner: 'Showing [n] of [m] entities; [list] not yet loaded'. Totals marked partial</div><div class="muted">View which are missing</div><div class="id">SY-03</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">04</div><div style="font-weight:600;color:#0F1E3A">Stale data</div><div>'Stale · as of [time]' on the card and in the header refresh indicator</div><div class="muted">View source status</div><div class="id">SY-04</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">05</div><div style="font-weight:600;color:#0F1E3A">Source unavailable</div><div>'[SOURCE CATEGORY] unavailable since [time]'. Last certified value shown and labelled</div><div class="muted">Notify owner role · view lineage</div><div class="id">SY-05</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">06</div><div style="font-weight:600;color:#0F1E3A">Reconciliation break</div><div>'Unverified: reconciliation break [ID]'</div><div class="muted">Open break · open S-03</div><div class="id">DS-04</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">07</div><div style="font-weight:600;color:#0F1E3A">Pending certification</div><div>'Pending certification · due [date]'</div><div class="muted">View certification status</div><div class="id">DS-04</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">08</div><div style="font-weight:600;color:#0F1E3A">Restricted access</div><div>'You do not have access to this item in your current scope.' No item details</div><div class="muted">Request access</div><div class="id">SY-07</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">09</div><div style="font-weight:600;color:#0F1E3A">Forecast unavailable</div><div>'Forecast unavailable: [reason]. Last forecast [time]'</div><div class="muted">View actuals only</div><div class="id">SY-06</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">10</div><div style="font-weight:600;color:#0F1E3A">Alert without owner</div><div>'Unowned · escalates in [h]' with amber clock</div><div class="muted">Accept ownership / reassign</div><div class="id">WK-04</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">11</div><div style="font-weight:600;color:#0F1E3A">Escalation overdue</div><div>'Escalation overdue +[h]' on the clock and in the action table</div><div class="muted">Intervene / escalate</div><div class="id">WK-14</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 220px 1fr 280px 110px"><div class="id">12</div><div style="font-weight:600;color:#0F1E3A">Action awaiting closure approval</div><div>'Closure requested [time] · approver: [role]'</div><div class="muted">Approve or reject (approver only)</div><div class="id">WK-12</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>9f · Component inventory (80)</h2>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:70px 230px 1fr 120px 330px"><div>ID</div><div>Component</div><div>Purpose</div><div>Templates</div><div>States / variants</div></div>
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Shell and page frame (14)</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-01</div><div style="font-weight:600;color:#0F1E3A">Global header</div><div>Persistent header row</div><div class="id" style="font-weight:500">all</div><div class="muted">Default · compact · scope-change pending</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-02</div><div style="font-weight:600;color:#0F1E3A">Lens selector</div><div>Switch Owner / Core Group / Entity within entitlement</div><div class="id" style="font-weight:500">all</div><div class="muted">Single-lens (hidden) · multi-lens</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-03</div><div style="font-weight:600;color:#0F1E3A">Scope selector</div><div>Permitted hierarchy tree only</div><div class="id" style="font-weight:500">all</div><div class="muted">Group · business · entity · plant; no-permission nodes not rendered</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-04</div><div style="font-weight:600;color:#0F1E3A">Period selector</div><div>Reporting period, MTD/YTD, comparison basis</div><div class="id" style="font-weight:500">all</div><div class="muted">Open period · closed period · certified period</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-05</div><div style="font-weight:600;color:#0F1E3A">Refresh indicator</div><div>Oldest relevant refresh on page</div><div class="id" style="font-weight:500">all</div><div class="muted">Fresh · stale · source unavailable</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-06</div><div style="font-weight:600;color:#0F1E3A">Search / Ask Control Tower</div><div>Find KPIs, alerts, cases; ask a question</div><div class="id" style="font-weight:500">all</div><div class="muted">Empty · results · AI answer · restricted-safe no-result</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-07</div><div style="font-weight:600;color:#0F1E3A">Notification centre</div><div>Alerts, assignments, approvals</div><div class="id" style="font-weight:500">all</div><div class="muted">Unread · grouped · materiality-filtered</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-08</div><div style="font-weight:600;color:#0F1E3A">Help</div><div>Definitions, legend, how-to</div><div class="id" style="font-weight:500">all</div><div class="muted">Panel · contextual</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-09</div><div style="font-weight:600;color:#0F1E3A">Profile menu</div><div>Role, scope, preferences, sign-out</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-10</div><div style="font-weight:600;color:#0F1E3A">Global navigation</div><div>10 items, same in every lens</div><div class="id" style="font-weight:500">all</div><div class="muted">Expanded · collapsed · phone stacked; current item</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-11</div><div style="font-weight:600;color:#0F1E3A">Hierarchy breadcrumb</div><div>Group → Business → Entity → Plant → Line</div><div class="id" style="font-weight:500">A–D</div><div class="muted">Levels per entitlement; current level</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-12</div><div style="font-weight:600;color:#0F1E3A">Page header</div><div>Title + explicit business question</div><div class="id" style="font-weight:500">A–F</div><div class="muted">With / without actions</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-13</div><div style="font-weight:600;color:#0F1E3A">Scope and trust summary bar</div><div>Scope, period, refresh, % certified, open breaks</div><div class="id" style="font-weight:500">A–D</div><div class="muted">All certified · exceptions · breaks</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SH-14</div><div style="font-weight:600;color:#0F1E3A">Status strip</div><div>On track / Deteriorating / Improving / Intervention required per area</div><div class="id" style="font-weight:500">A–C</div><div class="muted">4 states with icon + label</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Data display (22)</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-01</div><div style="font-weight:600;color:#0F1E3A">KPI card</div><div>One measure in context</div><div class="id" style="font-weight:500">A–D</div><div class="muted">12 states (9b) · hover · focus · loading</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-02</div><div style="font-weight:600;color:#0F1E3A">KPI card, expanded</div><div>Definition and trust detail</div><div class="id" style="font-weight:500">A, D</div><div class="muted">See 9a</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-03</div><div style="font-weight:600;color:#0F1E3A">Business status badge</div><div>Axis 1</div><div class="id" style="font-weight:500">all</div><div class="muted">5 states</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-04</div><div style="font-weight:600;color:#0F1E3A">Trust badge</div><div>Axis 2</div><div class="id" style="font-weight:500">all</div><div class="muted">7 states</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-05</div><div style="font-weight:600;color:#0F1E3A">Provenance tag</div><div>Class of a value</div><div class="id" style="font-weight:500">all</div><div class="muted">8 classes (9c)</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-06</div><div style="font-weight:600;color:#0F1E3A">Leading-signal tile</div><div>Early indicator with watch condition</div><div class="id" style="font-weight:500">C (S-12)</div><div class="muted">Watch · elevated · cleared · source unavailable</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-07</div><div style="font-weight:600;color:#0F1E3A">Prediction tile</div><div>Prediction output with confidence</div><div class="id" style="font-weight:500">A, C</div><div class="muted">Value · unavailable · low confidence</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-08</div><div style="font-weight:600;color:#0F1E3A">Line chart</div><div>Actual vs plan vs forecast over time</div><div class="id" style="font-weight:500">A–D</div><div class="muted">Provenance segments · threshold [PH] · scenario overlay</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-09</div><div style="font-weight:600;color:#0F1E3A">Horizontal bar comparison</div><div>Entity / plant / supplier / project / risk</div><div class="id" style="font-weight:500">B, C</div><div class="muted">Sorted · with trust per bar · drillable</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-10</div><div style="font-weight:600;color:#0F1E3A">Waterfall bridge</div><div>EBITDA, cash, cost, WC bridges</div><div class="id" style="font-weight:500">C</div><div class="muted">Plan → actual · actual → forecast</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-11</div><div style="font-weight:600;color:#0F1E3A">Lifecycle chain</div><div>Production → … → Upstreaming</div><div class="id" style="font-weight:500">A, C</div><div class="muted">Per stage: actual, plan, forecast, leakage, constraint, trust, owner</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-12</div><div style="font-weight:600;color:#0F1E3A">Progress chain</div><div>Approved → … → Benefit Realized</div><div class="id" style="font-weight:500">A, B, C</div><div class="muted">Spend and physical progress paired</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-13</div><div style="font-weight:600;color:#0F1E3A">Status matrix</div><div>Risk, certification, compliance, entity comparison</div><div class="id" style="font-weight:500">B, D</div><div class="muted">Cell = status + icon; restricted cell</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-14</div><div style="font-weight:600;color:#0F1E3A">Lineage graph</div><div>Source → KPI → views</div><div class="id" style="font-weight:500">D</div><div class="muted">Node ok · changed · break · unavailable</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-15</div><div style="font-weight:600;color:#0F1E3A">Reconciliation table</div><div>Break detail by stage</div><div class="id" style="font-weight:500">D</div><div class="muted">Within tolerance · break · resolved</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-16</div><div style="font-weight:600;color:#0F1E3A">Driver / contribution list</div><div>Ranked drivers with share</div><div class="id" style="font-weight:500">A–C</div><div class="muted">Positive · negative · unexplained remainder</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-17</div><div style="font-weight:600;color:#0F1E3A">Change-ledger row</div><div>Before → after, materiality, owner</div><div class="id" style="font-weight:500">F</div><div class="muted">New · escalated · de-escalated · trust change</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-18</div><div style="font-weight:600;color:#0F1E3A">Materiality breakdown</div><div>Dimensions that drove the level</div><div class="id" style="font-weight:500">E</div><div class="muted">Critical · High · Medium · Low; placeholder label</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-19</div><div style="font-weight:600;color:#0F1E3A">Days-to-breach clock</div><div>Countdown to threshold</div><div class="id" style="font-weight:500">A, C, E</div><div class="muted">Days · hours · unavailable</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-20</div><div style="font-weight:600;color:#0F1E3A">Sub-theme drill tabs</div><div>Hold non-landing KPIs</div><div class="id" style="font-weight:500">A, C</div><div class="muted">Tab with count of exceptions</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-21</div><div style="font-weight:600;color:#0F1E3A">Definition panel</div><div>Definition, formula, source, roles, tolerance</div><div class="id" style="font-weight:500">D</div><div class="muted">Approved · draft version · changed</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">DS-22</div><div style="font-weight:600;color:#0F1E3A">Signal board</div><div>Leading signals → predictions by segment</div><div class="id" style="font-weight:500">C (S-12)</div><div class="muted">5 segments; empty segment</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Work, decision and governance (25)</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-01</div><div style="font-weight:600;color:#0F1E3A">Accountability strip</div><div>Severity · exposure · owner role · due · clock · evidence · next action</div><div class="id" style="font-weight:500">all</div><div class="muted">Complete · missing owner · overdue</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-02</div><div style="font-weight:600;color:#0F1E3A">Alert card</div><div>Compact alert in lists</div><div class="id" style="font-weight:500">A, E</div><div class="muted">Per incident state</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-03</div><div style="font-weight:600;color:#0F1E3A">Incident header</div><div>ID, title, state, severity, materiality, scope, times, label, source, commander, level</div><div class="id" style="font-weight:500">E</div><div class="muted">Per incident state</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-04</div><div style="font-weight:600;color:#0F1E3A">Ownership panel</div><div>Accept / reassign; shows AI draft separately</div><div class="id" style="font-weight:500">E</div><div class="muted">Unowned · draft · accepted · reassigned</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-05</div><div style="font-weight:600;color:#0F1E3A">Live-facts panel</div><div>Certified · preliminary · missing · external · assumptions · confidence · evidence</div><div class="id" style="font-weight:500">E</div><div class="muted">Per section empty / populated</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-06</div><div style="font-weight:600;color:#0F1E3A">Impact grid</div><div>11 impact dimensions, current vs forecast</div><div class="id" style="font-weight:500">E</div><div class="muted">Known · estimated · unknown</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-07</div><div style="font-weight:600;color:#0F1E3A">Timeline</div><div>Detection → closure approval events</div><div class="id" style="font-weight:500">E</div><div class="muted">Filter by type; audit link</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-08</div><div style="font-weight:600;color:#0F1E3A">Action table</div><div>Issue, severity, exposure, owner, due, status, escalation, next action</div><div class="id" style="font-weight:500">C, E</div><div class="muted">Sortable; overdue; blocked; awaiting closure</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-09</div><div style="font-weight:600;color:#0F1E3A">Action detail</div><div>One action with dependencies and evidence</div><div class="id" style="font-weight:500">E</div><div class="muted">Recommended · accepted · blocked · done · overdue</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-10</div><div style="font-weight:600;color:#0F1E3A">Evidence item</div><div>File, link or attestation</div><div class="id" style="font-weight:500">D, E</div><div class="muted">Submitted · accepted · rejected · superseded</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-11</div><div style="font-weight:600;color:#0F1E3A">Evidence uploader</div><div>Attach evidence with required metadata</div><div class="id" style="font-weight:500">D, E</div><div class="muted">Idle · uploading · error · done</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-12</div><div style="font-weight:600;color:#0F1E3A">Closure checklist</div><div>Criteria, recovery, residual risk, root cause, preventive action, approver</div><div class="id" style="font-weight:500">E</div><div class="muted">Incomplete · requested · approved · rejected</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-13</div><div style="font-weight:600;color:#0F1E3A">Decision card</div><div>Options, exposure, cost of delay, authority</div><div class="id" style="font-weight:500">E</div><div class="muted">Open · decided · deferred</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-14</div><div style="font-weight:600;color:#0F1E3A">Escalation clock</div><div>Time remaining at current level</div><div class="id" style="font-weight:500">A, E</div><div class="muted">On time · due soon · overdue</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-15</div><div style="font-weight:600;color:#0F1E3A">Escalation ladder</div><div>L0–L3 board</div><div class="id" style="font-weight:500">E (G-09)</div><div class="muted">Per level counts</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-16</div><div style="font-weight:600;color:#0F1E3A">Disclosure clock</div><div>Disclosure-review state and time</div><div class="id" style="font-weight:500">E</div><div class="muted">Not applicable · running · under review · approved [PH]</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-17</div><div style="font-weight:600;color:#0F1E3A">Communications panel</div><div>Executive / Entity / Core Group / Owner updates with approvals</div><div class="id" style="font-weight:500">E</div><div class="muted">Draft (AI or human) · pending approval · sent</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-18</div><div style="font-weight:600;color:#0F1E3A">War-room layout</div><div>Template E war-room arrangement</div><div class="id" style="font-weight:500">E</div><div class="muted">Commander view · member view · Owner view</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-19</div><div style="font-weight:600;color:#0F1E3A">Scenario builder</div><div>Assumptions and options</div><div class="id" style="font-weight:500">C (S-06)</div><div class="muted">Draft · run · published</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-20</div><div style="font-weight:600;color:#0F1E3A">Scenario comparison</div><div>Options vs base forecast</div><div class="id" style="font-weight:500">C (S-06)</div><div class="muted">2–4 options</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-21</div><div style="font-weight:600;color:#0F1E3A">Certification decision panel</div><div>Certify / with exception / request correction</div><div class="id" style="font-weight:500">D</div><div class="muted">Hidden outside scope · rationale required</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-22</div><div style="font-weight:600;color:#0F1E3A">Comment thread</div><div>Business explanation and challenge</div><div class="id" style="font-weight:500">D, E</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-23</div><div style="font-weight:600;color:#0F1E3A">Audit entry</div><div>Who, role, what, when, why, prior state</div><div class="id" style="font-weight:500">D, E</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-24</div><div style="font-weight:600;color:#0F1E3A">Workflow counter</div><div>Queue counts on workbenches (≤4)</div><div class="id" style="font-weight:500">E</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">WK-25</div><div style="font-weight:600;color:#0F1E3A">Role-gated action bar</div><div>Primary actions per role</div><div class="id" style="font-weight:500">D, E</div><div class="muted">Controls not rendered without right</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>AI (6)</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">AI-01</div><div style="font-weight:600;color:#0F1E3A">AI explanation panel</div><div>Eight separated sections</div><div class="id" style="font-weight:500">F (S-07)</div><div class="muted">Generating · ready · insufficient data</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">AI-02</div><div style="font-weight:600;color:#0F1E3A">AI-generated label</div><div>Marks any AI text</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">AI-03</div><div style="font-weight:600;color:#0F1E3A">Assistant entry point</div><div>'Explain', 'Validate', 'Draft brief', 'Draft routing'</div><div class="id" style="font-weight:500">all</div><div class="muted">Available · not available in scope</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">AI-04</div><div style="font-weight:600;color:#0F1E3A">Human-decision-required block</div><div>States the decision, authority role and due</div><div class="id" style="font-weight:500">E, F</div><div class="muted">Open · decided</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">AI-05</div><div style="font-weight:600;color:#0F1E3A">AI recommendation card</div><div>Recommendation, rationale, confidence</div><div class="id" style="font-weight:500">E</div><div class="muted">Draft · accepted by human · dismissed</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">AI-06</div><div style="font-weight:600;color:#0F1E3A">Validation result</div><div>Consistency and completeness check</div><div class="id" style="font-weight:500">D, E</div><div class="muted">Pass · warnings · fail; 'advisory' label</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>Briefing (4)</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">BR-01</div><div style="font-weight:600;color:#0F1E3A">Brief section</div><div>Structured statements with provenance</div><div class="id" style="font-weight:500">F</div><div class="muted">Draft · released</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">BR-02</div><div style="font-weight:600;color:#0F1E3A">Source citation chip</div><div>Links a statement to its KPI or record</div><div class="id" style="font-weight:500">F</div><div class="muted">Available · restricted · stale</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">BR-03</div><div style="font-weight:600;color:#0F1E3A">Pack builder</div><div>Assemble Core Group briefing pack</div><div class="id" style="font-weight:500">F (G-10)</div><div class="muted">Draft · in review · released</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">BR-04</div><div style="font-weight:600;color:#0F1E3A">Inquiry log row</div><div>Question → answer → status</div><div class="id" style="font-weight:500">F</div><div class="muted">Open · answered · escalated</div></div>
+        
+      
+        <div class="tr grp" style="grid-template-columns:1fr"><div>System states and feedback (9)</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-01</div><div style="font-weight:600;color:#0F1E3A">Loading skeleton</div><div>Layout-faithful loading</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-02</div><div style="font-weight:600;color:#0F1E3A">Empty / no data</div><div>Explains absence</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-03</div><div style="font-weight:600;color:#0F1E3A">Partial-data banner</div><div>Lists missing scope</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-04</div><div style="font-weight:600;color:#0F1E3A">Stale indicator</div><div>Age of data</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-05</div><div style="font-weight:600;color:#0F1E3A">Source-unavailable panel</div><div>Source outage</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-06</div><div style="font-weight:600;color:#0F1E3A">Forecast-unavailable panel</div><div>Forecast outage</div><div class="id" style="font-weight:500">A, C</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-07</div><div style="font-weight:600;color:#0F1E3A">Restricted panel</div><div>Least-privilege message</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-08</div><div style="font-weight:600;color:#0F1E3A">Error panel</div><div>Unexpected failure with retry</div><div class="id" style="font-weight:500">all</div><div class="muted">—</div></div>
+        
+          <div class="tr" style="grid-template-columns:70px 230px 1fr 120px 330px"><div class="id">SY-09</div><div style="font-weight:600;color:#0F1E3A">Confirmation / toast</div><div>Confirms audited writes</div><div class="id" style="font-weight:500">all</div><div class="muted">Success · failure</div></div>
+        
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>9g · Visual-system colour roles (proposal; Phase 3 validates contrast)</h2>
+    <div class="sw">
+      
+        <div><div class="c" style="background:#0F1E3A"></div><div class="t"><b>Navy</b><br><span class="id" style="font-weight:500">#0F1E3A</span><br><span class="muted">Navigation, hierarchy, certified</span></div></div>
+      
+        <div><div class="c" style="background:#0B6E79"></div><div class="t"><b>Teal</b><br><span class="id" style="font-weight:500">#0B6E79</span><br><span class="muted">Neutral analytics, preliminary, external</span></div></div>
+      
+        <div><div class="c" style="background:#1E7B4B"></div><div class="t"><b>Green</b><br><span class="id" style="font-weight:500">#1E7B4B</span><br><span class="muted">On track, improving</span></div></div>
+      
+        <div><div class="c" style="background:#A66300"></div><div class="t"><b>Amber</b><br><span class="id" style="font-weight:500">#A66300</span><br><span class="muted">Attention, deteriorating, unowned</span></div></div>
+      
+        <div><div class="c" style="background:#B42318"></div><div class="t"><b>Red</b><br><span class="id" style="font-weight:500">#B42318</span><br><span class="muted">Material breach, critical exposure only</span></div></div>
+      
+        <div><div class="c" style="background:#5B3FA0"></div><div class="t"><b>Purple</b><br><span class="id" style="font-weight:500">#5B3FA0</span><br><span class="muted">Forecast and scenario only</span></div></div>
+      
+        <div><div class="c" style="background:#6B7380"></div><div class="t"><b>Grey</b><br><span class="id" style="font-weight:500">#6B7380</span><br><span class="muted">Pending, stale, unavailable, restricted</span></div></div>
+      
+        <div><div class="c" style="background:#1B2433"></div><div class="t"><b>Ink</b><br><span class="id" style="font-weight:500">#1B2433</span><br><span class="muted">Body text</span></div></div>
+      
+        <div><div class="c" style="background:#F7F8FA"></div><div class="t"><b>Base</b><br><span class="id" style="font-weight:500">#F7F8FA</span><br><span class="muted">Light neutral ground</span></div></div>
+      
+        <div><div class="c" style="background:#CDD3DB"></div><div class="t"><b>Rule</b><br><span class="id" style="font-weight:500">#CDD3DB</span><br><span class="muted">Borders and dividers</span></div></div>
+      
+    </div>
+    <p class="muted" style="font-size:12.5px;margin-top:10px">Type: IBM Plex Sans (UI) + IBM Plex Mono (IDs, tags, timestamps). Proposed for Phase 3. Spacing on a 4/8 px grid; 2–4 px radii; borders, not shadows. Excluded per brief: purple gradients, glassmorphism, neon, decorative blobs, oversized pills, donut percentages, gauges, fake maps, 3D, motion without analytical purpose.</p>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-09-Components.js"></script>
+<script>DCLite.mount("dc-root", "P1-09-Components", {});</script>
+</body>
+</html>

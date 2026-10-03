@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Permission matrix</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F8FA}
+a{color:#0B5E6B}a:hover{color:#073F48}
+.pg{font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1B2433;background:#F7F8FA;font-size:14px;line-height:20px;max-width:1440px;margin:0 auto;padding:44px 56px 72px;box-sizing:border-box}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 24px;border-bottom:2px solid #0F1E3A;padding-bottom:20px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:.06em;text-transform:uppercase;color:#4A5568;font-weight:500}
+h1{font-size:32px;line-height:40px;margin:6px 0;color:#0F1E3A;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;color:#0F1E3A;font-weight:600}
+.q{font-size:16px;line-height:24px;color:#36435A;max-width:980px;margin:0}
+.sec{margin-top:40px}
+.sub{color:#4A5568;margin:0 0 14px;max-width:1040px}
+.chips{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.chip{display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:600;letter-spacing:.04em;padding:2px 8px;border:1px solid #8A95A5;border-radius:2px;color:#2D3748;background:#fff;white-space:nowrap}
+.chip.syn{border-style:dashed}
+.chip.nav{background:#0F1E3A;border-color:#0F1E3A;color:#fff}
+.tbl{border:1px solid #CDD3DB;background:#fff;overflow-x:auto}
+.tr{display:grid;min-width:1240px}
+.tr > div{padding:8px 8px;border-top:1px solid #E2E6EB;font-size:12.5px;line-height:17px}
+.th > div{background:#0F1E3A;color:#fff;font-weight:600;font-size:12px;line-height:16px;border-top:0}
+.id{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:#0F1E3A;font-weight:600}
+.muted{color:#5A6576}
+.back{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;display:inline-block;padding:8px 0;margin-bottom:8px}
+.tr > div.v{border-left:1px solid #E2E6EB;font-size:12px}
+.tr > div.m{text-align:center;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:600;border-left:1px solid #E2E6EB}
+.th > div.m,.th > div.v{text-align:center}
+.tr > div.mY{background:#0F1E3A;color:#fff}
+.tr > div.mS{box-shadow:inset 0 0 0 2px #0F1E3A;color:#0F1E3A}
+.tr > div.mQ{background:#E3E7ED;color:#1B2433}
+.tr > div.mN{color:#6B7380}
+.tr > div.mD{background:repeating-linear-gradient(135deg,#fff 0 5px,#EDF0F3 5px 10px);box-shadow:inset 0 0 0 1px #6B7686;color:#1B2433}
+.key{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 12px;font-size:12.5px}
+.key span.k{display:inline-block;min-width:44px;text-align:center;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-size:12px;padding:2px 4px;margin-right:6px}
+.rule{display:grid;grid-template-columns:64px 1fr;gap:10px;background:#fff;border:1px solid #CDD3DB;padding:12px 14px}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div class="pg">
+  <a class="back" href="index.html">← Pack index</a>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Phase 1 · Deliverable 06 of 10</div>
+      <h1>Role visibility and action-permission matrix</h1>
+      <p class="q">Least privilege by default. Visibility answers "what data can this role see"; action rights answer "what can this role do". The lens never widens either. AI inherits the requester's scope and holds no action rights.</p>
+    </div>
+    <div class="chips">
+      <span class="chip nav">DRAFT v0.1 · FOR APPROVAL</span>
+      <span class="chip syn">AUTHORITY LIMITS: PLACEHOLDER (DoA)</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>6a · Visibility (data scope)</h2>
+    <p class="sub">Full = all entities. Own = own entity only. Domain = assigned function within own entity. Assigned = only items assigned to the user. Summary = aggregated, no transaction rows. Material = only items at or above the materiality threshold. — = not rendered (D-12).</p>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div>Information domain</div>
+        <div class="v">OWN</div><div class="v">CGE</div><div class="v">ENX</div><div class="v">FNL</div><div class="v">MOC</div><div class="v">ANL</div><div class="v">ACO</div><div class="v">INC</div><div class="v">ASR</div><div class="v">ADM</div><div class="v">AI</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Lenses available</div>
+          <div class="v">Owner (+ Core Group read: D-21)</div><div class="v">Core Group + Entity (any in scope)</div><div class="v">Entity (own)</div><div class="v">Entity (domain)</div><div class="v">Assurance views in scope</div><div class="v">Scoped views</div><div class="v">Entity (assigned)</div><div class="v">Incident scope</div><div class="v">Assurance views</div><div class="v">None (admin console)</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Group and portfolio KPIs</div>
+          <div class="v">Full · summary</div><div class="v">Full</div><div class="v">—</div><div class="v">—</div><div class="v">Assigned KPIs</div><div class="v">Assigned</div><div class="v">—</div><div class="v">Incident-linked</div><div class="v">Review scope</div><div class="v">—</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Peer-entity comparison</div>
+          <div class="v">Full</div><div class="v">Full</div><div class="v">— (D-16)</div><div class="v">—</div><div class="v">—</div><div class="v">Assigned</div><div class="v">—</div><div class="v">—</div><div class="v">Review scope</div><div class="v">—</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Entity and plant performance</div>
+          <div class="v">Summary to plant</div><div class="v">Full to plant; line on drill</div><div class="v">Own, to line</div><div class="v">Domain, to line</div><div class="v">Assigned</div><div class="v">Assigned</div><div class="v">Assigned</div><div class="v">Incident scope</div><div class="v">Review scope</div><div class="v">—</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Transaction and reconciliation records</div>
+          <div class="v">—</div><div class="v">Counts only</div><div class="v">Own</div><div class="v">Domain</div><div class="v">Assigned</div><div class="v">Assigned</div><div class="v">—</div><div class="v">—</div><div class="v">Review scope</div><div class="v">Mappings metadata</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Cash upstreaming and group treasury</div>
+          <div class="v">Full</div><div class="v">Full</div><div class="v">Own obligation (C-05)</div><div class="v">Finance domain</div><div class="v">Assigned</div><div class="v">Assigned</div><div class="v">—</div><div class="v">Incident-linked</div><div class="v">Review scope</div><div class="v">—</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Alerts and cases</div>
+          <div class="v">Material only</div><div class="v">All material + entity summaries</div><div class="v">Own</div><div class="v">Domain</div><div class="v">Linked to own KPIs</div><div class="v">Assigned</div><div class="v">Assigned</div><div class="v">Incident</div><div class="v">Review scope</div><div class="v">—</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Risk, compliance, EHS, audit findings</div>
+          <div class="v">Material summary</div><div class="v">Full</div><div class="v">Own</div><div class="v">Domain</div><div class="v">—</div><div class="v">Assigned</div><div class="v">Assigned</div><div class="v">Incident</div><div class="v">Full in scope</div><div class="v">—</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Certification, lineage, evidence</div>
+          <div class="v">Status only</div><div class="v">Governance view</div><div class="v">Own status</div><div class="v">Domain status</div><div class="v">Full in scope</div><div class="v">Full in scope</div><div class="v">Own evidence</div><div class="v">Incident evidence</div><div class="v">Full in scope</div><div class="v">Mapping lineage only</div><div class="v">Requester's</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">War rooms</div>
+          <div class="v">View all active (critical)</div><div class="v">View and coordinate</div><div class="v">Own entity</div><div class="v">If member</div><div class="v">—</div><div class="v">If member</div><div class="v">If member</div><div class="v">Full</div><div class="v">View</div><div class="v">—</div><div class="v">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">Disclosure-review state</div>
+          <div class="v">View</div><div class="v">View</div><div class="v">—</div><div class="v">—</div><div class="v">—</div><div class="v">—</div><div class="v">—</div><div class="v">View</div><div class="v">View</div><div class="v">—</div><div class="v">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:210px repeat(11,minmax(0,1fr))"><div style="font-weight:600;color:#0F1E3A">AI explanations, briefs, Ask</div>
+          <div class="v">Own scope</div><div class="v">Own scope</div><div class="v">Own scope</div><div class="v">Own scope</div><div class="v">Own scope</div><div class="v">Own scope</div><div class="v">Own scope</div><div class="v">Own scope</div><div class="v">Own scope</div><div class="v">—</div><div class="v">Never exceeds requester</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>6b · Action permissions</h2>
+    <div class="key">
+      <div><span class="k" style="background:#0F1E3A;color:#fff">Yes</span>Permitted</div>
+      <div><span class="k" style="box-shadow:inset 0 0 0 2px #0F1E3A">Scope</span>Only within assigned scope or authority</div>
+      <div><span class="k" style="background:#E3E7ED">Req</span>May request or recommend only</div>
+      <div><span class="k" style="box-shadow:inset 0 0 0 1px #6B7686">Draft</span>AI drafts for human acceptance</div>
+      <div><span class="k" style="color:#6B7380">—</span>Not permitted; control not rendered</div>
+    </div>
+    <div class="tbl">
+      <div class="tr th" style="grid-template-columns:44px 1fr repeat(11,64px)"><div>#</div><div>Action</div>
+        <div class="m">OWN</div><div class="m">CGE</div><div class="m">ENX</div><div class="m">FNL</div><div class="m">MOC</div><div class="m">ANL</div><div class="m">ACO</div><div class="m">INC</div><div class="m">ASR</div><div class="m">ADM</div><div class="m">AI</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">01</div><div>View and acknowledge alert (not ownership)</div>
+          <div class="m mY">Yes</div><div class="m mY">Yes</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">02</div><div>Accept ownership</div>
+          <div class="m mN">—</div><div class="m mQ">Req</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">03</div><div>Assign supporting action</div>
+          <div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">04</div><div>Update status</div>
+          <div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">05</div><div>Attach evidence</div>
+          <div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">06</div><div>Run scenario</div>
+          <div class="m mQ">Req</div><div class="m mY">Yes</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">07</div><div>Publish scenario as decision basis</div>
+          <div class="m mN">—</div><div class="m mY">Yes</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">08</div><div>Escalate</div>
+          <div class="m mQ">Req</div><div class="m mY">Yes</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mY">Yes</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">09</div><div>Open war room</div>
+          <div class="m mQ">Req</div><div class="m mY">Yes</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">10</div><div>Intervene in critical escalation</div>
+          <div class="m mY">Yes</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">11</div><div>Make permitted strategic decision</div>
+          <div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">12</div><div>Request analysis</div>
+          <div class="m mY">Yes</div><div class="m mY">Yes</div><div class="m mY">Yes</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mY">Yes</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">13</div><div>Draft executive update</div>
+          <div class="m mN">—</div><div class="m mY">Yes</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">14</div><div>Approve communication (Core Group / Owner update)</div>
+          <div class="m mN">—</div><div class="m mY">Yes</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">15</div><div>Request closure</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">16</div><div>Approve or reject closure (D-06 tiers)</div>
+          <div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mD">Check</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">17</div><div>Reopen closed case</div>
+          <div class="m mQ">Req</div><div class="m mY">Yes</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">18</div><div>Certify KPI</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Check</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">19</div><div>Certify with exception</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Check</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">20</div><div>Request data correction</div>
+          <div class="m mN">—</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mY">Yes</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mD">Check</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">21</div><div>Approve KPI override (D-17)</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">22</div><div>Maintain approved mappings / config</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">23</div><div>Accept material risk</div>
+          <div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">24</div><div>Approve disclosure (Disclosure Authority — PLACEHOLDER)</div>
+          <div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">25</div><div>Release daily Owner brief</div>
+          <div class="m mN">—</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">26</div><div>Maintain live facts in war room</div>
+          <div class="m mN">—</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">27</div><div>Approve permitted local action within [DoA — PH] (v0.2)</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">28</div><div>Add business explanation or comment (v0.2)</div>
+          <div class="m mN">—</div><div class="m mY">Yes</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">29</div><div>Document action dependency (v0.2)</div>
+          <div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">30</div><div>Maintain decisions log and communication drafts (v0.2)</div>
+          <div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Draft</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">31</div><div>Review, sample, challenge certification / controls / evidence / overrides / closure (v0.2)</div>
+          <div class="m mN">—</div><div class="m mQ">Req</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mY">Yes</div><div class="m mN">—</div><div class="m mD">Check</div></div>
+      
+        <div class="tr" style="grid-template-columns:44px 1fr repeat(11,64px)"><div class="id">32</div><div>Certify consolidated group-scope KPI (v0.2, D-22)</div>
+          <div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mS">Scope</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mN">—</div><div class="m mD">Check</div></div>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>6c · Hard governance rules (enforced in UI and service)</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(560px,1fr));gap:10px">
+      
+        <div class="rule"><div class="id">GR-01</div><div><b style="color:#0F1E3A">AI has no approval authority</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">AI cannot certify a KPI, approve a financial number, accept material risk, approve disclosure, close a material case or assign accountability. AI-originated items carry an 'AI draft' tag until a human accepts them. Approval controls are never pre-filled.</div></div></div>
+      
+        <div class="rule"><div class="id">GR-02</div><div><b style="color:#0F1E3A">No self-approval of closure</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">The action owner and the closure approver must be different users unless an explicit, audited authorisation exists.</div></div></div>
+      
+        <div class="rule"><div class="id">GR-03</div><div><b style="color:#0F1E3A">Certification within scope only</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">A certifier sees certification controls only for KPIs and nodes assigned to them. For leadership KPIs, the metric owner may not also certify (D-02).</div></div></div>
+      
+        <div class="rule"><div class="id">GR-04</div><div><b style="color:#0F1E3A">Administrator has no business authority</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">A mapping or config change moves the affected KPIs to 'Pending certification' and writes an audit entry. Admin has no certify, accept-risk or close controls.</div></div></div>
+      
+        <div class="rule"><div class="id">GR-05</div><div><b style="color:#0F1E3A">Assurance is read-only on business data</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">The Assurance Reviewer may comment, challenge, sample and reopen, but never edits values, actions or evidence.</div></div></div>
+      
+        <div class="rule"><div class="id">GR-06</div><div><b style="color:#0F1E3A">Lens never widens scope</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">Switching lens changes depth and layout only. Entitlement scope is applied before render, search, AI and notification.</div></div></div>
+      
+        <div class="rule"><div class="id">GR-07</div><div><b style="color:#0F1E3A">Core Group cannot alter source facts</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">Core Group coordinates, routes, escalates and governs. Facts change only by source correction and re-certification.</div></div></div>
+      
+        <div class="rule"><div class="id">GR-08</div><div><b style="color:#0F1E3A">Owner visibility is gated by materiality</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">Push to the Owner only at or above [OWNER THRESHOLD — PLACEHOLDER]. Pull below the threshold is labelled 'Below materiality threshold' (D-04).</div></div></div>
+      
+        <div class="rule"><div class="id">GR-09</div><div><b style="color:#0F1E3A">No leakage through restricted states</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">Restricted items show no values, counts, names or titles outside parent scope. Search and Ask never confirm that they exist (D-12).</div></div></div>
+      
+        <div class="rule"><div class="id">GR-10</div><div><b style="color:#0F1E3A">Every write is audited</b><div class="muted" style="font-size:13px;line-height:19px;margin-top:2px">Acceptance, decision, certification, override, escalation, evidence, communication approval, closure and reopen are recorded with role, time, rationale and prior state.</div></div></div>
+      
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/P1-06-Permissions.js"></script>
+<script>DCLite.mount("dc-root", "P1-06-Permissions", {});</script>
+</body>
+</html>
