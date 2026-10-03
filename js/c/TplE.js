@@ -18,17 +18,20 @@ class Component extends DCLogic {
     };
     const den = DEN[p.lens] || DEN["Owner"];
     this._den = den;
-    const NAV = ["Home","Enterprise Health","Cash and Liquidity","Operations and Assets","Capex and Initiatives","Risk, Compliance and EHS","Number Assurance","No-Surprises","Actions and Escalations","AI Insights"];
+    const NAV = ["Home","Enterprise Health","Number Assurance","No-Surprises","Cash and Liquidity","Operations and Assets","Capex and Initiatives","Risk, Compliance and EHS","Actions and Escalations","AI Insights"];
+    const NAVL = {"Enterprise Health":"Enterprise Overview","Number Assurance":"Data Assurance","No-Surprises":"Early Warning","Cash and Liquidity":"Cash & Liquidity","Operations and Assets":"Operational Performance","Capex and Initiatives":"Capital Projects","Risk, Compliance and EHS":"Risk, Compliance & EHS","Actions and Escalations":"Actions & Escalations"};
     const MAP = {
-      "Owner": ["P2-O01-EnterpriseHealth","P2-O01-EnterpriseHealth","P2-O03-CashLiquidity","P2-O09-Operations","P2-O04-Capex","P2-O05-Risk","P2-G08o-OwnerTrust","P2-O02-ChangeReport","P2-O06-Decisions","P2-O07-Brief"],
-      "Core Group": ["P2-G01-Portfolio","P2-G02-EntityComparison","P2-G04-CashWC","P2-G05-OpsBenchmark","P2-G06-CapexPortfolio","P2-G07-Risk","P2-G08-CertGovernance","P2-S12-Signals","P2-G09-Escalations","P2-G10-Briefing"],
-      "Entity": ["P2-E01-EntityHome","P2-E11-Financial","P2-E05-ProductionCash","P2-E02-Plants","P2-E06-Capex","P2-E07-RegEHS","P2-E08-CertWorkbench","P2-S12e-Signals","P2-E09-MyWork","P2-S13-Ask"]
+      "Owner": ["P2-O01-EnterpriseHealth","P2-O01-EnterpriseHealth","P2-G08o-OwnerTrust","P2-O02-ChangeReport","P2-O03-CashLiquidity","P2-O09-Operations","P2-O04-Capex","P2-O05-Risk","P2-O06-Decisions","P2-O07-Brief"],
+      "Core Group": ["P2-G01-Portfolio","P2-G02-EntityComparison","P2-G08-CertGovernance","P2-S12-Signals","P2-G04-CashWC","P2-G05-OpsBenchmark","P2-G06-CapexPortfolio","P2-G07-Risk","P2-G09-Escalations","P2-G10-Briefing"],
+      "Entity": ["P2-E01-EntityHome","P2-E11-Financial","P2-E08-CertWorkbench","P2-S12e-Signals","P2-E05-ProductionCash","P2-E02-Plants","P2-E06-Capex","P2-E07-RegEHS","P2-E09-MyWork","P2-S13-Ask"]
     };
     const m = MAP[p.lens] || MAP["Owner"];
     const LENSH = {"Owner": {ask: "P2-S07-AIExplain.dc.html", src: "P2-S03o-KPIDetail.dc.html"}, "Core Group": {ask: "P2-S07c-AIExplain.dc.html", src: "P2-S03-KPIDetail.dc.html"}, "Entity": {ask: "P2-S13-Ask.dc.html", src: "P2-S03e-KPIDetail.dc.html"}};
     const LH = LENSH[p.lens] || LENSH["Owner"];
     this._kpiHref = LH.src;
-    const nav = NAV.map(function (l, i) { const on = l === p.nav; return {l: l, href: m[i] + ".dc.html", cur: on ? "page" : "false", bg: on ? "rgba(255,255,255,.12)" : "transparent", sh: on ? "inset 3px 0 0 #FFFFFF" : "none", fg: on ? "#FFFFFF" : "rgba(255,255,255,.82)", fw: on ? "600" : "400"}; });
+    const HOMEL = {"Core Group": "Group Portfolio", "Entity": "Entity Overview"};
+    const pnav = p.lens === "Owner" && p.nav === "Home" ? "Enterprise Health" : p.nav;
+    const nav = NAV.map(function (l, i) { const on = l === pnav; return {l: (l === "Home" && HOMEL[p.lens]) || (l === "Enterprise Health" && p.lens === "Entity" && "Financial Health") || NAVL[l] || l, href: m[i] + ".dc.html", cur: on ? "page" : "false", bg: on ? "rgba(255,255,255,.12)" : "transparent", sh: on ? "inset 3px 0 0 #FFFFFF" : "none", fg: on ? "#FFFFFF" : "rgba(255,255,255,.82)", fw: on ? "600" : "400"}; }).filter(function (x, i) { return !(p.lens === "Owner" && NAV[i] === "Home"); });
     const strip = (p.strip || []).map(function (s) { const z = self.bizStyle(s.s, false); return {a: s.a, s: s.s, i: z.i, bg: z.bg, fg: z.fg, bd: z.bd, bs: z.bs}; });
     const cr = p.crumbs || [];
     const crumbs = cr.map(function (c, i) { const h = c.h || ""; const last = i === cr.length - 1; return {l: c.l || c, href: h || "#", isLink: !!h, isText: !h, cur: last ? "page" : "false", sep: last ? "" : "/"}; });
