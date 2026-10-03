@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-11 Entity Financial Health</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+:root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-surface-2:#F8F9FB;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-teal-700:#0B6B73;--ct-teal-100:#E1F1F2;--ct-green-700:#1E6B43;--ct-green-100:#E3F2E9;--ct-amber-700:#8A5300;--ct-amber-500:#C27C0E;--ct-amber-100:#FBF0DB;--ct-red-700:#A4231C;--ct-red-100:#FBE6E4;--ct-purple-700:#5A3E9E;--ct-purple-500:#7E63C7;--ct-purple-100:#EFEAF9;--ct-grey-600:#5F6B7A;--ct-grey-200:#E4E8ED;--ct-r-1:2px;--ct-r-2:4px;--ct-e1:0 2px 8px rgba(14,27,51,.12);--ct-e2:0 8px 24px rgba(14,27,51,.16);--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
+body{margin:0;background:var(--ct-bg)}
+.ct{-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+.ct-lensmenu summary::-webkit-details-marker{display:none}
+.ct-lensmenu summary::marker{content:""}
+.ct-lensmenu[open] summary{background:rgba(255,255,255,.12)}
+.ct a:focus-visible,.ct button:focus-visible,.ct input:focus-visible,.ct textarea:focus-visible{outline:2px solid var(--ct-navy-700)!important;outline-offset:2px;box-shadow:0 0 0 5px rgba(36,64,110,.18)!important}
+.ct-dark a:focus-visible,.ct-dark button:focus-visible,.ct-dark input:focus-visible{outline-color:#FFFFFF!important;box-shadow:0 0 0 5px rgba(255,255,255,.25)!important}
+.ct-hov{transition:border-color var(--ct-dur) var(--ct-ease),background-color var(--ct-dur) var(--ct-ease)}
+a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
+.ct-nav a.ct-navi:hover{background:rgba(255,255,255,.08)!important}
+.ct-btn{transition:background-color var(--ct-dur) var(--ct-ease),border-color var(--ct-dur) var(--ct-ease)}
+.ct-btn:hover{border-color:var(--ct-navy-700)!important}
+.ct-btn.ct-pri:hover{background:var(--ct-navy-700)!important}
+.ct-row{transition:background-color var(--ct-dur) var(--ct-ease)}
+.ct-row:hover{background-color:var(--ct-surface-2)!important}
+.ct-opt{transition:border-color var(--ct-dur) var(--ct-ease),background-color var(--ct-dur) var(--ct-ease)}
+.ct-opt:hover{border-color:var(--ct-navy-700)!important}
+.ct-panel{animation:ctIn 180ms var(--ct-ease)}
+.ct-confirm{animation:ctConfirm 1.4s var(--ct-ease) 1}
+.ct-change{animation:ctChange 1.8s var(--ct-ease) 1}
+.ct-skel{animation:ctPulse 1.6s ease-in-out infinite}
+@keyframes ctIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+@keyframes ctConfirm{0%{background-color:var(--ct-green-100)}100%{background-color:var(--ct-navy-100)}}
+@keyframes ctChange{0%{box-shadow:inset 0 0 0 2px var(--ct-amber-500)}100%{box-shadow:inset 0 0 0 2px transparent}}
+@keyframes ctPulse{0%,100%{opacity:1}50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.ct *{animation:none!important;transition:none!important}}
+@media (max-width:1023px){.ct-body{flex-direction:column!important}.ct-nav{flex:0 0 auto!important;width:auto!important;flex-direction:row!important;overflow-x:auto;padding:6px 8px!important;gap:4px!important}.ct-nav .ct-navi{white-space:nowrap}.ct-nav .ct-legend,.ct-nav .ct-lensl{display:none!important}}
+@media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
+@media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
+</style>
+<script src="js/data/base-data.js?v=20261003115111"></script>
+<script src="js/data/resolve.js?v=20261003115111"></script>
+</head>
+<body>
+<div id="dc-root">
+
+
+
+
+
+<div class="ct" style="font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ct-ink,#121A2B);background:var(--ct-bg,#F5F6F8);font-size:14px;line-height:20px;width:100%;min-height:100%">
+  <header class="ct-hdr ct-dark" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:10px 20px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;min-height:64px;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:10px;padding-right:14px;margin-right:2px;border-right:1px solid rgba(255,255,255,.2)">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.6"><rect x="3" y="3" width="16" height="16" rx="2"></rect><path d="M7 15V10M11 15V7M15 15v-3"></path></svg>
+      <span style="font-weight:600;letter-spacing:.02em;font-size:14px">Control Tower</span>
+    </div>
+    <span title="All names, values, dates and sources on this page are synthetic" style="display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border:1px dashed rgba(255,255,255,.55);border-radius:2px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:#FFFFFF">SYNTHETIC DATA</span>
+    <details class="ct-lensmenu" style="position:relative">
+      <summary aria-label="Switch lens (prototype)" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font-size:13px;cursor:pointer;list-style:none"><span style="color:rgba(255,255,255,.7)">Lens</span><b>Entity</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></summary>
+      <div style="position:absolute;top:46px;left:0;z-index:30;min-width:300px;background:#FFFFFF;color:var(--ct-ink,#121A2B);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;box-shadow:var(--ct-e1,0 2px 8px rgba(14,27,51,.12));padding:6px;display:flex;flex-direction:column;gap:2px">
+        <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding:6px 10px 4px">View this screen as</div>
+        <a href="P2-O01-EnterpriseHealth.html" aria-current="false" class="ct-hov" style="display:flex;flex-direction:column;gap:2px;padding:9px 10px;border-radius:4px;text-decoration:none;color:var(--ct-ink,#121A2B);background:#FFFFFF;border:1px solid transparent"><span style="font-weight:600;font-size:13.5px">Owner <span style="font-weight:400;color:var(--ct-ink-3,#5B6576)">· Owner role</span></span><span style="font-size:12px;color:var(--ct-ink-2,#3B4558)">Closest Owner screen: O-01 Enterprise Health</span></a><a href="P2-G03-Financial.html" aria-current="false" class="ct-hov" style="display:flex;flex-direction:column;gap:2px;padding:9px 10px;border-radius:4px;text-decoration:none;color:var(--ct-ink,#121A2B);background:#FFFFFF;border:1px solid transparent"><span style="font-weight:600;font-size:13.5px">Core Group <span style="font-weight:400;color:var(--ct-ink-3,#5B6576)">· Core Group Executive</span></span><span style="font-size:12px;color:var(--ct-ink-2,#3B4558)">Closest Core Group screen: G-03 Financial</span></a><a href="P2-E11-Financial.html" aria-current="page" class="ct-hov" style="display:flex;flex-direction:column;gap:2px;padding:9px 10px;border-radius:4px;text-decoration:none;color:var(--ct-ink,#121A2B);background:var(--ct-navy-100,#E8EDF6);border:1px solid var(--ct-navy-700,#24406E)"><span style="font-weight:600;font-size:13.5px">Entity <span style="font-weight:400;color:var(--ct-ink-3,#5B6576)">· Entity Executive · Entity A1</span></span><span style="font-size:12px;color:var(--ct-ink-2,#3B4558)">You are here</span></a>
+        <div style="font-size:11.5px;line-height:16px;color:var(--ct-ink-3,#5B6576);padding:8px 10px 4px;border-top:1px solid var(--ct-line,#DCE1E8);margin-top:4px">Prototype control. In the product, a user only sees the lenses their entitlements allow (06, D-21).</div>
+      </div>
+    </details>
+    <button type="button" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><span style="color:rgba(255,255,255,.7)">Scope</span><b>Entity A1</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></button>
+    <button type="button" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><span style="color:rgba(255,255,255,.7)">Period</span><b>P07 MTD (SYN)</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></button>
+    <span class="ct-hide-s" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;color:rgba(255,255,255,.72)">Refreshed 06:25 (SYN)</span>
+    <div class="ct-hide-s" style="flex:1 1 220px;min-width:180px;position:relative;display:flex;align-items:center">
+      <span style="position:absolute;left:10px;color:rgba(255,255,255,.6);display:flex"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12.5a5.5 5.5 0 1 0 0-11a5.5 5.5 0 1 0 0 11M11 11l3.5 3.5"></path></svg></span>
+      <input type="search" aria-label="Search or ask Control Tower" placeholder="Search or ask Control Tower" style="width:100%;box-sizing:border-box;min-height:40px;padding:0 12px 0 34px;border:1px solid rgba(255,255,255,.28);border-radius:4px;background:rgba(255,255,255,.08);color:#FFFFFF;font:inherit;font-size:13.5px">
+    </div>
+    <a href="P2-S13-Ask.html" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l1.6 4.9 4.9 1.6-4.9 1.6L8 14.5l-1.6-4.9L1.5 8l4.9-1.6z"></path></svg>Ask</a>
+    <button type="button" aria-label="Notifications, 3 unread" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V7a4 4 0 0 1 8 0v4l1.5 2h-11zM6.5 14.5h3"></path></svg><b style="background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border-radius:2px;padding:0 6px;font-size:12px">3</b></button>
+    <button type="button" aria-label="Help" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 1 0 0 13M6.2 6.2a1.9 1.9 0 1 1 2.6 1.8c-.5.2-.8.6-.8 1.1v.6M8 11.5v.4"></path></svg></button>
+    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a3 3 0 1 0 0-6a3 3 0 1 0 0 6M2.5 14.5c.7-2.8 2.9-4.5 5.5-4.5s4.8 1.7 5.5 4.5"></path></svg><span class="ct-hide-s">Entity Executive · Entity A1</span></button>
+  </header>
+  <div class="ct-body" style="display:flex;align-items:stretch">
+    <nav class="ct-nav ct-dark" aria-label="Global navigation" style="flex:0 0 232px;box-sizing:border-box;padding:16px 10px;background:var(--ct-navy-900,#0E1B33);border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:2px">
+      <div class="ct-lensl" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.62);padding:0 12px 10px">Entity lens · operational detail</div>
+      
+        <a class="ct-navi" href="P2-E01-EntityHome.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Entity Overview</a>
+      
+        <a class="ct-navi" href="P2-E11-Financial.html" aria-current="page" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:#FFFFFF;background:rgba(255,255,255,.12);box-shadow:inset 3px 0 0 #FFFFFF;font-weight:600;font-size:13.5px;border-radius:4px">Financial Health</a>
+      
+        <a class="ct-navi" href="P2-E08-CertWorkbench.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Data Assurance</a>
+      
+        <a class="ct-navi" href="P2-S12e-Signals.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Early Warning</a>
+      
+        <a class="ct-navi" href="P2-E05-ProductionCash.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Cash &amp; Liquidity</a>
+      
+        <a class="ct-navi" href="P2-E02-Plants.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Operational Performance</a>
+      
+        <a class="ct-navi" href="P2-E06-Capex.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Capital Projects</a>
+      
+        <a class="ct-navi" href="P2-E07-RegEHS.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Risk, Compliance &amp; EHS</a>
+      
+        <a class="ct-navi" href="P2-E09-MyWork.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Actions &amp; Escalations</a>
+      
+        <a class="ct-navi" href="P2-S13-Ask.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">AI Insights</a>
+      
+      <div class="ct-legend" style="margin-top:18px;padding:12px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;line-height:18px;color:rgba(255,255,255,.82)">
+        <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">Two separate statuses</div>
+        <div><b style="color:#FFFFFF">Performance</b> · filled chip</div>
+        <div><b style="color:#FFFFFF">Trust</b> · outlined chip with shield</div>
+        <div style="margin-top:8px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6)">Lines</div>
+        <div>Navy solid = certified actual</div><div>Teal solid = preliminary actual</div><div>Grey thin = plan</div><div>Purple dashed = forecast</div><div>Purple dotted = scenario</div>
+      </div>
+    </nav>
+    <main class="ct-main" style="flex:1 1 560px;min-width:0;padding:22px 28px 56px;box-sizing:border-box">
+     <div class="ct-inner" style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576)">
+        <span>Synthetic data · thresholds placeholder · scenario time D0 06:40 (SYN)</span><span>E-11</span>
+      </div>
+      
+      <div style="display:flex;flex-direction:column;gap:6px">
+        
+        <h1 class="ct-h1" style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.005em">Entity Financial Health</h1>
+        <p class="ct-q" style="margin:0;font-size:15px;line-height:22px;color:var(--ct-ink-2,#3B4558)">Is Entity A1 earning, converting to cash and returning on its capital as planned?</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 14px;font-size:13px">
+        <span><span style="color:var(--ct-ink-3,#5B6576)">Scope</span> <b style="font-weight:600">Entity A1</b></span>
+        <span><span style="color:var(--ct-ink-3,#5B6576)">Period</span> <b style="font-weight:600">P07 MTD (SYN)</b></span>
+        <span><span style="color:var(--ct-ink-3,#5B6576)">Last refresh</span> <b style="font-weight:600">06:25 (SYN)</b></span>
+        <span style="display:inline-flex;align-items:center;gap:6px;color:var(--ct-navy-900,#0E1B33)"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg><span style="color:var(--ct-ink-2,#3B4558)">5 of 6 cards certified · 1 pending · avg confidence 87%</span></span>
+        <a href="P2-S03e-KPIDetail.html" style="margin-left:auto;color:var(--ct-navy-700,#24406E);font-weight:600;display:inline-flex;align-items:center;gap:4px">Sources and lineage <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
+      </div>
+      
+      <details class="ct-status" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:0">
+        <summary style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;min-height:44px;padding:8px 14px;cursor:pointer;list-style:none"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-navy-700,#24406E)">Status overview ▾</span><span style="font-size:13px;color:var(--ct-ink-2,#3B4558)">5 areas · 1 intervention required · 1 deteriorating · 1 improving · 2 on track</span><span style="margin-left:auto;font-size:12px;color:var(--ct-ink-3,#5B6576)">Expand for status by area</span></summary>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:0 14px 14px">
+      
+        <div class="ct-strip" role="list" aria-label="Status by business area" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px">
+          <div role="listitem" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Revenue</span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span></div><div role="listitem" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Profitability</span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span></div><div role="listitem" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Cash conversion</span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Intervention required</span></div><div role="listitem" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Capital productivity</span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Deteriorating</span></div><div role="listitem" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:6px"><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Cost</span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span></div>
+        </div>
+      
+      
+        <div role="list" aria-label="On track, deteriorating, improving, requires intervention" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px">
+          <div role="listitem" style="background:var(--ct-green-100,#E3F2E9);border:1px solid var(--ct-green-100,#E3F2E9);border-left:4px solid var(--ct-green-700,#1E6B43);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;color:var(--ct-green-700,#1E6B43)">On track</span><span style="font-size:22px;line-height:1;font-weight:600;color:var(--ct-green-700,#1E6B43)">2</span></div><span style="font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Revenue · Profitability</span></div><div role="listitem" style="background:var(--ct-amber-100,#FBF0DB);border:1px solid var(--ct-amber-100,#FBF0DB);border-left:4px solid var(--ct-amber-700,#8A5300);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;color:var(--ct-amber-700,#8A5300)">Deteriorating</span><span style="font-size:22px;line-height:1;font-weight:600;color:var(--ct-amber-700,#8A5300)">1</span></div><span style="font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Capital productivity</span></div><div role="listitem" style="background:var(--ct-teal-100,#E1F1F2);border:1px solid var(--ct-teal-100,#E1F1F2);border-left:4px solid var(--ct-teal-700,#0B6B73);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;color:var(--ct-teal-700,#0B6B73)">Improving</span><span style="font-size:22px;line-height:1;font-weight:600;color:var(--ct-teal-700,#0B6B73)">1</span></div><span style="font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Cost</span></div><div role="listitem" style="background:var(--ct-red-100,#FBE6E4);border:1px solid var(--ct-red-100,#FBE6E4);border-left:4px solid var(--ct-red-700,#A4231C);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;color:var(--ct-red-700,#A4231C)">Requires intervention</span><span style="font-size:22px;line-height:1;font-weight:600;color:var(--ct-red-700,#A4231C)">1</span></div><span style="font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Cash conversion</span></div>
+        </div>
+      
+        </div>
+      </details>
+      
+      
+      
+      
+      
+      
+      
+      
+        <div style="display:flex;flex-direction:column;gap:14px">
+          
+            
+
+            <section class="ct-sec " role="region" aria-label="Primary KPI cards (max 6)" style="background:transparent;border:0;border-top:0;border-radius:4px;padding:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              
+
+              
+                <div class="ct-kpis" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+                  
+                    <a class="ct-hov" href="P2-S03e-KPIDetail.html" aria-label="Revenue YTD: 404.6 CU m. Performance On track. Trust Certified. Confidence 94%." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:12px 14px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Revenue YTD</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">FIN-003</span></div>
+                      
+                      
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:22px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">404.6</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">CU m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px">
+                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
+                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg>Certified</span>
+                          <span title="Confidence score · source agreement, completeness and freshness" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);border:1px solid var(--ct-navy-100,#E8EDF6)"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 13h2.5V9H2zM6.75 13h2.5V6h-2.5zM11.5 13H14V3h-2.5z"></path></svg>94% confidence</span>
+                        </div>
+                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
+                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">403.0 · var +0.4%</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">FY 812 vs plan 808</span>
+                        </div>
+                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 32.9 L38.0 28.8 L74.0 24.4 L110.0 20.0 L146.0 15.8 L182.0 11.5 L218.0 7.2" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 32.9 L38.0 28.7 L74.0 24.3 L110.0 19.9 L146.0 15.7 L182.0 11.4 L218.0 7.1 L218.0 38 L2 38 Z" fill="var(--ct-navy-900,#0E1B33)" fill-opacity=".08" stroke="none"></path><path d="M2.0 32.9 L38.0 28.7 L74.0 24.3 L110.0 19.9 L146.0 15.7 L182.0 11.4 L218.0 7.1" fill="none" stroke="var(--ct-navy-900,#0E1B33)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P07</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
+                          
+                        </div>
+                        
+                      
+                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
+                    </a>
+                  
+                    <a class="ct-hov" href="P2-S03e-KPIDetail.html" aria-label="EBITDA YTD: 96.2 CU m. Performance On track. Trust Certified. Confidence 94%." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:12px 14px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">EBITDA YTD</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">FIN-001</span></div>
+                      
+                      
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:22px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">96.2</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">CU m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px">
+                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
+                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg>Certified</span>
+                          <span title="Confidence score · source agreement, completeness and freshness" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);border:1px solid var(--ct-navy-100,#E8EDF6)"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 13h2.5V9H2zM6.75 13h2.5V6h-2.5zM11.5 13H14V3h-2.5z"></path></svg>94% confidence</span>
+                        </div>
+                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
+                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">95.8 · var +0.4%</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">Gap −7.6 P07–P12</span>
+                        </div>
+                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 32.8 L38.0 28.6 L74.0 24.3 L110.0 20.0 L146.0 15.7 L182.0 11.4 L218.0 7.2" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 32.9 L38.0 28.7 L74.0 24.3 L110.0 19.9 L146.0 15.6 L182.0 11.3 L218.0 7.1 L218.0 38 L2 38 Z" fill="var(--ct-navy-900,#0E1B33)" fill-opacity=".08" stroke="none"></path><path d="M2.0 32.9 L38.0 28.7 L74.0 24.3 L110.0 19.9 L146.0 15.6 L182.0 11.3 L218.0 7.1" fill="none" stroke="var(--ct-navy-900,#0E1B33)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P07</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border:1px dashed var(--ct-purple-500,#7E63C7);white-space:nowrap"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5a6.5 6.5 0 1 0 0 13a6.5 6.5 0 1 0 0-13M8 4.5V8l2.5 1.5"></path></svg>Gap −7.6 P07–P12</span>
+                        </div>
+                        
+                      
+                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
+                    </a>
+                  
+                    <a class="ct-hov" href="P2-S03e-KPIDetail.html" aria-label="EBIT YTD: 68.7 CU m. Performance On track. Trust Certified. Confidence 90%." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:12px 14px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">EBIT YTD</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">FIN-002</span></div>
+                      
+                      
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:22px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">68.7</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">CU m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px">
+                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
+                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg>Certified</span>
+                          <span title="Confidence score · source agreement, completeness and freshness" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);border:1px solid var(--ct-navy-100,#E8EDF6)"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 13h2.5V9H2zM6.75 13h2.5V6h-2.5zM11.5 13H14V3h-2.5z"></path></svg>90% confidence</span>
+                        </div>
+                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
+                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">67.5 · var +1.8%</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">FY 139 vs plan 138</span>
+                        </div>
+                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 32.9 L38.0 28.9 L74.0 25.0 L110.0 21.0 L146.0 17.0 L182.0 13.1 L218.0 9.1" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 32.9 L38.0 27.6 L74.0 28.3 L110.0 17.0 L146.0 19.7 L182.0 10.4 L218.0 7.1 L218.0 38 L2 38 Z" fill="var(--ct-navy-900,#0E1B33)" fill-opacity=".08" stroke="none"></path><path d="M2.0 32.9 L38.0 27.6 L74.0 28.3 L110.0 17.0 L146.0 19.7 L182.0 10.4 L218.0 7.1" fill="none" stroke="var(--ct-navy-900,#0E1B33)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P07</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
+                          
+                        </div>
+                        
+                      
+                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
+                    </a>
+                  
+                    <a class="ct-hov" href="P2-S03e-KPIDetail.html" aria-label="Free Cash Flow YTD: 19.8 CU m. Performance Deteriorating. Trust Certified. Confidence 84%." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:12px 14px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Free Cash Flow YTD</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">FIN-004</span></div>
+                      
+                      
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:22px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">19.8</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">CU m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px">
+                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Deteriorating</span>
+                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg>Certified</span>
+                          <span title="Confidence score · source agreement, completeness and freshness" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;background:#FFFFFF;color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-500,#C27C0E)"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 13h2.5V9H2zM6.75 13h2.5V6h-2.5zM11.5 13H14V3h-2.5z"></path></svg>84% confidence</span>
+                        </div>
+                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
+                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">24.5 · var −19.2%</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▼ 3 periods</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">FY 38 vs plan 47</span>
+                        </div>
+                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 32.8 L38.0 28.5 L74.0 24.2 L110.0 19.9 L146.0 15.7 L182.0 11.4 L218.0 7.1" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 32.9 L38.0 28.4 L74.0 24.3 L110.0 20.4 L146.0 17.5 L182.0 14.8 L218.0 12.8 L218.0 38 L2 38 Z" fill="var(--ct-amber-500,#C27C0E)" fill-opacity=".08" stroke="none"></path><path d="M2.0 32.9 L38.0 28.4 L74.0 24.3 L110.0 20.4 L146.0 17.5 L182.0 14.8 L218.0 12.8" fill="none" stroke="var(--ct-amber-500,#C27C0E)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P07</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
+                          
+                        </div>
+                        
+                      
+                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
+                    </a>
+                  
+                    <a class="ct-hov" href="P2-S03e-KPIDetail.html" aria-label="ROCE · annualised: 11.4 %. Performance Deteriorating. Trust Certified. Confidence 82%." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:12px 14px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">ROCE · annualised</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">FIN-005</span></div>
+                      
+                      
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:22px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">11.4</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">%</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px">
+                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Deteriorating</span>
+                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg>Certified</span>
+                          <span title="Confidence score · source agreement, completeness and freshness" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;background:#FFFFFF;color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-500,#C27C0E)"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 13h2.5V9H2zM6.75 13h2.5V6h-2.5zM11.5 13H14V3h-2.5z"></path></svg>82% confidence</span>
+                        </div>
+                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
+                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">13.0% · var −1.6 pt</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▼ 3 periods</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">FY 11.0%</span>
+                        </div>
+                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 14.1 L38.0 13.0 L74.0 11.8 L110.0 10.6 L146.0 9.4 L182.0 8.3 L218.0 7.1" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 14.1 L38.0 16.9 L74.0 21.4 L110.0 22.5 L146.0 27.6 L182.0 29.4 L218.0 32.9 L218.0 38 L2 38 Z" fill="var(--ct-amber-500,#C27C0E)" fill-opacity=".08" stroke="none"></path><path d="M2.0 14.1 L38.0 16.9 L74.0 21.4 L110.0 22.5 L146.0 27.6 L182.0 29.4 L218.0 32.9" fill="none" stroke="var(--ct-amber-500,#C27C0E)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P07</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
+                          
+                        </div>
+                        
+                      
+                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
+                    </a>
+                  
+                    <a class="ct-hov" href="P2-S03e-KPIDetail.html" aria-label="Conversion cost per tonne: CU 425 /t . Performance Deteriorating. Trust Certified. Confidence 94%." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:12px 14px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Conversion cost per tonne</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">CST-001</span></div>
+                      
+                      
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:22px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">CU 425 /t</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)"></span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px">
+                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Deteriorating</span>
+                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg>Certified</span>
+                          <span title="Confidence score · source agreement, completeness and freshness" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);border:1px solid var(--ct-navy-100,#E8EDF6)"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 13h2.5V9H2zM6.75 13h2.5V6h-2.5zM11.5 13H14V3h-2.5z"></path></svg>94% confidence</span>
+                        </div>
+                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
+                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">CU 410 /t · var −0.8%</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲</span>
+                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">FY 47.8</span>
+                        </div>
+                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 22.6 L38.0 22.6 L74.0 22.6 L110.0 22.6 L146.0 22.6 L182.0 22.6 L218.0 22.6" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 7.1 L38.0 12.3 L74.0 20.0 L110.0 22.6 L146.0 25.2 L182.0 30.3 L218.0 32.9 L218.0 38 L2 38 Z" fill="var(--ct-amber-500,#C27C0E)" fill-opacity=".08" stroke="none"></path><path d="M2.0 7.1 L38.0 12.3 L74.0 20.0 L110.0 22.6 L146.0 25.2 L182.0 30.3 L218.0 32.9" fill="none" stroke="var(--ct-amber-500,#C27C0E)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P07</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-teal-100,#E1F1F2);color:var(--ct-teal-700,#0B6B73);border:1px solid var(--ct-teal-700,#0B6B73);white-space:nowrap">PRELIM</span>
+                          
+                        </div>
+                        
+                      
+                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
+                    </a>
+                  
+                </div>
+                
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+            </section>
+          
+            
+
+            <section class="ct-sec " role="region" aria-label="EBITDA → FCF → ROCE diagnostic · Entity A1 · indexed P01 = 100" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-navy-700,#24406E)">Focus of this page</span>
+                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">EBITDA → FCF → ROCE diagnostic · Entity A1 · indexed P01 = 100</h2>
+                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>Is this entity's profit converting to cash and capital returns?</p>
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
+              </div>
+              
+              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">Certified to P06 · P07 preliminary.</p>
+
+              
+
+              
+
+              
+
+              
+                <svg viewBox="0 0 680 210" style="width:100%;height:auto;max-height:300px;display:block" role="img" aria-label="EBITDA → FCF → ROCE diagnostic · Entity A1 · indexed P01 = 100. Is this entity's profit converting to cash and capital returns? EBITDA ends at 117, FCF ends at 88, ROCE ends at 91.">
+                  <path d="M44 20 L590 20 M44 59 L590 59 M44 98 L590 98 M44 137 L590 137 M44 176 L590 176" stroke="#DCE1E8" stroke-width="1" fill="none"></path>
+                  <text x="38" y="24" font-size="10" fill="#5B6576" text-anchor="end" font-family="IBM Plex Mono, monospace">119.3</text>
+                  <text x="38" y="180" font-size="10" fill="#5B6576" text-anchor="end" font-family="IBM Plex Mono, monospace">85.7</text>
+                  <line x1="44" y1="109.6" x2="590" y2="109.6" stroke="#3B4558" stroke-width="1" stroke-dasharray="1 3"></line>
+                  <text x="588" y="122.6" font-size="10" fill="#3B4558" text-anchor="end">P01 baseline = 100</text>
+                  <path d="M44.0 109.6 L135.0 95.7 L226.0 81.8 L317.0 67.9 L408.0 53.9 L499.0 44.7 L590.0 30.8" fill="none" stroke="#0E1B33" stroke-width="2.5" stroke-dasharray="none" stroke-linejoin="round"></path><circle cx="590.0" cy="30.8" r="3.5" fill="#0E1B33"></circle><text x="598.0" y="34.8" font-size="10.5" font-weight="600" fill="#0E1B33">EBITDA 117</text><path d="M44.0 109.6 L135.0 114.2 L226.0 123.5 L317.0 132.8 L408.0 146.7 L499.0 156.0 L590.0 165.2" fill="none" stroke="#0B6B73" stroke-width="2.5" stroke-dasharray="none" stroke-linejoin="round"></path><circle cx="590.0" cy="165.2" r="3.5" fill="#0B6B73"></circle><text x="598.0" y="169.2" font-size="10.5" font-weight="600" fill="#0B6B73">FCF 88</text><path d="M44.0 109.6 L135.0 111.9 L226.0 118.9 L317.0 125.8 L408.0 132.8 L499.0 142.1 L590.0 151.3" fill="none" stroke="#7E63C7" stroke-width="2.5" stroke-dasharray="6 4" stroke-linejoin="round"></path><circle cx="590.0" cy="151.3" r="3.5" fill="#7E63C7"></circle><text x="598.0" y="155.3" font-size="10.5" font-weight="600" fill="#7E63C7">ROCE 91</text>
+                  <text x="44.0" y="198" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P01</text><text x="135.0" y="198" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P02</text><text x="226.0" y="198" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P03</text><text x="317.0" y="198" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P04</text><text x="408.0" y="198" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P05</text><text x="499.0" y="198" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P06</text><text x="590.0" y="198" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P07</text>
+                </svg>
+                <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--ct-ink-2,#3B4558);padding-top:2px">
+                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0E1B33" stroke-width="2.5" stroke-dasharray="none"></line></svg>EBITDA · CERT</span><span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0B6B73" stroke-width="2.5" stroke-dasharray="none"></line></svg>FCF · CERT</span><span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#7E63C7" stroke-width="2.5" stroke-dasharray="6 4"></line></svg>ROCE · CERT</span>
+                </div>
+                <div style="background:var(--ct-surface-2,#F8F9FB);border:1px dashed var(--ct-ink-3,#5B6576);border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:6px"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;align-self:flex-start;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576)">AI INTERPRETATION · not a certified number</span><p style="margin:0;font-size:13px;line-height:20px;color:var(--ct-ink,#121A2B)">Profit is growing but cash and returns are falling: EBITDA +17% while FCF −12% and ROCE −9% since P01. This is the 'high EBITDA, poor FCF' pattern — cash is stuck in RM-1 safety stock and slower collections (DSO 52 d vs 45 d plan), and the Line 3 debottleneck has added capital employed before its benefit lands (P10). Levers: release CU 6–8 m of inventory, recover DSO.</p></div>
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+            </section>
+          
+            
+
+            <section class="ct-sec " role="region" aria-label="EBITDA bridge · YTD plan to actual · CU m" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
+                  
+                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">EBITDA bridge · YTD plan to actual · CU m</h2>
+                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>What moved EBITDA versus plan?</p>
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
+              </div>
+              
+              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">Variance analysis by driver (SYN). Certified to P06.</p>
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+                <div style="display:flex;gap:10px;align-items:flex-end;overflow-x:auto;padding-bottom:4px">
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-navy-900,#0E1B33);font-weight:600">95.8</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:0.0%;height:90.3%;background:var(--ct-navy-900,#0E1B33)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Plan</div>
+                    </div>
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-amber-700,#8A5300);font-weight:600">−3.1</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:72.6%;height:17.7%;background:var(--ct-amber-500,#C27C0E)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Volume</div>
+                    </div>
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-teal-700,#0B6B73);font-weight:600">+4.2</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:72.6%;height:24.0%;background:var(--ct-teal-700,#0B6B73)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Price</div>
+                    </div>
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-teal-700,#0B6B73);font-weight:600">+0.6</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:96.6%;height:3.4%;background:var(--ct-teal-700,#0B6B73)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Mix</div>
+                    </div>
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-amber-700,#8A5300);font-weight:600">−1.9</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:89.1%;height:10.9%;background:var(--ct-amber-500,#C27C0E)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Variable cost</div>
+                    </div>
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-teal-700,#0B6B73);font-weight:600">+0.9</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:89.1%;height:5.1%;background:var(--ct-teal-700,#0B6B73)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Fixed cost</div>
+                    </div>
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-amber-700,#8A5300);font-weight:600">−0.3</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:92.6%;height:1.7%;background:var(--ct-amber-500,#C27C0E)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Productivity</div>
+                    </div>
+                  
+                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-navy-900,#0E1B33);font-weight:600">96.2</div>
+                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:0.0%;height:92.6%;background:var(--ct-navy-900,#0E1B33)"></div></div>
+                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Actual</div>
+                    </div>
+                  
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ct-ink-2,#3B4558)"><span><span style="display:inline-block;width:10px;height:10px;background:var(--ct-navy-900,#0E1B33);vertical-align:-1px"></span> Total</span><span><span style="display:inline-block;width:10px;height:10px;background:var(--ct-teal-700,#0B6B73);vertical-align:-1px"></span> Increase</span><span><span style="display:inline-block;width:10px;height:10px;background:var(--ct-amber-500,#C27C0E);vertical-align:-1px"></span> Decrease</span><span>Axis starts at 80</span></div>
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+            </section>
+          
+            
+
+            <section class="ct-sec " role="region" aria-label="Revenue per period · actual vs plan vs forecast · CU m" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
+                  
+                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Revenue per period · actual vs plan vs forecast · CU m</h2>
+                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>Will revenue hold for the rest of the year?</p>
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
+              </div>
+              
+              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">P01–P06 certified · P07 preliminary · forecast to P12.</p>
+
+              
+
+              
+                <svg viewBox="0 0 660 236" style="width:100%;height:auto;max-height:340px;display:block" role="img" aria-label="Revenue per period · actual vs plan vs forecast · CU m. Will revenue hold for the rest of the year? Certified actuals to P06, preliminary after, forecast dashed.">
+                  <path d="M44 20 L600 20 M44 64 L600 64 M44 108 L600 108 M44 152 L600 152 M44 196 L600 196" stroke="#DCE1E8" stroke-width="1" fill="none"></path>
+                  <text x="38" y="24" font-size="10" fill="#5B6576" text-anchor="end" font-family="IBM Plex Mono, monospace">71.5</text>
+                  <text x="38" y="199" font-size="10" fill="#5B6576" text-anchor="end" font-family="IBM Plex Mono, monospace">49.5</text>
+                  <path d="M347.3 108.0 L397.8 73.7 L448.4 59.4 L498.9 49.1 L549.5 38.7 L600.0 40.4 L600.0 103.7 L549.5 89.4 L498.9 87.1 L448.4 84.7 L397.8 86.4 L347.3 108.0 Z" fill="#EFEAF9" stroke="none"></path>
+                  <line x1="347.3" y1="16" x2="347.3" y2="200" stroke="#B4BDCA" stroke-width="1" stroke-dasharray="2 3"></line>
+                  <text x="347.3" y="11" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P07 · today</text>
+                  <line x1="44" y1="-20" x2="600" y2="-20" stroke="#3B4558" stroke-width="1" stroke-dasharray="1 3"></line>
+                  <text x="48" y="-20" font-size="10" fill="#3B4558"></text>
+                  <path d="M44.0 183.9 L94.5 135.9 L145.1 112.0 L195.6 96.0 L246.2 128.0 L296.7 120.0 L347.3 120.0 L397.8 48.1 L448.4 32.1 L498.9 32.1 L549.5 40.1 L600.0 48.1" fill="none" stroke="#5F6B7A" stroke-width="1.5"></path>
+                  <path d="M0 0" fill="none" stroke="#7E63C7" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round"></path>
+                  <path d="M0 0" fill="none" stroke="#5A3E9E" stroke-width="2" stroke-dasharray="2 4" stroke-linecap="round"></path>
+                  <path d="M0 0" fill="none" stroke="#5A3E9E" stroke-width="2.5" stroke-dasharray="1 3" stroke-linecap="round"></path>
+                  <path d="M347.3 108.0 L397.8 80.1 L448.4 72.1 L498.9 68.1 L549.5 64.1 L600.0 72.1" fill="none" stroke="#7E63C7" stroke-width="2" stroke-dasharray="7 4"></path>
+                  <path d="M44.0 175.9 L94.5 128.0 L145.1 104.0 L195.6 104.0 L246.2 128.0 L296.7 112.0" fill="none" stroke="#0E1B33" stroke-width="2.5" stroke-linejoin="round"></path>
+                  <path d="M296.7 112.0 L347.3 108.0" fill="none" stroke="#0B6B73" stroke-width="2.5" stroke-linejoin="round"></path>
+                  <path d="M344.3 108.0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" fill="#FFFFFF" stroke="#0B6B73" stroke-width="1.5"></path>
+                  <path d="M293.2 112.0a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0" fill="#0E1B33" stroke="none"></path>
+                  <text x="606.0" y="52.1" font-size="10.5" fill="#5F6B7A">Plan</text>
+                  <text x="343.3" y="99.0" font-size="10.5" font-weight="600" fill="#0B6B73">Actual (prelim)</text>
+                  <text x="606.0" y="76.1" font-size="10.5" font-weight="600" fill="#5A3E9E">Forecast</text>
+                  <text x="-200" y="-200" font-size="10" fill="#5A3E9E"></text>
+                  <text x="-200" y="-200" font-size="10" fill="#5A3E9E"></text>
+                  <text x="-200" y="-200" font-size="10" font-weight="600" fill="#5A3E9E"></text>
+                  <text x="44.0" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P01</text>
+                  <text x="94.5" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P02</text>
+                  <text x="145.1" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P03</text>
+                  <text x="195.6" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P04</text>
+                  <text x="246.2" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P05</text>
+                  <text x="296.7" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P06</text>
+                  <text x="347.3" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P07</text>
+                  <text x="397.8" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P08</text>
+                  <text x="448.4" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P09</text>
+                  <text x="498.9" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P10</text>
+                  <text x="549.5" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P11</text>
+                  <text x="600.0" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">P12</text>
+                  <text x="-100" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace"></text>
+                </svg>
+                <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--ct-ink-2,#3B4558);padding-top:2px">
+                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0E1B33" stroke-width="2.5"></line></svg>Actual · certified</span>
+                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0B6B73" stroke-width="2.5"></line><circle cx="13" cy="5" r="3" fill="#FFFFFF" stroke="#0B6B73" stroke-width="1.5"></circle></svg>Actual · preliminary</span>
+                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#5F6B7A" stroke-width="1.5"></line></svg>Plan</span>
+                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><rect x="0" y="1" width="26" height="8" fill="#EFEAF9"></rect><line x1="0" y1="5" x2="26" y2="5" stroke="#7E63C7" stroke-width="2" stroke-dasharray="7 4"></line></svg>Forecast and range</span>
+                  
+                  
+                </div>
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+            </section>
+          
+            
+
+            <section class="ct-sec " role="region" aria-label="Predictions for this entity" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
+                  
+                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Predictions for this entity</h2>
+                  
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
+              </div>
+              
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px">
+                  
+                    <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
+                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">PRD-012 Probability of EBITDA plan miss · FY</div><div style="font-weight:600;font-size:15px;line-height:1.3">58%</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">PREDICTION · confidence Medium</div>
+                    </div>
+                  
+                    <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
+                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">PRD-008 Projected FCF gap · FY</div><div style="font-weight:600;font-size:15px;line-height:1.3">−CU 9 m</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">FCST</div>
+                    </div>
+                  
+                    <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
+                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">PRD-009 ROCE at P12</div><div style="font-weight:600;font-size:15px;line-height:1.3">11.0%</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">FCST · plan 13.0%</div>
+                    </div>
+                  
+                </div>
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+            </section>
+          
+            
+
+            <section class="ct-sec " role="region" aria-label="Sub-theme drill-downs" style="background:transparent;border:0;border-top:0;border-radius:4px;padding:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+                
+                
+                  <div role="tablist" aria-label="Sub-theme drill-downs" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--ct-line,#DCE1E8)">
+                    <button type="button" role="tab" aria-label="Productivity detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">Productivity</button><button type="button" role="tab" aria-label="By plant detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">By plant</button>
+                  </div>
+                  
+                
+              
+
+              
+
+              
+            </section>
+          
+            
+
+            <section class="ct-sec ct-panel" role="tabpanel" aria-label="Cost and productivity" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
+                  
+                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Cost and productivity</h2>
+                  
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
+              </div>
+              
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="Cost and productivity" style="min-width:760px">
+                  <div role="row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:6px 8px">KPI</div><div role="columnheader" style="padding:6px 8px">Measure</div><div role="columnheader" style="padding:6px 8px">Value</div><div role="columnheader" style="padding:6px 8px">Plan · variance</div><div role="columnheader" style="padding:6px 8px">Status</div><div role="columnheader" style="padding:6px 8px">Trust</div></div>
+                  
+                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13px">
+                      <div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CST-001</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Conversion cost per tonne</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CU 425 /t</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CU 410 /t</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">▼ Deteriorating</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-grey-600,#5F6B7A);font-weight:400">◇ Pending certification</div>
+                    </div>
+                  
+                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13px">
+                      <div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CST-002</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Variable cost per tonne</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CU 221 /t</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CU 214 /t</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">▼ Deteriorating</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-navy-900,#0E1B33);font-weight:600">◆ Certified</div>
+                    </div>
+                  
+                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13px">
+                      <div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CST-005</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Fixed cost YTD</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CU 61 m</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">62 · −1.6%</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-green-700,#1E6B43);font-weight:400">✓ On track</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-navy-900,#0E1B33);font-weight:600">◆ Certified</div>
+                    </div>
+                  
+                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13px">
+                      <div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">PRD-010</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Revenue per FTE</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">CU 0.41 m</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">0.40 · +2.5%</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-green-700,#1E6B43);font-weight:400">▲ Improving</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-navy-900,#0E1B33);font-weight:600">◆ Certified</div>
+                    </div>
+                  
+                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13px">
+                      <div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">PRD-011</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Tonnes per FTE</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">236 t</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">240 · −1.7%</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">▼ Deteriorating</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-navy-900,#0E1B33);font-weight:600">◆ Certified</div>
+                    </div>
+                  
+                  
+                </div></div>
+                
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+            </section>
+          
+            
+
+            <section class="ct-sec " role="region" aria-label="Source, certification, lineage, case and evidence" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
+              
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
+                  
+                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Source, certification, lineage, case and evidence</h2>
+                  
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
+              </div>
+              
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+
+              
+                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+                  
+                    <a href="P2-S03e-KPIDetail.html" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);text-decoration:none;font-weight:600;font-size:13.5px">Sources ↗</a>
+                    
+                  
+                    <a href="P2-E05-ProductionCash.html" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);text-decoration:none;font-weight:600;font-size:13.5px">Cash and Liquidity ↗</a>
+                    
+                  
+                    <a href="P2-E08-CertWorkbench.html" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);text-decoration:none;font-weight:600;font-size:13.5px">Certification workbench ↗</a>
+                    
+                  
+                </div>
+                
+              
+
+              
+            </section>
+          
+        </div>
+      
+     </div>
+    </main>
+  </div>
+</div>
+
+
+</div>
+<script src="js/dc-lite.js"></script>
+<script src="js/c/TplA.js?v=20261003115111"></script>
+<script src="js/c/P2-E11-Financial.js?v=20261003115111"></script>
+<script>DCLite.mount("dc-root", "P2-E11-Financial", {});</script>
+</body>
+</html>
