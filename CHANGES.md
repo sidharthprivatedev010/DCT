@@ -51,9 +51,29 @@ Everything changed against the original prototype (`e104438 first commit`), grou
 
 **Tried and reverted** [dd58d90 → 2fd5544]: showing the four-way summary only on home pages and giving O-03/O-04/O-05 topic-specific strips.
 
-## 6. Docs
+## 6. Guided tours [7c7b4a3, d34920f, 4975030]
+
+- Tours are hidden by default. Start one from the new **Tour ▾** header menu (Primary business journey, Data Assurance journey) or from the "Start guided tour" buttons on P2-00. Tour mode is set by `#tour` in the URL and remembered per browser tab.
+- **Close tour ✕** is the only way out: it ends tour mode and keeps you on the current page at the same scroll position. The old "Exit tour" link was removed.
+- Content refresh:
+  - "Number Assurance journey" is renamed **Data Assurance journey**.
+  - Step 1 points to the production card in the new Operational section.
+  - Step 5 now opens **O-09 Operations** instead of S-10, with new step text.
+
+## 7. Currency [b90c8c4]
+
+- The placeholder currency "CU" is replaced by **₹** (Indian rupees) everywhere: page data, base-data, the screen reference doc and the scenario glossary (₹ m = Indian rupees, millions). Values and the "m" scale are unchanged; converting to ₹ Cr was considered and not done.
+
+## 8. Docs and tooling [6aeff56]
 
 - `docs/Control Tower Screen Reference.docx`: per-screen table (Content | What it shows | Why it matters), updated for the new sidebar order and names, the themed home sections and the collapsed Status overview.
+- `CLAUDE.md`: how pages render, the data layer and the conventions.
+- `tools/regen.js`: rebuilds every page's static HTML and bumps the `?v=` cache tag. Run it after any change in `js/`.
+
+## Repo
+
+- Backup of the original main: branch `backup/main-2026-10-03`.
+- Pull request to main: #1, open.
 
 ## Parked
 
