@@ -61,7 +61,7 @@ var DCTData = {
   "CPX-001": {
    "Group": {
     "v": "850",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "—",
     "var": "—",
     "tr": "flat",
@@ -73,7 +73,7 @@ var DCTData = {
    },
    "A1": {
     "v": "112",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "112",
     "var": "0",
     "tr": "flat",
@@ -109,7 +109,7 @@ var DCTData = {
   "CPX-002": {
    "A1": {
     "v": "118",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "120",
     "var": "−1.7%",
     "tr": "flat",
@@ -121,7 +121,7 @@ var DCTData = {
    },
    "Group": {
     "v": "610",
-    "u": "CU m · 72%",
+    "u": "₹ m · 72%",
     "plan": "600",
     "var": "+1.7%",
     "tr": "▲",
@@ -135,7 +135,7 @@ var DCTData = {
   "CPX-003": {
    "A1": {
     "v": "74",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "78",
     "var": "−5%",
     "tr": "flat",
@@ -147,7 +147,7 @@ var DCTData = {
    },
    "Group": {
     "v": "402",
-    "u": "CU m · 47%",
+    "u": "₹ m · 47%",
     "plan": "395",
     "var": "+1.8%",
     "tr": "▲",
@@ -187,7 +187,7 @@ var DCTData = {
   "CSH-001": {
    "Group": {
     "v": "384",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "402",
     "var": "−4.5%",
     "tr": "▼ 6 days",
@@ -198,7 +198,7 @@ var DCTData = {
     "own": "Treasury (role)"
    },
    "A1": {
-    "val": "CU 41 m",
+    "val": "₹41 m",
     "plan": "48",
     "bs": "Deteriorating",
     "ts": "Pending certification"
@@ -206,13 +206,13 @@ var DCTData = {
   },
   "CSH-002": {
    "Group": {
-    "val": "CU 21 m",
-    "plan": "CU 25 m",
+    "val": "₹21 m",
+    "plan": "₹25 m",
     "bs": "Deteriorating",
     "ts": "Certified"
    },
    "A1": {
-    "val": "CU 4.2 m",
+    "val": "₹4.2 m",
     "plan": "6.0",
     "bs": "Deteriorating",
     "ts": "Certified"
@@ -221,7 +221,7 @@ var DCTData = {
   "CSH-003": {
    "A1": {
     "v": "4.1",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "4.4",
     "var": "−6.8%",
     "tr": "▼ 3 days",
@@ -232,8 +232,8 @@ var DCTData = {
     "own": "Finance (role)"
    },
    "Group": {
-    "val": "CU 18.6 m",
-    "plan": "CU 19.2 m",
+    "val": "₹18.6 m",
+    "plan": "₹19.2 m",
     "bs": "Deteriorating",
     "ts": "Pending"
    }
@@ -261,11 +261,11 @@ var DCTData = {
   },
   "CSH-006": {
    "A1": {
-    "val": "CU 26 m at risk (FCST)",
+    "val": "₹26 m at risk (FCST)",
     "bs": "Forecast breach",
     "ts": "Pending certification",
     "v": "26",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "[UPSTREAM LIMIT — PH]",
     "var": "—",
     "tr": "▲ new D0",
@@ -275,7 +275,7 @@ var DCTData = {
    },
    "Group": {
     "v": "26",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "[UPSTREAM LIMIT — PH]",
     "var": "—",
     "tr": "▲ new D0",
@@ -288,18 +288,18 @@ var DCTData = {
   },
   "CST-001": {
    "A1": {
-    "val": "CU 425 /t",
-    "plan": "CU 410 /t",
+    "val": "₹425 /t",
+    "plan": "₹410 /t",
     "bs": "Deteriorating",
     "ts": ""
    },
    "Group": {
-    "val": "CU 412 /t",
+    "val": "₹412 /t",
     "plan": "408",
     "bs": "Deteriorating",
     "ts": "Certified",
     "v": "412",
-    "u": "CU /t",
+    "u": "₹ /t",
     "var": "+1.0%",
     "tr": "▼",
     "fc": "415",
@@ -309,27 +309,27 @@ var DCTData = {
   },
   "CST-002": {
    "A1": {
-    "val": "CU 221 /t",
-    "plan": "CU 214 /t",
+    "val": "₹221 /t",
+    "plan": "₹214 /t",
     "bs": "Deteriorating",
     "ts": ""
    },
    "Group": {
-    "val": "CU 214 /t",
-    "plan": "CU 211 /t",
+    "val": "₹214 /t",
+    "plan": "₹211 /t",
     "bs": "Deteriorating",
     "ts": "Certified"
    }
   },
   "CST-003": {
    "A1": {
-    "val": "CU 38 /t",
-    "plan": "CU 37 /t",
+    "val": "₹38 /t",
+    "plan": "₹37 /t",
     "bs": "On track",
     "ts": ""
    },
    "Group": {
-    "val": "9.8 CU/t",
+    "val": "9.8 ₹/t",
     "plan": "9.4",
     "var": "+4.3%",
     "bs": "Deteriorating",
@@ -338,7 +338,7 @@ var DCTData = {
   },
   "CST-004": {
    "Group": {
-    "val": "6.1 CU/t",
+    "val": "6.1 ₹/t",
     "plan": "6.3",
     "var": "−3.2%",
     "bs": "Improving",
@@ -347,7 +347,7 @@ var DCTData = {
   },
   "CST-005": {
    "A1": {
-    "val": "CU 61 m",
+    "val": "₹61 m",
     "plan": "62",
     "var": "−1.6%",
     "bs": "On track",
@@ -664,7 +664,7 @@ var DCTData = {
   "FIN-001": {
    "A1": {
     "v": "96.2",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "95.8",
     "var": "+0.4%",
     "tr": "▲",
@@ -677,7 +677,7 @@ var DCTData = {
    },
    "Group": {
     "v": "361.3",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "361.0",
     "var": "+0.1%",
     "tr": "▲ 3 periods",
@@ -691,25 +691,25 @@ var DCTData = {
   },
   "FIN-002": {
    "Group": {
-    "val": "238.4 CU m",
+    "val": "238.4 ₹ m",
     "plan": "236.0",
     "bs": "On track",
     "ts": "Certified",
     "var": "+1.0%",
     "v": "238.4",
-    "u": "CU m",
+    "u": "₹ m",
     "tr": "▲",
     "fc": "FY 482 vs 490",
     "prov": "CERT P06",
     "own": "Finance (role)"
    },
    "A1": {
-    "val": "CU 68.7 m",
+    "val": "₹68.7 m",
     "plan": "67.5",
     "var": "+1.8%",
     "ts": "Certified",
     "v": "68.7",
-    "u": "CU m",
+    "u": "₹ m",
     "tr": "▲",
     "fc": "FY 139 vs plan 138",
     "bs": "On track",
@@ -742,12 +742,12 @@ var DCTData = {
   },
   "FIN-003": {
    "Group": {
-    "val": "2,410 CU m",
+    "val": "2,410 ₹ m",
     "plan": "2,395",
     "var": "+0.6%",
     "ts": "Certified",
     "v": "2,410",
-    "u": "CU m",
+    "u": "₹ m",
     "tr": "▲",
     "fc": "FY 4,860 vs 4,880",
     "bs": "On track",
@@ -755,12 +755,12 @@ var DCTData = {
     "own": "Finance (role)"
    },
    "A1": {
-    "val": "CU 404.6 m",
+    "val": "₹404.6 m",
     "plan": "403.0",
     "var": "+0.4%",
     "ts": "Certified",
     "v": "404.6",
-    "u": "CU m",
+    "u": "₹ m",
     "tr": "▲",
     "fc": "FY 812 vs plan 808",
     "bs": "On track",
@@ -793,7 +793,7 @@ var DCTData = {
   "FIN-004": {
    "Group": {
     "v": "96.4",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "92.0",
     "var": "+4.8%",
     "tr": "▲ improving",
@@ -804,12 +804,12 @@ var DCTData = {
     "own": "Finance (role)"
    },
    "A1": {
-    "val": "CU 19.8 m",
+    "val": "₹19.8 m",
     "plan": "24.5",
     "var": "−19.2%",
     "ts": "Certified",
     "v": "19.8",
-    "u": "CU m",
+    "u": "₹ m",
     "tr": "▼ 3 periods",
     "fc": "FY 38 vs plan 47",
     "bs": "Deteriorating",
@@ -893,12 +893,12 @@ var DCTData = {
   },
   "FIN-006": {
    "Group": {
-    "val": "1,140 CU m",
+    "val": "1,140 ₹ m",
     "plan": "1,150",
     "bs": "On track",
     "ts": "Certified",
     "v": "1,140",
-    "u": "CU m",
+    "u": "₹ m",
     "var": "−0.9%",
     "tr": "flat",
     "fc": "P12 1,128",
@@ -1090,13 +1090,13 @@ var DCTData = {
   },
   "LIQ-003": {
    "Group": {
-    "val": "CU 120 m",
+    "val": "₹120 m",
     "bs": "On track",
     "ts": "Certified",
     "plan": "[PH]"
    },
    "A1": {
-    "val": "CU 18 m",
+    "val": "₹18 m",
     "plan": "—",
     "bs": "On track",
     "ts": "Certified"
@@ -1104,7 +1104,7 @@ var DCTData = {
   },
   "LIQ-004": {
    "Group": {
-    "val": "CU 310 m",
+    "val": "₹310 m",
     "bs": "On track",
     "ts": "Certified",
     "plan": "[PH]"
@@ -1408,9 +1408,9 @@ var DCTData = {
   },
   "PRD-003": {
    "Group": {
-    "val": "−CU 9.2 m",
+    "val": "−₹9.2 m",
     "v": "−9.2",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "0",
     "var": "—",
     "tr": "new",
@@ -1422,7 +1422,7 @@ var DCTData = {
    },
    "A1": {
     "v": "−7.6",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "0",
     "var": "—",
     "tr": "new",
@@ -1502,7 +1502,7 @@ var DCTData = {
   },
   "PRD-008": {
    "A1": {
-    "val": "−CU 9 m"
+    "val": "−₹9 m"
    }
   },
   "PRD-009": {
@@ -1512,7 +1512,7 @@ var DCTData = {
   },
   "PRD-010": {
    "A1": {
-    "val": "CU 0.41 m",
+    "val": "₹0.41 m",
     "plan": "0.40",
     "var": "+2.5%",
     "bs": "Improving",
@@ -2042,7 +2042,7 @@ var DCTData = {
   "SIG-011": {
    "A1": {
     "v": "2",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "—",
     "var": "—",
     "tr": "flat",
@@ -2053,9 +2053,9 @@ var DCTData = {
     "own": "Projects (role)"
    },
    "Group": {
-    "val": "CU 34 m",
+    "val": "₹34 m",
     "v": "34",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "—",
     "var": "—",
     "tr": "▲ new P07",
@@ -2305,13 +2305,13 @@ var DCTData = {
   },
   "TRS-001": {
    "Group": {
-    "val": "CU 64 m",
+    "val": "₹64 m",
     "bs": "On track",
     "ts": "Pending certification",
     "plan": "≤ [PH]"
    },
    "A1": {
-    "val": "CU 11 m",
+    "val": "₹11 m",
     "plan": "≤ 15",
     "bs": "On track",
     "ts": "Pending certification"
@@ -2356,7 +2356,7 @@ var DCTData = {
   },
   "TRS-005": {
    "Group": {
-    "val": "CU 3.2 m EBITDA",
+    "val": "₹3.2 m EBITDA",
     "plan": "—",
     "bs": "",
     "ts": "Pending certification"
@@ -2559,13 +2559,13 @@ var DCTData = {
   },
   "VAL-001": {
    "Group": {
-    "val": "CU 14 m",
-    "plan": "CU 16 m",
+    "val": "₹14 m",
+    "plan": "₹16 m",
     "ts": "Certified",
     "bs": "Deteriorating"
    },
    "A1": {
-    "val": "CU 6.1 m",
+    "val": "₹6.1 m",
     "plan": "7.0",
     "var": "−13%",
     "bs": "Deteriorating",
@@ -2574,13 +2574,13 @@ var DCTData = {
   },
   "VAL-002": {
    "Group": {
-    "val": "CU 9 m",
-    "plan": "CU 10 m",
+    "val": "₹9 m",
+    "plan": "₹10 m",
     "ts": "Certified",
     "bs": "On track"
    },
    "A1": {
-    "val": "CU 2.4 m",
+    "val": "₹2.4 m",
     "plan": "4.0",
     "var": "−40%",
     "bs": "Deteriorating",
@@ -2589,13 +2589,13 @@ var DCTData = {
   },
   "VAL-003": {
    "Group": {
-    "val": "CU 11 m",
-    "plan": "CU 12 m",
+    "val": "₹11 m",
+    "plan": "₹12 m",
     "ts": "Pending certification",
     "bs": "On track"
    },
    "A1": {
-    "val": "CU 3.9 m",
+    "val": "₹3.9 m",
     "plan": "3.5",
     "var": "+11%",
     "bs": "Improving",
@@ -2677,7 +2677,7 @@ var DCTData = {
   "WCP-004": {
    "Group": {
     "v": "512",
-    "u": "CU m",
+    "u": "₹ m",
     "plan": "498",
     "var": "+2.8%",
     "tr": "▼",
@@ -2688,7 +2688,7 @@ var DCTData = {
     "own": "Finance (role)"
    },
    "A1": {
-    "val": "CU 96 m",
+    "val": "₹96 m",
     "plan": "82",
     "var": "+14",
     "bs": "Deteriorating",
@@ -2697,13 +2697,13 @@ var DCTData = {
   },
   "WCP-005": {
    "Group": {
-    "val": "+CU 14 m",
-    "plan": "+CU 2 m",
+    "val": "+₹14 m",
+    "plan": "+₹2 m",
     "bs": "Deteriorating",
     "ts": "Pending"
    },
    "A1": {
-    "val": "+CU 9 m (cash out)",
+    "val": "+₹9 m (cash out)",
     "plan": "+2",
     "bs": "Deteriorating",
     "ts": "Pending certification"
