@@ -8,7 +8,7 @@ class Component extends DCLogic {
     return {
       assumptions: [
         A("A-01","Desktop-first at 1440 px, minimum supported 1280 px. Owner brief and alert acknowledgement are also readable at tablet and phone widths. Workbenches are desktop-only.","Executive daily use; dense workbenches","Owner mobile-first would reorder O-01/O-07 priorities"),
-        A("A-02","All monetary values are shown in synthetic currency units ('CU m'). FX appears as an exposure, never as translation logic.","No client currency given; truth rules","Multi-currency display requires a currency selector in the header"),
+        A("A-02","All monetary values are shown in synthetic currency units ('₹ m'). FX appears as an exposure, never as translation logic.","No client currency given; truth rules","Multi-currency display requires a currency selector in the header"),
         A("A-03","The reporting period is monthly with a daily flash, YTD and a rolling forecast. Period labels such as 'P07' are synthetic.","Common for industrial MIS (assumption)","Weekly cadence changes trend charts and certification calendar"),
         A("A-04","Refresh cadences are shown as [REFRESH CADENCE — PLACEHOLDER] per source category. The header shows the oldest relevant refresh for the page.","No source systems may be named","Near-real-time plant feeds need a 'live' indicator variant"),
         A("A-05","The hierarchy is Group → Business → Entity → Plant → Production Line. Synthetic structure: 3 businesses, 6 entities; Entity A1 has Plants 01–03; Plant 02 has Lines L1–L3.","Brief's required drill hierarchy","Matrix organisations (business × region) need a second hierarchy"),
