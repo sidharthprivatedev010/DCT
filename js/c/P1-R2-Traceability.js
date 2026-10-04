@@ -189,7 +189,7 @@ class Component extends DCLogic {
         R("J1-L","Lens gating: Entity → Core Group → Owner only after threshold","X","All","—","—","07 swimlane",C,"D-04"),
         R("J1-B","Branches BR-1..BR-7 (unowned, forecast unavailable, stale, source down, overdue, rejected, reopened)","X","All","—","—","07 branches table",C)
       ]),
-      G("12 · Number Assurance journey (board 08)", [
+      G("12 · Data Assurance journey (board 08)", [
         R("J2-01","KPI Card shows Reconciliation break (not breach)","T2","CGE","G-01","A","Two-axis card; Unverified value",C),
         R("J2-02","KPI Detail","T2","CGE","S-03","D","Trust summary; Validation Assistant note",C),
         R("J2-03","Definition / Source / Calculation","T2","CGE MOC","S-03","D","DS-21",C),
