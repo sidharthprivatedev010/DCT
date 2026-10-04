@@ -9,6 +9,8 @@ Static HTML prototype for a leadership "control tower" across three lenses: **Ow
 - `js/c/TplA.js` … `TplF.js`: the six shared page templates. Each holds the header, sidebar, block renderers and helpers (`conf()`, `spark()`, `four()`, `bizStyle()`, `trustStyle()`). A change to shared UI must be applied to **all six**; they are near-identical copies.
 - `js/c/<Page>.js`: one data file per page, `renderVals()` returning `{ page: {...JSON...} }`. Keys: `lens, nav, title, q, trust, strip, kpis, dominant, drivers, forecast, actions, drill[{n, blocks}], access, equiv`, plus optional `sections`, `kpiMax`, `dataAt`.
 - Block types: `line, multi, bars, waterfall, table, tiles, alerts, kv, text, chain, buttons, decision, ask`. Most blocks carry `ask` (the question the block answers) and `cap` (caption).
+- Overview visuals: `js/c/dc-viz.js` (`DCViz`) adds the block types `pulse, horizon, bridge, flow, fingerprints, tide, river, lanes, loop, runway, zoom` (and the simpler lab-only set). Each template sets `b.isViz`/`b.vz` in its normaliser and renders `DCViz.snippet`; every page loads `js/c/dc-viz.js`. The visuals on O-01, O-05, G-01, G-02, G-08, G-09, E-01, E-05 and E-11 are written by `tools/place-visuals.js` (re-runnable; edit the numbers there, then run it and `regen.js`). Their numbers must keep matching the figures already on those pages.
+- `lab/viz-lab.html` and `lab/viz-simple.html` are design labs (not linked from the app, not touched by regen); they use the same `js/c/dc-viz.js`.
 
 ## Numbers: single source of truth
 

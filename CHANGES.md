@@ -2,6 +2,28 @@
 
 Everything changed against the original prototype (`e104438 first commit`), grouped by theme. Commit hashes in brackets.
 
+## Overview visuals on nine screens (branch feature/overview-visuals)
+
+New visual block types from the visual lab (`js/c/dc-viz.js`), placed where they answer the page question. All figures come from, or add up to, numbers already on that screen.
+
+| Screen | Visual | Ties to |
+|---|---|---|
+| O-01 Enterprise Health | Enterprise pulse (Performance reading) · EBITDA bridge, confidence-weighted (Financial) | Domain status strip and base-data statuses (18 of 37 on track); G-03 FY bridge 742 → 733.1 |
+| O-05 Material Risk | Materiality horizon | The five issues and composite bands in the materiality table |
+| G-01 Portfolio Home | Projected gap entity → driver · EBITDA map at entity depth (Financial) | Entity bars (A1 −7.6 … total −9.2); FIN-001 361.3 |
+| G-02 Entity Comparison | Entity fingerprints | Matrix (DSO, certified %, production) and ROCE tab |
+| G-08 Certification Governance | Certification pace vs last three closes | TRU-001 84%, TRU-002 9, TRU-006 2, TRU-007 1 / BRK-SYN-0071 |
+| G-09 Escalation Center | Escalation clocks by stage | Ladder's six open items; EFF-006, EFF-008, EFF-009 |
+| E-01 Entity Home | EBITDA map at plant depth (Financial) · 14-day runway (Risk and actions) | E-11 plant EBITDA 42.1 / 29.8 / 24.3; dates from O-02, E-02, E-06 |
+| E-05 Production-to-Cash | Cash conversion loop | WCP-001/002/003, WCP-006 55 vs 37; cash levers 7.4 / 5.6 / 3.1 |
+| E-11 Entity Financial | Working-capital lanes (owner swimlanes) | Same levers (₹16.1 m) with base-data owner roles |
+
+- All six templates render the new types (`b.isViz`); every page loads `js/c/dc-viz.js`.
+- Trust encoding extended: external signals (teal-edged hatch) and forecasts (dotted purple edge), alongside certified / pending / break / overdue.
+- `tools/place-visuals.js` writes the blocks; re-run it after editing their numbers, then `node tools/regen.js`.
+- `docs/Control Tower Screen Reference.docx`: one row per new visual, marked “(new)”, in the screen tables, plus an intro note on the visual language.
+- `lab/`: the two design-lab pages (detailed and simple versions) these visuals came from; not linked from the app.
+
 ## 1. Gap closure against Themes.txt [4974c23, 83fb797]
 
 **Priority fixes**
