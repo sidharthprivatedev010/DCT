@@ -104,3 +104,32 @@ Everything changed against the original prototype (`e104438 first commit`), grou
   - Plant 02 at 78.4% (reliability-led, with RM-1 cover as a secondary risk) accounts for 26.2 kt of the 29.4 kt gap.
   - The P07 flash/BRK-SYN-0071 story is kept and scaled to Entity A1.
 - Non-derivable values are listed in `data/HARDCODED-VALUES.md`. The methodology now covers display, targets, status rules, aliases and child effect (`data/plant-model/Data-Model-Methodology.md` §5–6).
+
+## Every screen KPI calculated bottom-up (data/kpi-model)
+
+- New `data/kpi-model/` built from `data/kpi-model/Group-KPI-Model.xlsx`. It covers all 170 KPI IDs on the screens for Group, Entity A1 and A2, and for Plants 01–06 where the inputs exist (70 KPIs), P01–P06.
+  - The 12 UI KPIs the workbook lacked got formulas and synthetic entity inputs. The 9 catalogue aliases are mapped to their canonical KPI.
+  - `KPI-Model.xlsx` keeps live formulas, with per-scope input and KPI sheets and a UI KPI Map.
+- `base-data.js` now holds model values for every KPI and scope.
+- `resolve.js`:
+  - Roll-up tab and click-through cover all KPIs. Entity-only KPIs stop at the entity.
+  - Text-valued KPIs are supported.
+  - Fixed: the roll-up tab was skipped on G-03.
+- Re-applied the page edits (hierarchy A1/A2, story, model-bound tables, detail-page hooks) that had been lost from `js/c/`.
+- Narrative updated to the model's finance figures:
+  - EBITDA gap −₹56.2 m (A1 −48.5, A2 −7.7)
+  - EBITDA YTD ₹1,760.1 m
+  - FCF ₹606.2 m
+  - upstream ₹27.2 m
+  - net debt ÷ EBITDA 1.89×
+
+## KPI Reference page and data clean-up
+
+- New **R-01 KPI Reference** page in three lens versions (`P2-R01o`, `P2-R01`, `P2-R01e`). It lists every KPI with its ID, formula, inputs and roll-up rule, value, change vs the previous month, and the screens it appears on.
+  - Lens, Scope, Theme and Period are dropdowns (new `menus` block type in all six templates). Level, source and KPI-set filters are buttons.
+  - Every value links to its calculation.
+  - It opens from a small muted icon under the sidebar legend and from the index page.
+- Tables accept `rowsMax` (all six templates).
+- Moved the redundant plant-model outputs and old exporter to `data/redundant/` (see its README).
+  - The source workbooks now live in `data/kpi-model/`.
+  - `data/kpi-model/scan_ui.js` lists the KPIs and screens.

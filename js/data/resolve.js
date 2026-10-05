@@ -26,23 +26,29 @@ var DCTResolve = (function () {
   function isPlantKpi(id) { var P = PM(); return !!(P && P.kpi[canon(id)]); }
   function rootOf(lens) { return lens === "Entity" ? "A1" : "Group"; }
   function detailHref(id, scope, lens) { return (DETAIL[lens] || DETAIL.Entity) + "?kpi=" + encodeURIComponent(id) + "&scope=" + encodeURIComponent(scope || rootOf(lens)); }
-  function kidsOf(s) { var P = PM(); return (P.children || {})[s] || []; }
+  // CURK: the KPI being laid out. Its children are only those the model has a value for
+  // (entity-only KPIs such as EBITDA stop at the entity; plant KPIs go down to plants).
+  var CURK = null;
+  function kidsAll(s) { var P = PM(); return (P.children || {})[s] || []; }
+  function kidsOf(s) { return kidsAll(s).filter(function (c) { return !CURK || (CURK.val && CURK.val[c]); }); }
   function parentOf(s) { var P = PM(), c = P.children || {}; for (var k in c) if (c[k].indexOf(s) >= 0) return k; return null; }
   // Scope order for tables: each entity's plants, then the entity; the root last.
-  function layout(root) { var out = []; kidsOf(root).forEach(function (c) { if (kidsOf(c).length) out = out.concat(layout(c)); else out.push(c); }); if (kidsOf(root).length && root !== "Group") out.push(root); else if (root === "Group") out.push(root); return out; }
-  function lastVal(k, s) { var v = k.val[s]; return v[v.length - 1]; }
-  function fmtV(k, v) { return Number(v).toLocaleString("en-US", {minimumFractionDigits: k.dp, maximumFractionDigits: k.dp}); }
+  function layout(root) { var out = []; kidsOf(root).forEach(function (c) { if (kidsOf(c).length) out = out.concat(layout(c)); else out.push(c); }); out.push(root); return out; }
+  function lastVal(k, s) { var v = k.val[s]; return v ? v[v.length - 1] : null; }
+  function fmtV(k, v) { if (v == null) return "—"; if (typeof v === "string") return v; return Number(v).toLocaleString("en-US", {minimumFractionDigits: k.dp, maximumFractionDigits: k.dp}); }
   function plantTab(p, ids) {
-    var P = PM(), root = rootOf(p.lens), sc = layout(root), sn = function (s) { return P.scopes[s]; };
+    var P = PM(), root = rootOf(p.lens); CURK = null; var sc = layout(root), sn = function (s) { return P.scopes[s]; };
     var cols = ["KPI", "Measure"].concat(sc.map(function (s) { return kidsOf(s).length ? sn(s) + " (Σ)" : sn(s); })).concat(["Unit", "How rolled up"]);
     var rows = ids.map(function (id) {
       var k = P.kpi[canon(id)];
-      var how = k.fields.length > 1 || /÷|\//.test(k.formula) ? "Recomputed from summed inputs" : (k.rules[k.fields[0]] === "MIN" ? "Lowest of children" : "Sum of children");
-      return {c: [{t: id, h: detailHref(id, root, p.lens)}, k.name].concat(sc.map(function (s) { return kidsOf(s).length ? {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens), b: true} : {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens)}; }))
+      var how = (k.level === "entity" ? "Entity inputs → " : "") + (k.fields.length > 1 || /÷|\/|×/.test(k.formula || "") ? "recomputed from summed inputs" : (k.rules[k.fields[0]] === "MIN" ? "lowest of children" : "sum of children"));
+      how = how.charAt(0).toUpperCase() + how.slice(1);
+      return {c: [{t: id, h: detailHref(id, root, p.lens)}, k.name].concat(sc.map(function (s) { if (!k.val[s]) return "—"; return kidsAll(s).length ? {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens), b: true} : {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens)}; }))
         .concat([k.unit || "count", how])};
     });
     var title = root === "Group" ? "Plant → entity → Group" : sn(root) + " by plant";
-    return {n: (root === "Group" ? "Plant roll-up · " : "Plant KPIs · ") + P.period, blocks: [{type: "table", title: title + " · " + P.periodL, cols: cols, rows: rows, minW: 300 + 90 * sc.length,
+    // "—" = the KPI has no value at that level (entity-only inputs such as finance or governance)
+    return {n: "Roll-up · " + P.period, blocks: [{type: "table", title: title + " · " + P.periodL, cols: cols, rows: rows, minW: 300 + 90 * sc.length,
       ask: root === "Group" ? "Which entity and which plant drive each Group number?" : "Which plant is driving each entity number?",
       cap: "Parent values (Σ) are recalculated from their children's summed inputs, never averaged. Click any value for its calculation."}]};
   }
@@ -76,6 +82,7 @@ var DCTResolve = (function () {
     var P = PM(); if (!P || !scope) return null; var k = P.kpi[canon(id)]; if (!k || !k.val[scope]) return null;
     var D = (typeof DCTData !== "undefined" && DCTData.kpi[id] && DCTData.kpi[id][scope]) || {};
     var mark = {"On track": "✓ ", "Improving": "▲ ", "Deteriorating": "▼ ", "Intervention required": "▼ "}[D.bs] || "";
+    if (typeof lastVal(k, scope) === "string") return {v: 0, t: lastVal(k, scope), raw: lastVal(k, scope)};
     return {v: lastVal(k, scope), t: mark + fmtV(k, lastVal(k, scope)) + (k.unit && !/^%/.test(k.unit) ? " " + k.unit : (/^%/.test(k.unit) ? "%" : "")), raw: fmtV(k, lastVal(k, scope)) + (k.unit ? " " + k.unit : "")};
   }
   function fillModel(p, b) {
@@ -100,7 +107,7 @@ var DCTResolve = (function () {
     (b.items || []).forEach(function (t) {
       var m = /^([A-Z]{2,4}-\d{3}) /.exec(txt(t.l)); if (!m) return;
       var r = look(D, m[1], tileScope(p, t.l), at); if (!r) return;
-      if (t.v == null || t.v === "" || /\d/.test(String(t.v))) { var d = display(r); if (d != null) t.v = d; }
+      if (isPlantKpi(m[1]) || t.v == null || t.v === "" || /\d/.test(String(t.v))) { var d = display(r); if (d != null) t.v = d; }
     });
   }
   function walk(p, o, D, at) {
@@ -119,21 +126,21 @@ var DCTResolve = (function () {
     var P = PM(); if (!P || !page) return page;
     var q = {}; String(search || "").replace(/^\?/, "").split("&").forEach(function (x) { var kv = x.split("="); if (kv[0]) q[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || ""); });
     var id = q.kpi, cid = canon(id), k = id && P.kpi[cid]; if (!k) return page;
-    var lens = page.lens || "Entity", root = rootOf(lens);
+    var lens = page.lens || "Entity", root = rootOf(lens); CURK = k;
     var inTree = function (s) { for (var x = s; x; x = parentOf(x)) if (x === root) return true; return false; };
     var scope = P.scopes[q.scope] && inTree(q.scope) ? q.scope : root;      // Entity lens stays inside Entity A1
     var kids = kidsOf(scope), isLeaf = !kids.length, par = parentOf(scope);
-    var focus = isLeaf ? par : scope, fk = kidsOf(focus);                     // the parent whose roll-up is shown
+    var focus = isLeaf && par && inTree(par) && k.val[par] ? par : scope, fk = kidsOf(focus);   // the parent whose roll-up is shown
     var sn = function (s) { return P.scopes[s]; }, H = function (s) { return detailHref(id, s, lens); };
     var nf = function (v, dp) { return Number(v).toLocaleString("en-US", {minimumFractionDigits: dp, maximumFractionDigits: dp}); };
-    var raw = function (v) { return nf(v, Math.round(v) === v ? 0 : 1); };
-    var last = function (s) { return lastVal(k, s); }, unit = k.unit || "count", U = function (v) { return nf(v, k.dp) + (k.unit ? " " + k.unit : ""); };
-    var meets = function (v) { return k.target == null ? null : (k.better === "up" ? v >= k.target : v <= k.target); };
+    var raw = function (v) { return typeof v !== "number" ? String(v == null ? "—" : v) : nf(v, Math.round(v) === v ? 0 : 1); };
+    var last = function (s) { return lastVal(k, s); }, unit = k.unit || "count", U = function (v) { return v == null ? "—" : typeof v === "string" ? v : nf(v, k.dp) + (k.unit ? " " + k.unit : ""); };
+    var meets = function (v) { return k.target == null || typeof v !== "number" ? null : (k.better === "up" ? v >= k.target : v <= k.target); };
     var D = (typeof DCTData !== "undefined" && DCTData.kpi[id]) || {};
     var roll = k.fields.map(function (f) { return k.rules[f]; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).join("/");
     var ratio = k.fields.length > 1 || /÷|\//.test(k.formula);
-    var level = function (s) { return s === "Group" ? "Group" : (kidsOf(s).length ? "Entity" : "Plant"); };
-    var inpNote = function (s) { return k.fields.map(function (f) { return f + " " + raw(k.inp[s][f]); }).join("\n"); };
+    var level = function (s) { return s === "Group" ? "Group" : (kidsAll(s).length ? "Entity" : "Plant"); };
+    var inpNote = function (s) { return k.fields.map(function (f) { return f + " " + raw((k.inp[s] || {})[f]); }).join("\n"); };
     var alias = cid !== id ? " (alias of " + cid + ")" : "";
     var p = JSON.parse(JSON.stringify(page));
     p.title = "KPI Detail and Lineage · " + id + " " + k.name + " · " + sn(scope);
@@ -155,32 +162,32 @@ var DCTResolve = (function () {
       nodes: fk.map(function (s) {
         var v = last(s), m = meets(v), tr = (D[s] || {}).tr || "";
         return {n: sn(s), s: U(v), note: inpNote(s) + "\n" + (m == null ? "" : (m ? "Meets target" : "Misses target")) + (tr ? " · " + tr : ""), k: s === scope || m === false ? "hi" : ""};
-      }).concat([{n: sn(focus) + " (" + roll + " of " + (level(focus) === "Group" ? "entities" : "plants") + ")", s: U(last(focus)), note: inpNote(focus) + "\n" + ((D[focus] || {}).bs || ""), k: focus === scope ? "hi" : ""}])};
+      }).concat([{n: fk.length ? sn(focus) + " (" + roll + " of " + (level(focus) === "Group" ? "entities" : "plants") + ")" : sn(focus) + " (entity-level inputs)", s: U(last(focus)), note: inpNote(focus) + "\n" + ((D[focus] || {}).bs || ""), k: focus === scope ? "hi" : ""}])};
     // Every plant under the focus, grouped by entity
     var leaves = layout(focus === "Group" ? "Group" : focus).filter(function (s) { return !kidsOf(s).length; });
-    var bars = leaves.map(function (s) { return {l: sn(s) + (focus === "Group" ? " · " + sn(parentOf(s)) : ""), v: last(s), d: U(last(s)), hi: meets(last(s)) === false || s === scope, note: meets(last(s)) == null ? "" : (meets(last(s)) ? "meets target" : "misses target")}; })
+    var bars = leaves.map(function (s) { return {l: sn(s) + (focus === "Group" && level(s) === "Plant" ? " · " + sn(parentOf(s)) : ""), v: last(s), d: U(last(s)), hi: meets(last(s)) === false || s === scope, note: meets(last(s)) == null ? "" : (meets(last(s)) ? "meets target" : "misses target")}; })
       .concat(layout(focus).filter(function (s) { return kidsOf(s).length; }).map(function (s) { return {l: sn(s) + " (rolled up)", v: last(s), d: U(last(s)), note: level(s).toLowerCase()}; }));
     // Calculation: plant inputs, entity sums, Group sum — the whole chain
     var cols = ["Scope", "Level"].concat(k.fields).concat([id + " (" + unit + ")"]);
     var rows = layout(focus).map(function (s) {
       var parent = kidsOf(s).length;
-      return {c: [{t: parent ? sn(s) + " = " + roll + " of " + kidsOf(s).map(sn).join(" + ") : sn(s), h: H(s)}, level(s)].concat(k.fields.map(function (f) { return raw(k.inp[s][f]); })).concat([nf(last(s), k.dp)]), hi: s === scope || !!parent};
+      return {c: [{t: parent ? sn(s) + " = " + roll + " of " + kidsOf(s).map(sn).join(" + ") : sn(s), h: H(s)}, level(s)].concat(k.fields.map(function (f) { return raw((k.inp[s] || {})[f]); })).concat([fmtV(k, last(s))]), hi: s === scope || !!parent};
     });
     var share = [level(fk[0] || scope)].concat(k.fields.filter(function (f) { return k.rules[f] === "SUM"; }).map(function (f) { return "Share of " + f; }))
       .concat([id, sn(focus) + " without it", "Effect on " + sn(focus)]);
     var srows = fk.map(function (s) {
-      var xv = k.excl[s], eff = last(focus) - xv;
+      var xv = k.excl[s], ok = typeof xv === "number" && typeof last(focus) === "number", eff = ok ? last(focus) - xv : 0;
       return {c: [{t: sn(s), h: H(s)}].concat(k.fields.filter(function (f) { return k.rules[f] === "SUM"; }).map(function (f) { var t = k.inp[focus][f]; return t ? nf(100 * k.inp[s][f] / t, 1) + "%" : "—"; }))
-        .concat([U(last(s)), U(xv), (eff >= 0 ? "+" : "−") + nf(Math.abs(eff), k.dp) + (k.unit ? " " + k.unit : "")]), hi: s === scope};
+        .concat([U(last(s)), ok ? U(xv) : "—", ok ? (eff >= 0 ? "+" : "−") + nf(Math.abs(eff), k.dp) + (k.unit ? " " + k.unit : "") : "—"]), hi: s === scope};
     });
     var trendS = [focus].concat(fk).map(function (s, i) { return {l: sn(s), v: k.val[s], tag: "CERT", dash: i > 0}; });
     var trend = {type: "multi", title: id + " " + k.name + " · monthly · " + sn(focus) + " vs " + (level(focus) === "Group" ? "entities" : "plants") + " · " + unit, x: P.x, series: trendS,
       ask: "How has each child moved, and how has that moved " + sn(focus) + "?", cap: "Solid: " + sn(focus) + ", recalculated each month from its children's inputs. Dashed: children."};
     if (k.target != null) { trend.base = k.target; trend.baseL = "Target " + nf(k.target, k.dp); }
-    var mrows = layout(focus).map(function (s) { return [sn(s)].concat(k.val[s].map(function (v) { return nf(v, k.dp); })); });
+    var mrows = layout(focus).map(function (s) { return [sn(s)].concat(k.val[s].map(function (v) { return fmtV(k, v); })); });
     var tr = function (s) { var r = D[s] || {}; return [sn(s), level(s), r.ts || "—", r.prov || "—"]; };
     p.drill = [
-      {n: "By plant", blocks: [{type: "bars", title: id + " " + k.name + " by plant" + (focus === "Group" ? " and entity" : "") + " · " + P.periodL, rows: bars, ask: "Which plant is furthest from target?"},
+      {n: fk.length ? (level(focus) === "Group" ? "By entity and plant" : "By plant") : "Calculation", blocks: [{type: "bars", title: id + " " + k.name + " by plant" + (focus === "Group" ? " and entity" : "") + " · " + P.periodL, rows: bars, ask: "Which plant is furthest from target?"},
         {type: "table", title: "Calculation · plant inputs → " + (focus === "Group" ? "entity → Group" : sn(focus)) + " · " + P.periodL, cols: cols, rows: rows, minW: 640,
           ask: "How is each level calculated from the one below?", cap: "Plant rows are raw inputs. Each parent row " + (roll === "MIN" ? "takes the lowest of" : "sums") + " its children's inputs, then applies the same formula. Full trace: data/plant-model/kpi_calculations.csv"}]},
       {n: (level(fk[0] || scope) === "Entity" ? "Entity" : "Plant") + " contribution", blocks: [{type: "table", title: "How much each " + level(fk[0] || scope).toLowerCase() + " moves " + sn(focus) + " · " + P.periodL, cols: share, rows: srows,
@@ -195,6 +202,11 @@ var DCTResolve = (function () {
           {n: "Group", s: roll + " of entity inputs", note: "Same formula on totals", k: scope === "Group" ? "hi" : ""}, {n: "Screens", s: "Cards · roll-up tabs", note: "Click any value to return here"}]}]},
       {n: "Trust", blocks: [{type: "table", title: "Trust status by scope", cols: ["Scope", "Level", "Trust", "Provenance"], rows: layout(focus).map(tr)}]}
     ];
+    var isText = typeof last(scope) === "string";
+    p.drill = p.drill.filter(function (t) { return !(t.n.indexOf("contribution") > 0 && !fk.length); });
+    if (isText) p.drill.forEach(function (t) { t.blocks = t.blocks.filter(function (b) { return b.type !== "bars" && b.type !== "multi"; }); });
+    if (!fk.length) p.dominant.cap = level(focus) + "-level inputs: this KPI is not built from " + (level(focus) === "Entity" ? "plant" : "lower-level") + " data, so " + sn(focus) + " is its lowest level.";
+    CURK = null;
     if (typeof document !== "undefined") document.title = (page.rid || "S-03") + " " + p.title;
     p.dataAt = ""; p.period = P.period + " (SYN)";
     if (cid !== "OPS-001") { delete p.actions; delete p.forecast; delete p.drivers; }  // the base page's actions and signals are about OPS-001 only
@@ -221,7 +233,7 @@ var DCTResolve = (function () {
       var other = ks.filter(function (k) { return !/^Certified/.test(k.ts || ""); }).map(function (k) { return k.id + " " + String(k.ts || "").toLowerCase(); });
       p.trust = cert.length + " of " + ks.length + " cards certified" + (other.length ? " · " + other.join(" · ") : "");
     }
-    if (DETAIL[p.lens] && /^(E|G|O|S)-(?!03)/.test(p.rid || "") && PM()) {
+    if (DETAIL[p.lens] && /^([EGO]-|S-(?!03))/.test(p.rid || "") && PM()) {
       var ids = [], add = function (id) { if (isPlantKpi(id) && ids.indexOf(id) < 0) ids.push(id); };
       (p.kpis || []).forEach(function (k) { add(k.id); });
       JSON.stringify(Object.assign({}, p, {access: null, equiv: null, kpis: null})).replace(/"(?:l":")?([A-Z]{3}-\d{3})[" ]/g, function (_, id) { add(id); });

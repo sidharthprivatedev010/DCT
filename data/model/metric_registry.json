@@ -1,0 +1,324 @@
+{
+  "metric_registry": [
+    {
+      "metric_id": "OPS-001",
+      "name": "Production vs plan",
+      "definition": "Actual saleable production divided by approved production plan for the same period and organisational scope.",
+      "unit": "percent",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-PROD-ACTUAL",
+        "IN-PROD-PLAN"
+      ],
+      "formula": {
+        "type": "ratio_of_sums",
+        "numerator": "sum(IN-PROD-ACTUAL)",
+        "denominator": "sum(IN-PROD-PLAN)",
+        "expression": "(numerator / denominator) * 100",
+        "zero_denominator_policy": "MISSING"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "ratio_of_sums",
+        "entity_to_group": "ratio_of_sums"
+      },
+      "data_quality_rules": {
+        "freshness_hours": 24,
+        "reconciliation_tolerance_percent": 1,
+        "minimum_certified_contribution_percent": 95
+      },
+      "owner_role": "Metric Owner – Production",
+      "certifier_role": "Certifier – Finance",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "OPS-003",
+      "name": "Capacity utilisation",
+      "definition": "Actual saleable production divided by rated capacity for the same period and scope.",
+      "unit": "percent",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-PROD-ACTUAL",
+        "IN-RATED-CAPACITY"
+      ],
+      "formula": {
+        "type": "ratio_of_sums",
+        "numerator": "sum(IN-PROD-ACTUAL)",
+        "denominator": "sum(IN-RATED-CAPACITY)",
+        "expression": "(numerator / denominator) * 100",
+        "zero_denominator_policy": "MISSING"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "ratio_of_sums",
+        "entity_to_group": "ratio_of_sums"
+      },
+      "data_quality_rules": {
+        "freshness_hours": 24,
+        "reconciliation_tolerance_percent": 1,
+        "minimum_certified_contribution_percent": 95
+      },
+      "owner_role": "Metric Owner – Production",
+      "certifier_role": "Certifier – Operations",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "CST-001",
+      "name": "Cost per tonne",
+      "definition": "Variable production cost divided by actual saleable production.",
+      "unit": "INR_per_t",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-VAR-COST",
+        "IN-PROD-ACTUAL"
+      ],
+      "formula": {
+        "type": "ratio_of_sums",
+        "numerator": "sum(IN-VAR-COST)",
+        "denominator": "sum(IN-PROD-ACTUAL)",
+        "expression": "(numerator * 1000000) / (denominator * 1000)",
+        "zero_denominator_policy": "MISSING"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "ratio_of_sums",
+        "entity_to_group": "ratio_of_sums"
+      },
+      "data_quality_rules": {
+        "freshness_hours": 48,
+        "reconciliation_tolerance_percent": 0.5,
+        "minimum_certified_contribution_percent": 95
+      },
+      "owner_role": "Metric Owner – Finance",
+      "certifier_role": "Certifier – Finance",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "PLT-002",
+      "name": "OEE",
+      "definition": "Availability × performance × quality at Plant; above Plant, Plant OEE weighted by planned production hours.",
+      "unit": "percent",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-OEE-AVAILABILITY",
+        "IN-OEE-PERFORMANCE",
+        "IN-OEE-QUALITY",
+        "IN-PLANNED-HOURS"
+      ],
+      "formula": {
+        "type": "product",
+        "factors": [
+          "IN-OEE-AVAILABILITY",
+          "IN-OEE-PERFORMANCE",
+          "IN-OEE-QUALITY"
+        ],
+        "expression": "(a / 100) * (p / 100) * (q / 100) * 100",
+        "zero_denominator_policy": "MISSING"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "weighted_average",
+        "entity_to_group": "weighted_average",
+        "weight": "IN-PLANNED-HOURS",
+        "weight_rationale": "OEE is a time-based measure; plants with more planned production time carry proportionally more weight."
+      },
+      "data_quality_rules": {
+        "freshness_hours": 24,
+        "reconciliation_tolerance_percent": 2,
+        "minimum_certified_contribution_percent": 95
+      },
+      "owner_role": "Metric Owner – Production",
+      "certifier_role": "Certifier – Operations",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "REL-003",
+      "name": "Unplanned downtime",
+      "definition": "Total hours of unplanned equipment stoppage.",
+      "unit": "hours",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-UNPLANNED-DOWNTIME"
+      ],
+      "formula": {
+        "type": "sum",
+        "expression": "sum(IN-UNPLANNED-DOWNTIME)"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "sum",
+        "entity_to_group": "sum"
+      },
+      "data_quality_rules": {
+        "freshness_hours": 24,
+        "reconciliation_tolerance_percent": 0,
+        "minimum_certified_contribution_percent": 95
+      },
+      "owner_role": "Metric Owner – Maintenance",
+      "certifier_role": "Certifier – Operations",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "REL-001",
+      "name": "MTBF",
+      "definition": "Operating hours divided by number of equipment failures.",
+      "unit": "hours",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-OPERATING-HOURS",
+        "IN-FAILURE-COUNT"
+      ],
+      "formula": {
+        "type": "ratio_of_sums",
+        "numerator": "sum(IN-OPERATING-HOURS)",
+        "denominator": "sum(IN-FAILURE-COUNT)",
+        "expression": "numerator / denominator",
+        "zero_denominator_policy": "MISSING"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "ratio_of_sums",
+        "entity_to_group": "ratio_of_sums"
+      },
+      "data_quality_rules": {
+        "freshness_hours": 24,
+        "reconciliation_tolerance_percent": 0,
+        "minimum_certified_contribution_percent": 95
+      },
+      "owner_role": "Metric Owner – Maintenance",
+      "certifier_role": "Certifier – Operations",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "EHS-001",
+      "name": "TRIR",
+      "definition": "Recordable incidents per 200,000 hours worked.",
+      "unit": "rate_per_200k_h",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-RECORDABLE-INCIDENTS",
+        "IN-HOURS-WORKED"
+      ],
+      "formula": {
+        "type": "ratio_of_sums",
+        "numerator": "sum(IN-RECORDABLE-INCIDENTS)",
+        "denominator": "sum(IN-HOURS-WORKED)",
+        "expression": "(numerator * 200000) / denominator",
+        "zero_denominator_policy": "MISSING"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "ratio_of_sums",
+        "entity_to_group": "ratio_of_sums"
+      },
+      "data_quality_rules": {
+        "freshness_hours": 72,
+        "reconciliation_tolerance_percent": 0,
+        "minimum_certified_contribution_percent": 100
+      },
+      "owner_role": "Metric Owner – EHS",
+      "certifier_role": "Certifier – EHS",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "EHS-004",
+      "name": "Critical safety incidents",
+      "definition": "Count of critical safety incidents.",
+      "unit": "count",
+      "lowest_grain": "PLANT",
+      "period_grain": "month_to_date",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-CRITICAL-INCIDENTS"
+      ],
+      "formula": {
+        "type": "sum",
+        "expression": "sum(IN-CRITICAL-INCIDENTS)"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "sum",
+        "entity_to_group": "sum"
+      },
+      "data_quality_rules": {
+        "freshness_hours": 24,
+        "reconciliation_tolerance_percent": 0,
+        "minimum_certified_contribution_percent": 100
+      },
+      "owner_role": "Metric Owner – EHS",
+      "certifier_role": "Certifier – EHS",
+      "adjustment_policy": "governed_adjustment_only"
+    },
+    {
+      "metric_id": "PRD-001",
+      "name": "Days to breach",
+      "definition": "Forecast days until Plant production falls below minimum output. Only meaningful per Plant.",
+      "unit": "days",
+      "lowest_grain": "PLANT",
+      "period_grain": "point_in_time",
+      "calculation_version": "v1.0",
+      "input_metrics": [
+        "IN-DAYS-TO-BREACH"
+      ],
+      "formula": {
+        "type": "latest_value",
+        "expression": "latest(IN-DAYS-TO-BREACH)"
+      },
+      "aggregation": {
+        "prohibited": [
+          "average_of_percentages",
+          "manual_parent_value"
+        ],
+        "plant_to_entity": "non_additive",
+        "entity_to_group": "non_additive",
+        "note": "No valid aggregate; parents list their Plants instead."
+      },
+      "data_quality_rules": {
+        "freshness_hours": 24,
+        "reconciliation_tolerance_percent": 0,
+        "minimum_certified_contribution_percent": 0
+      },
+      "owner_role": "Metric Owner – Production",
+      "certifier_role": "Certifier – Operations",
+      "adjustment_policy": "governed_adjustment_only"
+    }
+  ]
+}
