@@ -1,10 +1,8 @@
-/* Single source of truth for every KPI value shown across the prototype.
-   Keyed by KPI id (from P1-R1-KPICatalogue.html where one exists), then by scope:
-   "Group" (Owner/Core Group), "A1" (Entity A1), "Plant02" (Plant 02 drill-ins).
-   A trailing "#t7" scope key (e.g. "Group#t7") is a named point-in-time variant,
-   used only by pages that deliberately show a before/after state (e.g. G-01b).
-   js/data/resolve.js reads this and overwrites every KPI card, table cell and tile
-   on render, so a KPI never shows two different values on two different pages. */
+/* Single source of truth for every KPI value shown across the prototype. GENERATED: do not edit by hand.
+   Written by data/kpi-model/export_to_prototype.py from the KPI model (data/kpi-model/README.md).
+   kpi[ID][scope]: card values for P06; scopes Group, A1, A2, Plant01–Plant06. "#t7" keys are point-in-time variants.
+   plant: model detail (monthly series, formulas, inputs, roll-up, screens, graphs) used by roll-up tabs, KPI detail and KPI Reference.
+   js/data/resolve.js reads this and fills every KPI card, table cell, tile and model-bound chart on render. */
 var DCTData = {
  "kpi": {
   "CMP-005": {
@@ -39667,7 +39665,585 @@ var DCTData = {
    "T6": "Capex and Strategic Initiatives",
    "T7": "Risk, Compliance and EHS",
    "T8": "Decision, Action and Escalation"
-  }
+  },
+  "charts": [
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "line",
+    "title": "Plant 02 production · actual vs plan · kt per month (P07 forecast)",
+    "ask": "How far below plan is Plant 02, and is it recovering?",
+    "source": "model",
+    "from": "Plant 02 good output vs planned production by month",
+    "note": "P07 forecast = plan − SIG-007 (24.3 kt)."
+   },
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "multi",
+    "title": "EBITDA margin → FCF conversion → ROCE · Entity A1 · %",
+    "ask": "Is this entity's profit converting to cash and capital returns?",
+    "source": "model",
+    "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE",
+    "note": "ROCE target 12% shown as the base line."
+   },
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "bars",
+    "title": "Production vs plan · P06 (CERT) · by plant",
+    "ask": "Which plant in Entity A1 is below plan?",
+    "source": "live",
+    "from": "OPS-001 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "line",
+    "title": "Plant 02 production · actual vs plan · kt per month (P07 forecast)",
+    "ask": "How far below plan is Plant 02, and is it recovering?",
+    "source": "model",
+    "from": "Plant 02 good output vs planned production by month",
+    "note": "P07 forecast = plan − SIG-007 (24.3 kt)."
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "bars",
+    "title": "Plant 02 P07 shortfall by line · kt (total 24.3 = SIG-007)",
+    "ask": "Which production line loses the most output?",
+    "source": "scaled",
+    "from": "Sum = SIG-007 Plant 02 (24.3 kt)",
+    "note": "Split by line is hand-set."
+   },
+   {
+    "screen": "P2-E03-Reliability",
+    "type": "bars",
+    "title": "Plant 02 unplanned downtime by asset · h · P06 (CERT) · total 78.2 h = REL-003",
+    "ask": "Which assets cause most unplanned downtime?",
+    "source": "scaled",
+    "from": "Sum = REL-003 Plant 02 (78.2 h)",
+    "note": "Split by asset is hand-set."
+   },
+   {
+    "screen": "P2-E04-Supply",
+    "type": "bars",
+    "title": "Material cover minus replenishment lead time · days (negative = stock-out risk)",
+    "ask": "Which materials will run out before they can be replenished?",
+    "source": "illustrative",
+    "from": "Cover minus lead time per material",
+    "note": "Not in the model; SIG-009 counts materials under 7 days' cover (a different measure)."
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "bars",
+    "title": "Leakage by stage · ₹ m (FCST)",
+    "ask": "Which lifecycle stage leaks the most cash?",
+    "source": "scaled",
+    "from": "Upstreaming = CSH-006",
+    "note": "Billing, dispatch and collection leakage are hand-set."
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "bars",
+    "title": "Cash levers · release opportunity · ₹ m",
+    "ask": "",
+    "source": "scaled",
+    "from": "Scaled to the model's working-capital size",
+    "note": "Opportunity per entity is hand-set."
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "multi",
+    "title": "Entity A1 value delivered vs plan · cumulative ₹ m",
+    "ask": "Are this entity's projects paying back?",
+    "source": "model",
+    "from": "Cumulative VAL-001 EBITDA benefit, VAL-002 cash benefit, VAL-003 cost savings",
+    "note": "Plan line is hand-set (8% above delivered)."
+   },
+   {
+    "screen": "P2-E08-CertWorkbench",
+    "type": "bars",
+    "title": "OPS-001 Entity A1 · P07 MTD · flash vs MIS vs corrected · kt",
+    "ask": "Is the corrected production number now within tolerance?",
+    "source": "illustrative",
+    "from": "P07 flash story scaled to Entity A1's monthly output",
+    "note": "P07 is outside the model (P01–P06)."
+   },
+   {
+    "screen": "P2-E11-Financial",
+    "type": "multi",
+    "title": "EBITDA margin → FCF conversion → ROCE · Entity A1 · %",
+    "ask": "Is this entity's profit converting to cash and capital returns?",
+    "source": "model",
+    "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE",
+    "note": "ROCE target 12% shown as the base line."
+   },
+   {
+    "screen": "P2-E11-Financial",
+    "type": "waterfall",
+    "title": "EBITDA bridge · YTD plan to actual · ₹ m",
+    "ask": "What moved EBITDA versus plan?",
+    "source": "model",
+    "from": "Plan = actual + revenue below plan × EBITDA margin; volume = sales below plan; price = the rest",
+    "note": "Derived plan: the model has no EBITDA plan for the year to date."
+   },
+   {
+    "screen": "P2-E11-Financial",
+    "type": "line",
+    "title": "Revenue per period · actual vs plan vs forecast · ₹ m",
+    "ask": "Will revenue hold for the rest of the year?",
+    "source": "model",
+    "from": "revenue_k vs planned_revenue_k by month (Entity A1)",
+    "note": "P07–P12 held at the P06 run-rate."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "bars",
+    "title": "Entity contribution to projected EBITDA variance · P07–P12 · ₹ m",
+    "ask": "Which entity accounts for the projected EBITDA gap?",
+    "source": "model",
+    "from": "PRD-003 by entity: A1 + A2 = Group",
+    "note": ""
+   },
+   {
+    "screen": "P2-G01b-PortfolioCertified",
+    "type": "bars",
+    "title": "Entity contribution to projected EBITDA variance · P07–P12 · ₹ m",
+    "ask": "Which entity accounts for the projected EBITDA gap?",
+    "source": "model",
+    "from": "PRD-003 by entity: A1 + A2 = Group",
+    "note": ""
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "bars",
+    "title": "Production vs plan · P06 (CERT) · by entity",
+    "ask": "Which entity will miss its production plan this period?",
+    "source": "live",
+    "from": "OPS-001 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "bars",
+    "title": "EBITDA variance vs plan YTD · ₹ m",
+    "ask": "How far is each entity from its EBITDA plan so far?",
+    "source": "model",
+    "from": "EBITDA YTD − derived plan (actual + revenue below plan × margin), by entity",
+    "note": ""
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "bars",
+    "title": "DSO · days",
+    "ask": "Where are customers paying slowest?",
+    "source": "live",
+    "from": "WCP-001 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "bars",
+    "title": "ROCE vs 12% target by entity · pts",
+    "ask": "",
+    "source": "model",
+    "from": "FIN-005 − 12% target, by entity",
+    "note": ""
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "waterfall",
+    "title": "EBITDA bridge · FY plan → FY forecast · ₹ m",
+    "ask": "What explains the gap between plan and forecast EBITDA?",
+    "source": "scaled",
+    "from": "FY plan = FIN-001 + planned rest of year; FY forecast = FIN-001 + forecast rest of year; gap = PRD-003",
+    "note": "Split of the gap into volume, price, cost, fuel and FX is hand-set."
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "multi",
+    "title": "EBITDA margin → FCF conversion → ROCE · Group · %",
+    "ask": "Is profit turning into cash and returns?",
+    "source": "model",
+    "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE",
+    "note": "ROCE target 12% shown as the base line."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "waterfall",
+    "title": "Net working capital bridge · P06 → P07 forecast · ₹ m",
+    "ask": "What is tying up working capital this period?",
+    "source": "scaled",
+    "from": "Starts at Group NWC (WCP-004)",
+    "note": "Steps to the P07 forecast are hand-set."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "bars",
+    "title": "DSO by entity · days",
+    "ask": "Which entity's receivables are slowing cash?",
+    "source": "live",
+    "from": "WCP-001 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "bars",
+    "title": "Working-capital release opportunity by entity · ₹ m",
+    "ask": "",
+    "source": "scaled",
+    "from": "Scaled to the model's working-capital size",
+    "note": "Opportunity per entity is hand-set."
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "bars",
+    "title": "Production vs plan · P06 (CERT) · by plant",
+    "ask": "Which plant will under-produce, and by how much?",
+    "source": "live",
+    "from": "OPS-001 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "multi",
+    "title": "Value delivered vs plan · cumulative ₹ m · Group",
+    "ask": "Is the capex and initiative portfolio delivering the value it promised?",
+    "source": "model",
+    "from": "Cumulative VAL-001 EBITDA benefit, VAL-002 cash benefit, VAL-003 cost savings",
+    "note": "Plan line is hand-set (8% above delivered)."
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "bars",
+    "title": "Spend % minus physical % · positive = spending ahead of progress",
+    "ask": "Which projects need a recovery review?",
+    "source": "layout",
+    "from": "Spend % minus physical progress % from the project table on the same page",
+    "note": ""
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "bars",
+    "title": "Open audit findings by entity",
+    "ask": "Which entities carry the most open audit findings?",
+    "source": "live",
+    "from": "GOV-004 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-G08o-OwnerTrust",
+    "type": "multi",
+    "title": "Certification coverage and reconciliation rates · %",
+    "ask": "Is the number base getting more defensible?",
+    "source": "model",
+    "from": "TRU-001, TRU-008, TRU-009 by month (Group)",
+    "note": "TRU-001 is flat in the source data."
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "multi",
+    "title": "Escalation effectiveness · Group",
+    "ask": "Are we closing issues faster and for good?",
+    "source": "model",
+    "from": "EFF-008 resolution time, EFF-010 repeat issues, EFF-011 root causes eliminated (Group)",
+    "note": ""
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "line",
+    "title": "EBITDA actual vs plan vs forecast · ₹ m per period",
+    "ask": "Will EBITDA stay on plan for the rest of the year, and when does the forecast fall below it?",
+    "source": "model",
+    "from": "Group EBITDA by month (ebitda_k); P01–P06 actual, P07–P12 = rest-of-year plan and forecast ÷ 6 (PRD-003 inputs)",
+    "note": "Plan to P06 equals actual: the model re-bases the plan on actuals."
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "multi",
+    "title": "EBITDA margin → FCF conversion → ROCE · Group · %",
+    "ask": "Is profit turning into cash and capital returns, or is value getting stuck?",
+    "source": "model",
+    "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE",
+    "note": "ROCE target 12% shown as the base line."
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "bars",
+    "title": "EBITDA variance contribution by entity · P07–P12 forecast vs plan · ₹ m",
+    "ask": "Which business is driving the forecast EBITDA gap?",
+    "source": "model",
+    "from": "PRD-003 by entity: A1 + A2 = Group",
+    "note": ""
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "line",
+    "title": "Cash position · actual vs plan vs forecast · ₹ m (daily)",
+    "ask": "Will cash stay above the liquidity floor over the next two weeks?",
+    "source": "scaled",
+    "from": "Ends at Group cash (CSH-001)",
+    "note": "Daily path (D-12 to D+12) is hand-set."
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "waterfall",
+    "title": "Cash bridge · P07 to date · ₹ m",
+    "ask": "What moved cash this period?",
+    "source": "scaled",
+    "from": "Ends at Group cash (CSH-001)",
+    "note": "Collections, payments, capex and financing steps are hand-set."
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "bars",
+    "title": "Debt maturity ladder · ₹ m",
+    "ask": "",
+    "source": "scaled",
+    "from": "Next 12 months = LIQ-003; > 12 m = gross debt − LIQ-003",
+    "note": "Quarterly split is hand-set."
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "multi",
+    "title": "FX exposure vs hedged amount · ₹ m",
+    "ask": "Is hedging keeping pace with exposure?",
+    "source": "model",
+    "from": "fx_exposure_k and fx_hedged_k by month; the gap is TRS-001",
+    "note": ""
+   },
+   {
+    "screen": "P2-O04-Capex",
+    "type": "multi",
+    "title": "Value delivered vs plan · cumulative ₹ m",
+    "ask": "Is the capex and initiative portfolio delivering the value it promised?",
+    "source": "model",
+    "from": "Cumulative VAL-001 EBITDA benefit, VAL-002 cash benefit, VAL-003 cost savings",
+    "note": "Plan line is hand-set (8% above delivered)."
+   },
+   {
+    "screen": "P2-O04-Capex",
+    "type": "bars",
+    "title": "Spend % minus physical progress % · positive = spending ahead of progress",
+    "ask": "Which projects are spending ahead of what they have built?",
+    "source": "layout",
+    "from": "Spend % minus physical progress % from the project table on the same page",
+    "note": ""
+   },
+   {
+    "screen": "P2-O06-Decisions",
+    "type": "multi",
+    "title": "Escalation effectiveness · Group",
+    "ask": "Are we closing issues faster and for good?",
+    "source": "model",
+    "from": "EFF-008 resolution time, EFF-010 repeat issues, EFF-011 root causes eliminated (Group)",
+    "note": ""
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "line",
+    "title": "Group production · actual vs plan · kt per period",
+    "ask": "Will the Group meet its production plan this year, and where does it fall short?",
+    "source": "model",
+    "from": "Σ Plants 01–06 good output vs planned production (OPS-001 inputs)",
+    "note": "P07–P12 forecast path is hand-set."
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "bars",
+    "title": "Production vs plan by entity · P06 (CERT) · %",
+    "ask": "Which entity is short?",
+    "source": "live",
+    "from": "OPS-001 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "multi",
+    "title": "OEE, yield and recovery · Group · %",
+    "ask": "Is the loss availability, performance or quality?",
+    "source": "model",
+    "from": "PLT-002 OEE, PLT-005 yield, PLT-004 recovery (Group)",
+    "note": ""
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "line",
+    "title": "OPS-001 Entity A1 · Plant 02 daily production · actual vs plan vs forecast · kt per day-pair",
+    "ask": "How is this KPI trending, and which part is certified?",
+    "source": "illustrative",
+    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "note": "Daily curve and scenario options are hand-set."
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "bars",
+    "title": "Variance drivers vs plan · kt MTD",
+    "ask": "Which line explains the unverified variance?",
+    "source": "illustrative",
+    "from": "P07 flash story scaled to Entity A1",
+    "note": ""
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "line",
+    "title": "OPS-001 Entity A1 · Plant 02 daily production · actual vs plan vs forecast · kt per day-pair",
+    "ask": "How is this KPI trending, and which part is certified?",
+    "source": "illustrative",
+    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "note": "Daily curve and scenario options are hand-set."
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "bars",
+    "title": "Variance drivers vs plan · kt MTD",
+    "ask": "Which line explains the unverified variance?",
+    "source": "illustrative",
+    "from": "P07 flash story scaled to Entity A1",
+    "note": ""
+   },
+   {
+    "screen": "P2-S03o-KPIDetail",
+    "type": "line",
+    "title": "OPS-001 Entity A1 · Plant 02 daily production · actual vs plan vs forecast · kt per day-pair",
+    "ask": "How is this KPI trending, and which part is certified?",
+    "source": "illustrative",
+    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "note": "Daily curve and scenario options are hand-set."
+   },
+   {
+    "screen": "P2-S03o-KPIDetail",
+    "type": "bars",
+    "title": "Variance drivers vs plan · kt MTD",
+    "ask": "Which line explains the unverified variance?",
+    "source": "illustrative",
+    "from": "P07 flash story scaled to Entity A1",
+    "note": ""
+   },
+   {
+    "screen": "P2-S04-Alert",
+    "type": "bars",
+    "title": "Materiality drivers · dimension ratings (placeholder scoring)",
+    "ask": "Why is this alert rated Critical?",
+    "source": "layout",
+    "from": "Placeholder ratings (High / Medium / Low)",
+    "note": "Thresholds pending approval (D-03)."
+   },
+   {
+    "screen": "P2-S04c-Alert",
+    "type": "bars",
+    "title": "Materiality drivers · dimension ratings (placeholder scoring)",
+    "ask": "Why is this alert rated Critical?",
+    "source": "layout",
+    "from": "Placeholder ratings (High / Medium / Low)",
+    "note": "Thresholds pending approval (D-03)."
+   },
+   {
+    "screen": "P2-S04e-Alert",
+    "type": "bars",
+    "title": "Materiality drivers · dimension ratings (placeholder scoring)",
+    "ask": "Why is this alert rated Critical?",
+    "source": "layout",
+    "from": "Placeholder ratings (High / Medium / Low)",
+    "note": "Thresholds pending approval (D-03)."
+   },
+   {
+    "screen": "P2-S06-Scenario",
+    "type": "line",
+    "title": "Plant 02 production · base forecast vs scenario options · kt per day-pair",
+    "ask": "Which sourcing option restores Plant 02 output, and how fast?",
+    "source": "illustrative",
+    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "note": "Daily curve and scenario options are hand-set."
+   },
+   {
+    "screen": "P2-S06e-Scenario",
+    "type": "line",
+    "title": "Plant 02 production · base forecast vs scenario options · kt per day-pair",
+    "ask": "Which sourcing option restores Plant 02 output, and how fast?",
+    "source": "illustrative",
+    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "note": "Daily curve and scenario options are hand-set."
+   },
+   {
+    "screen": "P2-S09-Contribution",
+    "type": "bars",
+    "title": "Contribution by entity · ₹ m (PREDICTION)",
+    "ask": "Which entity holds the projected EBITDA exposure?",
+    "source": "model",
+    "from": "PRD-003 by entity: A1 + A2 = Group",
+    "note": ""
+   },
+   {
+    "screen": "P2-S09-Contribution",
+    "type": "bars",
+    "title": "By business · ₹ m",
+    "ask": "Which business holds the projected exposure?",
+    "source": "model",
+    "from": "PRD-003 Group (Business A = Group)",
+    "note": ""
+   },
+   {
+    "screen": "P2-S10-OpsImpact",
+    "type": "line",
+    "title": "Plant 02 · actual vs plan vs forecast · kt per day-pair",
+    "ask": "When does the shortfall start, and how deep does it go?",
+    "source": "illustrative",
+    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "note": "Daily curve and scenario options are hand-set."
+   },
+   {
+    "screen": "P2-S10-OpsImpact",
+    "type": "bars",
+    "title": "Forecast shortfall by line (summary) · kt · total 24.3 = SIG-007 Plant 02",
+    "ask": "Where in the plant is the impact concentrated?",
+    "source": "scaled",
+    "from": "Sum = SIG-007 Plant 02 (24.3 kt)",
+    "note": "Split by line is hand-set."
+   },
+   {
+    "screen": "P2-S11-CashExposure",
+    "type": "bars",
+    "title": "Leakage by stage · ₹ m (FCST)",
+    "ask": "Which lifecycle stage leaks the most cash?",
+    "source": "scaled",
+    "from": "Upstreaming = CSH-006",
+    "note": "Billing, dispatch and collection leakage are hand-set."
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "line",
+    "title": "EBITDA actual vs plan vs forecast · ₹ m per period",
+    "ask": "Will EBITDA stay on plan for the rest of the year, and when does the forecast fall below it?",
+    "source": "model",
+    "from": "Group EBITDA by month (ebitda_k); P01–P06 actual, P07–P12 = rest-of-year plan and forecast ÷ 6 (PRD-003 inputs)",
+    "note": "Plan to P06 equals actual: the model re-bases the plan on actuals."
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "bars",
+    "title": "EBITDA variance contribution by entity · P07–P12 forecast vs plan · ₹ m",
+    "ask": "Which business is driving the forecast EBITDA gap?",
+    "source": "model",
+    "from": "PRD-003 by entity: A1 + A2 = Group",
+    "note": ""
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "line",
+    "title": "EBITDA actual vs plan vs forecast · ₹ m per period",
+    "ask": "Will EBITDA stay on plan for the rest of the year, and when does the forecast fall below it?",
+    "source": "model",
+    "from": "Group EBITDA by month (ebitda_k); P01–P06 actual, P07–P12 = rest-of-year plan and forecast ÷ 6 (PRD-003 inputs)",
+    "note": "Plan to P06 equals actual: the model re-bases the plan on actuals."
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "bars",
+    "title": "EBITDA variance contribution by entity · P07–P12 forecast vs plan · ₹ m",
+    "ask": "Which business is driving the forecast EBITDA gap?",
+    "source": "model",
+    "from": "PRD-003 by entity: A1 + A2 = Group",
+    "note": ""
+   }
+  ]
  }
 };
 if (typeof module !== "undefined" && module.exports) module.exports = DCTData;

@@ -136,6 +136,15 @@ def main():
     ui = {u["id"]: u for u in json.load(open(os.path.join(HERE, "ui_kpis.json")))}
     plant["screens"] = json.load(open(os.path.join(HERE, "ui_screens.json")))
     plant["themes"] = THEMES
+    # graphs on the screens and how each gets its numbers (chart_sources.json, first title match wins)
+    rules = json.load(open(os.path.join(HERE, "chart_sources.json"), encoding="utf-8"))["rules"]
+    plant["charts"] = []
+    for c in json.load(open(os.path.join(HERE, "ui_charts.json"), encoding="utf-8")):
+        r = next((r for r in rules if r["match"] in c["title"]), None)
+        csrc = "live" if c.get("kpi") else (r["source"] if r else "illustrative")
+        plant["charts"].append({"screen": c["screen"], "type": c["type"], "title": c["title"], "ask": c.get("ask", ""), "source": csrc,
+                                "from": (f"{c['kpi']} for the plant, entity or Group in each row label" if c.get("kpi") else (r["from"] if r else "Hand-set (SYN)")),
+                                "note": (r["note"] if r else "Not yet classified in data/kpi-model/chart_sources.json.")})
     for k in M["kpis"]:
         kid = k["id"]; div, du, dp, better, tgt = disp(kid, k["unit"])
         ent = {"name": k["name"], "unit": du, "dp": dp, "div": div, "formula": k["how"], "basis": k["basis"], "better": better, "target": tgt,

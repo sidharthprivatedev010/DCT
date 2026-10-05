@@ -29,7 +29,7 @@
     if (typeof v === "string") return v;
     return Number(v).toLocaleString("en-US", {minimumFractionDigits: k.dp, maximumFractionDigits: k.dp}) + (k.unit ? " " + k.unit : "");
   }
-  function code(s) { return (s.rid || "").replace(" · Entity view", "e").replace(" · Owner view", "o").replace(" · Core Group view", "c"); }
+  function code(s) { var m = /^P[23]-([A-Z]\d+[a-z]?)-/.exec(s.file || ""); return m ? m[1].replace(/^([A-Z])(\d)/, "$1-$2") : (s.rid || ""); }
 
   function build(lens) {
     var D = (typeof DCTData !== "undefined" && DCTData.plant) || null;
@@ -103,6 +103,23 @@
       gtc: "76px minmax(120px,1.1fr) 52px 100px minmax(170px,1.9fr) minmax(140px,1.4fr) 112px 70px minmax(90px,.8fr)",
       minW: 1040, rowsMax: 999, rows: rows, empty: "No KPI matches these filters."};
 
+    // ---- graphs on this lens's screens and where their numbers come from (DCTData.plant.charts)
+    var SRC = {"live": "● Live from model", "model": "● Calculated from model", "scaled": "◐ Total from model · split hand-set",
+               "illustrative": "○ Illustrative · model scale", "layout": "— Not KPI data"};
+    var charts = (P.charts || []).filter(function (c) { return lensScreens.indexOf(c.screen) >= 0 && (!st.screen || c.screen === st.screen); })
+      .sort(function (a, b) { return code(P.screens[a.screen]).localeCompare(code(P.screens[b.screen])) || a.title.localeCompare(b.title); });
+    var srcN = {}; charts.forEach(function (c) { srcN[c.source] = (srcN[c.source] || 0) + 1; });
+    var graphs = {type: "table", title: charts.length + " graphs on " + lens + " screens" + (st.screen ? " · " + code(P.screens[st.screen]) : "") + " · what each shows and where its numbers come from",
+      ask: "Can I trust what this graph shows, and what is it built from?",
+      cap: Object.keys(SRC).filter(function (k) { return srcN[k]; }).map(function (k) { return SRC[k] + " (" + srcN[k] + ")"; }).join(" · ") +
+           ". Live = filled from the model when the page opens. Calculated = written from the model by data/kpi-model/sync_pages.py. Hand-set splits are listed in data/HARDCODED-VALUES.md.",
+      cols: ["Screen", "Graph", "Type", "Source", "Built from", "Note"],
+      gtc: "64px minmax(170px,1.4fr) 70px 150px minmax(200px,1.8fr) minmax(140px,1.2fr)", minW: 1040, rowsMax: 999,
+      rows: charts.map(function (c) {
+        return {c: [{t: code(P.screens[c.screen]), h: c.screen + ".html"}, c.title + (c.ask ? " · " + c.ask : ""), {"line": "Line", "multi": "Lines", "bars": "Bars", "waterfall": "Bridge"}[c.type] || c.type,
+          SRC[c.source] || c.source, c.from, c.note || "—"], hi: c.source === "illustrative" || c.source === "layout"};
+      }), empty: "No graphs on this screen."};
+
     // ---- reference tabs
     var screenRows = lensScreens.map(function (n) {
       var c = all.filter(function (id) { return (P.kpi[id].screens || []).indexOf(n) >= 0; }).length;
@@ -135,7 +152,7 @@
       nav: "KPI Reference", title: "KPI Reference · formulas and values", period: st.period + " (SYN)",
       q: "How is each KPI calculated, and what is its value for this lens, scope and period?",
       trust: "Values from data/kpi-model · " + all.length + " KPIs · calculated bottom-up (plant → entity → Group)",
-      focus: "drivers", dominant: sel, drivers: table, drill: drill,
+      focus: "drivers", dominant: sel, drivers: [table, graphs], drill: drill,
       access: [{l: "KPI detail and lineage ↗", h: DETAIL[lens]}, {l: "Data Assurance ↗", h: lens === "Owner" ? "P2-G08o-OwnerTrust.html" : lens === "Entity" ? "P2-E08-CertWorkbench.html" : "P2-G08-CertGovernance.html"}],
       equiv: equiv, journey: null};
   }

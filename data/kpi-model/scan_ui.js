@@ -9,7 +9,7 @@ for (const f of fs.readdirSync(path.join(root, "js/c")).filter((f) => /^P[23]-/.
   try { eval(fs.readFileSync(path.join(root, "js/c", f), "utf8")); } catch (e) {}
 }
 const ID = /^[A-Z]{2,4}-\d{3}$/;
-const ids = {}, screens = {};
+const ids = {}, screens = {}, charts = [];
 const sc = (p, label) => { const m = /Plant (\d\d)/.exec(label || ""); if (m) return "Plant" + m[1]; if (/\bA2\b/.test(label || "")) return "A2"; if (/\bA1\b/.test(label || "")) return "A1"; return p.lens === "Entity" ? "A1" : "Group"; };
 const add = (id, p, n, label) => { (ids[id] = ids[id] || new Set()).add(sc(p, label) + "|" + n); };
 for (const n in pages) {
@@ -25,6 +25,8 @@ for (const n in pages) {
       if (!ID.test(t)) { const m = /^([A-Z]{2,4}-\d{3}) /.exec(lab) || /^([A-Z]{2,4}-\d{3}) /.exec(t); if (!m) return; t = m[1]; }
       add(t, p, n, lab + " " + (o.title || ""));
     });
+    if (["line", "multi", "bars", "waterfall"].includes(o.type) && o.title)
+      charts.push({screen: n, type: o.type, title: o.title, ask: o.ask || "", kpi: o.kpi || ""});
     if (o.type === "tiles") (o.items || []).forEach((t) => { const m = /^([A-Z]{2,4}-\d{3}) /.exec(t.l || ""); if (m) add(m[1], p, n, t.l); });
     for (const k in o) if (!["equiv", "access", "nav"].includes(k)) w(o[k]);
   })(p);
@@ -37,4 +39,5 @@ const out = Object.keys(ids).sort().map((id) => {
 });
 fs.writeFileSync(path.join(__dirname, "ui_kpis.json"), JSON.stringify(out));
 fs.writeFileSync(path.join(__dirname, "ui_screens.json"), JSON.stringify(screens));
-console.log(out.length + " KPI IDs on " + Object.keys(screens).length + " screens");
+fs.writeFileSync(path.join(__dirname, "ui_charts.json"), JSON.stringify(charts));
+console.log(out.length + " KPI IDs and " + charts.length + " graphs on " + Object.keys(screens).length + " screens");
