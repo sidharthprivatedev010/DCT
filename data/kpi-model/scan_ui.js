@@ -50,4 +50,17 @@ fs.writeFileSync(path.join(__dirname, "ui_kpis.json"), JSON.stringify(out));
 fs.writeFileSync(path.join(__dirname, "ui_screens.json"), JSON.stringify(screens));
 fs.writeFileSync(path.join(__dirname, "ui_charts.json"), JSON.stringify(charts));
 fs.writeFileSync(path.join(__dirname, "ui_blocks.json"), JSON.stringify(blocks));
-console.log(out.length + " KPI IDs, " + charts.length + " graphs and " + blocks.length + " tables/tiles on " + Object.keys(screens).length + " screens");
+// catalogue placement per KPI from P1-R1 (type, theme, primary screens, drill path, note); the canonical row wins over "see T1" alias rows
+const cat = {};
+try {
+  let comp = null; const save = global.DCLite;
+  global.DCLite = {register: (n, t, f) => { class B {} B.prototype.props = {}; comp = f(B); }};
+  eval(fs.readFileSync(path.join(root, "js/c/P1-R1-KPICatalogue.js"), "utf8")); global.DCLite = save;
+  (new comp().renderVals().themes || []).forEach((t) => (t.groups || []).forEach((g) => (g.rows || []).forEach((r) => {
+    if (!ID.test(r.i) || (cat[r.i] && /^see /.test(r.p))) return;
+    if (cat[r.i] && !/^see /.test(cat[r.i].placed)) return;
+    cat[r.i] = {type: r.c, theme: t.k + " " + t.n, themeQ: t.q || "", group: g.n, placed: r.p, drill: r.d, note: r.a};
+  })));
+} catch (e) { console.log("catalogue not read: " + e.message); }
+fs.writeFileSync(path.join(__dirname, "ui_catalogue.json"), JSON.stringify(cat));
+console.log(out.length + " KPI IDs, " + charts.length + " graphs and " + blocks.length + " tables/tiles and " + Object.keys(cat).length + " catalogue rows on " + Object.keys(screens).length + " screens");

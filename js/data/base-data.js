@@ -22461,7 +22461,16 @@ var DCTData = {
      "P2-S12e-Signals",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Operational",
+     "placed": "O-01 · G-01 · G-05 · E-01 · E-02 · E-05",
+     "drill": "Hierarchy drill Group → Line; S-10",
+     "note": "Canonical; reused in T5 Plant"
+    }
    },
    "OPS-003": {
     "name": "Capacity utilization",
@@ -22612,7 +22621,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Operational",
+     "placed": "G-05 · E-02",
+     "drill": "O-01 drill: Operational",
+     "note": "Canonical; reused in T5 Plant"
+    }
    },
    "PLT-001": {
     "name": "Asset utilization",
@@ -22759,7 +22777,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E02-Plants"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Plant (hierarchy Group → Business → Entity → Plant → Line)",
+     "placed": "E-02",
+     "drill": "G-05 drill",
+     "note": ""
+    }
    },
    "PLT-002": {
     "name": "OEE",
@@ -22907,7 +22934,16 @@ var DCTData = {
     "screens": [
      "P2-E02-Plants",
      "P2-G05-OpsBenchmark"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Plant (hierarchy Group → Business → Entity → Plant → Line)",
+     "placed": "G-05 · E-02",
+     "drill": "—",
+     "note": ""
+    }
    },
    "PLT-004": {
     "name": "Recovery percentage",
@@ -23054,7 +23090,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E02-Plants"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Plant (hierarchy Group → Business → Entity → Plant → Line)",
+     "placed": "E-02",
+     "drill": "S-12 (as SIG-003)",
+     "note": "C-07"
+    }
    },
    "PLT-005": {
     "name": "Yield",
@@ -23201,7 +23246,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E02-Plants"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Plant (hierarchy Group → Business → Entity → Plant → Line)",
+     "placed": "E-02",
+     "drill": "S-12 (as SIG-002)",
+     "note": "C-07"
+    }
    },
    "REL-001": {
     "name": "MTBF",
@@ -23350,7 +23404,16 @@ var DCTData = {
      "P2-E03-Reliability",
      "P2-G05-OpsBenchmark",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Reliability",
+     "placed": "E-03",
+     "drill": "G-05 drill: Reliability",
+     "note": ""
+    }
    },
    "REL-002": {
     "name": "Mean Time to Repair",
@@ -23499,7 +23562,16 @@ var DCTData = {
      "P2-E03-Reliability",
      "P2-G05-OpsBenchmark",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Reliability",
+     "placed": "E-03",
+     "drill": "G-05 drill: Reliability",
+     "note": ""
+    }
    },
    "REL-003": {
     "name": "Unplanned downtime",
@@ -23637,7 +23709,16 @@ var DCTData = {
      "P2-E03-Reliability",
      "P2-G05-OpsBenchmark",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Reliability",
+     "placed": "G-05 · E-03",
+     "drill": "S-12 (as SIG-001)",
+     "note": ""
+    }
    },
    "REL-004": {
     "name": "Production loss from downtime",
@@ -23774,7 +23855,16 @@ var DCTData = {
     "screens": [
      "P2-E03-Reliability",
      "P2-G05-OpsBenchmark"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Reliability",
+     "placed": "E-03",
+     "drill": "G-05 drill",
+     "note": ""
+    }
    },
    "REL-005": {
     "name": "Preventive-maintenance compliance",
@@ -23922,7 +24012,16 @@ var DCTData = {
     "screens": [
      "P2-E03-Reliability",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Reliability",
+     "placed": "E-03",
+     "drill": "G-05 drill",
+     "note": "C-09: brief truncated"
+    }
    },
    "CST-001": {
     "name": "Cost per tonne",
@@ -24084,7 +24183,16 @@ var DCTData = {
      "P2-G03-Financial",
      "P2-G05-OpsBenchmark",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Cost",
+     "placed": "G-05",
+     "drill": "E-02 drill: Cost",
+     "note": ""
+    }
    },
    "CST-002": {
     "name": "Variable cost",
@@ -24223,7 +24331,16 @@ var DCTData = {
      "P2-E11-Financial",
      "P2-G03-Financial",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Cost",
+     "placed": "—",
+     "drill": "E-02 drill: Cost; G-03 drill: Cost",
+     "note": ""
+    }
    },
    "CST-003": {
     "name": "Fuel cost",
@@ -24360,7 +24477,16 @@ var DCTData = {
     "screens": [
      "P2-E02-Plants",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Cost",
+     "placed": "—",
+     "drill": "E-02 drill: Cost",
+     "note": "Related: SIG-017"
+    }
    },
    "SUS-001": {
     "name": "Water usage",
@@ -24501,7 +24627,16 @@ var DCTData = {
      "P2-G07-Risk",
      "P2-O05-Risk",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Sustainability (canonical here; reused in T7)",
+     "placed": "—",
+     "drill": "E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07",
+     "note": ""
+    }
    },
    "SUS-002": {
     "name": "Emissions",
@@ -24642,7 +24777,16 @@ var DCTData = {
      "P2-G07-Risk",
      "P2-O05-Risk",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Sustainability (canonical here; reused in T7)",
+     "placed": "—",
+     "drill": "E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07",
+     "note": ""
+    }
    },
    "SUS-003": {
     "name": "Energy intensity",
@@ -24794,7 +24938,16 @@ var DCTData = {
      "P2-G07-Risk",
      "P2-O05-Risk",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Sustainability (canonical here; reused in T7)",
+     "placed": "G-05",
+     "drill": "E-02 drill: Sustainability; O-05 drill; E-07",
+     "note": ""
+    }
    },
    "SIG-007": {
     "name": "Production at risk",
@@ -24936,7 +25089,16 @@ var DCTData = {
      "P2-S10-OpsImpact",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "E-05 · S-10",
+     "drill": "S-12",
+     "note": ""
+    }
    },
    "SIG-008": {
     "name": "Critical plant-state alerts",
@@ -25074,7 +25236,16 @@ var DCTData = {
      "P2-E03-Reliability",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "E-03",
+     "drill": "S-12",
+     "note": ""
+    }
    },
    "SIG-009": {
     "name": "Critical-material shortage risk",
@@ -25216,7 +25387,16 @@ var DCTData = {
      "P2-S10-OpsImpact",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "E-01 · S-10",
+     "drill": "S-12; E-04",
+     "note": "Scenario trigger"
+    }
    },
    "SIG-012": {
     "name": "Dispatch delays",
@@ -25367,7 +25547,16 @@ var DCTData = {
      "P2-S11-CashExposure",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Commercial",
+     "placed": "E-05 · S-11",
+     "drill": "S-12",
+     "note": ""
+    }
    },
    "SIG-021": {
     "name": "Environmental violations",
@@ -25505,7 +25694,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Risk and compliance",
+     "placed": "—",
+     "drill": "S-12; E-07; O-05 drill: EHS",
+     "note": ""
+    }
    },
    "EHS-001": {
     "name": "TRIR",
@@ -25655,7 +25853,16 @@ var DCTData = {
      "P2-G07-Risk",
      "P2-G08-CertGovernance",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "O-05",
+     "drill": "G-07 drill: EHS; E-07 drill",
+     "note": ""
+    }
    },
    "EHS-002": {
     "name": "Severity incidents",
@@ -25795,7 +26002,16 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "—",
+     "drill": "O-05 drill: EHS; G-07 drill",
+     "note": "Canonical for RSK-002"
+    }
    },
    "EHS-003": {
     "name": "Near misses",
@@ -25933,7 +26149,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "—",
+     "drill": "E-07 drill: EHS",
+     "note": ""
+    }
    },
    "EHS-004": {
     "name": "Critical safety incidents",
@@ -26071,7 +26296,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "O-05 · G-07",
+     "drill": "—",
+     "note": ""
+    }
    },
    "EHS-005": {
     "name": "Environmental excursions",
@@ -26209,7 +26443,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "—",
+     "drill": "E-07 drill; O-05 drill: EHS",
+     "note": ""
+    }
    },
    "EHS-006": {
     "name": "Open EHS corrective actions",
@@ -26346,7 +26589,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "E-07",
+     "drill": "G-07 drill",
+     "note": ""
+    }
    },
    "EHS-007": {
     "name": "Overdue EHS actions",
@@ -26484,7 +26736,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "E-07",
+     "drill": "G-07 drill; G-09",
+     "note": ""
+    }
    },
    "EHS-009": {
     "name": "EHS investigation completion",
@@ -26632,7 +26893,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "E-07",
+     "drill": "G-07 drill",
+     "note": ""
+    }
    },
    "REG-006": {
     "name": "Licence or permit expiry clock",
@@ -26769,7 +27039,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "O-05 · E-07",
+     "drill": "—",
+     "note": ""
+    }
    },
    "OPS-005": {
     "name": "Capacity utilisation (same measure as OPS-003)",
@@ -27221,7 +27500,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Operational",
+     "placed": "E-01",
+     "drill": "O-01 drill: Operational; G-03 Volume",
+     "note": ""
+    }
    },
    "OPS-004": {
     "name": "Sales vs plan · Group (same measure as OPS-002)",
@@ -27589,7 +27877,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Financial",
+     "placed": "O-01 · G-01 · G-03 · E-01 (entity)",
+     "drill": "S-03; G-03 bridge",
+     "note": ""
+    }
    },
    "FIN-002": {
     "name": "EBIT YTD",
@@ -27660,7 +27957,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Financial",
+     "placed": "G-03",
+     "drill": "O-01 drill: Financial",
+     "note": ""
+    }
    },
    "FIN-003": {
     "name": "Revenue YTD",
@@ -27805,7 +28111,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Financial",
+     "placed": "G-01 · G-03",
+     "drill": "O-01 drill: Financial; G-02",
+     "note": ""
+    }
    },
    "FIN-004": {
     "name": "Free cash flow YTD",
@@ -27877,7 +28192,16 @@ var DCTData = {
      "P2-O03-CashLiquidity",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Financial",
+     "placed": "O-01 · O-03 · G-01",
+     "drill": "G-04",
+     "note": "Canonical; aliased in T4 as CSH-005"
+    }
    },
    "FIN-005": {
     "name": "ROCE, annualised",
@@ -27953,7 +28277,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Financial",
+     "placed": "G-03",
+     "drill": "O-01 drill: Financial; G-01 drill: Financial",
+     "note": ""
+    }
    },
    "FIN-006": {
     "name": "Net debt",
@@ -28023,7 +28356,16 @@ var DCTData = {
      "P2-O03-CashLiquidity",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Financial",
+     "placed": "O-01 · G-03",
+     "drill": "O-03 drill: Liquidity",
+     "note": ""
+    }
    },
    "FIN-007": {
     "name": "Shareholder-value indicator (economic profit YTD)",
@@ -28096,7 +28438,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Financial",
+     "placed": "G-03",
+     "drill": "O-01 drill: Financial",
+     "note": "Definition pending"
+    }
    },
    "FIN-008": {
     "name": "FCF conversion (FCF ÷ EBITDA)",
@@ -28233,7 +28584,16 @@ var DCTData = {
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Cash",
+     "placed": "O-03",
+     "drill": "G-04",
+     "note": ""
+    }
    },
    "CSH-002": {
     "name": "Cash released YTD",
@@ -28299,7 +28659,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Cash",
+     "placed": "—",
+     "drill": "G-04 drill: Cash; O-03 drill",
+     "note": ""
+    }
    },
    "CSH-003": {
     "name": "Daily collections",
@@ -28368,7 +28737,16 @@ var DCTData = {
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity",
      "P2-S11-CashExposure"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Cash",
+     "placed": "E-01 · E-05 · S-11",
+     "drill": "G-04 drill: Cash",
+     "note": ""
+    }
    },
    "CSH-004": {
     "name": "Cash-conversion cycle",
@@ -28444,7 +28822,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Cash",
+     "placed": "G-04",
+     "drill": "O-03 drill: Working capital",
+     "note": ""
+    }
    },
    "CSH-006": {
     "name": "Cash-upstream exposure",
@@ -28519,7 +28906,16 @@ var DCTData = {
      "P2-O02-ChangeReport",
      "P2-O03-CashLiquidity",
      "P2-S11-CashExposure"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Cash",
+     "placed": "O-03 · G-04 · E-05 · S-11",
+     "drill": "—",
+     "note": "Entity sees own obligation only (C-05)"
+    }
    },
    "WCP-001": {
     "name": "DSO",
@@ -28589,7 +28985,16 @@ var DCTData = {
      "P2-G08-CertGovernance",
      "P2-O03-CashLiquidity",
      "P2-S11-CashExposure"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Working capital",
+     "placed": "G-04 · E-05 · S-11",
+     "drill": "O-03 drill: Working capital",
+     "note": ""
+    }
    },
    "WCP-002": {
     "name": "DPO",
@@ -28655,7 +29060,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Working capital",
+     "placed": "G-04",
+     "drill": "O-03 drill: Working capital",
+     "note": ""
+    }
    },
    "WCP-003": {
     "name": "Inventory days",
@@ -28721,7 +29135,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Working capital",
+     "placed": "G-04",
+     "drill": "O-03 drill: Working capital",
+     "note": ""
+    }
    },
    "WCP-004": {
     "name": "Net working capital",
@@ -28787,7 +29210,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Working capital",
+     "placed": "O-03 · G-04",
+     "drill": "—",
+     "note": ""
+    }
    },
    "WCP-005": {
     "name": "Working-capital movement",
@@ -28853,7 +29285,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Working capital",
+     "placed": "—",
+     "drill": "G-04 bridge; G-04 drill: Cash",
+     "note": ""
+    }
    },
    "WCP-006": {
     "name": "Working-capital days",
@@ -28924,7 +29365,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Working capital",
+     "placed": "—",
+     "drill": "G-04 drill: Cash",
+     "note": ""
+    }
    },
    "LIQ-001": {
     "name": "Liquidity runway",
@@ -29010,7 +29460,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Liquidity",
+     "placed": "O-03",
+     "drill": "G-04 drill: Liquidity",
+     "note": ""
+    }
    },
    "LIQ-002": {
     "name": "Covenant headroom",
@@ -29081,7 +29540,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Liquidity",
+     "placed": "O-03",
+     "drill": "G-04 drill: Liquidity",
+     "note": "Covenant terms: PLACEHOLDER"
+    }
    },
    "LIQ-003": {
     "name": "Debt-maturity exposure, next 12 months",
@@ -29147,7 +29615,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Liquidity",
+     "placed": "—",
+     "drill": "O-03 drill: Liquidity; G-04",
+     "note": ""
+    }
    },
    "LIQ-004": {
     "name": "Financing exposure (floating-rate debt)",
@@ -29212,7 +29689,16 @@ var DCTData = {
     "screens": [
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Liquidity",
+     "placed": "—",
+     "drill": "O-03 drill: Liquidity; G-04",
+     "note": ""
+    }
    },
    "TRS-001": {
     "name": "FX exposure, unhedged",
@@ -29283,7 +29769,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Treasury",
+     "placed": "—",
+     "drill": "O-03 drill: Treasury; G-04 drill",
+     "note": "Canonical; aliased as SIG-015"
+    }
    },
    "TRS-002": {
     "name": "Hedging effectiveness",
@@ -29354,7 +29849,16 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T4 Cash and Liquidity Command Center",
+     "themeQ": "Can cash move where it needs to move?",
+     "group": "Treasury",
+     "placed": "—",
+     "drill": "O-03 drill: Treasury; G-04 drill",
+     "note": ""
+    }
    },
    "TRS-003": {
     "name": "USD share of unhedged FX exposure",
@@ -29639,7 +30143,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Capex (chain: Approved → Committed → Spent → Physical Progress → Benefit Realized)",
+     "placed": "O-04 · G-06",
+     "drill": "—",
+     "note": ""
+    }
    },
    "CPX-002": {
     "name": "Committed capex",
@@ -29705,7 +30218,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Capex (chain: Approved → Committed → Spent → Physical Progress → Benefit Realized)",
+     "placed": "O-04 · G-06 · E-06",
+     "drill": "—",
+     "note": ""
+    }
    },
    "CPX-003": {
     "name": "Capex actual spend YTD",
@@ -29771,7 +30293,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Capex (chain: Approved → Committed → Spent → Physical Progress → Benefit Realized)",
+     "placed": "O-04 · G-06 · E-06",
+     "drill": "—",
+     "note": "Never shown without CPX-004"
+    }
    },
    "CPX-004": {
     "name": "Capex physical progress, weighted",
@@ -29847,7 +30378,16 @@ var DCTData = {
      "P2-O04-Capex",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Capex (chain: Approved → Committed → Spent → Physical Progress → Benefit Realized)",
+     "placed": "O-01 · O-04 · G-06 · E-06",
+     "drill": "—",
+     "note": "Canonical for STR-001"
+    }
    },
    "SIG-011": {
     "name": "Capex value at risk",
@@ -29915,7 +30455,16 @@ var DCTData = {
      "P2-O04-Capex",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "O-04 · E-06",
+     "drill": "S-12; G-06",
+     "note": ""
+    }
    },
    "PRG-001": {
     "name": "Capex project status",
@@ -29990,7 +30539,16 @@ var DCTData = {
     "screens": [
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Programmes",
+     "placed": "—",
+     "drill": "O-04 drill: Programmes; G-06 drill",
+     "note": ""
+    }
    },
    "PRG-002": {
     "name": "Benefits realisation",
@@ -30061,7 +30619,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Programmes",
+     "placed": "O-04 · G-06",
+     "drill": "—",
+     "note": ""
+    }
    },
    "PRG-003": {
     "name": "Delayed projects",
@@ -30127,7 +30694,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Programmes",
+     "placed": "G-06 · E-06",
+     "drill": "O-04",
+     "note": ""
+    }
    },
    "PRG-004": {
     "name": "Capex / transformation progress (same measure as STR-002)",
@@ -30273,7 +30849,16 @@ var DCTData = {
      "P2-O04-Capex",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Strategic",
+     "placed": "—",
+     "drill": "O-04 drill: Programmes; G-06",
+     "note": ""
+    }
    },
    "PRG-005": {
     "name": "Transformation initiative status",
@@ -30419,7 +31004,16 @@ var DCTData = {
      "P2-E04-Supply",
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Operational supplier performance",
+     "placed": "E-04 · E-06",
+     "drill": "G-06 drill",
+     "note": ""
+    }
    },
    "VAL-001": {
     "name": "EBITDA benefit YTD",
@@ -30485,7 +31079,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Value",
+     "placed": "—",
+     "drill": "O-04 drill: Value; G-06 drill: Value",
+     "note": ""
+    }
    },
    "VAL-002": {
     "name": "Cash benefit YTD",
@@ -30551,7 +31154,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Value",
+     "placed": "—",
+     "drill": "O-04 drill: Value; G-06 drill: Value",
+     "note": ""
+    }
    },
    "VAL-003": {
     "name": "Cost savings delivered YTD",
@@ -30617,7 +31229,16 @@ var DCTData = {
      "P2-E06-Capex",
      "P2-G06-CapexPortfolio",
      "P2-O04-Capex"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T6 Capex and Strategic Initiatives",
+     "themeQ": "Are we spending money and creating value?",
+     "group": "Value",
+     "placed": "—",
+     "drill": "O-04 drill: Value; G-06 drill: Value",
+     "note": ""
+    }
    },
    "SUP-001": {
     "name": "Supplier on-time delivery",
@@ -30766,7 +31387,16 @@ var DCTData = {
      "P2-E04-Supply",
      "P2-G05-OpsBenchmark",
      "P2-O09-Operations"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Operational supplier performance",
+     "placed": "E-04",
+     "drill": "—",
+     "note": ""
+    }
    },
    "SUP-002": {
     "name": "Supplier fill rate",
@@ -30913,7 +31543,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E04-Supply"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Operational supplier performance",
+     "placed": "E-04",
+     "drill": "—",
+     "note": ""
+    }
    },
    "SUP-003": {
     "name": "Supplier quality-rejection rate",
@@ -31060,7 +31699,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E04-Supply"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Operational supplier performance",
+     "placed": "E-04",
+     "drill": "—",
+     "note": ""
+    }
    },
    "SUP-004": {
     "name": "Supplier lead-time variance",
@@ -31208,7 +31856,16 @@ var DCTData = {
     "screens": [
      "P2-E04-Supply",
      "P2-G05-OpsBenchmark"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Operational supplier performance",
+     "placed": "E-04",
+     "drill": "—",
+     "note": "Scenario: S-07"
+    }
    },
    "SUP-005": {
     "name": "Critical supplier exposure",
@@ -31273,7 +31930,16 @@ var DCTData = {
     "screens": [
      "P2-E04-Supply",
      "P2-G05-OpsBenchmark"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T5 Operations and Asset Performance",
+     "themeQ": "Are assets producing what they promised?",
+     "group": "Operational supplier performance",
+     "placed": "E-04",
+     "drill": "G-05 drill: Supply",
+     "note": "Scenario: S-07"
+    }
    },
    "SUP-007": {
     "name": "Single-source spend share",
@@ -31623,7 +32289,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Contracts",
+     "placed": "G-07",
+     "drill": "E-04",
+     "note": ""
+    }
    },
    "CON-002": {
     "name": "Contract-compliance rate",
@@ -31695,7 +32370,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Contracts",
+     "placed": "—",
+     "drill": "G-07 drill: Contracts; E-04",
+     "note": ""
+    }
    },
    "CON-003": {
     "name": "Supplier EHS non-compliance",
@@ -31763,7 +32447,16 @@ var DCTData = {
      "P2-G05-OpsBenchmark",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Contracts",
+     "placed": "—",
+     "drill": "E-04; E-07 drill: Contracts",
+     "note": ""
+    }
    },
    "REG-001": {
     "name": "Pending filings",
@@ -31900,7 +32593,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "—",
+     "drill": "E-07 drill: Regulatory; G-07 drill",
+     "note": ""
+    }
    },
    "REG-002": {
     "name": "Regulatory deadlines, next 30 days",
@@ -32037,7 +32739,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "—",
+     "drill": "E-07; S-12 (as SIG-019)",
+     "note": ""
+    }
    },
    "REG-003": {
     "name": "Licence expirations, next 12 months",
@@ -32174,7 +32885,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "—",
+     "drill": "E-07; S-12 (as SIG-020)",
+     "note": ""
+    }
    },
    "REG-004": {
     "name": "Regulatory obligations due, next 30 days",
@@ -32311,7 +33031,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "E-07",
+     "drill": "G-07 drill",
+     "note": ""
+    }
    },
    "REG-005": {
     "name": "Overdue regulatory obligations",
@@ -32449,7 +33178,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "O-05 · G-07 · E-07",
+     "drill": "—",
+     "note": ""
+    }
    },
    "REG-007": {
     "name": "Open regulatory actions",
@@ -32586,7 +33324,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "—",
+     "drill": "E-07 drill; G-07 drill",
+     "note": ""
+    }
    },
    "REG-008": {
     "name": "Overdue compliance actions",
@@ -32723,7 +33470,16 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "—",
+     "drill": "E-07 drill; G-07 drill",
+     "note": ""
+    }
    },
    "REG-009": {
     "name": "Disclosure-clock status",
@@ -32853,7 +33609,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Regulatory",
+     "placed": "O-05",
+     "drill": "S-05 header",
+     "note": "No legal rule modelled (D-07)"
+    }
    },
    "REG-010": {
     "name": "Regulatory breaches YTD",
@@ -33130,7 +33895,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Risk",
+     "placed": "—",
+     "drill": "O-01 drill: Risk; O-05; G-07",
+     "note": "Related: REG-005, SIG-021"
+    }
    },
    "CMP-005": {
     "name": "Regulatory breaches YTD (same measure as REG-010)",
@@ -33405,7 +34179,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "WORKFLOW",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "EHS",
+     "placed": "—",
+     "drill": "S-05; G-09; E-07 drill",
+     "note": ""
+    }
    },
    "EHS-010": {
     "name": "EHS investigation completion rate YTD",
@@ -33618,7 +34401,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-07 drill: Controls",
+     "note": ""
+    }
    },
    "CTL-004": {
     "name": "High-severity control failures YTD",
@@ -33683,7 +34475,16 @@ var DCTData = {
     "screens": [
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "O-05 · G-07",
+     "drill": "—",
+     "note": ""
+    }
    },
    "CTL-005": {
     "name": "Policy exceptions YTD",
@@ -33749,7 +34550,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-07 drill: Controls",
+     "note": ""
+    }
    },
    "CTL-006": {
     "name": "Unauthorised-vendor usage YTD",
@@ -33816,7 +34626,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-07 drill: Controls; E-04",
+     "note": ""
+    }
    },
    "CTL-007": {
     "name": "Segregation-of-duties exceptions YTD",
@@ -33882,7 +34701,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-07 drill: Controls",
+     "note": ""
+    }
    },
    "CTL-008": {
     "name": "Unauthorised-access events YTD",
@@ -33948,7 +34776,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-07 drill: Controls",
+     "note": ""
+    }
    },
    "CTL-009": {
     "name": "Data-sharing exceptions YTD",
@@ -34014,7 +34851,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-07 drill: Controls",
+     "note": ""
+    }
    },
    "CTL-010": {
     "name": "Manual overrides YTD",
@@ -34080,7 +34926,16 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-07 drill: Controls; G-08 drill",
+     "note": "Distinct from GOV-002"
+    }
    },
    "CTL-003": {
     "name": "Assurance reviews completed",
@@ -34149,7 +35004,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G07-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T7 Risk, Compliance and EHS",
+     "themeQ": "What can stop the business tomorrow?",
+     "group": "Compliance and controls",
+     "placed": "—",
+     "drill": "G-08 drill: Governance; G-07 drill",
+     "note": ""
+    }
    },
    "GOV-001": {
     "name": "Ageing certification approvals",
@@ -34215,7 +35079,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "—",
+     "drill": "G-08 drill: Governance",
+     "note": ""
+    }
    },
    "GOV-002": {
     "name": "KPI overrides",
@@ -34281,7 +35154,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "E-08",
+     "drill": "G-08 drill: Governance",
+     "note": "Distinct from CTL-010 (operational overrides)"
+    }
    },
    "GOV-003": {
     "name": "Recurring data-quality issues",
@@ -34347,7 +35229,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "—",
+     "drill": "G-08 drill: Governance",
+     "note": ""
+    }
    },
    "GOV-004": {
     "name": "Open audit findings",
@@ -34416,7 +35307,16 @@ var DCTData = {
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust",
      "P2-O05-Risk"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "G-07",
+     "drill": "G-08 drill: Governance",
+     "note": "Canonical; aliased in T7 as CTL-001"
+    }
    },
    "GOV-005": {
     "name": "Overdue assurance actions",
@@ -34482,7 +35382,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "—",
+     "drill": "G-08 drill: Governance",
+     "note": ""
+    }
    },
    "GOV-006": {
     "name": "Repeat findings",
@@ -34548,7 +35457,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "—",
+     "drill": "G-08 drill: Governance",
+     "note": ""
+    }
    },
    "GOV-007": {
     "name": "Leadership KPIs affected by findings",
@@ -34613,7 +35531,16 @@ var DCTData = {
     "screens": [
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "G-08",
+     "drill": "Header trust summary (Owner)",
+     "note": ""
+    }
    },
    "TRU-004": {
     "name": "Open reconciliation breaks",
@@ -34678,7 +35605,16 @@ var DCTData = {
     "screens": [
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "E-08",
+     "drill": "G-08 drill: Reconciliation",
+     "note": ""
+    }
    },
    "TRU-006": {
     "name": "Overdue certifications",
@@ -34743,7 +35679,16 @@ var DCTData = {
     "screens": [
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "G-08 · E-08",
+     "drill": "—",
+     "note": ""
+    }
    },
    "TRU-007": {
     "name": "Material reconciliation breaks",
@@ -34808,7 +35753,16 @@ var DCTData = {
     "screens": [
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "G-08",
+     "drill": "S-03 Reconciliation tab",
+     "note": ""
+    }
    },
    "GOV-008": {
     "name": "Evidence completeness rate",
@@ -34879,7 +35833,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "E-08",
+     "drill": "G-08 drill; S-08",
+     "note": ""
+    }
    },
    "GOV-009": {
     "name": "Average finding-closure time",
@@ -34950,7 +35913,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Governance",
+     "placed": "—",
+     "drill": "G-08 drill: Governance",
+     "note": ""
+    }
    },
    "TRU-001": {
     "name": "Certified KPI percentage",
@@ -35024,7 +35996,16 @@ var DCTData = {
      "P2-G02-EntityComparison",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "G-01 · G-08",
+     "drill": "Header trust summary (all lenses)",
+     "note": ""
+    }
    },
    "TRU-002": {
     "name": "Uncertified KPI count",
@@ -35094,7 +36075,16 @@ var DCTData = {
     "screens": [
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "G-08",
+     "drill": "Header trust summary",
+     "note": ""
+    }
    },
    "TRU-005": {
     "name": "KPI certification coverage",
@@ -35163,7 +36153,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G08-CertGovernance"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "—",
+     "drill": "G-08 drill: Reconciliation",
+     "note": ""
+    }
    },
    "TRU-008": {
     "name": "Source-to-Lake reconciliation rate",
@@ -35234,7 +36233,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "E-08",
+     "drill": "G-08 drill",
+     "note": "'Lake' = data-platform placeholder"
+    }
    },
    "TRU-009": {
     "name": "Flash-to-MIS reconciliation rate",
@@ -35305,7 +36313,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "—",
+     "drill": "G-08 drill: Reconciliation; E-08",
+     "note": ""
+    }
    },
    "TRU-010": {
     "name": "Flash-to-close variance",
@@ -35376,7 +36393,16 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "G-08",
+     "drill": "—",
+     "note": ""
+    }
    },
    "TRU-003": {
     "name": "Variance against Board number (EBITDA)",
@@ -35445,7 +36471,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G08-CertGovernance"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T2 Number Assurance and Certification",
+     "themeQ": "Can leadership defend the number?",
+     "group": "Data trust",
+     "placed": "—",
+     "drill": "G-08 drill: Reconciliation",
+     "note": "D-10"
+    }
    },
    "TRU-011": {
     "name": "Largest entity variance against Board numbers",
@@ -35604,7 +36639,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "WORKFLOW",
+     "theme": "T8 Decision, Action, Escalation and AI",
+     "themeQ": "Who owns the response, what must happen next, and is the issue moving to closure?",
+     "group": "Operating effectiveness",
+     "placed": "O-01 · G-01 · G-07 · G-09",
+     "drill": "—",
+     "note": "Canonical for RSK-001"
+    }
    },
    "EFF-006": {
     "name": "Alerts without accepted owners",
@@ -35668,7 +36712,16 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G09-Escalations"
-    ]
+    ],
+    "cat": {
+     "type": "WORKFLOW",
+     "theme": "T8 Decision, Action, Escalation and AI",
+     "themeQ": "Who owns the response, what must happen next, and is the issue moving to closure?",
+     "group": "Operating effectiveness",
+     "placed": "G-09",
+     "drill": "E-09 counter",
+     "note": ""
+    }
    },
    "EFF-007": {
     "name": "Overdue actions",
@@ -35734,7 +36787,16 @@ var DCTData = {
      "P2-E01-EntityHome",
      "P2-E09-MyWork",
      "P2-G09-Escalations"
-    ]
+    ],
+    "cat": {
+     "type": "WORKFLOW",
+     "theme": "T8 Decision, Action, Escalation and AI",
+     "themeQ": "Who owns the response, what must happen next, and is the issue moving to closure?",
+     "group": "Operating effectiveness",
+     "placed": "G-09 · E-01 · E-09",
+     "drill": "—",
+     "note": ""
+    }
    },
    "EFF-008": {
     "name": "Average resolution time",
@@ -35805,7 +36867,16 @@ var DCTData = {
      "P2-E09-MyWork",
      "P2-G09-Escalations",
      "P2-O06-Decisions"
-    ]
+    ],
+    "cat": {
+     "type": "WORKFLOW",
+     "theme": "T8 Decision, Action, Escalation and AI",
+     "themeQ": "Who owns the response, what must happen next, and is the issue moving to closure?",
+     "group": "Operating effectiveness",
+     "placed": "G-09",
+     "drill": "—",
+     "note": ""
+    }
    },
    "EFF-009": {
     "name": "Closed escalations, last 30 days",
@@ -36087,7 +37158,16 @@ var DCTData = {
      "P2-O03-CashLiquidity",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "—",
+     "drill": "S-12; E-05; G-04",
+     "note": ""
+    }
    },
    "SIG-005": {
     "name": "Payment delays",
@@ -36154,7 +37234,16 @@ var DCTData = {
      "P2-G04-CashWC",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "—",
+     "drill": "S-12; E-05; G-04",
+     "note": ""
+    }
    },
    "SIG-006": {
     "name": "Cash burn signal",
@@ -36219,7 +37308,16 @@ var DCTData = {
     "screens": [
      "P2-O03-CashLiquidity",
      "P2-S12-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "—",
+     "drill": "S-12; O-03 drill",
+     "note": ""
+    }
    },
    "SIG-013": {
     "name": "Pricing pressure",
@@ -36350,7 +37448,16 @@ var DCTData = {
     "screens": [
      "P2-G03-Financial",
      "P2-S12-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Commercial",
+     "placed": "—",
+     "drill": "S-12; G-03 drill: Price",
+     "note": ""
+    }
    },
    "PRD-001": {
     "name": "Days to breach (earliest plant)",
@@ -36495,7 +37602,16 @@ var DCTData = {
      "P2-S12e-Signals",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "PREDICTION",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Prediction outputs (forecast style, never shown as actuals)",
+     "placed": "S-12 · S-10",
+     "drill": "O-01 forecast panel; every alert header",
+     "note": ""
+    }
    },
    "PRD-002": {
     "name": "Probability of production plan miss, next month",
@@ -36661,7 +37777,16 @@ var DCTData = {
      "P2-S12e-Signals",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "PREDICTION",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Prediction outputs (forecast style, never shown as actuals)",
+     "placed": "S-12",
+     "drill": "O-01 forecast panel",
+     "note": ""
+    }
    },
    "PRD-003": {
     "name": "Projected EBITDA gap, rest of year",
@@ -36740,7 +37865,16 @@ var DCTData = {
      "P2-S12e-Signals",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "PREDICTION",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Prediction outputs (forecast style, never shown as actuals)",
+     "placed": "S-12",
+     "drill": "O-01 forecast panel; G-03",
+     "note": ""
+    }
    },
    "PRD-004": {
     "name": "Projected liquidity gap, next 90 days",
@@ -36820,7 +37954,16 @@ var DCTData = {
      "P2-O03-CashLiquidity",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "PREDICTION",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Prediction outputs (forecast style, never shown as actuals)",
+     "placed": "S-12",
+     "drill": "O-03 forecast panel",
+     "note": ""
+    }
    },
    "PRD-005": {
     "name": "Forecast covenant breach",
@@ -36894,7 +38037,16 @@ var DCTData = {
      "P2-O03-CashLiquidity",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "PREDICTION",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Prediction outputs (forecast style, never shown as actuals)",
+     "placed": "S-12",
+     "drill": "O-03; G-04 drill: Liquidity",
+     "note": ""
+    }
    },
    "PRD-006": {
     "name": "Production loss from downtime, next month",
@@ -37822,7 +38974,16 @@ var DCTData = {
      "P2-E04-Supply",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Finance and exposure",
+     "placed": "—",
+     "drill": "S-12; E-04",
+     "note": "Scenario trigger"
+    }
    },
    "SIG-014": {
     "name": "Commodity-price movement (RM-1 index)",
@@ -37888,7 +39049,16 @@ var DCTData = {
      "P2-G03-Financial",
      "P2-O02-ChangeReport",
      "P2-S12-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "EXTERNAL",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "External signals",
+     "placed": "—",
+     "drill": "S-12; G-03 drill: External",
+     "note": ""
+    }
    },
    "SIG-016": {
     "name": "Freight exposure (lanes disrupted)",
@@ -37955,7 +39125,16 @@ var DCTData = {
      "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "EXTERNAL",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "External signals",
+     "placed": "—",
+     "drill": "S-12; G-03 drill: External",
+     "note": ""
+    }
    },
    "SIG-017": {
     "name": "Fuel exposure (fuel cost per tonne, MoM)",
@@ -38105,7 +39284,16 @@ var DCTData = {
      "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "EXTERNAL",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "External signals",
+     "placed": "—",
+     "drill": "S-12; G-03 drill: External",
+     "note": "Related: CST-003"
+    }
    },
    "SIG-018": {
     "name": "Power-cost exposure (power cost per tonne, MoM)",
@@ -38254,7 +39442,16 @@ var DCTData = {
      "P2-G03-Financial",
      "P2-O02-ChangeReport",
      "P2-S12-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "EXTERNAL",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "External signals",
+     "placed": "—",
+     "drill": "S-12; G-03 drill: External",
+     "note": ""
+    }
    },
    "SIG-001": {
     "name": "Unplanned downtime (same measure as REL-003)",
@@ -38392,7 +39589,16 @@ var DCTData = {
      "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Operations",
+     "placed": "—",
+     "drill": "S-12; E-03",
+     "note": "Alias → REL-003"
+    }
    },
    "SIG-002": {
     "name": "Yield (same measure as PLT-005)",
@@ -38541,7 +39747,16 @@ var DCTData = {
      "P2-E02-Plants",
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Operations",
+     "placed": "—",
+     "drill": "S-12; E-02",
+     "note": "Alias → PLT-005"
+    }
    },
    "SIG-003": {
     "name": "Recovery percentage (same measure as PLT-004)",
@@ -38689,7 +39904,16 @@ var DCTData = {
     "screens": [
      "P2-E02-Plants",
      "P2-S12-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Operations",
+     "placed": "—",
+     "drill": "S-12; E-02",
+     "note": "Alias → PLT-004"
+    }
    },
    "SIG-015": {
     "name": "FX exposure, unhedged (same measure as TRS-001)",
@@ -38760,7 +39984,16 @@ var DCTData = {
      "P2-G03-Financial",
      "P2-O02-ChangeReport",
      "P2-S12-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "EXTERNAL",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "External signals",
+     "placed": "—",
+     "drill": "S-12; G-03 drill: External",
+     "note": "Alias → TRS-001"
+    }
    },
    "SIG-019": {
     "name": "Regulatory deadlines, next 30 days (same measure as REG-002)",
@@ -38897,7 +40130,16 @@ var DCTData = {
     "screens": [
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Risk and compliance",
+     "placed": "—",
+     "drill": "S-12; E-07",
+     "note": "Alias → REG-002"
+    }
    },
    "SIG-020": {
     "name": "Licence expirations, next 12 months (same measure as REG-003)",
@@ -39034,7 +40276,16 @@ var DCTData = {
     "screens": [
      "P2-S12-Signals",
      "P2-S12e-Signals"
-    ]
+    ],
+    "cat": {
+     "type": "LEADING",
+     "theme": "T3 No-Surprises Intelligence",
+     "themeQ": "What can materially hurt the business before period end?",
+     "group": "Leading signals: Risk and compliance",
+     "placed": "—",
+     "drill": "S-12; E-07",
+     "note": "Alias → REG-003"
+    }
    },
    "RSK-001": {
     "name": "Open critical alerts (same measure as EFF-002)",
@@ -39100,7 +40351,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "WORKFLOW",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Risk",
+     "placed": "O-01 (as EFF-002)",
+     "drill": "—",
+     "note": "Alias → EFF-002"
+    }
    },
    "RSK-002": {
     "name": "Severity incidents (same measure as EHS-002)",
@@ -39238,7 +40498,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Risk",
+     "placed": "—",
+     "drill": "O-01 drill: Risk; O-05 drill: EHS",
+     "note": "Alias → EHS-002"
+    }
    },
    "STR-001": {
     "name": "Capex physical progress, weighted (same measure as CPX-004)",
@@ -39309,7 +40578,16 @@ var DCTData = {
      "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
-    ]
+    ],
+    "cat": {
+     "type": "ACTUAL",
+     "theme": "T1 Enterprise Health",
+     "themeQ": "Is the enterprise healthier today than yesterday?",
+     "group": "Strategic",
+     "placed": "O-01 (as CPX-004)",
+     "drill": "O-04",
+     "note": "Alias → CPX-004 Physical progress"
+    }
    }
   },
   "screens": {
