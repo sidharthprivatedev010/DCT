@@ -99,16 +99,20 @@ for n in ("P2-O01-EnterpriseHealth", "P3-L-LargeDisplay", "P2-X-States"):
 
 # ---------------------------------------------------------------- 2. EBITDA → FCF → ROCE, indexed (O-01, G-03 Group · E-01, E-11 A1)
 def diag(sc):
-    e = ebitda[sc]; f8 = [kv("FIN-008", sc, i) for i in range(6)]; f5 = [kv("FIN-005", sc, i) for i in range(6)]
-    idx = lambda xs: [r1(100 * x / xs[0]) for x in xs]
-    read = (f"EBITDA in P06 is {('+' if e[-1] >= e[0] else '−')}{abs(round(100 * (e[-1] / e[0] - 1)))}% against P01 (₹{money(e[-1])} m vs ₹{money(e[0])} m). "
-            f"FCF conversion year to date is {f8[-1]:.0f}% (FIN-008): about {'a third' if 28 <= f8[-1] <= 40 else f'{f8[-1]:.0f}%'} of EBITDA reaches free cash after tax, working capital and capex. "
-            f"ROCE is {f5[-1]:.1f}% annualised against {f5[0]:.1f}% in P01 (FIN-005).")
-    return {"x": X6, "base": 100, "series": [{"l": "EBITDA (month)", "v": idx(e), "tag": "CERT"}, {"l": "FCF conversion YTD", "v": idx(f8), "tag": "CERT"},
-            {"l": "ROCE annualised", "v": idx(f5), "tag": "CERT", "dash": True}], "read": read, "cap": "Certified P01–P06 (model). Each line is indexed to P01 = 100."}
+    """EBITDA margin, FCF conversion and ROCE in % (one unit, no index)."""
+    e, rev = ebitda[sc], m(sc, "revenue_k")
+    mg = [r1(100 * x / y) for x, y in zip(e, rev)]
+    f8 = [r1(kv("FIN-008", sc, i)) for i in range(6)]; f5 = [r1(kv("FIN-005", sc, i)) for i in range(6)]
+    read = (f"EBITDA margin is {mg[-1]:.1f}% in P06 ({mg[0]:.1f}% in P01). FCF conversion year to date is {f8[-1]:.0f}% (FIN-008): about "
+            f"{'a third' if 28 <= f8[-1] <= 40 else f'{f8[-1]:.0f}%'} of EBITDA reaches free cash after tax, working capital and capex. "
+            f"ROCE is {f5[-1]:.1f}% annualised against {f5[0]:.1f}% in P01 (FIN-005; target 12%).")
+    return {"title": "EBITDA margin → FCF conversion → ROCE · " + ("Group" if sc == "Group" else "Entity A1") + " · %", "x": X6, "base": 12, "baseL": "ROCE target 12%",
+            "series": [{"l": "EBITDA margin", "v": mg, "tag": "CERT"}, {"l": "FCF conversion YTD", "v": f8, "tag": "CERT"},
+                       {"l": "ROCE annualised", "v": f5, "tag": "CERT", "dash": True}], "read": read, "cap": "Certified P01–P06 (model)."}
 def diag_edit(sc):
     def fn(o):
-        for b in titled(o, "EBITDA → FCF → ROCE"): b.update(diag(sc))
+        for b in blocks(o, lambda x: x.get("type") == "multi" and ("EBITDA → FCF → ROCE" in str(x.get("title", "")) or "EBITDA margin → FCF" in str(x.get("title", "")))):
+            b.update(diag(sc))
     return fn
 for n, sc in (("P2-O01-EnterpriseHealth", "Group"), ("P2-G03-Financial", "Group"), ("P2-E01-EntityHome", "A1"), ("P2-E11-Financial", "A1"),
               ("P3-L-LargeDisplay", "Group"), ("P2-X-States", "Group")):
@@ -140,7 +144,7 @@ def e11(o):
         a, p = [r1(x) for x in m("A1", "revenue_k")], [r1(x) for x in m("A1", "planned_revenue_k")]
         b.update(x=X12, act=a, plan=p + [p[-1]] * 6, certTo=5, fc=[None] * 5 + [a[-1]] + [a[-1]] * 6,
                  cap="P01–P06 certified (model) · P07–P12 plan and forecast held at the P06 run-rate (SYN).")
-    for b in titled(o, "EBITDA → FCF → ROCE"):
+    for b in titled(o, "EBITDA margin → FCF"):
         b["read"] += " Levers: release ₹34–45 m of inventory and recover DSO (52 d vs 45 d)."
 edit("P2-E11-Financial", e11)
 
@@ -275,4 +279,38 @@ def s10(o):
         b["rows"] = [{"l": "Line L2", "v": -15.3, "d": "−15.3", "hi": True}, {"l": "Line L1", "v": -6.4, "d": "−6.4"}, {"l": "Line L3", "v": -2.6, "d": "−2.6"}]
         b["title"] = "Forecast shortfall by line (summary) · kt · total 24.3 = SIG-007 Plant 02"
 edit("P2-S10-OpsImpact", s10)
+# ---------------------------------------------------------------- 11. entity comparison and governance charts
+def g02(o):
+    for b in titled(o, "EBITDA variance vs plan YTD"):
+        b["rows"] = [{"l": f"Entity {e}", "v": r1(ytd[e] - ytd_plan(e)[0]), "d": ("+" if ytd[e] >= ytd_plan(e)[0] else "−") + money(abs(ytd[e] - ytd_plan(e)[0])),
+                      **({"hi": True} if e == "A1" else {})} for e in ("A1", "A2")]
+        b["cap"] = "Plan YTD = actual + revenue below plan × EBITDA margin (model)."
+    for b in titled(o, "ROCE vs plan by entity"):
+        b["rows"] = [{"l": f"Entity {e}", "v": r1(kv("FIN-005", e) - 12), "d": ("+" if kv("FIN-005", e) >= 12 else "−") + money(abs(kv("FIN-005", e) - 12)),
+                      **({"hi": True, "note": "Line 3 capital before benefit"} if e == "A1" else {})} for e in ("A1", "A2")]
+        b["title"] = "ROCE vs 12% target by entity · pts"
+    for b in blocks(o, lambda x: x.get("type") == "bars" and str(x.get("title", "")).startswith("DSO")): b["kpi"] = "WCP-001"
+edit("P2-G02-EntityComparison", g02)
+edit("P2-G04-CashWC", lambda o: [b.update(kpi="WCP-001") for b in titled(o, "DSO by entity")])
+edit("P2-G07-Risk", lambda o: [b.update(kpi="GOV-004") for b in titled(o, "Open audit findings by entity")])
+def g08o(o):
+    for b in titled(o, "Certification coverage and reconciliation rates"):
+        b.update(x=X6, series=[{"l": "Certified KPI % (TRU-001)", "v": [r1(kv("TRU-001", "Group", i)) for i in range(6)]},
+                               {"l": "Source-to-Lake (TRU-008)", "v": [r1(kv("TRU-008", "Group", i)) for i in range(6)], "c": "#0B6B73"},
+                               {"l": "Flash-to-MIS (TRU-009)", "v": [r1(kv("TRU-009", "Group", i)) for i in range(6)], "c": "#7E63C7", "dash": True}])
+edit("P2-G08o-OwnerTrust", g08o)
+def eff(o):
+    def a_of(x): mt = re.match(r"(\d+) of", str(x)); return int(mt.group(1)) if mt else 0
+    for b in titled(o, "Escalation effectiveness"):
+        b.update(x=X6, series=[{"l": "Resolution time (d) · EFF-008", "v": [r1(kv("EFF-008", "Group", i)) for i in range(6)], "tag": "SYSTEM"},
+                               {"l": "Repeat issues, last 90 d · EFF-010", "v": [kv("EFF-010", "Group", i) for i in range(6)], "tag": "SYSTEM", "c": "#C27C0E"},
+                               {"l": "Root causes eliminated YTD · EFF-011", "v": [a_of(kv("EFF-011", "Group", i)) for i in range(6)], "tag": "CERT", "c": "#1E6B43", "dash": True}])
+for n in ("P2-G09-Escalations", "P2-O06-Decisions"): edit(n, eff)
+def leak(o):
+    for b in titled(o, "Leakage by stage"):
+        for r in b["rows"]:
+            if r["l"] == "Upstreaming": r["v"] = -r1(up); r["d"] = "−" + money(up)
+for n in ("P2-E05-ProductionCash", "P2-S11-CashExposure"): edit(n, leak)
+edit("P2-G06-CapexPortfolio", lambda o: [b.update(title="Value delivered vs plan · cumulative ₹ m · Group") for b in titled(o, "Value delivered vs plan · cumulative ₹ m · Group by entity")])
+
 print(f"synced · FY EBITDA {fy_pl:,.1f} → {fy_fc:,.1f} (gap {gap:,.1f}) · A1 YTD plan {plan_a1:,.1f} vs {ytd['A1']:,.1f} ({pct:+.1f}%) · cash {cashG:,.1f} · NWC {nwcG:,.1f}")

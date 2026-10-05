@@ -50,7 +50,13 @@ Charts and story figures live in `js/c/*.js`, not in the KPI cards. `sync_pages.
 | Where | What |
 |---|---|
 | O-01, P3-L | EBITDA per month |
-| O-01, G-03, E-01, E-11 | EBITDA → FCF → ROCE (indexed: EBITDA, FIN-008, FIN-005) |
+| O-01, G-03, E-01, E-11 | EBITDA margin, FCF conversion (FIN-008) and ROCE (FIN-005), in % |
+| G-02 | EBITDA vs plan YTD and ROCE vs the 12% target, by entity |
+| G-02, G-04 | DSO by entity (WCP-001, filled at render) |
+| G-07 | Audit findings by entity (GOV-004, filled at render) |
+| G-08o | Certification and reconciliation rates (TRU-001, TRU-008, TRU-009) |
+| G-09, O-06 | Escalation effectiveness (EFF-008, EFF-010, EFF-011) |
+| E-05, S-11 | Upstreaming leakage (CSH-006) |
 | E-11 | A1 revenue against planned revenue |
 | O-03 | FX exposure against hedged |
 | O-04, E-06 | Cumulative value delivered (VAL-001/002/003) |
@@ -85,6 +91,7 @@ Charts and story figures live in `js/c/*.js`, not in the KPI cards. `sync_pages.
 | Scenario options (A 10.3, B 18.2, A+B 4.2 kt) and the "≈ ₹24 m" A+B EBITDA effect | S-06, G-10 | Scaled from the old story to the model's 24.3 kt and ₹56.2 m gap |
 | Group P07–P12 production forecast path | O-09 | Hand-set from P06 actual 625.7 kt back towards plan |
 | Billing deferral ₹31 m, materiality bands, case and alert timings, owners, dates | Alerts, cases, decisions | Workflow narrative |
+| E-04 material cover minus lead time by material | E-04 | Per-material cover is not in the model. SIG-009 counts 4 materials under 7 days' cover at A1; the chart shows one (RM-1) below lead time. These are different measures. |
 | Line-level detail (L1–L3), asset IDs, supplier S-07 and S-12 names | Supply, reliability, case pages | Descriptive |
 
 ## KPI values in js/data/base-data.js not calculated by the model (generated)

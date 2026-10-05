@@ -78,7 +78,11 @@ def theme(kid):
             "REG": "T7", "EHS": "T7", "CTL": "T7", "CON": "T7", "CMP": "T7", "EFF": "T8"}.get(pre, "T1")
 
 
-def fmt(x, dp): return f"{x:,.{dp}f}"
+def fmt(x, dp):
+    """Round half up on the stored (dp+1) value, like the browser's toLocaleString, so cards and charts agree."""
+    from decimal import Decimal, ROUND_HALF_UP
+    q = Decimal(str(round(x, dp + 1))).quantize(Decimal(1).scaleb(-dp), rounding=ROUND_HALF_UP)
+    return f"{q:,.{dp}f}"
 
 
 def disp(kid, unit):
