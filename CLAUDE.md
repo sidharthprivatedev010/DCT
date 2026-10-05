@@ -29,7 +29,12 @@ Run `node tools/regen.js`. It re-renders every page's static HTML and bumps the 
 
 ## Layout conventions
 
-- Home pages (O-01, G-01, E-01) use `sections: [{n, kpis:[ids], blocks:["drivers", "drivers.1", …]}]` (TplA only). The sections render as numbered theme headings; any KPI not listed falls into "Other measures".
+- **Page tabs** (all six templates, `ptabs()`): a numbered tab bar at the top of the body; only the selected tab's content is shown. Opt-in per page:
+  - `tabs: [{n, has:[refs]}]`. Refs: `"kpis:ID,ID"`, `"key"` (all of it), `"key.N"`, `"drill.N"`. Blocks show in `has` order.
+  - or `tab0: "Overview"`: headline content in a first tab, then one tab per drill tab.
+  - Anything not referenced goes to the first tab; an unreferenced drill tab becomes its own tab. Header, Status overview, banner, tour and the source/lineage link row stay outside the tabs.
+  - Single-case pages (S- pages, war room, closure, AI Insights) have no page tabs.
+- `sections` (TplA, older form of the same idea) still works on pages without `tabs`: numbered headings, unlisted KPIs under "Other measures".
 - Status strip and four-way summary sit inside a collapsed "Status overview" `<details>`.
 - Don't remove content when restructuring; move it into sections or tabs.
 

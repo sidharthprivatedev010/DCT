@@ -75,6 +75,19 @@ Everything changed against the original prototype (`e104438 first commit`), grou
 - Backup of the original main: branch `backup/main-2026-10-03`.
 - Pull request to main: #1, open.
 
+## 9. Page tabs (branch `feature/page-subsection-tabs`)
+
+- Sidebar pages are split into the mockup_v2 subsections, reachable from a numbered tab bar at the top of the page. Clicking a tab shows only that tab's content. The old drill-down tab bar (and the Owner "Show sub-theme detail" button) is folded into it.
+- Nothing removed: every KPI card, chart and table sits in a tab (checked by rendering every tab of every page).
+- By area, all three lenses:
+  - Enterprise Overview: home sections became tabs (O-01, G-01, E-01, plus G-01 after T7); old drill tables moved into the matching tab. G-02, G-03, E-11: Overview + drill tabs.
+  - Data Assurance: G-08o Trust summary · Data trust · Governance; G-08 Certification · Data trust · Governance · Assurance view; E-08 KPI components (queue, chart, Definition, Lineage, Reconciliation, Evidence, decision, follow-ups) · Data trust · Governance.
+  - Early Warning (O-02, S-12, S-12e): What changed (24 h) · Predictive KPIs · Operations · Finance · Commercial · External · Risk. Leading-signal tables split by segment, all rows kept. O-02 Risk tab adds SIG-019/020/021 (Group values from S-12).
+  - Cash, Operations, Capex, Risk pages: a Headline/Overview tab, then their existing tabs (E-06 first tab is Programmes, E-02 Plant overview).
+  - Actions: O-06, G-09, E-09 Open escalations · Closure performance.
+- Tour notes on O-01 and G-01 now say "Open the Operational tab".
+
 ## Parked
 
-- Option to go the other way from mockup_v2: keep only headline cards and the main chart visible, and move other blocks into tabs named after the mockup sub-areas. Open questions: should home-page sections become tabs, and should the tab panel start closed in every lens?
+- Tabs named after the mockup sub-areas: done in section 9.
+- Converting ₹ m to ₹ Cr: not done.

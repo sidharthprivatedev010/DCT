@@ -48,7 +48,9 @@ class Component extends DCLogic {
     const focusKey = p.focus || FOCUS;
     const blocks = [];
     let bi = 0;
-    const add = function (raw, slot, focal) { blocks.push(self.blk(raw, slot, bi++, focal)); };
+    const TB = this.ptabs(p, st);
+    const add = function (raw, slot, focal) { if (TB && !(raw = TB.keep(raw))) return; blocks.push(self.blk(raw, slot, bi++, focal)); if (TB) blocks[blocks.length - 1].rk = TB.rk; };
+    if (TB) { delete p.drill; delete p.sections; delete p.access; blocks.push(self.blk(TB.bar, "Page tabs", bi++, false)); }
     ORDER.forEach(function (o) {
       const key = o[0], label = o[1];
       const v = p[key];
@@ -65,6 +67,7 @@ class Component extends DCLogic {
       if (key === "access") { add({type: "buttons", title: "Source, certification, lineage, case and evidence", btns: v, quiet: true}, label, false); return; }
       (Array.isArray(v) ? v : [v]).forEach(function (x, i) { add(x, label, key === focusKey && i === 0); });
     });
+    if (TB) TB.tail(add, blocks);
     const j = p.journey || null;
     return {
       p: p, nav: nav, lensUp: String(p.lens), depthL: den.depthL, tplLabel: TPL, gap: den.gap,
@@ -82,6 +85,60 @@ class Component extends DCLogic {
         return {l: l, role: ROLE[l], h: e.h, cur: cur ? "page" : "false", bg: cur ? "var(--ct-navy-100,#E8EDF6)" : "#FFFFFF", bd: cur ? "var(--ct-navy-700,#24406E)" : "transparent",
           note: cur ? "You are here" : (e.same ? "Same screen in the " + l + " lens" : "Closest " + l + " screen: " + (e.t || "lens home"))};
       })
+    };
+  }
+
+  ptabs(p, st) {
+    // Page tabs: p.tabs [{n, has:[refs]}], else p.sections, else Overview + drill tabs. Refs: "kpis:ID,ID", "key", "key.N", "drill.N".
+    const self = this;
+    const drill = p.drill || [], access = p.access;
+    let spec;
+    if (p.tabs === false) return null;
+    if (p.tabs) spec = p.tabs.map(function (t) { return {n: t.n, has: (t.has || []).slice()}; });
+    else if (p.sections) spec = p.sections.map(function (s) { return {n: s.n, has: ["kpis:" + (s.kpis || []).join(",")].concat(s.blocks || [])}; });
+    else if (drill.length && p.tab0) spec = [{n: p.tab0 || "Overview", has: []}];
+    else return null;
+    drill.forEach(function (d, i) { if (!spec.some(function (t) { return t.has.indexOf("drill." + i) >= 0; })) spec.push({n: d.n, has: ["drill." + i]}); });
+    const cur = Math.min(st.ptab || 0, spec.length - 1);
+    const tabOf = function (ref) {
+      const base = ref.split(".")[0];
+      for (let i = 0; i < spec.length; i++) if (spec[i].has.indexOf(ref) >= 0) return i;
+      for (let i = 0; i < spec.length; i++) if (spec[i].has.indexOf(base) >= 0) return i;
+      return 0;
+    };
+    const kpiTab = function (id) {
+      for (let i = 0; i < spec.length; i++) if (spec[i].has.some(function (h) { return h.indexOf("kpis:") === 0 && h.slice(5).split(",").indexOf(id) >= 0; })) return i;
+      return 0;
+    };
+    const refs = new Map();
+    Object.keys(p).forEach(function (k) {
+      const v = p[k];
+      if (k === "kpis" || !v || typeof v !== "object") return;
+      if (Array.isArray(v)) v.forEach(function (x, i) { if (x && typeof x === "object") refs.set(x, k + "." + i); });
+      else refs.set(v, k);
+    });
+    return {
+      bar: {type: "tabbar", title: "Page sections", closed: false, tabsN: spec.length, canHide: false, openIt: function () {}, hideIt: function () {},
+        tabs: spec.map(function (t, i) { const on = i === cur; return {n: (i + 1 < 10 ? "0" : "") + (i + 1) + " " + t.n, on: on ? "true" : "false", bd: on ? "var(--ct-navy-900,#0E1B33)" : "transparent", fg: on ? "var(--ct-navy-900,#0E1B33)" : "var(--ct-ink-2,#3B4558)", fw: on ? "600" : "500", pick: function () { self.setState({ptab: i}); }}; })},
+      rk: 0,
+      keep: function (raw) {
+        const has = spec[cur].has, rank = function (ref) { let i = has.indexOf(ref); if (i < 0) i = has.indexOf(ref.split(".")[0]); return i < 0 ? 500 : i; };
+        this.rk = raw.pin ? (raw.pin === 2 ? 9999 : rank(raw.pin)) : 500;
+        if (raw.pin) return raw;
+        if (raw.type === "kpis" && raw.items) {
+          const items = raw.items.filter(function (k) { return kpiTab(k.id) === cur; });
+          this.rk = has.findIndex(function (h) { return h.indexOf("kpis:") === 0; }); if (this.rk < 0) this.rk = 500;
+          return items.length ? Object.assign({}, raw, {items: items, max: items.length}) : null;
+        }
+        const r = refs.get(raw);
+        if (r) this.rk = rank(r);
+        return (r ? tabOf(r) : 0) === cur ? raw : null;
+      },
+      tail: function (add, blocks) {
+        drill.forEach(function (d, i) { if (tabOf("drill." + i) === cur) (d.blocks || []).forEach(function (x) { add(Object.assign({anim: "ct-panel"}, x, {pin: "drill." + i}), "Detail · " + d.n, false); }); });
+        const bar = blocks.shift(); blocks.sort(function (a, b) { return a.rk - b.rk; }); blocks.unshift(bar);
+        if (access) { add({pin: 2, type: "buttons", title: "Source, certification, lineage, case and evidence", btns: access, quiet: true}, "Slot 10", false); }
+      }
     };
   }
 
