@@ -60,17 +60,15 @@
     var btn = function (label, over, on) { return {l: label, h: link(lens, st, over), k: on ? "primary" : ""}; };
 
     // ---- selectors
-    var lensOpt = function (L) { var o = Object.assign({}, st, {screen: ""}); if (SCOPES[L].indexOf(o.scope) < 0) o.scope = SCOPES[L][0]; return {l: L + " lens", h: link(L, o), on: L === lens}; };
     var themeName = function (t) { return t === "all" ? "All themes" : t + " · " + P.themes[t]; };
     var sel = [
       {type: "menus", title: "Look at", menus: [
-        {label: "Lens", cur: lens, opts: ["Owner", "Core Group", "Entity"].map(lensOpt)},
         {label: "Scope", cur: sn(st.scope), opts: scopes.map(function (s) { return {l: sn(s) + (s === "Group" ? " (Entity A1 + A2)" : /^A/.test(s) ? " (its plants + entity inputs)" : " (plant inputs)"), h: link(lens, st, {scope: s}), on: s === st.scope}; })},
         {label: "Theme", cur: themeName(st.theme), opts: [{l: "All themes (" + count("theme", "all") + ")", h: link(lens, st, {theme: "all"}), on: st.theme === "all"}].concat(
           Object.keys(P.themes || {}).map(function (t) { var n = count("theme", t); return n ? {l: themeName(t) + " (" + n + ")", h: link(lens, st, {theme: t}), on: st.theme === t} : null; }).filter(Boolean))},
         {label: "Period", cur: st.period + " · " + MON[pi] + " 2026", opts: (P.x || []).map(function (x, i) {
           return {l: x + " · " + MON[i] + " 2026" + (i === (P.x || []).length - 1 ? " (latest certified)" : ""), h: link(lens, st, {period: x}), on: x === st.period}; })}
-      ], note: lens === "Entity" ? "Entity lens shows Entity A1 and its plants only (C-05). YTD measures run from April to the selected month." : "Values are recalculated for the selected scope and month from its own inputs; YTD measures run from April to the selected month."},
+      ], note: "Lens: " + lens + " (your sign-in). " + (lens === "Entity" ? "Entity A1 and its plants only (C-05). " : "") + "Values are recalculated for the selected scope and month from its own inputs; YTD measures run from April to the selected month."},
       {type: "buttons", title: "Filter · which KPIs, lowest level calculated, source of the formula", btns: [
         btn("On " + lens + " screens (" + all.filter(onLens).length + ")", {set: "lens", screen: ""}, st.set === "lens"),
         btn("All KPIs (" + all.length + ")", {set: "all", screen: ""}, st.set === "all"),
