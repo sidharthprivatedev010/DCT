@@ -1,0 +1,35 @@
+Section,KPI ID,Measure,Class,Primary card on,Drill-down / diagnostic location,Alias / note
+A - Core plant (T5),OPS-001,Production vs plan,ACTUAL,O-01 · G-01 · G-05 · E-01 · E-02 · E-05,Hierarchy drill Group → Line; S-10,Canonical in T1; reused in T5 Plant
+A - Core plant (T5),OPS-003,Capacity utilization,ACTUAL,G-05 · E-02,O-01 drill: Operational,Canonical in T1; reused in T5 Plant
+A - Core plant (T5),PLT-001,Asset utilization,ACTUAL,E-02,G-05 drill,
+A - Core plant (T5),PLT-002,OEE,ACTUAL,G-05 · E-02,—,
+A - Core plant (T5),PLT-004,Recovery percentage,ACTUAL,E-02,S-12 (as SIG-003),C-07
+A - Core plant (T5),PLT-005,Yield (or recovery),ACTUAL,E-02,S-12 (as SIG-002),C-07
+A - Core plant (T5),REL-001,MTBF,ACTUAL,E-03,G-05 drill: Reliability,
+A - Core plant (T5),REL-002,Mean Time to Repair,ACTUAL,E-03,G-05 drill: Reliability,
+A - Core plant (T5),REL-003,Unplanned downtime,ACTUAL,G-05 · E-03,S-12 (as SIG-001),
+A - Core plant (T5),REL-004,Production loss from downtime,ACTUAL,E-03,G-05 drill,
+A - Core plant (T5),REL-005,Preventive-maintenance compliance [ASSUMED],ACTUAL,E-03,G-05 drill,C-09: brief truncated
+A - Core plant (T5),CST-001,Cost per tonne / unit,ACTUAL,G-05,E-02 drill: Cost,
+A - Core plant (T5),CST-002,Variable cost,ACTUAL,—,E-02 drill: Cost; G-03 drill: Cost,
+A - Core plant (T5),CST-003,Fuel cost,ACTUAL,—,E-02 drill: Cost,Related: SIG-017
+A - Core plant (T5),SUS-001,Water usage,ACTUAL,—,E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07,
+A - Core plant (T5),SUS-002,Emissions,ACTUAL,—,E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07,
+A - Core plant (T5),SUS-003,Energy intensity,ACTUAL,G-05,E-02 drill: Sustainability; O-05 drill; E-07,
+B - Plant signals (T3),SIG-001,Plant downtime,LEADING,—,S-12; E-03,Alias → REL-003
+B - Plant signals (T3),SIG-002,Production yield,LEADING,—,S-12; E-02,Alias → PLT-005
+B - Plant signals (T3),SIG-003,Recovery percentage,LEADING,—,S-12; E-02,Alias → PLT-004
+B - Plant signals (T3),SIG-007,Production at risk,LEADING,E-05 · S-10,S-12,
+B - Plant signals (T3),SIG-008,Critical plant-state alerts,LEADING,E-03,S-12,
+C - Plant-attributable (T7),EHS-001,TRIR,ACTUAL,O-05,G-07 drill: EHS; E-07 drill,
+C - Plant-attributable (T7),EHS-002,Severity incidents,ACTUAL,—,O-05 drill: EHS; G-07 drill,Canonical for RSK-002
+C - Plant-attributable (T7),EHS-003,Near misses,ACTUAL,—,E-07 drill: EHS,
+C - Plant-attributable (T7),EHS-004,Critical safety incidents,ACTUAL,O-05 · G-07,—,
+C - Plant-attributable (T7),EHS-005,Environmental excursions,ACTUAL,—,E-07 drill; O-05 drill: EHS,
+C - Plant-attributable (T7),EHS-006,Open EHS corrective actions,ACTUAL,E-07,G-07 drill,
+C - Plant-attributable (T7),EHS-007,Overdue EHS actions,ACTUAL,E-07,G-07 drill; G-09,
+C - Plant-attributable (T7),EHS-009,EHS investigation completion,ACTUAL,E-07,G-07 drill,
+C - Plant-attributable (T7),REG-006,Licence or permit expiry clock,ACTUAL,O-05 · E-07,—,
+C - Plant-attributable (T3),SIG-021,Environmental violations,LEADING,—,S-12; E-07; O-05 drill: EHS,
+C - Plant-attributable (T3),SIG-009,Critical-material shortage risk,LEADING,E-01 · S-10,S-12; E-04,Scenario trigger
+C - Plant-attributable (T3),SIG-012,Dispatch delays,LEADING,E-05 · S-11,S-12,

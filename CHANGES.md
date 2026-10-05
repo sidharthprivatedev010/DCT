@@ -78,3 +78,29 @@ Everything changed against the original prototype (`e104438 first commit`), grou
 ## Parked
 
 - Option to go the other way from mockup_v2: keep only headline cards and the main chart visible, and move other blocks into tabs named after the mockup sub-areas. Open questions: should home-page sections become tabs, and should the tab panel start closed in every lens?
+
+## Plant-level data model drives Entity screens
+
+- New `data/plant-model/`: mock plant data (Plants 01–03 → Entity A1, Plants 04–06 → Entity A2 → Group), monthly P01–P06. Entity and Group values are recalculated from summed plant inputs. See `Data-Model-Methodology.md` and the calculation trace `kpi_calculations.csv`.
+- `export_to_prototype.py` writes the plant KPIs (31 IDs, plus aliases SIG-001/002/003) into `base-data.js` for scopes `A1`, `Plant01`, `Plant02` and `Plant03`, and adds `DCTData.plant` (monthly series, formulas, inputs). Trust fields are left unchanged.
+- `resolve.js`:
+  - Plant scope is detected for any "Plant NN", not only Plant 02.
+  - On Entity screens, plant-KPI cards and table IDs link to `P2-S03e-KPIDetail.html?kpi=ID&scope=…`.
+  - E-pages get a **Plant KPIs · P06** tab (Plant 01/02/03 vs Entity A1).
+- S-03e builds from the plant model when opened with `?kpi=`. It shows entity and plant cards, a monthly chart, a calculation table (plant inputs → entity sum → result), monthly values and the definition.
+- Regenerate: `python3 data/plant-model/build_plant_model.py && python3 data/plant-model/export_to_prototype.py && node tools/regen.js`.
+
+## Bottom-up numbers across all lenses (plant → entity → Group)
+
+- Hierarchy is now Group → Entity A1 (Plants 01–03) and Entity A2 (Plants 04–06). Entities B1–C2 and Businesses B and C are removed; their items are reassigned to A1 or A2.
+- `export_to_prototype.py` writes all 31 plant KPIs (plus aliases SIG-001/002/003, OPS-005, OPS-006) for 9 scopes into `base-data.js`. Group and entity values are recalculated from plant inputs.
+- `resolve.js`:
+  - Model-bound tables (`kcols`) and bar charts (`kpi`).
+  - A roll-up tab on Entity, Core Group and Owner pages.
+  - Click-through to the lens's own KPI detail page (S-03e, S-03 or S-03o) with `?kpi=&scope=`. The page shows the chain, calculation, contribution, monthly values, lineage and trust.
+  - Trust headers are recomputed from the cards.
+- Narrative rewritten to the data:
+  - Group 95.5% of plan in P06.
+  - Plant 02 at 78.4% (reliability-led, with RM-1 cover as a secondary risk) accounts for 26.2 kt of the 29.4 kt gap.
+  - The P07 flash/BRK-SYN-0071 story is kept and scaled to Entity A1.
+- Non-derivable values are listed in `data/HARDCODED-VALUES.md`. The methodology now covers display, targets, status rules, aliases and child effect (`data/plant-model/Data-Model-Methodology.md` §5–6).
