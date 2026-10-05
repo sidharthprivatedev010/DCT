@@ -20,10 +20,10 @@
   }
   function link(lens, st, over) {
     var o = Object.assign({}, st, over || {}), qs = [];
-    ["scope", "period", "set", "theme", "level", "source", "screen"].forEach(function (k) { if (o[k] && o[k] !== DEF[k]) qs.push(k + "=" + encodeURIComponent(o[k])); });
+    ["scope", "period", "set", "theme", "level", "source", "screen", "kpi", "graph", "on"].forEach(function (k) { if (o[k] && o[k] !== DEF[k]) qs.push(k + "=" + encodeURIComponent(o[k])); });
     return FILE[lens] + ".html" + (qs.length ? "?" + qs.join("&") : "");
   }
-  var DEF = {period: "P06", set: "lens", theme: "all", level: "all", source: "all", screen: ""};
+  var DEF = {period: "P06", set: "lens", theme: "all", level: "all", source: "all", screen: "", kpi: "", graph: "", on: ""};
   function fmt(k, v) {
     if (v == null) return "—";
     if (typeof v === "string") return v;
@@ -36,7 +36,7 @@
     var q = params(), P = D || {kpi: {}, scopes: {}, screens: {}, themes: {}, x: []};
     var scopes = SCOPES[lens];
     var st = {scope: scopes.indexOf(q.scope) >= 0 ? q.scope : scopes[0], period: (P.x || []).indexOf(q.period) >= 0 ? q.period : "P06",
-              set: q.set === "all" ? "all" : "lens", theme: q.theme || "all", level: q.level || "all", source: q.source || "all", screen: q.screen || ""};
+              set: q.set === "all" ? "all" : "lens", theme: q.theme || "all", level: q.level || "all", source: q.source || "all", screen: q.screen || "", kpi: q.kpi || "", graph: q.graph || "", on: q.on || ""};
     DEF.scope = scopes[0];
     var MON = ["Apr", "May", "Jun", "Jul", "Aug", "Sep"];
     var pi = Math.max(0, (P.x || []).indexOf(st.period));
@@ -45,6 +45,10 @@
     var sn = function (s) { return (P.scopes || {})[s] || s; };
 
     var all = Object.keys(P.kpi).sort();
+    // ?graph= (with ?on=<screen>): one graph, and the KPIs it is built from
+    var gSel = st.graph ? (P.charts || []).filter(function (c) { return c.title === st.graph && (!st.on || c.screen === st.on); }) : [];
+    var bSel = st.graph ? (P.blocks || []).filter(function (c) { return c.title === st.graph && (!st.on || c.screen === st.on); }) : [];
+    var gIds = {}; gSel.concat(bSel).forEach(function (c) { (c.kpis || []).concat((c.title + " " + c.from + " " + (c.note || "")).match(/[A-Z]{3}-\d{3}/g) || []).forEach(function (id) { if (P.kpi[id]) gIds[id] = 1; }); });
     var onLens = function (id) { return (P.kpi[id].screens || []).some(function (n) { return lensScreens.indexOf(n) >= 0; }); };
     var base = all.filter(function (id) { return st.set === "all" || onLens(id); });
     var keep = function (id, skip) {
@@ -52,7 +56,8 @@
       return (skip === "theme" || st.theme === "all" || k.theme === st.theme) &&
              (skip === "level" || st.level === "all" || k.level === st.level) &&
              (skip === "source" || st.source === "all" || k.source === st.source) &&
-             (skip === "screen" || !st.screen || (k.screens || []).indexOf(st.screen) >= 0);
+             (skip === "screen" || !st.screen || (k.screens || []).indexOf(st.screen) >= 0) &&
+             (!st.kpi || id === st.kpi) && (!st.graph || !!gIds[id]);
     };
     var ids = base.filter(function (id) { return keep(id); })
       .sort(function (a, b) { return (P.kpi[a].theme + a).localeCompare(P.kpi[b].theme + b); });
@@ -80,6 +85,8 @@
         btn("Added (" + count("source", "added") + ")", {source: "added"}, st.source === "added"),
         btn("Alias (" + count("source", "alias") + ")", {source: "alias"}, st.source === "alias")]}
     ];
+    if (st.graph) sel.push({type: "buttons", title: "Graph filter", btns: [btn("Only the " + (bSel.length && !gSel.length ? (bSel[0].type === "tiles" ? "tiles" : "table") : "graph") + " “" + st.graph + "” and the KPIs it is built from · show all ✕", {graph: "", on: ""}, true)]});
+    if (st.kpi) sel.push({type: "buttons", title: "KPI filter", btns: [btn("Only " + st.kpi + (P.kpi[st.kpi] ? " " + P.kpi[st.kpi].name : " (not in the model)") + " · show all ✕", {kpi: ""}, true)]});
     if (st.screen) sel.push({type: "buttons", title: "Screen filter", btns: [btn("Only KPIs on " + code(P.screens[st.screen]) + " " + P.screens[st.screen].title + " · clear ✕", {screen: ""}, true)]});
 
     // ---- the table
@@ -101,12 +108,12 @@
            "Inputs show how each one rolls up (Σ = sum of children, lowest = MIN). Highlighted rows were added by the model. Click a KPI or value for its calculation.",
       cols: ["KPI", "Measure", "Theme", "Unit · basis", "Formula", "Inputs (roll-up)", "Value · " + sn(st.scope) + " · " + st.period, "vs P" + ("0" + Math.max(1, pi)).slice(-2), "Shown on"],
       gtc: "76px minmax(120px,1.1fr) 52px 100px minmax(170px,1.9fr) minmax(140px,1.4fr) 112px 70px minmax(90px,.8fr)",
-      minW: 1040, rowsMax: 999, rows: rows, empty: "No KPI matches these filters."};
+      minW: 1040, rowsMax: 999, rows: rows, empty: st.graph ? "This " + (bSel.length && !gSel.length ? "block" : "graph") + " does not draw on a catalogued KPI; see its row below for what it is built from." : "No KPI matches these filters."};
 
     // ---- graphs on this lens's screens and where their numbers come from (DCTData.plant.charts)
     var SRC = {"live": "● Live from model", "model": "● Calculated from model", "scaled": "◐ Total from model · split hand-set",
                "illustrative": "○ Illustrative · model scale", "layout": "— Not KPI data"};
-    var charts = (P.charts || []).filter(function (c) { return lensScreens.indexOf(c.screen) >= 0 && (!st.screen || c.screen === st.screen); })
+    var charts = (P.charts || []).filter(function (c) { return st.graph ? gSel.indexOf(c) >= 0 : lensScreens.indexOf(c.screen) >= 0 && (!st.screen || c.screen === st.screen); })
       .sort(function (a, b) { return code(P.screens[a.screen]).localeCompare(code(P.screens[b.screen])) || a.title.localeCompare(b.title); });
     var srcN = {}; charts.forEach(function (c) { srcN[c.source] = (srcN[c.source] || 0) + 1; });
     var graphs = {type: "table", title: charts.length + " graphs on " + lens + " screens" + (st.screen ? " · " + code(P.screens[st.screen]) : "") + " · what each shows and where its numbers come from",
@@ -118,7 +125,26 @@
       rows: charts.map(function (c) {
         return {c: [{t: code(P.screens[c.screen]), h: c.screen + ".html"}, c.title + (c.ask ? " · " + c.ask : ""), {"line": "Line", "multi": "Lines", "bars": "Bars", "waterfall": "Bridge"}[c.type] || c.type,
           SRC[c.source] || c.source, c.from, c.note || "—"], hi: c.source === "illustrative" || c.source === "layout"};
-      }), empty: "No graphs on this screen."};
+      }), empty: st.graph ? "This graph is not in data/kpi-model/chart_sources.json yet (not yet classified)." : "No graphs on this screen."};
+
+    // ---- tables and tiles on this lens's screens (DCTData.plant.blocks, derived by scan_ui.js + export_to_prototype.py)
+    var BSRC = {"live": "● Live from model", "illustrative": "○ Hand-set · names non-KPI items", "layout": "— Not KPI data"};
+    var blks = (P.blocks || []).filter(function (c) { return st.graph ? bSel.indexOf(c) >= 0 : lensScreens.indexOf(c.screen) >= 0 && (!st.screen || c.screen === st.screen); })
+      .sort(function (a, b) { return code(P.screens[a.screen]).localeCompare(code(P.screens[b.screen])) || a.title.localeCompare(b.title); });
+    var bN = {}; blks.forEach(function (c) { bN[c.source] = (bN[c.source] || 0) + 1; });
+    var tablesB = {type: "table", title: blks.length + " tables and tiles on " + lens + " screens" + (st.screen ? " · " + code(P.screens[st.screen]) : "") + " · what each shows and where its numbers come from",
+      ask: "Which numbers in this table or tile set come from the model, and which are workflow or hand-set?",
+      cap: Object.keys(BSRC).filter(function (k) { return bN[k]; }).map(function (k) { return BSRC[k] + " (" + bN[k] + ")"; }).join(" · ") +
+           ". Live = rows or tiles whose label carries a KPI ID are filled from the model for the scope in the label (js/data/resolve.js); other cells are workflow, status or narrative (SYN).",
+      cols: ["Screen", "Table / tiles", "Type", "Source", "Built from", "Note"],
+      gtc: "64px minmax(170px,1.4fr) 60px 150px minmax(200px,1.8fr) minmax(140px,1.2fr)", minW: 1040, rowsMax: st.graph ? 999 : 40,
+      rows: blks.map(function (c) {
+        return {c: [{t: code(P.screens[c.screen]), h: c.screen + ".html"}, c.title + (c.ask ? " · " + c.ask : ""), c.type === "tiles" ? "Tiles" : "Table",
+          BSRC[c.source] || c.source, c.from, c.note || "—"], hi: !!st.graph};
+      }), empty: "This table is not in the scan yet: run node data/kpi-model/scan_ui.js and the rebuild."};
+    var drv = [table];
+    if (!st.graph || gSel.length || !bSel.length) drv.push(graphs);
+    if (!st.graph || bSel.length) drv.push(tablesB);
 
     // ---- reference tabs
     var screenRows = lensScreens.map(function (n) {
@@ -152,7 +178,7 @@
       nav: "KPI Reference", title: "KPI Reference · formulas and values", period: st.period + " (SYN)",
       q: "How is each KPI calculated, and what is its value for this lens, scope and period?",
       trust: "Values from data/kpi-model · " + all.length + " KPIs · calculated bottom-up (plant → entity → Group)",
-      focus: "drivers", dominant: sel, drivers: [table, graphs], drill: drill,
+      focus: "drivers", dominant: sel, drivers: drv, drill: drill,
       access: [{l: "KPI detail and lineage ↗", h: DETAIL[lens]}, {l: "Data Assurance ↗", h: lens === "Owner" ? "P2-G08o-OwnerTrust.html" : lens === "Entity" ? "P2-E08-CertWorkbench.html" : "P2-G08-CertGovernance.html"}],
       equiv: equiv, journey: null};
   }

@@ -40243,6 +40243,3174 @@ var DCTData = {
     "from": "PRD-003 by entity: A1 + A2 = Group",
     "note": ""
    }
+  ],
+  "blocks": [
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "table",
+    "title": "24-hour changes · entity scope (CX-07)",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 3 rows are KPIs filled from the model (SIG-009, OPS-001); scope from the row label",
+    "kpis": [
+     "SIG-009",
+     "OPS-001"
+    ],
+    "note": "Columns: Item · Change · Provenance · Owner (role)"
+   },
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "tiles",
+    "title": "Leading signals and predictions",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 tiles are KPIs filled from the model (SIG-009, SIG-010, PRD-001, SIG-007); scope from the row label",
+    "kpis": [
+     "SIG-009",
+     "SIG-010",
+     "PRD-001",
+     "SIG-007"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "table",
+    "title": "My alerts, cases and actions",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "table",
+    "title": "Cash and collections",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (WCP-001, CSH-006); scope from the row label",
+    "kpis": [
+     "WCP-001",
+     "CSH-006"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-E01-EntityHome",
+    "type": "table",
+    "title": "Entity A1 financial measures",
+    "ask": "",
+    "source": "live",
+    "from": "8 of 8 rows are KPIs filled from the model (FIN-003, FIN-002, FIN-004, FIN-005, OPS-005, PRG-004, EFF-002, CMP-005); scope from the row label",
+    "kpis": [
+     "FIN-003",
+     "FIN-002",
+     "FIN-004",
+     "FIN-005",
+     "OPS-005",
+     "PRG-004",
+     "EFF-002",
+     "CMP-005"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "table",
+    "title": "Cost",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (CST-001, CST-002, CST-003); scope from the row label",
+    "kpis": [
+     "CST-001",
+     "CST-002",
+     "CST-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "table",
+    "title": "Sustainability (same governed KPIs as Risk)",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SUS-001, SUS-002, SUS-003); scope from the row label",
+    "kpis": [
+     "SUS-001",
+     "SUS-002",
+     "SUS-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "tiles",
+    "title": "Signals",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (SIG-007, SIG-002, SIG-003); scope from the row label",
+    "kpis": [
+     "SIG-007",
+     "SIG-002",
+     "SIG-003"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E03-Reliability",
+    "type": "table",
+    "title": "Recovery plan vs actual · Plant 02",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Milestone · Plan · Actual / forecast · Status"
+   },
+   {
+    "screen": "P2-E03-Reliability",
+    "type": "table",
+    "title": "MTBF by line",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Line · MTBF · MTTR · Trust"
+   },
+   {
+    "screen": "P2-E03-Reliability",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E04-Supply",
+    "type": "table",
+    "title": "Critical suppliers",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Supplier · Material · OTD · Single source · Status · Owner (role)"
+   },
+   {
+    "screen": "P2-E04-Supply",
+    "type": "table",
+    "title": "Contracts",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (CON-001, CON-002, CON-003); scope from the row label",
+    "kpis": [
+     "CON-001",
+     "CON-002",
+     "CON-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E04-Supply",
+    "type": "table",
+    "title": "Supplier controls",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 1 row are KPIs filled from the model (CTL-006); scope from the row label",
+    "kpis": [
+     "CTL-006"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E04-Supply",
+    "type": "tiles",
+    "title": "Leading signals",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (SIG-009, SIG-010, PRD-001); scope from the row label",
+    "kpis": [
+     "SIG-009",
+     "SIG-010",
+     "PRD-001"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-E04-Supply",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Dispatch by customer group",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Customer group · Volume at risk · Priority · Owner (role)"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Collections",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (SIG-004, SIG-005); scope from the row label",
+    "kpis": [
+     "SIG-004",
+     "SIG-005"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Working capital · Entity A1",
+    "ask": "",
+    "source": "live",
+    "from": "7 of 7 rows are KPIs filled from the model (WCP-001, WCP-002, WCP-003, WCP-004, WCP-005, WCP-006, CSH-004); scope from the row label",
+    "kpis": [
+     "WCP-001",
+     "WCP-002",
+     "WCP-003",
+     "WCP-004",
+     "WCP-005",
+     "WCP-006",
+     "CSH-004"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Liquidity · Entity A1",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (CSH-001, CSH-002, LIQ-001, LIQ-002, LIQ-003); scope from the row label",
+    "kpis": [
+     "CSH-001",
+     "CSH-002",
+     "LIQ-001",
+     "LIQ-002",
+     "LIQ-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Treasury · Entity A1",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (TRS-001, TRS-002, TRS-004); scope from the row label",
+    "kpis": [
+     "TRS-001",
+     "TRS-002",
+     "TRS-004"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "table",
+    "title": "Progress chain · Entity A1 projects",
+    "ask": "Are Entity A1's projects progressing physically, not just spending?",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Project · Approved · Committed · Spent · Physical progress · Benefit realized"
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "table",
+    "title": "Milestones",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Milestone · Plan · Forecast · Contractor"
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "table",
+    "title": "Value delivered · Entity A1",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (VAL-001, VAL-002, VAL-003); scope from the row label",
+    "kpis": [
+     "VAL-001",
+     "VAL-002",
+     "VAL-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "table",
+    "title": "Transformation initiatives · Entity A1",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Initiative · Owner (role) · Stage · Progress · Benefit FY · Status"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Obligation and expiry clocks · time-ordered",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Due · Obligation · Clock · Owner (role) · Evidence"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Materiality · Entity A1 open risks · six dimensions",
+    "ask": "How material is each open risk across all six dimensions?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Composite = highest dimension, raised one level when time-to-breach ≤ [PH] days. Bands are placeholders pending approval (D-03)."
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "EHS corrective actions",
+    "ask": "",
+    "source": "illustrative",
+    "from": "Names SYN-031, SYN-034 (not KPIs in the model: alerts, cases, signals or decisions); values hand-set (SYN)",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "EHS",
+    "ask": "",
+    "source": "live",
+    "from": "9 of 9 rows are KPIs filled from the model (EHS-001, EHS-002, EHS-003, EHS-005, SIG-021, EHS-008, EHS-004, EHS-007 …); scope from the row label",
+    "kpis": [
+     "EHS-001",
+     "EHS-002",
+     "EHS-003",
+     "EHS-005",
+     "SIG-021",
+     "EHS-008",
+     "EHS-004",
+     "EHS-007",
+     "EHS-009"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Regulatory",
+    "ask": "",
+    "source": "live",
+    "from": "7 of 7 rows are KPIs filled from the model (REG-001, REG-002, REG-003, REG-007, REG-008, REG-011, REG-010); scope from the row label",
+    "kpis": [
+     "REG-001",
+     "REG-002",
+     "REG-003",
+     "REG-007",
+     "REG-008",
+     "REG-011",
+     "REG-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Compliance and controls · Entity A1",
+    "ask": "",
+    "source": "live",
+    "from": "8 of 8 rows are KPIs filled from the model (GOV-004, CTL-002, CTL-005, CTL-007, CTL-006, CTL-008, CTL-009, CTL-010); scope from the row label",
+    "kpis": [
+     "GOV-004",
+     "CTL-002",
+     "CTL-005",
+     "CTL-007",
+     "CTL-006",
+     "CTL-008",
+     "CTL-009",
+     "CTL-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Contracts",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (CON-003, CON-001, CON-002); scope from the row label",
+    "kpis": [
+     "CON-003",
+     "CON-001",
+     "CON-002"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Sustainability",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SUS-001, SUS-002, SUS-003); scope from the row label",
+    "kpis": [
+     "SUS-001",
+     "SUS-002",
+     "SUS-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Regulatory actions",
+    "ask": "",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E08-CertWorkbench",
+    "type": "table",
+    "title": "My certification queue · scope Entity A1 (same route at group scope from G-08)",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (OPS-001, CSH-003, OPS-002); scope from the row label",
+    "kpis": [
+     "OPS-001",
+     "CSH-003",
+     "OPS-002"
+    ],
+    "note": "Columns: KPI · Period · Trust · Break · Due · Evidence"
+   },
+   {
+    "screen": "P2-E08-CertWorkbench",
+    "type": "table",
+    "title": "BRK-SYN-0071",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Point · Flash · MIS · Variance · Status"
+   },
+   {
+    "screen": "P2-E08-CertWorkbench",
+    "type": "table",
+    "title": "Evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Item · Submitted by (role) · State"
+   },
+   {
+    "screen": "P2-E08-CertWorkbench",
+    "type": "table",
+    "title": "Entity A1 assurance rates",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (TRU-001, TRU-011, TRU-009, TRU-010); scope from the row label",
+    "kpis": [
+     "TRU-001",
+     "TRU-011",
+     "TRU-009",
+     "TRU-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Target · Trust"
+   },
+   {
+    "screen": "P2-E08-CertWorkbench",
+    "type": "table",
+    "title": "Governance measures · Entity A1",
+    "ask": "",
+    "source": "live",
+    "from": "8 of 8 rows are KPIs filled from the model (GOV-001, GOV-002, GOV-003, GOV-004, GOV-005, GOV-006, GOV-008, GOV-009); scope from the row label",
+    "kpis": [
+     "GOV-001",
+     "GOV-002",
+     "GOV-003",
+     "GOV-004",
+     "GOV-005",
+     "GOV-006",
+     "GOV-008",
+     "GOV-009"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E08-CertWorkbench",
+    "type": "table",
+    "title": "Follow-up actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "tiles",
+    "title": "Workflow counters (max 4)",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 4 tiles are KPIs filled from the model (EFF-007); scope from the row label",
+    "kpis": [
+     "EFF-007"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "table",
+    "title": "Unified work queue · Entity A1",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "tiles",
+    "title": "Entity A1 effectiveness",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 tiles are KPIs filled from the model (EFF-002, EFF-008, EFF-009, EFF-010, EFF-011); scope from the row label",
+    "kpis": [
+     "EFF-002",
+     "EFF-008",
+     "EFF-009",
+     "EFF-010",
+     "EFF-011"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "table",
+    "title": "Root causes recorded · rolled up",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Root cause · Cases · Status · Prevents"
+   },
+   {
+    "screen": "P2-E10-Closure",
+    "type": "tiles",
+    "title": "Closure request",
+    "ask": "",
+    "source": "layout",
+    "from": "4 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-E10-Closure",
+    "type": "table",
+    "title": "Closure criteria",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Criterion · Target · Evidence · Status"
+   },
+   {
+    "screen": "P2-E10-Closure",
+    "type": "tiles",
+    "title": "Recovery and evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "3 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-E11-Financial",
+    "type": "tiles",
+    "title": "Predictions for this entity",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (PRD-012, PRD-008, PRD-009); scope from the row label",
+    "kpis": [
+     "PRD-012",
+     "PRD-008",
+     "PRD-009"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-E11-Financial",
+    "type": "table",
+    "title": "Cost and productivity",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (CST-001, CST-002, CST-005, PRD-010, PRD-011); scope from the row label",
+    "kpis": [
+     "CST-001",
+     "CST-002",
+     "CST-005",
+     "PRD-010",
+     "PRD-011"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
+   },
+   {
+    "screen": "P2-E11-Financial",
+    "type": "table",
+    "title": "Profitability by plant",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Plant · Revenue YTD · EBITDA YTD · EBITDA margin · Capital employed · ROCE · Trust"
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "24-hour changes · portfolio scope (CX-07)",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 3 rows are KPIs filled from the model (OPS-001); scope from the row label",
+    "kpis": [
+     "OPS-001"
+    ],
+    "note": "Columns: Item · Change · Provenance · Owner (role)"
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "tiles",
+    "title": "Forecast exposure",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (PRD-003, PRD-002, PRD-004); scope from the row label",
+    "kpis": [
+     "PRD-003",
+     "PRD-002",
+     "PRD-004"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Escalations needing Core Group coordination",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Trust by entity",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Entity · Leadership KPIs certified · Open breaks · Overdue certifications · Pending"
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Financial measures",
+    "ask": "",
+    "source": "live",
+    "from": "10 of 10 rows are KPIs filled from the model (FIN-005, FIN-002, FIN-006, FIN-003, OPS-002, OPS-005, CPX-004, PRG-004 …); scope from the row label",
+    "kpis": [
+     "FIN-005",
+     "FIN-002",
+     "FIN-006",
+     "FIN-003",
+     "OPS-002",
+     "OPS-005",
+     "CPX-004",
+     "PRG-004",
+     "EHS-002",
+     "REG-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Certification calendar · P07 close",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Milestone · Due · Status"
+   },
+   {
+    "screen": "P2-G01b-PortfolioCertified",
+    "type": "table",
+    "title": "24-hour changes · portfolio scope (CX-07)",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 3 rows are KPIs filled from the model (OPS-001); scope from the row label",
+    "kpis": [
+     "OPS-001"
+    ],
+    "note": "Columns: Item · Change · Provenance · Owner (role)"
+   },
+   {
+    "screen": "P2-G01b-PortfolioCertified",
+    "type": "tiles",
+    "title": "Forecast exposure",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (PRD-003, PRD-002, PRD-004); scope from the row label",
+    "kpis": [
+     "PRD-003",
+     "PRD-002",
+     "PRD-004"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-G01b-PortfolioCertified",
+    "type": "table",
+    "title": "Escalations needing Core Group coordination",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G01b-PortfolioCertified",
+    "type": "table",
+    "title": "Trust by entity",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Entity · Leadership KPIs certified · Open breaks · Overdue certifications · Pending"
+   },
+   {
+    "screen": "P2-G01b-PortfolioCertified",
+    "type": "table",
+    "title": "Financial measures",
+    "ask": "",
+    "source": "live",
+    "from": "10 of 10 rows are KPIs filled from the model (FIN-005, FIN-002, FIN-006, FIN-003, OPS-002, OPS-005, CPX-004, PRG-004 …); scope from the row label",
+    "kpis": [
+     "FIN-005",
+     "FIN-002",
+     "FIN-006",
+     "FIN-003",
+     "OPS-002",
+     "OPS-005",
+     "CPX-004",
+     "PRG-004",
+     "EHS-002",
+     "REG-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-G01b-PortfolioCertified",
+    "type": "table",
+    "title": "Certification calendar · P07 close",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Milestone · Due · Status"
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Entity × KPI matrix · business status · trust",
+    "ask": "Which entity is off plan, and on which numbers can we rely?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Production vs plan = OPS-001",
+    "kpis": [],
+    "note": "Glyph = business status, then trust. Cells link to the KPI detail at entity scope."
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Profitability and capital productivity by entity",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Entity · EBITDA margin · vs plan · ROCE · vs plan · FCF conversion"
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "External drivers (EXTERNAL signals, never blended into actuals)",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (SIG-014, SIG-015, TRS-001, SIG-016, SIG-017, SIG-018); scope from the row label",
+    "kpis": [
+     "SIG-014",
+     "SIG-015",
+     "TRS-001",
+     "SIG-016",
+     "SIG-017",
+     "SIG-018"
+    ],
+    "note": "Columns: Signal · Movement · Exposure · Provenance"
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Volume",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (OPS-002, OPS-001); scope from the row label",
+    "kpis": [
+     "OPS-002",
+     "OPS-001"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Price",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 1 row are KPIs filled from the model (SIG-013); scope from the row label",
+    "kpis": [
+     "SIG-013"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Cost",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (CST-002, CST-001); scope from the row label",
+    "kpis": [
+     "CST-002",
+     "CST-001"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Cash conversion",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (FIN-004, FIN-008); scope from the row label",
+    "kpis": [
+     "FIN-004",
+     "FIN-008"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "tiles",
+    "title": "Forecast exposure",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 2 tiles are KPIs filled from the model (PRD-003); scope from the row label",
+    "kpis": [
+     "PRD-003"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 1 row are KPIs filled from the model (FIN-007); scope from the row label",
+    "kpis": [
+     "FIN-007"
+    ],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Cash",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (CSH-001, CSH-003, CSH-002, WCP-005, WCP-006); scope from the row label",
+    "kpis": [
+     "CSH-001",
+     "CSH-003",
+     "CSH-002",
+     "WCP-005",
+     "WCP-006"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Liquidity",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (LIQ-001, LIQ-002, LIQ-003, LIQ-004, PRD-005); scope from the row label",
+    "kpis": [
+     "LIQ-001",
+     "LIQ-002",
+     "LIQ-003",
+     "LIQ-004",
+     "PRD-005"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Treasury",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (TRS-001, TRS-002, TRS-004); scope from the row label",
+    "kpis": [
+     "TRS-001",
+     "TRS-002",
+     "TRS-004"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "tiles",
+    "title": "Forecast exposure",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 tiles are KPIs filled from the model (PRD-004, PRD-005, SIG-004, SIG-005); scope from the row label",
+    "kpis": [
+     "PRD-004",
+     "PRD-005",
+     "SIG-004",
+     "SIG-005"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Plant × KPI benchmark · P06 (CERT)",
+    "ask": "How does each plant compare on output, efficiency, reliability, cost and energy?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Production vs plan = OPS-001, OEE = PLT-002, Downtime = REL-003, Cost /t = CST-001, Energy GJ/t = SUS-003",
+    "kpis": [],
+    "note": "Columns: Plant · Production vs plan · OEE · Downtime · Cost /t · Energy GJ/t"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Asset productivity by plant",
+    "ask": "",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Asset utilisation = PLT-001, Yield = PLT-005, Recovery = PLT-004, OEE = PLT-002",
+    "kpis": [],
+    "note": "Columns: Plant · Asset utilisation · Yield · Recovery · OEE · Trust"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Cost by plant · P06 (CERT)",
+    "ask": "",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Cost per tonne = CST-001, Variable cost = CST-002, Fuel cost = CST-003",
+    "kpis": [],
+    "note": "Columns: Plant · Cost per tonne · Variable cost · Fuel cost · Trust"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Reliability",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (REL-001, REL-002, REL-003, REL-004, PRD-006); scope from the row label",
+    "kpis": [
+     "REL-001",
+     "REL-002",
+     "REL-003",
+     "REL-004",
+     "PRD-006"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Supplier exposure",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (SUP-005, SUP-001, SUP-004, CON-003); scope from the row label",
+    "kpis": [
+     "SUP-005",
+     "SUP-001",
+     "SUP-004",
+     "CON-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Sustainability",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SUS-001, SUS-002, SUS-003); scope from the row label",
+    "kpis": [
+     "SUS-001",
+     "SUS-002",
+     "SUS-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
+    "title": "Progress chain by project",
+    "ask": "Which projects convert spend into progress and benefit?",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Project · Entity · Approved · Committed · Spent · Physical progress · Benefit realized"
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
+    "title": "Portfolio prioritisation · reallocation candidates",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Project · Entity · Remaining ₹ m · Expected IRR · Benefit at risk · Recommendation"
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "tiles",
+    "title": "Exposure",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 2 tiles are KPIs filled from the model (SIG-011); scope from the row label",
+    "kpis": [
+     "SIG-011"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
+    "title": "Programmes",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (PRG-001, STR-002); scope from the row label",
+    "kpis": [
+     "PRG-001",
+     "STR-002"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
+    "title": "Value",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (VAL-001, VAL-002, VAL-003); scope from the row label",
+    "kpis": [
+     "VAL-001",
+     "VAL-002",
+     "VAL-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Trust"
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
+    "title": "Contractor slippage",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (SUP-006); scope from the row label",
+    "kpis": [
+     "SUP-006"
+    ],
+    "note": "Columns: KPI · Project · Slippage · Owner (role)"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Entity × materiality dimension · composite (placeholder bands)",
+    "ask": "Where is consolidated risk concentrated?",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Entity · Supply continuity · Liquidity · EHS · Regulatory · Controls · Contracts · Reputation"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Named actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Regulatory",
+    "ask": "",
+    "source": "live",
+    "from": "6 of 6 rows are KPIs filled from the model (REG-001, REG-002, REG-003, REG-004, REG-007, REG-008); scope from the row label",
+    "kpis": [
+     "REG-001",
+     "REG-002",
+     "REG-003",
+     "REG-004",
+     "REG-007",
+     "REG-008"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "EHS",
+    "ask": "",
+    "source": "live",
+    "from": "9 of 9 rows are KPIs filled from the model (EHS-001, EHS-002, EHS-003, EHS-005, EHS-006, EHS-007, EHS-008, EHS-009 …); scope from the row label",
+    "kpis": [
+     "EHS-001",
+     "EHS-002",
+     "EHS-003",
+     "EHS-005",
+     "EHS-006",
+     "EHS-007",
+     "EHS-008",
+     "EHS-009",
+     "EHS-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Compliance and controls",
+    "ask": "",
+    "source": "live",
+    "from": "8 of 8 rows are KPIs filled from the model (CTL-002, CTL-003, CTL-005, CTL-006, CTL-007, CTL-008, CTL-009, CTL-010); scope from the row label",
+    "kpis": [
+     "CTL-002",
+     "CTL-003",
+     "CTL-005",
+     "CTL-006",
+     "CTL-007",
+     "CTL-008",
+     "CTL-009",
+     "CTL-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Contracts",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (CON-001, CON-002, CON-003); scope from the row label",
+    "kpis": [
+     "CON-001",
+     "CON-002",
+     "CON-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Sustainability (shared KPIs)",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SUS-001, SUS-002, SUS-003); scope from the row label",
+    "kpis": [
+     "SUS-001",
+     "SUS-002",
+     "SUS-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Certification matrix · leadership KPIs × entity (trust state)",
+    "ask": "Which leadership numbers cannot yet be defended, and where?",
+    "source": "live",
+    "from": "7 of 7 rows are KPIs filled from the model (FIN-001, FIN-003, OPS-001, WCP-001, CSH-001, EHS-001, FIN-007); scope from the row label",
+    "kpis": [
+     "FIN-001",
+     "FIN-003",
+     "OPS-001",
+     "WCP-001",
+     "CSH-001",
+     "EHS-001",
+     "FIN-007"
+    ],
+    "note": "◆ certified · ◇ pending · ⊘ break · — missing definition. Cells open the workbench at that scope."
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Certification queue · group scope (opens E-08 at group scope, D-22)",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (OPS-001, FIN-001); scope from the row label",
+    "kpis": [
+     "OPS-001",
+     "FIN-001"
+    ],
+    "note": "Columns: KPI × scope · Period · Certifier (role) · Due · Trust · Action"
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Reconciliation measures",
+    "ask": "",
+    "source": "live",
+    "from": "6 of 6 rows are KPIs filled from the model (TRU-003, TRU-004, TRU-005, TRU-008, TRU-009, TRU-011); scope from the row label",
+    "kpis": [
+     "TRU-003",
+     "TRU-004",
+     "TRU-005",
+     "TRU-008",
+     "TRU-009",
+     "TRU-011"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Governance measures",
+    "ask": "",
+    "source": "live",
+    "from": "9 of 9 rows are KPIs filled from the model (GOV-001, GOV-002, GOV-003, GOV-004, GOV-005, GOV-006, GOV-008, GOV-009 …); scope from the row label",
+    "kpis": [
+     "GOV-001",
+     "GOV-002",
+     "GOV-003",
+     "GOV-004",
+     "GOV-005",
+     "GOV-006",
+     "GOV-008",
+     "GOV-009",
+     "GOV-007"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Assurance Reviewer sampling tasks (read-only role, GR-05)",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Sample · Scope · Status"
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Assurance actions",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 1 row are KPIs filled from the model (OPS-001); scope from the row label",
+    "kpis": [
+     "OPS-001"
+    ],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G08o-OwnerTrust",
+    "type": "table",
+    "title": "Numbers on your pages and their trust state",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (FIN-001, OPS-001, CSH-001, CSH-006); scope from the row label",
+    "kpis": [
+     "FIN-001",
+     "OPS-001",
+     "CSH-001",
+     "CSH-006"
+    ],
+    "note": "Columns: KPI · Where you see it · Trust · What it means"
+   },
+   {
+    "screen": "P2-G08o-OwnerTrust",
+    "type": "table",
+    "title": "Coverage and reconciliation",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (TRU-001, TRU-008, TRU-009, TRU-010, TRU-011); scope from the row label",
+    "kpis": [
+     "TRU-001",
+     "TRU-008",
+     "TRU-009",
+     "TRU-010",
+     "TRU-011"
+    ],
+    "note": "Columns: KPI · Measure · Value · Target · Trust"
+   },
+   {
+    "screen": "P2-G08o-OwnerTrust",
+    "type": "table",
+    "title": "Governance measures · Group",
+    "ask": "",
+    "source": "live",
+    "from": "9 of 9 rows are KPIs filled from the model (GOV-001, GOV-002, GOV-003, GOV-004, GOV-005, GOV-006, GOV-007, GOV-008 …); scope from the row label",
+    "kpis": [
+     "GOV-001",
+     "GOV-002",
+     "GOV-003",
+     "GOV-004",
+     "GOV-005",
+     "GOV-006",
+     "GOV-007",
+     "GOV-008",
+     "GOV-009"
+    ],
+    "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "tiles",
+    "title": "Workflow counters",
+    "ask": "",
+    "source": "live",
+    "from": "7 of 7 tiles are KPIs filled from the model (EFF-002, EFF-006, EFF-007, EFF-008, EFF-009, EFF-010, EFF-011); scope from the row label",
+    "kpis": [
+     "EFF-002",
+     "EFF-006",
+     "EFF-007",
+     "EFF-008",
+     "EFF-009",
+     "EFF-010",
+     "EFF-011"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "table",
+    "title": "Alert without owner · routing draft (AI) awaiting human acceptance",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Alert · Draft owner role · Draft due · Draft path · Decision required · Clock"
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "table",
+    "title": "Repeat issues and root causes",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Occurrences 90 d · Root cause · Eliminated? · Owner (role)"
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "table",
+    "title": "Escalations",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G10-Briefing",
+    "type": "tiles",
+    "title": "Pack status",
+    "ask": "",
+    "source": "layout",
+    "from": "4 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G10-Briefing",
+    "type": "table",
+    "title": "Pack sections",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Section · Statements · Provenance mix · Status"
+   },
+   {
+    "screen": "P2-G10-Briefing",
+    "type": "table",
+    "title": "Inquiry log",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Asked by (role) · Question · Answered by · Status"
+   },
+   {
+    "screen": "P2-G10-Briefing",
+    "type": "tiles",
+    "title": "Predictive analysis · next 30–90 days",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 tiles are KPIs filled from the model (PRD-002, PRD-003, PRD-006, PRD-005); scope from the row label",
+    "kpis": [
+     "PRD-002",
+     "PRD-003",
+     "PRD-006",
+     "PRD-005"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-G10-Briefing",
+    "type": "table",
+    "title": "Agent activity · audit log · pack",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time · Agent · Action · Outcome · Human check"
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "tiles",
+    "title": "Forecast exposure · prediction outputs",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (PRD-001, PRD-002, PRD-003); scope from the row label",
+    "kpis": [
+     "PRD-001",
+     "PRD-002",
+     "PRD-003"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "table",
+    "title": "Decisions required from the Owner",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "table",
+    "title": "Financial health measures",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (FIN-002, FIN-003, FIN-005, FIN-007); scope from the row label",
+    "kpis": [
+     "FIN-002",
+     "FIN-003",
+     "FIN-005",
+     "FIN-007"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "table",
+    "title": "Operational measures",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (OPS-002, OPS-003, OPS-004, OPS-005); scope from the row label",
+    "kpis": [
+     "OPS-002",
+     "OPS-003",
+     "OPS-004",
+     "OPS-005"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "table",
+    "title": "Strategic measures",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (STR-001, CPX-004, STR-002, PRG-004); scope from the row label",
+    "kpis": [
+     "STR-001",
+     "CPX-004",
+     "STR-002",
+     "PRG-004"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "table",
+    "title": "Risk measures",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (RSK-001, EFF-002, RSK-002, EHS-002, RSK-003, CMP-005); scope from the row label",
+    "kpis": [
+     "RSK-001",
+     "EFF-002",
+     "RSK-002",
+     "EHS-002",
+     "RSK-003",
+     "CMP-005"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-O02-ChangeReport",
+    "type": "tiles",
+    "title": "24-hour change tiles",
+    "ask": "",
+    "source": "layout",
+    "from": "6 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-O02-ChangeReport",
+    "type": "table",
+    "title": "Change report · Cause → Impact → Action · ranked by materiality",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 5 rows are KPIs filled from the model (SIG-009, CSH-006, OPS-001); scope from the row label",
+    "kpis": [
+     "SIG-009",
+     "CSH-006",
+     "OPS-001"
+    ],
+    "note": "Columns: # · What changed · Cause · Impact · Action (owner · due) · Provenance · Materiality"
+   },
+   {
+    "screen": "P2-O02-ChangeReport",
+    "type": "tiles",
+    "title": "Predictive KPIs · next 30 days",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 tiles are KPIs filled from the model (PRD-001, PRD-002, PRD-003, PRD-004, PRD-005); scope from the row label",
+    "kpis": [
+     "PRD-001",
+     "PRD-002",
+     "PRD-003",
+     "PRD-004",
+     "PRD-005"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-O02-ChangeReport",
+    "type": "table",
+    "title": "Leading-indicator board",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (SIG-009, SIG-007, SIG-012, SIG-004, SIG-001); scope from the row label",
+    "kpis": [
+     "SIG-009",
+     "SIG-007",
+     "SIG-012",
+     "SIG-004",
+     "SIG-001"
+    ],
+    "note": "Columns: Signal · Value · State · 24 h · Feeds"
+   },
+   {
+    "screen": "P2-O02-ChangeReport",
+    "type": "table",
+    "title": "External signals · never blended into actuals",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (SIG-014, SIG-015, SIG-016, SIG-017, SIG-018); scope from the row label",
+    "kpis": [
+     "SIG-014",
+     "SIG-015",
+     "SIG-016",
+     "SIG-017",
+     "SIG-018"
+    ],
+    "note": "Columns: Signal · Movement · Exposure · State"
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "tiles",
+    "title": "Forecast exposure · prediction outputs",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (PRD-004, PRD-005, SIG-004); scope from the row label",
+    "kpis": [
+     "PRD-004",
+     "PRD-005",
+     "SIG-004"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "table",
+    "title": "Named actions on cash",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "table",
+    "title": "Working capital",
+    "ask": "",
+    "source": "live",
+    "from": "8 of 8 rows are KPIs filled from the model (WCP-001, WCP-002, WCP-003, CSH-004, CSH-002, WCP-005, WCP-006, CSH-003); scope from the row label",
+    "kpis": [
+     "WCP-001",
+     "WCP-002",
+     "WCP-003",
+     "CSH-004",
+     "CSH-002",
+     "WCP-005",
+     "WCP-006",
+     "CSH-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "table",
+    "title": "Liquidity",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (LIQ-003, LIQ-004, FIN-006, SIG-006); scope from the row label",
+    "kpis": [
+     "LIQ-003",
+     "LIQ-004",
+     "FIN-006",
+     "SIG-006"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-O03-CashLiquidity",
+    "type": "table",
+    "title": "Treasury",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (TRS-001, TRS-002, TRS-003, TRS-004, TRS-005); scope from the row label",
+    "kpis": [
+     "TRS-001",
+     "TRS-002",
+     "TRS-003",
+     "TRS-004",
+     "TRS-005"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-O04-Capex",
+    "type": "table",
+    "title": "Progress chain per major project · Approved → Committed → Spent → Physical progress → Benefit realized",
+    "ask": "Is each major project turning spend into physical progress and benefit?",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Spend is always shown next to physical progress; project health is never inferred from spend alone."
+   },
+   {
+    "screen": "P2-O04-Capex",
+    "type": "tiles",
+    "title": "Forecast exposure",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 3 tiles are KPIs filled from the model (PRG-003, SIG-011); scope from the row label",
+    "kpis": [
+     "PRG-003",
+     "SIG-011"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-O04-Capex",
+    "type": "table",
+    "title": "Named actions on major projects",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-O04-Capex",
+    "type": "table",
+    "title": "Programmes",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (PRG-001, STR-002, PRG-003, PRG-005, PRG-004); scope from the row label",
+    "kpis": [
+     "PRG-001",
+     "STR-002",
+     "PRG-003",
+     "PRG-005",
+     "PRG-004"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-O04-Capex",
+    "type": "table",
+    "title": "Value delivered",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (VAL-001, VAL-002, VAL-003); scope from the row label",
+    "kpis": [
+     "VAL-001",
+     "VAL-002",
+     "VAL-003"
+    ],
+    "note": "Columns: KPI · Measure · Value YTD · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "Materiality · composite across six dimensions",
+    "ask": "How material is each open risk across all six dimensions?",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Composite = highest dimension, raised one level when time-to-breach ≤ [PH] days. Bands are placeholders pending approval (D-03)."
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "Which materiality dimensions drove INC-SYN-0142 (placeholder model)",
+    "ask": "",
+    "source": "layout",
+    "from": "7 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Dimension · Rating · Measures used"
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "tiles",
+    "title": "Clocks and forecast exposure",
+    "ask": "",
+    "source": "layout",
+    "from": "3 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "Named actions on material risks",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "Materiality matrix · impact × likelihood (placeholder bands)",
+    "ask": "Which risks are both likely and high-impact?",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Band boundaries are placeholders pending approval (D-03). Each plotted item links to its case."
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "EHS",
+    "ask": "",
+    "source": "live",
+    "from": "7 of 7 rows are KPIs filled from the model (EHS-002, EHS-005, EHS-007, EHS-003, EHS-001, EHS-008, REG-010); scope from the row label",
+    "kpis": [
+     "EHS-002",
+     "EHS-005",
+     "EHS-007",
+     "EHS-003",
+     "EHS-001",
+     "EHS-008",
+     "REG-010"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "Compliance and controls",
+    "ask": "",
+    "source": "live",
+    "from": "8 of 8 rows are KPIs filled from the model (GOV-004, CTL-002, CTL-010, CTL-005, CTL-007, CTL-006, CTL-008, CTL-009); scope from the row label",
+    "kpis": [
+     "GOV-004",
+     "CTL-002",
+     "CTL-010",
+     "CTL-005",
+     "CTL-007",
+     "CTL-006",
+     "CTL-008",
+     "CTL-009"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "Contracts",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (CON-001, CON-002, CON-003); scope from the row label",
+    "kpis": [
+     "CON-001",
+     "CON-002",
+     "CON-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-O05-Risk",
+    "type": "table",
+    "title": "Sustainability (same governed KPIs as Operations)",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SUS-001, SUS-002, SUS-003); scope from the row label",
+    "kpis": [
+     "SUS-001",
+     "SUS-002",
+     "SUS-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-O06-Decisions",
+    "type": "tiles",
+    "title": "Decision queue counters",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 7 tiles are KPIs filled from the model (EFF-008, EFF-009, EFF-010, EFF-011); scope from the row label",
+    "kpis": [
+     "EFF-008",
+     "EFF-009",
+     "EFF-010",
+     "EFF-011"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-O06-Decisions",
+    "type": "table",
+    "title": "Decision queue",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Decision · Materiality · Exposure · Recommending role · Options · Due · Cost of delay"
+   },
+   {
+    "screen": "P2-O06-Decisions",
+    "type": "table",
+    "title": "Options from scenario SCN-SYN-0031",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Assumptions are owned by Planning (role); see S-06."
+   },
+   {
+    "screen": "P2-O06-Decisions",
+    "type": "table",
+    "title": "Escalations reaching the Owner",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Escalation · Level · Materiality · Owner (role) · Clock · Status"
+   },
+   {
+    "screen": "P2-O07-Brief",
+    "type": "table",
+    "title": "Agent activity · audit log",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time · Agent · Action · Outcome · Human check"
+   },
+   {
+    "screen": "P2-O08-WarRoom",
+    "type": "tiles",
+    "title": "Incident header",
+    "ask": "",
+    "source": "layout",
+    "from": "12 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-O08-WarRoom",
+    "type": "tiles",
+    "title": "Accountability strip",
+    "ask": "",
+    "source": "layout",
+    "from": "7 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-O08-WarRoom",
+    "type": "table",
+    "title": "Since the last update",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Update · Who (role)"
+   },
+   {
+    "screen": "P2-O08-WarRoom",
+    "type": "table",
+    "title": "Waiting on the Owner",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Decision · Due · Authority"
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "tiles",
+    "title": "Forecast exposure · prediction outputs",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 tiles are KPIs filled from the model (PRD-001, PRD-006, PRD-007, SIG-009); scope from the row label",
+    "kpis": [
+     "PRD-001",
+     "PRD-006",
+     "PRD-007",
+     "SIG-009"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "table",
+    "title": "Production by entity · P06 (CERT)",
+    "ask": "",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Production vs plan = OPS-001, Capacity util. = OPS-003, Yield = PLT-005, Recovery = PLT-004",
+    "kpis": [],
+    "note": "Columns: Entity · Production vs plan · Capacity util. · Yield · Recovery · Trust"
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "table",
+    "title": "Reliability measures",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (REL-001, REL-002, REL-003, REL-005, PRD-006); scope from the row label",
+    "kpis": [
+     "REL-001",
+     "REL-002",
+     "REL-003",
+     "REL-005",
+     "PRD-006"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "table",
+    "title": "Cost measures",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (CST-001, CST-002, CST-003, CST-004); scope from the row label",
+    "kpis": [
+     "CST-001",
+     "CST-002",
+     "CST-003",
+     "CST-004"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "table",
+    "title": "Supplier performance",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (SUP-001, SIG-009, SUP-007, SUP-008); scope from the row label",
+    "kpis": [
+     "SUP-001",
+     "SIG-009",
+     "SUP-007",
+     "SUP-008"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "table",
+    "title": "Sustainability",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SUS-002, SUS-003, SUS-001); scope from the row label",
+    "kpis": [
+     "SUS-002",
+     "SUS-003",
+     "SUS-001"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "tiles",
+    "title": "Trust summary",
+    "ask": "",
+    "source": "layout",
+    "from": "8 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "table",
+    "title": "BRK-SYN-0071 · Flash vs MIS",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Check · Left · Right · Variance · Result"
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "table",
+    "title": "Certification history",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Period · Decision · By (role) · Note"
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "table",
+    "title": "Related alerts and cases",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Item · Relation"
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "table",
+    "title": "Evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Item · State"
+   },
+   {
+    "screen": "P2-S03-KPIDetail",
+    "type": "table",
+    "title": "Investigation actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "tiles",
+    "title": "Trust summary",
+    "ask": "",
+    "source": "layout",
+    "from": "8 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "table",
+    "title": "BRK-SYN-0071 · Flash vs MIS",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Check · Left · Right · Variance · Result"
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "table",
+    "title": "Certification history",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Period · Decision · By (role) · Note"
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "table",
+    "title": "Related alerts and cases",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Item · Relation"
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "table",
+    "title": "Evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Item · State"
+   },
+   {
+    "screen": "P2-S03e-KPIDetail",
+    "type": "table",
+    "title": "Investigation actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S03o-KPIDetail",
+    "type": "tiles",
+    "title": "Trust summary",
+    "ask": "",
+    "source": "layout",
+    "from": "8 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S03o-KPIDetail",
+    "type": "table",
+    "title": "BRK-SYN-0071 · Flash vs MIS",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Check · Left · Right · Variance · Result"
+   },
+   {
+    "screen": "P2-S03o-KPIDetail",
+    "type": "table",
+    "title": "Certification history",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Period · Decision · By (role) · Note"
+   },
+   {
+    "screen": "P2-S03o-KPIDetail",
+    "type": "table",
+    "title": "Related alerts and cases",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Item · Relation"
+   },
+   {
+    "screen": "P2-S03o-KPIDetail",
+    "type": "table",
+    "title": "Evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Item · State"
+   },
+   {
+    "screen": "P2-S04-Alert",
+    "type": "tiles",
+    "title": "Alert header (22-field model, 11a)",
+    "ask": "",
+    "source": "layout",
+    "from": "16 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S04-Alert",
+    "type": "table",
+    "title": "Impact · current vs forecast",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Dimension · Current · Forecast"
+   },
+   {
+    "screen": "P2-S04-Alert",
+    "type": "table",
+    "title": "Recommended actions (AI drafts accepted by a human)",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Action · Drafted by · Accepted by"
+   },
+   {
+    "screen": "P2-S04-Alert",
+    "type": "table",
+    "title": "Updates and audit",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Update · By (role)"
+   },
+   {
+    "screen": "P2-S04c-Alert",
+    "type": "tiles",
+    "title": "Alert header (22-field model, 11a)",
+    "ask": "",
+    "source": "layout",
+    "from": "16 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S04c-Alert",
+    "type": "table",
+    "title": "Impact · current vs forecast",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Dimension · Current · Forecast"
+   },
+   {
+    "screen": "P2-S04c-Alert",
+    "type": "table",
+    "title": "Recommended actions (AI drafts accepted by a human)",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Action · Drafted by · Accepted by"
+   },
+   {
+    "screen": "P2-S04c-Alert",
+    "type": "table",
+    "title": "Updates and audit",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Update · By (role)"
+   },
+   {
+    "screen": "P2-S04e-Alert",
+    "type": "tiles",
+    "title": "Alert header (22-field model, 11a)",
+    "ask": "",
+    "source": "layout",
+    "from": "16 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S04e-Alert",
+    "type": "table",
+    "title": "Impact · current vs forecast",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Dimension · Current · Forecast"
+   },
+   {
+    "screen": "P2-S04e-Alert",
+    "type": "table",
+    "title": "Recommended actions (AI drafts accepted by a human)",
+    "ask": "",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Action · Drafted by · Accepted by"
+   },
+   {
+    "screen": "P2-S04e-Alert",
+    "type": "table",
+    "title": "Updates and audit",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Update · By (role)"
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "tiles",
+    "title": "Incident header (12 fields)",
+    "ask": "",
+    "source": "layout",
+    "from": "12 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "tiles",
+    "title": "Accountability strip",
+    "ask": "",
+    "source": "layout",
+    "from": "7 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "table",
+    "title": "Ownership and governance (10 elements)",
+    "ask": "",
+    "source": "layout",
+    "from": "10 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Element · Value"
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "table",
+    "title": "Live facts",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Category · Fact · Provenance"
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "table",
+    "title": "Impact (11 dimensions)",
+    "ask": "",
+    "source": "layout",
+    "from": "11 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Dimension · Current · Forecast"
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "table",
+    "title": "Actions (recommended → accepted → milestones)",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "table",
+    "title": "Timeline",
+    "ask": "",
+    "source": "layout",
+    "from": "7 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Event type · Event"
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "table",
+    "title": "Communications",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Update · Audience · State"
+   },
+   {
+    "screen": "P2-S05-Case",
+    "type": "table",
+    "title": "Closure (9 elements · defined, not yet met)",
+    "ask": "",
+    "source": "layout",
+    "from": "9 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Element · State"
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "tiles",
+    "title": "Incident header (12 fields)",
+    "ask": "",
+    "source": "layout",
+    "from": "12 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "tiles",
+    "title": "Accountability strip",
+    "ask": "",
+    "source": "layout",
+    "from": "7 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "table",
+    "title": "Ownership and governance (10 elements)",
+    "ask": "",
+    "source": "layout",
+    "from": "10 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Element · Value"
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "table",
+    "title": "Live facts",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Category · Fact · Provenance"
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "table",
+    "title": "Impact (11 dimensions)",
+    "ask": "",
+    "source": "layout",
+    "from": "11 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Dimension · Current · Forecast"
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "table",
+    "title": "Actions (recommended → accepted → milestones)",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "table",
+    "title": "Timeline",
+    "ask": "",
+    "source": "layout",
+    "from": "7 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Event type · Event"
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "table",
+    "title": "Communications",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Update · Audience · State"
+   },
+   {
+    "screen": "P2-S05c-Case",
+    "type": "table",
+    "title": "Closure (9 elements · defined, not yet met)",
+    "ask": "",
+    "source": "layout",
+    "from": "9 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Element · State"
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "tiles",
+    "title": "Incident header (12 fields)",
+    "ask": "",
+    "source": "layout",
+    "from": "12 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "tiles",
+    "title": "Accountability strip",
+    "ask": "",
+    "source": "layout",
+    "from": "7 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "table",
+    "title": "Ownership and governance (10 elements)",
+    "ask": "",
+    "source": "layout",
+    "from": "10 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Element · Value"
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "table",
+    "title": "Live facts",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Category · Fact · Provenance"
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "table",
+    "title": "Impact (11 dimensions)",
+    "ask": "",
+    "source": "layout",
+    "from": "11 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Dimension · Current · Forecast"
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "table",
+    "title": "Actions (recommended → accepted → milestones)",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "table",
+    "title": "Timeline",
+    "ask": "",
+    "source": "layout",
+    "from": "7 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Event type · Event"
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "table",
+    "title": "Communications",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Update · Audience · State"
+   },
+   {
+    "screen": "P2-S05e-Case",
+    "type": "table",
+    "title": "Closure (9 elements · defined, not yet met)",
+    "ask": "",
+    "source": "layout",
+    "from": "9 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Element · State"
+   },
+   {
+    "screen": "P2-S06-Scenario",
+    "type": "table",
+    "title": "Scenario assumptions (each owned by a role)",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Assumption · Value · Owner (role) · Basis"
+   },
+   {
+    "screen": "P2-S06-Scenario",
+    "type": "table",
+    "title": "Sensitivity of A + B",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: If · Then"
+   },
+   {
+    "screen": "P2-S06-Scenario",
+    "type": "table",
+    "title": "Scenario actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S06e-Scenario",
+    "type": "table",
+    "title": "Scenario assumptions (each owned by a role)",
+    "ask": "",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Assumption · Value · Owner (role) · Basis"
+   },
+   {
+    "screen": "P2-S06e-Scenario",
+    "type": "table",
+    "title": "Sensitivity of A + B",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: If · Then"
+   },
+   {
+    "screen": "P2-S06e-Scenario",
+    "type": "table",
+    "title": "Scenario actions",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S08-Evidence",
+    "type": "tiles",
+    "title": "Evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "4 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S08-Evidence",
+    "type": "table",
+    "title": "Evidence register",
+    "ask": "",
+    "source": "layout",
+    "from": "10 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: ID · Item · Submitted by (role) · State"
+   },
+   {
+    "screen": "P2-S08-Evidence",
+    "type": "table",
+    "title": "Audit trail (append-only)",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Action · Role · Rationale / prior state"
+   },
+   {
+    "screen": "P2-S08e-Evidence",
+    "type": "tiles",
+    "title": "Evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "4 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S08e-Evidence",
+    "type": "table",
+    "title": "Evidence register",
+    "ask": "",
+    "source": "layout",
+    "from": "10 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: ID · Item · Submitted by (role) · State"
+   },
+   {
+    "screen": "P2-S08e-Evidence",
+    "type": "table",
+    "title": "Audit trail (append-only)",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Action · Role · Rationale / prior state"
+   },
+   {
+    "screen": "P2-S08o-Evidence",
+    "type": "tiles",
+    "title": "Evidence",
+    "ask": "",
+    "source": "layout",
+    "from": "4 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S08o-Evidence",
+    "type": "table",
+    "title": "Evidence register",
+    "ask": "",
+    "source": "layout",
+    "from": "10 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: ID · Item · Submitted by (role) · State"
+   },
+   {
+    "screen": "P2-S08o-Evidence",
+    "type": "table",
+    "title": "Audit trail (append-only)",
+    "ask": "",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Time (SYN) · Action · Role · Rationale / prior state"
+   },
+   {
+    "screen": "P2-S10-OpsImpact",
+    "type": "tiles",
+    "title": "Timing",
+    "ask": "",
+    "source": "layout",
+    "from": "2 tiles of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · filter: all (change to 'Changed in last 24 h')",
+    "ask": "",
+    "source": "live",
+    "from": "21 of 21 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005, SIG-003, PLT-004, SIG-004, SIG-005 …); scope from the row label",
+    "kpis": [
+     "SIG-001",
+     "REL-003",
+     "SIG-002",
+     "PLT-005",
+     "SIG-003",
+     "PLT-004",
+     "SIG-004",
+     "SIG-005",
+     "SIG-006",
+     "SIG-007",
+     "SIG-008",
+     "SIG-009",
+     "SIG-010",
+     "SIG-011",
+     "SIG-012",
+     "SIG-013",
+     "SIG-014",
+     "SIG-015",
+     "TRS-001",
+     "SIG-016",
+     "SIG-017",
+     "SIG-018",
+     "SIG-019",
+     "REG-002",
+     "SIG-020",
+     "REG-003",
+     "SIG-021"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "External signals · shown by default",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (SIG-014, SIG-015, SIG-016, SIG-017, SIG-018); scope from the row label",
+    "kpis": [
+     "SIG-014",
+     "SIG-015",
+     "SIG-016",
+     "SIG-017",
+     "SIG-018"
+    ],
+    "note": "Columns: Signal · Movement · Group exposure · State · Feeds"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "24-hour change report · Group · Cause → Impact → Action",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 3 rows are KPIs filled from the model (SIG-004); scope from the row label",
+    "kpis": [
+     "SIG-004"
+    ],
+    "note": "Columns: # · What changed · Cause · Impact · Action (owner · due) · Provenance · Materiality"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Signals changed in 24 h",
+    "ask": "",
+    "source": "live",
+    "from": "6 of 6 rows are KPIs filled from the model (SIG-009, SIG-010, SIG-007, SIG-012, SIG-016, SIG-004); scope from the row label",
+    "kpis": [
+     "SIG-009",
+     "SIG-010",
+     "SIG-007",
+     "SIG-012",
+     "SIG-016",
+     "SIG-004"
+    ],
+    "note": "Columns: Signal · Change"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Signals needing an owner",
+    "ask": "",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · Entity A1",
+    "ask": "",
+    "source": "live",
+    "from": "14 of 14 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005, SIG-004, SIG-005, SIG-007, SIG-009 …); scope from the row label",
+    "kpis": [
+     "SIG-001",
+     "REL-003",
+     "SIG-002",
+     "PLT-005",
+     "SIG-004",
+     "SIG-005",
+     "SIG-007",
+     "SIG-009",
+     "SIG-010",
+     "SIG-011",
+     "SIG-012",
+     "SIG-016",
+     "SIG-017",
+     "SIG-019",
+     "SIG-020",
+     "SIG-021"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Signals needing an owner",
+    "ask": "",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "24-hour change report · Entity A1 · Cause → Impact → Action",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 3 rows are KPIs filled from the model (OPS-001, SIG-008); scope from the row label",
+    "kpis": [
+     "OPS-001",
+     "SIG-008"
+    ],
+    "note": "Columns: # · What changed · Cause · Impact · Action (owner · due) · Provenance · Materiality"
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "table",
+    "title": "Saved inquiries",
+    "ask": "",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Question · Asked · Status"
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "table",
+    "title": "Functional recommendations and root-cause support",
+    "ask": "",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: For · Recommendation · Evidence · Provenance · Status"
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "tiles",
+    "title": "Forecast exposure · prediction outputs",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (PRD-001, PRD-002, PRD-003); scope from the row label",
+    "kpis": [
+     "PRD-001",
+     "PRD-002",
+     "PRD-003"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "table",
+    "title": "Decisions required from the Owner",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "table",
+    "title": "Financial health measures",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (FIN-002, FIN-003, FIN-005, FIN-007); scope from the row label",
+    "kpis": [
+     "FIN-002",
+     "FIN-003",
+     "FIN-005",
+     "FIN-007"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "table",
+    "title": "Operational measures",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (OPS-002, OPS-003); scope from the row label",
+    "kpis": [
+     "OPS-002",
+     "OPS-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "table",
+    "title": "Strategic measures",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (STR-001, CPX-004, STR-002); scope from the row label",
+    "kpis": [
+     "STR-001",
+     "CPX-004",
+     "STR-002"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P2-X-States",
+    "type": "table",
+    "title": "Risk measures",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (RSK-001, EFF-002, RSK-002, EHS-002, RSK-003); scope from the row label",
+    "kpis": [
+     "RSK-001",
+     "EFF-002",
+     "RSK-002",
+     "EHS-002",
+     "RSK-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "tiles",
+    "title": "Forecast exposure · prediction outputs",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 tiles are KPIs filled from the model (PRD-001, PRD-002, PRD-003); scope from the row label",
+    "kpis": [
+     "PRD-001",
+     "PRD-002",
+     "PRD-003"
+    ],
+    "note": ""
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "table",
+    "title": "Decisions required from the Owner",
+    "ask": "",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "table",
+    "title": "Financial health measures",
+    "ask": "",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (FIN-002, FIN-003, FIN-005, FIN-007); scope from the row label",
+    "kpis": [
+     "FIN-002",
+     "FIN-003",
+     "FIN-005",
+     "FIN-007"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "table",
+    "title": "Operational measures",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (OPS-002, OPS-003); scope from the row label",
+    "kpis": [
+     "OPS-002",
+     "OPS-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "table",
+    "title": "Strategic measures",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (STR-001, CPX-004, STR-002); scope from the row label",
+    "kpis": [
+     "STR-001",
+     "CPX-004",
+     "STR-002"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   },
+   {
+    "screen": "P3-L-LargeDisplay",
+    "type": "table",
+    "title": "Risk measures",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (RSK-001, EFF-002, RSK-002, EHS-002, RSK-003); scope from the row label",
+    "kpis": [
+     "RSK-001",
+     "EFF-002",
+     "RSK-002",
+     "EHS-002",
+     "RSK-003"
+    ],
+    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+   }
   ]
  }
 };

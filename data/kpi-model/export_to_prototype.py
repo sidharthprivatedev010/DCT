@@ -145,6 +145,25 @@ def main():
         plant["charts"].append({"screen": c["screen"], "type": c["type"], "title": c["title"], "ask": c.get("ask", ""), "source": csrc,
                                 "from": (f"{c['kpi']} for the plant, entity or Group in each row label" if c.get("kpi") else (r["from"] if r else "Hand-set (SYN)")),
                                 "note": (r["note"] if r else "Not yet classified in data/kpi-model/chart_sources.json.")})
+    # tables and tiles on the screens: how each gets its numbers, derived from what the block carries
+    known = {k["id"] for k in M["kpis"]}
+    plant["blocks"] = []
+    for blk in json.load(open(os.path.join(HERE, "ui_blocks.json"), encoding="utf-8")):
+        ks = [i for i in blk["kpis"] if i in known]
+        what = "tile" if blk["type"] == "tiles" else "row"
+        what = what + ("" if blk["n"] == 1 else "s")
+        nk = sum(1 for r in blk.get("rowIds", []) if any(i in known for i in r))
+        if blk.get("kcols"):
+            bsrc, frm = "live", "Columns filled from the model for the scope in each row label: " + ", ".join(f"{h} = {i}" for h, i in blk["kcols"].items())
+        elif ks:
+            bsrc, frm = "live", f"{nk} of {blk['n']} {what} are KPIs filled from the model ({', '.join(ks[:8])}{' …' if len(ks) > 8 else ''}); scope from the row label"
+        elif blk["kpis"]:
+            bsrc, frm = "illustrative", "Names " + ", ".join(blk["kpis"][:6]) + " (not KPIs in the model: alerts, cases, signals or decisions); values hand-set (SYN)"
+        else:
+            bsrc, frm = "layout", f"{blk['n']} {what} of workflow, status or reference text; no KPI values"
+        cols = " · ".join(str(c) for c in blk.get("cols") or [])
+        plant["blocks"].append({"screen": blk["screen"], "type": blk["type"], "title": blk["title"], "ask": blk.get("ask", ""), "source": bsrc,
+                                "from": frm, "kpis": ks, "note": blk.get("cap") or (("Columns: " + cols) if cols else "")})
     for k in M["kpis"]:
         kid = k["id"]; div, du, dp, better, tgt = disp(kid, k["unit"])
         ent = {"name": k["name"], "unit": du, "dp": dp, "div": div, "formula": k["how"], "basis": k["basis"], "better": better, "target": tgt,

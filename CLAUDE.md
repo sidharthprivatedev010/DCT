@@ -32,6 +32,7 @@ Static HTML prototype for a leadership "control tower" across three lenses: **Ow
 | Build | `data/kpi-model/build_kpi_model.py` | Adds 11 synthetic entity inputs (`NEW_INPUTS`), 12 KPIs the workbook lacked (`NEW_KPIS`) and 9 aliases (`ALIASES`). Writes `KPI-Model.xlsx` (live formulas, per-scope sheets, UI KPI Map), `kpi_values.csv`, `kpi_catalogue.csv` and `kpi_model.json`. |
 | Formula engine | `data/kpi-model/xleval.py` | Evaluates the workbook formulas in Python. It matches Excel on all 149 source KPIs. There is no LibreOffice here, so use this to check formulas. |
 | UI scan | `data/kpi-model/scan_ui.js` | Lists the KPI IDs, screens and graphs in the UI (170 IDs, 64 graphs, 57 screens). Rerun it when pages gain or lose KPIs. |
+| Tables and tiles | `data/kpi-model/ui_blocks.json` → `DCTData.plant.blocks` | Written by `scan_ui.js`; `export_to_prototype.py` derives each block's source (live KPI rows, hand-set, or not KPI data) from what it carries. Shown on R-01 behind the (i) buttons. |
 | Graph sources | `data/kpi-model/chart_sources.json` | How each graph gets its numbers: live, model, scaled, illustrative or layout, matched on the title. Shown on KPI Reference (R-01). When you add or retitle a graph, add a rule; unmatched graphs show as "Not yet classified". |
 | Page figures | `data/kpi-model/sync_pages.py` | Rewrites charts and story numbers in `js/c/*.js` from the model (bound or scaled). Rerun after every rebuild. |
 | To prototype | `data/kpi-model/export_to_prototype.py` | Writes `base-data.js` (cards for P06 + `DCTData.plant`). Display units, targets and better-direction are in `SPEC`. Keeps existing trust (`ts`/`prov`) for entity-level KPIs. Regenerates `data/HARDCODED-VALUES.md`. |
@@ -65,6 +66,7 @@ node tools/regen.js
 - **Model-bound blocks:** a table with `kcols` {header: KPI} or a bar chart with `kpi` fills each row from the model, using the scope in the row label.
 - **Roll-up tab:** every E-, G-, O- and S- page (except S-03) gets a "Roll-up · P06" tab.
 - **Click-through:** every model value links to `P2-S03e/S03/S03o-KPIDetail.html?kpi=ID&scope=…`, built by `DCTResolve.kpiDetail`.
+- **(i) buttons:** KPI cards, KPI cells in tables (columns 1–2), KPI tiles and the titles of graphs, tables and tiles link to R-01 with `?kpi=ID` or `?graph=<title>&on=<screen>`. Only IDs in the model get one; none on R-01 itself.
 - **KPI Reference (R-01):** `js/c/P2-R01-KPIReference.js` is one file for three lens pages. Lens, Scope, Theme and Period dropdowns use the `menus` block; filters are URL params.
 
 **Watch out:**
