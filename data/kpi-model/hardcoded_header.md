@@ -41,6 +41,39 @@ The following UI IDs are catalogue aliases and show the same value as their cano
 - **In use:** Group → Entity A1 (Plants 01–03) and Entity A2 (Plants 04–06). "Business A" in breadcrumbs is the Group.
 - **Removed:** Entities B1–C2 and Businesses B and C. Their capex projects, alerts and owners were reassigned to A1 or A2.
 
+## Page figures kept in line by `data/kpi-model/sync_pages.py`
+
+Charts and story figures live in `js/c/*.js`, not in the KPI cards. `sync_pages.py` rewrites them from the model, so rerun it after every rebuild.
+
+**Bound to model series (exact):**
+
+| Where | What |
+|---|---|
+| O-01, P3-L | EBITDA per month |
+| O-01, G-03, E-01, E-11 | EBITDA → FCF → ROCE (indexed: EBITDA, FIN-008, FIN-005) |
+| E-11 | A1 revenue against planned revenue |
+| O-03 | FX exposure against hedged |
+| O-04, E-06 | Cumulative value delivered (VAL-001/002/003) |
+| G-03 | Full-year EBITDA plan ₹4,150.5 m → forecast ₹4,094.3 m (YTD + rest of year) |
+| E-05 | Billing and cash nodes |
+| O-06, G-10, S-12, S-13 | Story figures (upstream ₹27.2 m, EBITDA gap, A1 EBITDA/EBIT/ROCE/DSO/collections) |
+
+**Derived with an assumption:**
+- **E-11 A1 EBITDA plan YTD** = actual + revenue below plan × EBITDA margin, split into volume (sales below plan) and price. This gives ₹1,006.7 m plan against ₹890.5 m actual (−11.5%).
+
+**Scaled to model totals; the split itself is hand-set:**
+
+| Where | What |
+|---|---|
+| G-03 | Driver steps of the −₹56.2 m gap |
+| O-03 | Daily cash curve and P07 cash bridge (end at ₹2,141.8 m); debt ladder quarters (sum = LIQ-003 ₹891.4 m, > 12 m = gross debt − that) |
+| G-04 | Working-capital bridge steps (start ₹2,781.0 m) and release opportunity (A1 117.3 + A2 50.3) |
+| E-05, S-13 | Cash levers |
+| O-04, G-06, E-06 | Project budgets (A1 = CPX-001 ₹1,000 m; committed = CPX-002) |
+| O-04, E-06 | Value plan line (8% above delivered) |
+| S-03 (default view) | Plant 02 daily curve and variance drivers |
+| S-10 | Line split (= 24.3 kt) |
+
 ## Still hardcoded on pages (narrative and detail with no model input)
 
 | What | Where | Note |

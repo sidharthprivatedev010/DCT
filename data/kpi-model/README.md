@@ -80,6 +80,7 @@ The synthetic inputs behind them, and all aliases, are listed in `data/HARDCODED
 ```
 python3 data/kpi-model/build_kpi_model.py
 python3 data/kpi-model/export_to_prototype.py
+python3 data/kpi-model/sync_pages.py
 node tools/regen.js
 ```
 

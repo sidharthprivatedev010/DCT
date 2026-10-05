@@ -21,6 +21,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 SRC = os.path.join(HERE, "Group-KPI-Model.xlsx")
 OUT = os.path.join(HERE, "KPI-Model.xlsx")
+# monthly building blocks exported for charts that sync_pages.py binds to the model
+SERIES = ["ebitda_k", "ebit_k", "revenue_k", "planned_revenue_k", "cash_k", "nwc_k", "fcf_k", "good_output_t", "planned_production_t",
+          "forecast_ebitda_rest_k", "planned_ebitda_rest_k", "receivables_k", "inventory_k", "payables_k", "fx_exposure_k", "fx_hedged_k",
+          "debt_maturing_12m_k", "capital_employed_k", "collections_k", "upstream_due_k", "upstream_covered_k",
+          "sales_t", "planned_sales_t", "gross_debt_k", "ebitda_benefit_k", "cash_benefit_k", "cost_savings_k", "benefits_planned_k"]
 PER = ["2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09"]
 ROWS = range(4, 10)                       # P01..P06 rows on every *Inputs sheet
 ENT = {"A1": ("Entity A1", 4, "$B$5"), "A2": ("Entity A2", 10, "$B$6")}   # name, first row in Entity Inputs, opening NWC
@@ -281,6 +286,8 @@ def main():
         for k in kpis: w.writerow([k["id"], k["name"], k["unit"], k["basis"], k["how"], ", ".join(k["fields"]), k["alias_of"] or "", k["plant"], bool(k["added"])])
     json.dump({"kpis": [{x: k[x] for x in ("id", "name", "unit", "basis", "how", "fields", "alias_of", "plant", "added")} for k in kpis],
                "values": values, "inputs": inputs, "rules": rules, "excl": excl,
+               "series": {sc: {f: [round(float(b.value("Group Inputs" if sc == "Group" else f"{sc} Inputs", gfield[f], r)), 1) for r in ROWS]
+                               for f in SERIES if f in gfield} for sc in ("Group", "A1", "A2")},
                "scopes": {"Group": "Group", "A1": "Entity A1", "A2": "Entity A2", **{p: v[0] for p, v in PLANTS.items()}},
                "children": {"Group": ["A1", "A2"], "A1": ["Plant01", "Plant02", "Plant03"], "A2": ["Plant04", "Plant05", "Plant06"]}},
               open(os.path.join(HERE, "kpi_model.json"), "w"), ensure_ascii=False)

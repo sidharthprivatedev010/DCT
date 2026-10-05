@@ -32,6 +32,7 @@ Static HTML prototype for a leadership "control tower" across three lenses: **Ow
 | Build | `data/kpi-model/build_kpi_model.py` | Adds 11 synthetic entity inputs (`NEW_INPUTS`), 12 KPIs the workbook lacked (`NEW_KPIS`) and 9 aliases (`ALIASES`). Writes `KPI-Model.xlsx` (live formulas, per-scope sheets, UI KPI Map), `kpi_values.csv`, `kpi_catalogue.csv` and `kpi_model.json`. |
 | Formula engine | `data/kpi-model/xleval.py` | Evaluates the workbook formulas in Python. It matches Excel on all 149 source KPIs. There is no LibreOffice here, so use this to check formulas. |
 | UI scan | `data/kpi-model/scan_ui.js` | Lists the KPI IDs and screens in the UI (170 IDs, 57 screens). Rerun it when pages gain or lose KPIs. |
+| Page figures | `data/kpi-model/sync_pages.py` | Rewrites charts and story numbers in `js/c/*.js` from the model (bound or scaled). Rerun after every rebuild. |
 | To prototype | `data/kpi-model/export_to_prototype.py` | Writes `base-data.js` (cards for P06 + `DCTData.plant`). Display units, targets and better-direction are in `SPEC`. Keeps existing trust (`ts`/`prov`) for entity-level KPIs. Regenerates `data/HARDCODED-VALUES.md`. |
 | Not derivable | `data/HARDCODED-VALUES.md` | The single register of what the model does not calculate: synthetic inputs, aliases, narrative numbers. Edit its narrative part in `data/kpi-model/hardcoded_header.md`. |
 | Method | `data/kpi-model/README.md`, `data/plant-model/Data-Model-Methodology.md` | Roll-up rules, the formulas of the added KPIs, display/status rules |
@@ -42,6 +43,7 @@ Static HTML prototype for a leadership "control tower" across three lenses: **Ow
 node data/kpi-model/scan_ui.js
 python3 data/kpi-model/build_kpi_model.py
 python3 data/kpi-model/export_to_prototype.py
+python3 data/kpi-model/sync_pages.py
 node tools/regen.js
 ```
 
