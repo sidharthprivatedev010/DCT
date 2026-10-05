@@ -89,7 +89,7 @@ Run `node tools/regen.js`. It re-renders every page's static HTML and bumps the 
 ## Layout conventions
 
 - Home pages (O-01, G-01, E-01) use `sections: [{n, kpis:[ids], blocks:["drivers", "drivers.1", …]}]` (TplA only). The sections render as numbered theme headings; any KPI not listed falls into "Other measures".
-- Status strip and four-way summary sit inside a collapsed "Status overview" `<details>`.
+- There is no Status overview bar (status strip and four-way summary); it was removed from all six templates.
 - Don't remove content when restructuring; move it into sections or tabs.
 
 ## Repo

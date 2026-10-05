@@ -139,3 +139,8 @@ Everything changed against the original prototype (`e104438 first commit`), grou
 - New `login.html`: choose a persona (Owner, Core Group Executive, Entity Executive · A1). It is stored in `localStorage["dct-persona"]`.
 - The header Lens menu is replaced (all six templates) by a persona chip with **Sign out**, which goes back to `login.html`.
 - New `js/persona.js`, loaded on every lens screen (not P2-00, P2-X, P3-00/01, P1 pack). With no persona it sends you to login. A screen from another lens redirects to its closest equivalent in your lens (taken from the page's `equiv`), or to your home.
+
+## Status overview removed
+
+- Removed the collapsed **Status overview** bar (status strip and four-way summary) from all six templates, so it no longer appears on any page.
+- `docs/Control Tower Screen Reference.docx` updated to match.
