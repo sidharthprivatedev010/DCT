@@ -4,7 +4,7 @@ class Component extends DCLogic {
   renderVals() {
     return {
       index: [
-        {n:"TOUR", t:"Guided tour · Primary business journey", d:"10 steps from the Owner home to evidence-based closure, with what to notice at each step. Use the Lens menu in any screen header to switch role.", href:"P2-O01-EnterpriseHealth.dc.html"},
+        {n:"TOUR", t:"Guided tour · Primary business journey", d:"10 steps from the Owner home to evidence-based closure, with what to notice at each step. Sign in as a persona; sign out from the header to switch.", href:"P2-O01-EnterpriseHealth.dc.html"},
         {n:"TOUR", t:"Guided tour · Data Assurance journey", d:"8 steps from an untrusted KPI card to a human certification decision and the updated leadership view.", href:"P2-G01-Portfolio.dc.html"},
         {n:"01", t:"Product interpretation", d:"What the Control Tower is, the four questions, the decision flow and the design stance. Below on this board.", href:"#interp"},
         {n:"02", t:"Assumptions, unresolved decisions, conflicts", d:"16 design assumptions, 23 decisions awaiting approval, 14 conflicts in the brief.", href:"P1-02-Assumptions.dc.html"},

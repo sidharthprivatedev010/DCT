@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control Tower sign in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+:root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ct-bg);font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ct-ink);font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:10px;padding:10px 20px;background:var(--ct-navy-900);color:#fff;min-height:64px}
+header b{font-weight:600;letter-spacing:.02em;font-size:14px}
+.syn{margin-left:auto;display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border:1px dashed rgba(255,255,255,.55);border-radius:2px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 16px}
+.box{width:100%;max-width:980px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ct-ink-3);font-weight:500}
+h1{font-size:28px;line-height:36px;margin:6px 0 6px;color:var(--ct-navy-900);font-weight:600;letter-spacing:-.01em}
+.q{font-size:15px;line-height:22px;color:var(--ct-ink-2);margin:0 0 28px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+button.p{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;background:var(--ct-surface);border:1px solid var(--ct-line);border-top:3px solid var(--ct-navy-900);border-radius:4px;padding:18px 18px 16px;transition:border-color var(--ct-dur) var(--ct-ease),box-shadow var(--ct-dur) var(--ct-ease)}
+button.p:hover{border-color:var(--ct-navy-700);box-shadow:0 2px 8px rgba(14,27,51,.12)}
+button.p:focus-visible{outline:2px solid var(--ct-navy-700);outline-offset:2px}
+.p .k{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ct-ink-3);font-weight:600}
+.p .t{font-size:18px;line-height:24px;font-weight:600;color:var(--ct-navy-900)}
+.p .r{font-size:13px;color:var(--ct-ink-2)}
+.p ul{margin:4px 0 0;padding-left:18px;color:var(--ct-ink-2);font-size:13px;line-height:19px}
+.p .go{margin-top:auto;padding-top:10px;font-weight:600;font-size:13px;color:var(--ct-navy-700)}
+.foot{margin-top:22px;font-size:12px;color:var(--ct-ink-3)}
+.foot a{color:var(--ct-navy-700)}
+</style>
+</head>
+<body>
+<header>
+  <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.6"><rect x="3" y="3" width="16" height="16" rx="2"></rect><path d="M7 15V10M11 15V7M15 15v-3"></path></svg>
+  <b>Control Tower</b>
+  <span class="syn" title="All names, values, dates and sources are synthetic">SYNTHETIC DATA</span>
+</header>
+<main>
+  <div class="box">
+    <div class="eyebrow">Sign in · prototype</div>
+    <h1>Choose your persona</h1>
+    <p class="q">Each persona has its own screens, scope and navigation. You only see the lens your role is entitled to; sign out from the header to switch.</p>
+    <div class="grid">
+      <button class="p" type="button" data-persona="Owner">
+        <span class="k">Owner</span>
+        <span class="t">Owner</span>
+        <span class="r">Group · all businesses · summary depth</span>
+        <ul><li>Enterprise health and 24-hour changes</li><li>Cash, capex and risk at a glance</li><li>Decisions awaiting you and the daily brief</li></ul>
+        <span class="go">Sign in as Owner →</span>
+      </button>
+      <button class="p" type="button" data-persona="Core Group">
+        <span class="k">Core Group</span>
+        <span class="t">Core Group Executive</span>
+        <span class="r">Group · both entities · comparative depth</span>
+        <ul><li>Portfolio and entity comparison</li><li>Financial, cash, ops and capex benchmarks</li><li>Certification governance and escalations</li></ul>
+        <span class="go">Sign in as Core Group →</span>
+      </button>
+      <button class="p" type="button" data-persona="Entity">
+        <span class="k">Entity</span>
+        <span class="t">Entity Executive</span>
+        <span class="r">Entity A1 · its plants · working depth</span>
+        <ul><li>Entity home and plant performance</li><li>Reliability, supply, production and cash</li><li>Certification workbench and my work</li></ul>
+        <span class="go">Sign in as Entity →</span>
+      </button>
+    </div>
+    <p class="foot">No password in the prototype. <a href="index.html">Phase 1 architecture pack</a> · <a href="P2-00-Index.html">Screen tracker</a></p>
+  </div>
+</main>
+<script>
+(function () {
+  var HOME = {"Owner": "P2-O01-EnterpriseHealth.html", "Core Group": "P2-G01-Portfolio.html", "Entity": "P2-E01-EntityHome.html"};
+  try { localStorage.removeItem("dct-persona"); } catch (e) {}
+  var next = new URLSearchParams(location.search).get("next");
+  if (next && !/^P[23]-[\w-]+\.html([?#].*)?$/.test(next)) next = null;
+  document.querySelectorAll("button[data-persona]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var p = b.getAttribute("data-persona");
+      try { localStorage.setItem("dct-persona", p); } catch (e) {}
+      location.href = next || HOME[p];
+    });
+  });
+})();
+</script>
+</body>
+</html>
