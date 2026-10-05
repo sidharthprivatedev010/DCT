@@ -86,7 +86,7 @@
         btn("Alias (" + count("source", "alias") + ")", {source: "alias"}, st.source === "alias")]}
     ];
     if (st.graph) sel.push({type: "buttons", title: "Graph filter", btns: [btn("Only the " + (bSel.length && !gSel.length ? (bSel[0].type === "tiles" ? "tiles" : "table") : "graph") + " “" + st.graph + "” and the KPIs it is built from · show all ✕", {graph: "", on: ""}, true)]});
-    if (st.kpi) sel.push({type: "buttons", title: "KPI filter", btns: [btn("Only " + st.kpi + (P.kpi[st.kpi] ? " " + P.kpi[st.kpi].name : " (not in the model)") + " · show all ✕", {kpi: ""}, true)]});
+    if (st.kpi) sel.push({type: "buttons", title: "KPI filter", btns: [btn("Only " + st.kpi + (P.kpi[st.kpi] ? " " + P.kpi[st.kpi].name : " (not in the model)") + " · show all ✕", {kpi: ""}, true)].concat(P.kpi[st.kpi] ? [{l: "Explain " + st.kpi + " ›", h: "#kpi-" + st.kpi, k: ""}] : [])});
     if (st.screen) sel.push({type: "buttons", title: "Screen filter", btns: [btn("Only KPIs on " + code(P.screens[st.screen]) + " " + P.screens[st.screen].title + " · clear ✕", {screen: ""}, true)]});
 
     // ---- the table
@@ -183,7 +183,7 @@
       equiv: equiv, journey: null};
   }
 
-  // ---- KPI explainer modal: opens on #kpi-ID (KPI column) and on arrival with ?kpi=ID (the (i) buttons)
+  // ---- KPI explainer modal: opens only on request, via #kpi-ID (KPI column, or the Explain button in the KPI filter)
   var LENS = {}; Object.keys(FILE).forEach(function (L) { LENS[FILE[L]] = L; });
   function esc(x) { return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
   function num(x, dp) { return typeof x === "number" ? x.toLocaleString("en-US", {minimumFractionDigits: dp || 0, maximumFractionDigits: dp == null ? 1 : dp}) : (x == null ? "—" : String(x)); }
@@ -315,7 +315,7 @@
     var ov = document.getElementById("ct-kx"); if (!ov) return; ov.style.display = "none"; document.documentElement.style.overflow = "";
     if (/^#kpi-/.test(location.hash)) { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) { location.hash = ""; } }
   }
-  function fromUrl() { var m = /^#kpi-([A-Z]{3}-\d{3})$/.exec(location.hash || ""); if (m) openKx(m[1]); else if (params().kpi && !document.getElementById("ct-kx")) openKx(params().kpi); else closeKx(); }
+  function fromUrl() { var m = /^#kpi-([A-Z]{3}-\d{3})$/.exec(location.hash || ""); if (m) openKx(m[1]); else closeKx(); }
   if (typeof window !== "undefined" && typeof document !== "undefined" && window.addEventListener && !window.__ctKx) {
     window.__ctKx = 1;
     window.addEventListener("hashchange", fromUrl);
