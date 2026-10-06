@@ -1,0 +1,186 @@
+{
+  "input_metrics": [
+    {
+      "input_metric_id": "IN-PROD-ACTUAL",
+      "name": "Actual saleable production",
+      "unit": "kt",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "Production Source",
+      "used_by_metrics": [
+        "OPS-001",
+        "OPS-003",
+        "CST-001"
+      ]
+    },
+    {
+      "input_metric_id": "IN-PROD-PLAN",
+      "name": "Approved production plan",
+      "unit": "kt",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "Planning System",
+      "used_by_metrics": [
+        "OPS-001"
+      ]
+    },
+    {
+      "input_metric_id": "IN-RATED-CAPACITY",
+      "name": "Rated capacity for the period",
+      "unit": "kt",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "Planning System",
+      "used_by_metrics": [
+        "OPS-003"
+      ]
+    },
+    {
+      "input_metric_id": "IN-VAR-COST",
+      "name": "Variable production cost",
+      "unit": "INR_m",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "ERP Finance",
+      "used_by_metrics": [
+        "CST-001"
+      ]
+    },
+    {
+      "input_metric_id": "IN-OEE-AVAILABILITY",
+      "name": "OEE availability factor",
+      "unit": "percent",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "rate",
+      "source_system": "Maintenance System",
+      "used_by_metrics": [
+        "PLT-002"
+      ]
+    },
+    {
+      "input_metric_id": "IN-OEE-PERFORMANCE",
+      "name": "OEE performance factor",
+      "unit": "percent",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "rate",
+      "source_system": "Production Source",
+      "used_by_metrics": [
+        "PLT-002"
+      ]
+    },
+    {
+      "input_metric_id": "IN-OEE-QUALITY",
+      "name": "OEE quality factor",
+      "unit": "percent",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "rate",
+      "source_system": "Quality System",
+      "used_by_metrics": [
+        "PLT-002"
+      ]
+    },
+    {
+      "input_metric_id": "IN-PLANNED-HOURS",
+      "name": "Planned production hours",
+      "unit": "hours",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "Planning System",
+      "used_by_metrics": [
+        "PLT-002"
+      ]
+    },
+    {
+      "input_metric_id": "IN-UNPLANNED-DOWNTIME",
+      "name": "Unplanned downtime",
+      "unit": "hours",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "Maintenance System",
+      "used_by_metrics": [
+        "REL-003"
+      ]
+    },
+    {
+      "input_metric_id": "IN-OPERATING-HOURS",
+      "name": "Equipment operating hours",
+      "unit": "hours",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "Maintenance System",
+      "used_by_metrics": [
+        "REL-001"
+      ]
+    },
+    {
+      "input_metric_id": "IN-FAILURE-COUNT",
+      "name": "Equipment failures",
+      "unit": "count",
+      "value_type": "integer",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "Maintenance System",
+      "used_by_metrics": [
+        "REL-001"
+      ]
+    },
+    {
+      "input_metric_id": "IN-RECORDABLE-INCIDENTS",
+      "name": "Recordable safety incidents",
+      "unit": "count",
+      "value_type": "integer",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "EHS System",
+      "used_by_metrics": [
+        "EHS-001"
+      ]
+    },
+    {
+      "input_metric_id": "IN-HOURS-WORKED",
+      "name": "Hours worked (employees and contractors)",
+      "unit": "hours",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "EHS System",
+      "used_by_metrics": [
+        "EHS-001"
+      ]
+    },
+    {
+      "input_metric_id": "IN-CRITICAL-INCIDENTS",
+      "name": "Critical safety incidents",
+      "unit": "count",
+      "value_type": "integer",
+      "lowest_grain": "PLANT",
+      "additivity": "additive",
+      "source_system": "EHS System",
+      "used_by_metrics": [
+        "EHS-004"
+      ]
+    },
+    {
+      "input_metric_id": "IN-DAYS-TO-BREACH",
+      "name": "Forecast days until production breaches minimum output",
+      "unit": "days",
+      "value_type": "decimal",
+      "lowest_grain": "PLANT",
+      "additivity": "point_in_time",
+      "source_system": "Forecast Model",
+      "used_by_metrics": [
+        "PRD-001"
+      ]
+    }
+  ]
+}

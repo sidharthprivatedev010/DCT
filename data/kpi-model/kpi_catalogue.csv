@@ -1,0 +1,171 @@
+kpi,measure,unit,time_basis,formula,inputs,alias_of,plant_level,added_by_model
+OPS-001,Production vs plan,%,Month,Good output ÷ Planned production × 100,"planned_production_t, good_output_t",,True,False
+OPS-003,Capacity utilization,%,Month,Good output ÷ Installed capacity × 100,"installed_capacity_t, good_output_t",,True,False
+PLT-001,Asset utilization,%,Month,Run hours ÷ Calendar hours × 100,"calendar_hours, run_hours",,True,False
+PLT-002,OEE,%,Month,Availability × Performance × Quality = Good output ÷ Ideal output × 100,"ideal_output_t, good_output_t",,True,False
+PLT-004,Recovery percentage,%,Month,Valuable content recovered ÷ Valuable content in feed × 100,"feed_contained_t, recovered_contained_t",,True,False
+PLT-005,Yield,%,Month,Good output ÷ Feed input × 100,"good_output_t, feed_input_t",,True,False
+REL-001,MTBF,h,Month,Run hours ÷ Breakdowns,"run_hours, failures",,True,False
+REL-002,Mean Time to Repair,h,Month,Repair hours ÷ Breakdowns,"failures, repair_hours",,True,False
+REL-003,Unplanned downtime,h,Month,Unplanned downtime,unplanned_downtime_hours,,True,False
+REL-004,Production loss from downtime,t,Month,Production lost to downtime,prod_loss_downtime_t,,True,False
+REL-005,Preventive-maintenance compliance,%,Month,Preventive maintenance completed ÷ Preventive maintenance scheduled × 100,"pm_scheduled, pm_completed",,True,False
+CST-001,Cost per tonne,₹/t,Month,(Variable cost + Fixed cost) × 1000 ÷ Good output,"good_output_t, variable_cost_k, fixed_cost_k",,True,False
+CST-002,Variable cost,₹ thousand,Month,Variable cost,variable_cost_k,,True,False
+CST-003,Fuel cost,₹ thousand,Month,Fuel cost,fuel_cost_k,,True,False
+SUS-001,Water usage,m3,Month,Water used,water_m3,,True,False
+SUS-002,Emissions,tCO2e,Month,Emissions,emissions_tco2e,,True,False
+SUS-003,Energy intensity,GJ/t,Month,Energy used ÷ Good output,"good_output_t, energy_gj",,True,False
+SIG-007,Production at risk,t,Month,Production at risk,production_at_risk_t,,True,False
+SIG-008,Critical plant-state alerts,count,Month,Critical plant alerts,critical_plant_alerts,,True,False
+SIG-009,Critical-material shortage risk,count,Month,Critical materials at risk,critical_material_risks,,True,False
+SIG-012,Dispatch delays,%,Month,Delayed dispatches ÷ Dispatches × 100,"dispatches_total, dispatches_delayed",,True,False
+SIG-021,Environmental violations,count,Month,Environmental violations,env_violations,,True,False
+EHS-001,TRIR,"per 200,000 h",Month,"Recordable injuries × 200,000 ÷ Hours worked","hours_worked, recordable_injuries",,True,False
+EHS-002,Severity incidents,count,Month,Severity incidents,severity_incidents,,True,False
+EHS-003,Near misses,count,Month,Near misses,near_misses,,True,False
+EHS-004,Critical safety incidents,count,Month,Critical safety incidents,critical_safety_incidents,,True,False
+EHS-005,Environmental excursions,count,Month,Environmental excursions,env_excursions,,True,False
+EHS-006,Open EHS corrective actions,count,Month,Open EHS corrective actions,ehs_ca_open,,True,False
+EHS-007,Overdue EHS actions,count,Month,Overdue EHS corrective actions,ehs_ca_overdue,,True,False
+EHS-009,EHS investigation completion,%,Month,EHS investigations completed ÷ EHS investigations due × 100 (100 if none due),"investigations_due, investigations_completed",,True,False
+REG-006,Licence or permit expiry clock,days,Month,Days to permit expiry (lowest plant),permit_days_to_expiry,,True,False
+OPS-005,Capacity utilisation (same measure as OPS-003),%,Month,Good output ÷ Installed capacity × 100,"installed_capacity_t, good_output_t",OPS-003,True,False
+OPS-006,OEE · Group weighted (same measure as PLT-002),%,Month,"Good output ÷ Ideal output × 100 (weighted by output, not an average of plants)","ideal_output_t, good_output_t",PLT-002,True,False
+OPS-002,Sales vs plan,%,Month,Sales volume ÷ Planned sales volume × 100,"sales_t, planned_sales_t",,True,False
+OPS-004,Sales vs plan · Group (same measure as OPS-002),%,Month,Sales volume ÷ Planned sales volume × 100,"sales_t, planned_sales_t",OPS-002,True,False
+CST-004,Power cost per tonne,₹/t,Month,Power cost × 1000 ÷ Good output,"good_output_t, power_cost_k",,True,False
+FIN-001,EBITDA YTD,₹ m,Year to date,Sum of monthly EBITDA since April ÷ 1000,ebitda_k,,False,False
+FIN-002,EBIT YTD,₹ m,Year to date,Sum of monthly EBIT since April ÷ 1000,ebit_k,,False,False
+FIN-003,Revenue YTD,₹ m,Year to date,Sum of monthly Revenue since April ÷ 1000,revenue_k,,True,False
+FIN-004,Free cash flow YTD,₹ m,Year to date,Sum of monthly Free cash flow since April ÷ 1000,fcf_k,,False,False
+FIN-005,"ROCE, annualised",%,Year to date,EBIT since April × 12 ÷ months elapsed ÷ Capital employed × 100,"ytd_months, capital_employed_k, ebit_k",,False,False
+FIN-006,Net debt,₹ m,Month end,(Gross debt − Cash) ÷ 1000,net_debt_k,,False,False
+FIN-007,Shareholder-value indicator (economic profit YTD),₹ m,Year to date,(EBIT since April × (1 − Tax rate) − Capital employed × Cost of capital × months elapsed ÷ 12) ÷ 1000,"ytd_months, capital_employed_k, ebit_k",,False,False
+FIN-008,FCF conversion (FCF ÷ EBITDA),%,Year to date,Free cash flow since April ÷ EBITDA since April × 100,"ebitda_k, fcf_k",,False,False
+CSH-001,Cash position,₹ m,Month end,Cash ÷ 1000,cash_k,,False,False
+CSH-002,Cash released YTD,₹ m,Year to date,Sum of cash released since April ÷ 1000,cash_released_k,,False,False
+CSH-003,Daily collections,₹ m per day,Month,Cash collected ÷ Days in month ÷ 1000,"days, collections_k",,False,False
+CSH-004,Cash-conversion cycle,days,Month end,DSO + Inventory days − DPO,"dso_d, dpo_d, dio_d",,False,False
+CSH-006,Cash-upstream exposure,₹ m,Next 30 days,(Cash due to be upstreamed − Amount covered by available cash) ÷ 1000,"upstream_due_k, upstream_covered_k",,False,False
+WCP-001,DSO,days,Month end,Trade receivables ÷ Revenue × Days in month,dso_d,,False,False
+WCP-002,DPO,days,Month end,Trade payables ÷ Variable cost × Days in month,dpo_d,,False,False
+WCP-003,Inventory days,days,Month end,Inventory ÷ Variable cost × Days in month,dio_d,,False,False
+WCP-004,Net working capital,₹ m,Month end,(Trade receivables + Inventory − Trade payables) ÷ 1000,nwc_k,,False,False
+WCP-005,Working-capital movement,₹ m,Month,(Net working capital − last month's net working capital) ÷ 1000; positive = cash tied up,nwc_change_k,,False,False
+WCP-006,Working-capital days,days,Month end,Net working capital ÷ Revenue × Days in month,"days, revenue_k, nwc_k",,False,False
+LIQ-001,Liquidity runway,months,Month end,(Cash + Undrawn facilities) ÷ (Fixed cost + Overheads + Debt service) per month,"fixed_cost_k, overhead_k, cash_k, undrawn_facilities_k, debt_service_k",,False,False
+LIQ-002,Covenant headroom,%,Month end,(Covenant limit − Net debt ÷ Annualised EBITDA) ÷ Covenant limit × 100,"net_debt_k, ebitda_annualised_k",,False,False
+LIQ-003,"Debt-maturity exposure, next 12 months",₹ m,Month end,Debt maturing in next 12 months ÷ 1000,debt_maturing_12m_k,,False,False
+LIQ-004,Financing exposure (floating-rate debt),₹ m,Month end,Floating-rate debt ÷ 1000,floating_rate_debt_k,,False,False
+TRS-001,"FX exposure, unhedged",₹ m,Month end,(Foreign-currency exposure − Amount hedged) ÷ 1000,"fx_exposure_k, fx_hedged_k",,False,False
+TRS-002,Hedging effectiveness,%,Month,Change in value of hedges ÷ Change in value of hedged items × 100,"hedge_value_change_k, hedged_item_value_change_k",,False,False
+TRS-003,USD share of unhedged FX exposure,%,Month end,(USD exposure − USD hedged) ÷ (FX exposure − FX hedged) × 100,"fx_exposure_k, fx_hedged_k, usd_exposure_k, usd_hedged_k",,False,False
+TRS-004,"Hedge cover, next 6 months",%,Next 6 months,"Foreign-currency flows hedged ÷ Forecast foreign-currency flows, next 6 months × 100","fx_flows_6m_k, fx_hedged_6m_k",,False,False
+TRS-005,"FX sensitivity, 5% USD move",₹ m,Month end,5% × (USD exposure − USD hedged) ÷ 1000,"usd_exposure_k, usd_hedged_k",,False,False
+CPX-001,Approved capex budget,₹ m,Full year,Approved capex budget ÷ 1000,capex_budget_k,,False,False
+CPX-002,Committed capex,₹ m,To date,Capex committed to date ÷ 1000,capex_committed_k,,False,False
+CPX-003,Capex actual spend YTD,₹ m,Year to date,Sum of capex spent since April ÷ 1000,capex_spend_k,,False,False
+CPX-004,"Capex physical progress, weighted",%,To date,Work completed valued at budget ÷ Approved budget × 100 (weights each project by its budget),"capex_budget_k, capex_earned_value_k",,False,False
+SIG-011,Capex value at risk,₹ m,Month end,Budget of projects at risk ÷ 1000,capex_at_risk_k,,False,False
+PRG-001,Capex project status,text,Month end,Count of projects by status,"projects_on_track, projects_at_risk, projects_off_track",,False,False
+PRG-002,Benefits realisation,%,Year to date,Benefits delivered since April ÷ Benefits planned since April × 100,"benefits_planned_k, benefits_delivered_k",,False,False
+PRG-003,Delayed projects,count,Month end,Capex projects delayed,projects_delayed,,False,False
+PRG-004,Capex / transformation progress (same measure as STR-002),%,To date,Transformation milestones completed ÷ Milestones in plan × 100,"milestones_total, milestones_done",STR-002,False,False
+STR-002,Transformation progress,%,To date,Transformation milestones completed ÷ Milestones in plan × 100,"milestones_total, milestones_done",,False,False
+PRG-005,Transformation initiative status,text,Month end,Count of transformation initiatives by status,"initiatives_on_track, initiatives_at_risk, initiatives_delayed",,False,False
+SUP-006,Contractor slippage,days,Month,Contractor days late ÷ Contractor milestones due (average days late per milestone),"contractor_milestones_due, contractor_days_late",,False,False
+VAL-001,EBITDA benefit YTD,₹ m,Year to date,Sum of EBITDA benefit since April ÷ 1000,ebitda_benefit_k,,False,False
+VAL-002,Cash benefit YTD,₹ m,Year to date,Sum of cash benefit since April ÷ 1000,cash_benefit_k,,False,False
+VAL-003,Cost savings delivered YTD,₹ m,Year to date,Sum of cost savings since April ÷ 1000,cost_savings_k,,False,False
+SUP-001,Supplier on-time delivery,%,Month,Purchase-order lines on time ÷ Lines due × 100,"po_lines_due, po_lines_on_time",,True,False
+SUP-002,Supplier fill rate,%,Month,Quantity received ÷ Quantity ordered × 100,"qty_ordered_t, qty_received_t",,True,False
+SUP-003,Supplier quality-rejection rate,%,Month,Quantity rejected ÷ Quantity received × 100,"qty_received_t, qty_rejected_t",,True,False
+SUP-004,Supplier lead-time variance,%,Month,(Actual lead time − Planned lead time) ÷ Planned lead time × 100,"lead_time_planned_days, lead_time_actual_days",,True,False
+SUP-005,Critical supplier exposure,count,Month end,Critical single-source suppliers,single_source_suppliers,,False,False
+SUP-007,Single-source spend share,%,Month,Spend with single-source suppliers ÷ Supplier spend × 100,"supplier_spend_k, single_source_spend_k",,True,False
+SUP-008,Supplier EHS incidents YTD,count,Year to date,Sum of supplier EHS incidents since April,supplier_ehs_incidents,,True,False
+CON-001,"Contracts expiring, next 90 days",count,Month end,Contracts expiring in next 90 days,contracts_expiring_90d,,False,False
+CON-002,Contract-compliance rate,%,Month end,Contracts fully compliant ÷ Active contracts × 100,"contracts_total, contracts_compliant",,False,False
+CON-003,Supplier EHS non-compliance,count,Month end,Suppliers not meeting EHS requirements,supplier_ehs_noncompliance,,False,False
+REG-001,Pending filings,count,Month end,Regulatory filings pending,pending_filings,,True,False
+REG-002,"Regulatory deadlines, next 30 days",count,Month end,Regulatory deadlines in next 30 days,reg_deadlines_30d,,True,False
+REG-003,"Licence expirations, next 12 months",count,Month end,Licences expiring in next 12 months,licences_expiring_12m,,True,False
+REG-004,"Regulatory obligations due, next 30 days",count,Month end,Regulatory obligations due in next 30 days,reg_obligations_due_30d,,True,False
+REG-005,Overdue regulatory obligations,count,Month end,Regulatory obligations overdue,reg_obligations_overdue,,True,False
+REG-007,Open regulatory actions,count,Month end,Open regulatory actions,reg_actions_open,,True,False
+REG-008,Overdue compliance actions,count,Month end,Overdue compliance actions,compliance_actions_overdue,,True,False
+REG-009,Disclosure-clock status,text,Month end,"Triggered if any event that needs disclosure is open, otherwise Not triggered",disclosure_events_open,,True,False
+REG-010,Regulatory breaches YTD,count,Year to date,Sum of regulatory breaches since April,reg_breaches,,True,False
+RSK-003,Regulatory breaches YTD (same measure as REG-010),count,Year to date,Sum of regulatory breaches since April,reg_breaches,REG-010,True,False
+CMP-005,Regulatory breaches YTD (same measure as REG-010),count,Year to date,Sum of regulatory breaches since April,reg_breaches,REG-010,True,False
+EHS-008,EHS escalation clocks running,count,Month end,EHS escalation clocks running,ehs_escalation_clocks,,True,False
+EHS-010,EHS investigation completion rate YTD,%,Year to date,EHS investigations completed since April ÷ Investigations due since April × 100 (100 if none due),"investigations_due, investigations_completed",,True,False
+CTL-002,Control failures YTD,count,Year to date,Sum of control failures since April,control_failures,,False,False
+CTL-004,High-severity control failures YTD,count,Year to date,Sum of high-severity control failures since April,control_failures_high,,False,False
+CTL-005,Policy exceptions YTD,count,Year to date,Sum of policy exceptions since April,policy_exceptions,,False,False
+CTL-006,Unauthorised-vendor usage YTD,count,Year to date,Sum of unauthorised vendor uses since April,unauthorized_vendor_uses,,False,False
+CTL-007,Segregation-of-duties exceptions YTD,count,Year to date,Sum of segregation-of-duties exceptions since April,sod_exceptions,,False,False
+CTL-008,Unauthorised-access events YTD,count,Year to date,Sum of unauthorised access events since April,unauthorized_access_events,,False,False
+CTL-009,Data-sharing exceptions YTD,count,Year to date,Sum of data-sharing exceptions since April,data_sharing_exceptions,,False,False
+CTL-010,Manual overrides YTD,count,Year to date,Sum of manual operational or system overrides since April,manual_overrides,,False,False
+CTL-003,Assurance reviews completed,text,Year to date,"Assurance reviews completed since April, of those planned since April","assurance_reviews_planned, assurance_reviews_done",,False,False
+GOV-001,Ageing certification approvals,count,Month end,Certification approvals past due date,cert_approvals_ageing,,False,False
+GOV-002,KPI overrides,count,Month end,KPI values overridden,kpi_overrides,,False,False
+GOV-003,Recurring data-quality issues,count,Month end,Recurring data-quality issues,dq_issues_recurring,,False,False
+GOV-004,Open audit findings,count,Month end,Open audit findings,audit_findings_open,,False,False
+GOV-005,Overdue assurance actions,count,Month end,Overdue assurance actions,assurance_actions_overdue,,False,False
+GOV-006,Repeat findings,count,Month end,Repeat audit findings,repeat_findings,,False,False
+GOV-007,Leadership KPIs affected by findings,count,Month end,Leadership KPIs affected by open findings,leadership_kpis_affected,,False,False
+TRU-004,Open reconciliation breaks,count,Month end,Open reconciliation breaks,recon_breaks_open,,False,False
+TRU-006,Overdue certifications,count,Month end,Certifications overdue,certifications_overdue,,False,False
+TRU-007,Material reconciliation breaks,count,Month end,Material reconciliation breaks,recon_breaks_material,,False,False
+GOV-008,Evidence completeness rate,%,Month end,Evidence items complete ÷ Evidence items required × 100,"evidence_required, evidence_complete",,False,False
+GOV-009,Average finding-closure time,days,Year to date,Days taken to close findings since April ÷ Findings closed since April,"findings_closed, finding_closure_days",,False,False
+TRU-001,Certified KPI percentage,%,Month end,Leadership KPI values certified ÷ Leadership KPI values reported × 100,"kpis_leadership, kpis_certified",,False,False
+TRU-002,Uncertified KPI count,count,Month end,Leadership KPI values reported − Values certified,"kpis_leadership, kpis_certified",,False,False
+TRU-005,KPI certification coverage,%,Month end,Leadership KPI values inside the certification process ÷ Values reported × 100,"kpis_leadership, kpis_in_scope",,False,False
+TRU-008,Source-to-Lake reconciliation rate,%,Month,Records reconciled to source ÷ Records loaded × 100,"lake_records_loaded, lake_records_reconciled",,False,False
+TRU-009,Flash-to-MIS reconciliation rate,%,Month,Flash lines matching MIS ÷ Flash report lines × 100,"mis_lines_total, mis_lines_matched",,False,False
+TRU-010,Flash-to-close variance,%,Month,|Flash revenue − Closed revenue| ÷ Closed revenue × 100,"revenue_k, flash_revenue_k",,False,False
+TRU-003,Variance against Board number (EBITDA),%,Month,(Board-pack EBITDA − Certified EBITDA) ÷ Certified EBITDA × 100,"board_ebitda_k, ebitda_k",,False,False
+TRU-011,Largest entity variance against Board numbers,%,Month,Highest of the entities' |Board-pack EBITDA − Certified EBITDA| ÷ Certified EBITDA × 100,"variable_cost_k, fixed_cost_k, revenue_k, overhead_k, board_ebitda_k",,False,False
+EFF-002,Open critical alerts,count,Month end,Open critical alerts,critical_alerts_open,,False,False
+EFF-006,Alerts without accepted owners,count,Month end,Alerts with no accepted owner,alerts_unowned,,False,False
+EFF-007,Overdue actions,count,Month end,Overdue actions,actions_overdue,,False,False
+EFF-008,Average resolution time,days,Month,Days taken to resolve alerts ÷ Alerts resolved,"alerts_resolved, alert_resolution_days",,False,False
+EFF-009,"Closed escalations, last 30 days",count,Month,Escalations closed in the month,escalations_closed,,False,False
+EFF-010,"Repeat issues, last 90 days",count,Last 3 months,Sum of repeat issues over the last 3 months,repeat_issues,,False,False
+EFF-011,Root causes eliminated YTD,text,Year to date,"Root causes eliminated since April, of those identified since April","root_causes_identified, root_causes_eliminated",,False,False
+SIG-004,Collections slippage,days,Month,(Days taken to collect − Agreed payment terms) ÷ Invoices collected (average days late),"invoices_collected, collection_days, terms_days",,False,False
+SIG-005,Payment delays,customers,Month end,Customers more than 30 days overdue,customers_overdue,,False,False
+SIG-006,Cash burn signal,text,Month,Triggered if operating cash flow in the month is negative,op_cash_flow_k,,False,False
+SIG-013,Pricing pressure,text,Month,"Realised price vs plan: Low if above −1%, Medium down to −3%, High below −3%",price_vs_plan_pct,,True,False
+PRD-001,Days to breach (earliest plant),days,Forecast,Lowest plant forecast of days until its production plan is breached (99 = not expected),days_to_breach,,True,False
+PRD-002,"Probability of production plan miss, next month",%,Next month,"Chance that output falls below plan: normal distribution with mean = Forecast good output, spread = √(sum of plant forecast variances)","planned_production_next_t, forecast_good_next_t, forecast_good_var_next",,True,False
+PRD-003,"Projected EBITDA gap, rest of year",₹ m,Forecast,"(Forecast EBITDA − Planned EBITDA, rest of year) ÷ 1000","forecast_ebitda_rest_k, planned_ebitda_rest_k",,False,False
+PRD-004,"Projected liquidity gap, next 90 days",₹ m or text,Next 90 days,Cash + Undrawn facilities + Forecast net cash flow (90 days); 'None' if not negative,"cash_k, undrawn_facilities_k, forecast_net_cash_flow_90d_k",,False,False
+PRD-005,Forecast covenant breach,text,Quarter end,Breach forecast if Forecast net debt ÷ Forecast 12-month EBITDA exceeds the covenant limit,"forecast_net_debt_k, forecast_ebitda_ltm_k",,False,False
+PRD-006,"Production loss from downtime, next month",kt,Next month,Forecast production lost to downtime next month ÷ 1000,forecast_downtime_loss_next_t,,True,False
+PRD-007,"Probability OEE below 78%, next month",%,Next month,Chance that Forecast good output < 78% × Ideal output next month (same distribution as PRD-002),"forecast_good_next_t, forecast_good_var_next, ideal_output_next_t",,True,False
+CST-005,Fixed cost YTD,₹ m,Year to date,Sum of monthly fixed cost since April ÷ 1000,fixed_cost_k,,True,True
+PRD-008,"Projected FCF gap, full year",₹ m,Forecast,(FCF YTD + forecast FCF rest of year − FY FCF plan) ÷ 1000,"fcf_k, fcf_plan_fy_k, forecast_fcf_rest_k",,False,True
+PRD-009,ROCE at P12 (forecast),%,Forecast,(EBIT YTD + forecast EBIT rest of year) ÷ forecast capital employed at P12 × 100,"capital_employed_p12_k, ebit_fcst_rest_k, ebit_k",,False,True
+PRD-010,Revenue per FTE YTD,₹ m,Year to date,Revenue since April ÷ FTE ÷ 1000,"fte, revenue_k",,False,True
+PRD-011,Tonnes per FTE,t,Month,Good output ÷ FTE,"fte, good_output_t",,False,True
+PRD-012,"Probability of EBITDA plan miss, full year",%,Forecast,"P(FY EBITDA < FY plan), FY EBITDA ~ Normal(EBITDA YTD + forecast rest of year, σ)","ebitda_fy_sigma_k, ebitda_k, ebitda_plan_fy_k, forecast_ebitda_rest_k",,False,True
+REG-011,"Disclosure clock, hours remaining",h,Month end,Hours to the nearest open disclosure deadline (999 = none running),disclosure_deadline_h,,False,True
+SIG-010,Single-source supply risk,count,Month end,Single-source suppliers with cover below lead time,single_source_elevated,,False,True
+SIG-014,Commodity-price movement (RM-1 index),%,Month,"RM-1 price index ÷ last month's index − 1, as %",rm1_price_index,,False,True
+SIG-016,Freight exposure (lanes disrupted),count,Month end,Supply lanes with a disruption flag,freight_lanes_disrupted,,False,True
+SIG-017,"Fuel exposure (fuel cost per tonne, MoM)",%,Month,"(Fuel cost ÷ good output) ÷ last month's − 1, as %","fuel_cost_k, good_output_t",,True,True
+SIG-018,"Power-cost exposure (power cost per tonne, MoM)",%,Month,"(Power cost ÷ good output) ÷ last month's − 1, as %","good_output_t, power_cost_k",,True,True
+SIG-001,Unplanned downtime (same measure as REL-003),h,Month,Alias of REL-003: same value,unplanned_downtime_hours,REL-003,True,True
+SIG-002,Yield (same measure as PLT-005),%,Month,Alias of PLT-005: same value,"good_output_t, feed_input_t",PLT-005,True,True
+SIG-003,Recovery percentage (same measure as PLT-004),%,Month,Alias of PLT-004: same value,"feed_contained_t, recovered_contained_t",PLT-004,True,True
+SIG-015,"FX exposure, unhedged (same measure as TRS-001)",₹ m,Month end,Alias of TRS-001: same value,"fx_exposure_k, fx_hedged_k",TRS-001,False,True
+SIG-019,"Regulatory deadlines, next 30 days (same measure as REG-002)",count,Month end,Alias of REG-002: same value,reg_deadlines_30d,REG-002,True,True
+SIG-020,"Licence expirations, next 12 months (same measure as REG-003)",count,Month end,Alias of REG-003: same value,licences_expiring_12m,REG-003,True,True
+RSK-001,Open critical alerts (same measure as EFF-002),count,Month end,Alias of EFF-002: same value,critical_alerts_open,EFF-002,False,True
+RSK-002,Severity incidents (same measure as EHS-002),count,Month,Alias of EHS-002: same value,severity_incidents,EHS-002,True,True
+STR-001,"Capex physical progress, weighted (same measure as CPX-004)",%,To date,Alias of CPX-004: same value,"capex_budget_k, capex_earned_value_k",CPX-004,False,True

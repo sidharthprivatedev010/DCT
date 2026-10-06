@@ -1,0 +1,87 @@
+{
+  "organisation": {
+    "nodes": [
+      {
+        "node_id": "GRP-001",
+        "node_type": "GROUP",
+        "name": "Group",
+        "parent_id": null,
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "ENT-A1",
+        "node_type": "ENTITY",
+        "name": "Entity A1",
+        "parent_id": "GRP-001",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "PLT-A1-01",
+        "node_type": "PLANT",
+        "name": "Plant A1-01",
+        "parent_id": "ENT-A1",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "PLT-A1-02",
+        "node_type": "PLANT",
+        "name": "Plant A1-02",
+        "parent_id": "ENT-A1",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "PLT-A1-03",
+        "node_type": "PLANT",
+        "name": "Plant A1-03",
+        "parent_id": "ENT-A1",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "ENT-B1",
+        "node_type": "ENTITY",
+        "name": "Entity B1",
+        "parent_id": "GRP-001",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "PLT-B1-01",
+        "node_type": "PLANT",
+        "name": "Plant B1-01",
+        "parent_id": "ENT-B1",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "PLT-B1-02",
+        "node_type": "PLANT",
+        "name": "Plant B1-02",
+        "parent_id": "ENT-B1",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      },
+      {
+        "node_id": "PLT-B1-03",
+        "node_type": "PLANT",
+        "name": "Plant B1-03",
+        "parent_id": "ENT-B1",
+        "valid_from": "2026-01-01",
+        "valid_to": null,
+        "active": true
+      }
+    ]
+  }
+}

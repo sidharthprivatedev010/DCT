@@ -1,0 +1,2 @@
+# Cloudflare Pages: the site root opens the persona login, not the Phase 1 index.
+/  /login  302

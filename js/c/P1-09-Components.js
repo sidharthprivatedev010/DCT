@@ -7,7 +7,7 @@ class Component extends DCLogic {
       kpiStates: [
         {a:"BUSINESS", s:"On track", c:"Green", i:"Check", t:"Badge 'On track'. Value in standard ink.", e:"FIN-004 FCF at O-01"},
         {a:"BUSINESS", s:"Improving", c:"Green", i:"Trend-up arrow", t:"Badge 'Improving' with period-over-period delta.", e:"Plant 02 recovery D+5"},
-        {a:"BUSINESS", s:"Deteriorating", c:"Amber", i:"Trend-down arrow", t:"Badge 'Deteriorating' with delta and trend.", e:"OPS-001 Entity A1"},
+        {a:"BUSINESS", s:"Declining", c:"Amber", i:"Trend-down arrow", t:"Badge 'Declining' with delta and trend.", e:"OPS-001 Entity A1"},
         {a:"BUSINESS", s:"Breached", c:"Red (material only)", i:"Octagon with !", t:"Badge 'Breached' with threshold reference [PH]. Red is reserved for this state and critical exposure.", e:"— (no actual breach in scenario)"},
         {a:"BUSINESS", s:"Forecast breach", c:"Purple", i:"Clock", t:"Separate marker 'Forecast breach in N d' in forecast style. Never replaces the actual status.", e:"FIN-001 EBITDA at O-01: actual On track + forecast breach"},
         {a:"TRUST", s:"Certified", c:"Navy", i:"Shield with check", t:"'Certified · P06' plus the certifier role on hover.", e:"CSH-001 Cash position"},
@@ -72,7 +72,7 @@ class Component extends DCLogic {
           C("SH-11","Hierarchy breadcrumb","Group → Business → Entity → Plant → Line","A–D","Levels per entitlement; current level"),
           C("SH-12","Page header","Title + explicit business question","A–F","With / without actions"),
           C("SH-13","Scope and trust summary bar","Scope, period, refresh, % certified, open breaks","A–D","All certified · exceptions · breaks"),
-          C("SH-14","Status strip","On track / Deteriorating / Improving / Intervention required per area","A–C","4 states with icon + label")
+          C("SH-14","Status strip","On track / Declining / Improving / Intervention required per area","A–C","4 states with icon + label")
         ]},
         { n:"Data display (22)", rows:[
           C("DS-01","KPI card","One measure in context","A–D","12 states (9b) · hover · focus · loading"),
