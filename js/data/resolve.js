@@ -65,6 +65,45 @@ var DCTResolve = (function () {
       cap: "Parent values (Σ) are recalculated from their children's summed inputs, never averaged. Click any value for its calculation."}]};
   }
 
+  /* Entity lens tables: a code never stands alone.
+     - Plants carry their code like entities do: "Plant 02" → "Plant 02 (P02)" (asset IDs already use P02-03).
+     - A KPI code with no name after it gets the model's name: "REG-004" → "REG-004 Regulatory obligations due, next 30 days";
+       inside a list ("PRD-002, PRD-006") the name goes in brackets. A bare KPI ID in column 1 next to a "Measure" column keeps
+       the name in that column.
+     - The identifying cells in the first three columns (KPI, plant, entity, Group) are semi-bold (cell flag b). */
+  var KTOK = /(?<![-\w])([A-Z]{3}-\d{3})\b/g, PTOK = /\bPlant (\d\d)\b(?! \(P)/g, IDSTART = /^\s*(?:[▼▲✓■◆◇#]\s*)?([A-Z]{3}-\d{3}\b|Plant \d\d\b|Entity A\d\b|Group\b)/;
+  function kname(id) { var P = PM(), k = P && P.kpi[canon(id)]; return k ? k.name.replace(/\s*\(same measure as [A-Z]{3}-\d{3}\)/, "") : ""; }
+  function nameCodes(t, paired) {
+    t = t.replace(PTOK, function (m, n) { return m + " (P" + n + ")"; });
+    if (paired) return t;
+    return t.replace(KTOK, function (m, id, off, all) {
+      var nm = kname(id); if (!nm) return m;
+      var rest = all.slice(off + m.length);
+      if (/^\s*($|\))/.test(rest)) return m + " " + nm;                  // end of cell or closing bracket
+      if (/^\s*[,;·=\/+]/.test(rest)) return m + " (" + nm + ")";          // inside a list or formula
+      return m;                                                          // a name or text already follows
+    });
+  }
+  function labelTables(o) {
+    if (Array.isArray(o)) { o.forEach(labelTables); return; }
+    if (!o || typeof o !== "object") return;
+    if ((o.type === "table" || o.type === "watchlist") && Array.isArray(o.rows)) {
+      var cols = o.cols || [], pairedCol = /^(KPI|ID)$/i.test(txt(cols[0])) && /measure|name/i.test(txt(cols[1]));
+      o.cols = cols.map(function (c) { return typeof c === "string" ? nameCodes(c, true).replace(/\bEntity (A\d) \(Σ\)/, "Entity $1 ($1) · Σ") : c; });
+      o.rows.forEach(function (r) {
+        var a = Array.isArray(r) ? r : r && r.c; if (!a) return;
+        a.forEach(function (c, i) {
+          var obj = c && typeof c === "object", t = obj ? c.t : c; if (typeof t !== "string") return;
+          var paired = i === 0 && pairedCol && /^\s*[A-Z]{3}-\d{3}\s*$/.test(t);
+          var nt = nameCodes(t, paired), bold = i < 3 && (IDSTART.test(nt) || (i === 1 && pairedCol));
+          if (obj) { c.t = nt; if (typeof c.sub === "string") c.sub = nameCodes(c.sub, false); if (bold) c.b = true; }
+          else a[i] = bold ? {t: nt, b: true} : nt;
+        });
+      });
+    }
+    Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && o[k] && typeof o[k] === "object") labelTables(o[k]); });
+  }
+
   /* Every table: drop columns that have no value in any row ("", "—"). Keeps the first column. */
   var BLANK = /^\s*(—|–|-)?\s*$/;
   function pruneCols(o) {
@@ -145,6 +184,12 @@ var DCTResolve = (function () {
             sub: rs.map(function (x) { return x.id + " " + (x.r.v != null ? x.r.v + (x.r.u ? " " + x.r.u : "") : x.r.val || "—"); }).join(" · ")};
         });
       });
+    }
+    /* multi with kpi "KPI-ID": each series labelled with a scope (Plant NN, Entity A1) takes its monthly values from the model */
+    if (b.type === "multi" && b.kpi) {
+      var Pm = PM(), km = Pm && Pm.kpi[canon(b.kpi)];
+      if (km) (b.series || []).forEach(function (s) { var sc = labelScope(txt(s.l)); if (!sc || !km.val[sc]) return;
+        s.v = km.val[sc].map(function (q) { return typeof q === "number" ? Math.round(q * 100) / 100 : null; }); s.endL = fmtV(km, lastVal(km, sc)); });
     }
     if (b.type === "bars" && b.kpi) {
       (b.rows || []).forEach(function (r) { var m = modelCell(b.kpi, labelScope(txt(r.l))); if (m) { r.v = m.v; r.d = m.raw; } });
@@ -442,6 +487,8 @@ var DCTResolve = (function () {
       if (isPlantKpi(k.id)) k.fb = r.fb || "";
       if (CAP && PLANT.test(k.fb || "")) k.fb = "";   // model flags such as "Plant 02 at 78.4%" stay below the Owner cap
     });
+    // Entity lens: every card is stand-alone (no links) and shows how Entity A1's value is built from its plants (js/data/entity-cards.js)
+    if (p.lens === "Entity") cards.forEach(function (k) { if (typeof DCTEntityCards !== "undefined") DCTEntityCards.attach(k, ID.test(k.id || "") ? cardScope(p, k) : null); else { k.noInfo = true; delete k.href; } });
     // Trust header "N of M cards certified …" is recomputed from the cards actually shown
     if (/^\d+ of \d+ cards certified/.test(p.trust || "") && (p.kpis || []).length) {
       var ks = p.kpis.filter(function (k) { return ID.test(k.id || ""); }), cert = ks.filter(function (k) { return /^Certified/.test(k.ts || ""); });
@@ -449,7 +496,7 @@ var DCTResolve = (function () {
       p.trust = cert.length + " of " + ks.length + " cards certified" + (other.length ? " · " + other.join(" · ") : "");
     }
     // "How totals add up" roll-up tab: not on Owner screens (MANIFEST01: entity cap, no roll-up tab)
-    if (DETAIL[p.lens] && !OWN && /^([EGO]-|S-(?!03))/.test(p.rid || "") && PM()) {
+    if (DETAIL[p.lens] && !OWN && !p.noRollup && /^([EGO]-|S-(?!03))/.test(p.rid || "") && PM()) {   // noRollup: page opts out
       var ids = [], add = function (id) { if (isPlantKpi(id) && ids.indexOf(id) < 0) ids.push(id); };
       (p.kpis || []).forEach(function (k) { add(k.id); });
       if (!CAP) JSON.stringify(Object.assign({}, p, {access: null, equiv: null, kpis: null})).replace(/"(?:l":")?([A-Z]{3}-\d{3})[" ]/g, function (_, id) { add(id); });
@@ -480,6 +527,7 @@ var DCTResolve = (function () {
     withCodes(p);               // 1D / MANIFEST03 G1, all personas: entity name with its code (last, so scope detection is unaffected)
     noSystemCount(p);           // "System count" trust label is not shown anywhere
     noKpiLinks(p);              // MANIFEST03 G2: a KPI never links to another KPI, screen or section
+    if (p.lens === "Entity") labelTables(p);   // every code in a table carries its name; identifiers semi-bold
     pruneCols(p);
     return p;
   };

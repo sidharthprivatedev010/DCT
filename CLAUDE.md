@@ -63,8 +63,8 @@ node tools/regen.js
 
 **How the UI uses it (`js/data/resolve.js`):**
 - **Model values everywhere:** cards, KPI tables (ID in column 1 or 2) and tiles take model values. Scope comes from the label: "Plant NN", "A1/A2", otherwise the lens default.
-- **Model-bound blocks:** a table with `kcols` {header: KPI} or a bar chart with `kpi` fills each row from the model, using the scope in the row label.
-- **Roll-up tab:** every E-, G-, O- and S- page (except S-03) gets a "How totals add up · Sep 2026" tab. Entity lens: plants → A1. Owner and Core Group: entities → Group only (no plant columns).
+- **Model-bound blocks:** a table with `kcols` {header: KPI} a bar chart with `kpi` or a `multi` chart with `kpi` (series labelled Plant NN / Entity A1) fills each row or series from the model, using the scope in the row label.
+- **Roll-up tab:** every E-, G-, O- and S- page (except S-03, and pages with `noRollup: true`: E-02, E-05, E-06, E-07) gets a "How totals add up · Sep 2026" tab. Entity lens: plants → A1. Owner and Core Group: entities → Group only (no plant columns).
 - **Empty columns:** `pruneCols()` in resolve.js drops any table column that is blank or "—" in every row (first column always kept), on every page.
 - **Click-through:** every model value links to `P2-S03e/S03/S03o-KPIDetail.html?kpi=ID&scope=…`, built by `DCTResolve.kpiDetail`.
 - **(i) buttons:** KPI cards, KPI cells in tables (columns 1–2), KPI tiles and the titles of graphs, tables and tiles link to R-01 with `?kpi=ID` or `?graph=<title>&on=<screen>`. Only IDs in the model get one; none on R-01 itself.
@@ -81,6 +81,15 @@ Run `node tools/regen.js`. It re-renders every page's static HTML and bumps the 
 ## Personas
 
 - `login.html` sets the persona; `js/persona.js` (in the head of each lens screen) gates pages to that lens. Templates render a hidden `[data-dct-lens]` with per-lens equivalent links that the gate uses. Add `js/persona.js` to any new lens screen.
+
+## Entity lens KPI cards
+
+- `js/data/entity-cards.js` (`DCTEntityCards`, loaded on every Entity page after `resolve.js`) is called by `resolve.js` for each Entity-lens card. It adds a one-line justification, a **By plant** breakdown (Plant 01–03: value, change vs Aug, effect on Entity A1) and a **Root cause** box when the KPI, or one of its plants, is off target or worsening.
+- Plant effects are computed from the model inputs: for a ratio KPI they add up to the Entity A1 gap to target; for a summed KPI they are shares; for a MIN KPI the plant that sets the value is marked. Entity-only KPIs (finance, cash, governance, capex) show their plant **driver** (`DRIVER` map) or say the model holds no plant split (`LINK` gives the plant link where one exists).
+- Root causes (`ROOT`) are written from model numbers; the only hand-set facts are in `CASE` (asset P02-03 / Line L2, Supplier S-07, BRK-SYN-0071, Contractor C-3), quoted from the Entity screens. Reference baseline: `data/KPI-Lineage-Model.xlsx`.
+- Entity cards are stand-alone: no click-through and no (i) link (`noInfo`). Cards are re-scoped to Entity A1; don't label a card with a single plant.
+- Tables (Entity lens, `labelTables()` in resolve.js): plants show as "Plant 02 (P02)", bare KPI codes get their model name, and the identifying cells in the first three columns are semi-bold (cell flag `b`).
+- Check: `node tools/check_entity.js` (`--dump` prints every card's text), also run by `tools/check_all.js`.
 
 ## Sidebar
 

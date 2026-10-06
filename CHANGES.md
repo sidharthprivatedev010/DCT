@@ -161,3 +161,43 @@ Everything changed against the original prototype (`e104438 first commit`), grou
 - G-05 rebuilt around entities (production by entity, Entity × KPI benchmark, reliability and supply by entity). G-01, G-02, G-03, G-04, G-06, G-07, G-08, G-09, G-10, S-03, S-04c, S-05c, S-06, S-07c, S-08 cleaned of plant, line, material and supplier codes, placeholders and hand-set charts.
 - Every Core Group status has a one-line justification (`node tools/build_verdicts.js core_group`).
 - New check `tools/check_core_group.js`, run from `tools/check_all.js`.
+
+## Entity persona: plant breakdown, justifications and root causes on every KPI card (2026-10-06)
+
+Baseline: `data/KPI-Lineage-Model.xlsx` (KPI register, lineage plant → entity → Group). Its calculated values match `base-data.js`; the "Shown on the screen" column there is the stale hand-set page JSON that `resolve.js` overwrites. Scope: Entity lens only.
+
+- New `js/data/entity-cards.js`, loaded on all 19 Entity screens and applied by `resolve.js` to every Entity card:
+  - **One-line justification** under the status (e.g. "Production vs plan: 91.3% against a ≥100% target (−8.7 pts); Plant 02 (78.4%) accounts for 7.6 of the 8.7 pts gap").
+  - **By plant · Sep** block: Plant 01–03 value (red when off target), change vs Aug, and the plant's effect on Entity A1. Ratio KPIs: effect in pts/units, adding up to the entity gap; summed KPIs: share; MIN KPIs: the plant that sets the value.
+  - Entity-only KPIs show their **plant driver** (EBITDA/EBIT/FCF → revenue by plant, ROCE → capacity utilisation, collections → sales vs plan, DSO → dispatch delays, upstream exposure and EBITDA gap → production at risk) or state that the model holds no plant split, with the plant link where there is one.
+  - **Root cause** box when the KPI is off target or worsening, or one plant misses target (e.g. OEE on track but Plant 02 at 70.3%). Written from model numbers (downtime, breakdowns, MTTR, PM jobs, output, dispatches, order lines, lead times, permit days, EHS actions) plus case facts quoted from the screens.
+- **KPI cards are stand-alone** on Entity screens: the (i) link to KPI Reference and the click-through are removed. Owner and Core Group cards are unchanged.
+- Plant-scoped cards re-scoped to Entity A1 so the plant split shows inside them: E-02 "OEE · Plant 02" → OEE, S-12e "Days to breach · Plant 02" → earliest plant, E-05 "Production at risk · Plant 02" → Production at risk, E-04 "Lead-time variance · S-07" → Supplier lead-time variance, E-01 "Sales vs plan · MTD" → Sales vs plan, "Critical-material shortage risk · RM-1" → Critical materials at shortage risk.
+- Card markup in all six templates: plant block, note and root-cause box; KPI rows with a plant block get a 268 px minimum card width.
+- Disclosure clock (REG-011) trend shows "Started in Sep" instead of "▼ 961" (999 placeholder).
+- New check `tools/check_entity.js`, run from `tools/check_all.js`.
+
+
+## Entity sub-theme drill-downs (2026-10-06)
+
+Each sub-theme now goes one level deeper than the screen above it (Entity Overview → screen → sub-theme → plant → asset, customer or record). Plant tables and trend charts are model-bound; every derived figure is calculated from `base-data.js` and reconciles to the model (totals checked when the content was written). Hand-set story detail is registered in `data/HARDCODED-VALUES.md`.
+
+- **Early Warning (S-12e), 03–07:** signal matrices extended (SIG-001 now Elevated). Operations: signals by plant, downtime trend by plant, the 5 open plant-state alerts by asset, how the signals connect. Finance: EBITDA gap allocated by plant, predictions vs thresholds, covenant headroom maths and sensitivity, collections slippage. Sales: by plant, dispatch-delay trend, customer orders at risk. Outside factors: by plant, external watch-list with sensitivities. Risk: by plant, clocks running by plant.
+- **Cash & Liquidity (E-05):** "How totals add up" removed. Deliveries: billing at risk by customer group, by plant, dispatch trend. Customer payments: receivables ageing (= DSO × revenue per day), the 2 customers > 30 days overdue, DSO trend. Cash tied up: cash levers recomputed from the model (the old ₹41.3/31.3/17.3 m bars were inconsistent), NWC bridge Aug → Sep. Cash and debt: runway build-up, debt-maturity ladder, upstream obligation. Currency: FX by currency, interest-rate exposure.
+- **Operational Performance (E-02):** "How totals add up" removed. Cost: by plant, cost per tonne at actual vs at planned output (Plant 02's cost gap is lost volume, not overspend), Plant 03 → Plant 02 bridge, trend. Environment: by plant, intensity per tonne, energy-intensity trend, excursion ENV-SYN-0077.
+- **Capital Projects (E-06):** "How totals add up" removed. Benefits: register that adds up to PRG-002, shortfall by plant, realisation trend. Improvement programmes: all 8 initiatives (matching PRG-005), root causes of the 3 slipping ones, milestone trend.
+- **Risk, Compliance & EHS (E-07):** "How totals add up" removed. Health and safety: by plant, incidents and investigations, overdue actions by plant and age, trend. Permits: by plant, permit and licence register, regulator interactions. Controls: audit findings, control events by plant, P07 items not yet in the YTD count. Contracts: expiring, non-compliant, supplier performance by plant. Environment: compliance by plant, water use vs permit, excursion detail.
+- **Actions & Escalations (E-09):** open work by plant, other open items in scope, escalation ladder, closed-issue log (shows the repeat P02-03 kiln stop), resolution-time trend. Root-cause table now agrees with EFF-011 (4 of 4 Apr–Sep; 2 opened in Oct).
+- Engine: `noRollup: true` on a page drops the "How totals add up" tab; a `multi` chart with `kpi` takes each series (labelled Plant NN / Entity A1) from the model. New chart rules in `chart_sources.json`.
+
+## Entity tables: every code carries its name (2026-10-06)
+
+- `labelTables()` in `resolve.js`, Entity lens: plants carry a code like entities do ("Plant 02 (P02)", matching asset IDs P02-03); a KPI code with nothing after it gets the model's name ("REG-004 Regulatory obligations due, next 30 days"; in lists the name is in brackets); the roll-up column reads "Entity A1 (A1) · Σ".
+- Identifying cells in the first three columns (KPI code and measure, plant, entity, Group) are semi-bold: new cell flag `b` in all six templates.
+- `tools/check_entity.js` fails on a bare KPI code or an uncoded plant in any Entity table.
+
+## AI Insights (S-13): questions on the top Overview KPIs (2026-10-06)
+
+- Question picker "Questions on the top Overview KPIs" (a `seg` block) with 4 mocked questions on EBITDA YTD, EBIT YTD and production vs plan. Each answer is tagged by provenance (CERT, FCST, DECLINED, AI · NOT APPROVED) and has charts: EBITDA by month and the E-11 plan-to-actual bridge; EBITDA → EBIT waterfall and monthly EBITDA vs EBIT; production shortfall by plant and the plant trend (model-bound); EBITDA/EBIT upside by Plant 02 output level with its calculation.
+- All figures come from the model (contribution ₹886/t; Plant 02 needs about 85.9% of plan to close the ₹48.5 m PRD-003 gap). The same 4 questions are in the Ask box.
+- The Ask box answer "Where can I release cash?" now uses the E-05 cash levers from the model (it still quoted the old ₹41.3/31.3/17.3 m).

@@ -93,3 +93,7 @@ Charts and story figures live in `js/c/*.js`, not in the KPI cards. `sync_pages.
 | Billing deferral ₹31 m, materiality bands, case and alert timings, owners, dates | Alerts, cases, decisions | Workflow narrative |
 | E-04 material cover minus lead time by material | E-04 | Per-material cover is not in the model. SIG-009 counts 4 materials under 7 days' cover at A1; the chart shows one (RM-1) below lead time. These are different measures. |
 | Line-level detail (L1–L3), asset IDs, supplier S-07 and S-12 names | Supply, reliability, case pages | Descriptive |
+| Entity sub-theme drill-downs (2026-10-06): plant-state alerts PSA-SYN-*, customers C-SYN-114/208, incident and audit IDs, permit register, regulator dates, contracts, closed-issue log, root-cause list | S-12e, E-05, E-02, E-06, E-07, E-09 | Story detail. Counts tie to the model (SIG-008 5, SIG-005 2, GOV-004 2, CON-001 2, CON-002 69 of 72, EHS-007 7 by plant, CTL-002/005/010, EFF-011 4 of 4) |
+| Receivables ageing shares, customer split of the 31+ day balance, debt-maturity quarters, EUR/AUD split of non-USD FX, water permit limits | E-05, E-07 | Totals tie to the model: ageing = DSO × revenue per day, maturities = LIQ-003, unhedged FX = TRS-001 |
+| Benefits register by line and the 8 transformation initiatives | E-06 | Plan and delivered add up to the PRG-002 inputs (₹30.2 m / ₹20.9 m); VAL-001 and VAL-003 split by plant; counts match PRG-005 |
+| EBITDA gap by plant | S-12e | PRD-003 (−48.5) allocated by each plant's share of SIG-007 |

@@ -19,5 +19,7 @@ for (const f of files) {
   }
 }
 console.log(bad ? bad + " problem(s)" : "All-persona checks passed (" + files.length + " screens)");
+// Entity persona: stand-alone cards, plant breakdown, justification, root causes
+console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_entity.js")], {encoding: "utf8"}).trim());
 // MANIFEST06: Core Group acceptance checks
 console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_core_group.js")], {encoding: "utf8"}).trim());
