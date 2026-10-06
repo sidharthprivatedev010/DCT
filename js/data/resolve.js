@@ -136,6 +136,27 @@ var DCTResolve = (function () {
       if (isPlantKpi(m[1]) || t.v == null || t.v === "" || /\d/.test(String(t.v))) { var d = display(r); if (d != null) t.v = d; }
     });
   }
+  /* Dashboard block (O-03): every card, hero and chart takes its value, trend, status, owner and monthly series
+     from the model (Group scope). Months read as calendar months. Nothing on the block is hand-set except labels. */
+  var MONS = ["Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar"];
+  function monthsOf(s) { return String(s || "").replace(/\bP(0[1-9]|1[0-2])\b/g, function (_, n) { return MONS[+n - 1]; }); }
+  function fillDash(o, D, at) {
+    var P = PM(); if (!P) return;
+    var xs = (P.x || []).map(monthsOf);
+    var fill = function (c) {
+      if (!c || !c.kpi) return; var r = look(D, c.kpi, "Group", at), k = P.kpi[canon(c.kpi)]; if (!r) return;
+      c.v = r.v != null ? r.v : r.val; c.u = r.v != null ? (r.u || "") : ""; c.tr = monthsOf(r.tr || "—"); c.bs = r.bs || ""; c.own = r.own || "";
+      if (k && k.val && k.val.Group) { c.series = k.val.Group.slice(); c.xs = xs; }
+      if (c.hero !== undefined || c.isHero) { c.plan = r.plan || "—"; c["var"] = r["var"] || ""; c.target = k ? k.target : null;
+        var s = c.series || [], a = s[s.length - 1], b = s[s.length - 2];
+        if (typeof a === "number" && typeof b === "number" && b) { var pc = 100 * (a - b) / b; c.mom = (pc >= 0 ? "▲ " : "▼ ") + Math.abs(pc).toFixed(1) + "% vs " + xs[xs.length - 2] + " (" + (a - b >= 0 ? "+" : "−") + Math.abs(a - b).toFixed(k.dp) + " " + (k.unit || "") + ")"; } }
+    };
+    (o.cols || []).forEach(function (col) { if (col.hero) { col.hero.isHero = true; fill(col.hero); } (col.cards || []).forEach(fill); });
+    (o.charts || []).forEach(function (g) {
+      if (g.x) g.x = g.x.map(monthsOf); else g.x = xs;
+      (g.series || []).forEach(function (s) { if (!s.kpi) return; var k = P.kpi[canon(s.kpi)]; if (k && k.val && k.val.Group) s.v = k.val.Group.slice(); if (g.target === true && k) { g.target = k.target; } });
+    });
+  }
   function walk(p, o, D, at) {
     if (!o || typeof o !== "object") return;
     if (Array.isArray(o)) { o.forEach(function (x) { walk(p, x, D, at); }); return; }
@@ -143,6 +164,7 @@ var DCTResolve = (function () {
     if (o.type === "table") fillTable(p, o, D, at);
     if (o.type === "tiles") fillTiles(p, o, D, at);
     if (o.type === "ask" && o.histKey && typeof DCTHistory !== "undefined") o.hist = (DCTHistory[o.histKey] || []).map(function (x) { return names({q: x.q, when: x.when, a: x.a}); });
+    if (o.type === "dash") fillDash(o, D, at);
     if (o.type === "timeline") (o.stats || []).forEach(function (t) { var r = t.kpi && look(D, t.kpi, "Group", at); if (r) { t.v = display(r); t.bs = r.bs || ""; } });
     if (o.type === "heat") (o.items || []).forEach(function (t) { if (!t.kpi) return; var r = look(D, t.kpi, t.scope || baseScope(p), at); if (r) t.v = display(r); });
     Object.keys(o).forEach(function (k) { if (o[k] && typeof o[k] === "object") walk(p, o[k], D, at); });

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O-03 Cash and Liquidity Summary</title>
+<title>O-03 Cash &amp; Liquidity Dashboard</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 :root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-surface-2:#F8F9FB;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-teal-700:#0B6B73;--ct-teal-100:#E1F1F2;--ct-green-700:#1E6B43;--ct-green-100:#E3F2E9;--ct-amber-700:#8A5300;--ct-amber-500:#C27C0E;--ct-amber-100:#FBF0DB;--ct-red-700:#A4231C;--ct-red-100:#FBE6E4;--ct-purple-700:#5A3E9E;--ct-purple-500:#7E63C7;--ct-purple-100:#EFEAF9;--ct-grey-600:#5F6B7A;--ct-grey-200:#E4E8ED;--ct-r-1:2px;--ct-r-2:4px;--ct-e1:0 2px 8px rgba(14,27,51,.12);--ct-e2:0 8px 24px rgba(14,27,51,.16);--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
@@ -37,10 +37,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006092827"></script>
-<script src="js/data/resolve.js?v=20261006092827"></script>
-<script src="js/data/owner-verdicts.js?v=20261006092827"></script>
-<script src="js/persona.js?v=20261006092827"></script>
+<script src="js/data/base-data.js?v=20261006100039"></script>
+<script src="js/data/resolve.js?v=20261006100039"></script>
+<script src="js/data/owner-verdicts.js?v=20261006100039"></script>
+<script src="js/persona.js?v=20261006100039"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -101,18 +101,17 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
       <div style="display:flex;flex-direction:column;gap:6px">
         
-        <h1 class="ct-h1" style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.005em">Cash and Liquidity Summary</h1>
+        <h1 class="ct-h1" style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.005em">Cash &amp; Liquidity Dashboard</h1>
         <p class="ct-q" style="margin:0;font-size:15px;line-height:22px;color:var(--ct-ink-2,#3B4558)">Can cash move where it needs to move?</p>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 14px;font-size:13px">
         <span><span style="color:var(--ct-ink-3,#5B6576)">Scope</span> <b style="font-weight:600">Group · all businesses</b></span>
         <span><span style="color:var(--ct-ink-3,#5B6576)">Period</span> <b style="font-weight:600">P07 MTD (SYN)</b></span>
         <span><span style="color:var(--ct-ink-3,#5B6576)">Last refresh</span> <b style="font-weight:600">06:25 (SYN)</b></span>
-        <span style="display:inline-flex;align-items:center;gap:6px;color:var(--ct-navy-900,#0E1B33)"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg><span style="color:var(--ct-ink-2,#3B4558)">3 of 6 cards certified · CSH-001 pending certification · LIQ-002 pending certification · CSH-006 pending certification</span></span>
+        <span style="display:inline-flex;align-items:center;gap:6px;color:var(--ct-navy-900,#0E1B33)"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg><span style="color:var(--ct-ink-2,#3B4558)">All values from the governed KPI model · Sep 2026 (certified month)</span></span>
         <a href="P2-S03o-KPIDetail.html" style="margin-left:auto;color:var(--ct-navy-700,#24406E);font-weight:600;display:inline-flex;align-items:center;gap:4px">Sources and lineage <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
       </div>
       
-            
       
       
       
@@ -124,7 +123,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
           
             
 
-            <section class="ct-sec " role="region" aria-label="Page sections" style="background:transparent;border:0;border-top:0;border-radius:4px;padding:0;display:flex;flex-direction:column;gap:12px;min-width:0">
+            <section class="ct-sec " role="region" aria-label="Cash &amp; Liquidity Dashboard" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
               
               
 
@@ -143,688 +142,119 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                
-                
-                  <div role="tablist" aria-label="Sub-theme drill-downs" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--ct-line,#DCE1E8)">
-                    <button type="button" role="tab" aria-label="01 Summary detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Summary</button><button type="button" role="tab" aria-label="02 Cash tied up in operations detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 Cash tied up in operations</button><button type="button" role="tab" aria-label="03 Cash available and debt detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Cash available and debt</button><button type="button" role="tab" aria-label="04 Currency and interest detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Currency and interest</button>
-                  </div>
-                  
-                
-              
-
-              
-
-              
-
-              
-            </section>
-          
-            
-
-            <section class="ct-sec " role="region" aria-label="Primary KPI cards (max 6)" style="background:transparent;border:0;border-top:0;border-radius:4px;padding:0;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              
-
-              
-                <div class="ct-kpis" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(236px,1fr));gap:12px">
-                  
-                    <div class="ct-kcard" role="group" aria-label="Cash position: 2,141.8 ₹ m. Performance Improving. Trust Pending certification." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:18px 20px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
-                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Cash position</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">CSH-001</span><span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;kpi=CSH-001" title="How CSH-001 is calculated (KPI Reference)" aria-label="About CSH-001: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();location.href=this.dataset.href" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();location.href=this.dataset.href}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></span></div>
+                <div class="ct-dash" style="display:flex;flex-direction:column;gap:18px">
+                  <div class="ct-dash-cols" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;align-items:start">
+                    <section aria-label="Liquidity overview" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;display:flex;flex-direction:column">
+                      <h3 style="margin:0;padding:14px 16px 12px;font-size:16px;line-height:1.4;font-weight:600">Liquidity overview</h3>
                       
-                      
-                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">2,141.8</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px">
-                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span>
-                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-grey-600,#5F6B7A);border:1px dashed var(--ct-grey-600,#5F6B7A);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM8 5.5V8l1.6 1"></path></svg>Pending certification</span>
-                        </div>
+                      <div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Cash position</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Treasury (role)</span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">2,141.8</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-700,#1E6B43);white-space:nowrap">Low risk</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▲ 114.5 vs Aug</span></div>
                         <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1 (A1), up 76.6.</p>
-                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
-                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 114.5 vs P05</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">—</span>
-                        </div>
-                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 17.4 L38.0 15.7 L74.0 14.0 L110.0 12.3 L146.0 10.5 L182.0 8.8 L218.0 7.1" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 17.4 L38.0 28.6 L74.0 32.9 L110.0 11.7 L146.0 27.2 L182.0 11.7 L182.0 38 L2 38 Z" fill="var(--ct-green-700,#1E6B43)" fill-opacity=".08" stroke="none"></path><path d="M2.0 17.4 L38.0 28.6 L74.0 32.9 L110.0 11.7 L146.0 27.2 L182.0 11.7" fill="none" stroke="var(--ct-green-700,#1E6B43)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P06</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
-                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-teal-100,#E1F1F2);color:var(--ct-teal-700,#0B6B73);border:1px solid var(--ct-teal-700,#0B6B73);white-space:nowrap">PRELIM daily</span>
-                          
-                        </div>
                         
-                      
-                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Treasury (role)</span></div>
-                    </div>
-                  
-                    <div class="ct-kcard" role="group" aria-label="Liquidity runway: 16.7 months. Performance On track. Trust Certified." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:18px 20px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
-                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Liquidity runway</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">LIQ-001</span><span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;kpi=LIQ-001" title="How LIQ-001 is calculated (KPI Reference)" aria-label="About LIQ-001: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();location.href=this.dataset.href" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();location.href=this.dataset.href}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></span></div>
-                      
-                      
-                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">16.7</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">months</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px">
-                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
-                          
-                        </div>
+                        
+                      </div><div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Liquidity runway</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Treasury (role)</span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">16.7</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">months</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-700,#1E6B43);white-space:nowrap">Low risk</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▲ 0.8 vs Aug</span></div>
                         <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Liquidity runway 16.7 months against a ≥12.0 months target; both entities meet it.</p>
-                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
-                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 12.0 months · var +4.7 months</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 0.8 vs P05</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">—</span>
-                        </div>
-                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 32.9 L45.2 32.9 L88.4 32.9 L131.6 32.9 L174.8 32.9 L218.0 32.9" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 11.8 L45.2 11.4 L88.4 10.4 L131.6 9.9 L174.8 11.6 L218.0 7.1 L218.0 38 L2 38 Z" fill="var(--ct-navy-900,#0E1B33)" fill-opacity=".08" stroke="none"></path><path d="M2.0 11.8 L45.2 11.4 L88.4 10.4 L131.6 9.9 L174.8 11.6 L218.0 7.1" fill="none" stroke="var(--ct-navy-900,#0E1B33)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P06</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
-                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
-                          
-                        </div>
                         
-                      
-                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Treasury (role)</span></div>
-                    </div>
-                  
-                    <div class="ct-kcard" role="group" aria-label="Covenant headroom: 24.4 %. Performance On track. Trust Pending certification." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:18px 20px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
-                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Covenant headroom</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">LIQ-002</span><span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;kpi=LIQ-002" title="How LIQ-002 is calculated (KPI Reference)" aria-label="About LIQ-002: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();location.href=this.dataset.href" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();location.href=this.dataset.href}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></span></div>
-                      
-                      
-                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">24.4</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">%</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px">
-                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
-                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-grey-600,#5F6B7A);border:1px dashed var(--ct-grey-600,#5F6B7A);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM8 5.5V8l1.6 1"></path></svg>Pending certification</span>
-                        </div>
-                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Covenant headroom 24.4% against a ≥20.0% target; Entity A1 (A1) at 18.9% misses it.</p>
-                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
-                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 20.0% · var +4.4 pts</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 6.6 vs P05</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">—</span>
-                        </div>
-                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 23.9 L45.2 23.9 L88.4 23.9 L131.6 23.9 L174.8 23.9 L218.0 23.9" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 7.1 L45.2 24.8 L88.4 32.9 L131.6 26.7 L174.8 28.7 L218.0 14.0 L218.0 38 L2 38 Z" fill="var(--ct-navy-900,#0E1B33)" fill-opacity=".08" stroke="none"></path><path d="M2.0 7.1 L45.2 24.8 L88.4 32.9 L131.6 26.7 L174.8 28.7 L218.0 14.0" fill="none" stroke="var(--ct-navy-900,#0E1B33)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P06</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
-                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-teal-100,#E1F1F2);color:var(--ct-teal-700,#0B6B73);border:1px solid var(--ct-teal-700,#0B6B73);white-space:nowrap">PRELIM</span>
-                          
-                        </div>
                         
-                      
-                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Treasury (role)</span></div>
-                    </div>
-                  
-                    <div class="ct-kcard" role="group" aria-label="Free Cash Flow YTD: 606.2 ₹ m. Performance Improving. Trust Certified." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:18px 20px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
-                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Free Cash Flow YTD</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">FIN-004</span><span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;kpi=FIN-004" title="How FIN-004 is calculated (KPI Reference)" aria-label="About FIN-004: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();location.href=this.dataset.href" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();location.href=this.dataset.href}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></span></div>
-                      
-                      
-                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">606.2</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px">
-                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span>
-                          
-                        </div>
-                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Free cash flow YTD 606.2 ₹ m, up 157.4 vs Aug; largest move Entity A1 (A1), up 94.3.</p>
-                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
-                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 157.4 vs P05</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">—</span>
-                        </div>
-                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 32.9 L38.0 32.9 L74.0 32.9 L110.0 32.8 L146.0 32.8 L182.0 32.8 L218.0 32.8" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 32.9 L38.0 21.2 L74.0 20.4 L110.0 18.2 L146.0 14.6 L182.0 7.1 L182.0 38 L2 38 Z" fill="var(--ct-green-700,#1E6B43)" fill-opacity=".08" stroke="none"></path><path d="M2.0 32.9 L38.0 21.2 L74.0 20.4 L110.0 18.2 L146.0 14.6 L182.0 7.1" fill="none" stroke="var(--ct-green-700,#1E6B43)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P06</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
-                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
-                          
-                        </div>
+                      </div><div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Net debt</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Treasury (role)</span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">6,650.0</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▼ Decreasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-700,#1E6B43);white-space:nowrap">Low risk</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▼ 70.0 vs Aug</span></div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1 (A1), down 38.0.</p>
                         
-                      
-                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
-                    </div>
-                  
-                    <div class="ct-kcard" role="group" aria-label="Net working capital: 2,781.0 ₹ m. Performance Declining. Trust Certified." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:18px 20px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
-                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Net working capital</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">WCP-004</span><span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;kpi=WCP-004" title="How WCP-004 is calculated (KPI Reference)" aria-label="About WCP-004: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();location.href=this.dataset.href" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();location.href=this.dataset.href}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></span></div>
-                      
-                      
-                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">2,781.0</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px">
-                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span>
-                          
-                        </div>
+                        
+                      </div><div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Debt maturity (next 12 months)</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)"></span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">891.4</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-500,#C27C0E);white-space:nowrap">Monitor</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▲ 25.3 vs Aug</span></div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Debt-maturity exposure 891.4 ₹ m, up 25.3 vs Aug; largest move Entity A1 (A1), up 56.3.</p>
+                        
+                        
+                      </div>
+                    </section><section aria-label="Operational anomalies" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;display:flex;flex-direction:column">
+                      <h3 style="margin:0;padding:14px 16px 12px;font-size:16px;line-height:1.4;font-weight:600">Operational anomalies</h3>
+                      <div style="margin:0 12px 12px;padding:14px 16px;border-radius:4px;background:var(--ct-red-100,#FBE6E4);border-left:4px solid var(--ct-red-700,#A4231C);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:14px;font-weight:600;color:var(--ct-red-700,#A4231C)">DSO above target</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Finance (role)</span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px"><span class="ct-val" style="font-size:36px;line-height:1.1;font-weight:600;color:var(--ct-ink,#121A2B)">47.0</span><span style="font-size:13px;color:var(--ct-ink-3,#5B6576)">days</span></div>
+                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px"><span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≤ 45.0 days · var +2.0 days</span><span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▼ 1.1% vs Aug (−0.5 days)</span></div>
+                        <svg viewBox="0 0 300 60" width="100%" height="56" preserveAspectRatio="none" role="img" aria-label="DSO by month, Apr–Sep, against the 45-day target"><line x1="0" x2="300" y1="50.0" y2="50.0" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"></line><polyline points="0.0,26.4 60.0,10.0 120.0,12.6 180.0,16.9 240.0,22.6 300.0,28.5" fill="none" stroke="var(--ct-red-700,#A4231C)" stroke-width="2" vector-effect="non-scaling-stroke"></polyline></svg>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▼ Decreasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-700,#A4231C);color:#FFFFFF;border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap">High risk</span><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Intervention required</span></div>
+                        <p class="ct-why" title="Why this verdict" style="margin:0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">DSO 47.0 days against a ≤45.0 days target; Entity A1 (A1) at 52.0 days (slower collections) drives the gap.</p>
+                      </div>
+                      <div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Working capital</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Finance (role)</span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">2,781.0</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-500,#C27C0E);white-space:nowrap">Monitor</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▲ 17.3 vs Aug</span></div>
                         <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Net working capital 2,781.0 ₹ m, up 17.3 vs Aug; largest move Entity A2 (A2), up 26.5.</p>
-                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
-                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 17.3 vs P05</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">—</span>
-                        </div>
-                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 16.2 L38.0 14.7 L74.0 13.2 L110.0 11.7 L146.0 10.1 L182.0 8.6 L218.0 7.1" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 16.2 L38.0 32.9 L74.0 30.4 L110.0 26.6 L146.0 29.1 L182.0 27.6 L182.0 38 L2 38 Z" fill="var(--ct-amber-500,#C27C0E)" fill-opacity=".08" stroke="none"></path><path d="M2.0 16.2 L38.0 32.9 L74.0 30.4 L110.0 26.6 L146.0 29.1 L182.0 27.6" fill="none" stroke="var(--ct-amber-500,#C27C0E)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P06</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
-                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
-                          
-                        </div>
                         
+                        
+                      </div>
+                    </section><section aria-label="Market &amp; risk exposure" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;display:flex;flex-direction:column">
+                      <h3 style="margin:0;padding:14px 16px 12px;font-size:16px;line-height:1.4;font-weight:600">Market &amp; risk exposure</h3>
                       
-                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Finance (role)</span></div>
-                    </div>
-                  
-                    <div class="ct-kcard" role="group" aria-label="Cash-upstream exposure: 27.2 ₹ m. Performance Declining. Trust Pending certification." style="display:flex;flex-direction:column;gap:10px;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:18px 20px;text-decoration:none;color:var(--ct-ink,#121A2B);min-height:44px">
-                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Cash-upstream exposure</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ct-ink-3,#5B6576)">CSH-006</span><span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;kpi=CSH-006" title="How CSH-006 is calculated (KPI Reference)" aria-label="About CSH-006: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();location.href=this.dataset.href" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();location.href=this.dataset.href}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></span></div>
-                      
-                      
-                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">27.2</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px">
-                          <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span>
-                          <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-grey-600,#5F6B7A);border:1px dashed var(--ct-grey-600,#5F6B7A);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM8 5.5V8l1.6 1"></path></svg>Pending certification</span>
-                        </div>
+                      <div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">FX hedge ratio (next 6 months)</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)"></span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">70.7</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">%</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-700,#1E6B43);white-space:nowrap">Low risk</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▲ 1.0 vs Aug</span></div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Hedge cover 70.7% against a ≥70.0% target; Entity A2 (A2) at 61.1% misses it.</p>
+                        <div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ct-ink-3,#5B6576)"><span>Hedged (Sep)</span><b style="color:var(--ct-ink,#121A2B);font-weight:600">₹546.0 m</b></div><div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--ct-ink-3,#5B6576)"><span>Gross FX exposure (Sep)</span><b style="color:var(--ct-ink,#121A2B);font-weight:600">₹767.7 m</b></div>
+                        
+                      </div><div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Financing exposure</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)"></span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">2,720.8</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-500,#C27C0E);white-space:nowrap">Monitor</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▲ 93.3 vs Aug</span></div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Financing exposure 2,720.8 ₹ m, up 93.3 vs Aug; largest move Entity A2 (A2), up 87.2.</p>
+                        
+                        
+                      </div><div style="padding:14px 16px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-direction:column;gap:8px">
+                        <div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:var(--ct-ink-2,#3B4558)">Upstream exposure</span><span style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Group Treasury (role)</span></div>
+                        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap"><span class="ct-val" style="font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.01em;color:var(--ct-ink,#121A2B)">27.2</span><span style="font-size:12.5px;color:var(--ct-ink-3,#5B6576)">₹ m</span></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing</span><span title="Risk level (from the status)" style="display:inline-flex;align-items:center;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-500,#C27C0E);white-space:nowrap">Monitor</span><span style="font-size:12.5px;color:var(--ct-ink-2,#3B4558)">Trend ▲ 1.6 vs Aug</span></div>
                         <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1 (A1), up 1.6.</p>
-                        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
-                          <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 1.6 vs P05</span>
-                          <span style="color:var(--ct-ink-3,#5B6576)">Forecast</span><span style="color:var(--ct-purple-700,#5A3E9E)">—</span>
-                        </div>
-                        <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 16.1 L38.0 14.6 L74.0 13.1 L110.0 11.6 L146.0 10.1 L182.0 8.6 L218.0 7.1" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 16.1 L38.0 16.6 L74.0 22.6 L110.0 23.9 L146.0 27.6 L182.0 31.9 L218.0 32.9 L218.0 38 L2 38 Z" fill="var(--ct-amber-500,#C27C0E)" fill-opacity=".08" stroke="none"></path><path d="M2.0 16.1 L38.0 16.6 L74.0 22.6 L110.0 23.9 L146.0 27.6 L182.0 31.9 L218.0 32.9" fill="none" stroke="var(--ct-amber-500,#C27C0E)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P06</span></div>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
-                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border:1px dashed var(--ct-purple-500,#7E63C7);white-space:nowrap">FCST</span>
-                          
-                        </div>
                         
-                      
-                      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--ct-line,#DCE1E8);display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11.5px;color:var(--ct-ink-3,#5B6576)"><span>Refreshed 06:25</span><span>Owner Group Treasury (role)</span></div>
-                    </div>
-                  
-                </div>
-                
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-            
-
-            <section class="ct-sec " role="region" aria-label="Cash position · actual vs plan vs forecast · ₹ m (daily)" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-navy-700,#24406E)">Focus of this page</span>
-                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">Cash position · actual vs plan vs forecast · ₹ m (daily)</h2>
-                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>Will cash stay above the liquidity floor over the next two weeks?</p>
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">Actual to D0 (certified to D-4, preliminary after) · forecast to D+12 includes the billing deferral (SYN).</p>
-
-              
-
-              
-                <svg viewBox="0 0 660 236" style="width:100%;height:auto;max-height:340px;display:block" role="img" aria-label="Cash position · actual vs plan vs forecast · ₹ m (daily). Will cash stay above the liquidity floor over the next two weeks? Certified actuals to D-4, preliminary after, forecast dashed.">
-                  <path d="M44 20 L600 20 M44 64 L600 64 M44 108 L600 108 M44 152 L600 152 M44 196 L600 196" stroke="#DCE1E8" stroke-width="1" fill="none"></path>
-                  <text x="38" y="24" font-size="10" fill="#5B6576" text-anchor="end" font-family="IBM Plex Mono, monospace">2299.7</text>
-                  <text x="38" y="199" font-size="10" fill="#5B6576" text-anchor="end" font-family="IBM Plex Mono, monospace">1870.4</text>
-                  <path d="M322.0 84.7 L368.3 88.6 L414.7 103.9 L461.0 110.1 L507.3 97.9 L553.7 81.2 L600.0 64.5 L600.0 127.9 L553.7 134.0 L507.3 140.1 L461.0 141.7 L414.7 125.0 L368.3 99.2 L322.0 84.7 Z" fill="#EFEAF9" stroke="none"></path>
-                  <line x1="322.0" y1="16" x2="322.0" y2="200" stroke="#B4BDCA" stroke-width="1" stroke-dasharray="2 3"></line>
-                  <text x="322.0" y="11" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D0 · today</text>
-                  <line x1="44" y1="183.9" x2="600" y2="183.9" stroke="#3B4558" stroke-width="1" stroke-dasharray="1 3"></line>
-                  <text x="48" y="178.9" font-size="10" fill="#3B4558">[LIQUIDITY FLOOR — PLACEHOLDER]</text>
-                  <path d="M44.0 48.1 L90.3 45.9 L136.7 41.3 L183.0 43.6 L229.3 39.0 L275.7 41.3 L322.0 43.6 L368.3 39.0 L414.7 36.7 L461.0 34.4 L507.3 39.0 L553.7 36.7 L600.0 32.1" fill="none" stroke="#5F6B7A" stroke-width="1.5"></path>
-                  <path d="M0 0" fill="none" stroke="#7E63C7" stroke-width="2" stroke-dasharray="1 4" stroke-linecap="round"></path>
-                  <path d="M0 0" fill="none" stroke="#5A3E9E" stroke-width="2" stroke-dasharray="2 4" stroke-linecap="round"></path>
-                  <path d="M0 0" fill="none" stroke="#5A3E9E" stroke-width="2.5" stroke-dasharray="1 3" stroke-linecap="round"></path>
-                  <path d="M322.0 84.7 L368.3 93.9 L414.7 114.5 L461.0 125.9 L507.3 119.0 L553.7 107.6 L600.0 96.2" fill="none" stroke="#7E63C7" stroke-width="2" stroke-dasharray="7 4"></path>
-                  <path d="M44.0 52.7 L90.3 50.4 L136.7 57.3 L183.0 59.6 L229.3 66.5" fill="none" stroke="#0E1B33" stroke-width="2.5" stroke-linejoin="round"></path>
-                  <path d="M229.3 66.5 L275.7 75.6 L322.0 84.7" fill="none" stroke="#0B6B73" stroke-width="2.5" stroke-linejoin="round"></path>
-                  <path d="M272.7 75.6a3 3 0 1 0 6 0a3 3 0 1 0 -6 0M319.0 84.7a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" fill="#FFFFFF" stroke="#0B6B73" stroke-width="1.5"></path>
-                  <path d="M225.8 66.5a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0" fill="#0E1B33" stroke="none"></path>
-                  <text x="606.0" y="36.1" font-size="10.5" fill="#5F6B7A">Plan</text>
-                  <text x="318.0" y="75.7" font-size="10.5" font-weight="600" fill="#0B6B73">Actual (prelim)</text>
-                  <text x="606.0" y="100.2" font-size="10.5" font-weight="600" fill="#5A3E9E">Forecast</text>
-                  <text x="-200" y="-200" font-size="10" fill="#5A3E9E"></text>
-                  <text x="-200" y="-200" font-size="10" fill="#5A3E9E"></text>
-                  <text x="-200" y="-200" font-size="10" font-weight="600" fill="#5A3E9E"></text>
-                  <text x="44.0" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D-12</text>
-                  <text x="90.3" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D-10</text>
-                  <text x="136.7" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D-8</text>
-                  <text x="183.0" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D-6</text>
-                  <text x="229.3" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D-4</text>
-                  <text x="275.7" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D-2</text>
-                  <text x="322.0" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D0</text>
-                  <text x="368.3" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D+2</text>
-                  <text x="414.7" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D+4</text>
-                  <text x="461.0" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D+6</text>
-                  <text x="507.3" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D+8</text>
-                  <text x="553.7" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D+10</text>
-                  <text x="600.0" y="216" font-size="10" fill="#5B6576" text-anchor="middle" font-family="IBM Plex Mono, monospace">D+12</text>
-                </svg>
-                <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--ct-ink-2,#3B4558);padding-top:2px">
-                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0E1B33" stroke-width="2.5"></line></svg>Actual · certified</span>
-                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0B6B73" stroke-width="2.5"></line><circle cx="13" cy="5" r="3" fill="#FFFFFF" stroke="#0B6B73" stroke-width="1.5"></circle></svg>Actual · preliminary</span>
-                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#5F6B7A" stroke-width="1.5"></line></svg>Plan</span>
-                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><rect x="0" y="1" width="26" height="8" fill="#EFEAF9"></rect><line x1="0" y1="5" x2="26" y2="5" stroke="#7E63C7" stroke-width="2" stroke-dasharray="7 4"></line></svg>Forecast and range</span>
-                  
-                  <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#3B4558" stroke-width="1" stroke-dasharray="1 3"></line></svg>Threshold (placeholder)</span>
-                </div>
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-            
-
-            <section class="ct-sec " role="region" aria-label="Cash bridge · P07 to date · ₹ m" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Cash bridge · P07 to date · ₹ m</h2>
-                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>What moved cash this period?</p>
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="display:flex;gap:10px;align-items:flex-end;overflow-x:auto;padding-bottom:4px">
-                  
-                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-navy-900,#0E1B33);font-weight:600">2242.2</div>
-                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:0.0%;height:40.0%;background:var(--ct-navy-900,#0E1B33)"></div></div>
-                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Opening P07</div>
-                    </div>
-                  
-                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-teal-700,#0B6B73);font-weight:600">+814</div>
-                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:40.0%;height:60.0%;background:var(--ct-teal-700,#0B6B73)"></div></div>
-                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Collections</div>
-                    </div>
-                  
-                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-amber-700,#8A5300);font-weight:600">−658</div>
-                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:51.5%;height:48.5%;background:var(--ct-amber-500,#C27C0E)"></div></div>
-                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Supplier payments</div>
-                    </div>
-                  
-                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-amber-700,#8A5300);font-weight:600">−173</div>
-                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:38.7%;height:12.7%;background:var(--ct-amber-500,#C27C0E)"></div></div>
-                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Capex</div>
-                    </div>
-                  
-                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-amber-700,#8A5300);font-weight:600">−50</div>
-                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:35.0%;height:3.7%;background:var(--ct-amber-500,#C27C0E)"></div></div>
-                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Financing</div>
-                    </div>
-                  
-                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-amber-700,#8A5300);font-weight:600">−34</div>
-                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:32.6%;height:2.5%;background:var(--ct-amber-500,#C27C0E)"></div></div>
-                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Other</div>
-                    </div>
-                  
-                    <div style="flex:1 0 76px;display:flex;flex-direction:column;gap:6px">
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;text-align:center;color:var(--ct-navy-900,#0E1B33);font-weight:600">2141.8</div>
-                      <div style="position:relative;height:180px;border-bottom:1px solid var(--ct-line-strong,#B4BDCA)"><div style="position:absolute;left:16%;right:16%;bottom:0.0%;height:32.6%;background:var(--ct-navy-900,#0E1B33)"></div></div>
-                      <div style="font-size:12px;text-align:center;line-height:16px;color:var(--ct-ink-2,#3B4558)">Cash D0</div>
-                    </div>
-                  
-                </div>
-                <div style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ct-ink-2,#3B4558)"><span><span style="display:inline-block;width:10px;height:10px;background:var(--ct-navy-900,#0E1B33);vertical-align:-1px"></span> Total</span><span><span style="display:inline-block;width:10px;height:10px;background:var(--ct-teal-700,#0B6B73);vertical-align:-1px"></span> Increase</span><span><span style="display:inline-block;width:10px;height:10px;background:var(--ct-amber-500,#C27C0E);vertical-align:-1px"></span> Decrease</span><span>Axis starts at 1,700 ₹ m (axis truncated)</span></div>
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-            
-
-            <section class="ct-sec " role="region" aria-label="Production-to-cash lifecycle · Group summary" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Production-to-cash lifecycle · Group summary</h2>
-                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>Where between production and upstreaming is value leaking?</p>
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">Each stage shows actual, plan, forecast, leakage, constraint, trust and owner role. Full detail in E-05.</p>
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:stretch">
-                  <div style="flex:1 1 150px;border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Production</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-ink,#121A2B)">◇ PRELIM · ⊘ Entity A1 (A1) break</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">Act 95.5% of plan (P06 CERT)
-Fcst 95.8%
-Leak −24.3 kt (Entity A1 (A1), FCST)
-Owner: Production</div></div><span aria-hidden="true" style="align-self:center;color:var(--ct-line-strong,#B4BDCA);display:flex"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"></path></svg></span><div style="flex:1 1 150px;border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Dispatch</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-teal-700,#0B6B73)">◇ PRELIM</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">Act 8.7% late (P06)
-Fcst 2–4 d delay (A1)
-Constraint: RM-1
-Owner: Commercial</div></div><span aria-hidden="true" style="align-self:center;color:var(--ct-line-strong,#B4BDCA);display:flex"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"></path></svg></span><div style="flex:1 1 150px;border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Billing</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-teal-700,#0B6B73)">◇ PRELIM</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">Fcst deferral ₹31 m
-Owner: Finance</div></div><span aria-hidden="true" style="align-self:center;color:var(--ct-line-strong,#B4BDCA);display:flex"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"></path></svg></span><div style="flex:1 1 150px;border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Collection</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-navy-900,#0E1B33)">◆ CERT P06</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">DSO 47 d vs 45
-Owner: Finance</div></div><span aria-hidden="true" style="align-self:center;color:var(--ct-line-strong,#B4BDCA);display:flex"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"></path></svg></span><div style="flex:1 1 150px;border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Cash</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-teal-700,#0B6B73)">◇ PRELIM daily</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">₹2,141.8 m vs 2,242.2
-Owner: Treasury</div></div><span aria-hidden="true" style="align-self:center;color:var(--ct-line-strong,#B4BDCA);display:flex"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"></path></svg></span><div style="flex:1 1 150px;border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Upstreaming</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-purple-700,#5A3E9E)">◇ FCST</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">Exposure ₹27.2 m
-Owner: Group Treasury</div></div><span aria-hidden="true" style="align-self:center;color:var(--ct-line-strong,#B4BDCA);display:none"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"></path></svg></span>
-                </div>
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-            
-
-            <section class="ct-sec " role="region" aria-label="Forecast exposure · prediction outputs" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Forecast exposure · prediction outputs</h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px">
-                  
-                    <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">PRD-004 Projected liquidity gap</div><div style="font-weight:600;font-size:15px;line-height:1.3">None within 90 d</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">PREDICTION · SYN</div>
-                    </div>
-                  
-                    <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">PRD-005 Forecast covenant breach</div><div style="font-weight:600;font-size:15px;line-height:1.3">Not forecast</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">PREDICTION · terms PH</div>
-                    </div>
-                  
-                    <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">SIG-004 Collections slippage</div><div style="font-weight:600;font-size:15px;line-height:1.3">1.1 days</div><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">LEADING</div>
-                    </div>
-                  
-                </div>
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-            
-
-            <section class="ct-sec " role="region" aria-label="Material alerts affecting cash" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Material alerts affecting cash</h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="display:flex;flex-direction:column;gap:12px">
-                  
-                    <article style="border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:14px 16px;display:flex;flex-direction:column;gap:12px">
-                      <div style="display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center">
-                        <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-700,#A4231C);color:#FFFFFF;border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14V11M6 14V8M10 14V5M14 14V2"></path></svg>Critical</span>
-                        <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border:1px dashed var(--ct-purple-500,#7E63C7);white-space:nowrap">FORECAST</span>
-                        <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-100,#E8EDF6);white-space:nowrap">War room active</span>
-                        <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-ink-3,#5B6576)">ALT-SYN-2041 · INC-SYN-0142</span>
+                        <svg viewBox="0 0 300 60" width="100%" height="48" preserveAspectRatio="none" aria-label="Cash-upstream exposure by month" role="img"><polyline points="0.0,50.0 60.0,50.0 120.0,50.0 180.0,50.0 240.0,12.3 300.0,10.0" fill="none" stroke="var(--ct-navy-700,#24406E)" stroke-width="2" vector-effect="non-scaling-stroke"></polyline></svg><div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ct-ink-3,#5B6576)"><span>Apr</span><span>Sep</span></div>
                       </div>
-                      <div style="font-size:16px;font-weight:600;line-height:22px">Production shortfall · Entity A1 (A1) · reliability losses + RM-1 cover</div>
-                      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--ct-line,#DCE1E8);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;overflow:hidden">
-                        <div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Severity</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">High (rule-assigned)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Materiality</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Critical · drivers Production, Liquidity (PH model)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Exposure</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">−24.3 kt · −₹56.2 m EBITDA · ₹27.2 m upstream (FCST)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Named owner (role)</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Entity Executive · Entity A1 (A1) · accepted D-1 23:15</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Due</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Decision D0 11:00</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Escalation clock</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">L2 Core Group · next level in [PH] h</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Evidence</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">6 of 9 items</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Next action</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Protect billing via dispatch reprioritisation (ACT-SYN-1110)</div></div>
-                      </div>
-                      <a href="P2-S11-CashExposure.html" class="ct-btn ct-pri" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-navy-900,#0E1B33);border-radius:4px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none">Open cash exposure <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
-                    </article>
-                  
+                    </section>
+                  </div>
+                  <div class="ct-dash-cols" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+                    <section aria-label="DSO trend" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap"><h3 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">DSO trend</h3><span style="display:inline-flex;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▼ Decreasing since Apr</span></div>
+                      <div style="display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ct-ink-2,#3B4558)"><span><i style="display:inline-block;width:14px;height:2px;background:#24406E;vertical-align:middle;margin-right:5px"></i>DSO (days)</span><span><i style="display:inline-block;width:14px;height:2px;background:var(--ct-grey-600,#5F6B7A);vertical-align:middle;margin-right:5px"></i>Target ≤ 45 days</span></div>
+                      <svg viewBox="0 0 300 120" width="100%" height="140" preserveAspectRatio="none" role="img" aria-label="DSO trend" style="border-bottom:1px solid var(--ct-line,#DCE1E8)">
+                        <line x1="0" x2="300" y1="105.0" y2="105.0" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"></line>
+                        
+                        <polyline points="0.0,51.9 60.0,15.0 120.0,20.9 180.0,30.5 240.0,43.3 300.0,56.6" fill="none" stroke="#24406E" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+                      </svg>
+                      <div style="display:grid;grid-template-columns:repeat(6,1fr);font-size:11.5px;color:var(--ct-ink-3,#5B6576);text-align:center"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+                      <p style="margin:0;font-size:12.5px;line-height:18px;color:var(--ct-ink-2,#3B4558)">DSO fell from 48.7 days in May to 47.0 in Sep but is still above the 45-day target.</p>
+                    </section><section aria-label="Net debt evolution" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap"><h3 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Net debt evolution</h3><span style="display:inline-flex;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▼ Decreasing since Apr</span></div>
+                      <div style="display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ct-ink-2,#3B4558)"><span><i style="display:inline-block;width:14px;height:2px;background:#24406E;vertical-align:middle;margin-right:5px"></i>Net debt (₹ m)</span></div>
+                      <svg viewBox="0 0 300 120" width="100%" height="140" preserveAspectRatio="none" role="img" aria-label="Net debt evolution" style="border-bottom:1px solid var(--ct-line,#DCE1E8)">
+                        
+                        <rect x="9.0" y="14.0" width="32.0" height="100.0" fill="#24406E"><title>Apr: 7000</title></rect><rect x="59.0" y="15.0" width="32.0" height="99.0" fill="#24406E"><title>May: 6930</title></rect><rect x="109.0" y="16.0" width="32.0" height="98.0" fill="#24406E"><title>Jun: 6860</title></rect><rect x="159.0" y="17.0" width="32.0" height="97.0" fill="#24406E"><title>Jul: 6790</title></rect><rect x="209.0" y="18.0" width="32.0" height="96.0" fill="#24406E"><title>Aug: 6720</title></rect><rect x="259.0" y="19.0" width="32.0" height="95.0" fill="#24406E"><title>Sep: 6650</title></rect>
+                        
+                      </svg>
+                      <div style="display:grid;grid-template-columns:repeat(6,1fr);font-size:11.5px;color:var(--ct-ink-3,#5B6576);text-align:center"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+                      <p style="margin:0;font-size:12.5px;line-height:18px;color:var(--ct-ink-2,#3B4558)">Net debt fell by ₹70 m every month, from 7,000.0 ₹ m in Apr to 6,650.0 ₹ m in Sep.</p>
+                    </section><section aria-label="FX exposure vs hedge" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+                      <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap"><h3 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">FX exposure vs hedge</h3><span style="display:inline-flex;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-700,#24406E);white-space:nowrap">▲ Increasing since Apr</span></div>
+                      <div style="display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ct-ink-2,#3B4558)"><span><i style="display:inline-block;width:14px;height:2px;background:#24406E;vertical-align:middle;margin-right:5px"></i>Gross FX exposure (₹ m)</span><span><i style="display:inline-block;width:14px;height:2px;background:#0B6B73;vertical-align:middle;margin-right:5px"></i>Hedged (₹ m)</span></div>
+                      <svg viewBox="0 0 300 120" width="100%" height="140" preserveAspectRatio="none" role="img" aria-label="FX exposure vs hedge" style="border-bottom:1px solid var(--ct-line,#DCE1E8)">
+                        
+                        
+                        <polyline points="0.0,36.1 60.0,38.8 120.0,41.5 180.0,15.0 240.0,36.6 300.0,22.9" fill="none" stroke="#24406E" stroke-width="2" vector-effect="non-scaling-stroke"></polyline><polyline points="0.0,94.0 60.0,101.8 120.0,98.6 180.0,84.1 240.0,105.0 300.0,90.2" fill="none" stroke="#0B6B73" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+                      </svg>
+                      <div style="display:grid;grid-template-columns:repeat(6,1fr);font-size:11.5px;color:var(--ct-ink-3,#5B6576);text-align:center"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+                      <p style="margin:0;font-size:12.5px;line-height:18px;color:var(--ct-ink-2,#3B4558)">Gross exposure is ₹767.7 m and ₹546.0 m is hedged in Sep, leaving 221.7 ₹ m unhedged (TRS-001).</p>
+                    </section>
+                  </div>
                 </div>
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-            
-
-            <section class="ct-sec " role="region" aria-label="Named actions on cash" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Named actions on cash</h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="Named actions on cash" style="min-width:1150px">
-                  <div role="row" style="display:grid;grid-template-columns:minmax(220px,2fr) 90px minmax(150px,1.2fr) minmax(170px,1.3fr) 100px 120px 120px minmax(170px,1.3fr);background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:11px 12px">Issue</div><div role="columnheader" style="padding:11px 12px">Severity</div><div role="columnheader" style="padding:11px 12px">Exposure</div><div role="columnheader" style="padding:11px 12px">Named owner (role)</div><div role="columnheader" style="padding:11px 12px">Due</div><div role="columnheader" style="padding:11px 12px">Status</div><div role="columnheader" style="padding:11px 12px">Escalation</div><div role="columnheader" style="padding:11px 12px">Next action</div></div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:minmax(220px,2fr) 90px minmax(150px,1.2fr) minmax(170px,1.3fr) 100px 120px 120px minmax(170px,1.3fr);border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:14px">
-                      <div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400"><a href="P2-S05-Case.html" style="color:var(--ct-navy-700,#24406E);font-weight:600">ACT-SYN-1110 · Reprioritise customer dispatch to protect billing</a></div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">High</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹31 m billing deferral (FCST)</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (commercial) · Entity A1 (A1)</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">D+1</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">In progress</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">L0 · on time</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Customer dispatch plan</div>
-                    </div>
-                  
-                  
-                </div></div>
-                
               
 
               
@@ -862,8 +292,8 @@ Owner: Group Treasury</div></div><span aria-hidden="true" style="align-self:cent
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplA.js?v=20261006092827"></script>
-<script src="js/c/P2-O03-CashLiquidity.js?v=20261006092827"></script>
+<script src="js/c/TplA.js?v=20261006100039"></script>
+<script src="js/c/P2-O03-CashLiquidity.js?v=20261006100039"></script>
 <script>DCLite.mount("dc-root", "P2-O03-CashLiquidity", {});</script>
 </body>
 </html>
