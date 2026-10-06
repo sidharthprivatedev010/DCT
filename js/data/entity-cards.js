@@ -256,5 +256,60 @@ var DCTEntityCards = (function () {
     c.hasRoot = !!c.root;
     c.fb = "";                             // the breakdown replaces the single-plant flag chip
   }
-  return {attach: attach, plantRows: function (id) { return init() ? plantRows(id) : null; }, rootIds: function () { return Object.keys(ROOT); }};
+  // ---- Core Group lens: summarised plant detail, only plants with a variation, no root cause ------------------
+  // A plant has a variation when it misses the KPI target by more than 2% of the target (any amount for a zero target);
+  // for a KPI without a target, when it moved the wrong way by 10% or more vs last month, or sits 25% or more on the wrong
+  // side of the plant median. Text KPIs: only pricing pressure (Medium or High) counts.
+  var TOL = 0.02, MOVE = 0.10, PEER = 0.25;
+  var SIZE = {"SUS-001": 1, "SUS-002": 1, "FIN-003": 1, "CST-002": 1, "CST-003": 1, "CST-005": 1};   // totals that scale with plant size: no peer test
+  function plantsOf(scope) { var c = P.children || {}; if (scope && c[scope] && !/^Plant/.test(c[scope][0] || "")) return [].concat.apply([], c[scope].map(function (e) { return c[e] || []; })); return c[scope] || []; }
+  function entityOf(s) { var c = P.children || {}; for (var e in c) if (c[e].indexOf(s) >= 0 && e !== "Group") return e; return ""; }
+  function median(a) { a = a.slice().sort(function (x, y) { return x - y; }); var m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; }
+  function varOf(id, s, peers) {
+    var k = K(id); if (!k || !k.val || !k.val[s]) return null;
+    var v = last(id, s), c = card(id, s), dq = Math.max(dpOf(id), 1);
+    if (typeof v !== "number") return canon(id) === "SIG-013" && /^(Medium|High)/.test(String(v)) ? {c: String(v).split(" ")[0] + " pressure", sev: /^High/.test(v) ? 2 : 1} : null;
+    if (c && c.v != null && !/\d/.test(String(c.v))) return null;                        // e.g. "Not expected"
+    if (k.target != null) {
+      var gap = v - k.target, tol = Math.abs(k.target) * TOL;
+      var bad = k.better === "down" ? gap > tol : gap < -tol; if (!bad) return null;
+      var du = dUnit(id); if (Math.abs(gap) === 1) du = du.replace(/([a-z])s$/, "$1");
+      return {c: sgn(gap, isPct(id) ? 1 : dpOf(id)) + du + " vs target", sev: Math.abs(gap) / (Math.abs(k.target) || 1)};
+    }
+    if (!k.better) return null;
+    var p = prev(id, s), med = median(peers), down = k.better === "down";
+    if (num(p) && p !== 0) { var rel = (v - p) / Math.abs(p); if (down ? rel >= MOVE : rel <= -MOVE) return {c: (rel > 0 ? "+" : "−") + Math.round(Math.abs(rel) * 100) + "% vs Aug", sev: Math.abs(rel)}; }
+    if (!SIZE[canon(id)] && num(med) && med !== 0) { var r2 = (v - med) / Math.abs(med); if (down ? r2 >= PEER : r2 <= -PEER) return {c: (down ? (v / med).toFixed(1) + "× plant median" : Math.round(Math.abs(r2) * 100) + "% below median"), sev: Math.abs(r2)}; }
+    return null;
+  }
+  function variations(id, scope) {
+    if (!init()) return null; var k = K(id); if (!k || !k.val) return null;
+    var ps = plantsOf(scope || "Group").filter(function (s) { return k.val[s]; }); if (!ps.length) return null;
+    var peers = ps.map(function (s) { return last(id, s); }).filter(num);
+    var out = ps.map(function (s) { var x = varOf(id, s, peers); return x && {s: s, pl: sn(s), ent: entityOf(s), id: canon(id) === id ? id : id, v: show(id, s).replace(/ (% of plan|% late|% weighted)$/, "%"), tr: trendTxt(id, s), c: x.c, sev: x.sev}; }).filter(Boolean);
+    out.sort(function (a, b) { return b.sev - a.sev; });
+    return {rows: out, of: ps.length};
+  }
+  function attachGroup(c, scope) {
+    if (!init() || !c) return;
+    c.noInfo = true; delete c.href;                       // stand-alone cards, as in the Entity lens
+    var id = c.id || "";
+    if (!/^[A-Z]{3}-\d{3}$/.test(id) || c.pending) return;
+    scope = /^(A\d|Group)$/.test(scope || "") ? scope : "Group";
+    var vid = id, vr = variations(id, scope);
+    if (!vr && DRIVER[id]) { vid = DRIVER[id]; vr = variations(vid, scope); }
+    c.fb = "";
+    if (!vr) { c.hasPl = false; c.plN = "Booked at entity level; no plant split."; c.hasPlN = true; return; }
+    var lbl = vid === id ? "" : " · " + nameOf(vid);
+    if (!vr.rows.length) { c.hasPl = false; c.plN = "No plant variation" + lbl.replace(" · ", " on ") + ": all " + vr.of + " plants within target or normal range."; c.hasPlN = true; return; }
+    c.hasPl = true;
+    c.plT = "Plants with a variation" + lbl + " · Sep";
+    c.plH = "vs target / trend";
+    c.plRows = vr.rows.map(function (x, i) { return {pl: x.pl + " (P" + x.s.slice(-2) + ")", v: x.v, tr: "", c: x.c.replace(/ vs target$/, ""), fw: i === 0 ? "600" : "400", vc: "var(--ct-red-700,#A4262C)", cc: "var(--ct-red-700,#A4262C)"}; });
+    var byE = {}; vr.rows.forEach(function (x) { (byE[x.ent] = byE[x.ent] || []).push(x.pl.replace("Plant ", "")); });
+    c.plN = vr.rows.length + " of " + vr.of + " plants " + (vr.rows.length === 1 ? "varies" : "vary") + (vid === id ? "" : " on the driver (" + vid + ")") + ": " +
+      Object.keys(byE).sort().map(function (e) { return sn(e) + " plant" + (byE[e].length > 1 ? "s " : " ") + byE[e].join(", "); }).join(" · ") + ". Plant detail is in the Entity lens.";
+    c.hasPlN = true; c.hasRoot = false;
+  }
+  return {attach: attach, attachGroup: attachGroup, variations: variations, plantRows: function (id) { return init() ? plantRows(id) : null; }, rootIds: function () { return Object.keys(ROOT); }};
 })();

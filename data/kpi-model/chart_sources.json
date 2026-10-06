@@ -2,6 +2,12 @@
  "_about": "How every graph on the screens gets its numbers. Matched in order on the graph title (first match wins). source: live = filled from the model when the page renders; model = calculated from the model by sync_pages.py; scaled = total matches the model, split hand-set; illustrative = shape only, at model scale; layout = not KPI data. Shown on the KPI Reference page (R-01).",
  "rules": [
   {
+   "match": "by entity · per month",
+   "source": "live",
+   "from": "The KPI's monthly values for Entity A1, Entity A2 and Group (model-bound multi, kpi)",
+   "note": "Core Group sub-themes (2026-10-06)."
+  },
+  {
    "match": "EBITDA by month · Entity A1",
    "source": "model",
    "from": "Monthly change in FIN-001 EBITDA YTD; margin = EBITDA ÷ monthly revenue (FIN-003)",

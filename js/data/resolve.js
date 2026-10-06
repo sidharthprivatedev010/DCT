@@ -74,6 +74,7 @@ var DCTResolve = (function () {
   var KTOK = /(?<![-\w])([A-Z]{3}-\d{3})\b/g, PTOK = /\bPlant (\d\d)\b(?! \(P)/g, IDSTART = /^\s*(?:[▼▲✓■◆◇#]\s*)?([A-Z]{3}-\d{3}\b|Plant \d\d\b|Entity A\d\b|Group\b)/;
   function kname(id) { var P = PM(), k = P && P.kpi[canon(id)]; return k ? k.name.replace(/\s*\(same measure as [A-Z]{3}-\d{3}\)/, "") : ""; }
   function nameCodes(t, paired) {
+    t = t.replace(/\bPlant (\d\d) \((A\d)\)/g, "Plant $1 (P$1) · Entity $2 ($2)");    // watchlist "Plant 02 (A1)"
     t = t.replace(PTOK, function (m, n) { return m + " (P" + n + ")"; });
     if (paired) return t;
     return t.replace(KTOK, function (m, id, off, all) {
@@ -156,6 +157,21 @@ var DCTResolve = (function () {
     return {v: lastVal(k, scope), t: mark + fmtV(k, lastVal(k, scope)) + (k.unit && !/^%/.test(k.unit) ? " " + k.unit : (/^%/.test(k.unit) ? "%" : "")), raw: fmtV(k, lastVal(k, scope)) + (k.unit ? " " + k.unit : "")};
   }
   function fillModel(p, b) {
+    /* kvar [KPI IDs]: lists only the plants with a variation on those KPIs (DCTEntityCards.variations), at the block's
+       scope (default Group). Used by Core Group sub-themes; plant detail and root causes stay in the Entity lens. */
+    if (b.type === "table" && b.kvar && typeof DCTEntityCards !== "undefined") {
+      var Pv = PM(), sc0 = b.scope || "Group", out = [], order = [];
+      b.kvar.forEach(function (id) { var r = DCTEntityCards.variations(id, sc0); if (!r) return;
+        r.rows.forEach(function (x) { if (order.indexOf(x.s) < 0) order.push(x.s); out.push({s: x.s, sev: x.sev, c: [x.pl, Pv.scopes[x.ent] || x.ent, id + " " + Pv.kpi[canon(id)].name.replace(/\s*\(same measure as [A-Z]{3}-\d{3}\)/, ""), x.v, x.c]}); }); });
+      var worst = {}; out.forEach(function (x) { worst[x.s] = Math.max(worst[x.s] || 0, x.sev); });
+      order.sort(function (a, c) { return worst[c] - worst[a]; });      // plant with the largest variation first
+      out.sort(function (a, c) { return order.indexOf(a.s) - order.indexOf(c.s) || c.sev - a.sev; });
+      b.cols = ["Plant", "Entity", "KPI", "Sep value", "Variation"];
+      b.rows = out.map(function (x) { return {c: x.c}; });
+      b.plantOk = true; b.minW = b.minW || 820;
+      b.empty = "No plant shows a variation on these measures: all within target or normal range.";
+      b.cap = b.cap || "Only plants with a variation are listed: off target by more than 2%, or a 10%+ adverse move vs Aug, or 25%+ worse than the plant median. Plant detail and root causes are in the Entity lens.";
+    }
     if (b.type === "table" && b.kcols) {
       var cols = b.cols || [];
       (b.rows || []).forEach(function (row) {
@@ -264,7 +280,7 @@ var DCTResolve = (function () {
   var PLANT = /\bPlant ?0?\d\d?\b/;
   function capOwner(o) {
     if (Array.isArray(o)) { o.forEach(capOwner); return; }
-    if (!o || typeof o !== "object" || o.type === "watchlist") return;
+    if (!o || typeof o !== "object" || o.type === "watchlist" || o.plantOk) return;   // plantOk: plant-variation content allowed in Core Group
     var named = function (x) { return PLANT.test(typeof x === "string" ? x : JSON.stringify(x == null ? "" : x)); };
     if (o.type === "table" && Array.isArray(o.rows)) o.rows = o.rows.filter(function (r) { var a = Array.isArray(r) ? r : (r && r.c) || []; return !named(a[0]) && !named(a[1]); });
     if (o.type === "bars" && Array.isArray(o.rows)) o.rows = o.rows.filter(function (r) { return !named(r.l); });
@@ -489,6 +505,8 @@ var DCTResolve = (function () {
     });
     // Entity lens: every card is stand-alone (no links) and shows how Entity A1's value is built from its plants (js/data/entity-cards.js)
     if (p.lens === "Entity") cards.forEach(function (k) { if (typeof DCTEntityCards !== "undefined") DCTEntityCards.attach(k, ID.test(k.id || "") ? cardScope(p, k) : null); else { k.noInfo = true; delete k.href; } });
+    // Core Group: stand-alone cards with only the plants that show a variation (no root cause)
+    if (p.lens === "Core Group") cards.forEach(function (k) { if (typeof DCTEntityCards !== "undefined") DCTEntityCards.attachGroup(k, ID.test(k.id || "") ? cardScope(p, k) : null); else { k.noInfo = true; delete k.href; } });
     // Trust header "N of M cards certified …" is recomputed from the cards actually shown
     if (/^\d+ of \d+ cards certified/.test(p.trust || "") && (p.kpis || []).length) {
       var ks = p.kpis.filter(function (k) { return ID.test(k.id || ""); }), cert = ks.filter(function (k) { return /^Certified/.test(k.ts || ""); });
@@ -527,7 +545,7 @@ var DCTResolve = (function () {
     withCodes(p);               // 1D / MANIFEST03 G1, all personas: entity name with its code (last, so scope detection is unaffected)
     noSystemCount(p);           // "System count" trust label is not shown anywhere
     noKpiLinks(p);              // MANIFEST03 G2: a KPI never links to another KPI, screen or section
-    if (p.lens === "Entity") labelTables(p);   // every code in a table carries its name; identifiers semi-bold
+    if (p.lens === "Entity" || p.lens === "Core Group") labelTables(p);   // every code in a table carries its name; identifiers semi-bold
     pruneCols(p);
     return p;
   };

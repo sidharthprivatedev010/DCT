@@ -91,6 +91,11 @@ Run `node tools/regen.js`. It re-renders every page's static HTML and bumps the 
 - Tables (Entity lens, `labelTables()` in resolve.js): plants show as "Plant 02 (P02)", bare KPI codes get their model name, and the identifying cells in the first three columns are semi-bold (cell flag `b`).
 - Check: `node tools/check_entity.js` (`--dump` prints every card's text), also run by `tools/check_all.js`.
 
+## Core Group lens: plants with a variation
+
+- Core Group cards and sub-themes show **only plants with a variation** (rule in `DCTEntityCards.variations`, js/data/entity-cards.js), with no root cause; full plant detail is the Entity lens. Cards use `attachGroup`; the existing justifications (core-group-verdicts.js) stay.
+- A table with `kvar: [KPI IDs]` is filled with the plants that vary on those KPIs. Blocks with plant content must carry `plantOk: true`, or the Core Group cap (`capOwner`) strips plant rows and `check_core_group.js` fails.
+
 ## Sidebar
 
 `NAV` + `MAP` in each template. The order follows `mockup_v2` (`/Users/satyajit/Desktop/DCT/mockup_v2/`): Home, Enterprise Overview, Data Assurance, Early Warning, Cash & Liquidity, Operational Performance, Capital Projects, Risk Compliance & EHS, Actions & Escalations, AI Insights.
