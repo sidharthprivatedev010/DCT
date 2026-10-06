@@ -51,7 +51,7 @@ class Component extends DCLogic {
     const blocks = [];
     let bi = 0;
     const TB = this.ptabs(p, st);
-    const add = function (raw, slot, focal) { if (TB && !(raw = TB.keep(raw))) return; blocks.push(self.blk(raw, slot, bi++, focal)); if (TB) blocks[blocks.length - 1].rk = TB.rk; };
+    const add = function (raw, slot, focal) { if (raw && (raw.title === "Source, certification, lineage, case and evidence" || raw.title === "Drill into the contribution")) return; if (TB && !(raw = TB.keep(raw))) return; blocks.push(self.blk(raw, slot, bi++, focal)); if (TB) blocks[blocks.length - 1].rk = TB.rk; };
     if (TB) { delete p.drill; delete p.sections; delete p.access; blocks.push(self.blk(TB.bar, "Page tabs", bi++, false)); }
     ORDER.forEach(function (o) {
       const key = o[0], label = o[1];
