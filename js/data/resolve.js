@@ -5,6 +5,8 @@ var DCTResolve = (function () {
   var ID = /^[A-Z]{2,4}-\d{3}$/;
   var BIZ = {"On track": "✓ On track", "Improving": "▲ Improving", "Declining": "▼ Declining", "Intervention required": "■ Intervention required", "Breached": "■ Breached", "Forecast breach": "◇ Forecast breach", "—": "—"};
   var TRUST = {"Certified": ["◆ Certified", "◆"], "Certified with exception": ["◆ Certified · exception", "◆"], "Pending certification": ["◇ Pending certification", "◇"], "Reconciliation break": ["⊘ Reconciliation break", "⊘"], "System count": ["# System count", "#"], "Stale": ["◇ Stale", "◇"], "Missing": ["— Missing", "—"], "Restricted": ["Restricted", "—"]};
+  /* "Certified" is the default, so it is only spelled out on the certification pages (E-08, G-08). */
+  var CERTPG = /^(E-08|G-08)/;
   var CARD = ["v", "u", "plan", "var", "tr", "fc", "bs", "ts", "prov", "cf", "cfWhy", "sp", "spp", "spx", "fb", "own"];
 
   function baseScope(p) { return p.lens === "Entity" || /Entity A1/.test(p.scope || "") ? "A1" : "Group"; }
@@ -88,7 +90,7 @@ var DCTResolve = (function () {
         else if (/^Plan · variance$/.test(h)) set = r.plan != null ? r.plan + (r["var"] ? " · " + r["var"] : "") : null;
         else if (/^(Plan|Target)$/.test(h)) set = r.plan != null ? r.plan : null;
         else if (/^(Status|Business status)$/.test(h)) set = r.bs ? (BIZ[r.bs] || r.bs) : null;
-        else if (/^Trust$/.test(h)) set = r.ts ? (TRUST[r.ts] || [r.ts, r.ts])[b.trustShort ? 1 : 0] : null;
+        else if (/^Trust$/.test(h)) set = r.ts === "Certified" && !CERTPG.test(p.rid || "") ? "" : r.ts ? (TRUST[r.ts] || [r.ts, r.ts])[b.trustShort ? 1 : 0] : null;
         if (set == null) return;
         if (a[i] && typeof a[i] === "object") a[i] = Object.assign({}, a[i], {t: set}); else a[i] = set;
       });
