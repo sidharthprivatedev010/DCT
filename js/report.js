@@ -1,6 +1,7 @@
 /* Download report: builds a PDF for the signed-in persona (Owner, Core Group, Entity) from the same data the pages show.
    Loaded on first click of the header "Download report" button (TplA–TplF). Uses jsPDF + autoTable from js/vendor/.
-   Content: the lens home page (strip, headline KPIs, forecast, actions, resolved through DCTResolve) and a scorecard from
+   Owner: a two-page portrait brief, chart-led (MANIFEST04 §7.1, buildOwner). Core Group and Entity, for now:
+   the lens home page (strip, headline KPIs, forecast, actions, resolved through DCTResolve) and a scorecard from
    DCTData (js/data/base-data.js): Owner = Group, Core Group = Group vs Entity A1 / A2, Entity = Entity A1 and its plants. */
 var DCTReport = (function () {
   "use strict";
@@ -32,8 +33,9 @@ var DCTReport = (function () {
     });
   }
   function libs() {
-    if (window.jspdf && window.jspdf.jsPDF && window.jspdf.jsPDF.API.autoTable) return Promise.resolve();
-    return load("js/vendor/jspdf.umd.min.js").then(function () { return load("js/vendor/jspdf.plugin.autotable.min.js"); });
+    if (window.jspdf && window.jspdf.jsPDF && window.jspdf.jsPDF.API.autoTable && window.DCTReportFonts) return Promise.resolve();
+    return load("js/vendor/jspdf.umd.min.js").then(function () { return load("js/vendor/jspdf.plugin.autotable.min.js"); })
+      .then(function () { return window.DCTReportFonts ? null : load("js/vendor/report-fonts.js").catch(function () { return null; }); });   // optional: Helvetica fallback
   }
   // Loads the lens home page data file and returns its page JSON, resolved from base-data like the page itself.
   function homePage(name) {
@@ -221,6 +223,283 @@ var DCTReport = (function () {
     doc.save("Control-Tower-" + cfg.file + "-Report-" + d + ".pdf");
   }
 
+
+  /* ---------- Owner brief (MANIFEST04 §6, §7.1): A4 portrait, chart-led, entity level only ---------- */
+  var HEX = function (h) { return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; };
+  var SC = {A1: HEX("#2a78d6"), A2: HEX("#eb6834"), Group: HEX("#52514e")};
+  var ST = {"On track": HEX("#15803d"), "Improving": HEX("#1d63c4"), "Declining": HEX("#c2700e"), "Intervention required": HEX("#be2020"), "Breached": HEX("#be2020"), "Forecast breach": HEX("#7c3aed")};
+  var TGT = HEX("#898781"), GRID = [230, 232, 236], PANEL = [221, 225, 231], SOFT = [244, 245, 248], SUBT = [110, 116, 128];
+  var OWNER = [
+    {t: "Enterprise health and data assurance", s: "Health and data assurance", k: ["TRU-001", "TRU-007", "TRU-006", "FIN-003", "FIN-001", "FIN-005"]},
+    {t: "Early warning", s: "Early warning", k: ["PRD-003", "PRD-002"]},
+    {t: "Cash and liquidity", s: "Cash and liquidity", k: ["FIN-004", "FIN-008", "FIN-006", "LIQ-002", "LIQ-001"], page: true},
+    {t: "Operational performance", s: "Operational performance", k: ["OPS-001", "OPS-002", "CST-001", "EHS-001"]}
+  ];
+  // Short names for the bottom line; anything else uses the model name.
+  var SHORT = {"PRD-003": "Projected EBITDA gap", "PRD-002": "Plan-miss probability", "TRU-001": "Numbers certified", "FIN-005": "ROCE", "FIN-008": "FCF conversion", "LIQ-002": "Covenant headroom", "OPS-001": "Production vs plan", "OPS-002": "Sales vs plan", "CST-001": "Cost per tonne", "EHS-001": "Safety (TRIR)"};
+
+  function buildOwner(cfg, page) {
+    var jsPDF = window.jspdf.jsPDF, doc = new jsPDF({orientation: "portrait", unit: "pt", format: "a4"});
+    var F = "helvetica", rich = false;
+    if (window.DCTReportFonts && DCTReportFonts.regular) {
+      try {
+        doc.addFileToVFS("Plex-R.ttf", DCTReportFonts.regular); doc.addFont("Plex-R.ttf", "Plex", "normal");
+        doc.addFileToVFS("Plex-B.ttf", DCTReportFonts.bold); doc.addFont("Plex-B.ttf", "Plex", "bold");
+        F = "Plex"; rich = true;
+      } catch (e) { F = "helvetica"; rich = false; }
+    }
+    // With the Plex subset ₹ − ≤ ≥ ↑ ↓ print as they are; with Helvetica they fall back to clean().
+    var tx = function (s) { s = String(s == null ? "" : s).replace(/▲/g, "↑").replace(/▼/g, "↓").replace(/\s+/g, " ").trim(); return rich ? s.replace(/[^\x00-\xFF₹−–—≤≥←↑→↓‘’“”•…×÷≈]/g, "") : clean(s.replace(/↑/g, "up").replace(/↓/g, "down")); };
+    var W = doc.internal.pageSize.getWidth(), H = doc.internal.pageSize.getHeight(), M = 32, CW = W - 2 * M, y;
+    var now = new Date(), P = DCTData.plant, S = P.scopes;
+    var per = String(P.periodL || "").replace(/\s*\((?:SYN,\s*)?([^)]*)\)/, " · $1");
+    var scopeL = ["Group", "A1", "A2"].map(function (s) { return S[s] || s; }).join(" · ");
+    var gen = "Generated " + now.getDate() + " " + now.toLocaleString("en-GB", {month: "short"}) + " " + now.getFullYear() + ", " + ("0" + now.getHours()).slice(-2) + ":" + ("0" + now.getMinutes()).slice(-2);
+    var font = function (b, sz, c) { doc.setFont(F, b ? "bold" : "normal"); doc.setFontSize(sz); doc.setTextColor.apply(doc, c || INK); };
+    var R = function (id, s) { return rec(id, s || "Group"); };
+    var bad = function (r) { return !!r && BAD.test(r.bs || ""); };
+    var col = function (r) { return (r && ST[r.bs]) || MUTED; };
+    var K = function (id) { return P.kpi[id] || {}; };
+
+    // Value text from a record: "₹13,811.3 m", "−₹48.5 m", "82.1%", "₹2,853", "16.7 months"; split into [big, unit].
+    function parts(r) {
+      if (!r) return ["—", ""];
+      var v = String(r.v == null ? r.val : r.v), u = r.u || "", neg = /^[-−]/.test(v); v = v.replace(/^[-−]/, "");
+      var sg = neg ? "−" : "";
+      if (/^₹\/t$/.test(u)) return [sg + "₹" + v, ""];
+      if (/^₹ ?/.test(u)) return [sg + "₹" + v, u.replace(/^₹ ?/, "")];
+      if (/^%/.test(u)) return [sg + v + "%", u.replace(/^%\s*/, "")];
+      return [sg + v, u];
+    }
+    var vtxt = function (r) { var p = parts(r); return p[0] + (p[1] ? " " + p[1] : ""); };
+    // Every status carries its number: variance to target where a target exists (zero ₹ targets count as none), else the change since P05.
+    function why(r) {
+      if (!r) return "";
+      var tgt = r.plan && r.plan !== "—" && !/^[≥≤]\s*0(\.0+)?\s*₹/.test(r.plan);
+      return tgt && r["var"] && r["var"] !== "—" ? r["var"] + " vs target" : (r.tr && r.tr !== "—" && r.tr !== "flat" ? r.tr : "");
+    }
+    var statL = function (r) { return r ? (r.bs || "") + (why(r) ? " · " + why(r) : "") : ""; };
+    function tally(sec) { var n = sec.k.filter(function (id) { return bad(R(id)); }).length; return {n: n, m: sec.k.length, c: sec.k.some(function (id) { return /Interv|Breach/.test((R(id) || {}).bs || ""); }) ? ST["Intervention required"] : n ? ST["Declining"] : ST["On track"]}; }
+
+    function band(first) {
+      doc.setFillColor.apply(doc, NAVY);
+      if (first) {
+        doc.rect(0, 0, W, 74, "F");
+        font(false, 8, [196, 205, 222]); doc.setCharSpace(1.2); doc.text("CONTROL TOWER", M, 22); doc.setCharSpace(0);
+        font(true, 20, [255, 255, 255]); doc.text("Owner brief", M, 46);
+        font(false, 9.5, [226, 232, 242]); doc.text(tx(scopeL + " · " + per), M, 62);
+        font(true, 7.5, [255, 255, 255]); doc.setCharSpace(0.8); doc.text("SYNTHETIC DATA", W - M, 22, {align: "right"}); doc.setCharSpace(0);
+        font(false, 8, [196, 205, 222]); doc.text(gen, W - M, 62, {align: "right"});
+        y = 92;
+      } else {
+        doc.rect(0, 0, W, 30, "F");
+        font(true, 9.5, [255, 255, 255]); doc.text("Owner brief", M, 19);
+        font(false, 8, [210, 218, 232]); doc.text(tx(scopeL + " · " + per), W - M, 19, {align: "right"});
+        y = 50;
+      }
+    }
+    function newPage() { doc.addPage(); band(false); }
+    function need(h) { if (y + h > H - 44) newPage(); }
+    function caps(t, x, yy) { font(true, 7.5, [72, 80, 96]); doc.setCharSpace(0.9); doc.text(tx(t.toUpperCase()), x, yy); doc.setCharSpace(0); }
+    function tallyT(t) { return t.n ? t.n + " of " + t.m + " need attention" : "All " + t.m + " on target or improving"; }
+
+    function scorecard() {
+      caps("Scorecard · measures off target or declining", M, y); y += 9;
+      var n = OWNER.length, g = 8, w = (CW - g * (n - 1)) / n;
+      OWNER.forEach(function (sec, i) {
+        var x = M + i * (w + g), t = tally(sec);
+        doc.setDrawColor.apply(doc, PANEL); doc.setLineWidth(0.6); doc.setFillColor(255, 255, 255); doc.roundedRect(x, y, w, 40, 2, 2, "FD");
+        doc.setFillColor.apply(doc, t.c); doc.rect(x, y, 2.5, 40, "F");
+        font(false, 7.5, SUBT); doc.text(tx(sec.s), x + 10, y + 13);
+        font(true, 13, t.c); var a = t.n + " of " + t.m; doc.text(a, x + 10, y + 31);
+        font(false, 7, SUBT); doc.text(w < 120 ? "off target" : "need attention", x + 14 + doc.getStringUnitWidth(a) * 13 / doc.internal.scaleFactor, y + 30.5);
+      });
+      y += 52;
+    }
+    function section(i, sec) {
+      need(90);
+      var t = tally(sec);
+      doc.setFillColor.apply(doc, NAVY); doc.circle(M + 9, y + 2, 9, "F");
+      font(true, 9, [255, 255, 255]); doc.text(String(i + 1), M + 9, y + 5.2, {align: "center"});
+      font(true, 14, INK); doc.text(tx(sec.t), M + 26, y + 7);
+      font(true, 8, t.c); doc.text(tallyT(t), W - M, y + 6, {align: "right"});
+      doc.setDrawColor.apply(doc, PANEL); doc.setLineWidth(0.6); doc.line(M, y + 15, W - M, y + 15);
+      y += 30;
+    }
+    function panel(x, yy, w, h, title, sub) {
+      doc.setDrawColor.apply(doc, PANEL); doc.setLineWidth(0.6); doc.setFillColor(255, 255, 255); doc.roundedRect(x, yy, w, h, 3, 3, "FD");
+      font(true, 9, INK); doc.text(tx(title), x + 10, yy + 16);
+      if (sub) { font(false, 7, SUBT); doc.text(tx(sub), x + 10, yy + 27); }
+    }
+    function legend(x, yy, items) {
+      items.forEach(function (it) {
+        doc.setDrawColor.apply(doc, it.c); doc.setLineWidth(it.dash ? 0.8 : 2);
+        if (it.dash) doc.setLineDashPattern([2.5, 2], 0); doc.line(x, yy - 2.5, x + 12, yy - 2.5); doc.setLineDashPattern([], 0);
+        font(false, 7, SUBT); doc.text(tx(it.l), x + 16, yy); x += 22 + doc.getStringUnitWidth(tx(it.l)) * 7 / doc.internal.scaleFactor + 10;
+      });
+    }
+    function ticks(lo, hi) {
+      var span = hi - lo || Math.abs(hi) || 1, raw = span / 4, mag = Math.pow(10, Math.floor(Math.log10(raw))), st = [1, 2, 2.5, 5, 10].map(function (m) { return m * mag; }).filter(function (s) { return s >= raw; })[0];
+      var a = Math.floor(lo / st) * st, b = Math.ceil(hi / st) * st, out = []; for (var v = a; v <= b + st / 2; v += st) out.push(+v.toFixed(6)); return out;
+    }
+    var tickL = function (v) { return (v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-US", {maximumFractionDigits: 2}); };
+    // Line chart: one y-axis, recessive grid, 1.5 pt lines, end dot + direct label (nudged ≥ 9 pt apart), dashed target.
+    function lineChart(x, yy, w, h, series, target, fmt) {
+      var all = []; series.forEach(function (s) { all = all.concat(s.v); }); if (target != null) all.push(target);
+      var tk = ticks(Math.min.apply(null, all), Math.max.apply(null, all)), lo = tk[0], hi = tk[tk.length - 1];
+      var px = x + 24, pw = w - 24 - 52, n = series[0].v.length;
+      var X = function (i) { return px + pw * i / (n - 1); }, Y = function (v) { return yy + h - h * (v - lo) / (hi - lo); };
+      tk.forEach(function (t) { doc.setDrawColor.apply(doc, GRID); doc.setLineWidth(0.4); doc.line(px, Y(t), px + pw, Y(t)); font(false, 6.5, SUBT); doc.text(tickL(t), px - 5, Y(t) + 2.2, {align: "right"}); });
+      P.x.forEach(function (l, i) { font(false, 6.5, SUBT); doc.text(l, X(i), yy + h + 10, {align: "center"}); });
+      if (target != null) { doc.setDrawColor.apply(doc, TGT); doc.setLineWidth(0.7); doc.setLineDashPattern([3, 2], 0); doc.line(px, Y(target), px + pw, Y(target)); doc.setLineDashPattern([], 0); }
+      var ends = series.map(function (s) {
+        doc.setDrawColor.apply(doc, s.c); doc.setLineWidth(1.5);
+        for (var i = 1; i < n; i++) doc.line(X(i - 1), Y(s.v[i - 1]), X(i), Y(s.v[i]));
+        doc.setFillColor.apply(doc, s.c); doc.circle(X(n - 1), Y(s.v[n - 1]), 2.3, "F");
+        return {y: Y(s.v[n - 1]), t: fmt(s.v[n - 1])};
+      });
+      ends.sort(function (a, b) { return a.y - b.y; });
+      for (var j = 1; j < ends.length; j++) if (ends[j].y - ends[j - 1].y < 9) ends[j].y = ends[j - 1].y + 9;
+      ends.forEach(function (e) { font(true, 7.5, INK); doc.text(tx(e.t), px + pw + 7, e.y + 2.5); });
+    }
+    // Stacked monthly bars (YTD series differenced), segments in series order with a surface gap, total on the last bar.
+    function stackChart(x, yy, w, h, series, fmt) {
+      var n = series[0].v.length, tot = []; for (var i = 0; i < n; i++) tot.push(series.reduce(function (a, s) { return a + s.v[i]; }, 0));
+      var tk = ticks(0, Math.max.apply(null, tot)), hi = tk[tk.length - 1], px = x + 24, pw = w - 34, bw = pw / n * 0.62;
+      var Y = function (v) { return yy + h - h * v / hi; };
+      tk.forEach(function (t) { doc.setDrawColor.apply(doc, GRID); doc.setLineWidth(0.4); doc.line(px, Y(t), px + pw, Y(t)); font(false, 6.5, SUBT); doc.text(tickL(t), px - 5, Y(t) + 2.2, {align: "right"}); });
+      for (i = 0; i < n; i++) {
+        var cx = px + pw * (i + 0.5) / n, base = 0;
+        series.forEach(function (s, si) {
+          var v = Math.max(0, s.v[i]), y0 = Y(base), y1 = Y(base + v); doc.setFillColor.apply(doc, s.c);
+          if (si === series.length - 1) doc.roundedRect(cx - bw / 2, y1, bw, Math.max(0.5, y0 - y1 - 0.8), 1.5, 1.5, "F"); else doc.rect(cx - bw / 2, y1 + 0.8, bw, Math.max(0.5, y0 - y1 - 0.8), "F");
+          base += v;
+        });
+        font(false, 6.5, SUBT); doc.text(P.x[i], cx, yy + h + 10, {align: "center"});
+      }
+      font(true, 7.5, INK); doc.text(tx(fmt(tot[n - 1])), px + pw * (n - 0.5) / n, Y(tot[n - 1]) - 4, {align: "center"});
+    }
+    // Horizontal bars, one per scope from zero; value at the bar end; optional dashed target.
+    function hbars(x, yy, w, ids, id, target, targetL) {
+      var rows = ids.map(function (s) { var r = R(id, s); return {s: s, r: r, v: parseFloat(String(r.v).replace(/,/g, "").replace("−", "-"))}; });
+      var vals = rows.map(function (r) { return r.v; }).concat(target != null ? [target] : []);
+      var mx = Math.max(0, Math.max.apply(null, vals)), mn = Math.min(0, Math.min.apply(null, vals)), lx = x + 62 + (mn < 0 ? 40 : 0), lw = w - 62 - 46 - (mn < 0 ? 40 : 0);
+      var X = function (v) { return lx + lw * (v - mn) / ((mx - mn) || 1); }, z = X(0), rh = 20;
+      if (target != null) { font(false, 6.5, SUBT); doc.text(tx(targetL), X(target), yy - 2, {align: "center"}); }
+      rows.forEach(function (r, i) {
+        var cy = yy + 6 + i * rh, a = X(Math.min(0, r.v)), b = X(Math.max(0, r.v));
+        font(false, 7.5, INK); doc.text(tx(S[r.s] || r.s), x, cy + 7);
+        doc.setFillColor.apply(doc, SC[r.s]); doc.roundedRect(a, cy, Math.max(1, b - a), 10, 1.5, 1.5, "F");
+        font(true, 7.5, INK); var t = tx(vtxt(r.r));
+        if (r.v < 0) doc.text(t, a - 4, cy + 7.5, {align: "right"}); else doc.text(t, b + 4, cy + 7.5);
+      });
+      doc.setDrawColor.apply(doc, [190, 194, 202]); doc.setLineWidth(0.6); doc.line(z, yy + 2, z, yy + 8 + ids.length * rh - 6);
+      if (target != null) { doc.setDrawColor.apply(doc, TGT); doc.setLineWidth(0.7); doc.setLineDashPattern([2.5, 2], 0); doc.line(X(target), yy + 1, X(target), yy + 4 + ids.length * rh); doc.setLineDashPattern([], 0); }
+      return ids.length * rh + 10;
+    }
+    // Key figure: label, big value + unit, child values with status dots, status · number line.
+    function keyFig(x, yy, w, id, label) {
+      var r = R(id), p = parts(r);
+      font(false, 7.5, SUBT); doc.text(tx(label), x, yy);
+      font(true, 15, INK); doc.text(tx(p[0]), x, yy + 18);
+      if (p[1]) { var bw = doc.getStringUnitWidth(tx(p[0])) * 15 / doc.internal.scaleFactor; font(false, 8.5, SUBT); doc.text(tx(p[1]), x + bw + 3, yy + 18); }
+      var cx = x;
+      ["A1", "A2"].forEach(function (s) { var c = R(id, s); doc.setFillColor.apply(doc, col(c)); doc.circle(cx + 2, yy + 28.5, 1.8, "F"); font(false, 7, INK); var t = tx(s + " " + vtxt(c)); doc.text(t, cx + 6, yy + 31); cx += 12 + doc.getStringUnitWidth(t) * 7 / doc.internal.scaleFactor; });
+      font(false, 7, col(r)); doc.text(tx(statL(r)), x, yy + 43);
+    }
+    function keyRow(items) {
+      need(56); var n = items.length, w = CW / n;
+      items.forEach(function (it, i) { var x = M + i * w; if (i) { doc.setDrawColor.apply(doc, PANEL); doc.setLineWidth(0.6); doc.line(x - 8, y - 6, x - 8, y + 44); } keyFig(x, y, w - 16, it[0], it[1]); });
+      y += 58;
+    }
+    var ser = function (id, s) { return (K(id).val || {})[s] || []; };
+    var diff = function (a) { return a.map(function (v, i) { return i ? v - a[i - 1] : v; }); };
+    var dp = function (id) { return K(id).dp == null ? 1 : K(id).dp; };
+    var num = function (v, d) { return (v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d}); };
+    var gw = (CW - 14) / 2, gx2 = M + gw + 14, Gs = function (id) { return "Group " + vtxt(R(id)); };
+
+    band(true);
+    scorecard();
+
+    // 1 · Enterprise health and data assurance
+    section(0, OWNER[0]);
+    caps("Data assurance · can we rely on the numbers?", M, y); y += 9;
+    var r1 = R("TRU-001");
+    panel(M, y, gw, 112, "Numbers certified", "% of leadership KPIs · " + statL(r1));
+    hbars(M + 10, y + 46, gw - 20, ["A1", "A2", "Group"], "TRU-001", K("TRU-001").target, "Target " + K("TRU-001").target + "%");
+    panel(gx2, y, gw, 112, "Open trust issues", "Count · target 0");
+    [["TRU-007", "Reconciliation breaks"], ["TRU-006", "Overdue certifications"]].forEach(function (it, i) { var x = gx2 + 10 + i * (gw - 20) / 2; if (i) { doc.setDrawColor.apply(doc, PANEL); doc.line(x - 8, y + 40, x - 8, y + 100); } keyFig(x, y + 48, (gw - 20) / 2 - 12, it[0], it[1]); });
+    y += 124;
+    caps("Enterprise health · profit and returns", M, y); y += 14;
+    keyRow([["FIN-003", "Revenue YTD"], ["FIN-001", "EBITDA YTD"], ["FIN-005", "ROCE (annualised)"]]);
+    need(150);
+    panel(M, y, gw, 140, "EBITDA by month", "₹ m · certified · entities stack to Group"); legend(M + 10, y + 38, [{l: S.A1, c: SC.A1}, {l: S.A2, c: SC.A2}]);
+    stackChart(M + 10, y + 50, gw - 20, 68, [{v: diff(ser("FIN-001", "A1")), c: SC.A1}, {v: diff(ser("FIN-001", "A2")), c: SC.A2}], function (v) { return "₹" + num(v, 1) + " m"; });
+    var r5 = R("FIN-005");
+    panel(gx2, y, gw, 140, "ROCE, annualised", "% · " + Gs("FIN-005") + " · " + why(r5)); legend(gx2 + 10, y + 38, [{l: S.A1, c: SC.A1}, {l: S.A2, c: SC.A2}, {l: "Target " + K("FIN-005").target + "%", c: TGT, dash: true}]);
+    lineChart(gx2 + 10, y + 52, gw - 20, 66, [{v: ser("FIN-005", "A1"), c: SC.A1}, {v: ser("FIN-005", "A2"), c: SC.A2}], K("FIN-005").target, function (v) { return num(v, dp("FIN-005")) + "%"; });
+    y += 156;
+
+    // 2 · Early warning
+    section(1, OWNER[1]); need(100);
+    panel(M, y, gw, 100, "Projected EBITDA gap, rest of year", "₹ m forecast · Group " + (R("PRD-003").tr || ""));
+    hbars(M + 10, y + 34, gw - 20, ["A1", "A2", "Group"], "PRD-003", null, "");
+    panel(gx2, y, gw, 100, "Chance of missing next month's plan", "% · model prediction · Group " + (R("PRD-002").tr || ""));
+    hbars(gx2 + 10, y + 34, gw - 20, ["A1", "A2", "Group"], "PRD-002", null, "");
+    y += 112;
+
+    // 3 · Cash and liquidity (starts a new page)
+    newPage(); section(2, OWNER[2]);
+    panel(M, y, gw, 128, "Free cash flow, year to date", "₹ m · " + Gs("FIN-004") + " · " + why(R("FIN-004"))); legend(M + 10, y + 38, [{l: S.A1, c: SC.A1}, {l: S.A2, c: SC.A2}]);
+    lineChart(M + 10, y + 50, gw - 20, 56, [{v: ser("FIN-004", "A1"), c: SC.A1}, {v: ser("FIN-004", "A2"), c: SC.A2}], null, function (v) { return "₹" + num(v, 1) + " m"; });
+    panel(gx2, y, gw, 128, "Covenant headroom", "% · " + Gs("LIQ-002") + " · " + why(R("LIQ-002"))); legend(gx2 + 10, y + 38, [{l: S.A1, c: SC.A1}, {l: S.A2, c: SC.A2}, {l: "Target " + K("LIQ-002").target + "%", c: TGT, dash: true}]);
+    lineChart(gx2 + 10, y + 50, gw - 20, 56, [{v: ser("LIQ-002", "A1"), c: SC.A1}, {v: ser("LIQ-002", "A2"), c: SC.A2}], K("LIQ-002").target, function (v) { return num(v, 1) + "%"; });
+    y += 146;
+    keyRow([["FIN-008", "FCF conversion"], ["FIN-006", "Net debt"], ["LIQ-001", "Liquidity runway"]]);
+    font(false, 7.5, SUBT); doc.text(tx("Forecast: liquidity gap in the next 90 days — " + vtxt(R("PRD-004")) + " · covenant breach — " + vtxt(R("PRD-005")) + "."), M, y); y += 20;
+
+    // 4 · Operational performance
+    section(3, OWNER[3]); need(140);
+    panel(M, y, gw, 124, "Production vs plan", "% of plan · " + Gs("OPS-001") + " · " + why(R("OPS-001"))); legend(M + 10, y + 38, [{l: S.A1, c: SC.A1}, {l: S.A2, c: SC.A2}, {l: "Plan " + K("OPS-001").target + "%", c: TGT, dash: true}]);
+    lineChart(M + 10, y + 50, gw - 20, 52, [{v: ser("OPS-001", "A1"), c: SC.A1}, {v: ser("OPS-001", "A2"), c: SC.A2}], K("OPS-001").target, function (v) { return num(v, 1) + "%"; });
+    panel(gx2, y, gw, 124, "Cost per tonne", "₹ per tonne · Group " + why(R("CST-001")));
+    hbars(gx2 + 10, y + 52, gw - 20, ["A1", "A2", "Group"], "CST-001", K("CST-001").target, "Target ₹" + num(K("CST-001").target, 0));
+    y += 140;
+    var half = CW / 2; need(56);
+    keyFig(M, y, half - 16, "OPS-002", "Sales vs plan"); doc.setDrawColor.apply(doc, PANEL); doc.line(M + half - 8, y - 6, M + half - 8, y + 44);
+    keyFig(M + half, y, half - 16, "EHS-001", "Safety (TRIR)"); y += 60;
+
+    // Bottom line: counts, the most material items per entity with their numbers, then the home-page banner (if any).
+    var ids = []; OWNER.forEach(function (s) { ids = ids.concat(s.k); });
+    var ok = ids.filter(function (id) { return !bad(R(id)); }).length;
+    var off = function (s) { return ids.filter(function (id) { return bad(R(id, s)); }); };
+    var lines = [{t: "Group: " + ok + " of " + ids.length + " headline measures are on target or improving. " + S.A1 + " is off target on " + off("A1").length + ", " + S.A2 + " on " + off("A2").length + "."}];
+    ["A1", "A2"].forEach(function (s) {
+      var o = off(s); if (!o.length) return;
+      var items = o.slice(0, 4).map(function (id) { var r = R(id, s); return (SHORT[id] || clean(K(id).name || id)) + " " + vtxt(r) + (why(r) ? " (" + why(r) + ")" : ""); });
+      lines.push({t: S[s] + ": " + items.join(" · ") + (o.length > 4 ? " · and " + (o.length - 4) + " more." : ".")});
+    });
+    if (page.banner && page.banner.t) lines.push({t: page.banner.t, red: true});
+    font(false, 9, INK);
+    var wrapped = lines.map(function (l) { return {l: doc.splitTextToSize(tx(l.t), CW - 30), red: l.red}; });
+    var bh = 30 + wrapped.reduce(function (a, w) { return a + w.l.length * 12 + (w.red ? 10 : 0); }, 0);
+    need(bh + 6);
+    doc.setFillColor.apply(doc, SOFT); doc.rect(M, y, CW, bh, "F"); doc.setFillColor.apply(doc, NAVY); doc.rect(M, y, 3, bh, "F");
+    caps("Bottom line", M + 16, y + 16); var yy = y + 30;
+    wrapped.forEach(function (w) { if (w.red) yy += 10; font(!!w.red, 9, w.red ? ST["Intervention required"] : INK); doc.text(w.l, M + 16, yy); yy += w.l.length * 12; });
+    y += bh + 10;
+
+    var n = doc.getNumberOfPages();
+    for (var i = 1; i <= n; i++) {
+      doc.setPage(i); font(false, 7, SUBT);
+      doc.text(tx("Control Tower · Owner brief · " + per + " · Values from the certified data set · Synthetic data, prototype only"), M, H - 18);
+      doc.text("Page " + i + " of " + n, W - M, H - 18, {align: "right"});
+    }
+    var d = now.getFullYear() + "-" + ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2);
+    doc.save("Control-Tower-" + cfg.file + "-Report-" + d + ".pdf");
+    return doc;
+  }
+
   var busy = false;
   function run(btn) {
     if (busy) return;
@@ -231,7 +510,7 @@ var DCTReport = (function () {
     var label = btn && btn.querySelector("[data-report-label]"), was = label && label.textContent;
     if (label) label.textContent = "Preparing…";
     if (btn) btn.setAttribute("aria-busy", "true");
-    libs().then(function () { return homePage(cfg.home); }).then(function (page) { build(cfg, page, lens); })
+    libs().then(function () { return homePage(cfg.home); }).then(function (page) { if (lens === "Owner") buildOwner(cfg, page); else build(cfg, page, lens); })
       .catch(function (e) { console.error(e); alert("The report could not be created: " + e.message); })
       .then(function () { busy = false; if (label) label.textContent = was; if (btn) btn.removeAttribute("aria-busy"); });
   }

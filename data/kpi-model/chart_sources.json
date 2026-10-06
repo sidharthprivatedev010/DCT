@@ -1,6 +1,7 @@
 {
   "_about": "How every graph on the screens gets its numbers. Matched in order on the graph title (first match wins). source: live = filled from the model when the page renders; model = calculated from the model by sync_pages.py; scaled = total matches the model, split hand-set; illustrative = shape only, at model scale; layout = not KPI data. Shown on the KPI Reference page (R-01).",
   "rules": [
+    {"match": "FX exposure vs hedge", "source": "model", "from": "Group Inputs fx_exposure_k and fx_hedged_k ÷ 1000, by month (P01–P06)", "note": "Gross exposure and hedged amount; unhedged = exposure − hedged (TRS-001)."},
     {"match": "EBITDA actual vs plan vs forecast", "source": "model", "from": "Group EBITDA by month (ebitda_k); P01–P06 actual, P07–P12 = rest-of-year plan and forecast ÷ 6 (PRD-003 inputs)", "note": "Plan to P06 equals actual: the model re-bases the plan on actuals."},
     {"match": "EBITDA margin → FCF conversion → ROCE", "source": "model", "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE", "note": "ROCE target 12% shown as the base line."},
     {"match": "EBITDA bridge · FY plan", "source": "scaled", "from": "FY plan = FIN-001 + planned rest of year; FY forecast = FIN-001 + forecast rest of year; gap = PRD-003", "note": "Split of the gap into volume, price, cost, fuel and FX is hand-set."},
@@ -31,12 +32,16 @@
     {"match": "Leakage by stage", "source": "scaled", "from": "Upstreaming = CSH-006", "note": "Billing, dispatch and collection leakage are hand-set."},
     {"match": "shortfall by line", "source": "scaled", "from": "Sum = SIG-007 Plant 02 (24.3 kt)", "note": "Split by line is hand-set."},
     {"match": "downtime by asset", "source": "scaled", "from": "Sum = REL-003 Plant 02 (78.2 h)", "note": "Split by asset is hand-set."},
-    {"match": "day-pair", "source": "illustrative", "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)", "note": "Daily curve and scenario options are hand-set."},
-    {"match": "daily production", "source": "illustrative", "from": "Plant 02 at model scale (plan 8.1 kt per day-pair)", "note": "Daily curve is hand-set."},
+    {"match": "day-pair", "source": "illustrative", "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)", "note": "Daily curve and scenario options are hand-set."},
+    {"match": "daily production", "source": "illustrative", "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair)", "note": "Daily curve is hand-set."},
     {"match": "flash vs MIS", "source": "illustrative", "from": "P07 flash story scaled to Entity A1's monthly output", "note": "P07 is outside the model (P01–P06)."},
     {"match": "Variance drivers vs plan", "source": "illustrative", "from": "P07 flash story scaled to Entity A1", "note": ""},
     {"match": "Materiality drivers", "source": "layout", "from": "Placeholder ratings (High / Medium / Low)", "note": "Thresholds pending approval (D-03)."},
     {"match": "Spend %", "source": "layout", "from": "Spend % minus physical progress % from the project table on the same page", "note": ""},
-    {"match": "Material cover", "source": "illustrative", "from": "Cover minus lead time per material", "note": "Not in the model; SIG-009 counts materials under 7 days' cover (a different measure)."}
+    {"match": "Material cover", "source": "illustrative", "from": "Cover minus lead time per material", "note": "Not in the model; SIG-009 counts materials under 7 days' cover (a different measure)."},
+    {"match": "DSO trend", "source": "live", "from": "WCP-001 Group by month (P01–P06)", "note": "Dashed line = the 45-day target from the model."},
+    {"match": "Net debt evolution", "source": "live", "from": "FIN-006 Group by month (P01–P06)", "note": "Month-end net debt from the Group building blocks."},
+    {"match": "Reliability trend · mean time to repair", "source": "live", "from": "REL-002 for Entity A1 and Entity A2 by month (P01–P06)", "note": "Recalculated per entity from repair hours ÷ breakdowns; dashed line = 6 h target."},
+    {"match": "Sustainability curve · emissions", "source": "live", "from": "SUS-002 for Entity A1 and Entity A2 by month (P01–P06)", "note": "Σ of plant emissions per entity."}
   ]
 }

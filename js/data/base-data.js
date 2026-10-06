@@ -22452,7 +22452,6 @@ var DCTData = {
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust",
      "P2-O01-EnterpriseHealth",
-     "P2-O02-ChangeReport",
      "P2-O09-Operations",
      "P2-S03-KPIDetail",
      "P2-S03e-KPIDetail",
@@ -22620,6 +22619,7 @@ var DCTData = {
      "P2-E02-Plants",
      "P2-G05-OpsBenchmark",
      "P2-O01-EnterpriseHealth",
+     "P2-O09-Operations",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -22936,7 +22936,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E02-Plants",
-     "P2-G05-OpsBenchmark"
+     "P2-G05-OpsBenchmark",
+     "P2-O09-Operations"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -24341,8 +24342,7 @@ var DCTData = {
     "screens": [
      "P2-E02-Plants",
      "P2-E11-Financial",
-     "P2-G03-Financial",
-     "P2-O09-Operations"
+     "P2-G03-Financial"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -24488,8 +24488,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
-     "P2-E02-Plants",
-     "P2-O09-Operations"
+     "P2-E02-Plants"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -24639,8 +24638,7 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G05-OpsBenchmark",
      "P2-G07-Risk",
-     "P2-O05-Risk",
-     "P2-O09-Operations"
+     "P2-O05-Risk"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -24790,8 +24788,7 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G05-OpsBenchmark",
      "P2-G07-Risk",
-     "P2-O05-Risk",
-     "P2-O09-Operations"
+     "P2-O05-Risk"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -24952,8 +24949,7 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G05-OpsBenchmark",
      "P2-G07-Risk",
-     "P2-O05-Risk",
-     "P2-O09-Operations"
+     "P2-O05-Risk"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -25402,7 +25398,6 @@ var DCTData = {
      "P2-E01-EntityHome",
      "P2-E04-Supply",
      "P2-O02-ChangeReport",
-     "P2-O09-Operations",
      "P2-S10-OpsImpact",
      "P2-S12-Signals",
      "P2-S12e-Signals"
@@ -25713,6 +25708,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E07-RegEHS",
+     "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals"
     ],
@@ -26024,6 +26020,7 @@ var DCTData = {
      "P2-G01-Portfolio",
      "P2-G01b-PortfolioCertified",
      "P2-G07-Risk",
+     "P2-O01-EnterpriseHealth",
      "P2-O05-Risk"
     ],
     "cat": {
@@ -27228,8 +27225,7 @@ var DCTData = {
      "P2-E01-EntityHome",
      "P2-G01-Portfolio",
      "P2-G01b-PortfolioCertified",
-     "P2-O01-EnterpriseHealth",
-     "P2-O09-Operations"
+     "P2-O01-EnterpriseHealth"
     ],
     "def": "How much of the installed capacity was turned into good output; shows spare or stretched capacity."
    },
@@ -27376,9 +27372,7 @@ var DCTData = {
     "theme": "T5",
     "source": "alias",
     "aliasOf": "PLT-002",
-    "screens": [
-     "P2-O09-Operations"
-    ],
+    "screens": [],
     "def": "Overall equipment effectiveness: good output as a share of what the line could ideally make, combining availability, speed and quality losses."
    },
    "OPS-002": {
@@ -27531,6 +27525,7 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-G03-Financial",
      "P2-O01-EnterpriseHealth",
+     "P2-O09-Operations",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -28146,7 +28141,6 @@ var DCTData = {
      "P2-G02-EntityComparison",
      "P2-G03-Financial",
      "P2-G08-CertGovernance",
-     "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -28228,7 +28222,6 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-G03-Financial",
      "P2-O01-EnterpriseHealth",
-     "P2-O03-CashLiquidity",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -28477,7 +28470,6 @@ var DCTData = {
     "screens": [
      "P2-G03-Financial",
      "P2-G08-CertGovernance",
-     "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -28702,8 +28694,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -28781,7 +28772,6 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-E08-CertWorkbench",
      "P2-G04-CashWC",
-     "P2-O03-CashLiquidity",
      "P2-S11-CashExposure"
     ],
     "cat": {
@@ -28867,8 +28857,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29108,8 +29097,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29184,8 +29172,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29336,8 +29323,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29417,8 +29403,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29594,8 +29579,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29826,8 +29810,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29907,8 +29890,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
-     "P2-O03-CashLiquidity"
+     "P2-G04-CashWC"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29996,9 +29978,7 @@ var DCTData = {
     "theme": "T4",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [
-     "P2-O03-CashLiquidity"
-    ],
+    "screens": [],
     "def": "Share of the unhedged foreign-currency exposure that is in US dollars."
    },
    "TRS-004": {
@@ -30138,9 +30118,7 @@ var DCTData = {
     "theme": "T4",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [
-     "P2-O03-CashLiquidity"
-    ],
+    "screens": [],
     "def": "Rupee impact of a 5% move in the US dollar on the unhedged exposure."
    },
    "CPX-001": {
@@ -30606,8 +30584,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
-     "P2-G06-CapexPortfolio",
-     "P2-O04-Capex"
+     "P2-G06-CapexPortfolio"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -30763,8 +30740,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E06-Capex",
-     "P2-G06-CapexPortfolio",
-     "P2-O04-Capex"
+     "P2-G06-CapexPortfolio"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -30846,8 +30822,7 @@ var DCTData = {
      "P2-E01-EntityHome",
      "P2-G01-Portfolio",
      "P2-G01b-PortfolioCertified",
-     "P2-O01-EnterpriseHealth",
-     "P2-O04-Capex"
+     "P2-O01-EnterpriseHealth"
     ],
     "def": "Share of planned transformation milestones completed."
    },
@@ -30919,7 +30894,6 @@ var DCTData = {
     "screens": [
      "P2-G06-CapexPortfolio",
      "P2-O01-EnterpriseHealth",
-     "P2-O04-Capex",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -31005,8 +30979,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
-     "P2-E06-Capex",
-     "P2-O04-Capex"
+     "P2-E06-Capex"
     ],
     "def": "Number of transformation initiatives in each status."
    },
@@ -31622,7 +31595,8 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
-     "P2-E04-Supply"
+     "P2-E04-Supply",
+     "P2-O09-Operations"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -32168,9 +32142,7 @@ var DCTData = {
     "theme": "T5",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [
-     "P2-O09-Operations"
-    ],
+    "screens": [],
     "def": "Share of supplier spend that goes to single-source suppliers."
    },
    "SUP-008": {
@@ -32305,9 +32277,7 @@ var DCTData = {
     "theme": "T5",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [
-     "P2-O09-Operations"
-    ],
+    "screens": [],
     "def": "EHS incidents involving suppliers or contractors since April."
    },
    "CON-001": {
@@ -34727,7 +34697,6 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
-     "P2-E04-Supply",
      "P2-E07-RegEHS",
      "P2-G07-Risk",
      "P2-O05-Risk"
@@ -37293,7 +37262,6 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O02-ChangeReport",
-     "P2-O03-CashLiquidity",
      "P2-S12-Signals",
      "P2-S12e-Signals"
     ],
@@ -37446,7 +37414,6 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
-     "P2-O03-CashLiquidity",
      "P2-S12-Signals"
     ],
     "cat": {
@@ -37738,7 +37705,6 @@ var DCTData = {
      "P2-E04-Supply",
      "P2-O01-EnterpriseHealth",
      "P2-O02-ChangeReport",
-     "P2-O09-Operations",
      "P2-S10-OpsImpact",
      "P2-S12-Signals",
      "P2-S12e-Signals",
@@ -38096,7 +38062,6 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-G04-CashWC",
      "P2-O02-ChangeReport",
-     "P2-O03-CashLiquidity",
      "P2-S12-Signals",
      "P2-S12e-Signals"
     ],
@@ -38180,7 +38145,6 @@ var DCTData = {
      "P2-G04-CashWC",
      "P2-G10-Briefing",
      "P2-O02-ChangeReport",
-     "P2-O03-CashLiquidity",
      "P2-S12-Signals",
      "P2-S12e-Signals"
     ],
@@ -38329,8 +38293,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G05-OpsBenchmark",
-     "P2-G10-Briefing",
-     "P2-O09-Operations"
+     "P2-G10-Briefing"
     ],
     "def": "Forecast output lost to downtime next month."
    },
@@ -38488,9 +38451,7 @@ var DCTData = {
     "theme": "T3",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [
-     "P2-O09-Operations"
-    ],
+    "screens": [],
     "def": "Forecast chance that OEE falls below 78% next month."
    },
    "CST-005": {
@@ -40293,6 +40254,7 @@ var DCTData = {
     "source": "alias",
     "aliasOf": "REG-002",
     "screens": [
+     "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals"
     ],
@@ -40440,6 +40402,7 @@ var DCTData = {
     "source": "alias",
     "aliasOf": "REG-003",
     "screens": [
+     "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals"
     ],
@@ -40515,7 +40478,6 @@ var DCTData = {
     "source": "alias",
     "aliasOf": "EFF-002",
     "screens": [
-     "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -40663,7 +40625,6 @@ var DCTData = {
     "source": "alias",
     "aliasOf": "EHS-002",
     "screens": [
-     "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -40744,7 +40705,6 @@ var DCTData = {
     "source": "alias",
     "aliasOf": "CPX-004",
     "screens": [
-     "P2-O01-EnterpriseHealth",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -40908,13 +40868,13 @@ var DCTData = {
    "P2-O02-ChangeReport": {
     "lens": "Owner",
     "rid": "O-02",
-    "title": "24-Hour Executive Change Report",
+    "title": "Early Warning · Risk Heat Map",
     "file": "P2-O02-ChangeReport.html"
    },
    "P2-O03-CashLiquidity": {
     "lens": "Owner",
     "rid": "O-03",
-    "title": "Cash and Liquidity Summary",
+    "title": "Cash & Liquidity Dashboard",
     "file": "P2-O03-CashLiquidity.html"
    },
    "P2-O04-Capex": {
@@ -40938,7 +40898,7 @@ var DCTData = {
    "P2-O07-Brief": {
     "lens": "Owner",
     "rid": "O-07",
-    "title": "Daily Executive Brief",
+    "title": "AI Insights · Ask about this brief",
     "file": "P2-O07-Brief.html"
    },
    "P2-O08-WarRoom": {
@@ -40950,7 +40910,7 @@ var DCTData = {
    "P2-O09-Operations": {
     "lens": "Owner",
     "rid": "O-09",
-    "title": "Operations and Assets",
+    "title": "Operations Command View",
     "file": "P2-O09-Operations.html"
    },
    "P2-S03-KPIDetail": {
@@ -40968,7 +40928,7 @@ var DCTData = {
    "P2-S03o-KPIDetail": {
     "lens": "Owner",
     "rid": "S-03 · Owner view",
-    "title": "KPI Detail and Lineage · OPS-001 Production vs plan · Entity A1",
+    "title": "KPI Detail and Lineage · OPS-001 Production vs plan · [[A1]]",
     "file": "P2-S03o-KPIDetail.html"
    },
    "P2-S04-Alert": {
@@ -41022,7 +40982,7 @@ var DCTData = {
    "P2-S07-AIExplain": {
     "lens": "Owner",
     "rid": "S-07",
-    "title": "AI Explanation · Why did the Plant 02 forecast fall?",
+    "title": "AI Explanation · Why did the [[A1]] forecast fall?",
     "file": "P2-S07-AIExplain.html"
    },
    "P2-S07c-AIExplain": {
@@ -41058,7 +41018,7 @@ var DCTData = {
    "P2-S10-OpsImpact": {
     "lens": "Owner",
     "rid": "S-10",
-    "title": "Operations Impact · Plant 02 (Owner summary)",
+    "title": "Operations Impact · [[A1]] (Owner summary)",
     "file": "P2-S10-OpsImpact.html"
    },
    "P2-S11-CashExposure": {
@@ -41397,83 +41357,65 @@ var DCTData = {
    {
     "screen": "P2-O01-EnterpriseHealth",
     "type": "line",
-    "title": "EBITDA actual vs plan vs forecast · ₹ m per period",
+    "title": "EBITDA by month · actual (Apr–Sep), plan and forecast (Oct–Mar) · ₹ m",
     "ask": "Will EBITDA stay on plan for the rest of the year, and when does the forecast fall below it?",
-    "source": "model",
-    "from": "Group EBITDA by month (ebitda_k); P01–P06 actual, P07–P12 = rest-of-year plan and forecast ÷ 6 (PRD-003 inputs)",
-    "note": "Plan to P06 equals actual: the model re-bases the plan on actuals."
+    "source": "illustrative",
+    "from": "Hand-set (SYN)",
+    "note": "Not yet classified in data/kpi-model/chart_sources.json."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
     "type": "multi",
-    "title": "EBITDA margin → FCF conversion → ROCE · Group · %",
+    "title": "Is profit turning into cash? EBITDA margin, cash conversion and ROCE by month · Group · %",
     "ask": "Is profit turning into cash and capital returns, or is value getting stuck?",
-    "source": "model",
-    "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE",
-    "note": "ROCE target 12% shown as the base line."
+    "source": "illustrative",
+    "from": "Hand-set (SYN)",
+    "note": "Not yet classified in data/kpi-model/chart_sources.json."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
     "type": "bars",
-    "title": "EBITDA variance contribution by entity · P07–P12 forecast vs plan · ₹ m",
-    "ask": "Which business is driving the forecast EBITDA gap?",
+    "title": "Where the forecast EBITDA shortfall comes from · Oct–Mar forecast minus plan · entities and Group total · ₹ m",
+    "ask": "Which entity is driving the forecast EBITDA gap, and how big is it in total?",
+    "source": "live",
+    "from": "PRD-003 for the plant, entity or Group in each row label",
+    "note": "Not yet classified in data/kpi-model/chart_sources.json."
+   },
+   {
+    "screen": "P2-O01-EnterpriseHealth",
+    "type": "multi",
+    "title": "Certification coverage and reconciliation rates · %",
+    "ask": "Is the number base getting more defensible?",
     "source": "model",
-    "from": "PRD-003 by entity: A1 + A2 = Group",
-    "note": ""
+    "from": "TRU-001, TRU-008, TRU-009 by month (Group)",
+    "note": "TRU-001 is flat in the source data."
    },
    {
     "screen": "P2-O03-CashLiquidity",
     "type": "line",
-    "title": "Cash position · actual vs plan vs forecast · ₹ m (daily)",
-    "ask": "Will cash stay above the liquidity floor over the next two weeks?",
-    "source": "scaled",
-    "from": "Ends at Group cash (CSH-001)",
-    "note": "Daily path (D-12 to D+12) is hand-set."
-   },
-   {
-    "screen": "P2-O03-CashLiquidity",
-    "type": "waterfall",
-    "title": "Cash bridge · P07 to date · ₹ m",
-    "ask": "What moved cash this period?",
-    "source": "scaled",
-    "from": "Ends at Group cash (CSH-001)",
-    "note": "Collections, payments, capex and financing steps are hand-set."
+    "title": "DSO trend",
+    "ask": "DSO fell from 48.7 days in May to 47.0 in Sep but is still above the 45-day target.",
+    "source": "live",
+    "from": "WCP-001 for the plant, entity or Group in each row label",
+    "note": ""
    },
    {
     "screen": "P2-O03-CashLiquidity",
     "type": "bars",
-    "title": "Debt maturity ladder · ₹ m",
-    "ask": "",
-    "source": "scaled",
-    "from": "Next 12 months = LIQ-003; > 12 m = gross debt − LIQ-003",
-    "note": "Quarterly split is hand-set."
+    "title": "Net debt evolution",
+    "ask": "Net debt fell by ₹70 m every month, from 7,000.0 ₹ m in Apr to 6,650.0 ₹ m in Sep.",
+    "source": "live",
+    "from": "FIN-006 for the plant, entity or Group in each row label",
+    "note": "Month-end net debt from the Group building blocks."
    },
    {
     "screen": "P2-O03-CashLiquidity",
-    "type": "multi",
-    "title": "FX exposure vs hedged amount · ₹ m",
-    "ask": "Is hedging keeping pace with exposure?",
+    "type": "line",
+    "title": "FX exposure vs hedge",
+    "ask": "Gross exposure is ₹767.7 m and ₹546.0 m is hedged in Sep, leaving 221.7 ₹ m unhedged (TRS-001).",
     "source": "model",
-    "from": "fx_exposure_k and fx_hedged_k by month; the gap is TRS-001",
-    "note": ""
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "multi",
-    "title": "Value delivered vs plan · cumulative ₹ m",
-    "ask": "Is the capex and initiative portfolio delivering the value it promised?",
-    "source": "model",
-    "from": "Cumulative VAL-001 EBITDA benefit, VAL-002 cash benefit, VAL-003 cost savings",
-    "note": "Plan line is hand-set (8% above delivered)."
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "bars",
-    "title": "Spend % minus physical progress % · positive = spending ahead of progress",
-    "ask": "Which projects are spending ahead of what they have built?",
-    "source": "layout",
-    "from": "Spend % minus physical progress % from the project table on the same page",
-    "note": ""
+    "from": "Group Inputs fx_exposure_k and fx_hedged_k ÷ 1000, by month (P01–P06)",
+    "note": "Gross exposure and hedged amount; unhedged = exposure − hedged (TRS-001)."
    },
    {
     "screen": "P2-O06-Decisions",
@@ -41487,29 +41429,29 @@ var DCTData = {
    {
     "screen": "P2-O09-Operations",
     "type": "line",
-    "title": "Group production · actual vs plan · kt per period",
-    "ask": "Will the Group meet its production plan this year, and where does it fall short?",
-    "source": "model",
-    "from": "Σ Plants 01–06 good output vs planned production (OPS-001 inputs)",
-    "note": "P07–P12 forecast path is hand-set."
-   },
-   {
-    "screen": "P2-O09-Operations",
-    "type": "bars",
-    "title": "Production vs plan by entity · P06 (CERT) · %",
-    "ask": "Which entity is short?",
+    "title": "Production vs plan",
+    "ask": "[[A1]] was below plan in every month (91.3% in Sep). [[A2]] met plan in Apr and Sep (100.3% in Sep).",
     "source": "live",
     "from": "OPS-001 for the plant, entity or Group in each row label",
     "note": ""
    },
    {
     "screen": "P2-O09-Operations",
-    "type": "multi",
-    "title": "OEE, yield and recovery · Group · %",
-    "ask": "Is the loss availability, performance or quality?",
-    "source": "model",
-    "from": "PLT-002 OEE, PLT-005 yield, PLT-004 recovery (Group)",
-    "note": ""
+    "type": "line",
+    "title": "Reliability trend · mean time to repair",
+    "ask": "Repair time in [[A1]] rose every month, from 5.3 h in Apr to 8.2 h in Sep. [[A2]] is 6.2 h; both are above the 6 h target.",
+    "source": "live",
+    "from": "REL-002 for the plant, entity or Group in each row label",
+    "note": "Recalculated per entity from repair hours ÷ breakdowns; dashed line = 6 h target."
+   },
+   {
+    "screen": "P2-O09-Operations",
+    "type": "line",
+    "title": "Sustainability curve · emissions",
+    "ask": "Group emissions rose three months running, from 374.1 kt CO2e in Jun to 427.7 in Sep (+17.3 vs Aug).",
+    "source": "live",
+    "from": "SUS-002 for the plant, entity or Group in each row label",
+    "note": "Σ of plant emissions per entity."
    },
    {
     "screen": "P2-S03-KPIDetail",
@@ -41517,17 +41459,8 @@ var DCTData = {
     "title": "OPS-001 Entity A1 · Plant 02 daily production · actual vs plan vs forecast · kt per day-pair",
     "ask": "How is this KPI trending, and which part is certified?",
     "source": "illustrative",
-    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)",
     "note": "Daily curve and scenario options are hand-set."
-   },
-   {
-    "screen": "P2-S03-KPIDetail",
-    "type": "bars",
-    "title": "Variance drivers vs plan · kt MTD",
-    "ask": "Which line explains the unverified variance?",
-    "source": "illustrative",
-    "from": "P07 flash story scaled to Entity A1",
-    "note": ""
    },
    {
     "screen": "P2-S03e-KPIDetail",
@@ -41535,35 +41468,17 @@ var DCTData = {
     "title": "OPS-001 Entity A1 · Plant 02 daily production · actual vs plan vs forecast · kt per day-pair",
     "ask": "How is this KPI trending, and which part is certified?",
     "source": "illustrative",
-    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)",
     "note": "Daily curve and scenario options are hand-set."
-   },
-   {
-    "screen": "P2-S03e-KPIDetail",
-    "type": "bars",
-    "title": "Variance drivers vs plan · kt MTD",
-    "ask": "Which line explains the unverified variance?",
-    "source": "illustrative",
-    "from": "P07 flash story scaled to Entity A1",
-    "note": ""
    },
    {
     "screen": "P2-S03o-KPIDetail",
     "type": "line",
-    "title": "OPS-001 Entity A1 · Plant 02 daily production · actual vs plan vs forecast · kt per day-pair",
+    "title": "OPS-001 [[A1]] daily production · actual vs plan vs forecast · kt per day-pair",
     "ask": "How is this KPI trending, and which part is certified?",
     "source": "illustrative",
-    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)",
     "note": "Daily curve and scenario options are hand-set."
-   },
-   {
-    "screen": "P2-S03o-KPIDetail",
-    "type": "bars",
-    "title": "Variance drivers vs plan · kt MTD",
-    "ask": "Which line explains the unverified variance?",
-    "source": "illustrative",
-    "from": "P07 flash story scaled to Entity A1",
-    "note": ""
    },
    {
     "screen": "P2-S04-Alert",
@@ -41598,7 +41513,7 @@ var DCTData = {
     "title": "Plant 02 production · base forecast vs scenario options · kt per day-pair",
     "ask": "Which sourcing option restores Plant 02 output, and how fast?",
     "source": "illustrative",
-    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)",
     "note": "Daily curve and scenario options are hand-set."
    },
    {
@@ -41607,7 +41522,7 @@ var DCTData = {
     "title": "Plant 02 production · base forecast vs scenario options · kt per day-pair",
     "ask": "Which sourcing option restores Plant 02 output, and how fast?",
     "source": "illustrative",
-    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)",
     "note": "Daily curve and scenario options are hand-set."
    },
    {
@@ -41620,31 +41535,22 @@ var DCTData = {
     "note": ""
    },
    {
-    "screen": "P2-S09-Contribution",
-    "type": "bars",
-    "title": "By business · ₹ m",
-    "ask": "Which business holds the projected exposure?",
-    "source": "model",
-    "from": "PRD-003 Group (Business A = Group)",
-    "note": ""
-   },
-   {
     "screen": "P2-S10-OpsImpact",
     "type": "line",
-    "title": "Plant 02 · actual vs plan vs forecast · kt per day-pair",
+    "title": "[[A1]] · actual vs plan vs forecast · kt per day-pair",
     "ask": "When does the shortfall start, and how deep does it go?",
     "source": "illustrative",
-    "from": "Plant 02 at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+    "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)",
     "note": "Daily curve and scenario options are hand-set."
    },
    {
     "screen": "P2-S10-OpsImpact",
     "type": "bars",
-    "title": "Forecast shortfall by line (summary) · kt · total 24.3 = SIG-007 Plant 02",
-    "ask": "Where in the plant is the impact concentrated?",
-    "source": "scaled",
-    "from": "Sum = SIG-007 Plant 02 (24.3 kt)",
-    "note": "Split by line is hand-set."
+    "title": "Production at risk by entity · kt (SIG-007)",
+    "ask": "Which entity carries the production at risk?",
+    "source": "live",
+    "from": "SIG-007 for the plant, entity or Group in each row label",
+    "note": "Not yet classified in data/kpi-model/chart_sources.json."
    },
    {
     "screen": "P2-S11-CashExposure",
@@ -41828,16 +41734,6 @@ var DCTData = {
    {
     "screen": "P2-E03-Reliability",
     "type": "table",
-    "title": "MTBF by line",
-    "ask": "",
-    "source": "layout",
-    "from": "3 rows of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Line · MTBF · MTTR · Trust"
-   },
-   {
-    "screen": "P2-E03-Reliability",
-    "type": "table",
     "title": "Named actions",
     "ask": "",
     "source": "layout",
@@ -41866,18 +41762,6 @@ var DCTData = {
      "CON-001",
      "CON-002",
      "CON-003"
-    ],
-    "note": "Columns: KPI · Measure · Value · Trust"
-   },
-   {
-    "screen": "P2-E04-Supply",
-    "type": "table",
-    "title": "Supplier controls",
-    "ask": "",
-    "source": "live",
-    "from": "1 of 1 row are KPIs filled from the model (CTL-006); scope from the row label",
-    "kpis": [
-     "CTL-006"
     ],
     "note": "Columns: KPI · Measure · Value · Trust"
    },
@@ -42352,16 +42236,6 @@ var DCTData = {
     "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
    },
    {
-    "screen": "P2-E11-Financial",
-    "type": "table",
-    "title": "Profitability by plant",
-    "ask": "",
-    "source": "layout",
-    "from": "3 rows of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Plant · Revenue YTD · EBITDA YTD · EBITDA margin · Capital employed · ROCE · Trust"
-   },
-   {
     "screen": "P2-G01-Portfolio",
     "type": "table",
     "title": "24-hour changes · portfolio scope (CX-07)",
@@ -42538,12 +42412,12 @@ var DCTData = {
    {
     "screen": "P2-G02-EntityComparison",
     "type": "table",
-    "title": "Profitability and capital productivity by entity",
+    "title": "Return on capital and cash conversion by entity · YTD",
     "ask": "",
-    "source": "layout",
-    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: ROCE = FIN-005, FCF conversion = FIN-008",
     "kpis": [],
-    "note": "Columns: Entity · EBITDA margin · vs plan · ROCE · vs plan · FCF conversion"
+    "note": "Columns: Entity · ROCE · FCF conversion"
    },
    {
     "screen": "P2-G03-Financial",
@@ -43234,7 +43108,7 @@ var DCTData = {
      "PRD-002",
      "PRD-003"
     ],
-    "note": ""
+    "note": "Model predictions for the coming months; they are forecasts, not actuals."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
@@ -43244,22 +43118,7 @@ var DCTData = {
     "source": "layout",
     "from": "1 row of workflow, status or reference text; no KPI values",
     "kpis": [],
-    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
-   },
-   {
-    "screen": "P2-O01-EnterpriseHealth",
-    "type": "table",
-    "title": "Financial health measures",
-    "ask": "",
-    "source": "live",
-    "from": "4 of 4 rows are KPIs filled from the model (FIN-002, FIN-003, FIN-005, FIN-007); scope from the row label",
-    "kpis": [
-     "FIN-002",
-     "FIN-003",
-     "FIN-005",
-     "FIN-007"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+    "note": "Decisions that need the Owner's authority, with exposure and due time."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
@@ -43274,7 +43133,7 @@ var DCTData = {
      "OPS-004",
      "OPS-005"
     ],
-    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+    "note": "Production, sales and capacity against plan for the Group in Sep."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
@@ -43282,14 +43141,14 @@ var DCTData = {
     "title": "Strategic measures",
     "ask": "",
     "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (STR-001, CPX-004, STR-002, PRG-004); scope from the row label",
+    "from": "3 of 3 rows are KPIs filled from the model (CPX-004, STR-001, STR-002, PRG-004); scope from the row label",
     "kpis": [
-     "STR-001",
      "CPX-004",
+     "STR-001",
      "STR-002",
      "PRG-004"
     ],
-    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
+    "note": "How far capital projects and the transformation programme have progressed against plan."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
@@ -43297,225 +43156,16 @@ var DCTData = {
     "title": "Risk measures",
     "ask": "",
     "source": "live",
-    "from": "4 of 4 rows are KPIs filled from the model (RSK-001, EFF-002, RSK-002, EHS-002, RSK-003, CMP-005); scope from the row label",
+    "from": "4 of 4 rows are KPIs filled from the model (EFF-002, RSK-001, EHS-002, RSK-002, RSK-003, CMP-005); scope from the row label",
     "kpis": [
-     "RSK-001",
      "EFF-002",
-     "RSK-002",
+     "RSK-001",
      "EHS-002",
+     "RSK-002",
      "RSK-003",
      "CMP-005"
     ],
-    "note": "Columns: KPI · Measure · Value · Plan · variance · Business status · Trust"
-   },
-   {
-    "screen": "P2-O02-ChangeReport",
-    "type": "tiles",
-    "title": "24-hour change tiles",
-    "ask": "",
-    "source": "layout",
-    "from": "6 tiles of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": ""
-   },
-   {
-    "screen": "P2-O02-ChangeReport",
-    "type": "table",
-    "title": "Change report · Cause → Impact → Action · ranked by materiality",
-    "ask": "",
-    "source": "live",
-    "from": "3 of 5 rows are KPIs filled from the model (SIG-009, CSH-006, OPS-001); scope from the row label",
-    "kpis": [
-     "SIG-009",
-     "CSH-006",
-     "OPS-001"
-    ],
-    "note": "Columns: # · What changed · Cause · Impact · Action (owner · due) · Provenance · Materiality"
-   },
-   {
-    "screen": "P2-O02-ChangeReport",
-    "type": "tiles",
-    "title": "Predictive KPIs · next 30 days",
-    "ask": "",
-    "source": "live",
-    "from": "5 of 5 tiles are KPIs filled from the model (PRD-001, PRD-002, PRD-003, PRD-004, PRD-005); scope from the row label",
-    "kpis": [
-     "PRD-001",
-     "PRD-002",
-     "PRD-003",
-     "PRD-004",
-     "PRD-005"
-    ],
-    "note": ""
-   },
-   {
-    "screen": "P2-O02-ChangeReport",
-    "type": "table",
-    "title": "Leading-indicator board",
-    "ask": "",
-    "source": "live",
-    "from": "5 of 5 rows are KPIs filled from the model (SIG-009, SIG-007, SIG-012, SIG-004, SIG-001); scope from the row label",
-    "kpis": [
-     "SIG-009",
-     "SIG-007",
-     "SIG-012",
-     "SIG-004",
-     "SIG-001"
-    ],
-    "note": "Columns: Signal · Value · State · 24 h · Feeds"
-   },
-   {
-    "screen": "P2-O02-ChangeReport",
-    "type": "table",
-    "title": "External signals · never blended into actuals",
-    "ask": "",
-    "source": "live",
-    "from": "5 of 5 rows are KPIs filled from the model (SIG-014, SIG-015, SIG-016, SIG-017, SIG-018); scope from the row label",
-    "kpis": [
-     "SIG-014",
-     "SIG-015",
-     "SIG-016",
-     "SIG-017",
-     "SIG-018"
-    ],
-    "note": "Columns: Signal · Movement · Exposure · State"
-   },
-   {
-    "screen": "P2-O03-CashLiquidity",
-    "type": "tiles",
-    "title": "Forecast exposure · prediction outputs",
-    "ask": "",
-    "source": "live",
-    "from": "3 of 3 tiles are KPIs filled from the model (PRD-004, PRD-005, SIG-004); scope from the row label",
-    "kpis": [
-     "PRD-004",
-     "PRD-005",
-     "SIG-004"
-    ],
-    "note": ""
-   },
-   {
-    "screen": "P2-O03-CashLiquidity",
-    "type": "table",
-    "title": "Named actions on cash",
-    "ask": "",
-    "source": "layout",
-    "from": "1 row of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
-   },
-   {
-    "screen": "P2-O03-CashLiquidity",
-    "type": "table",
-    "title": "Working capital",
-    "ask": "",
-    "source": "live",
-    "from": "8 of 8 rows are KPIs filled from the model (WCP-001, WCP-002, WCP-003, CSH-004, CSH-002, WCP-005, WCP-006, CSH-003); scope from the row label",
-    "kpis": [
-     "WCP-001",
-     "WCP-002",
-     "WCP-003",
-     "CSH-004",
-     "CSH-002",
-     "WCP-005",
-     "WCP-006",
-     "CSH-003"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
-   },
-   {
-    "screen": "P2-O03-CashLiquidity",
-    "type": "table",
-    "title": "Liquidity",
-    "ask": "",
-    "source": "live",
-    "from": "4 of 4 rows are KPIs filled from the model (LIQ-003, LIQ-004, FIN-006, SIG-006); scope from the row label",
-    "kpis": [
-     "LIQ-003",
-     "LIQ-004",
-     "FIN-006",
-     "SIG-006"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
-   },
-   {
-    "screen": "P2-O03-CashLiquidity",
-    "type": "table",
-    "title": "Treasury",
-    "ask": "",
-    "source": "live",
-    "from": "5 of 5 rows are KPIs filled from the model (TRS-001, TRS-002, TRS-003, TRS-004, TRS-005); scope from the row label",
-    "kpis": [
-     "TRS-001",
-     "TRS-002",
-     "TRS-003",
-     "TRS-004",
-     "TRS-005"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "table",
-    "title": "Progress chain per major project · Approved → Committed → Spent → Physical progress → Benefit realized",
-    "ask": "Is each major project turning spend into physical progress and benefit?",
-    "source": "layout",
-    "from": "4 rows of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Spend is always shown next to physical progress; project health is never inferred from spend alone."
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "tiles",
-    "title": "Forecast exposure",
-    "ask": "",
-    "source": "live",
-    "from": "2 of 3 tiles are KPIs filled from the model (PRG-003, SIG-011); scope from the row label",
-    "kpis": [
-     "PRG-003",
-     "SIG-011"
-    ],
-    "note": ""
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "table",
-    "title": "Named actions on major projects",
-    "ask": "",
-    "source": "layout",
-    "from": "1 row of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "table",
-    "title": "Programmes",
-    "ask": "",
-    "source": "live",
-    "from": "5 of 5 rows are KPIs filled from the model (PRG-001, STR-002, PRG-003, PRG-005, PRG-004); scope from the row label",
-    "kpis": [
-     "PRG-001",
-     "STR-002",
-     "PRG-003",
-     "PRG-005",
-     "PRG-004"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "table",
-    "title": "Value delivered",
-    "ask": "",
-    "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (VAL-001, VAL-002, VAL-003); scope from the row label",
-    "kpis": [
-     "VAL-001",
-     "VAL-002",
-     "VAL-003"
-    ],
-    "note": "Columns: KPI · Measure · Value YTD · Plan · Status · Trust"
+    "note": "Critical alerts, EHS events and regulatory breaches that could stop the business."
    },
    {
     "screen": "P2-O05-Risk",
@@ -43530,7 +43180,7 @@ var DCTData = {
    {
     "screen": "P2-O05-Risk",
     "type": "table",
-    "title": "Which materiality dimensions drove INC-SYN-0142 (placeholder model)",
+    "title": "What drives the rating of INC-SYN-0142 · materiality dimensions (placeholder model)",
     "ask": "",
     "source": "layout",
     "from": "7 rows of workflow, status or reference text; no KPI values",
@@ -43540,7 +43190,7 @@ var DCTData = {
    {
     "screen": "P2-O05-Risk",
     "type": "tiles",
-    "title": "Clocks and forecast exposure",
+    "title": "Compliance clocks and deadlines",
     "ask": "",
     "source": "layout",
     "from": "3 tiles of workflow, status or reference text; no KPI values",
@@ -43556,16 +43206,6 @@ var DCTData = {
     "from": "1 row of workflow, status or reference text; no KPI values",
     "kpis": [],
     "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
-   },
-   {
-    "screen": "P2-O05-Risk",
-    "type": "table",
-    "title": "Materiality matrix · impact × likelihood (placeholder bands)",
-    "ask": "Which risks are both likely and high-impact?",
-    "source": "layout",
-    "from": "4 rows of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Band boundaries are placeholders pending approval (D-03). Each plotted item links to its case."
    },
    {
     "screen": "P2-O05-Risk",
@@ -43678,16 +43318,6 @@ var DCTData = {
     "note": "Columns: Escalation · Level · Materiality · Owner (role) · Clock · Status"
    },
    {
-    "screen": "P2-O07-Brief",
-    "type": "table",
-    "title": "Agent activity · audit log",
-    "ask": "",
-    "source": "layout",
-    "from": "5 rows of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Time · Agent · Action · Outcome · Human check"
-   },
-   {
     "screen": "P2-O08-WarRoom",
     "type": "tiles",
     "title": "Incident header",
@@ -43726,91 +43356,6 @@ var DCTData = {
     "from": "1 row of workflow, status or reference text; no KPI values",
     "kpis": [],
     "note": "Columns: Decision · Due · Authority"
-   },
-   {
-    "screen": "P2-O09-Operations",
-    "type": "tiles",
-    "title": "Forecast exposure · prediction outputs",
-    "ask": "",
-    "source": "live",
-    "from": "4 of 4 tiles are KPIs filled from the model (PRD-001, PRD-006, PRD-007, SIG-009); scope from the row label",
-    "kpis": [
-     "PRD-001",
-     "PRD-006",
-     "PRD-007",
-     "SIG-009"
-    ],
-    "note": ""
-   },
-   {
-    "screen": "P2-O09-Operations",
-    "type": "table",
-    "title": "Production by entity · P06 (CERT)",
-    "ask": "",
-    "source": "live",
-    "from": "Columns filled from the model for the scope in each row label: Production vs plan = OPS-001, Capacity util. = OPS-003, Yield = PLT-005, Recovery = PLT-004",
-    "kpis": [],
-    "note": "Columns: Entity · Production vs plan · Capacity util. · Yield · Recovery · Trust"
-   },
-   {
-    "screen": "P2-O09-Operations",
-    "type": "table",
-    "title": "Reliability measures",
-    "ask": "",
-    "source": "live",
-    "from": "5 of 5 rows are KPIs filled from the model (REL-001, REL-002, REL-003, REL-005, PRD-006); scope from the row label",
-    "kpis": [
-     "REL-001",
-     "REL-002",
-     "REL-003",
-     "REL-005",
-     "PRD-006"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
-   },
-   {
-    "screen": "P2-O09-Operations",
-    "type": "table",
-    "title": "Cost measures",
-    "ask": "",
-    "source": "live",
-    "from": "4 of 4 rows are KPIs filled from the model (CST-001, CST-002, CST-003, CST-004); scope from the row label",
-    "kpis": [
-     "CST-001",
-     "CST-002",
-     "CST-003",
-     "CST-004"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
-   },
-   {
-    "screen": "P2-O09-Operations",
-    "type": "table",
-    "title": "Supplier performance",
-    "ask": "",
-    "source": "live",
-    "from": "4 of 4 rows are KPIs filled from the model (SUP-001, SIG-009, SUP-007, SUP-008); scope from the row label",
-    "kpis": [
-     "SUP-001",
-     "SIG-009",
-     "SUP-007",
-     "SUP-008"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
-   },
-   {
-    "screen": "P2-O09-Operations",
-    "type": "table",
-    "title": "Sustainability",
-    "ask": "",
-    "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (SUS-002, SUS-003, SUS-001); scope from the row label",
-    "kpis": [
-     "SUS-002",
-     "SUS-003",
-     "SUS-001"
-    ],
-    "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
    },
    {
     "screen": "P2-S03-KPIDetail",
@@ -44535,17 +44080,28 @@ var DCTData = {
    {
     "screen": "P2-S12-Signals",
     "type": "table",
-    "title": "Leading signals by segment · filter: all (change to 'Changed in last 24 h')",
+    "title": "Leading signals by segment · filter: all (change to 'Changed in last 24 h') · Operations",
     "ask": "",
     "source": "live",
-    "from": "21 of 21 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005, SIG-003, PLT-004, SIG-004, SIG-005 …); scope from the row label",
+    "from": "3 of 3 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005, SIG-003, PLT-004); scope from the row label",
     "kpis": [
      "SIG-001",
      "REL-003",
      "SIG-002",
      "PLT-005",
      "SIG-003",
-     "PLT-004",
+     "PLT-004"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · filter: all (change to 'Changed in last 24 h') · Finance",
+    "ask": "",
+    "source": "live",
+    "from": "8 of 8 rows are KPIs filled from the model (SIG-004, SIG-005, SIG-006, SIG-007, SIG-008, SIG-009, SIG-010, SIG-011); scope from the row label",
+    "kpis": [
      "SIG-004",
      "SIG-005",
      "SIG-006",
@@ -44553,15 +44109,48 @@ var DCTData = {
      "SIG-008",
      "SIG-009",
      "SIG-010",
-     "SIG-011",
+     "SIG-011"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · filter: all (change to 'Changed in last 24 h') · Commercial",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (SIG-012, SIG-013); scope from the row label",
+    "kpis": [
      "SIG-012",
-     "SIG-013",
+     "SIG-013"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · filter: all (change to 'Changed in last 24 h') · External",
+    "ask": "",
+    "source": "live",
+    "from": "5 of 5 rows are KPIs filled from the model (SIG-014, SIG-015, TRS-001, SIG-016, SIG-017, SIG-018); scope from the row label",
+    "kpis": [
      "SIG-014",
      "SIG-015",
      "TRS-001",
      "SIG-016",
      "SIG-017",
-     "SIG-018",
+     "SIG-018"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · filter: all (change to 'Changed in last 24 h') · Risk",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SIG-019, REG-002, SIG-020, REG-003, SIG-021); scope from the row label",
+    "kpis": [
      "SIG-019",
      "REG-002",
      "SIG-020",
@@ -44628,24 +44217,68 @@ var DCTData = {
    {
     "screen": "P2-S12e-Signals",
     "type": "table",
-    "title": "Leading signals by segment · Entity A1",
+    "title": "Leading signals by segment · Entity A1 · Operations",
     "ask": "",
     "source": "live",
-    "from": "14 of 14 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005, SIG-004, SIG-005, SIG-007, SIG-009 …); scope from the row label",
+    "from": "2 of 2 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005); scope from the row label",
     "kpis": [
      "SIG-001",
      "REL-003",
      "SIG-002",
-     "PLT-005",
+     "PLT-005"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · Entity A1 · Finance",
+    "ask": "",
+    "source": "live",
+    "from": "6 of 6 rows are KPIs filled from the model (SIG-004, SIG-005, SIG-007, SIG-009, SIG-010, SIG-011); scope from the row label",
+    "kpis": [
      "SIG-004",
      "SIG-005",
      "SIG-007",
      "SIG-009",
      "SIG-010",
-     "SIG-011",
-     "SIG-012",
+     "SIG-011"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · Entity A1 · Commercial",
+    "ask": "",
+    "source": "live",
+    "from": "1 of 1 row are KPIs filled from the model (SIG-012); scope from the row label",
+    "kpis": [
+     "SIG-012"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · Entity A1 · External",
+    "ask": "",
+    "source": "live",
+    "from": "2 of 2 rows are KPIs filled from the model (SIG-016, SIG-017); scope from the row label",
+    "kpis": [
      "SIG-016",
-     "SIG-017",
+     "SIG-017"
+    ],
+    "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Leading signals by segment · Entity A1 · Risk",
+    "ask": "",
+    "source": "live",
+    "from": "3 of 3 rows are KPIs filled from the model (SIG-019, SIG-020, SIG-021); scope from the row label",
+    "kpis": [
      "SIG-019",
      "SIG-020",
      "SIG-021"

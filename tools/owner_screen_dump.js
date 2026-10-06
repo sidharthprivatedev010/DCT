@@ -3,11 +3,13 @@
 const {load} = require("./owner_pages.js");
 const name = process.argv[2], p = load(name), out = [];
 const shown = (c) => (c.v == null ? "—" : String(c.v)) + (c.u ? " " + c.u : "");
-if (p.dominant && p.dominant.type === "dash") {
-  p.dominant.cols.forEach((col) => {
+// every dash block on the page (O-09 keeps its charts in a second dash block under the heat map)
+const dashes = [].concat(p.dominant || [], p.drivers || [], p.forecast || []).filter((b) => b && b.type === "dash");
+for (const d of dashes) {
+  (d.cols || []).forEach((col) => {
     if (col.hero) out.push({element: "Card", label: col.hero.l, kpi: col.hero.kpi, shown: shown(col.hero)});
     col.cards.forEach((c) => { out.push({element: "Card", label: c.l, kpi: c.kpi, shown: shown(c)}); (c.extra || []).forEach((x) => out.push({element: "Card detail", label: c.l + " · " + x.l, kpi: "", shown: x.v})); });
   });
-  p.dominant.charts.forEach((g) => out.push({element: "Chart", label: g.t, kpi: (g.series[0] || {}).kpi || "", shown: g.x.join("–").replace(/–.*–/, "–") + " monthly series"}));
+  (d.charts || []).forEach((g) => out.push({element: "Chart", label: g.t, kpi: (g.series[0] || {}).kpi || "", shown: g.x.join("–").replace(/–.*–/, "–") + " monthly series"}));
 }
 console.log(JSON.stringify(out));
