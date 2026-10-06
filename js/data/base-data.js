@@ -37703,7 +37703,6 @@ var DCTData = {
     "screens": [
      "P2-E01-EntityHome",
      "P2-E04-Supply",
-     "P2-O01-EnterpriseHealth",
      "P2-O02-ChangeReport",
      "P2-S10-OpsImpact",
      "P2-S12-Signals",
@@ -37880,7 +37879,6 @@ var DCTData = {
      "P2-G01-Portfolio",
      "P2-G01b-PortfolioCertified",
      "P2-G10-Briefing",
-     "P2-O01-EnterpriseHealth",
      "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals",
@@ -37968,7 +37966,6 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-G03-Financial",
      "P2-G10-Briefing",
-     "P2-O01-EnterpriseHealth",
      "P2-O02-ChangeReport",
      "P2-S09-Contribution",
      "P2-S12-Signals",
@@ -41374,15 +41371,6 @@ var DCTData = {
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
-    "type": "bars",
-    "title": "Where the forecast EBITDA shortfall comes from · Oct–Mar forecast minus plan · entities and Group total · ₹ m",
-    "ask": "Which entity is driving the forecast EBITDA gap, and how big is it in total?",
-    "source": "live",
-    "from": "PRD-003 for the plant, entity or Group in each row label",
-    "note": "Not yet classified in data/kpi-model/chart_sources.json."
-   },
-   {
-    "screen": "P2-O01-EnterpriseHealth",
     "type": "multi",
     "title": "Certification coverage and reconciliation rates · %",
     "ask": "Is the number base getting more defensible?",
@@ -43095,30 +43083,6 @@ var DCTData = {
     "from": "5 rows of workflow, status or reference text; no KPI values",
     "kpis": [],
     "note": "Columns: Time · Agent · Action · Outcome · Human check"
-   },
-   {
-    "screen": "P2-O01-EnterpriseHealth",
-    "type": "tiles",
-    "title": "Forecast exposure · prediction outputs",
-    "ask": "",
-    "source": "live",
-    "from": "3 of 3 tiles are KPIs filled from the model (PRD-001, PRD-002, PRD-003); scope from the row label",
-    "kpis": [
-     "PRD-001",
-     "PRD-002",
-     "PRD-003"
-    ],
-    "note": "Model predictions for the coming months; they are forecasts, not actuals."
-   },
-   {
-    "screen": "P2-O01-EnterpriseHealth",
-    "type": "table",
-    "title": "Decisions required from the Owner",
-    "ask": "",
-    "source": "layout",
-    "from": "1 row of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Decisions that need the Owner's authority, with exposure and due time."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
