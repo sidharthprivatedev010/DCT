@@ -144,8 +144,8 @@
           BSRC[c.source] || c.source, c.from, c.note || "—"], hi: !!st.graph};
       }), empty: "This table is not in the scan yet: run node data/kpi-model/scan_ui.js and the rebuild."};
     var drv = [table];
-    if (!st.graph || gSel.length || !bSel.length) drv.push(graphs);
-    if (!st.graph || bSel.length) drv.push(tablesB);
+    // The graphs table ("N graphs on <lens> screens · what each shows …") was removed from all KPI Reference variants; a graph (i) link still filters the KPIs it is built from.
+    // The "tables and tiles" table and the sub-theme drill (screens, roll-up, aliases, added) were removed from all variants.
 
     // ---- reference tabs
     var screenRows = lensScreens.map(function (n) {
@@ -185,7 +185,7 @@
       nav: "KPI Reference", title: "KPI Reference · formulas and values", period: st.period + " (SYN)",
       q: "How is each KPI calculated, and what is its value for this lens, scope and period?",
       trust: "Values from data/kpi-model · " + all.length + " KPIs · calculated bottom-up (" + (lens === "Owner" ? "entity → Group" : "plant → entity → Group") + ")",
-      focus: "drivers", dominant: sel, drivers: drv, drill: drill,
+      focus: "drivers", dominant: sel, drivers: drv,
       access: [{l: "KPI detail and lineage ↗", h: DETAIL[lens]}, {l: "Data Assurance ↗", h: lens === "Owner" ? "P2-G08o-OwnerTrust.html" : lens === "Entity" ? "P2-E08-CertWorkbench.html" : "P2-G08-CertGovernance.html"}],
       equiv: equiv, journey: null};
   }
