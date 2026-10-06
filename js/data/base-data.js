@@ -22470,7 +22470,8 @@ var DCTData = {
      "placed": "O-01 · G-01 · G-05 · E-01 · E-02 · E-05",
      "drill": "Hierarchy drill Group → Line; S-10",
      "note": "Canonical; reused in T5 Plant"
-    }
+    },
+    "def": "How much saleable output the plant made against what the production plan called for in the month."
    },
    "OPS-003": {
     "name": "Capacity utilization",
@@ -22630,7 +22631,8 @@ var DCTData = {
      "placed": "G-05 · E-02",
      "drill": "O-01 drill: Operational",
      "note": "Canonical; reused in T5 Plant"
-    }
+    },
+    "def": "How much of the installed capacity was turned into good output; shows spare or stretched capacity."
    },
    "PLT-001": {
     "name": "Asset utilization",
@@ -22786,7 +22788,8 @@ var DCTData = {
      "placed": "E-02",
      "drill": "G-05 drill",
      "note": ""
-    }
+    },
+    "def": "Share of all calendar hours the equipment was actually running."
    },
    "PLT-002": {
     "name": "OEE",
@@ -22943,7 +22946,8 @@ var DCTData = {
      "placed": "G-05 · E-02",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Overall equipment effectiveness: good output as a share of what the line could ideally make, combining availability, speed and quality losses."
    },
    "PLT-004": {
     "name": "Recovery percentage",
@@ -23099,7 +23103,8 @@ var DCTData = {
      "placed": "E-02",
      "drill": "S-12 (as SIG-003)",
      "note": "C-07"
-    }
+    },
+    "def": "Share of the valuable content in the feed that the process recovers into product."
    },
    "PLT-005": {
     "name": "Yield",
@@ -23255,7 +23260,8 @@ var DCTData = {
      "placed": "E-02",
      "drill": "S-12 (as SIG-002)",
      "note": "C-07"
-    }
+    },
+    "def": "Share of feed material that comes out as good, saleable output."
    },
    "REL-001": {
     "name": "MTBF",
@@ -23413,7 +23419,8 @@ var DCTData = {
      "placed": "E-03",
      "drill": "G-05 drill: Reliability",
      "note": ""
-    }
+    },
+    "def": "Mean time between failures: average run hours between breakdowns. Higher means more reliable equipment."
    },
    "REL-002": {
     "name": "Mean Time to Repair",
@@ -23571,7 +23578,8 @@ var DCTData = {
      "placed": "E-03",
      "drill": "G-05 drill: Reliability",
      "note": ""
-    }
+    },
+    "def": "Mean time to repair: average hours to restore equipment after a breakdown."
    },
    "REL-003": {
     "name": "Unplanned downtime",
@@ -23718,7 +23726,8 @@ var DCTData = {
      "placed": "G-05 · E-03",
      "drill": "S-12 (as SIG-001)",
      "note": ""
-    }
+    },
+    "def": "Hours of production lost to stoppages that were not planned."
    },
    "REL-004": {
     "name": "Production loss from downtime",
@@ -23864,7 +23873,8 @@ var DCTData = {
      "placed": "E-03",
      "drill": "G-05 drill",
      "note": ""
-    }
+    },
+    "def": "Tonnes of output lost because equipment was down when it should have been running."
    },
    "REL-005": {
     "name": "Preventive-maintenance compliance",
@@ -24021,7 +24031,8 @@ var DCTData = {
      "placed": "E-03",
      "drill": "G-05 drill",
      "note": "C-09: brief truncated"
-    }
+    },
+    "def": "Share of scheduled preventive-maintenance jobs completed on time."
    },
    "CST-001": {
     "name": "Cost per tonne",
@@ -24192,7 +24203,8 @@ var DCTData = {
      "placed": "G-05",
      "drill": "E-02 drill: Cost",
      "note": ""
-    }
+    },
+    "def": "Total production cost (variable plus fixed) for each tonne of good output."
    },
    "CST-002": {
     "name": "Variable cost",
@@ -24340,7 +24352,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-02 drill: Cost; G-03 drill: Cost",
      "note": ""
-    }
+    },
+    "def": "Costs that move with production volume: raw materials, power, fuel and consumables."
    },
    "CST-003": {
     "name": "Fuel cost",
@@ -24486,7 +24499,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-02 drill: Cost",
      "note": "Related: SIG-017"
-    }
+    },
+    "def": "Spend on fuel in the month."
    },
    "SUS-001": {
     "name": "Water usage",
@@ -24636,7 +24650,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07",
      "note": ""
-    }
+    },
+    "def": "Volume of water drawn for operations in the month."
    },
    "SUS-002": {
     "name": "Emissions",
@@ -24786,7 +24801,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-02 drill: Sustainability; G-05 drill; O-05 drill; E-07",
      "note": ""
-    }
+    },
+    "def": "Greenhouse-gas emissions from operations, in tonnes of CO2 equivalent."
    },
    "SUS-003": {
     "name": "Energy intensity",
@@ -24947,7 +24963,8 @@ var DCTData = {
      "placed": "G-05",
      "drill": "E-02 drill: Sustainability; O-05 drill; E-07",
      "note": ""
-    }
+    },
+    "def": "Energy used for each tonne of good output; lower means more energy-efficient production."
    },
    "SIG-007": {
     "name": "Production at risk",
@@ -25098,7 +25115,8 @@ var DCTData = {
      "placed": "E-05 · S-10",
      "drill": "S-12",
      "note": ""
-    }
+    },
+    "def": "Tonnes of planned output threatened by current plant, supply or maintenance issues."
    },
    "SIG-008": {
     "name": "Critical plant-state alerts",
@@ -25245,7 +25263,8 @@ var DCTData = {
      "placed": "E-03",
      "drill": "S-12",
      "note": ""
-    }
+    },
+    "def": "Number of open critical alerts about plant condition."
    },
    "SIG-009": {
     "name": "Critical-material shortage risk",
@@ -25396,7 +25415,8 @@ var DCTData = {
      "placed": "E-01 · S-10",
      "drill": "S-12; E-04",
      "note": "Scenario trigger"
-    }
+    },
+    "def": "Number of critical materials at risk of running short before the next delivery."
    },
    "SIG-012": {
     "name": "Dispatch delays",
@@ -25556,7 +25576,8 @@ var DCTData = {
      "placed": "E-05 · S-11",
      "drill": "S-12",
      "note": ""
-    }
+    },
+    "def": "Share of customer dispatches that left late."
    },
    "SIG-021": {
     "name": "Environmental violations",
@@ -25703,7 +25724,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-07; O-05 drill: EHS",
      "note": ""
-    }
+    },
+    "def": "Number of breaches of environmental permits or limits."
    },
    "EHS-001": {
     "name": "TRIR",
@@ -25862,7 +25884,8 @@ var DCTData = {
      "placed": "O-05",
      "drill": "G-07 drill: EHS; E-07 drill",
      "note": ""
-    }
+    },
+    "def": "Total recordable injury rate: recordable injuries per 200,000 hours worked (about 100 people for a year)."
    },
    "EHS-002": {
     "name": "Severity incidents",
@@ -26011,7 +26034,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-05 drill: EHS; G-07 drill",
      "note": "Canonical for RSK-002"
-    }
+    },
+    "def": "Number of incidents classed as high severity."
    },
    "EHS-003": {
     "name": "Near misses",
@@ -26158,7 +26182,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-07 drill: EHS",
      "note": ""
-    }
+    },
+    "def": "Events that could have caused harm but did not; a leading indicator of safety risk."
    },
    "EHS-004": {
     "name": "Critical safety incidents",
@@ -26305,7 +26330,8 @@ var DCTData = {
      "placed": "O-05 · G-07",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Number of incidents classed as critical to safety."
    },
    "EHS-005": {
     "name": "Environmental excursions",
@@ -26452,7 +26478,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-07 drill; O-05 drill: EHS",
      "note": ""
-    }
+    },
+    "def": "Number of times environmental limits were exceeded."
    },
    "EHS-006": {
     "name": "Open EHS corrective actions",
@@ -26598,7 +26625,8 @@ var DCTData = {
      "placed": "E-07",
      "drill": "G-07 drill",
      "note": ""
-    }
+    },
+    "def": "EHS corrective actions raised and not yet closed."
    },
    "EHS-007": {
     "name": "Overdue EHS actions",
@@ -26745,7 +26773,8 @@ var DCTData = {
      "placed": "E-07",
      "drill": "G-07 drill; G-09",
      "note": ""
-    }
+    },
+    "def": "EHS corrective actions past their due date."
    },
    "EHS-009": {
     "name": "EHS investigation completion",
@@ -26902,7 +26931,8 @@ var DCTData = {
      "placed": "E-07",
      "drill": "G-07 drill",
      "note": ""
-    }
+    },
+    "def": "Share of EHS investigations due this month that were completed."
    },
    "REG-006": {
     "name": "Licence or permit expiry clock",
@@ -27048,7 +27078,8 @@ var DCTData = {
      "placed": "O-05 · E-07",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Days until the earliest licence or permit expires at any plant."
    },
    "OPS-005": {
     "name": "Capacity utilisation (same measure as OPS-003)",
@@ -27199,7 +27230,8 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-O01-EnterpriseHealth",
      "P2-O09-Operations"
-    ]
+    ],
+    "def": "How much of the installed capacity was turned into good output; shows spare or stretched capacity."
    },
    "OPS-006": {
     "name": "OEE · Group weighted (same measure as PLT-002)",
@@ -27346,7 +27378,8 @@ var DCTData = {
     "aliasOf": "PLT-002",
     "screens": [
      "P2-O09-Operations"
-    ]
+    ],
+    "def": "Overall equipment effectiveness: good output as a share of what the line could ideally make, combining availability, speed and quality losses."
    },
    "OPS-002": {
     "name": "Sales vs plan",
@@ -27509,7 +27542,8 @@ var DCTData = {
      "placed": "E-01",
      "drill": "O-01 drill: Operational; G-03 Volume",
      "note": ""
-    }
+    },
+    "def": "How much was sold against the sales volume planned for the month."
    },
    "OPS-004": {
     "name": "Sales vs plan · Group (same measure as OPS-002)",
@@ -27656,7 +27690,8 @@ var DCTData = {
     "aliasOf": "OPS-002",
     "screens": [
      "P2-O01-EnterpriseHealth"
-    ]
+    ],
+    "def": "How much was sold against the sales volume planned for the month."
    },
    "CST-004": {
     "name": "Power cost per tonne",
@@ -27803,7 +27838,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-O09-Operations"
-    ]
+    ],
+    "def": "Power cost for each tonne of good output."
    },
    "FIN-001": {
     "name": "EBITDA YTD",
@@ -27886,7 +27922,8 @@ var DCTData = {
      "placed": "O-01 · G-01 · G-03 · E-01 (entity)",
      "drill": "S-03; G-03 bridge",
      "note": ""
-    }
+    },
+    "def": "Earnings before interest, tax, depreciation and amortisation since April: core operating profit."
    },
    "FIN-002": {
     "name": "EBIT YTD",
@@ -27966,7 +28003,8 @@ var DCTData = {
      "placed": "G-03",
      "drill": "O-01 drill: Financial",
      "note": ""
-    }
+    },
+    "def": "Earnings before interest and tax since April: operating profit after depreciation."
    },
    "FIN-003": {
     "name": "Revenue YTD",
@@ -28120,7 +28158,8 @@ var DCTData = {
      "placed": "G-01 · G-03",
      "drill": "O-01 drill: Financial; G-02",
      "note": ""
-    }
+    },
+    "def": "Revenue earned since April."
    },
    "FIN-004": {
     "name": "Free cash flow YTD",
@@ -28201,7 +28240,8 @@ var DCTData = {
      "placed": "O-01 · O-03 · G-01",
      "drill": "G-04",
      "note": "Canonical; aliased in T4 as CSH-005"
-    }
+    },
+    "def": "Cash generated by the business after operating costs and capex since April."
    },
    "FIN-005": {
     "name": "ROCE, annualised",
@@ -28286,7 +28326,8 @@ var DCTData = {
      "placed": "G-03",
      "drill": "O-01 drill: Financial; G-01 drill: Financial",
      "note": ""
-    }
+    },
+    "def": "Return on capital employed: annualised operating profit as a share of the capital tied up in the business."
    },
    "FIN-006": {
     "name": "Net debt",
@@ -28365,7 +28406,8 @@ var DCTData = {
      "placed": "O-01 · G-03",
      "drill": "O-03 drill: Liquidity",
      "note": ""
-    }
+    },
+    "def": "Borrowings less cash held; what the business owes net of its cash."
    },
    "FIN-007": {
     "name": "Shareholder-value indicator (economic profit YTD)",
@@ -28447,7 +28489,8 @@ var DCTData = {
      "placed": "G-03",
      "drill": "O-01 drill: Financial",
      "note": "Definition pending"
-    }
+    },
+    "def": "Economic profit since April: after-tax operating profit minus the cost of the capital used. Positive means value is being created."
    },
    "FIN-008": {
     "name": "FCF conversion (FCF ÷ EBITDA)",
@@ -28516,7 +28559,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G03-Financial"
-    ]
+    ],
+    "def": "Share of EBITDA that turned into free cash flow since April."
    },
    "CSH-001": {
     "name": "Cash position",
@@ -28593,7 +28637,8 @@ var DCTData = {
      "placed": "O-03",
      "drill": "G-04",
      "note": ""
-    }
+    },
+    "def": "Cash held at month end."
    },
    "CSH-002": {
     "name": "Cash released YTD",
@@ -28668,7 +28713,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-04 drill: Cash; O-03 drill",
      "note": ""
-    }
+    },
+    "def": "Cash freed up since April by working-capital and other cash initiatives."
    },
    "CSH-003": {
     "name": "Daily collections",
@@ -28746,7 +28792,8 @@ var DCTData = {
      "placed": "E-01 · E-05 · S-11",
      "drill": "G-04 drill: Cash",
      "note": ""
-    }
+    },
+    "def": "Average cash collected from customers per day in the month."
    },
    "CSH-004": {
     "name": "Cash-conversion cycle",
@@ -28831,7 +28878,8 @@ var DCTData = {
      "placed": "G-04",
      "drill": "O-03 drill: Working capital",
      "note": ""
-    }
+    },
+    "def": "Days between paying suppliers and collecting from customers (DSO + inventory days − DPO). Shorter frees cash."
    },
    "CSH-006": {
     "name": "Cash-upstream exposure",
@@ -28915,7 +28963,8 @@ var DCTData = {
      "placed": "O-03 · G-04 · E-05 · S-11",
      "drill": "—",
      "note": "Entity sees own obligation only (C-05)"
-    }
+    },
+    "def": "Cash an entity must send up to the Group that its available cash does not cover."
    },
    "WCP-001": {
     "name": "DSO",
@@ -28994,7 +29043,8 @@ var DCTData = {
      "placed": "G-04 · E-05 · S-11",
      "drill": "O-03 drill: Working capital",
      "note": ""
-    }
+    },
+    "def": "Days sales outstanding: how many days of revenue are waiting to be collected from customers."
    },
    "WCP-002": {
     "name": "DPO",
@@ -29069,7 +29119,8 @@ var DCTData = {
      "placed": "G-04",
      "drill": "O-03 drill: Working capital",
      "note": ""
-    }
+    },
+    "def": "Days payables outstanding: how many days of spend are owed to suppliers."
    },
    "WCP-003": {
     "name": "Inventory days",
@@ -29144,7 +29195,8 @@ var DCTData = {
      "placed": "G-04",
      "drill": "O-03 drill: Working capital",
      "note": ""
-    }
+    },
+    "def": "How many days of production cost are held as inventory."
    },
    "WCP-004": {
     "name": "Net working capital",
@@ -29219,7 +29271,8 @@ var DCTData = {
      "placed": "O-03 · G-04",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Cash tied up in operations: receivables plus inventory minus payables."
    },
    "WCP-005": {
     "name": "Working-capital movement",
@@ -29294,7 +29347,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-04 bridge; G-04 drill: Cash",
      "note": ""
-    }
+    },
+    "def": "Change in net working capital on last month; positive means more cash tied up."
    },
    "WCP-006": {
     "name": "Working-capital days",
@@ -29374,7 +29428,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-04 drill: Cash",
      "note": ""
-    }
+    },
+    "def": "Net working capital expressed as days of revenue."
    },
    "LIQ-001": {
     "name": "Liquidity runway",
@@ -29469,7 +29524,8 @@ var DCTData = {
      "placed": "O-03",
      "drill": "G-04 drill: Liquidity",
      "note": ""
-    }
+    },
+    "def": "How many months cash and undrawn facilities would cover fixed costs, overheads and debt service."
    },
    "LIQ-002": {
     "name": "Covenant headroom",
@@ -29549,7 +29605,8 @@ var DCTData = {
      "placed": "O-03",
      "drill": "G-04 drill: Liquidity",
      "note": "Covenant terms: PLACEHOLDER"
-    }
+    },
+    "def": "How far leverage (net debt ÷ annualised EBITDA) sits below the lenders' covenant limit, as a share of the limit."
    },
    "LIQ-003": {
     "name": "Debt-maturity exposure, next 12 months",
@@ -29624,7 +29681,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-03 drill: Liquidity; G-04",
      "note": ""
-    }
+    },
+    "def": "Debt that must be repaid or refinanced in the next 12 months."
    },
    "LIQ-004": {
     "name": "Financing exposure (floating-rate debt)",
@@ -29698,7 +29756,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-03 drill: Liquidity; G-04",
      "note": ""
-    }
+    },
+    "def": "Debt on floating interest rates, exposed to rate rises."
    },
    "TRS-001": {
     "name": "FX exposure, unhedged",
@@ -29778,7 +29837,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-03 drill: Treasury; G-04 drill",
      "note": "Canonical; aliased as SIG-015"
-    }
+    },
+    "def": "Foreign-currency exposure not covered by hedges."
    },
    "TRS-002": {
     "name": "Hedging effectiveness",
@@ -29858,7 +29918,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-03 drill: Treasury; G-04 drill",
      "note": ""
-    }
+    },
+    "def": "How closely hedge value changes offset the value changes of the items they protect."
    },
    "TRS-003": {
     "name": "USD share of unhedged FX exposure",
@@ -29937,7 +29998,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "def": "Share of the unhedged foreign-currency exposure that is in US dollars."
    },
    "TRS-004": {
     "name": "Hedge cover, next 6 months",
@@ -30008,7 +30070,8 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "def": "Share of forecast foreign-currency flows over the next 6 months already hedged."
    },
    "TRS-005": {
     "name": "FX sensitivity, 5% USD move",
@@ -30077,7 +30140,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-O03-CashLiquidity"
-    ]
+    ],
+    "def": "Rupee impact of a 5% move in the US dollar on the unhedged exposure."
    },
    "CPX-001": {
     "name": "Approved capex budget",
@@ -30152,7 +30216,8 @@ var DCTData = {
      "placed": "O-04 · G-06",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Capital-expenditure budget approved for the year."
    },
    "CPX-002": {
     "name": "Committed capex",
@@ -30227,7 +30292,8 @@ var DCTData = {
      "placed": "O-04 · G-06 · E-06",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Capex committed through orders and contracts to date."
    },
    "CPX-003": {
     "name": "Capex actual spend YTD",
@@ -30302,7 +30368,8 @@ var DCTData = {
      "placed": "O-04 · G-06 · E-06",
      "drill": "—",
      "note": "Never shown without CPX-004"
-    }
+    },
+    "def": "Capex actually spent since April."
    },
    "CPX-004": {
     "name": "Capex physical progress, weighted",
@@ -30387,7 +30454,8 @@ var DCTData = {
      "placed": "O-01 · O-04 · G-06 · E-06",
      "drill": "—",
      "note": "Canonical for STR-001"
-    }
+    },
+    "def": "Physical completion of capex projects, weighted by each project's budget."
    },
    "SIG-011": {
     "name": "Capex value at risk",
@@ -30464,7 +30532,8 @@ var DCTData = {
      "placed": "O-04 · E-06",
      "drill": "S-12; G-06",
      "note": ""
-    }
+    },
+    "def": "Budget value of capex projects flagged as at risk of overrun or delay."
    },
    "PRG-001": {
     "name": "Capex project status",
@@ -30548,7 +30617,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-04 drill: Programmes; G-06 drill",
      "note": ""
-    }
+    },
+    "def": "Number of capex projects in each status (on track, at risk, delayed)."
    },
    "PRG-002": {
     "name": "Benefits realisation",
@@ -30628,7 +30698,8 @@ var DCTData = {
      "placed": "O-04 · G-06",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Share of planned programme benefits actually delivered since April."
    },
    "PRG-003": {
     "name": "Delayed projects",
@@ -30703,7 +30774,8 @@ var DCTData = {
      "placed": "G-06 · E-06",
      "drill": "O-04",
      "note": ""
-    }
+    },
+    "def": "Number of capex projects running behind schedule."
    },
    "PRG-004": {
     "name": "Capex / transformation progress (same measure as STR-002)",
@@ -30776,7 +30848,8 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-O01-EnterpriseHealth",
      "P2-O04-Capex"
-    ]
+    ],
+    "def": "Share of planned transformation milestones completed."
    },
    "STR-002": {
     "name": "Transformation progress",
@@ -30858,7 +30931,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-04 drill: Programmes; G-06",
      "note": ""
-    }
+    },
+    "def": "Share of planned transformation milestones completed."
    },
    "PRG-005": {
     "name": "Transformation initiative status",
@@ -30933,7 +31007,8 @@ var DCTData = {
     "screens": [
      "P2-E06-Capex",
      "P2-O04-Capex"
-    ]
+    ],
+    "def": "Number of transformation initiatives in each status."
    },
    "SUP-006": {
     "name": "Contractor slippage",
@@ -31013,7 +31088,8 @@ var DCTData = {
      "placed": "E-04 · E-06",
      "drill": "G-06 drill",
      "note": ""
-    }
+    },
+    "def": "Average days late per contractor milestone due."
    },
    "VAL-001": {
     "name": "EBITDA benefit YTD",
@@ -31088,7 +31164,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-04 drill: Value; G-06 drill: Value",
      "note": ""
-    }
+    },
+    "def": "EBITDA improvement delivered by value-creation initiatives since April."
    },
    "VAL-002": {
     "name": "Cash benefit YTD",
@@ -31163,7 +31240,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-04 drill: Value; G-06 drill: Value",
      "note": ""
-    }
+    },
+    "def": "Cash improvement delivered by value-creation initiatives since April."
    },
    "VAL-003": {
     "name": "Cost savings delivered YTD",
@@ -31238,7 +31316,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-04 drill: Value; G-06 drill: Value",
      "note": ""
-    }
+    },
+    "def": "Cost savings delivered by initiatives since April."
    },
    "SUP-001": {
     "name": "Supplier on-time delivery",
@@ -31396,7 +31475,8 @@ var DCTData = {
      "placed": "E-04",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Share of purchase-order lines suppliers delivered on time."
    },
    "SUP-002": {
     "name": "Supplier fill rate",
@@ -31552,7 +31632,8 @@ var DCTData = {
      "placed": "E-04",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Share of the ordered quantity suppliers actually delivered."
    },
    "SUP-003": {
     "name": "Supplier quality-rejection rate",
@@ -31708,7 +31789,8 @@ var DCTData = {
      "placed": "E-04",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Share of received quantity rejected for quality."
    },
    "SUP-004": {
     "name": "Supplier lead-time variance",
@@ -31865,7 +31947,8 @@ var DCTData = {
      "placed": "E-04",
      "drill": "—",
      "note": "Scenario: S-07"
-    }
+    },
+    "def": "How much actual supplier lead times exceed planned lead times, as a percentage."
    },
    "SUP-005": {
     "name": "Critical supplier exposure",
@@ -31939,7 +32022,8 @@ var DCTData = {
      "placed": "E-04",
      "drill": "G-05 drill: Supply",
      "note": "Scenario: S-07"
-    }
+    },
+    "def": "Number of critical suppliers with no alternative source."
    },
    "SUP-007": {
     "name": "Single-source spend share",
@@ -32086,7 +32170,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-O09-Operations"
-    ]
+    ],
+    "def": "Share of supplier spend that goes to single-source suppliers."
    },
    "SUP-008": {
     "name": "Supplier EHS incidents YTD",
@@ -32222,7 +32307,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-O09-Operations"
-    ]
+    ],
+    "def": "EHS incidents involving suppliers or contractors since April."
    },
    "CON-001": {
     "name": "Contracts expiring, next 90 days",
@@ -32298,7 +32384,8 @@ var DCTData = {
      "placed": "G-07",
      "drill": "E-04",
      "note": ""
-    }
+    },
+    "def": "Contracts that expire in the next 90 days."
    },
    "CON-002": {
     "name": "Contract-compliance rate",
@@ -32379,7 +32466,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Contracts; E-04",
      "note": ""
-    }
+    },
+    "def": "Share of active contracts fully meeting their terms."
    },
    "CON-003": {
     "name": "Supplier EHS non-compliance",
@@ -32456,7 +32544,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-04; E-07 drill: Contracts",
      "note": ""
-    }
+    },
+    "def": "Suppliers not meeting EHS requirements."
    },
    "REG-001": {
     "name": "Pending filings",
@@ -32602,7 +32691,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-07 drill: Regulatory; G-07 drill",
      "note": ""
-    }
+    },
+    "def": "Regulatory filings due and not yet submitted."
    },
    "REG-002": {
     "name": "Regulatory deadlines, next 30 days",
@@ -32748,7 +32838,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-07; S-12 (as SIG-019)",
      "note": ""
-    }
+    },
+    "def": "Regulatory deadlines that fall in the next 30 days."
    },
    "REG-003": {
     "name": "Licence expirations, next 12 months",
@@ -32894,7 +32985,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-07; S-12 (as SIG-020)",
      "note": ""
-    }
+    },
+    "def": "Licences that expire in the next 12 months."
    },
    "REG-004": {
     "name": "Regulatory obligations due, next 30 days",
@@ -33040,7 +33132,8 @@ var DCTData = {
      "placed": "E-07",
      "drill": "G-07 drill",
      "note": ""
-    }
+    },
+    "def": "Regulatory obligations that fall due in the next 30 days."
    },
    "REG-005": {
     "name": "Overdue regulatory obligations",
@@ -33187,7 +33280,8 @@ var DCTData = {
      "placed": "O-05 · G-07 · E-07",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Regulatory obligations already past their due date."
    },
    "REG-007": {
     "name": "Open regulatory actions",
@@ -33333,7 +33427,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-07 drill; G-07 drill",
      "note": ""
-    }
+    },
+    "def": "Actions required by regulators that are still open."
    },
    "REG-008": {
     "name": "Overdue compliance actions",
@@ -33479,7 +33574,8 @@ var DCTData = {
      "placed": "—",
      "drill": "E-07 drill; G-07 drill",
      "note": ""
-    }
+    },
+    "def": "Compliance actions past their due date."
    },
    "REG-009": {
     "name": "Disclosure-clock status",
@@ -33618,7 +33714,8 @@ var DCTData = {
      "placed": "O-05",
      "drill": "S-05 header",
      "note": "No legal rule modelled (D-07)"
-    }
+    },
+    "def": "Whether an event that must be disclosed to regulators or the market is open."
    },
    "REG-010": {
     "name": "Regulatory breaches YTD",
@@ -33757,7 +33854,8 @@ var DCTData = {
      "P2-G01-Portfolio",
      "P2-G01b-PortfolioCertified",
      "P2-O05-Risk"
-    ]
+    ],
+    "def": "Number of regulatory breaches since April."
    },
    "RSK-003": {
     "name": "Regulatory breaches YTD (same measure as REG-010)",
@@ -33904,7 +34002,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-01 drill: Risk; O-05; G-07",
      "note": "Related: REG-005, SIG-021"
-    }
+    },
+    "def": "Number of regulatory breaches since April."
    },
    "CMP-005": {
     "name": "Regulatory breaches YTD (same measure as REG-010)",
@@ -34041,7 +34140,8 @@ var DCTData = {
     "screens": [
      "P2-E01-EntityHome",
      "P2-O01-EnterpriseHealth"
-    ]
+    ],
+    "def": "Number of regulatory breaches since April."
    },
    "EHS-008": {
     "name": "EHS escalation clocks running",
@@ -34188,7 +34288,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-05; G-09; E-07 drill",
      "note": ""
-    }
+    },
+    "def": "Number of EHS escalation deadlines currently counting down."
    },
    "EHS-010": {
     "name": "EHS investigation completion rate YTD",
@@ -34335,7 +34436,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G07-Risk"
-    ]
+    ],
+    "def": "Share of EHS investigations due since April that were completed."
    },
    "CTL-002": {
     "name": "Control failures YTD",
@@ -34410,7 +34512,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Controls",
      "note": ""
-    }
+    },
+    "def": "Internal-control tests that failed since April."
    },
    "CTL-004": {
     "name": "High-severity control failures YTD",
@@ -34484,7 +34587,8 @@ var DCTData = {
      "placed": "O-05 · G-07",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "High-severity internal-control failures since April."
    },
    "CTL-005": {
     "name": "Policy exceptions YTD",
@@ -34559,7 +34663,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Controls",
      "note": ""
-    }
+    },
+    "def": "Approved departures from policy since April."
    },
    "CTL-006": {
     "name": "Unauthorised-vendor usage YTD",
@@ -34635,7 +34740,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Controls; E-04",
      "note": ""
-    }
+    },
+    "def": "Purchases from vendors not on the approved list since April."
    },
    "CTL-007": {
     "name": "Segregation-of-duties exceptions YTD",
@@ -34710,7 +34816,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Controls",
      "note": ""
-    }
+    },
+    "def": "Cases since April where one person held duties that should be split."
    },
    "CTL-008": {
     "name": "Unauthorised-access events YTD",
@@ -34785,7 +34892,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Controls",
      "note": ""
-    }
+    },
+    "def": "Access to systems or data by people not authorised, since April."
    },
    "CTL-009": {
     "name": "Data-sharing exceptions YTD",
@@ -34860,7 +34968,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Controls",
      "note": ""
-    }
+    },
+    "def": "Data shared outside agreed rules since April."
    },
    "CTL-010": {
     "name": "Manual overrides YTD",
@@ -34935,7 +35044,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-07 drill: Controls; G-08 drill",
      "note": "Distinct from GOV-002"
-    }
+    },
+    "def": "Manual overrides of operational or system controls since April."
    },
    "CTL-003": {
     "name": "Assurance reviews completed",
@@ -35013,7 +35123,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Governance; G-07 drill",
      "note": ""
-    }
+    },
+    "def": "Assurance reviews completed since April, against the number planned."
    },
    "GOV-001": {
     "name": "Ageing certification approvals",
@@ -35088,7 +35199,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Governance",
      "note": ""
-    }
+    },
+    "def": "KPI certification approvals past their due date."
    },
    "GOV-002": {
     "name": "KPI overrides",
@@ -35163,7 +35275,8 @@ var DCTData = {
      "placed": "E-08",
      "drill": "G-08 drill: Governance",
      "note": "Distinct from CTL-010 (operational overrides)"
-    }
+    },
+    "def": "KPI values manually overridden instead of taken from source."
    },
    "GOV-003": {
     "name": "Recurring data-quality issues",
@@ -35238,7 +35351,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Governance",
      "note": ""
-    }
+    },
+    "def": "Data-quality issues that keep coming back."
    },
    "GOV-004": {
     "name": "Open audit findings",
@@ -35316,7 +35430,8 @@ var DCTData = {
      "placed": "G-07",
      "drill": "G-08 drill: Governance",
      "note": "Canonical; aliased in T7 as CTL-001"
-    }
+    },
+    "def": "Audit findings not yet closed."
    },
    "GOV-005": {
     "name": "Overdue assurance actions",
@@ -35391,7 +35506,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Governance",
      "note": ""
-    }
+    },
+    "def": "Assurance actions past their due date."
    },
    "GOV-006": {
     "name": "Repeat findings",
@@ -35466,7 +35582,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Governance",
      "note": ""
-    }
+    },
+    "def": "Audit findings raised again after being closed before."
    },
    "GOV-007": {
     "name": "Leadership KPIs affected by findings",
@@ -35540,7 +35657,8 @@ var DCTData = {
      "placed": "G-08",
      "drill": "Header trust summary (Owner)",
      "note": ""
-    }
+    },
+    "def": "Leadership KPIs whose reliability is affected by an open finding."
    },
    "TRU-004": {
     "name": "Open reconciliation breaks",
@@ -35614,7 +35732,8 @@ var DCTData = {
      "placed": "E-08",
      "drill": "G-08 drill: Reconciliation",
      "note": ""
-    }
+    },
+    "def": "Reconciliation breaks between systems not yet resolved."
    },
    "TRU-006": {
     "name": "Overdue certifications",
@@ -35688,7 +35807,8 @@ var DCTData = {
      "placed": "G-08 · E-08",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Certifications past their due date."
    },
    "TRU-007": {
     "name": "Material reconciliation breaks",
@@ -35762,7 +35882,8 @@ var DCTData = {
      "placed": "G-08",
      "drill": "S-03 Reconciliation tab",
      "note": ""
-    }
+    },
+    "def": "Open reconciliation breaks large enough to be material."
    },
    "GOV-008": {
     "name": "Evidence completeness rate",
@@ -35842,7 +35963,8 @@ var DCTData = {
      "placed": "E-08",
      "drill": "G-08 drill; S-08",
      "note": ""
-    }
+    },
+    "def": "Share of required evidence items that have been provided."
    },
    "GOV-009": {
     "name": "Average finding-closure time",
@@ -35922,7 +36044,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Governance",
      "note": ""
-    }
+    },
+    "def": "Average days taken to close audit findings since April."
    },
    "TRU-001": {
     "name": "Certified KPI percentage",
@@ -36005,7 +36128,8 @@ var DCTData = {
      "placed": "G-01 · G-08",
      "drill": "Header trust summary (all lenses)",
      "note": ""
-    }
+    },
+    "def": "Share of reported leadership KPI values that have been certified."
    },
    "TRU-002": {
     "name": "Uncertified KPI count",
@@ -36084,7 +36208,8 @@ var DCTData = {
      "placed": "G-08",
      "drill": "Header trust summary",
      "note": ""
-    }
+    },
+    "def": "Number of reported leadership KPI values not yet certified."
    },
    "TRU-005": {
     "name": "KPI certification coverage",
@@ -36162,7 +36287,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Reconciliation",
      "note": ""
-    }
+    },
+    "def": "Share of reported leadership KPI values covered by the certification process."
    },
    "TRU-008": {
     "name": "Source-to-Lake reconciliation rate",
@@ -36242,7 +36368,8 @@ var DCTData = {
      "placed": "E-08",
      "drill": "G-08 drill",
      "note": "'Lake' = data-platform placeholder"
-    }
+    },
+    "def": "Share of records loaded to the data lake that reconcile to the source system."
    },
    "TRU-009": {
     "name": "Flash-to-MIS reconciliation rate",
@@ -36322,7 +36449,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Reconciliation; E-08",
      "note": ""
-    }
+    },
+    "def": "Share of flash-report lines that match the MIS."
    },
    "TRU-010": {
     "name": "Flash-to-close variance",
@@ -36402,7 +36530,8 @@ var DCTData = {
      "placed": "G-08",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Gap between flash revenue and closed revenue."
    },
    "TRU-003": {
     "name": "Variance against Board number (EBITDA)",
@@ -36480,7 +36609,8 @@ var DCTData = {
      "placed": "—",
      "drill": "G-08 drill: Reconciliation",
      "note": "D-10"
-    }
+    },
+    "def": "Gap between the EBITDA in the Board pack and the certified EBITDA."
    },
    "TRU-011": {
     "name": "Largest entity variance against Board numbers",
@@ -36566,7 +36696,8 @@ var DCTData = {
      "P2-E08-CertWorkbench",
      "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust"
-    ]
+    ],
+    "def": "The largest gap, across entities, between Board-pack EBITDA and certified EBITDA."
    },
    "EFF-002": {
     "name": "Open critical alerts",
@@ -36648,7 +36779,8 @@ var DCTData = {
      "placed": "O-01 · G-01 · G-07 · G-09",
      "drill": "—",
      "note": "Canonical for RSK-001"
-    }
+    },
+    "def": "Critical alerts not yet resolved."
    },
    "EFF-006": {
     "name": "Alerts without accepted owners",
@@ -36721,7 +36853,8 @@ var DCTData = {
      "placed": "G-09",
      "drill": "E-09 counter",
      "note": ""
-    }
+    },
+    "def": "Alerts where no owner has accepted responsibility."
    },
    "EFF-007": {
     "name": "Overdue actions",
@@ -36796,7 +36929,8 @@ var DCTData = {
      "placed": "G-09 · E-01 · E-09",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Actions past their due date."
    },
    "EFF-008": {
     "name": "Average resolution time",
@@ -36876,7 +37010,8 @@ var DCTData = {
      "placed": "G-09",
      "drill": "—",
      "note": ""
-    }
+    },
+    "def": "Average days from raising an alert to resolving it."
    },
    "EFF-009": {
     "name": "Closed escalations, last 30 days",
@@ -36942,7 +37077,8 @@ var DCTData = {
      "P2-E09-MyWork",
      "P2-G09-Escalations",
      "P2-O06-Decisions"
-    ]
+    ],
+    "def": "Escalations closed in the last 30 days."
    },
    "EFF-010": {
     "name": "Repeat issues, last 90 days",
@@ -37008,7 +37144,8 @@ var DCTData = {
      "P2-E09-MyWork",
      "P2-G09-Escalations",
      "P2-O06-Decisions"
-    ]
+    ],
+    "def": "Issues that recurred in the last 90 days."
    },
    "EFF-011": {
     "name": "Root causes eliminated YTD",
@@ -37079,7 +37216,8 @@ var DCTData = {
      "P2-E09-MyWork",
      "P2-G09-Escalations",
      "P2-O06-Decisions"
-    ]
+    ],
+    "def": "Root causes eliminated since April, against those identified."
    },
    "SIG-004": {
     "name": "Collections slippage",
@@ -37167,7 +37305,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-05; G-04",
      "note": ""
-    }
+    },
+    "def": "Average number of days customers pay later than their agreed payment terms."
    },
    "SIG-005": {
     "name": "Payment delays",
@@ -37243,7 +37382,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-05; G-04",
      "note": ""
-    }
+    },
+    "def": "Number of customers more than 30 days overdue on payment."
    },
    "SIG-006": {
     "name": "Cash burn signal",
@@ -37317,7 +37457,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; O-03 drill",
      "note": ""
-    }
+    },
+    "def": "Early warning that the business consumed more cash than operations generated in the month."
    },
    "SIG-013": {
     "name": "Pricing pressure",
@@ -37457,7 +37598,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; G-03 drill: Price",
      "note": ""
-    }
+    },
+    "def": "How far realised selling prices are running below plan, graded Low, Medium or High."
    },
    "PRD-001": {
     "name": "Days to breach (earliest plant)",
@@ -37611,7 +37753,8 @@ var DCTData = {
      "placed": "S-12 · S-10",
      "drill": "O-01 forecast panel; every alert header",
      "note": ""
-    }
+    },
+    "def": "Forecast days until the first plant misses its production plan."
    },
    "PRD-002": {
     "name": "Probability of production plan miss, next month",
@@ -37786,7 +37929,8 @@ var DCTData = {
      "placed": "S-12",
      "drill": "O-01 forecast panel",
      "note": ""
-    }
+    },
+    "def": "Forecast chance that next month's output falls below plan."
    },
    "PRD-003": {
     "name": "Projected EBITDA gap, rest of year",
@@ -37874,7 +38018,8 @@ var DCTData = {
      "placed": "S-12",
      "drill": "O-01 forecast panel; G-03",
      "note": ""
-    }
+    },
+    "def": "Forecast gap between expected and planned EBITDA for the rest of the year."
    },
    "PRD-004": {
     "name": "Projected liquidity gap, next 90 days",
@@ -37963,7 +38108,8 @@ var DCTData = {
      "placed": "S-12",
      "drill": "O-03 forecast panel",
      "note": ""
-    }
+    },
+    "def": "Forecast cash shortfall over the next 90 days, if any."
    },
    "PRD-005": {
     "name": "Forecast covenant breach",
@@ -38046,7 +38192,8 @@ var DCTData = {
      "placed": "S-12",
      "drill": "O-03; G-04 drill: Liquidity",
      "note": ""
-    }
+    },
+    "def": "Whether forecast leverage breaches the lenders' covenant limit."
    },
    "PRD-006": {
     "name": "Production loss from downtime, next month",
@@ -38184,7 +38331,8 @@ var DCTData = {
      "P2-G05-OpsBenchmark",
      "P2-G10-Briefing",
      "P2-O09-Operations"
-    ]
+    ],
+    "def": "Forecast output lost to downtime next month."
    },
    "PRD-007": {
     "name": "Probability OEE below 78%, next month",
@@ -38342,7 +38490,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-O09-Operations"
-    ]
+    ],
+    "def": "Forecast chance that OEE falls below 78% next month."
    },
    "CST-005": {
     "name": "Fixed cost YTD",
@@ -38478,7 +38627,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E11-Financial"
-    ]
+    ],
+    "def": "Costs that do not move with volume (staff, rent, fixed maintenance), summed since April."
    },
    "PRD-008": {
     "name": "Projected FCF gap, full year",
@@ -38552,7 +38702,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E11-Financial"
-    ]
+    ],
+    "def": "Forecast gap between full-year free cash flow and plan."
    },
    "PRD-009": {
     "name": "ROCE at P12 (forecast)",
@@ -38626,7 +38777,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E11-Financial"
-    ]
+    ],
+    "def": "Forecast return on capital employed at year end (P12)."
    },
    "PRD-010": {
     "name": "Revenue per FTE YTD",
@@ -38695,7 +38847,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E11-Financial"
-    ]
+    ],
+    "def": "Revenue since April per full-time employee."
    },
    "PRD-011": {
     "name": "Tonnes per FTE",
@@ -38764,7 +38917,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E11-Financial"
-    ]
+    ],
+    "def": "Good output per full-time employee in the month."
    },
    "PRD-012": {
     "name": "Probability of EBITDA plan miss, full year",
@@ -38843,7 +38997,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E11-Financial"
-    ]
+    ],
+    "def": "Forecast chance that full-year EBITDA misses plan."
    },
    "REG-011": {
     "name": "Disclosure clock, hours remaining",
@@ -38907,7 +39062,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E07-RegEHS"
-    ]
+    ],
+    "def": "Hours left before the nearest open disclosure deadline."
    },
    "SIG-010": {
     "name": "Single-source supply risk",
@@ -38983,7 +39139,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-04",
      "note": "Scenario trigger"
-    }
+    },
+    "def": "Single-source suppliers whose stock cover is shorter than their resupply lead time."
    },
    "SIG-014": {
     "name": "Commodity-price movement (RM-1 index)",
@@ -39058,7 +39215,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; G-03 drill: External",
      "note": ""
-    }
+    },
+    "def": "Month-on-month change in the main raw-material price index."
    },
    "SIG-016": {
     "name": "Freight exposure (lanes disrupted)",
@@ -39134,7 +39292,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; G-03 drill: External",
      "note": ""
-    }
+    },
+    "def": "Number of supply lanes currently flagged as disrupted."
    },
    "SIG-017": {
     "name": "Fuel exposure (fuel cost per tonne, MoM)",
@@ -39293,7 +39452,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; G-03 drill: External",
      "note": "Related: CST-003"
-    }
+    },
+    "def": "Month-on-month change in fuel cost per tonne of output."
    },
    "SIG-018": {
     "name": "Power-cost exposure (power cost per tonne, MoM)",
@@ -39451,7 +39611,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; G-03 drill: External",
      "note": ""
-    }
+    },
+    "def": "Month-on-month change in power cost per tonne of output."
    },
    "SIG-001": {
     "name": "Unplanned downtime (same measure as REL-003)",
@@ -39598,7 +39759,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-03",
      "note": "Alias → REL-003"
-    }
+    },
+    "def": "Hours of production lost to stoppages that were not planned."
    },
    "SIG-002": {
     "name": "Yield (same measure as PLT-005)",
@@ -39756,7 +39918,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-02",
      "note": "Alias → PLT-005"
-    }
+    },
+    "def": "Share of feed material that comes out as good, saleable output."
    },
    "SIG-003": {
     "name": "Recovery percentage (same measure as PLT-004)",
@@ -39913,7 +40076,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-02",
      "note": "Alias → PLT-004"
-    }
+    },
+    "def": "Share of the valuable content in the feed that the process recovers into product."
    },
    "SIG-015": {
     "name": "FX exposure, unhedged (same measure as TRS-001)",
@@ -39993,7 +40157,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; G-03 drill: External",
      "note": "Alias → TRS-001"
-    }
+    },
+    "def": "Foreign-currency exposure not covered by hedges."
    },
    "SIG-019": {
     "name": "Regulatory deadlines, next 30 days (same measure as REG-002)",
@@ -40139,7 +40304,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-07",
      "note": "Alias → REG-002"
-    }
+    },
+    "def": "Regulatory deadlines that fall in the next 30 days."
    },
    "SIG-020": {
     "name": "Licence expirations, next 12 months (same measure as REG-003)",
@@ -40285,7 +40451,8 @@ var DCTData = {
      "placed": "—",
      "drill": "S-12; E-07",
      "note": "Alias → REG-003"
-    }
+    },
+    "def": "Licences that expire in the next 12 months."
    },
    "RSK-001": {
     "name": "Open critical alerts (same measure as EFF-002)",
@@ -40360,7 +40527,8 @@ var DCTData = {
      "placed": "O-01 (as EFF-002)",
      "drill": "—",
      "note": "Alias → EFF-002"
-    }
+    },
+    "def": "Critical alerts not yet resolved."
    },
    "RSK-002": {
     "name": "Severity incidents (same measure as EHS-002)",
@@ -40507,7 +40675,8 @@ var DCTData = {
      "placed": "—",
      "drill": "O-01 drill: Risk; O-05 drill: EHS",
      "note": "Alias → EHS-002"
-    }
+    },
+    "def": "Number of incidents classed as high severity."
    },
    "STR-001": {
     "name": "Capex physical progress, weighted (same measure as CPX-004)",
@@ -40587,7 +40756,8 @@ var DCTData = {
      "placed": "O-01 (as CPX-004)",
      "drill": "O-04",
      "note": "Alias → CPX-004 Physical progress"
-    }
+    },
+    "def": "Physical completion of capex projects, weighted by each project's budget."
    }
   },
   "screens": {

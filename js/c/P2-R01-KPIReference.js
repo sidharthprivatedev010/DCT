@@ -98,7 +98,7 @@
       var scr = (k.screens || []).filter(function (n) { return st.set === "all" || lensScreens.indexOf(n) >= 0; }).map(function (n) { return code(P.screens[n]); });
       var href = DETAIL[lens] + "?kpi=" + encodeURIComponent(id) + "&scope=" + encodeURIComponent(st.scope);
       var why = !ser ? (k.level === "entity" && /^Plant/.test(st.scope) ? "— entity-level KPI" : "—") : null;
-      return {c: [{t: id, h: "#kpi-" + id}, k.name + (k.aliasOf ? " (= " + k.aliasOf + ")" : ""), k.theme, (k.unit || "count") + " · " + (k.basis || ""), k.formula || "",
+      return {c: [{t: id, h: "#kpi-" + id}, k.name + (k.aliasOf ? " (= " + k.aliasOf + ")" : ""), k.def || "—", k.theme, (k.unit || "count") + " · " + (k.basis || ""), k.formula || "",
         inputs || "—", why ? why : {t: fmt(k, v), h: href}, chT, scr.join(" · ") || "—"],
         hi: k.source === "added"};
     });
@@ -106,9 +106,9 @@
       ask: "How is each KPI calculated, and what is its value here?",
       cap: "Formula and inputs are the same at every level; the value is recalculated from " + sn(st.scope) + "'s own inputs, never averaged. " +
            "Inputs show how each one rolls up (Σ = sum of children, lowest = MIN). Highlighted rows were added by the model. Click a KPI ID for what its number is saying, where the problem sits and what moves it; click a value for its full lineage.",
-      cols: ["KPI", "Measure", "Theme", "Unit · basis", "Formula", "Inputs (roll-up)", "Value · " + sn(st.scope) + " · " + st.period, "vs P" + ("0" + Math.max(1, pi)).slice(-2), "Shown on"],
-      gtc: "76px minmax(120px,1.1fr) 52px 100px minmax(170px,1.9fr) minmax(140px,1.4fr) 112px 70px minmax(90px,.8fr)",
-      minW: 1040, rowsMax: 999, rows: rows, empty: st.graph ? "This " + (bSel.length && !gSel.length ? "block" : "graph") + " does not draw on a catalogued KPI; see its row below for what it is built from." : "No KPI matches these filters."};
+      cols: ["KPI", "Measure", "Definition", "Theme", "Unit · basis", "Formula", "Inputs (roll-up)", "Value · " + sn(st.scope) + " · " + st.period, "vs P" + ("0" + Math.max(1, pi)).slice(-2), "Shown on"],
+      gtc: "76px minmax(120px,1.1fr) minmax(180px,1.8fr) 52px 100px minmax(170px,1.9fr) minmax(140px,1.4fr) 112px 70px minmax(90px,.8fr)",
+      minW: 1240, rowsMax: 999, rows: rows, empty: st.graph ? "This " + (bSel.length && !gSel.length ? "block" : "graph") + " does not draw on a catalogued KPI; see its row below for what it is built from." : "No KPI matches these filters."};
 
     // ---- graphs on this lens's screens and where their numbers come from (DCTData.plant.charts)
     var SRC = {"live": "● Live from model", "model": "● Calculated from model", "scaled": "◐ Total from model · split hand-set",
@@ -160,6 +160,7 @@
         ["Plant", "Atomic level: the plant's own inputs (production, reliability, cost, EHS, sales, supply, regulatory, forecast)."],
         ["Entity A1 / A2", "Plant-type inputs are the sum of the entity's 3 plants (lowest for permit days, days to breach). Finance, cash, treasury, capex, programmes, contracts, controls, governance, data trust and workflow inputs exist only at entity level."],
         ["Group", "Sum of Entity A1 and Entity A2 (lowest for clocks, same value for external indices, √Σσ² for forecast uncertainty)."],
+        ["Definition", "What the KPI measures and why it matters, in plain language (data/kpi-model/kpi_definitions.json). Aliases share the definition of the KPI they point to."],
         ["KPI value", "Always the KPI formula applied to that scope's inputs; never an average of the level below."],
         ["“—”", "No value at this scope: the KPI uses entity-only inputs, so it is not calculated for plants."],
         ["Source", "Workbook = data/kpi-model/Group-KPI-Model.xlsx · Added = formula and synthetic inputs added by data/kpi-model · Alias = same measure as another ID."],
@@ -289,7 +290,7 @@
       esc((k.level === "plant" ? "Down to plants" : "Entity inputs only") + " · " + (k.source === "alias" ? "alias of " + k.aliasOf : k.source))]}]) +
       (c7 ? '<p style="margin:0;font-size:12.5px">Theme question: <i>' + esc(c7.themeQ) + "</i>" + (c7.note ? " · " + esc(c7.note) : "") + "</p>" : '<p style="margin:0;font-size:12.5px">Not in the P1-R1 catalogue: added by the model.</p>'));
 
-    var head = '<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--ct-ink-3,#5B6576)">' + esc(id) + " · " + esc(lens) + " lens · " + esc(sn(scope)) + " · " + per + " " + (MON[pi] || "") + ' 2026</div><h2 id="ct-kx-t" style="margin:2px 0 0;font-size:19px">' + esc(k.name) + (k.unit ? ' <span style="font-weight:400;color:var(--ct-ink-3,#5B6576);font-size:14px">' + esc(k.unit) + "</span>" : "") + "</h2></div>" +
+    var head = '<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--ct-ink-3,#5B6576)">' + esc(id) + " · " + esc(lens) + " lens · " + esc(sn(scope)) + " · " + per + " " + (MON[pi] || "") + ' 2026</div><h2 id="ct-kx-t" style="margin:2px 0 0;font-size:19px">' + esc(k.name) + (k.unit ? ' <span style="font-weight:400;color:var(--ct-ink-3,#5B6576);font-size:14px">' + esc(k.unit) + "</span>" : "") + "</h2>" + (k.def ? '<p style="margin:6px 0 0;max-width:640px;line-height:20px">' + esc(k.def) + "</p>" : "") + "</div>" +
       '<button type="button" data-kx-close aria-label="Close" style="min-width:40px;min-height:40px;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;background:var(--ct-surface,#FFFFFF);font-size:18px;cursor:pointer">✕</button></div>';
     var foot = '<div style="display:flex;gap:8px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--ct-line,#DCE1E8)"><a href="' + DETAIL[lens] + "?kpi=" + encodeURIComponent(id) + "&scope=" + encodeURIComponent(scope) + '" style="display:inline-flex;align-items:center;min-height:40px;padding:0 14px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;border-radius:4px;text-decoration:none;font-weight:600;font-size:13.5px">Full lineage (KPI detail) ›</a></div>';
     return {html: head + H.join("") + foot, scope: scope};

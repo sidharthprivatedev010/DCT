@@ -165,6 +165,7 @@ def main():
         plant["blocks"].append({"screen": blk["screen"], "type": blk["type"], "title": blk["title"], "ask": blk.get("ask", ""), "source": bsrc,
                                 "from": frm, "kpis": ks, "note": blk.get("cap") or (("Columns: " + cols) if cols else "")})
     cat = json.load(open(os.path.join(HERE, "ui_catalogue.json"), encoding="utf-8"))
+    defs = json.load(open(os.path.join(HERE, "kpi_definitions.json"), encoding="utf-8"))
     for k in M["kpis"]:
         kid = k["id"]; div, du, dp, better, tgt = disp(kid, k["unit"])
         ent = {"name": k["name"], "unit": du, "dp": dp, "div": div, "formula": k["how"], "basis": k["basis"], "better": better, "target": tgt,
@@ -172,6 +173,7 @@ def main():
                "theme": theme(kid), "source": "alias" if k["alias_of"] else ("added" if k["added"] else "workbook"),
                "aliasOf": k["alias_of"] or "", "screens": ui.get(kid, {}).get("screens", [])}
         if kid in cat: ent["cat"] = cat[kid]
+        ent["def"] = defs.get(kid) or defs.get(k["alias_of"] or "", "")
         for sc in M["scopes"]:
             ser = V.get((kid, sc))
             if not ser or any(x is None for x in ser): continue

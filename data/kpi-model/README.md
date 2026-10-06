@@ -12,6 +12,7 @@ This model supersedes `data/plant-model/export_to_prototype.py`. The plant model
 | `KPI-Model.xlsx` | The workbook with live formulas. Sheets are described below |
 | `kpi_values.csv` | Every KPI × scope × month (P01–P06), 5,580 values |
 | `kpi_catalogue.csv` | KPI, measure, unit, time basis, formula, inputs, alias, whether it is plant-level, whether it was added by this model |
+| `kpi_definitions.json` | Plain-language definition of each KPI (aliases inherit theirs). Shown on R-01 KPI Reference |
 | `kpi_model.json` | The same data plus P06 inputs per scope, roll-up rules and "without this child" values (read by the exporter) |
 | `ui_kpis.json` | The 170 KPI IDs found on the screens, with their scopes and pages |
 | `export_to_prototype.py` | Writes everything into `js/data/base-data.js` and regenerates `data/HARDCODED-VALUES.md` |
