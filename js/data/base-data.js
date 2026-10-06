@@ -25699,6 +25699,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
+     "P2-E02-Plants",
      "P2-E07-RegEHS",
      "P2-O02-ChangeReport",
      "P2-S12e-Signals"
@@ -26452,9 +26453,11 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
+     "P2-E02-Plants",
      "P2-E07-RegEHS",
      "P2-G07-Risk",
-     "P2-O05-Risk"
+     "P2-O05-Risk",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -26749,7 +26752,8 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk",
-     "P2-O05-Risk"
+     "P2-O05-Risk",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -27053,7 +27057,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E07-RegEHS",
-     "P2-O05-Risk"
+     "P2-O05-Risk",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -27512,6 +27517,7 @@ var DCTData = {
      "P2-G05-OpsBenchmark",
      "P2-O01-EnterpriseHealth",
      "P2-O09-Operations",
+     "P2-S12e-Signals",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -27818,6 +27824,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
+     "P2-E02-Plants",
      "P2-O09-Operations"
     ],
     "def": "Power cost for each tonne of good output."
@@ -28368,6 +28375,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
+     "P2-E05-ProductionCash",
      "P2-G03-Financial",
      "P2-O01-EnterpriseHealth",
      "P2-O03-CashLiquidity",
@@ -28533,6 +28541,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
+     "P2-E05-ProductionCash",
      "P2-G02-EntityComparison",
      "P2-G03-Financial"
     ],
@@ -29558,7 +29567,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC"
+     "P2-G04-CashWC",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -29708,6 +29718,7 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
+     "P2-E05-ProductionCash",
      "P2-G04-CashWC",
      "P2-O03-CashLiquidity"
     ],
@@ -29959,7 +29970,9 @@ var DCTData = {
     "theme": "T4",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [],
+    "screens": [
+     "P2-E05-ProductionCash"
+    ],
     "def": "Share of the unhedged foreign-currency exposure that is in US dollars."
    },
    "TRS-004": {
@@ -30099,7 +30112,9 @@ var DCTData = {
     "theme": "T4",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [],
+    "screens": [
+     "P2-E05-ProductionCash"
+    ],
     "def": "Rupee impact of a 5% move in the US dollar on the unhedged exposure."
    },
    "CPX-001": {
@@ -37517,7 +37532,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G03-Financial",
-     "P2-S12-Signals"
+     "P2-S12-Signals",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "LEADING",
@@ -38252,7 +38268,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G10-Briefing",
-     "P2-S12-Signals"
+     "P2-S12-Signals",
+     "P2-S12e-Signals"
     ],
     "def": "Forecast output lost to downtime next month."
    },
@@ -38546,6 +38563,7 @@ var DCTData = {
     "source": "added",
     "aliasOf": "",
     "screens": [
+     "P2-E02-Plants",
      "P2-E11-Financial"
     ],
     "def": "Costs that do not move with volume (staff, rent, fixed maintenance), summed since April."
@@ -38621,7 +38639,9 @@ var DCTData = {
     "source": "added",
     "aliasOf": "",
     "screens": [
-     "P2-E11-Financial"
+     "P2-E05-ProductionCash",
+     "P2-E11-Financial",
+     "P2-S12e-Signals"
     ],
     "def": "Forecast gap between full-year free cash flow and plan."
    },
@@ -38696,7 +38716,8 @@ var DCTData = {
     "source": "added",
     "aliasOf": "",
     "screens": [
-     "P2-E11-Financial"
+     "P2-E11-Financial",
+     "P2-S12e-Signals"
     ],
     "def": "Forecast return on capital employed at year end (P12)."
    },
@@ -38916,7 +38937,8 @@ var DCTData = {
     "source": "added",
     "aliasOf": "",
     "screens": [
-     "P2-E11-Financial"
+     "P2-E11-Financial",
+     "P2-S12e-Signals"
     ],
     "def": "Forecast chance that full-year EBITDA misses plan."
    },
@@ -39125,7 +39147,8 @@ var DCTData = {
     "screens": [
      "P2-G03-Financial",
      "P2-O02-ChangeReport",
-     "P2-S12-Signals"
+     "P2-S12-Signals",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "EXTERNAL",
@@ -39359,6 +39382,7 @@ var DCTData = {
     "source": "added",
     "aliasOf": "",
     "screens": [
+     "P2-E02-Plants",
      "P2-G03-Financial",
      "P2-O02-ChangeReport",
      "P2-S12-Signals",
@@ -39519,9 +39543,11 @@ var DCTData = {
     "source": "added",
     "aliasOf": "",
     "screens": [
+     "P2-E02-Plants",
      "P2-G03-Financial",
      "P2-O02-ChangeReport",
-     "P2-S12-Signals"
+     "P2-S12-Signals",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "EXTERNAL",
@@ -39983,7 +40009,8 @@ var DCTData = {
     "source": "alias",
     "aliasOf": "PLT-004",
     "screens": [
-     "P2-E02-Plants"
+     "P2-E02-Plants",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "LEADING",
@@ -40062,7 +40089,8 @@ var DCTData = {
     "source": "alias",
     "aliasOf": "TRS-001",
     "screens": [
-     "P2-O02-ChangeReport"
+     "P2-O02-ChangeReport",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "EXTERNAL",
@@ -40865,6 +40893,12 @@ var DCTData = {
     "title": "Operations Command View",
     "file": "P2-O09-Operations.html"
    },
+   "P2-O10-KnowledgeMap": {
+    "lens": "Owner",
+    "rid": "O-10",
+    "title": "Knowledge Map · KPI tree for root cause",
+    "file": "P2-O10-KnowledgeMap.html"
+   },
    "P2-S03-KPIDetail": {
     "lens": "Core Group",
     "rid": "S-03",
@@ -41073,6 +41107,42 @@ var DCTData = {
     "note": "Split by line is hand-set."
    },
    {
+    "screen": "P2-E02-Plants",
+    "type": "bars",
+    "title": "Cost per tonne · actual vs at planned output · ₹/t · Sep",
+    "ask": "Is Plant 02 expensive because it spends more, or because it makes less?",
+    "source": "model",
+    "from": "Plant cost inputs ÷ good output (actual) and ÷ planned production (at plan)",
+    "note": ""
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "waterfall",
+    "title": "Cost per tonne · Plant 03 → Plant 02 · ₹/t · Sep",
+    "ask": "What makes up Plant 02's cost gap to the best plant?",
+    "source": "model",
+    "from": "Fuel, other variable and fixed cost per tonne of good output, Plant 03 vs Plant 02",
+    "note": ""
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "multi",
+    "title": "Cost per tonne by plant · ₹/t per month",
+    "ask": "Is Plant 02's cost gap persistent?",
+    "source": "live",
+    "from": "CST-001 for the plant, entity or Group in each row label",
+    "note": "Filled by resolve.js at render."
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "multi",
+    "title": "Energy intensity by plant · GJ/t per month",
+    "ask": "Is energy intensity drifting?",
+    "source": "live",
+    "from": "SUS-003 for the plant, entity or Group in each row label",
+    "note": "Filled by resolve.js at render."
+   },
+   {
     "screen": "P2-E03-Reliability",
     "type": "bars",
     "title": "Plant 02 unplanned downtime by asset · h · P06 (CERT) · total 78.2 h = REL-003",
@@ -41101,12 +41171,48 @@ var DCTData = {
    },
    {
     "screen": "P2-E05-ProductionCash",
+    "type": "multi",
+    "title": "Dispatch delays by plant · % late per month",
+    "ask": "Is the dispatch problem getting worse?",
+    "source": "live",
+    "from": "SIG-012 for the plant, entity or Group in each row label",
+    "note": "Filled by resolve.js at render."
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "multi",
+    "title": "DSO vs target · Entity A1 · days",
+    "ask": "Is collection speed improving?",
+    "source": "live",
+    "from": "WCP-001 for the plant, entity or Group in each row label",
+    "note": "Target 45 days."
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
     "type": "bars",
-    "title": "Cash levers · release opportunity · ₹ m",
-    "ask": "",
+    "title": "Cash levers · release at target days · ₹ m",
+    "ask": "Where can cash be released, and how much?",
+    "source": "model",
+    "from": "(days above target) × Sep revenue or variable cost per day (WCP-001/002/003, FIN-003, CST-002)",
+    "note": ""
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "waterfall",
+    "title": "Net working capital · Aug → Sep · Entity A1 · ₹ m",
+    "ask": "What moved working capital this month?",
+    "source": "model",
+    "from": "Receivables and inventory from DSO and inventory days × value per day; payables = remainder of the WCP-004 change",
+    "note": ""
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "bars",
+    "title": "Debt maturing in the next 12 months · ₹ m",
+    "ask": "When does debt fall due, and is it covered?",
     "source": "scaled",
-    "from": "Scaled to the model's working-capital size",
-    "note": "Opportunity per entity is hand-set."
+    "from": "LIQ-003 total from the model",
+    "note": "Quarterly split hand-set."
    },
    {
     "screen": "P2-E06-Capex",
@@ -41118,6 +41224,42 @@ var DCTData = {
     "note": "Plan line is hand-set (8% above delivered)."
    },
    {
+    "screen": "P2-E06-Capex",
+    "type": "bars",
+    "title": "Benefit shortfall vs plan by plant · YTD · ₹ m",
+    "ask": "Which plant is behind on benefits?",
+    "source": "scaled",
+    "from": "Benefits register on E-06; total = PRG-002 planned − delivered",
+    "note": "Split by benefit line hand-set."
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "multi",
+    "title": "Benefits realisation · Entity A1 · % of plan YTD",
+    "ask": "Is the benefits gap closing?",
+    "source": "live",
+    "from": "PRG-002 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "multi",
+    "title": "Transformation progress · Entity A1 · % of milestones done",
+    "ask": "Is the programme keeping pace?",
+    "source": "live",
+    "from": "PRG-004 for the plant, entity or Group in each row label",
+    "note": ""
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "multi",
+    "title": "Open EHS corrective actions by plant · per month",
+    "ask": "Is the corrective-action backlog growing?",
+    "source": "live",
+    "from": "EHS-006 for the plant, entity or Group in each row label",
+    "note": "Filled by resolve.js at render."
+   },
+   {
     "screen": "P2-E08-CertWorkbench",
     "type": "bars",
     "title": "OPS-001 Entity A1 · P07 MTD · flash vs MIS vs corrected · kt",
@@ -41125,6 +41267,15 @@ var DCTData = {
     "source": "illustrative",
     "from": "P07 flash story scaled to Entity A1's monthly output",
     "note": "P07 is outside the model (P01–P06)."
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "multi",
+    "title": "Average alert resolution time · Entity A1 · days",
+    "ask": "Are issues being closed quickly enough?",
+    "source": "live",
+    "from": "EFF-008 for the plant, entity or Group in each row label",
+    "note": "Target 3 days."
    },
    {
     "screen": "P2-E11-Financial",
@@ -41460,6 +41611,96 @@ var DCTData = {
     "note": "Billing, dispatch and collection leakage are hand-set."
    },
    {
+    "screen": "P2-S12e-Signals",
+    "type": "multi",
+    "title": "Unplanned downtime by plant · h per month",
+    "ask": "Is downtime at Plant 02 a trend or a one-off?",
+    "source": "live",
+    "from": "REL-003 for the plant, entity or Group in each row label",
+    "note": "Filled by resolve.js at render."
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "bars",
+    "title": "Projected EBITDA gap · Entity A1 · rest of year · allocated by plant · ₹ m",
+    "ask": "Which plant's lost volume drives the projected EBITDA gap?",
+    "source": "scaled",
+    "from": "PRD-003 Entity A1 total from the model",
+    "note": "Split by each plant's share of SIG-007 production at risk."
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "multi",
+    "title": "Dispatch delays by plant · % late per month",
+    "ask": "Are late dispatches spreading beyond Plant 02?",
+    "source": "live",
+    "from": "SIG-012 for the plant, entity or Group in each row label",
+    "note": "Filled by resolve.js at render."
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "bars",
+    "title": "EBITDA by month · Entity A1 · ₹ m",
+    "ask": "Which months earned the EBITDA?",
+    "source": "model",
+    "from": "Monthly change in FIN-001 EBITDA YTD; margin = EBITDA ÷ monthly revenue (FIN-003)",
+    "note": "S-13 question 1."
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "waterfall",
+    "title": "EBITDA bridge · YTD plan → actual · Entity A1 · ₹ m",
+    "ask": "What moved EBITDA versus plan?",
+    "source": "model",
+    "from": "Same bridge as E-11 (planned revenue and sales volume)",
+    "note": "S-13 question 1."
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "waterfall",
+    "title": "EBITDA → EBIT · YTD Apr–Sep · Entity A1 · ₹ m",
+    "ask": "Where does EBITDA go before EBIT?",
+    "source": "model",
+    "from": "FIN-001 − FIN-002 = depreciation and amortisation",
+    "note": "S-13 question 2."
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "multi",
+    "title": "EBITDA vs EBIT by month · Entity A1 · ₹ m",
+    "ask": "Does EBIT follow EBITDA month by month?",
+    "source": "model",
+    "from": "Monthly change in FIN-001 and FIN-002",
+    "note": "S-13 question 2."
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "bars",
+    "title": "Production shortfall vs plan by plant · Sep · kt",
+    "ask": "Which plant is short?",
+    "source": "model",
+    "from": "planned_production_t − good_output_t by plant, Sep",
+    "note": "S-13 question 3."
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "multi",
+    "title": "Production vs plan by plant · % per month",
+    "ask": "",
+    "source": "live",
+    "from": "OPS-001 for the plant, entity or Group in each row label",
+    "note": "S-13 question 3."
+   },
+   {
+    "screen": "P2-S13-Ask",
+    "type": "bars",
+    "title": "Monthly EBITDA and EBIT upside by Plant 02 output level · ₹ m",
+    "ask": "How much is each step of recovery worth?",
+    "source": "model",
+    "from": "Extra Plant 02 tonnes × Sep contribution per tonne (revenue per tonne sold − variable cost per tonne made)",
+    "note": "S-13 question 4; assumes fixed cost and depreciation unchanged."
+   },
+   {
     "screen": "P2-X-States",
     "type": "line",
     "title": "EBITDA actual vs plan vs forecast · ₹ m per period",
@@ -41570,30 +41811,76 @@ var DCTData = {
    {
     "screen": "P2-E02-Plants",
     "type": "table",
-    "title": "Cost",
+    "title": "Cost · Entity A1 · Sep",
     "ask": "",
     "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (CST-001, CST-002, CST-003); scope from the row label",
+    "from": "7 of 7 rows are KPIs filled from the model (CST-001, CST-002, CST-003, CST-004, CST-005, SIG-017, SIG-018); scope from the row label",
     "kpis": [
      "CST-001",
      "CST-002",
-     "CST-003"
+     "CST-003",
+     "CST-004",
+     "CST-005",
+     "SIG-017",
+     "SIG-018"
     ],
     "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
    },
    {
     "screen": "P2-E02-Plants",
     "type": "table",
-    "title": "Sustainability (same governed KPIs as Risk)",
+    "title": "Cost by plant · Sep",
+    "ask": "Which plant is expensive, and is it spend or volume?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Cost per tonne = CST-001, Power cost per tonne = CST-004, Variable cost = CST-002, Fuel cost = CST-003, Fixed cost YTD = CST-005, Production vs plan = OPS-001",
+    "kpis": [],
+    "note": "Columns: Scope · Cost per tonne · Power cost per tonne · Variable cost · Fuel cost · Fixed cost YTD · Production vs plan"
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "table",
+    "title": "Sustainability · Entity A1 · Sep (same governed KPIs as Risk)",
     "ask": "",
     "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (SUS-001, SUS-002, SUS-003); scope from the row label",
+    "from": "5 of 5 rows are KPIs filled from the model (SUS-001, SUS-002, SUS-003, EHS-005, SIG-021); scope from the row label",
     "kpis": [
      "SUS-001",
      "SUS-002",
-     "SUS-003"
+     "SUS-003",
+     "EHS-005",
+     "SIG-021"
     ],
     "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "table",
+    "title": "Environment by plant · Sep",
+    "ask": "Which plant drives the footprint?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Water used = SUS-001, Emissions = SUS-002, Energy intensity = SUS-003, Environmental excursions = EHS-005, Environmental violations = SIG-021",
+    "kpis": [],
+    "note": "Columns: Scope · Water used · Emissions · Energy intensity · Environmental excursions · Environmental violations"
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "table",
+    "title": "Intensity per tonne of good output · Sep",
+    "ask": "Which plant is least efficient per tonne?",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Model inputs ÷ good output. Plant 02 uses the most water and energy per tonne: restarts after breakdowns burn energy without output."
+   },
+   {
+    "screen": "P2-E02-Plants",
+    "type": "table",
+    "title": "Environmental events · Sep",
+    "ask": "What happened, and was it reportable?",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Event · Plant · line · What · Reportable · Cause · Action"
    },
    {
     "screen": "P2-E02-Plants",
@@ -41690,12 +41977,22 @@ var DCTData = {
    {
     "screen": "P2-E05-ProductionCash",
     "type": "table",
-    "title": "Dispatch by customer group",
+    "title": "Dispatch by customer group · P07 volume at risk (Plant 02)",
     "ask": "",
     "source": "layout",
     "from": "3 rows of workflow, status or reference text; no KPI values",
     "kpis": [],
-    "note": "Columns: Customer group · Volume at risk · Priority · Owner (role)"
+    "note": "Total 24.3 kt = Plant 02 production at risk (SIG-007); ₹31 m = the billing deferral in the lifecycle above."
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Deliveries by plant · Sep",
+    "ask": "Which plant's dispatches hold back billing?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Sales vs plan = OPS-002, Dispatch delays = SIG-012, Revenue YTD = FIN-003",
+    "kpis": [],
+    "note": "Late loads in Sep: Plant 01 9 of 120, Plant 02 36 of 225, Plant 03 16 of 214."
    },
    {
     "screen": "P2-E05-ProductionCash",
@@ -41703,12 +42000,34 @@ var DCTData = {
     "title": "Collections",
     "ask": "",
     "source": "live",
-    "from": "2 of 2 rows are KPIs filled from the model (SIG-004, SIG-005); scope from the row label",
+    "from": "4 of 4 rows are KPIs filled from the model (CSH-003, WCP-001, SIG-004, SIG-005); scope from the row label",
     "kpis": [
+     "CSH-003",
+     "WCP-001",
      "SIG-004",
      "SIG-005"
     ],
     "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Receivables ageing · Entity A1 · end Sep · ₹ m",
+    "ask": "How much is overdue, and how old is it?",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Total = DSO 52.0 d × Sep revenue per day ₹38.5 m (₹1,155.7 m ÷ 30)."
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "Customers more than 30 days overdue · SIG-005 = 2",
+    "ask": "Who is paying late, and what is being done?",
+    "source": "illustrative",
+    "from": "Names SYN-114, SYN-208 (not KPIs in the model: alerts, cases, signals or decisions); values hand-set (SYN)",
+    "kpis": [],
+    "note": "Together ₹150.6 m, the whole 31+ day balance. Both are Group 2, the group whose P07 deliveries are being re-timed."
    },
    {
     "screen": "P2-E05-ProductionCash",
@@ -41734,13 +42053,18 @@ var DCTData = {
     "title": "Liquidity · Entity A1",
     "ask": "",
     "source": "live",
-    "from": "5 of 5 rows are KPIs filled from the model (CSH-001, CSH-002, LIQ-001, LIQ-002, LIQ-003); scope from the row label",
+    "from": "10 of 10 rows are KPIs filled from the model (CSH-001, CSH-002, LIQ-001, LIQ-002, LIQ-003, FIN-006, LIQ-004, CSH-006 …); scope from the row label",
     "kpis": [
      "CSH-001",
      "CSH-002",
      "LIQ-001",
      "LIQ-002",
-     "LIQ-003"
+     "LIQ-003",
+     "FIN-006",
+     "LIQ-004",
+     "CSH-006",
+     "FIN-008",
+     "PRD-008"
     ],
     "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
    },
@@ -41750,13 +42074,26 @@ var DCTData = {
     "title": "Treasury · Entity A1",
     "ask": "",
     "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (TRS-001, TRS-002, TRS-004); scope from the row label",
+    "from": "6 of 6 rows are KPIs filled from the model (TRS-001, TRS-002, TRS-004, TRS-003, TRS-005, LIQ-004); scope from the row label",
     "kpis": [
      "TRS-001",
      "TRS-002",
-     "TRS-004"
+     "TRS-004",
+     "TRS-003",
+     "TRS-005",
+     "LIQ-004"
     ],
     "note": "Columns: KPI · Measure · Value · Plan · Status · Trust"
+   },
+   {
+    "screen": "P2-E05-ProductionCash",
+    "type": "table",
+    "title": "FX exposure by currency · Entity A1 · ₹ m",
+    "ask": "Which currency carries the risk?",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Unhedged total = TRS-001; USD share = TRS-003."
    },
    {
     "screen": "P2-E05-ProductionCash",
@@ -41804,23 +42141,44 @@ var DCTData = {
     "title": "Value delivered · Entity A1",
     "ask": "",
     "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (VAL-001, VAL-002, VAL-003); scope from the row label",
+    "from": "4 of 4 rows are KPIs filled from the model (VAL-001, VAL-002, VAL-003, PRG-002); scope from the row label",
     "kpis": [
      "VAL-001",
      "VAL-002",
-     "VAL-003"
+     "VAL-003",
+     "PRG-002"
     ],
     "note": "Columns: KPI · Measure · Value · Plan · variance · Status · Trust"
    },
    {
     "screen": "P2-E06-Capex",
     "type": "table",
-    "title": "Transformation initiatives · Entity A1",
-    "ask": "",
+    "title": "Benefits register · YTD Apr–Sep · ₹ m",
+    "ask": "Where does each rupee of benefit come from?",
     "source": "layout",
-    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "from": "9 rows of workflow, status or reference text; no KPI values",
     "kpis": [],
-    "note": "Columns: Initiative · Owner (role) · Stage · Progress · Benefit FY · Status"
+    "note": "Rows add up to the model's benefits planned (₹30.2 m) and delivered (₹20.9 m). Highlighted: below 70% of plan."
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "table",
+    "title": "Transformation initiatives · Entity A1 · PRG-005 = 5 on track · 2 at risk · 1 delayed",
+    "ask": "Which initiatives are delivering, and which are slipping?",
+    "source": "layout",
+    "from": "8 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Totals: plan YTD ₹16.0 m, delivered ₹8.5 m (53%). Milestones: 32 of 60 done (PRG-004)."
+   },
+   {
+    "screen": "P2-E06-Capex",
+    "type": "table",
+    "title": "Why the three slipping initiatives slip · and what links them to the plant numbers",
+    "ask": "What is the root cause of each slip?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Initiative · Status · Root cause · Linked plant KPI · Recovery step · Due"
    },
    {
     "screen": "P2-E07-RegEHS",
@@ -41875,6 +42233,36 @@ var DCTData = {
    {
     "screen": "P2-E07-RegEHS",
     "type": "table",
+    "title": "Health and safety by plant · Sep",
+    "ask": "Which plant carries the safety risk?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: TRIR = EHS-001, Severity incidents = EHS-002, Near misses = EHS-003, Open corrective actions = EHS-006, Overdue actions = EHS-007, Investigation completion = EHS-009",
+    "kpis": [],
+    "note": "TRIR per 200,000 hours worked (Plant 01 55,000 h, Plant 02 95,000 h, Plant 03 69,000 h)."
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Incidents and investigations · Sep",
+    "ask": "What happened, where, and is it investigated?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Event · Plant · line · Type · What happened · Investigation · Corrective action"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Overdue EHS actions by plant and age · EHS-007 = 7",
+    "ask": "Where is the overdue backlog, and how old is it?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Plant · Overdue · ≤ 15 days · 16–30 days · > 30 days · Main reason"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
     "title": "Regulatory",
     "ask": "",
     "source": "live",
@@ -41889,6 +42277,36 @@ var DCTData = {
      "REG-010"
     ],
     "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Permits and obligations by plant · Sep",
+    "ask": "Which plant's permits need attention?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Deadlines, 30 d = REG-002, Obligations due, 30 d = REG-004, Licence expirations, 12 m = REG-003, Nearest permit expiry = REG-006, Overdue obligations = REG-005, Breaches YTD = REG-010",
+    "kpis": [],
+    "note": "Columns: Scope · Deadlines, 30 d · Obligations due, 30 d · Licence expirations, 12 m · Nearest permit expiry · Overdue obligations · Breaches YTD"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Permit and licence register · expiring within 12 months",
+    "ask": "Is every renewal on a safe timeline?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Expiry days are REG-006 by plant; the entity value is the earliest (65 d, Plant 02). The licence is the one counted in REG-003."
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Regulator interactions · next 60 days",
+    "ask": "Which regulator contacts are coming?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: When · Regulator · Plant · Topic · Prepared by"
    },
    {
     "screen": "P2-E07-RegEHS",
@@ -41912,6 +42330,31 @@ var DCTData = {
    {
     "screen": "P2-E07-RegEHS",
     "type": "table",
+    "title": "Open audit findings · GOV-004 = 2",
+    "ask": "What did audit find, and when will it close?",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Average finding closure 28.6 days (GOV-009, target ≤ 30)."
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Control events YTD Apr–Sep · by plant",
+    "ask": "Where do control failures and overrides happen?",
+    "source": "live",
+    "from": "4 of 4 rows are KPIs filled from the model (CTL-002, CTL-005, CTL-010, CTL-007); scope from the row label",
+    "kpis": [
+     "CTL-002",
+     "CTL-005",
+     "CTL-010",
+     "CTL-007"
+    ],
+    "note": "Plant 02: weighbridge reading overridden 4 times during kiln restarts; spot RM-1 purchase above delegated limit in Sep (policy exception). Plant 03: weighbridge calibration overdue in Jul (control failure)."
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
     "title": "Contracts",
     "ask": "",
     "source": "live",
@@ -41926,6 +42369,36 @@ var DCTData = {
    {
     "screen": "P2-E07-RegEHS",
     "type": "table",
+    "title": "Contracts expiring within 90 days · CON-001 = 2",
+    "ask": "Which contracts must be renewed, and on what terms?",
+    "source": "layout",
+    "from": "2 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Contract · Counterparty · Plant served · Expires · Issue · Decision"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Contracts not fully compliant · 3 of 72 (CON-002 95.8%)",
+    "ask": "Which contracts breach their terms?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Columns: Contract · Counterparty · Breach · Remedy"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Supplier and contractor performance by plant · Sep",
+    "ask": "Which plant's suppliers underperform?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Supplier on-time delivery = SUP-001, Lead-time variance = SUP-004, Single-source spend share = SUP-007, Supplier EHS incidents YTD = SUP-008",
+    "kpis": [],
+    "note": "Columns: Scope · Supplier on-time delivery · Lead-time variance · Single-source spend share · Supplier EHS incidents YTD"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
     "title": "Sustainability",
     "ask": "",
     "source": "live",
@@ -41936,6 +42409,26 @@ var DCTData = {
      "SUS-003"
     ],
     "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Environmental compliance by plant · Sep",
+    "ask": "Where is the environmental compliance risk?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Environmental excursions = EHS-005, Environmental violations = SIG-021, Emissions = SUS-002, Water used = SUS-001, Nearest permit expiry = REG-006",
+    "kpis": [],
+    "note": "Columns: Scope · Environmental excursions · Environmental violations · Emissions · Water used · Nearest permit expiry"
+   },
+   {
+    "screen": "P2-E07-RegEHS",
+    "type": "table",
+    "title": "Water abstraction vs permitted volume · Sep · '000 m³",
+    "ask": "Is any plant close to its water limit?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Use from SUS-001 by plant. Plant 03 uses 91% of its limit and its permit is up for renewal in 68 days: the renewal should not ask for less."
    },
    {
     "screen": "P2-E07-RegEHS",
@@ -42067,11 +42560,41 @@ var DCTData = {
     "screen": "P2-E09-MyWork",
     "type": "table",
     "title": "Root causes recorded · rolled up",
-    "ask": "",
+    "ask": "Which causes have been removed for good?",
     "source": "layout",
-    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
     "kpis": [],
-    "note": "Columns: Root cause · Cases · Status · Prevents"
+    "note": "EFF-011 counts Apr–Sep: 4 of 4 eliminated. The two open causes were identified in Oct with INC-SYN-0142 and enter the count in P07."
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "table",
+    "title": "Open work by plant and severity",
+    "ask": "Where is my open work concentrated?",
+    "source": "layout",
+    "from": "3 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Counts the 'other open items' table; the incident queue above is all Plant 02 (supply, Line L2, dispatch, L2 meter)."
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "table",
+    "title": "Other open items in my scope · by plant",
+    "ask": "What else is mine beyond the incident?",
+    "source": "illustrative",
+    "from": "Names SYN-031, SYN-034 (not KPIs in the model: alerts, cases, signals or decisions); values hand-set (SYN)",
+    "kpis": [],
+    "note": "Columns: Issue · Plant · Severity · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-E09-MyWork",
+    "type": "table",
+    "title": "Issues closed · last 90 days",
+    "ask": "How were recent issues closed, and did they stay closed?",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Average resolution 2.8 d in Sep (16.7 days over 6 alerts, EFF-008). Repeats in 90 days: 3 (EFF-010), two of them the same P02-03 kiln stop."
    },
    {
     "screen": "P2-E10-Closure",
@@ -43898,12 +44421,16 @@ var DCTData = {
     "title": "Leading signals by segment · Entity A1 · Operations",
     "ask": "",
     "source": "live",
-    "from": "2 of 2 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005); scope from the row label",
+    "from": "5 of 5 rows are KPIs filled from the model (SIG-001, REL-003, SIG-002, PLT-005, SIG-003, PLT-004, SIG-008, PRD-006); scope from the row label",
     "kpis": [
      "SIG-001",
      "REL-003",
      "SIG-002",
-     "PLT-005"
+     "PLT-005",
+     "SIG-003",
+     "PLT-004",
+     "SIG-008",
+     "PRD-006"
     ],
     "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
    },
@@ -43913,14 +44440,16 @@ var DCTData = {
     "title": "Leading signals by segment · Entity A1 · Finance",
     "ask": "",
     "source": "live",
-    "from": "6 of 6 rows are KPIs filled from the model (SIG-004, SIG-005, SIG-007, SIG-009, SIG-010, SIG-011); scope from the row label",
+    "from": "8 of 8 rows are KPIs filled from the model (SIG-004, SIG-005, SIG-007, SIG-009, SIG-010, SIG-011, LIQ-002, PRD-008); scope from the row label",
     "kpis": [
      "SIG-004",
      "SIG-005",
      "SIG-007",
      "SIG-009",
      "SIG-010",
-     "SIG-011"
+     "SIG-011",
+     "LIQ-002",
+     "PRD-008"
     ],
     "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
    },
@@ -43930,9 +44459,11 @@ var DCTData = {
     "title": "Leading signals by segment · Entity A1 · Commercial",
     "ask": "",
     "source": "live",
-    "from": "1 of 1 row are KPIs filled from the model (SIG-012); scope from the row label",
+    "from": "3 of 3 rows are KPIs filled from the model (SIG-012, OPS-002, SIG-013); scope from the row label",
     "kpis": [
-     "SIG-012"
+     "SIG-012",
+     "OPS-002",
+     "SIG-013"
     ],
     "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
    },
@@ -43942,10 +44473,13 @@ var DCTData = {
     "title": "Leading signals by segment · Entity A1 · External",
     "ask": "",
     "source": "live",
-    "from": "2 of 2 rows are KPIs filled from the model (SIG-016, SIG-017); scope from the row label",
+    "from": "5 of 5 rows are KPIs filled from the model (SIG-016, SIG-017, SIG-014, SIG-015, SIG-018); scope from the row label",
     "kpis": [
      "SIG-016",
-     "SIG-017"
+     "SIG-017",
+     "SIG-014",
+     "SIG-015",
+     "SIG-018"
     ],
     "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
    },
@@ -43955,11 +44489,14 @@ var DCTData = {
     "title": "Leading signals by segment · Entity A1 · Risk",
     "ask": "",
     "source": "live",
-    "from": "3 of 3 rows are KPIs filled from the model (SIG-019, SIG-020, SIG-021); scope from the row label",
+    "from": "6 of 6 rows are KPIs filled from the model (SIG-019, SIG-020, SIG-021, REG-006, EHS-005, EHS-007); scope from the row label",
     "kpis": [
      "SIG-019",
      "SIG-020",
-     "SIG-021"
+     "SIG-021",
+     "REG-006",
+     "EHS-005",
+     "EHS-007"
     ],
     "note": "Columns: Segment · Signal · Value · State · Changed 24 h · Feeds prediction"
    },
@@ -43985,6 +44522,111 @@ var DCTData = {
      "SIG-008"
     ],
     "note": "Columns: # · What changed · Cause · Impact · Action (owner · due) · Provenance · Materiality"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Operations signals by plant · Sep (CERT) and next month (PREDICTION)",
+    "ask": "Which plant is generating the operations signals?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Unplanned downtime = REL-003, Critical plant-state alerts = SIG-008, MTTR = REL-002, Downtime loss, next month = PRD-006, Plan-miss probability, next month = PRD-002, Probability OEE < 78% = PRD-007",
+    "kpis": [],
+    "note": "Model values. Predictions are next-month outputs from each plant's own forecast inputs."
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Open plant-state alerts · SIG-008 = 5 (Plant 02: 4, Plant 03: 1)",
+    "ask": "What exactly are the plants warning about?",
+    "source": "layout",
+    "from": "5 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Four of the five alerts sit on Plant 02, three on assets that caused Sep downtime (P02-03 29 h, P02-07 19 h, P02-01 13 h; E-03)."
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Finance predictions and thresholds · Entity A1",
+    "ask": "How close are the finance signals to a trigger?",
+    "source": "live",
+    "from": "7 of 7 rows are KPIs filled from the model (PRD-003, PRD-008, PRD-012, PRD-009, LIQ-002, SIG-004, SIG-005); scope from the row label",
+    "kpis": [
+     "PRD-003",
+     "PRD-008",
+     "PRD-012",
+     "PRD-009",
+     "LIQ-002",
+     "SIG-004",
+     "SIG-005"
+    ],
+    "note": "Columns: KPI · Measure · Value · Threshold · Status"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Sales and delivery signals by plant · Sep",
+    "ask": "Which plant's customers feel the shortfall?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Sales vs plan = OPS-002, Dispatch delays = SIG-012, Pricing pressure = SIG-013, Revenue YTD = FIN-003",
+    "kpis": [],
+    "note": "Columns: Scope · Sales vs plan · Dispatch delays · Pricing pressure · Revenue YTD"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Customer orders at risk · P07 · supplied from Plant 02",
+    "ask": "Which customers are exposed, and what is being done?",
+    "source": "layout",
+    "from": "4 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Volume at risk = Plant 02's production at risk (SIG-007). Billing at risk = the ₹31 m deferral on E-05, split by volume."
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Outside factors by plant · Sep",
+    "ask": "Which plant is most exposed to energy and price moves?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Fuel cost per tonne, MoM = SIG-017, Power cost per tonne, MoM = SIG-018, Power cost per tonne = CST-004, Pricing pressure = SIG-013",
+    "kpis": [],
+    "note": "Columns: Scope · Fuel cost per tonne, MoM · Power cost per tonne, MoM · Power cost per tonne · Pricing pressure"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "External watch-list · Entity A1",
+    "ask": "Which outside factors could move the numbers, and by how much?",
+    "source": "live",
+    "from": "6 of 6 rows are KPIs filled from the model (SIG-016, SIG-014, SIG-017, SIG-018, SIG-015, SIG-013); scope from the row label",
+    "kpis": [
+     "SIG-016",
+     "SIG-014",
+     "SIG-017",
+     "SIG-018",
+     "SIG-015",
+     "SIG-013"
+    ],
+    "note": "Columns: Factor · Signal · Now · What it hits · Sensitivity · Watch"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Risk and compliance signals by plant · Sep",
+    "ask": "Where do the compliance clocks sit?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Regulatory deadlines, 30 d = REG-002, Obligations due, 30 d = REG-004, Nearest permit expiry = REG-006, Environmental excursions = EHS-005, Overdue EHS actions = EHS-007, Supplier EHS incidents YTD = SUP-008",
+    "kpis": [],
+    "note": "Columns: Scope · Regulatory deadlines, 30 d · Obligations due, 30 d · Nearest permit expiry · Environmental excursions · Overdue EHS actions · Supplier EHS incidents YTD"
+   },
+   {
+    "screen": "P2-S12e-Signals",
+    "type": "table",
+    "title": "Clocks running · next 90 days · by plant",
+    "ask": "What falls due, where, and is it on track?",
+    "source": "layout",
+    "from": "6 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Same items as the Regulatory and EHS workbench (E-07); this view adds the plant and the KPI each one feeds."
    },
    {
     "screen": "P2-S13-Ask",

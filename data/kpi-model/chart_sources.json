@@ -1,47 +1,395 @@
 {
-  "_about": "How every graph on the screens gets its numbers. Matched in order on the graph title (first match wins). source: live = filled from the model when the page renders; model = calculated from the model by sync_pages.py; scaled = total matches the model, split hand-set; illustrative = shape only, at model scale; layout = not KPI data. Shown on the KPI Reference page (R-01).",
-  "rules": [
-    {"match": "FX exposure vs hedge", "source": "model", "from": "Group Inputs fx_exposure_k and fx_hedged_k ÷ 1000, by month (P01–P06)", "note": "Gross exposure and hedged amount; unhedged = exposure − hedged (TRS-001)."},
-    {"match": "EBITDA actual vs plan vs forecast", "source": "model", "from": "Group EBITDA by month (ebitda_k); P01–P06 actual, P07–P12 = rest-of-year plan and forecast ÷ 6 (PRD-003 inputs)", "note": "Plan to P06 equals actual: the model re-bases the plan on actuals."},
-    {"match": "EBITDA margin → FCF conversion → ROCE", "source": "model", "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE", "note": "ROCE target 12% shown as the base line."},
-    {"match": "EBITDA bridge · FY plan", "source": "scaled", "from": "FY plan = FIN-001 + planned rest of year; FY forecast = FIN-001 + forecast rest of year; gap = PRD-003", "note": "Split of the gap into volume, price, cost, fuel and FX is hand-set."},
-    {"match": "EBITDA bridge · YTD plan", "source": "model", "from": "Plan = actual + revenue below plan × EBITDA margin; volume = sales below plan; price = the rest", "note": "Derived plan: the model has no EBITDA plan for the year to date."},
-    {"match": "Revenue per period", "source": "model", "from": "revenue_k vs planned_revenue_k by month (Entity A1)", "note": "P07–P12 held at the P06 run-rate."},
-    {"match": "Cash position", "source": "scaled", "from": "Ends at Group cash (CSH-001)", "note": "Daily path (D-12 to D+12) is hand-set."},
-    {"match": "Cash bridge", "source": "scaled", "from": "Ends at Group cash (CSH-001)", "note": "Collections, payments, capex and financing steps are hand-set."},
-    {"match": "Debt maturity ladder", "source": "scaled", "from": "Next 12 months = LIQ-003; > 12 m = gross debt − LIQ-003", "note": "Quarterly split is hand-set."},
-    {"match": "FX exposure vs hedged", "source": "model", "from": "fx_exposure_k and fx_hedged_k by month; the gap is TRS-001", "note": ""},
-    {"match": "Net working capital bridge", "source": "scaled", "from": "Starts at Group NWC (WCP-004)", "note": "Steps to the P07 forecast are hand-set."},
-    {"match": "release opportunity", "source": "scaled", "from": "Scaled to the model's working-capital size", "note": "Opportunity per entity is hand-set."},
-    {"match": "Cash levers", "source": "scaled", "from": "Scaled to the model's working-capital size", "note": "Lever amounts are hand-set."},
-    {"match": "alue delivered vs plan", "source": "model", "from": "Cumulative VAL-001 EBITDA benefit, VAL-002 cash benefit, VAL-003 cost savings", "note": "Plan line is hand-set (8% above delivered)."},
-    {"match": "Group production", "source": "model", "from": "Σ Plants 01–06 good output vs planned production (OPS-001 inputs)", "note": "P07–P12 forecast path is hand-set."},
-    {"match": "Plant 02 production · actual vs plan · kt per month", "source": "model", "from": "Plant 02 good output vs planned production by month", "note": "P07 forecast = plan − SIG-007 (24.3 kt)."},
-    {"match": "OEE, yield and recovery", "source": "model", "from": "PLT-002 OEE, PLT-005 yield, PLT-004 recovery (Group)", "note": ""},
-    {"match": "Production vs plan", "source": "live", "from": "OPS-001 for each plant, entity and Group", "note": ""},
-    {"match": "contribution to projected EBITDA variance", "source": "model", "from": "PRD-003 by entity: A1 + A2 = Group", "note": ""},
-    {"match": "EBITDA variance contribution by entity", "source": "model", "from": "PRD-003 by entity: A1 + A2 = Group", "note": ""},
-    {"match": "Contribution by entity", "source": "model", "from": "PRD-003 by entity: A1 + A2 = Group", "note": ""},
-    {"match": "By business", "source": "model", "from": "PRD-003 Group (Business A = Group)", "note": ""},
-    {"match": "EBITDA variance vs plan YTD", "source": "model", "from": "EBITDA YTD − derived plan (actual + revenue below plan × margin), by entity", "note": ""},
-    {"match": "ROCE vs", "source": "model", "from": "FIN-005 − 12% target, by entity", "note": ""},
-    {"match": "DSO", "source": "live", "from": "WCP-001 by entity", "note": ""},
-    {"match": "Open audit findings", "source": "live", "from": "GOV-004 by entity", "note": ""},
-    {"match": "Certification coverage", "source": "model", "from": "TRU-001, TRU-008, TRU-009 by month (Group)", "note": "TRU-001 is flat in the source data."},
-    {"match": "Escalation effectiveness", "source": "model", "from": "EFF-008 resolution time, EFF-010 repeat issues, EFF-011 root causes eliminated (Group)", "note": ""},
-    {"match": "Leakage by stage", "source": "scaled", "from": "Upstreaming = CSH-006", "note": "Billing, dispatch and collection leakage are hand-set."},
-    {"match": "shortfall by line", "source": "scaled", "from": "Sum = SIG-007 Plant 02 (24.3 kt)", "note": "Split by line is hand-set."},
-    {"match": "downtime by asset", "source": "scaled", "from": "Sum = REL-003 Plant 02 (78.2 h)", "note": "Split by asset is hand-set."},
-    {"match": "day-pair", "source": "illustrative", "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)", "note": "Daily curve and scenario options are hand-set."},
-    {"match": "daily production", "source": "illustrative", "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair)", "note": "Daily curve is hand-set."},
-    {"match": "flash vs MIS", "source": "illustrative", "from": "P07 flash story scaled to Entity A1's monthly output", "note": "P07 is outside the model (P01–P06)."},
-    {"match": "Variance drivers vs plan", "source": "illustrative", "from": "P07 flash story scaled to Entity A1", "note": ""},
-    {"match": "Materiality drivers", "source": "layout", "from": "Placeholder ratings (High / Medium / Low)", "note": "Thresholds pending approval (D-03)."},
-    {"match": "Spend %", "source": "layout", "from": "Spend % minus physical progress % from the project table on the same page", "note": ""},
-    {"match": "Material cover", "source": "illustrative", "from": "Cover minus lead time per material", "note": "Not in the model; SIG-009 counts materials under 7 days' cover (a different measure)."},
-    {"match": "DSO trend", "source": "live", "from": "WCP-001 Group by month (P01–P06)", "note": "Dashed line = the 45-day target from the model."},
-    {"match": "Net debt evolution", "source": "live", "from": "FIN-006 Group by month (P01–P06)", "note": "Month-end net debt from the Group building blocks."},
-    {"match": "Reliability trend · mean time to repair", "source": "live", "from": "REL-002 for Entity A1 and Entity A2 by month (P01–P06)", "note": "Recalculated per entity from repair hours ÷ breakdowns; dashed line = 6 h target."},
-    {"match": "Sustainability curve · emissions", "source": "live", "from": "SUS-002 for Entity A1 and Entity A2 by month (P01–P06)", "note": "Σ of plant emissions per entity."}
-  ]
+ "_about": "How every graph on the screens gets its numbers. Matched in order on the graph title (first match wins). source: live = filled from the model when the page renders; model = calculated from the model by sync_pages.py; scaled = total matches the model, split hand-set; illustrative = shape only, at model scale; layout = not KPI data. Shown on the KPI Reference page (R-01).",
+ "rules": [
+  {
+   "match": "EBITDA by month · Entity A1",
+   "source": "model",
+   "from": "Monthly change in FIN-001 EBITDA YTD; margin = EBITDA ÷ monthly revenue (FIN-003)",
+   "note": "S-13 question 1."
+  },
+  {
+   "match": "EBITDA bridge · YTD plan → actual · Entity A1",
+   "source": "model",
+   "from": "Same bridge as E-11 (planned revenue and sales volume)",
+   "note": "S-13 question 1."
+  },
+  {
+   "match": "EBITDA → EBIT · YTD",
+   "source": "model",
+   "from": "FIN-001 − FIN-002 = depreciation and amortisation",
+   "note": "S-13 question 2."
+  },
+  {
+   "match": "EBITDA vs EBIT by month",
+   "source": "model",
+   "from": "Monthly change in FIN-001 and FIN-002",
+   "note": "S-13 question 2."
+  },
+  {
+   "match": "Production shortfall vs plan by plant",
+   "source": "model",
+   "from": "planned_production_t − good_output_t by plant, Sep",
+   "note": "S-13 question 3."
+  },
+  {
+   "match": "Production vs plan by plant · % per month",
+   "source": "live",
+   "from": "OPS-001 monthly values by plant and Entity A1 (model-bound multi, kpi)",
+   "note": "S-13 question 3."
+  },
+  {
+   "match": "Monthly EBITDA and EBIT upside by Plant 02 output level",
+   "source": "model",
+   "from": "Extra Plant 02 tonnes × Sep contribution per tonne (revenue per tonne sold − variable cost per tonne made)",
+   "note": "S-13 question 4; assumes fixed cost and depreciation unchanged."
+  },
+  {
+   "match": "by plant · h per month",
+   "source": "live",
+   "from": "REL-003 monthly values by plant and Entity A1 (model-bound multi, kpi)",
+   "note": "Filled by resolve.js at render."
+  },
+  {
+   "match": "by plant · % late per month",
+   "source": "live",
+   "from": "SIG-012 monthly values by plant and Entity A1 (model-bound multi, kpi)",
+   "note": "Filled by resolve.js at render."
+  },
+  {
+   "match": "Cost per tonne by plant · ₹/t per month",
+   "source": "live",
+   "from": "CST-001 monthly values by plant and Entity A1 (model-bound multi, kpi)",
+   "note": "Filled by resolve.js at render."
+  },
+  {
+   "match": "Energy intensity by plant",
+   "source": "live",
+   "from": "SUS-003 monthly values by plant and Entity A1 (model-bound multi, kpi)",
+   "note": "Filled by resolve.js at render."
+  },
+  {
+   "match": "Open EHS corrective actions by plant",
+   "source": "live",
+   "from": "EHS-006 monthly values by plant and Entity A1 (model-bound multi, kpi)",
+   "note": "Filled by resolve.js at render."
+  },
+  {
+   "match": "DSO vs target",
+   "source": "live",
+   "from": "WCP-001 Entity A1 monthly values (model-bound multi, kpi)",
+   "note": "Target 45 days."
+  },
+  {
+   "match": "Benefits realisation · Entity A1",
+   "source": "live",
+   "from": "PRG-002 Entity A1 monthly values (model-bound multi, kpi)",
+   "note": ""
+  },
+  {
+   "match": "Transformation progress · Entity A1",
+   "source": "live",
+   "from": "PRG-004 Entity A1 monthly values (model-bound multi, kpi)",
+   "note": ""
+  },
+  {
+   "match": "Average alert resolution time",
+   "source": "live",
+   "from": "EFF-008 Entity A1 monthly values (model-bound multi, kpi)",
+   "note": "Target 3 days."
+  },
+  {
+   "match": "Projected EBITDA gap · Entity A1 · rest of year · allocated by plant",
+   "source": "scaled",
+   "from": "PRD-003 Entity A1 total from the model",
+   "note": "Split by each plant's share of SIG-007 production at risk."
+  },
+  {
+   "match": "Cash levers · release at target days",
+   "source": "model",
+   "from": "(days above target) × Sep revenue or variable cost per day (WCP-001/002/003, FIN-003, CST-002)",
+   "note": ""
+  },
+  {
+   "match": "Net working capital · Aug → Sep",
+   "source": "model",
+   "from": "Receivables and inventory from DSO and inventory days × value per day; payables = remainder of the WCP-004 change",
+   "note": ""
+  },
+  {
+   "match": "Debt maturing in the next 12 months",
+   "source": "scaled",
+   "from": "LIQ-003 total from the model",
+   "note": "Quarterly split hand-set."
+  },
+  {
+   "match": "Cost per tonne · actual vs at planned output",
+   "source": "model",
+   "from": "Plant cost inputs ÷ good output (actual) and ÷ planned production (at plan)",
+   "note": ""
+  },
+  {
+   "match": "Cost per tonne · Plant 03 → Plant 02",
+   "source": "model",
+   "from": "Fuel, other variable and fixed cost per tonne of good output, Plant 03 vs Plant 02",
+   "note": ""
+  },
+  {
+   "match": "Benefit shortfall vs plan by plant",
+   "source": "scaled",
+   "from": "Benefits register on E-06; total = PRG-002 planned − delivered",
+   "note": "Split by benefit line hand-set."
+  },
+  {
+   "match": "FX exposure vs hedge",
+   "source": "model",
+   "from": "Group Inputs fx_exposure_k and fx_hedged_k ÷ 1000, by month (P01–P06)",
+   "note": "Gross exposure and hedged amount; unhedged = exposure − hedged (TRS-001)."
+  },
+  {
+   "match": "EBITDA actual vs plan vs forecast",
+   "source": "model",
+   "from": "Group EBITDA by month (ebitda_k); P01–P06 actual, P07–P12 = rest-of-year plan and forecast ÷ 6 (PRD-003 inputs)",
+   "note": "Plan to P06 equals actual: the model re-bases the plan on actuals."
+  },
+  {
+   "match": "EBITDA margin → FCF conversion → ROCE",
+   "source": "model",
+   "from": "EBITDA ÷ revenue by month · FIN-008 FCF conversion YTD · FIN-005 ROCE",
+   "note": "ROCE target 12% shown as the base line."
+  },
+  {
+   "match": "EBITDA bridge · FY plan",
+   "source": "scaled",
+   "from": "FY plan = FIN-001 + planned rest of year; FY forecast = FIN-001 + forecast rest of year; gap = PRD-003",
+   "note": "Split of the gap into volume, price, cost, fuel and FX is hand-set."
+  },
+  {
+   "match": "EBITDA bridge · YTD plan",
+   "source": "model",
+   "from": "Plan = actual + revenue below plan × EBITDA margin; volume = sales below plan; price = the rest",
+   "note": "Derived plan: the model has no EBITDA plan for the year to date."
+  },
+  {
+   "match": "Revenue per period",
+   "source": "model",
+   "from": "revenue_k vs planned_revenue_k by month (Entity A1)",
+   "note": "P07–P12 held at the P06 run-rate."
+  },
+  {
+   "match": "Cash position",
+   "source": "scaled",
+   "from": "Ends at Group cash (CSH-001)",
+   "note": "Daily path (D-12 to D+12) is hand-set."
+  },
+  {
+   "match": "Cash bridge",
+   "source": "scaled",
+   "from": "Ends at Group cash (CSH-001)",
+   "note": "Collections, payments, capex and financing steps are hand-set."
+  },
+  {
+   "match": "Debt maturity ladder",
+   "source": "scaled",
+   "from": "Next 12 months = LIQ-003; > 12 m = gross debt − LIQ-003",
+   "note": "Quarterly split is hand-set."
+  },
+  {
+   "match": "FX exposure vs hedged",
+   "source": "model",
+   "from": "fx_exposure_k and fx_hedged_k by month; the gap is TRS-001",
+   "note": ""
+  },
+  {
+   "match": "Net working capital bridge",
+   "source": "scaled",
+   "from": "Starts at Group NWC (WCP-004)",
+   "note": "Steps to the P07 forecast are hand-set."
+  },
+  {
+   "match": "release opportunity",
+   "source": "scaled",
+   "from": "Scaled to the model's working-capital size",
+   "note": "Opportunity per entity is hand-set."
+  },
+  {
+   "match": "Cash levers",
+   "source": "scaled",
+   "from": "Scaled to the model's working-capital size",
+   "note": "Lever amounts are hand-set."
+  },
+  {
+   "match": "alue delivered vs plan",
+   "source": "model",
+   "from": "Cumulative VAL-001 EBITDA benefit, VAL-002 cash benefit, VAL-003 cost savings",
+   "note": "Plan line is hand-set (8% above delivered)."
+  },
+  {
+   "match": "Group production",
+   "source": "model",
+   "from": "Σ Plants 01–06 good output vs planned production (OPS-001 inputs)",
+   "note": "P07–P12 forecast path is hand-set."
+  },
+  {
+   "match": "Plant 02 production · actual vs plan · kt per month",
+   "source": "model",
+   "from": "Plant 02 good output vs planned production by month",
+   "note": "P07 forecast = plan − SIG-007 (24.3 kt)."
+  },
+  {
+   "match": "OEE, yield and recovery",
+   "source": "model",
+   "from": "PLT-002 OEE, PLT-005 yield, PLT-004 recovery (Group)",
+   "note": ""
+  },
+  {
+   "match": "Production vs plan",
+   "source": "live",
+   "from": "OPS-001 for each plant, entity and Group",
+   "note": ""
+  },
+  {
+   "match": "contribution to projected EBITDA variance",
+   "source": "model",
+   "from": "PRD-003 by entity: A1 + A2 = Group",
+   "note": ""
+  },
+  {
+   "match": "EBITDA variance contribution by entity",
+   "source": "model",
+   "from": "PRD-003 by entity: A1 + A2 = Group",
+   "note": ""
+  },
+  {
+   "match": "Contribution by entity",
+   "source": "model",
+   "from": "PRD-003 by entity: A1 + A2 = Group",
+   "note": ""
+  },
+  {
+   "match": "By business",
+   "source": "model",
+   "from": "PRD-003 Group (Business A = Group)",
+   "note": ""
+  },
+  {
+   "match": "EBITDA variance vs plan YTD",
+   "source": "model",
+   "from": "EBITDA YTD − derived plan (actual + revenue below plan × margin), by entity",
+   "note": ""
+  },
+  {
+   "match": "ROCE vs",
+   "source": "model",
+   "from": "FIN-005 − 12% target, by entity",
+   "note": ""
+  },
+  {
+   "match": "DSO",
+   "source": "live",
+   "from": "WCP-001 by entity",
+   "note": ""
+  },
+  {
+   "match": "Open audit findings",
+   "source": "live",
+   "from": "GOV-004 by entity",
+   "note": ""
+  },
+  {
+   "match": "Certification coverage",
+   "source": "model",
+   "from": "TRU-001, TRU-008, TRU-009 by month (Group)",
+   "note": "TRU-001 is flat in the source data."
+  },
+  {
+   "match": "Escalation effectiveness",
+   "source": "model",
+   "from": "EFF-008 resolution time, EFF-010 repeat issues, EFF-011 root causes eliminated (Group)",
+   "note": ""
+  },
+  {
+   "match": "Leakage by stage",
+   "source": "scaled",
+   "from": "Upstreaming = CSH-006",
+   "note": "Billing, dispatch and collection leakage are hand-set."
+  },
+  {
+   "match": "shortfall by line",
+   "source": "scaled",
+   "from": "Sum = SIG-007 Plant 02 (24.3 kt)",
+   "note": "Split by line is hand-set."
+  },
+  {
+   "match": "downtime by asset",
+   "source": "scaled",
+   "from": "Sum = REL-003 Plant 02 (78.2 h)",
+   "note": "Split by asset is hand-set."
+  },
+  {
+   "match": "day-pair",
+   "source": "illustrative",
+   "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair, running at about 78%)",
+   "note": "Daily curve and scenario options are hand-set."
+  },
+  {
+   "match": "daily production",
+   "source": "illustrative",
+   "from": "The weakest Entity A1 site at model scale (plan 8.1 kt per day-pair)",
+   "note": "Daily curve is hand-set."
+  },
+  {
+   "match": "flash vs MIS",
+   "source": "illustrative",
+   "from": "P07 flash story scaled to Entity A1's monthly output",
+   "note": "P07 is outside the model (P01–P06)."
+  },
+  {
+   "match": "Variance drivers vs plan",
+   "source": "illustrative",
+   "from": "P07 flash story scaled to Entity A1",
+   "note": ""
+  },
+  {
+   "match": "Materiality drivers",
+   "source": "layout",
+   "from": "Placeholder ratings (High / Medium / Low)",
+   "note": "Thresholds pending approval (D-03)."
+  },
+  {
+   "match": "Spend %",
+   "source": "layout",
+   "from": "Spend % minus physical progress % from the project table on the same page",
+   "note": ""
+  },
+  {
+   "match": "Material cover",
+   "source": "illustrative",
+   "from": "Cover minus lead time per material",
+   "note": "Not in the model; SIG-009 counts materials under 7 days' cover (a different measure)."
+  },
+  {
+   "match": "DSO trend",
+   "source": "live",
+   "from": "WCP-001 Group by month (P01–P06)",
+   "note": "Dashed line = the 45-day target from the model."
+  },
+  {
+   "match": "Net debt evolution",
+   "source": "live",
+   "from": "FIN-006 Group by month (P01–P06)",
+   "note": "Month-end net debt from the Group building blocks."
+  },
+  {
+   "match": "Reliability trend · mean time to repair",
+   "source": "live",
+   "from": "REL-002 for Entity A1 and Entity A2 by month (P01–P06)",
+   "note": "Recalculated per entity from repair hours ÷ breakdowns; dashed line = 6 h target."
+  },
+  {
+   "match": "Sustainability curve · emissions",
+   "source": "live",
+   "from": "SUS-002 for Entity A1 and Entity A2 by month (P01–P06)",
+   "note": "Σ of plant emissions per entity."
+  }
+ ]
 }
