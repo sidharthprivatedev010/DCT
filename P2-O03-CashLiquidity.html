@@ -37,9 +37,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006052506"></script>
-<script src="js/data/resolve.js?v=20261006052506"></script>
-<script src="js/persona.js?v=20261006052506"></script>
+<script src="js/data/base-data.js?v=20261006084810"></script>
+<script src="js/data/resolve.js?v=20261006084810"></script>
+<script src="js/data/owner-verdicts.js?v=20261006084810"></script>
+<script src="js/persona.js?v=20261006084810"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -89,8 +90,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
         <a class="ct-navi" href="P2-O05-Risk.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Risk, Compliance &amp; EHS</a>
       
-        <a class="ct-navi" href="P2-O06-Decisions.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Actions &amp; Escalations</a>
-      
         <a class="ct-navi" href="P2-O07-Brief.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">AI Insights</a>
       
       <div class="ct-legend" style="margin-top:18px;padding:12px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;line-height:18px;color:rgba(255,255,255,.82)">
@@ -122,10 +121,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       </div>
       
             
-      
-        <div role="status" class="ct-change" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;border-color:var(--ct-red-700,#A4231C);padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center">
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-700,#A4231C);color:#FFFFFF;border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Critical</span><b style="font-weight:600">1 new material issue since yesterday: ALT-SYN-2041 crossed the placeholder Owner threshold at 05:10 (Critical).</b><a href="P2-O02-ChangeReport.html" style="margin-left:auto;color:var(--ct-navy-700,#24406E);font-weight:600">See 24-hour changes →</a>
-        </div>
       
       
       
@@ -166,10 +161,14 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
                 
                 
                   <div role="tablist" aria-label="Sub-theme drill-downs" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--ct-line,#DCE1E8)">
-                    <button type="button" role="tab" aria-label="01 Summary detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Summary</button><button type="button" role="tab" aria-label="02 How totals add up · Sep 2026 detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 How totals add up · Sep 2026</button><button type="button" role="tab" aria-label="03 Cash tied up in operations detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Cash tied up in operations</button><button type="button" role="tab" aria-label="04 Cash available and debt detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Cash available and debt</button><button type="button" role="tab" aria-label="05 Currency and interest detail" aria-selected="false" data-dc-ev="4" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">05 Currency and interest</button>
+                    <button type="button" role="tab" aria-label="01 Summary detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Summary</button><button type="button" role="tab" aria-label="02 Cash tied up in operations detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 Cash tied up in operations</button><button type="button" role="tab" aria-label="03 Cash available and debt detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Cash available and debt</button><button type="button" role="tab" aria-label="04 Currency and interest detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Currency and interest</button>
                   </div>
                   
                 
@@ -200,6 +199,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span>
                           <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-grey-600,#5F6B7A);border:1px dashed var(--ct-grey-600,#5F6B7A);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM8 5.5V8l1.6 1"></path></svg>Pending certification</span>
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1 (A1), up 76.6.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 114.5 vs P05</span>
@@ -224,6 +224,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Liquidity runway 16.7 months against a ≥12.0 months target; both entities meet it.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 12.0 months · var +4.7 months</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 0.8 vs P05</span>
@@ -248,6 +249,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
                           <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-grey-600,#5F6B7A);border:1px dashed var(--ct-grey-600,#5F6B7A);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM8 5.5V8l1.6 1"></path></svg>Pending certification</span>
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Covenant headroom 24.4% against a ≥20.0% target; Entity A1 (A1) at 18.9% misses it.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 20.0% · var +4.4 pts</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 6.6 vs P05</span>
@@ -272,6 +274,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Free cash flow YTD 606.2 ₹ m, up 157.4 vs Aug; largest move Entity A1 (A1), up 94.3.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 157.4 vs P05</span>
@@ -296,6 +299,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Net working capital 2,781.0 ₹ m, up 17.3 vs Aug; largest move Entity A2 (A2), up 26.5.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 17.3 vs P05</span>
@@ -320,6 +324,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span>
                           <span title="Trust status" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-grey-600,#5F6B7A);border:1px dashed var(--ct-grey-600,#5F6B7A);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM8 5.5V8l1.6 1"></path></svg>Pending certification</span>
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1 (A1), up 1.6.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 1.6 vs P05</span>
@@ -337,6 +342,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                   
                 </div>
                 
+              
+
+              
+
               
 
               
@@ -463,6 +472,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
             </section>
           
             
@@ -558,6 +571,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
             </section>
           
             
@@ -596,10 +613,14 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
                 <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:stretch">
-                  <div style="flex:1 1 150px;border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Production</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-ink,#121A2B)">◇ PRELIM · ⊘ A1 break</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">Act 95.5% of plan (P06 CERT)
+                  <div style="flex:1 1 150px;border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Production</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-ink,#121A2B)">◇ PRELIM · ⊘ Entity A1 (A1) break</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">Act 95.5% of plan (P06 CERT)
 Fcst 95.8%
-Leak −24.3 kt (Plant 02, FCST)
+Leak −24.3 kt (Entity A1 (A1), FCST)
 Owner: Production</div></div><span aria-hidden="true" style="align-self:center;color:var(--ct-line-strong,#B4BDCA);display:flex"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"></path></svg></span><div style="flex:1 1 150px;border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:4px"><div style="font-weight:600">Dispatch</div><div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-teal-700,#0B6B73)">◇ PRELIM</div><div style="font-size:12.5px;color:var(--ct-ink-2,#3B4558);white-space:pre-line;line-height:18px">Act 8.7% late (P06)
 Fcst 2–4 d delay (A1)
 Constraint: RM-1
@@ -635,6 +656,10 @@ Owner: Group Treasury</div></div><span aria-hidden="true" style="align-self:cent
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
               
+              
+
+              
+
               
 
               
@@ -724,6 +749,10 @@ Owner: Group Treasury</div></div><span aria-hidden="true" style="align-self:cent
               
 
               
+
+              
+
+              
                 <div style="display:flex;flex-direction:column;gap:12px">
                   
                     <article style="border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:14px 16px;display:flex;flex-direction:column;gap:12px">
@@ -733,9 +762,9 @@ Owner: Group Treasury</div></div><span aria-hidden="true" style="align-self:cent
                         <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-100,#E8EDF6);color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-100,#E8EDF6);white-space:nowrap">War room active</span>
                         <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--ct-ink-3,#5B6576)">ALT-SYN-2041 · INC-SYN-0142</span>
                       </div>
-                      <div style="font-size:16px;font-weight:600;line-height:22px">Production shortfall · Plant 02 · reliability losses + RM-1 cover</div>
+                      <div style="font-size:16px;font-weight:600;line-height:22px">Production shortfall · Entity A1 (A1) · reliability losses + RM-1 cover</div>
                       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--ct-line,#DCE1E8);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;overflow:hidden">
-                        <div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Severity</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">High (rule-assigned)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Materiality</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Critical · drivers Production, Liquidity (PH model)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Exposure</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">−24.3 kt · −₹56.2 m EBITDA · ₹27.2 m upstream (FCST)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Named owner (role)</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Entity Executive · Entity A1 · accepted D-1 23:15</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Due</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Decision D0 11:00</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Escalation clock</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">L2 Core Group · next level in [PH] h</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Evidence</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">6 of 9 items</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Next action</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Protect billing via dispatch reprioritisation (ACT-SYN-1110)</div></div>
+                        <div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Severity</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">High (rule-assigned)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Materiality</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Critical · drivers Production, Liquidity (PH model)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Exposure</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">−24.3 kt · −₹56.2 m EBITDA · ₹27.2 m upstream (FCST)</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Named owner (role)</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Entity Executive · Entity A1 (A1) · accepted D-1 23:15</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Due</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Decision D0 11:00</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Escalation clock</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">L2 Core Group · next level in [PH] h</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Evidence</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">6 of 9 items</div></div><div style="background:var(--ct-surface-2,#F8F9FB);padding:8px 10px"><div style="font-size:11.5px;color:var(--ct-ink-3,#5B6576)">Next action</div><div style="font-weight:600;font-size:13px;line-height:18px;color:var(--ct-ink,#121A2B)">Protect billing via dispatch reprioritisation (ACT-SYN-1110)</div></div>
                       </div>
                       <a href="P2-S11-CashExposure.html" class="ct-btn ct-pri" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-navy-900,#0E1B33);border-radius:4px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none">Open cash exposure <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
                     </article>
@@ -784,12 +813,16 @@ Owner: Group Treasury</div></div><span aria-hidden="true" style="align-self:cent
                   <div role="row" style="display:grid;grid-template-columns:minmax(220px,2fr) 90px minmax(150px,1.2fr) minmax(170px,1.3fr) 100px 120px 120px minmax(170px,1.3fr);background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:11px 12px">Issue</div><div role="columnheader" style="padding:11px 12px">Severity</div><div role="columnheader" style="padding:11px 12px">Exposure</div><div role="columnheader" style="padding:11px 12px">Named owner (role)</div><div role="columnheader" style="padding:11px 12px">Due</div><div role="columnheader" style="padding:11px 12px">Status</div><div role="columnheader" style="padding:11px 12px">Escalation</div><div role="columnheader" style="padding:11px 12px">Next action</div></div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:minmax(220px,2fr) 90px minmax(150px,1.2fr) minmax(170px,1.3fr) 100px 120px 120px minmax(170px,1.3fr);border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:14px">
-                      <div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400"><a href="P2-S05-Case.html" style="color:var(--ct-navy-700,#24406E);font-weight:600">ACT-SYN-1110 · Reprioritise customer dispatch to protect billing</a></div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">High</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹31 m billing deferral (FCST)</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (commercial) · Entity A1</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">D+1</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">In progress</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">L0 · on time</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Customer dispatch plan</div>
+                      <div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400"><a href="P2-S05-Case.html" style="color:var(--ct-navy-700,#24406E);font-weight:600">ACT-SYN-1110 · Reprioritise customer dispatch to protect billing</a></div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">High</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹31 m billing deferral (FCST)</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (commercial) · Entity A1 (A1)</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">D+1</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">In progress</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">L0 · on time</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Customer dispatch plan</div>
                     </div>
                   
                   
                 </div></div>
                 
+              
+
+              
+
               
 
               
@@ -821,8 +854,8 @@ Owner: Group Treasury</div></div><span aria-hidden="true" style="align-self:cent
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplA.js?v=20261006052506"></script>
-<script src="js/c/P2-O03-CashLiquidity.js?v=20261006052506"></script>
+<script src="js/c/TplA.js?v=20261006084810"></script>
+<script src="js/c/P2-O03-CashLiquidity.js?v=20261006084810"></script>
 <script>DCLite.mount("dc-root", "P2-O03-CashLiquidity", {});</script>
 </body>
 </html>

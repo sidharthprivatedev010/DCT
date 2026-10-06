@@ -37,9 +37,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006052506"></script>
-<script src="js/data/resolve.js?v=20261006052506"></script>
-<script src="js/persona.js?v=20261006052506"></script>
+<script src="js/data/base-data.js?v=20261006084810"></script>
+<script src="js/data/resolve.js?v=20261006084810"></script>
+<script src="js/data/owner-verdicts.js?v=20261006084810"></script>
+<script src="js/persona.js?v=20261006084810"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -89,8 +90,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
         <a class="ct-navi" href="P2-O05-Risk.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Risk, Compliance &amp; EHS</a>
       
-        <a class="ct-navi" href="P2-O06-Decisions.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Actions &amp; Escalations</a>
-      
         <a class="ct-navi" href="P2-O07-Brief.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">AI Insights</a>
       
       <div class="ct-legend" style="margin-top:18px;padding:12px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;line-height:18px;color:rgba(255,255,255,.82)">
@@ -122,10 +121,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       </div>
       
             
-      
-        <div role="status" class="ct-change" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;border-color:var(--ct-red-700,#A4231C);padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center">
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-700,#A4231C);color:#FFFFFF;border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Critical</span><b style="font-weight:600">Plant 02 (Entity A1) produced 78.4% of plan in P06: 26.2 kt of the Group's 29.4 kt shortfall.</b><a href="P2-S10-OpsImpact.html" style="margin-left:auto;color:var(--ct-navy-700,#24406E);font-weight:600">Open the Plant 02 incident →</a>
-        </div>
       
       
       
@@ -166,10 +161,14 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
                 
                 
                   <div role="tablist" aria-label="Sub-theme drill-downs" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--ct-line,#DCE1E8)">
-                    <button type="button" role="tab" aria-label="01 Summary detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Summary</button><button type="button" role="tab" aria-label="02 How totals add up · Sep 2026 detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 How totals add up · Sep 2026</button><button type="button" role="tab" aria-label="03 Production detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Production</button><button type="button" role="tab" aria-label="04 Reliability detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Reliability</button><button type="button" role="tab" aria-label="05 Cost detail" aria-selected="false" data-dc-ev="4" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">05 Cost</button><button type="button" role="tab" aria-label="06 Supply detail" aria-selected="false" data-dc-ev="5" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">06 Supply</button><button type="button" role="tab" aria-label="07 Environment detail" aria-selected="false" data-dc-ev="6" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">07 Environment</button>
+                    <button type="button" role="tab" aria-label="01 Summary detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Summary</button><button type="button" role="tab" aria-label="02 Production detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 Production</button><button type="button" role="tab" aria-label="03 Reliability detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Reliability</button><button type="button" role="tab" aria-label="04 Cost detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Cost</button><button type="button" role="tab" aria-label="05 Supply detail" aria-selected="false" data-dc-ev="4" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">05 Supply</button><button type="button" role="tab" aria-label="06 Environment detail" aria-selected="false" data-dc-ev="5" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">06 Environment</button>
                   </div>
                   
                 
@@ -200,6 +199,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Intervention required</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 (A1) at 91.3% of plan drives the gap.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 100.0% · var −4.5 pts</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 3.2 vs P05</span>
@@ -208,7 +208,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                         <svg viewBox="0 0 220 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true" style="display:block;overflow:visible"><path d="M2.0 7.1 L45.2 7.1 L88.4 7.1 L131.6 7.1 L174.8 7.1 L218.0 7.1" fill="none" stroke="var(--ct-grey-600,#5F6B7A)" stroke-width="1.2" stroke-dasharray="2 3" vector-effect="non-scaling-stroke"></path><path d="M2.0 16.7 L45.2 28.7 L88.4 32.9 L131.6 22.3 L174.8 26.5 L218.0 18.6 L218.0 38 L2 38 Z" fill="var(--ct-red-700,#A4231C)" fill-opacity=".08" stroke="none"></path><path d="M2.0 16.7 L45.2 28.7 L88.4 32.9 L131.6 22.3 L174.8 26.5 L218.0 18.6" fill="none" stroke="var(--ct-red-700,#A4231C)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg><div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10px;color:var(--ct-ink-3,#5B6576);margin-top:-4px"><span>P01</span><span>P06</span></div>
                         <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
                           <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT P06</span>
-                          <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border:1px dashed var(--ct-purple-500,#7E63C7);white-space:nowrap"><svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5a6.5 6.5 0 1 0 0 13a6.5 6.5 0 1 0 0-13M8 4.5V8l2.5 1.5"></path></svg>Plant 02: −26.2 kt of the −29.4 kt gap</span>
+                          
                         </div>
                         
                       
@@ -224,6 +224,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">OEE 84.1% against a ≥80.0% target; both entities meet it (Entity A1 (A1) 80.2%, Entity A2 (A2) 88.4%).</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 80.0% · var +4.1 pts</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 1.9 vs P05</span>
@@ -248,6 +249,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Intervention required</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 85.0% · var −1.6 pts</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 4.6 vs P05</span>
@@ -272,6 +274,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">MTBF 270 h against a ≥200 h target; Entity A1 (A1) at 165 h misses it.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 200 h · var +70 h</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 58 vs P05</span>
@@ -296,6 +299,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Intervention required</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Cost per tonne 2,934 ₹/t against a ≤2,900 ₹/t target; Entity A2 (A2) at 3,017 ₹/t drives the gap.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≤ 2,900 ₹/t · var +34 ₹/t</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▼ 231 vs P05</span>
@@ -320,6 +324,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Intervention required</span>
                           
                         </div>
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Supplier on-time delivery 91.4% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 90.4%, Entity A2 (A2) 92.3%).</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 95.0% · var −3.6 pts</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 0.2 vs P05</span>
@@ -368,6 +373,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
             </section>
           
             
@@ -383,7 +392,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
               
-              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">P01–P06 certified (Σ of Plants 01–06) · P07+ forecast.</p>
+              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">P01–P06 certified (Σ of Entity A1 (A1) and Entity A2 (A2)) · P07+ forecast.</p>
 
               
 
@@ -463,6 +472,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
             </section>
           
             
@@ -492,24 +505,28 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 <div role="list" style="display:flex;flex-direction:column;gap:6px">
                   
                     <div role="listitem" style="display:grid;grid-template-columns:minmax(130px,240px) minmax(0,1fr) minmax(110px,210px);gap:12px;align-items:center;min-height:28px">
-                      <div style="font-weight:600;font-size:13.5px">Entity A1</div>
+                      <div style="font-weight:600;font-size:13.5px">Entity A1 (A1)</div>
                       <div style="position:relative;height:14px"><div style="position:absolute;top:0;bottom:0;left:0.0%;width:89.2%;background:var(--ct-navy-900,#0E1B33);border-radius:0"></div><div style="position:absolute;top:-4px;bottom:-4px;left:0%;border-left:1px solid var(--ct-line-strong,#B4BDCA)"></div></div>
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--ct-ink,#121A2B)">91.3 % of plan <span style="font-family:'IBM Plex Sans',sans-serif;color:var(--ct-ink-3,#5B6576)">Plant 02 · reliability + RM-1</span></div>
+                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--ct-ink,#121A2B)">91.3 % of plan <span style="font-family:'IBM Plex Sans',sans-serif;color:var(--ct-ink-3,#5B6576)">Reliability + RM-1</span></div>
                     </div>
                   
                     <div role="listitem" style="display:grid;grid-template-columns:minmax(130px,240px) minmax(0,1fr) minmax(110px,210px);gap:12px;align-items:center;min-height:28px">
-                      <div style="font-weight:400;font-size:13.5px">Entity A2</div>
+                      <div style="font-weight:400;font-size:13.5px">Entity A2 (A2)</div>
                       <div style="position:relative;height:14px"><div style="position:absolute;top:0;bottom:0;left:0.0%;width:98.0%;background:var(--ct-teal-700,#0B6B73);border-radius:0"></div><div style="position:absolute;top:-4px;bottom:-4px;left:0%;border-left:1px solid var(--ct-line-strong,#B4BDCA)"></div></div>
                       <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--ct-ink,#121A2B)">100.3 % of plan <span style="font-family:'IBM Plex Sans',sans-serif;color:var(--ct-ink-3,#5B6576)"></span></div>
                     </div>
                   
                     <div role="listitem" style="display:grid;grid-template-columns:minmax(130px,240px) minmax(0,1fr) minmax(110px,210px);gap:12px;align-items:center;min-height:28px">
-                      <div style="font-weight:400;font-size:13.5px">Group (A1 + A2)</div>
+                      <div style="font-weight:400;font-size:13.5px">Group (Entity A1 (A1) + A2)</div>
                       <div style="position:relative;height:14px"><div style="position:absolute;top:0;bottom:0;left:0.0%;width:93.3%;background:var(--ct-teal-700,#0B6B73);border-radius:0"></div><div style="position:absolute;top:-4px;bottom:-4px;left:0%;border-left:1px solid var(--ct-line-strong,#B4BDCA)"></div></div>
                       <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--ct-ink,#121A2B)">95.5 % of plan <span style="font-family:'IBM Plex Sans',sans-serif;color:var(--ct-ink-3,#5B6576)"></span></div>
                     </div>
                   
                 </div>
+              
+
+              
+
               
 
               
@@ -569,7 +586,11 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 <div style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--ct-ink-2,#3B4558);padding-top:2px">
                   <span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0E1B33" stroke-width="2.5" stroke-dasharray="none"></line></svg>Yield · CERT</span><span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#0B6B73" stroke-width="2.5" stroke-dasharray="none"></line></svg>Recovery · CERT</span><span style="display:inline-flex;align-items:center;gap:6px"><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#7E63C7" stroke-width="2.5" stroke-dasharray="none"></line></svg>OEE · CERT</span>
                 </div>
-                <div style="background:var(--ct-surface-2,#F8F9FB);border:1px dashed var(--ct-ink-3,#5B6576);border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:6px"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;align-self:flex-start;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576)">AI INTERPRETATION · not a certified number</span><p style="margin:0;font-size:13px;line-height:20px;color:var(--ct-ink,#121A2B)">Group OEE is 84.1% in P06. Plant 02 alone (OEE 70.3%, MTTR 11.4 h, 78 h unplanned downtime) takes 3.1 pts off it: without Plant 02 the Group would be at 87.1%.</p></div>
+                <div style="background:var(--ct-surface-2,#F8F9FB);border:1px dashed var(--ct-ink-3,#5B6576);border-radius:4px;padding:12px 14px;display:flex;flex-direction:column;gap:6px"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;white-space:nowrap;align-self:flex-start;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576)">AI INTERPRETATION · not a certified number</span><p style="margin:0;font-size:13px;line-height:20px;color:var(--ct-ink,#121A2B)">Group OEE is 84.1% in P06. Entity A1 (OEE 80.2%, MTTR 8.2 h, 120.7 h unplanned downtime) pulls it down: Entity A2 (A2) alone runs at 88.4%.</p></div>
+              
+
+              
+
               
 
               
@@ -627,10 +648,14 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
+
+              
+
+              
                 <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px">
                   
                     <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">PRD-001 Days to breach · Plant 02 plan<a class="ct-info" href="P2-R01o-KPIReference.html?set=all&amp;kpi=PRD-001" title="How PRD-001 is calculated (KPI Reference)" aria-label="How PRD-001 is calculated (KPI Reference)" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:1px;margin-left:5px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);text-decoration:none;cursor:pointer">i</a></div><div style="font-weight:600;font-size:15px;line-height:1.3">4 days</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">PREDICTION · confidence Medium</div>
+                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">PRD-001 Days to breach · Entity A1 (A1) plan<a class="ct-info" href="P2-R01o-KPIReference.html?set=all&amp;kpi=PRD-001" title="How PRD-001 is calculated (KPI Reference)" aria-label="How PRD-001 is calculated (KPI Reference)" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:1px;margin-left:5px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);text-decoration:none;cursor:pointer">i</a></div><div style="font-weight:600;font-size:15px;line-height:1.3">4 days</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">PREDICTION · confidence Medium</div>
                     </div>
                   
                     <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
@@ -642,7 +667,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                     </div>
                   
                     <div style="border:1px solid var(--ct-amber-500,#C27C0E);background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-amber-700,#8A5300)">SIG-009 RM-1 days of cover<a class="ct-info" href="P2-R01o-KPIReference.html?set=all&amp;kpi=SIG-009" title="How SIG-009 is calculated (KPI Reference)" aria-label="How SIG-009 is calculated (KPI Reference)" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:1px;margin-left:5px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);text-decoration:none;cursor:pointer">i</a></div><div style="font-weight:600;font-size:15px;line-height:1.3">5 materials</div><div style="font-size:11.5px;color:var(--ct-amber-700,#8A5300)">LEADING · below 9 d lead time</div>
+                      <div style="font-size:12px;color:var(--ct-amber-700,#8A5300)">SIG-009 Critical-material shortage risk<a class="ct-info" href="P2-R01o-KPIReference.html?set=all&amp;kpi=SIG-009" title="How SIG-009 is calculated (KPI Reference)" aria-label="How SIG-009 is calculated (KPI Reference)" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:1px;margin-left:5px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);text-decoration:none;cursor:pointer">i</a></div><div style="font-weight:600;font-size:15px;line-height:1.3">5 materials</div><div style="font-size:11.5px;color:var(--ct-amber-700,#8A5300)">LEADING · RM-1 cover 3.5 d vs 9 d lead time</div>
                     </div>
                   
                 </div>
@@ -675,8 +700,8 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplA.js?v=20261006052506"></script>
-<script src="js/c/P2-O09-Operations.js?v=20261006052506"></script>
+<script src="js/c/TplA.js?v=20261006084810"></script>
+<script src="js/c/P2-O09-Operations.js?v=20261006084810"></script>
 <script>DCLite.mount("dc-root", "P2-O09-Operations", {});</script>
 </body>
 </html>
