@@ -213,7 +213,7 @@ class Component extends DCLogic {
     b.hasInfo = ["line", "multi", "bars", "waterfall", "table", "tiles"].indexOf(T) >= 0 && !!b.title && !this._noInfo; b.infoH = (this._refH || "P2-R01-KPIReference.html") + "?set=all&graph=" + encodeURIComponent(b.title);
     b.anim = b.anim || ""; b.role = b.anim === "ct-panel" ? "tabpanel" : "region";
     ["Kpis","Line","Bars","Wf","Table","Tiles","Kv","Text","Chain","Alerts","Tabbar","Buttons","Decision"].forEach(function (n) { b["is" + n] = false; });
-    b.isKpis = T === "kpis"; b.isLine = T === "line"; b.isBars = T === "bars"; b.isWf = T === "waterfall"; b.isTable = T === "table";
+    b.isKpis = T === "kpis"; b.isLine = T === "line"; b.isBars = T === "bars"; b.isWf = T === "waterfall"; b.isTable = T === "table" || T === "watchlist";
     b.isTiles = T === "tiles"; b.isKv = T === "kv"; b.isText = T === "text"; b.isChain = T === "chain"; b.isAlerts = T === "alerts";
     b.isTabbar = T === "tabbar"; b.isButtons = T === "buttons"; b.isMenus = T === "menus"; b.isDecision = T === "decision"; b.isMulti = T === "multi"; b.isAsk = T === "ask"; b.isHeat = T === "heat"; b.isSeg = T === "seg"; b.isTl = T === "timeline"; b.isDash = T === "dash";
     if (b.isSeg) { const sk = b.key || "seg", curS = st[sk] || b.def || "all"; b.segs = (b.opts || []).map(function (o) { const on = o.k === curS; return {l: o.l, on: on ? "true" : "false", bg: on ? "var(--ct-navy-900,#0E1B33)" : "var(--ct-surface,#FFFFFF)", fg: on ? "#FFFFFF" : "var(--ct-navy-900,#0E1B33)", bd: on ? "var(--ct-navy-900,#0E1B33)" : "var(--ct-line-strong,#B4BDCA)", pick: function () { const u = {}; u[sk] = o.k; self.setState(u); }}; }); }

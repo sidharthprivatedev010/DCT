@@ -7,6 +7,11 @@ const SCREENS = {"P2-O01-EnterpriseHealth": "enterprise_overview", "P2-G08o-Owne
   "P2-O07-Brief": "ai_insights", "P2-S04-Alert": "actions_and_escalations", "P2-S05-Case": "actions_and_escalations",
   "P2-S07-AIExplain": "ai_insights", "P2-S09-Contribution": "enterprise_overview", "P2-S10-OpsImpact": "operational_performance",
   "P2-S11-CashExposure": "cash_and_liquidity", "P2-S08o-Evidence": "actions_and_escalations", "P2-S03o-KPIDetail": "kpi_detail"};
+// MANIFEST06 1C: the same register for the Core Group screens
+const CG_SCREENS = {"P2-G01-Portfolio": "home", "P2-G01b-PortfolioCertified": "home", "P2-G02-EntityComparison": "enterprise_overview", "P2-G03-Financial": "enterprise_overview",
+  "P2-G08-CertGovernance": "data_assurance", "P2-S12-Signals": "early_warning", "P2-G04-CashWC": "cash_and_liquidity", "P2-G05-OpsBenchmark": "operational_performance",
+  "P2-G06-CapexPortfolio": "capital_projects", "P2-G07-Risk": "risk_compliance_ehs", "P2-G09-Escalations": "actions_and_escalations", "P2-G10-Briefing": "ai_insights",
+  "P2-S04c-Alert": "actions_and_escalations", "P2-S05c-Case": "actions_and_escalations", "P2-S06-Scenario": "actions_and_escalations", "P2-S07c-AIExplain": "ai_insights", "P2-S08-Evidence": "actions_and_escalations"};
 const VERD = /^(?:[✓▲▼■◇] )?(On track|Improving|Declining|Intervention required|Breached|Forecast breach|Critical)$/;
 const txt = (c) => c == null ? "" : typeof c === "object" ? (c.t || "") : String(c);
 const slug = (s) => String(s || "").toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
@@ -16,7 +21,7 @@ function tabOf(p, ref) {
   return p.tab0 || "summary";
 }
 function collect(name, page) {
-  const p = page || load(name), out = [], screen = SCREENS[name];
+  const p = page || load(name), out = [], screen = SCREENS[name] || CG_SCREENS[name];
   if (!screen) return out;
   const cardTab = (id) => { for (const t of p.tabs || []) if (t.has.some((h) => h.indexOf("kpis:") === 0 && h.slice(5).split(",").indexOf(id) >= 0)) return t.n; return p.tab0 || (p.tabs && p.tabs[0] && p.tabs[0].n) || "summary"; };
   (p.kpis || []).forEach((k) => { if (!k.bs || !/^[A-Z]{3}-\d{3}$/.test(k.id || "")) return; const sc = k.scope || entOf(k.name) || "Group";
@@ -43,5 +48,5 @@ function collect(name, page) {
     else walk(p[k], k, p.tabs ? tabOf(p, k) : (p.tab0 || "summary")); });
   return out;
 }
-module.exports = {collect, SCREENS};
+module.exports = {collect, SCREENS, CG_SCREENS};
 if (require.main === module) { const all = []; Object.keys(SCREENS).forEach((n) => { try { all.push(...collect(n)); } catch (e) { console.log("ERR", n, e.message); } }); console.log(JSON.stringify(all, null, 0).replace(/\},\{/g, "},\n{")); }

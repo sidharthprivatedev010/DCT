@@ -7,8 +7,12 @@
   var RID = {"Owner": "R-01 · Owner view", "Core Group": "R-01", "Entity": "R-01 · Entity view"};
   var ROLE = {"Owner": "Owner", "Core Group": "Core Group Executive", "Entity": "Entity Executive · Entity A1"};
   var SCOPES = {"Owner": ["Group", "A1", "A2"],   // MANIFEST01 1A: the Owner sees nothing below Entity
-                "Core Group": ["Group", "A1", "A2", "Plant01", "Plant02", "Plant03", "Plant04", "Plant05", "Plant06"],
+                "Core Group": ["Group", "A1", "A2"],   // MANIFEST06 1A: Core Group is capped at Entity too
                 "Entity": ["A1", "Plant01", "Plant02", "Plant03"]};   // C-05: an entity sees its own scope only
+  var CAPD = {"Owner": true, "Core Group": true};   // lenses capped at Entity
+  // MANIFEST06 §3: tier R (removed) and tier A (alias) KPIs are not listed in the Core Group reference
+  var DROP = {"Core Group": ["CSH-003","CST-002","CST-003","CST-004","CTL-006","CTL-008","CTL-009","EHS-008","EHS-009","PLT-001","PLT-004","PLT-005","REG-001","REG-004","REG-007","REG-008","REL-001","REL-002","SIG-008","SIG-021","SUP-004","SUP-006","TRU-008","WCP-005","WCP-006",
+    "OPS-005","PRG-004","SIG-001","SIG-002","SIG-003","SIG-015","SIG-019","SIG-020"]};
   var DETAIL = {"Owner": "P2-S03o-KPIDetail.html", "Core Group": "P2-S03-KPIDetail.html", "Entity": "P2-S03e-KPIDetail.html"};
   var RULE = {"SUM": "Σ", "MIN": "lowest", "SAME": "same value", "SQRT(Σσ²)": "√Σσ²"};
 
@@ -38,14 +42,14 @@
     var st = {scope: scopes.indexOf(q.scope) >= 0 ? q.scope : scopes[0], period: (P.x || []).indexOf(q.period) >= 0 ? q.period : "P06",
               set: q.set === "all" ? "all" : "lens", theme: q.theme || "all", level: q.level || "all", source: q.source || "all", screen: q.screen || "", kpi: q.kpi || "", graph: q.graph || "", on: q.on || ""};
     DEF.scope = scopes[0];
-    if (lens === "Owner") st.level = "all";
+    if (CAPD[lens]) st.level = "all";
     var MON = ["Apr", "May", "Jun", "Jul", "Aug", "Sep"];
     var pi = Math.max(0, (P.x || []).indexOf(st.period));
     var lensScreens = Object.keys(P.screens || {}).filter(function (n) { return P.screens[n].lens === lens; });
     if (st.screen && lensScreens.indexOf(st.screen) < 0) st.screen = "";
     var sn = function (s) { return (P.scopes || {})[s] || s; };
 
-    var all = Object.keys(P.kpi).sort();
+    var all = Object.keys(P.kpi).sort().filter(function (id) { return (DROP[lens] || []).indexOf(id) < 0; });
     // ?graph= (with ?on=<screen>): one graph, and the KPIs it is built from
     var gSel = st.graph ? (P.charts || []).filter(function (c) { return c.title === st.graph && (!st.on || c.screen === st.on); }) : [];
     var bSel = st.graph ? (P.blocks || []).filter(function (c) { return c.title === st.graph && (!st.on || c.screen === st.on); }) : [];
@@ -69,7 +73,7 @@
     var themeName = function (t) { return t === "all" ? "All themes" : t + " · " + P.themes[t]; };
     var sel = [
       {type: "menus", title: "Look at", menus: [
-        {label: "Scope", cur: sn(st.scope), opts: scopes.map(function (s) { return {l: sn(s) + (s === "Group" ? (lens === "Owner" ? " (" + (P.children.Group || []).map(sn).join(" + ") + ")" : " (Entity A1 + A2)") : /^A/.test(s) ? (lens === "Owner" ? " (entity inputs)" : " (its plants + entity inputs)") : " (plant inputs)"), h: link(lens, st, {scope: s}), on: s === st.scope}; })},
+        {label: "Scope", cur: sn(st.scope), opts: scopes.map(function (s) { return {l: sn(s) + (s === "Group" ? (CAPD[lens] ? " (" + (P.children.Group || []).map(sn).join(" + ") + ")" : " (Entity A1 + A2)") : /^A/.test(s) ? (CAPD[lens] ? " (entity inputs)" : " (its plants + entity inputs)") : " (plant inputs)"), h: link(lens, st, {scope: s}), on: s === st.scope}; })},
         {label: "Theme", cur: themeName(st.theme), opts: [{l: "All themes (" + count("theme", "all") + ")", h: link(lens, st, {theme: "all"}), on: st.theme === "all"}].concat(
           Object.keys(P.themes || {}).map(function (t) { var n = count("theme", t); return n ? {l: themeName(t) + " (" + n + ")", h: link(lens, st, {theme: t}), on: st.theme === t} : null; }).filter(Boolean))},
         {label: "Period", cur: st.period + " · " + MON[pi] + " 2026", opts: (P.x || []).map(function (x, i) {
@@ -78,9 +82,9 @@
       {type: "buttons", title: "Filter · which KPIs, lowest level calculated, source of the formula", btns: [
         btn("On " + lens + " screens (" + all.filter(onLens).length + ")", {set: "lens", screen: ""}, st.set === "lens"),
         btn("All KPIs (" + all.length + ")", {set: "all", screen: ""}, st.set === "all"),
-        lens === "Owner" ? null : btn("Any level", {level: "all"}, st.level === "all"),
-        lens === "Owner" ? null : btn("Down to plants (" + count("level", "plant") + ")", {level: "plant"}, st.level === "plant"),
-        lens === "Owner" ? null : btn("Entity inputs only (" + count("level", "entity") + ")", {level: "entity"}, st.level === "entity"),
+        CAPD[lens] ? null : btn("Any level", {level: "all"}, st.level === "all"),
+        CAPD[lens] ? null : btn("Down to plants (" + count("level", "plant") + ")", {level: "plant"}, st.level === "plant"),
+        CAPD[lens] ? null : btn("Entity inputs only (" + count("level", "entity") + ")", {level: "entity"}, st.level === "entity"),
         btn("Any source", {source: "all"}, st.source === "all"),
         btn("Workbook (" + count("source", "workbook") + ")", {source: "workbook"}, st.source === "workbook"),
         btn("Added (" + count("source", "added") + ")", {source: "added"}, st.source === "added"),
@@ -157,8 +161,8 @@
     var drill = [
       {n: "Screens in this lens", blocks: [{type: "table", title: lens + " screens and the KPIs on them", cols: ["Screen", "Title", "KPIs", "Filter"], rows: screenRows, rowsMax: 999,
         gtc: "110px minmax(0,2fr) 70px 160px", minW: 640, ask: "Which KPIs does each screen use?"}]},
-      {n: "How values roll up", blocks: [{type: "kv", title: "Reading the table", rows: lens === "Owner" ? [
-        ["Entity", "Lowest level in the Owner view. Each entity value is calculated from the entity's own inputs."],
+      {n: "How values roll up", blocks: [{type: "kv", title: "Reading the table", rows: CAPD[lens] ? [
+        ["Entity", "Lowest level in this view. Each entity value is calculated from the entity's own inputs."],
         ["Group", "Sum of the entities' inputs (lowest for clocks, same value for external indices, √Σσ² for forecast uncertainty), then the KPI formula once on the totals."],
         ["Definition", "What the KPI measures and why it matters, in plain language (data/kpi-model/kpi_definitions.json). Aliases share the definition of the KPI they point to."],
         ["KPI value", "Always the KPI formula applied to that scope's inputs; never an average of the level below."],
@@ -176,6 +180,7 @@
         gtc: "90px minmax(0,1.3fr) minmax(0,2fr) minmax(0,1.3fr)", minW: 900, cap: "Synthetic inputs and their roll-up rules: data/HARDCODED-VALUES.md."}]}
     ];
 
+    if (lens === "Core Group") drill = drill.filter(function (d) { return d.n !== "Added by the model" && d.n !== "Aliases"; });
     var equiv = {};
     ["Owner", "Core Group", "Entity"].forEach(function (L) {
       var o = Object.assign({}, st, {screen: ""}); if (SCOPES[L].indexOf(o.scope) < 0) o.scope = SCOPES[L][0];
@@ -184,7 +189,7 @@
     return {lens: lens, role: ROLE[lens], scope: lens === "Entity" ? "Entity A1 (own entity)" : "Group (all permitted)", rid: RID[lens],
       nav: "KPI Reference", title: "KPI Reference · formulas and values", period: st.period + " (SYN)",
       q: "How is each KPI calculated, and what is its value for this lens, scope and period?",
-      trust: "Values from data/kpi-model · " + all.length + " KPIs · calculated bottom-up (" + (lens === "Owner" ? "entity → Group" : "plant → entity → Group") + ")",
+      trust: "Values from data/kpi-model · " + all.length + " KPIs · calculated bottom-up (" + (CAPD[lens] ? "entity → Group" : "plant → entity → Group") + ")",
       focus: "drivers", dominant: sel, drivers: drv,
       access: [{l: "KPI detail and lineage ↗", h: DETAIL[lens]}, {l: "Data Assurance ↗", h: lens === "Owner" ? "P2-G08o-OwnerTrust.html" : lens === "Entity" ? "P2-E08-CertWorkbench.html" : "P2-G08-CertGovernance.html"}],
       equiv: equiv, journey: null};
@@ -249,7 +254,7 @@
     var leaves = scopes.filter(function (s) { return typeof (k.val[s] || [])[pi] === "number" && /^Plant/.test(s); });
     var pool = leaves.length ? leaves : scopes.filter(function (s) { return /^A/.test(s) && typeof (k.val[s] || [])[pi] === "number"; });
     var lowS = k.better && typeof k.target === "number" && pool.length > 1 ? pool.reduce(function (a, b) { return good(k.val[a][pi], k.val[b][pi]) ? b : a; }) : null;
-    var kids = lens === "Owner" && scope !== "Group" ? [] : (P.children || {})[scope] || [], ex = kids.filter(function (c) { return typeof (k.excl || {})[c] === "number"; });
+    var kids = CAPD[lens] && scope !== "Group" ? [] : (P.children || {})[scope] || [], ex = kids.filter(function (c) { return typeof (k.excl || {})[c] === "number"; });
     var b2 = (lowS ? "<p style=\"margin:0\">Weakest " + (leaves.length ? "plant" : "entity") + ": <b>" + esc(sn(lowS)) + "</b> at " + esc(fmt(k, k.val[lowS][pi])) + ".</p>" : "") + tbl(["Scope", "Value · " + per, "vs target", "Status"], rows2) +
       (ex.length && pi === last ? '<p style="margin:0;font-size:12.5px">Leave one out (' + per + "): " + ex.map(function (c) { return "without " + esc(sn(c)) + ", " + esc(sn(scope)) + " would be <b>" + esc(fmt(k, k.excl[c])) + "</b>"; }).join(" · ") + ". Recalculated from the remaining inputs, not averaged.</p>" : "");
     sec("2", "Where it sits across the hierarchy", b2);
@@ -293,7 +298,7 @@
     // 7 · catalogue context
     var c7 = k.cat;
     sec("7", "Catalogue", tbl(["Type", "Theme", "Placed on", "Drills to", "Level · source"], [{c: [esc(c7 ? c7.type : "—"), esc(c7 ? c7.theme + " · " + c7.group : (P.themes || {})[k.theme] || k.theme), esc(c7 ? c7.placed : "—"), esc(c7 ? c7.drill : "—"),
-      esc((lens === "Owner" ? "Entity and Group" : k.level === "plant" ? "Down to plants" : "Entity inputs only") + " · " + (k.source === "alias" ? "alias of " + k.aliasOf : k.source))]}]) +
+      esc((CAPD[lens] ? "Entity and Group" : k.level === "plant" ? "Down to plants" : "Entity inputs only") + " · " + (k.source === "alias" ? "alias of " + k.aliasOf : k.source))]}]) +
       (c7 ? '<p style="margin:0;font-size:12.5px">Theme question: <i>' + esc(c7.themeQ) + "</i>" + (c7.note ? " · " + esc(c7.note) : "") + "</p>" : '<p style="margin:0;font-size:12.5px">Not in the P1-R1 catalogue: added by the model.</p>'));
 
     var head = '<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start"><div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--ct-ink-3,#5B6576)">' + esc(id) + " · " + esc(lens) + " lens · " + esc(sn(scope)) + " · " + per + " " + (MON[pi] || "") + ' 2026</div><h2 id="ct-kx-t" style="margin:2px 0 0;font-size:19px">' + esc(k.name) + (k.unit ? ' <span style="font-weight:400;color:var(--ct-ink-3,#5B6576);font-size:14px">' + esc(k.unit) + "</span>" : "") + "</h2>" + (k.def ? '<p style="margin:6px 0 0;max-width:640px;line-height:20px">' + esc(k.def) + "</p>" : "") + "</div>" +
@@ -333,7 +338,7 @@
   Object.keys(FILE).forEach(function (lens) {
     DCLite.register(FILE[lens], "\n\n<dc-import name=\"TplC\" page=\"{{page}}\" hint-size=\"100%,3600px\"></dc-import>\n", function (DCLogic) {
       class Component extends DCLogic {
-        renderVals() { var pg = build(lens); return {page: lens === "Owner" ? JSON.parse(JSON.stringify(pg).replace(/Σ Plants 01–06/g, "Σ of the entities")) : pg}; }
+        renderVals() { var pg = build(lens); return {page: CAPD[lens] ? JSON.parse(JSON.stringify(pg).replace(/Σ Plants 01–06/g, "Σ of the entities")) : pg}; }
       }
       return Component;
     });

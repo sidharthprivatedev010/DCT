@@ -37,9 +37,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006114220"></script>
-<script src="js/data/resolve.js?v=20261006114220"></script>
-<script src="js/persona.js?v=20261006114220"></script>
+<script src="js/data/base-data.js?v=20261006120919"></script>
+<script src="js/data/resolve.js?v=20261006120919"></script>
+<script src="js/data/core-group-verdicts.js?v=20261006120919"></script>
+<script src="js/persona.js?v=20261006120919"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -172,7 +173,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 
                 
                   <div role="tablist" aria-label="Sub-theme drill-downs" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--ct-line,#DCE1E8)">
-                    <button type="button" role="tab" aria-label="01 Summary detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Summary</button><button type="button" role="tab" aria-label="02 How totals add up · Sep 2026 detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 How totals add up · Sep 2026</button><button type="button" role="tab" aria-label="03 Projects detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Projects</button><button type="button" role="tab" aria-label="04 Benefits delivered detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Benefits delivered</button><button type="button" role="tab" aria-label="05 Contractors detail" aria-selected="false" data-dc-ev="4" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">05 Contractors</button>
+                    <button type="button" role="tab" aria-label="01 Summary detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Summary</button><button type="button" role="tab" aria-label="02 How totals add up · Sep 2026 detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 How totals add up · Sep 2026</button><button type="button" role="tab" aria-label="03 Projects detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Projects</button><button type="button" role="tab" aria-label="04 Benefits delivered detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Benefits delivered</button>
                   </div>
                   
                 
@@ -186,12 +187,12 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
             </section>
           
 
-            <section class="ct-sec " role="region" aria-label="Portfolio filter" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
+            <section class="ct-sec " role="region" aria-label="Project register" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
               
               <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
                 <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
                   
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Portfolio filter</h2>
+                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Project register</h2>
                   
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
@@ -239,19 +240,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
                   
                     
-                    <button type="button" class="ct-btn ct-pri" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-navy-900,#0E1B33);border-radius:4px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">All projects</button>
-                  
-                    
-                    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">Major only</button>
-                  
-                    
-                    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">Delayed</button>
-                  
-                    
-                    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">By business</button>
+                    <button type="button" class="ct-btn ct-pri" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-navy-900,#0E1B33);border-radius:4px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">Above group materiality (≥ ₹200 m approved)</button>
                   
                 </div>
-                
+                <div style="font-size:12.5px;color:var(--ct-ink-3,#5B6576);display:flex;gap:6px;align-items:flex-start"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h8v7H4zM5.5 7V5a2.5 2.5 0 0 1 5 0v2"></path></svg><span>One register: smaller projects are managed by the entities.</span></div>
               
 
               
@@ -274,7 +266,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
                           
                         </div>
-                        
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Approved capex budget 1,860.0 ₹ m, flat; unchanged in both entities.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">flat</span>
@@ -299,7 +291,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
                           
                         </div>
-                        
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Committed capex 1,347.7 ₹ m, up 109.2 vs Aug; largest move Entity A2 (A2), up 58.1.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 109.2 vs P05</span>
@@ -324,7 +316,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 8.5l3 3 7-7"></path></svg>On track</span>
                           
                         </div>
-                        
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Capex actual spend YTD 879.7 ₹ m, up 144.9 vs Aug; largest move Entity A1 (A1), up 79.2.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 144.9 vs P05</span>
@@ -349,7 +341,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-green-100,#E3F2E9);color:var(--ct-green-700,#1E6B43);border:1px solid var(--ct-green-100,#E3F2E9);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 11l4-4 3 3 5-5M10 5h4v4"></path></svg>Improving</span>
                           
                         </div>
-                        
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">— · var —</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▲ 4.6 vs P05</span>
@@ -374,7 +366,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-amber-100,#FBF0DB);color:var(--ct-amber-700,#8A5300);border:1px solid var(--ct-amber-100,#FBF0DB);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M2 5l4 4 3-3 5 5M10 11h4V7"></path></svg>Declining</span>
                           
                         </div>
-                        
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Benefits realisation 48.0% of plan against a ≥100.0% target; both entities miss it.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≥ 100.0% · var −52.0 pts</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">▼ 0.1 vs P05</span>
@@ -399,7 +391,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                           <span title="Business performance" style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);border:1px solid var(--ct-red-700,#A4231C);white-space:nowrap"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5.5 1.5h5l4 4v5l-4 4h-5l-4-4v-5zM8 4.5v4.2M8 11v.5"></path></svg>Intervention required</span>
                           
                         </div>
-                        
+                        <p class="ct-why" title="Why this verdict" style="margin:-2px 0 0;font-size:12px;line-height:17px;color:var(--ct-ink-2,#3B4558)">Delayed projects 1 against a ≤0 target; Entity A2 (A2) at 1 (MP03 milestone slip) drives the gap.</p>
                         <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;font-size:12.5px;line-height:18px">
                           <span style="color:var(--ct-ink-3,#5B6576)">Plan</span><span style="color:var(--ct-ink-2,#3B4558)">≤ 0 · var +1</span>
                           <span style="color:var(--ct-ink-3,#5B6576)">Trend</span><span style="color:var(--ct-ink-2,#3B4558)">flat</span>
@@ -459,12 +451,12 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
             </section>
           
 
-            <section class="ct-sec " role="region" aria-label="Progress chain by project" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
+            <section class="ct-sec " role="region" aria-label="Progress chain by project · project register (above group materiality)" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
               
               <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
                 <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
                   <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-navy-700,#24406E)">Focus of this page</span>
-                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">Progress chain by project</h2>
+                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">Progress chain by project · project register (above group materiality)</h2>
                   <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>Which projects convert spend into progress and benefit?</p>
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
@@ -485,7 +477,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
-                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="Progress chain by project" style="min-width:1050px">
+                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="Progress chain by project · project register (above group materiality)" style="min-width:1050px">
                   <div role="row" style="display:grid;grid-template-columns:minmax(170px,1.4fr) 60px 100px 100px minmax(150px,1.2fr) minmax(150px,1.2fr) 120px;background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:9px 10px">Project</div><div role="columnheader" style="padding:9px 10px">Entity</div><div role="columnheader" style="padding:9px 10px">Approved</div><div role="columnheader" style="padding:9px 10px">Committed</div><div role="columnheader" style="padding:9px 10px">Spent</div><div role="columnheader" style="padding:9px 10px">Physical progress</div><div role="columnheader" style="padding:9px 10px">Benefit realized</div></div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:minmax(170px,1.4fr) 60px 100px 100px minmax(150px,1.2fr) minmax(150px,1.2fr) 120px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
@@ -501,15 +493,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:minmax(170px,1.4fr) 60px 100px 100px minmax(150px,1.2fr) minmax(150px,1.2fr) 120px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Major Project 04</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A2 (A2)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹174 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹62 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">██░░░░░░░░ 20%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">██░░░░░░░░ 20%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-grey-600,#5F6B7A);font-weight:400">Not yet due</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:minmax(170px,1.4fr) 60px 100px 100px minmax(150px,1.2fr) minmax(150px,1.2fr) 120px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Project 05 (Entity A1 (A1) debottleneck)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A1 (A1)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹550 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹318 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">███░░░░░░░ 34%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">██████░░░░ 58%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-grey-600,#5F6B7A);font-weight:400">Not yet due</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:minmax(170px,1.4fr) 60px 100px 100px minmax(150px,1.2fr) minmax(150px,1.2fr) 120px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Project 06</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A2 (A2)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹174 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹147 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">███████░░░ 70%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">███████░░░ 72%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹2 of 4 m</div>
+                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Project 05</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A1 (A1)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹550 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹318 m</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">███░░░░░░░ 34%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">██████░░░░ 58%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-grey-600,#5F6B7A);font-weight:400">Not yet due</div>
                     </div>
                   
                   
@@ -614,88 +598,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
             </section>
           
 
-            <section class="ct-sec " role="region" aria-label="Portfolio prioritisation · reallocation candidates" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Portfolio prioritisation · reallocation candidates</h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="Portfolio prioritisation · reallocation candidates" style="min-width:760px">
-                  <div role="row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:9px 10px">Project</div><div role="columnheader" style="padding:9px 10px">Entity</div><div role="columnheader" style="padding:9px 10px">Remaining ₹ m</div><div role="columnheader" style="padding:9px 10px">Expected IRR</div><div role="columnheader" style="padding:9px 10px">Benefit at risk</div><div role="columnheader" style="padding:9px 10px">Recommendation</div></div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Line 3 debottleneck</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A1 (A1)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">28</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">22%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Low</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-green-700,#1E6B43);font-weight:400">✓ Keep · accelerate</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Kiln 2 upgrade</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A2 (A2)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">41</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">9%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">High</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">▼ Re-phase · release ₹15.4 m</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Digital maintenance</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A2 (A2)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">6</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">31%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Low</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-green-700,#1E6B43);font-weight:400">✓ Keep</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Warehouse automation</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A1 (A1)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">19</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">7%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">High</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">▼ Review scope</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Solar PPA tie-in</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A2 (A2)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">12</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">14%</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Medium</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-grey-600,#5F6B7A);font-weight:400">◇ Hold decision P09</div>
-                    </div>
-                  
-                  
-                </div></div>
-                
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-
             <section class="ct-sec " role="region" aria-label="Spend % minus physical % · positive = spending ahead of progress" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
               
               <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
@@ -730,12 +632,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                       <div style="font-weight:400;font-size:13.5px">Major Project 01</div>
                       <div style="position:relative;height:14px"><div style="position:absolute;top:0;bottom:0;left:50.0%;width:4.0%;background:var(--ct-teal-700,#0B6B73);border-radius:0"></div><div style="position:absolute;top:-4px;bottom:-4px;left:50%;border-left:1px solid var(--ct-line-strong,#B4BDCA)"></div></div>
                       <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--ct-ink,#121A2B)">+2 <span style="font-family:'IBM Plex Sans',sans-serif;color:var(--ct-ink-3,#5B6576)"></span></div>
-                    </div>
-                  
-                    <div role="listitem" style="display:grid;grid-template-columns:minmax(130px,240px) minmax(0,1fr) minmax(110px,210px);gap:12px;align-items:center;min-height:28px">
-                      <div style="font-weight:400;font-size:13.5px">Project 06</div>
-                      <div style="position:relative;height:14px"><div style="position:absolute;top:0;bottom:0;left:46.0%;width:4.0%;background:var(--ct-teal-700,#0B6B73);border-radius:0"></div><div style="position:absolute;top:-4px;bottom:-4px;left:50%;border-left:1px solid var(--ct-line-strong,#B4BDCA)"></div></div>
-                      <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;color:var(--ct-ink,#121A2B)">−2 <span style="font-family:'IBM Plex Sans',sans-serif;color:var(--ct-ink-3,#5B6576)"></span></div>
                     </div>
                   
                     <div role="listitem" style="display:grid;grid-template-columns:minmax(130px,240px) minmax(0,1fr) minmax(110px,210px);gap:12px;align-items:center;min-height:28px">
@@ -927,8 +823,8 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplB.js?v=20261006114220"></script>
-<script src="js/c/P2-G06-CapexPortfolio.js?v=20261006114220"></script>
+<script src="js/c/TplB.js?v=20261006120919"></script>
+<script src="js/c/P2-G06-CapexPortfolio.js?v=20261006120919"></script>
 <script>DCLite.mount("dc-root", "P2-G06-CapexPortfolio", {});</script>
 </body>
 </html>

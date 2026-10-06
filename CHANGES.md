@@ -153,3 +153,11 @@ Everything changed against the original prototype (`e104438 first commit`), grou
   - Core Group: Group vs Entity A1 vs Entity A2, with status per entity.
   - Entity: Entity A1 scorecard plus plant comparison (Plant 01–03).
 - The PDF uses the standard fonts, so `₹` prints as `INR` and the status symbols (▲ ◆ …) are written out or dropped.
+
+## MANIFEST06 · Core Group persona (2026-10-06)
+
+- Core Group capped at Entity like the Owner (`CAPL` lens policy in `resolve.js`); plants appear only in the new **plant watchlist** block (G-05, S-12, G-07), filled from the model, at most 5 rows.
+- 25 tier R and 8 alias KPIs removed from Core Group screens and from the Core Group KPI Reference (112 KPIs, scopes Group / A1 / A2).
+- G-05 rebuilt around entities (production by entity, Entity × KPI benchmark, reliability and supply by entity). G-01, G-02, G-03, G-04, G-06, G-07, G-08, G-09, G-10, S-03, S-04c, S-05c, S-06, S-07c, S-08 cleaned of plant, line, material and supplier codes, placeholders and hand-set charts.
+- Every Core Group status has a one-line justification (`node tools/build_verdicts.js core_group`).
+- New check `tools/check_core_group.js`, run from `tools/check_all.js`.

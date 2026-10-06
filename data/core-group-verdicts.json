@@ -1,7 +1,7 @@
 [
  {
-  "persona": "owner",
-  "screen": "enterprise_overview",
+  "persona": "core_group",
+  "screen": "home",
   "section": "financial",
   "kpi_id": "fin-001",
   "level": "group",
@@ -15,23 +15,23 @@
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "enterprise_overview",
+  "persona": "core_group",
+  "screen": "home",
   "section": "financial",
-  "kpi_id": "fin-002",
+  "kpi_id": "fin-003",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "EBIT YTD 1,228.1 ₹ m, up 307.5 vs Aug; largest move Entity A1 (A1), up 154.1.",
+  "justification": "Revenue YTD 13,811.3 ₹ m, up 2,335.8 vs Aug; largest move Entity A2 (A2), up 1,180.1.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "enterprise_overview",
+  "persona": "core_group",
+  "screen": "home",
   "section": "financial",
   "kpi_id": "fin-004",
   "level": "group",
@@ -45,8 +45,8 @@
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "enterprise_overview",
+  "persona": "core_group",
+  "screen": "home",
   "section": "financial",
   "kpi_id": "fin-005",
   "level": "group",
@@ -60,23 +60,8 @@
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "financial",
-  "kpi_id": "fin-006",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "improving",
-  "status_color": "green",
-  "display_verdict": "Improving",
-  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1 (A1), down 38.0.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
+  "persona": "core_group",
+  "screen": "home",
   "section": "operations",
   "kpi_id": "ops-001",
   "level": "group",
@@ -90,414 +75,9 @@
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "strategic_projects",
-  "kpi_id": "cpx-004",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "improving",
-  "status_color": "green",
-  "display_verdict": "Improving",
-  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "operations",
-  "kpi_id": "ops-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
-  "source_type": "table_row",
-  "row_id": "OPS-002"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "operations",
-  "kpi_id": "ops-003",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.",
-  "source_type": "table_row",
-  "row_id": "OPS-003"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "operations",
-  "kpi_id": "ops-004",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
-  "source_type": "table_row",
-  "row_id": "OPS-004"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "operations",
-  "kpi_id": "ops-005",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.",
-  "source_type": "table_row",
-  "row_id": "OPS-005"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "strategic_projects",
-  "kpi_id": "cpx-004",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "improving",
-  "status_color": "green",
-  "display_verdict": "Improving",
-  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.",
-  "source_type": "table_row",
-  "row_id": "CPX-004"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "strategic_projects",
-  "kpi_id": "str-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
-  "source_type": "table_row",
-  "row_id": "STR-002"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "strategic_projects",
-  "kpi_id": "prg-004",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
-  "source_type": "table_row",
-  "row_id": "PRG-004"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "risk",
-  "kpi_id": "eff-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 (A1) at 1 (ALT-SYN-2041) drives the gap.",
-  "source_type": "table_row",
-  "row_id": "EFF-002"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "risk",
-  "kpi_id": "ehs-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 2).",
-  "source_type": "table_row",
-  "row_id": "EHS-002"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "risk",
-  "kpi_id": "rsk-003",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
-  "source_type": "table_row",
-  "row_id": "RSK-003"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "risk",
-  "kpi_id": "cmp-005",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
-  "source_type": "table_row",
-  "row_id": "CMP-005"
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
+  "persona": "core_group",
+  "screen": "home",
   "section": "data_reliability",
-  "kpi_id": "tru-007",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 (A1) at 1 (flash break BRK-SYN-0071) drives the gap.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_reliability",
-  "kpi_id": "tru-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Uncertified KPI count 9, flat; unchanged in both entities.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_reliability",
-  "kpi_id": "tru-011",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Largest entity variance against Board numbers 0.3%, flat; unchanged in both entities.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_reliability",
-  "kpi_id": "tru-010",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Flash-to-close variance 0.38% against a ≤0.50% target; Entity A2 (A2) at 0.52% misses it.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_reliability",
-  "kpi_id": "tru-008",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Source-to-Lake reconciliation rate 99.0% against a ≥99.0% target; Entity A1 (A1) at 98.9% misses it.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_reliability",
-  "kpi_id": "tru-009",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Flash-to-MIS reconciliation rate 96.0% against a ≥98.0% target; both entities miss it (Entity A1 (A1) 94.3%, Entity A2 (A2) 97.6%).",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-001",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Ageing certification approvals 2, flat; unchanged in both entities.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "KPI overrides 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-003",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Recurring data-quality issues 1, flat; unchanged in both entities.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-004",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1 (A1), down 1.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-005",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Overdue assurance actions 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-006",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Repeat findings 1, flat; unchanged in both entities.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-007",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Leadership KPIs affected by findings 1, flat; unchanged in both entities.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-008",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Evidence completeness rate 88.0% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 86.0%, Entity A2 (A2) 89.7%).",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-009",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Average finding-closure time 32.8 days against a ≤30.0 days target; Entity A2 (A2) at 37.8 days drives the gap.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "data_assurance",
-  "section": "summary",
   "kpi_id": "tru-001",
   "level": "group",
   "entity_code": null,
@@ -510,37 +90,352 @@
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "data_assurance",
-  "section": "data_ownership_and_rules",
-  "kpi_id": "gov-007",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Leadership KPIs affected by findings 1, flat; unchanged in both entities.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "data_assurance",
-  "section": "data_reliability",
-  "kpi_id": "tru-007",
+  "persona": "core_group",
+  "screen": "home",
+  "section": "risk",
+  "kpi_id": "eff-002",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 (A1) at 1 (flash break BRK-SYN-0071) drives the gap.",
+  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 (A1) at 1 (ALT-SYN-2041) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
+  "screen": "home",
+  "section": "financial",
+  "kpi_id": "prd-003",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Projected EBITDA gap -56.2 ₹ m against a ≥0.0 ₹ m target; both entities miss it.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "fin-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "EBITDA YTD 1,760.1 ₹ m, up 397.0 vs Aug; largest move Entity A1 (A1), up 201.4.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "fin-003",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "Revenue YTD 13,811.3 ₹ m, up 2,335.8 vs Aug; largest move Entity A2 (A2), up 1,180.1.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "fin-005",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "ROCE 11.6% against a ≥12.0% target; Entity A1 (A1) at 11.1% (capital employed outpacing EBIT) drives the gap.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "fin-008",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "FCF conversion 34.4% against a ≥35.0% target; Entity A2 (A2) at 30.9% drives the gap.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "ops-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "wcp-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "DSO 47.0 days against a ≤45.0 days target; Entity A1 (A1) at 52.0 days (slower collections) drives the gap.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "fin-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "EBIT YTD 1,228.1 ₹ m, up 307.5 vs Aug; largest move Entity A1 (A1), up 154.1.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "fin-006",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1 (A1), down 38.0.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "sig-013",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Pricing pressure low (-0.4% vs plan price); Entity A1 (A1) low, Entity A2 (A2) low (0% vs plan price).",
+  "source_type": "table_row",
+  "row_id": "SIG-013"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "sig-014",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Commodity-price movement 2.1% MoM, up 1.4 vs Aug; largest move Entity A1 (A1), up 1.3.",
+  "source_type": "table_row",
+  "row_id": "SIG-014"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "trs-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "FX exposure 221.7 ₹ m, down 3.8 vs Aug; largest move Entity A1 (A1), down 7.9.",
+  "source_type": "table_row",
+  "row_id": "TRS-001"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "sig-016",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Freight exposure 1 lanes against a ≤0 lanes target; Entity A1 (A1) at 1 lanes drives the gap.",
+  "source_type": "table_row",
+  "row_id": "SIG-016"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "sig-017",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Fuel exposure -17.7% MoM, down 18.5 vs Aug; largest move Entity A1 (A1), down 50.4.",
+  "source_type": "table_row",
+  "row_id": "SIG-017"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "summary",
+  "kpi_id": "sig-018",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Power-cost exposure -7.1% MoM, down 16.5 vs Aug; largest move Entity A1 (A1), down 32.6.",
+  "source_type": "table_row",
+  "row_id": "SIG-018"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "drivers",
+  "kpi_id": "ops-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
+  "source_type": "table_row",
+  "row_id": "OPS-002"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "drivers",
+  "kpi_id": "ops-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 (A1) at 91.3% of plan drives the gap.",
+  "source_type": "table_row",
+  "row_id": "OPS-001"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "drivers",
+  "kpi_id": "sig-013",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Pricing pressure low (-0.4% vs plan price); Entity A1 (A1) low, Entity A2 (A2) low (0% vs plan price).",
+  "source_type": "table_row",
+  "row_id": "SIG-013"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "drivers",
+  "kpi_id": "cst-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Cost per tonne 2,934 ₹/t against a ≤2,900 ₹/t target; Entity A2 (A2) at 3,017 ₹/t drives the gap.",
+  "source_type": "table_row",
+  "row_id": "CST-001"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "drivers",
+  "kpi_id": "fin-004",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "Free cash flow YTD 606.2 ₹ m, up 157.4 vs Aug; largest move Entity A1 (A1), up 94.3.",
+  "source_type": "table_row",
+  "row_id": "FIN-004"
+ },
+ {
+  "persona": "core_group",
+  "screen": "enterprise_overview",
+  "section": "drivers",
+  "kpi_id": "fin-008",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "FCF conversion 34.4% against a ≥35.0% target; Entity A2 (A2) at 30.9% drives the gap.",
+  "source_type": "table_row",
+  "row_id": "FIN-008"
+ },
+ {
+  "persona": "core_group",
+  "screen": "data_assurance",
+  "section": "sign_off_status",
+  "kpi_id": "tru-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Certified KPI percentage 83.9% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 82.1%, Entity A2 (A2) 85.7%).",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
   "screen": "data_assurance",
   "section": "data_reliability",
   "kpi_id": "tru-002",
@@ -555,22 +450,37 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "data_assurance",
   "section": "data_reliability",
-  "kpi_id": "tru-011",
+  "kpi_id": "tru-006",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Largest entity variance against Board numbers 0.3%, flat; unchanged in both entities.",
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Overdue certifications 2 against a ≤0 target; Entity A2 (A2) at 2 drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
+  "screen": "data_assurance",
+  "section": "data_reliability",
+  "kpi_id": "tru-007",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 (A1) at 1 (flash break BRK-SYN-0071) drives the gap.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
   "screen": "data_assurance",
   "section": "data_reliability",
   "kpi_id": "tru-010",
@@ -585,69 +495,99 @@
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "liquidity_overview",
-  "kpi_id": "csh-001",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "improving",
-  "status_color": "green",
-  "display_verdict": "Improving",
-  "justification": "Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1 (A1), up 76.6.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "liquidity_overview",
-  "kpi_id": "liq-001",
+  "persona": "core_group",
+  "screen": "data_assurance",
+  "section": "data_ownership_and_rules",
+  "kpi_id": "gov-007",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Liquidity runway 16.7 months against a ≥12.0 months target; both entities meet it.",
+  "justification": "Leadership KPIs affected by findings 1, flat; unchanged in both entities.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "liquidity_overview",
-  "kpi_id": "fin-006",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "improving",
-  "status_color": "green",
-  "display_verdict": "Improving",
-  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1 (A1), down 38.0.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "liquidity_overview",
-  "kpi_id": "liq-003",
+  "persona": "core_group",
+  "screen": "early_warning",
+  "section": "forecasts",
+  "kpi_id": "prd-001",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Debt-maturity exposure 891.4 ₹ m, up 25.3 vs Aug; largest move Entity A1 (A1), up 56.3.",
+  "justification": "Days to breach 4 days, down 6 vs Aug; largest move Entity A1 (A1), down 6 (critical-material cover).",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
+  "screen": "early_warning",
+  "section": "forecasts",
+  "kpi_id": "prd-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Probability of production plan miss 69.7%, up 8.6 vs Aug; largest move Entity A1 (A1), up 6.6.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "early_warning",
+  "section": "forecasts",
+  "kpi_id": "prd-003",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Projected EBITDA gap -56.2 ₹ m against a ≥0.0 ₹ m target; both entities miss it.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "early_warning",
+  "section": "forecasts",
+  "kpi_id": "prd-004",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Projected liquidity gap none within 90 d; same in both entities.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "early_warning",
+  "section": "forecasts",
+  "kpi_id": "prd-005",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Forecast covenant breach not forecast; same in both entities.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
   "screen": "cash_and_liquidity",
-  "section": "operational_anomalies",
+  "section": "summary",
   "kpi_id": "wcp-001",
   "level": "group",
   "entity_code": null,
@@ -660,9 +600,9 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "cash_and_liquidity",
-  "section": "operational_anomalies",
+  "section": "summary",
   "kpi_id": "wcp-004",
   "level": "group",
   "entity_code": null,
@@ -675,39 +615,39 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "cash_and_liquidity",
-  "section": "market_and_risk_exposure",
-  "kpi_id": "trs-004",
+  "section": "summary",
+  "kpi_id": "csh-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1 (A1), up 76.6.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "summary",
+  "kpi_id": "csh-004",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Hedge cover 70.7% against a ≥70.0% target; Entity A2 (A2) at 61.1% misses it.",
+  "justification": "Cash-conversion cycle 32.6 days against a ≤35.0 days target; Entity A1 (A1) at 52.3 days misses it.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "cash_and_liquidity",
-  "section": "market_and_risk_exposure",
-  "kpi_id": "liq-004",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Financing exposure 2,720.8 ₹ m, up 93.3 vs Aug; largest move Entity A2 (A2), up 87.2.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "market_and_risk_exposure",
+  "section": "summary",
   "kpi_id": "csh-006",
   "level": "group",
   "entity_code": null,
@@ -720,9 +660,174 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "summary",
+  "kpi_id": "liq-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Covenant headroom 24.4% against a ≥20.0% target; Entity A1 (A1) at 18.9% misses it.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "cash",
+  "kpi_id": "csh-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1 (A1), up 76.6.",
+  "source_type": "table_row",
+  "row_id": "CSH-001"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "cash",
+  "kpi_id": "csh-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "Cash released YTD 22.0 ₹ m, up 3.4 vs Aug; largest move Entity A2 (A2), up 2.6.",
+  "source_type": "table_row",
+  "row_id": "CSH-002"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "cash_available_and_debt",
+  "kpi_id": "liq-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Liquidity runway 16.7 months against a ≥12.0 months target; both entities meet it.",
+  "source_type": "table_row",
+  "row_id": "LIQ-001"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "cash_available_and_debt",
+  "kpi_id": "liq-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Covenant headroom 24.4% against a ≥20.0% target; Entity A1 (A1) at 18.9% misses it.",
+  "source_type": "table_row",
+  "row_id": "LIQ-002"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "cash_available_and_debt",
+  "kpi_id": "liq-003",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Debt-maturity exposure 891.4 ₹ m, up 25.3 vs Aug; largest move Entity A1 (A1), up 56.3.",
+  "source_type": "table_row",
+  "row_id": "LIQ-003"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "cash_available_and_debt",
+  "kpi_id": "liq-004",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Financing exposure 2,720.8 ₹ m, up 93.3 vs Aug; largest move Entity A2 (A2), up 87.2.",
+  "source_type": "table_row",
+  "row_id": "LIQ-004"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "cash_available_and_debt",
+  "kpi_id": "prd-005",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Forecast covenant breach not forecast; same in both entities.",
+  "source_type": "table_row",
+  "row_id": "PRD-005"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "currency_and_interest",
+  "kpi_id": "trs-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "FX exposure 221.7 ₹ m, down 3.8 vs Aug; largest move Entity A1 (A1), down 7.9.",
+  "source_type": "table_row",
+  "row_id": "TRS-001"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "currency_and_interest",
+  "kpi_id": "trs-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Hedging effectiveness 91.7% against a ≥80.0% target; both entities meet it (Entity A1 (A1) 91.6%, Entity A2 (A2) 92.0%).",
+  "source_type": "table_row",
+  "row_id": "TRS-002"
+ },
+ {
+  "persona": "core_group",
+  "screen": "cash_and_liquidity",
+  "section": "currency_and_interest",
+  "kpi_id": "trs-004",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Hedge cover 70.7% against a ≥70.0% target; Entity A2 (A2) at 61.1% misses it.",
+  "source_type": "table_row",
+  "row_id": "TRS-004"
+ },
+ {
+  "persona": "core_group",
   "screen": "operational_performance",
-  "section": "production",
+  "section": "summary",
   "kpi_id": "ops-001",
   "level": "group",
   "entity_code": null,
@@ -735,24 +840,39 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "operational_performance",
-  "section": "reliability",
-  "kpi_id": "rel-001",
+  "section": "summary",
+  "kpi_id": "ops-003",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "operational_performance",
+  "section": "summary",
+  "kpi_id": "plt-002",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "MTBF 270 h against a ≥200 h target; Entity A1 (A1) at 165 h misses it.",
+  "justification": "OEE 84.1% against a ≥80.0% target; both entities meet it (Entity A1 (A1) 80.2%, Entity A2 (A2) 88.4%).",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "operational_performance",
-  "section": "cost_efficiency",
+  "section": "summary",
   "kpi_id": "cst-001",
   "level": "group",
   "entity_code": null,
@@ -765,7 +885,37 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
+  "screen": "operational_performance",
+  "section": "summary",
+  "kpi_id": "rel-003",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "improving",
+  "status_color": "green",
+  "display_verdict": "Improving",
+  "justification": "Unplanned downtime 154 h, down 10 vs Aug; largest move Entity A2 (A2), down 34.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "operational_performance",
+  "section": "summary",
+  "kpi_id": "ops-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
   "screen": "capital_projects",
   "section": "summary",
   "kpi_id": "cpx-001",
@@ -780,7 +930,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "capital_projects",
   "section": "summary",
   "kpi_id": "cpx-002",
@@ -795,7 +945,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "capital_projects",
   "section": "summary",
   "kpi_id": "cpx-003",
@@ -810,7 +960,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "capital_projects",
   "section": "summary",
   "kpi_id": "cpx-004",
@@ -825,7 +975,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "capital_projects",
   "section": "summary",
   "kpi_id": "prg-002",
@@ -840,99 +990,9 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "capital_projects",
   "section": "summary",
-  "kpi_id": "sig-011",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Capex value at risk 148.0 ₹ m, down 5.1 vs Aug; largest move Entity A2 (A2), down 4.3.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "capital_projects",
-  "section": "summary",
-  "kpi_id": "val-001",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "EBITDA benefit YTD 14.2 ₹ m, up 2.4 vs Aug; largest move Entity A2 (A2), up 1.3.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "capital_projects",
-  "section": "summary",
-  "kpi_id": "val-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Cash benefit YTD 8.7 ₹ m, up 1.4 vs Aug; largest move Entity A2 (A2), up 1.0.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "capital_projects",
-  "section": "summary",
-  "kpi_id": "val-003",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Cost savings delivered YTD 11.3 ₹ m, up 1.9 vs Aug; largest move Entity A2 (A2), up 1.2.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "capital_projects",
-  "section": "capital_projects_and_benefits_plan_vs_actual_by_month",
-  "kpi_id": "prg-001",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Capex project status 9 on track · 2 at risk · 0 off track.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "capital_projects",
-  "section": "capital_projects_and_benefits_plan_vs_actual_by_month",
-  "kpi_id": "str-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "capital_projects",
-  "section": "capital_projects_and_benefits_plan_vs_actual_by_month",
   "kpi_id": "prg-003",
   "level": "group",
   "entity_code": null,
@@ -945,25 +1005,25 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "capital_projects",
-  "section": "capital_projects_and_benefits_plan_vs_actual_by_month",
-  "kpi_id": "prg-005",
+  "section": "projects",
+  "kpi_id": "prg-001",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Transformation initiative status 15 on track · 6 at risk · 3 delayed.",
-  "source_type": "kpi",
-  "row_id": null
+  "justification": "Capex project status 9 on track · 2 at risk · 0 off track.",
+  "source_type": "table_row",
+  "row_id": "PRG-001"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "capital_projects",
-  "section": "capital_projects_and_benefits_plan_vs_actual_by_month",
-  "kpi_id": "prg-004",
+  "section": "projects",
+  "kpi_id": "str-002",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
@@ -971,13 +1031,43 @@
   "status_color": "green",
   "display_verdict": "On track",
   "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
+  "source_type": "table_row",
+  "row_id": "STR-002"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "summary",
+  "kpi_id": "eff-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "Intervention required",
+  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 (A1) at 1 (ALT-SYN-2041) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
+  "section": "summary",
+  "kpi_id": "ehs-001",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 (A1) at 0.91 per 200k h misses it.",
+  "source_type": "kpi",
+  "row_id": null
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "summary",
   "kpi_id": "ehs-004",
   "level": "group",
   "entity_code": null,
@@ -990,24 +1080,9 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
-  "kpi_id": "ehs-001",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 (A1) at 0.91 per 200k h misses it.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "summary",
   "kpi_id": "reg-005",
   "level": "group",
   "entity_code": null,
@@ -1020,24 +1095,9 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
-  "kpi_id": "reg-006",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Licence or permit expiry clock 65 days vs ≥90 days; Entity A1 (A1) at 65 days drives the gap.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "summary",
   "kpi_id": "ctl-004",
   "level": "group",
   "entity_code": null,
@@ -1050,84 +1110,69 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
-  "kpi_id": "reg-009",
+  "section": "summary",
+  "kpi_id": "gov-004",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Disclosure-clock status not triggered; same in both entities.",
+  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1 (A1), down 1.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
-  "kpi_id": "ehs-002",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 2).",
-  "source_type": "table_row",
-  "row_id": "EHS-002"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "ehs",
-  "kpi_id": "ehs-005",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Environmental excursions 2 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 1).",
-  "source_type": "table_row",
-  "row_id": "EHS-005"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "ehs",
-  "kpi_id": "ehs-007",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Overdue EHS actions 9 against a ≤0 target; both entities miss it (Entity A1 (A1) 7, Entity A2 (A2) 2).",
-  "source_type": "table_row",
-  "row_id": "EHS-007"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "ehs",
-  "kpi_id": "ehs-003",
+  "section": "permits_and_regulators",
+  "kpi_id": "reg-002",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Near misses 41, down 1 vs Aug; largest move Entity A2 (A2), down 2.",
+  "justification": "Regulatory deadlines 3, up 3 vs Aug; largest move Entity A1 (A1), up 2.",
   "source_type": "table_row",
-  "row_id": "EHS-003"
+  "row_id": "REG-002"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
+  "section": "permits_and_regulators",
+  "kpi_id": "reg-003",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Licence expirations 1, down 1 vs Aug; largest move Entity A2 (A2), down 1.",
+  "source_type": "table_row",
+  "row_id": "REG-003"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "health_and_safety",
+  "kpi_id": "ehs-004",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "On track",
+  "justification": "Critical safety incidents 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "source_type": "table_row",
+  "row_id": "EHS-004"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "health_and_safety",
   "kpi_id": "ehs-001",
   "level": "group",
   "entity_code": null,
@@ -1140,54 +1185,99 @@
   "row_id": "EHS-001"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
-  "kpi_id": "ehs-008",
+  "section": "health_and_safety",
+  "kpi_id": "ehs-002",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 2).",
+  "source_type": "table_row",
+  "row_id": "EHS-002"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "health_and_safety",
+  "kpi_id": "ehs-003",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "EHS escalation clocks running 0, flat; unchanged in both entities.",
+  "justification": "Near misses 41, down 1 vs Aug; largest move Entity A2 (A2), down 2.",
   "source_type": "table_row",
-  "row_id": "EHS-008"
+  "row_id": "EHS-003"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
-  "kpi_id": "reg-010",
+  "section": "health_and_safety",
+  "kpi_id": "ehs-005",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Environmental excursions 2 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 1).",
   "source_type": "table_row",
-  "row_id": "REG-010"
+  "row_id": "EHS-005"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
-  "kpi_id": "gov-004",
+  "section": "health_and_safety",
+  "kpi_id": "ehs-006",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1 (A1), down 1.",
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Open EHS corrective actions 45, up 1 vs Aug; largest move Entity A1 (A1), up 10.",
   "source_type": "table_row",
-  "row_id": "GOV-004"
+  "row_id": "EHS-006"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "health_and_safety",
+  "kpi_id": "ehs-007",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "Overdue EHS actions 9 against a ≤0 target; both entities miss it (Entity A1 (A1) 7, Entity A2 (A2) 2).",
+  "source_type": "table_row",
+  "row_id": "EHS-007"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "health_and_safety",
+  "kpi_id": "ehs-010",
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "Declining",
+  "justification": "EHS investigation completion rate YTD 85.4% against a ≥95.0% target; both entities miss it.",
+  "source_type": "table_row",
+  "row_id": "EHS-010"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "checks_and_controls",
   "kpi_id": "ctl-002",
   "level": "group",
   "entity_code": null,
@@ -1200,24 +1290,24 @@
   "row_id": "CTL-002"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
-  "kpi_id": "ctl-010",
+  "section": "checks_and_controls",
+  "kpi_id": "ctl-003",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Manual overrides YTD 14, up 3 vs Aug; largest move Entity A2 (A2), up 2.",
+  "justification": "Assurance reviews completed 6 of 8; Entity A1 (A1) 2 of 4, Entity A2 (A2) 4 of 4.",
   "source_type": "table_row",
-  "row_id": "CTL-010"
+  "row_id": "CTL-003"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "checks_and_controls",
   "kpi_id": "ctl-005",
   "level": "group",
   "entity_code": null,
@@ -1230,9 +1320,9 @@
   "row_id": "CTL-005"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "checks_and_controls",
   "kpi_id": "ctl-007",
   "level": "group",
   "entity_code": null,
@@ -1245,54 +1335,24 @@
   "row_id": "CTL-007"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
-  "kpi_id": "ctl-006",
+  "section": "checks_and_controls",
+  "kpi_id": "ctl-010",
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Unauthorised-vendor usage YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Manual overrides YTD 14, up 3 vs Aug; largest move Entity A2 (A2), up 2.",
   "source_type": "table_row",
-  "row_id": "CTL-006"
+  "row_id": "CTL-010"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
-  "kpi_id": "ctl-008",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Unauthorised-access events YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
-  "source_type": "table_row",
-  "row_id": "CTL-008"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "compliance",
-  "kpi_id": "ctl-009",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "On track",
-  "justification": "Data-sharing exceptions YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
-  "source_type": "table_row",
-  "row_id": "CTL-009"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "contracts",
   "kpi_id": "con-001",
   "level": "group",
   "entity_code": null,
@@ -1305,9 +1365,9 @@
   "row_id": "CON-001"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "contracts",
   "kpi_id": "con-002",
   "level": "group",
   "entity_code": null,
@@ -1320,9 +1380,9 @@
   "row_id": "CON-002"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "compliance",
+  "section": "contracts",
   "kpi_id": "con-003",
   "level": "group",
   "entity_code": null,
@@ -1335,9 +1395,9 @@
   "row_id": "CON-003"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
+  "section": "environment",
   "kpi_id": "sus-001",
   "level": "group",
   "entity_code": null,
@@ -1350,9 +1410,9 @@
   "row_id": "SUS-001"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
+  "section": "environment",
   "kpi_id": "sus-002",
   "level": "group",
   "entity_code": null,
@@ -1365,9 +1425,9 @@
   "row_id": "SUS-002"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "ehs",
+  "section": "environment",
   "kpi_id": "sus-003",
   "level": "group",
   "entity_code": null,
@@ -1380,307 +1440,277 @@
   "row_id": "SUS-003"
  },
  {
-  "persona": "owner",
-  "screen": "enterprise_overview",
-  "section": "summary",
-  "kpi_id": "prd-003",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Projected EBITDA gap -56.2 ₹ m against a ≥0.0 ₹ m target; both entities miss it.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "operational_performance",
-  "section": "summary",
-  "kpi_id": "ops-001",
-  "level": "entity",
-  "entity_code": "A1",
-  "entity_name": "Entity A1",
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Production vs plan 91.3% of plan vs ≥100.0%; driven by reliability losses and RM-1 cover; Group at 95.5% of plan.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "operational_performance",
-  "section": "summary",
-  "kpi_id": "sig-007",
-  "level": "entity",
-  "entity_code": "A1",
-  "entity_name": "Entity A1",
-  "verdict": "improving",
-  "status_color": "green",
-  "display_verdict": "Improving",
-  "justification": "Production at risk 30.9 kt, down 7.3 vs Aug; Group at 36.8 kt.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "operational_performance",
-  "section": "summary",
-  "kpi_id": "sig-009",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Critical-material shortage risk 5 materials against a ≤0 materials target; both entities miss it.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "operational_performance",
-  "section": "summary",
-  "kpi_id": "prd-001",
-  "level": "entity",
-  "entity_code": "A1",
-  "entity_name": "Entity A1",
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Days to breach 4 days, down 6 vs Aug; driven by RM-1 cover; Group at 4 days.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "summary",
-  "kpi_id": "sig-012",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Dispatch delays 8.7% late against a ≤5.0% target; both entities miss it.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "summary",
-  "kpi_id": "wcp-001",
-  "level": "entity",
-  "entity_code": "A1",
-  "entity_name": "Entity A1",
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "DSO 52.0 days against a ≤45.0 days target; driven by slower collections; Group at 47.0 days.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "summary",
-  "kpi_id": "csh-003",
-  "level": "entity",
-  "entity_code": "A1",
-  "entity_name": "Entity A1",
-  "verdict": "improving",
-  "status_color": "green",
-  "display_verdict": "Improving",
-  "justification": "Daily collections 38.6 ₹ m/day, up 0.8 vs Aug; Group at 76.8 ₹ m/day.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "cash_and_liquidity",
-  "section": "summary",
-  "kpi_id": "csh-006",
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Declining",
-  "justification": "Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1 (A1), up 1.6.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
-  "screen": "kpi_detail",
-  "section": "summary",
-  "kpi_id": "ops-001",
-  "level": "entity",
-  "entity_code": "A1",
-  "entity_name": "Entity A1",
-  "verdict": "intervention_required",
-  "status_color": "red",
-  "display_verdict": "Intervention required",
-  "justification": "Production vs plan 91.3% of plan vs ≥100.0%; driven by reliability losses and RM-1 cover; Group at 95.5% of plan.",
-  "source_type": "kpi",
-  "row_id": null
- },
- {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "materiality_composite_across_six_dimensions",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
   "kpi_id": null,
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "display_verdict": "■ Critical",
-  "justification": "Production and liquidity both High, raised one level as Entity A1 (A1) breaches plan in 4 days.",
+  "display_verdict": "■ High",
+  "justification": "SIG-009 4 materials · SIG-010 1 suppliers",
   "source_type": "table_row",
-  "row_id": "INC-SYN-0142 · Composite"
+  "row_id": "Entity A1 (A1) · Supply continuity"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "materiality_composite_across_six_dimensions",
-  "kpi_id": null,
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Medium",
-  "justification": "Hedge cover 70.7% sits just above the 70.0% floor; Entity A2 (A2) at 61.1% is below it.",
-  "source_type": "table_row",
-  "row_id": "Hedge cover close to policy floor (70.7% vs ≥70.0%) · Composite"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "what_drives_the_rating_of_inc_syn_0142_materiality_dimensions_placeholder_model",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
   "kpi_id": null,
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "display_verdict": "High",
-  "justification": "Entity A1 (A1) at 91.3% of plan, with 24.3 kt more at risk from RM-1 cover.",
+  "display_verdict": "■ High",
+  "justification": "CSH-006 27.2 ₹ m · LIQ-002 18.9 %",
   "source_type": "table_row",
-  "row_id": "Production exposure · Rating"
+  "row_id": "Entity A1 (A1) · Liquidity"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "what_drives_the_rating_of_inc_syn_0142_materiality_dimensions_placeholder_model",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
   "kpi_id": null,
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "display_verdict": "High",
-  "justification": "27.2 ₹ m of upstream cash at risk in Entity A1 (A1); runway still 16.7 months.",
+  "display_verdict": "■ High",
+  "justification": "EHS-001 0.91 per 200k h · EHS-002 1",
   "source_type": "table_row",
-  "row_id": "Liquidity / cash · Rating"
+  "row_id": "Entity A1 (A1) · EHS"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "what_drives_the_rating_of_inc_syn_0142_materiality_dimensions_placeholder_model",
-  "kpi_id": null,
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "watch",
-  "status_color": "amber",
-  "display_verdict": "Medium",
-  "justification": "Oct–Mar EBITDA forecast 56.2 ₹ m below plan; material but no covenant breach forecast.",
-  "source_type": "table_row",
-  "row_id": "Financial · Rating"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "what_drives_the_rating_of_inc_syn_0142_materiality_dimensions_placeholder_model",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
   "kpi_id": null,
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
-  "display_verdict": "Low",
-  "justification": "0 overdue obligations and the disclosure clock is not triggered.",
+  "display_verdict": "✓ Low",
+  "justification": "REG-005 0",
   "source_type": "table_row",
-  "row_id": "Regulatory · Rating"
+  "row_id": "Entity A1 (A1) · Regulatory"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "what_drives_the_rating_of_inc_syn_0142_materiality_dimensions_placeholder_model",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
   "kpi_id": null,
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
-  "display_verdict": "Low",
-  "justification": "Impact limited to dispatch delays; no external escalation recorded.",
+  "display_verdict": "✓ Low",
+  "justification": "CTL-004 0",
   "source_type": "table_row",
-  "row_id": "Reputation · Rating"
+  "row_id": "Entity A1 (A1) · Controls"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "what_drives_the_rating_of_inc_syn_0142_materiality_dimensions_placeholder_model",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
   "kpi_id": null,
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "on_track",
   "status_color": "green",
-  "display_verdict": "None",
-  "justification": "0 critical safety incidents linked to this incident.",
+  "display_verdict": "✓ Low",
+  "justification": "CON-001 2",
   "source_type": "table_row",
-  "row_id": "EHS · Rating"
+  "row_id": "Entity A1 (A1) · Contracts"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "risk_compliance_ehs",
-  "section": "what_drives_the_rating_of_inc_syn_0142_materiality_dimensions_placeholder_model",
-  "kpi_id": null,
-  "level": "group",
-  "entity_code": null,
-  "entity_name": null,
-  "verdict": "on_track",
-  "status_color": "green",
-  "display_verdict": "+1 level (≤ [PH] d)",
-  "justification": "Entity A1 (A1) breaches its production plan in 4 days, inside the escalation window.",
-  "source_type": "table_row",
-  "row_id": "Time-to-breach modifier · Rating"
- },
- {
-  "persona": "owner",
-  "screen": "risk_compliance_ehs",
-  "section": "named_actions_on_material_risks",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
   "kpi_id": null,
   "level": "group",
   "entity_code": null,
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "display_verdict": "War room active",
-  "justification": "Decision DEC-SYN-0219 due D0 11:00; the war room is coordinating the response.",
+  "display_verdict": "■ High",
+  "justification": "SIG-009 1 materials · SIG-010 0 suppliers",
   "source_type": "table_row",
-  "row_id": "INC-SYN-0142 · Status"
+  "row_id": "Entity A2 (A2) · Supply continuity"
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "✓ Low",
+  "justification": "CSH-006 0.0 ₹ m · LIQ-002 30.1 %",
+  "source_type": "table_row",
+  "row_id": "Entity A2 (A2) · Liquidity"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "▼ Medium",
+  "justification": "EHS-001 0.00 per 200k h · EHS-002 2",
+  "source_type": "table_row",
+  "row_id": "Entity A2 (A2) · EHS"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "✓ Low",
+  "justification": "REG-005 0",
+  "source_type": "table_row",
+  "row_id": "Entity A2 (A2) · Regulatory"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "✓ Low",
+  "justification": "CTL-004 0",
+  "source_type": "table_row",
+  "row_id": "Entity A2 (A2) · Controls"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "✓ Low",
+  "justification": "CON-001 2",
+  "source_type": "table_row",
+  "row_id": "Entity A2 (A2) · Contracts"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "intervention_required",
+  "status_color": "red",
+  "display_verdict": "■ High",
+  "justification": "SIG-009 5 materials · SIG-010 1 suppliers",
+  "source_type": "table_row",
+  "row_id": "Group · Supply continuity"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "▼ Medium",
+  "justification": "CSH-006 27.2 ₹ m · LIQ-002 24.4 %",
+  "source_type": "table_row",
+  "row_id": "Group · Liquidity"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "watch",
+  "status_color": "amber",
+  "display_verdict": "▼ Medium",
+  "justification": "EHS-001 0.47 per 200k h · EHS-002 3",
+  "source_type": "table_row",
+  "row_id": "Group · EHS"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "✓ Low",
+  "justification": "REG-005 0",
+  "source_type": "table_row",
+  "row_id": "Group · Regulatory"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "✓ Low",
+  "justification": "CTL-004 0",
+  "source_type": "table_row",
+  "row_id": "Group · Controls"
+ },
+ {
+  "persona": "core_group",
+  "screen": "risk_compliance_ehs",
+  "section": "entity_materiality_dimension_rating_from_the_dimension_s_kpis_sep_2026",
+  "kpi_id": null,
+  "level": "group",
+  "entity_code": null,
+  "entity_name": null,
+  "verdict": "on_track",
+  "status_color": "green",
+  "display_verdict": "✓ Low",
+  "justification": "CON-001 4",
+  "source_type": "table_row",
+  "row_id": "Group · Contracts"
+ },
+ {
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-001",
@@ -1695,7 +1725,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-001",
@@ -1705,12 +1735,12 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Production vs plan 91.3% of plan vs ≥100.0%; driven by reliability losses and RM-1 cover; Group at 95.5% of plan.",
+  "justification": "Production vs plan 91.3% of plan vs ≥100.0%; driven by reliability losses and critical-material cover; Group at 95.5% of plan.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-001",
@@ -1725,7 +1755,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-003",
@@ -1740,7 +1770,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-003",
@@ -1755,7 +1785,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-003",
@@ -1770,7 +1800,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-001",
@@ -1785,7 +1815,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-001",
@@ -1800,7 +1830,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-001",
@@ -1815,7 +1845,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-002",
@@ -1830,7 +1860,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-002",
@@ -1845,7 +1875,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-002",
@@ -1860,7 +1890,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-004",
@@ -1875,7 +1905,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-004",
@@ -1890,7 +1920,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-004",
@@ -1905,7 +1935,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-005",
@@ -1920,7 +1950,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-005",
@@ -1935,7 +1965,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "plt-005",
@@ -1950,7 +1980,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-001",
@@ -1965,7 +1995,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-001",
@@ -1980,7 +2010,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-001",
@@ -1995,7 +2025,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-002",
@@ -2010,7 +2040,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-002",
@@ -2025,7 +2055,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-002",
@@ -2040,7 +2070,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-003",
@@ -2055,7 +2085,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-003",
@@ -2070,7 +2100,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-003",
@@ -2085,7 +2115,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-004",
@@ -2100,7 +2130,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-004",
@@ -2115,7 +2145,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-004",
@@ -2130,7 +2160,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-005",
@@ -2145,7 +2175,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-005",
@@ -2160,7 +2190,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rel-005",
@@ -2175,7 +2205,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-001",
@@ -2190,7 +2220,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-001",
@@ -2205,7 +2235,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-001",
@@ -2220,7 +2250,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-002",
@@ -2235,7 +2265,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-002",
@@ -2250,7 +2280,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-002",
@@ -2265,7 +2295,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-003",
@@ -2280,7 +2310,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-003",
@@ -2295,7 +2325,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-003",
@@ -2310,7 +2340,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-001",
@@ -2325,7 +2355,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-001",
@@ -2340,7 +2370,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-001",
@@ -2355,7 +2385,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-002",
@@ -2370,7 +2400,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-002",
@@ -2385,7 +2415,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-002",
@@ -2400,7 +2430,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-003",
@@ -2415,7 +2445,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-003",
@@ -2430,7 +2460,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sus-003",
@@ -2445,7 +2475,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-007",
@@ -2460,7 +2490,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-007",
@@ -2475,7 +2505,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-007",
@@ -2490,7 +2520,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-008",
@@ -2505,7 +2535,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-008",
@@ -2520,7 +2550,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-008",
@@ -2535,7 +2565,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-009",
@@ -2550,7 +2580,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-009",
@@ -2560,12 +2590,12 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Critical-material shortage risk 4 materials against a ≤0 materials target; driven by RM-1 single-source supply; Group at 5 materials.",
+  "justification": "Critical-material shortage risk 4 materials against a ≤0 materials target; driven by critical-material single-source supply; Group at 5 materials.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-009",
@@ -2575,12 +2605,12 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Critical-material shortage risk 1 materials against a ≤0 materials target; driven by RM-1 single-source supply; Group at 5 materials.",
+  "justification": "Critical-material shortage risk 1 materials against a ≤0 materials target; driven by critical-material single-source supply; Group at 5 materials.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-012",
@@ -2595,7 +2625,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-012",
@@ -2610,7 +2640,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-012",
@@ -2625,7 +2655,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-021",
@@ -2640,7 +2670,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-021",
@@ -2655,7 +2685,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-021",
@@ -2670,7 +2700,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-001",
@@ -2685,7 +2715,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-001",
@@ -2700,7 +2730,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-001",
@@ -2715,7 +2745,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-002",
@@ -2730,7 +2760,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-002",
@@ -2745,7 +2775,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-002",
@@ -2760,7 +2790,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-003",
@@ -2775,7 +2805,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-003",
@@ -2790,7 +2820,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-003",
@@ -2805,7 +2835,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-004",
@@ -2820,7 +2850,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-004",
@@ -2835,7 +2865,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-004",
@@ -2850,7 +2880,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-005",
@@ -2865,7 +2895,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-005",
@@ -2880,7 +2910,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-005",
@@ -2895,7 +2925,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-006",
@@ -2910,7 +2940,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-006",
@@ -2925,7 +2955,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-006",
@@ -2940,7 +2970,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-007",
@@ -2955,7 +2985,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-007",
@@ -2970,7 +3000,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-007",
@@ -2985,7 +3015,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-009",
@@ -3000,7 +3030,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-009",
@@ -3015,7 +3045,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-009",
@@ -3030,7 +3060,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-006",
@@ -3045,7 +3075,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-006",
@@ -3060,7 +3090,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-006",
@@ -3075,7 +3105,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-005",
@@ -3090,7 +3120,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-005",
@@ -3105,7 +3135,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-005",
@@ -3120,7 +3150,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-006",
@@ -3135,7 +3165,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-006",
@@ -3150,7 +3180,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-006",
@@ -3165,7 +3195,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-002",
@@ -3180,7 +3210,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-002",
@@ -3195,7 +3225,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-002",
@@ -3210,7 +3240,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-004",
@@ -3225,7 +3255,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-004",
@@ -3240,7 +3270,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ops-004",
@@ -3255,7 +3285,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-004",
@@ -3270,7 +3300,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-004",
@@ -3285,7 +3315,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-004",
@@ -3300,7 +3330,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-001",
@@ -3315,7 +3345,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-001",
@@ -3330,7 +3360,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-001",
@@ -3345,7 +3375,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-002",
@@ -3360,7 +3390,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-002",
@@ -3375,7 +3405,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-002",
@@ -3390,7 +3420,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-003",
@@ -3405,7 +3435,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-003",
@@ -3420,7 +3450,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-003",
@@ -3435,7 +3465,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-004",
@@ -3450,7 +3480,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-004",
@@ -3465,7 +3495,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-004",
@@ -3480,7 +3510,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-005",
@@ -3495,7 +3525,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-005",
@@ -3510,7 +3540,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-005",
@@ -3525,7 +3555,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-006",
@@ -3540,7 +3570,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-006",
@@ -3555,7 +3585,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-006",
@@ -3570,7 +3600,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-007",
@@ -3585,7 +3615,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-007",
@@ -3600,7 +3630,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-007",
@@ -3615,7 +3645,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-008",
@@ -3630,7 +3660,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-008",
@@ -3645,7 +3675,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "fin-008",
@@ -3660,7 +3690,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-001",
@@ -3675,7 +3705,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-001",
@@ -3690,7 +3720,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-001",
@@ -3705,7 +3735,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-002",
@@ -3720,7 +3750,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-002",
@@ -3735,7 +3765,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-002",
@@ -3750,7 +3780,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-003",
@@ -3765,7 +3795,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-003",
@@ -3780,7 +3810,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-003",
@@ -3795,7 +3825,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-004",
@@ -3810,7 +3840,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-004",
@@ -3825,7 +3855,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-004",
@@ -3840,7 +3870,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-006",
@@ -3855,7 +3885,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-006",
@@ -3870,7 +3900,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "csh-006",
@@ -3885,7 +3915,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-001",
@@ -3900,7 +3930,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-001",
@@ -3915,7 +3945,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-001",
@@ -3930,7 +3960,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-002",
@@ -3945,7 +3975,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-002",
@@ -3960,7 +3990,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-002",
@@ -3975,7 +4005,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-003",
@@ -3990,7 +4020,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-003",
@@ -4005,7 +4035,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-003",
@@ -4020,7 +4050,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-004",
@@ -4035,7 +4065,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-004",
@@ -4050,7 +4080,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-004",
@@ -4065,7 +4095,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-005",
@@ -4080,7 +4110,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-005",
@@ -4095,7 +4125,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-005",
@@ -4110,7 +4140,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-006",
@@ -4125,7 +4155,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-006",
@@ -4140,7 +4170,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "wcp-006",
@@ -4155,7 +4185,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-001",
@@ -4170,7 +4200,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-001",
@@ -4185,7 +4215,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-001",
@@ -4200,7 +4230,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-002",
@@ -4215,7 +4245,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-002",
@@ -4230,7 +4260,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-002",
@@ -4245,7 +4275,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-003",
@@ -4260,7 +4290,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-003",
@@ -4275,7 +4305,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-003",
@@ -4290,7 +4320,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-004",
@@ -4305,7 +4335,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-004",
@@ -4320,7 +4350,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "liq-004",
@@ -4335,7 +4365,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-001",
@@ -4350,7 +4380,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-001",
@@ -4365,7 +4395,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-001",
@@ -4380,7 +4410,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-002",
@@ -4395,7 +4425,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-002",
@@ -4410,7 +4440,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-002",
@@ -4425,7 +4455,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-003",
@@ -4440,7 +4470,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-003",
@@ -4455,7 +4485,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-003",
@@ -4470,7 +4500,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-004",
@@ -4485,7 +4515,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-004",
@@ -4500,7 +4530,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-004",
@@ -4515,7 +4545,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-005",
@@ -4530,7 +4560,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-005",
@@ -4545,7 +4575,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "trs-005",
@@ -4560,7 +4590,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-001",
@@ -4575,7 +4605,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-001",
@@ -4590,7 +4620,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-001",
@@ -4605,7 +4635,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-002",
@@ -4620,7 +4650,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-002",
@@ -4635,7 +4665,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-002",
@@ -4650,7 +4680,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-003",
@@ -4665,7 +4695,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-003",
@@ -4680,7 +4710,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-003",
@@ -4695,7 +4725,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-004",
@@ -4710,7 +4740,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-004",
@@ -4725,7 +4755,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cpx-004",
@@ -4740,7 +4770,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-011",
@@ -4755,7 +4785,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-011",
@@ -4770,7 +4800,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-011",
@@ -4785,7 +4815,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-001",
@@ -4800,7 +4830,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-001",
@@ -4815,7 +4845,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-001",
@@ -4830,7 +4860,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-002",
@@ -4845,7 +4875,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-002",
@@ -4860,7 +4890,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-002",
@@ -4875,7 +4905,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-003",
@@ -4890,7 +4920,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-003",
@@ -4905,7 +4935,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-003",
@@ -4920,7 +4950,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-004",
@@ -4935,7 +4965,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-004",
@@ -4950,7 +4980,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-004",
@@ -4965,7 +4995,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "str-002",
@@ -4980,7 +5010,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "str-002",
@@ -4995,7 +5025,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "str-002",
@@ -5010,7 +5040,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-005",
@@ -5025,7 +5055,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-005",
@@ -5040,7 +5070,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prg-005",
@@ -5055,7 +5085,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-006",
@@ -5070,7 +5100,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-006",
@@ -5085,7 +5115,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-006",
@@ -5100,7 +5130,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-001",
@@ -5115,7 +5145,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-001",
@@ -5130,7 +5160,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-001",
@@ -5145,7 +5175,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-002",
@@ -5160,7 +5190,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-002",
@@ -5175,7 +5205,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-002",
@@ -5190,7 +5220,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-003",
@@ -5205,7 +5235,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-003",
@@ -5220,7 +5250,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "val-003",
@@ -5235,7 +5265,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-001",
@@ -5250,7 +5280,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-001",
@@ -5260,12 +5290,12 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Supplier on-time delivery 90.4% against a ≥95.0% target; driven by supplier S-07 delays; Group at 91.4%.",
+  "justification": "Supplier on-time delivery 90.4% against a ≥95.0% target; driven by a critical supplier delays; Group at 91.4%.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-001",
@@ -5275,12 +5305,12 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Supplier on-time delivery 92.3% against a ≥95.0% target; driven by supplier S-07 delays; Group at 91.4%.",
+  "justification": "Supplier on-time delivery 92.3% against a ≥95.0% target; driven by a critical supplier delays; Group at 91.4%.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-002",
@@ -5295,7 +5325,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-002",
@@ -5310,7 +5340,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-002",
@@ -5325,7 +5355,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-003",
@@ -5340,7 +5370,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-003",
@@ -5355,7 +5385,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-003",
@@ -5370,7 +5400,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-004",
@@ -5385,7 +5415,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-004",
@@ -5400,7 +5430,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-004",
@@ -5415,7 +5445,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-005",
@@ -5430,7 +5460,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-005",
@@ -5445,7 +5475,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-005",
@@ -5460,7 +5490,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-007",
@@ -5475,7 +5505,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-007",
@@ -5485,12 +5515,12 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Single-source spend share 34.8% against a ≤30.0% target; driven by RM-1 single sourcing; Group at 35.2%.",
+  "justification": "Single-source spend share 34.8% against a ≤30.0% target; driven by critical-material single sourcing; Group at 35.2%.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-007",
@@ -5500,12 +5530,12 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Single-source spend share 35.6% against a ≤30.0% target; driven by RM-1 single sourcing; Group at 35.2%.",
+  "justification": "Single-source spend share 35.6% against a ≤30.0% target; driven by critical-material single sourcing; Group at 35.2%.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-008",
@@ -5520,7 +5550,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-008",
@@ -5535,7 +5565,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sup-008",
@@ -5550,7 +5580,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-001",
@@ -5565,7 +5595,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-001",
@@ -5580,7 +5610,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-001",
@@ -5595,7 +5625,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-002",
@@ -5610,7 +5640,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-002",
@@ -5625,7 +5655,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-002",
@@ -5640,7 +5670,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-003",
@@ -5655,7 +5685,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-003",
@@ -5670,7 +5700,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "con-003",
@@ -5685,7 +5715,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-001",
@@ -5700,7 +5730,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-001",
@@ -5715,7 +5745,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-001",
@@ -5730,7 +5760,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-002",
@@ -5745,7 +5775,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-002",
@@ -5760,7 +5790,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-002",
@@ -5775,7 +5805,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-003",
@@ -5790,7 +5820,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-003",
@@ -5805,7 +5835,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-003",
@@ -5820,7 +5850,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-004",
@@ -5835,7 +5865,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-004",
@@ -5850,7 +5880,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-004",
@@ -5865,7 +5895,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-005",
@@ -5880,7 +5910,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-005",
@@ -5895,7 +5925,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-005",
@@ -5910,7 +5940,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-007",
@@ -5925,7 +5955,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-007",
@@ -5940,7 +5970,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-007",
@@ -5955,7 +5985,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-008",
@@ -5970,7 +6000,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-008",
@@ -5985,7 +6015,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-008",
@@ -6000,7 +6030,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-009",
@@ -6015,7 +6045,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-009",
@@ -6030,7 +6060,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-009",
@@ -6045,7 +6075,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-010",
@@ -6060,7 +6090,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-010",
@@ -6075,7 +6105,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-010",
@@ -6090,7 +6120,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-003",
@@ -6105,7 +6135,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-003",
@@ -6120,7 +6150,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-003",
@@ -6135,7 +6165,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cmp-005",
@@ -6150,7 +6180,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cmp-005",
@@ -6165,7 +6195,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cmp-005",
@@ -6180,7 +6210,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-008",
@@ -6195,7 +6225,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-008",
@@ -6210,7 +6240,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-008",
@@ -6225,7 +6255,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-010",
@@ -6240,7 +6270,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-010",
@@ -6255,7 +6285,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ehs-010",
@@ -6270,7 +6300,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-002",
@@ -6285,7 +6315,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-002",
@@ -6300,7 +6330,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-002",
@@ -6315,7 +6345,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-004",
@@ -6330,7 +6360,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-004",
@@ -6345,7 +6375,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-004",
@@ -6360,7 +6390,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-005",
@@ -6375,7 +6405,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-005",
@@ -6390,7 +6420,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-005",
@@ -6405,7 +6435,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-006",
@@ -6420,7 +6450,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-006",
@@ -6435,7 +6465,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-006",
@@ -6450,7 +6480,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-007",
@@ -6465,7 +6495,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-007",
@@ -6480,7 +6510,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-007",
@@ -6495,7 +6525,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-008",
@@ -6510,7 +6540,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-008",
@@ -6525,7 +6555,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-008",
@@ -6540,7 +6570,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-009",
@@ -6555,7 +6585,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-009",
@@ -6570,7 +6600,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-009",
@@ -6585,7 +6615,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-010",
@@ -6600,7 +6630,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-010",
@@ -6615,7 +6645,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-010",
@@ -6630,7 +6660,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-003",
@@ -6645,7 +6675,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-003",
@@ -6660,7 +6690,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "ctl-003",
@@ -6675,7 +6705,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-001",
@@ -6690,7 +6720,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-001",
@@ -6705,7 +6735,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-001",
@@ -6720,7 +6750,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-002",
@@ -6735,7 +6765,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-002",
@@ -6750,7 +6780,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-002",
@@ -6765,7 +6795,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-003",
@@ -6780,7 +6810,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-003",
@@ -6795,7 +6825,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-003",
@@ -6810,7 +6840,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-004",
@@ -6825,7 +6855,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-004",
@@ -6840,7 +6870,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-004",
@@ -6855,7 +6885,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-005",
@@ -6870,7 +6900,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-005",
@@ -6885,7 +6915,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-005",
@@ -6900,7 +6930,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-006",
@@ -6915,7 +6945,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-006",
@@ -6930,7 +6960,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-006",
@@ -6945,7 +6975,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-007",
@@ -6960,7 +6990,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-007",
@@ -6975,7 +7005,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-007",
@@ -6990,7 +7020,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-004",
@@ -7005,7 +7035,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-004",
@@ -7020,7 +7050,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-004",
@@ -7035,7 +7065,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-006",
@@ -7050,7 +7080,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-006",
@@ -7065,7 +7095,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-006",
@@ -7080,7 +7110,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-007",
@@ -7095,7 +7125,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-007",
@@ -7110,7 +7140,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-007",
@@ -7125,7 +7155,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-008",
@@ -7140,7 +7170,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-008",
@@ -7155,7 +7185,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-008",
@@ -7170,7 +7200,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-009",
@@ -7185,7 +7215,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-009",
@@ -7200,7 +7230,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "gov-009",
@@ -7215,7 +7245,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-001",
@@ -7230,7 +7260,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-001",
@@ -7245,7 +7275,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-001",
@@ -7260,7 +7290,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-002",
@@ -7275,7 +7305,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-002",
@@ -7290,7 +7320,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-002",
@@ -7305,7 +7335,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-005",
@@ -7320,7 +7350,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-005",
@@ -7335,7 +7365,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-005",
@@ -7350,7 +7380,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-008",
@@ -7365,7 +7395,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-008",
@@ -7380,7 +7410,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-008",
@@ -7395,7 +7425,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-009",
@@ -7410,7 +7440,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-009",
@@ -7425,7 +7455,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-009",
@@ -7440,7 +7470,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-010",
@@ -7455,7 +7485,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-010",
@@ -7470,7 +7500,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-010",
@@ -7485,7 +7515,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-003",
@@ -7500,7 +7530,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-003",
@@ -7515,7 +7545,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-003",
@@ -7530,7 +7560,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-011",
@@ -7545,7 +7575,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-011",
@@ -7560,7 +7590,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "tru-011",
@@ -7575,7 +7605,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-002",
@@ -7590,7 +7620,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-002",
@@ -7605,7 +7635,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-002",
@@ -7620,7 +7650,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-006",
@@ -7635,7 +7665,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-006",
@@ -7650,7 +7680,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-006",
@@ -7665,7 +7695,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-007",
@@ -7680,7 +7710,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-007",
@@ -7695,7 +7725,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-007",
@@ -7710,7 +7740,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-008",
@@ -7725,7 +7755,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-008",
@@ -7740,7 +7770,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-008",
@@ -7755,7 +7785,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-009",
@@ -7770,7 +7800,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-009",
@@ -7785,7 +7815,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-009",
@@ -7800,7 +7830,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-010",
@@ -7815,7 +7845,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-010",
@@ -7830,7 +7860,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-010",
@@ -7845,7 +7875,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-011",
@@ -7860,7 +7890,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-011",
@@ -7875,7 +7905,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "eff-011",
@@ -7890,7 +7920,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-004",
@@ -7905,7 +7935,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-004",
@@ -7920,7 +7950,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-004",
@@ -7935,7 +7965,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-005",
@@ -7950,7 +7980,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-005",
@@ -7965,7 +7995,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-005",
@@ -7980,7 +8010,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-006",
@@ -7995,7 +8025,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-006",
@@ -8010,7 +8040,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-006",
@@ -8025,7 +8055,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-013",
@@ -8040,7 +8070,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-013",
@@ -8055,7 +8085,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-013",
@@ -8070,7 +8100,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-001",
@@ -8080,12 +8110,12 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Days to breach 4 days, down 6 vs Aug; largest move Entity A1 (A1), down 6 (RM-1 cover).",
+  "justification": "Days to breach 4 days, down 6 vs Aug; largest move Entity A1 (A1), down 6 (critical-material cover).",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-001",
@@ -8095,12 +8125,12 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Days to breach 4 days, down 6 vs Aug; driven by RM-1 cover; Group at 4 days.",
+  "justification": "Days to breach 4 days, down 6 vs Aug; driven by critical-material cover; Group at 4 days.",
   "source_type": "kpi",
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-001",
@@ -8115,7 +8145,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-002",
@@ -8130,7 +8160,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-002",
@@ -8145,7 +8175,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-002",
@@ -8160,7 +8190,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-003",
@@ -8175,7 +8205,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-003",
@@ -8190,7 +8220,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-003",
@@ -8205,7 +8235,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-004",
@@ -8220,7 +8250,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-004",
@@ -8235,7 +8265,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-004",
@@ -8250,7 +8280,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-005",
@@ -8265,7 +8295,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-005",
@@ -8280,7 +8310,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-005",
@@ -8295,7 +8325,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-006",
@@ -8310,7 +8340,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-006",
@@ -8325,7 +8355,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-006",
@@ -8340,7 +8370,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-007",
@@ -8355,7 +8385,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-007",
@@ -8370,7 +8400,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-007",
@@ -8385,7 +8415,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-005",
@@ -8400,7 +8430,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-005",
@@ -8415,7 +8445,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "cst-005",
@@ -8430,7 +8460,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-008",
@@ -8445,7 +8475,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-008",
@@ -8460,7 +8490,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-008",
@@ -8475,7 +8505,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-009",
@@ -8490,7 +8520,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-009",
@@ -8505,7 +8535,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-009",
@@ -8520,7 +8550,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-010",
@@ -8535,7 +8565,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-010",
@@ -8550,7 +8580,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-010",
@@ -8565,7 +8595,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-011",
@@ -8580,7 +8610,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-011",
@@ -8595,7 +8625,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-011",
@@ -8610,7 +8640,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-012",
@@ -8625,7 +8655,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-012",
@@ -8640,7 +8670,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "prd-012",
@@ -8655,7 +8685,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-011",
@@ -8670,7 +8700,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-011",
@@ -8685,7 +8715,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "reg-011",
@@ -8700,7 +8730,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-010",
@@ -8715,7 +8745,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-010",
@@ -8730,7 +8760,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-010",
@@ -8745,7 +8775,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-014",
@@ -8760,7 +8790,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-014",
@@ -8775,7 +8805,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-014",
@@ -8790,7 +8820,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-016",
@@ -8805,7 +8835,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-016",
@@ -8820,7 +8850,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-016",
@@ -8835,7 +8865,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-017",
@@ -8850,7 +8880,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-017",
@@ -8865,7 +8895,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-017",
@@ -8880,7 +8910,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-018",
@@ -8895,7 +8925,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-018",
@@ -8910,7 +8940,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-018",
@@ -8925,7 +8955,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-001",
@@ -8940,7 +8970,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-001",
@@ -8955,7 +8985,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-001",
@@ -8970,7 +9000,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-002",
@@ -8985,7 +9015,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-002",
@@ -9000,7 +9030,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-002",
@@ -9015,7 +9045,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-003",
@@ -9030,7 +9060,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-003",
@@ -9045,7 +9075,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-003",
@@ -9060,7 +9090,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-015",
@@ -9075,7 +9105,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-015",
@@ -9090,7 +9120,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-015",
@@ -9105,7 +9135,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-019",
@@ -9120,7 +9150,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-019",
@@ -9135,7 +9165,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-019",
@@ -9150,7 +9180,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-020",
@@ -9165,7 +9195,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-020",
@@ -9180,7 +9210,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "sig-020",
@@ -9195,7 +9225,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-001",
@@ -9210,7 +9240,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-001",
@@ -9225,7 +9255,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-001",
@@ -9240,7 +9270,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-002",
@@ -9255,7 +9285,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-002",
@@ -9270,7 +9300,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "rsk-002",
@@ -9285,7 +9315,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "str-001",
@@ -9300,7 +9330,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "str-001",
@@ -9315,7 +9345,7 @@
   "row_id": null
  },
  {
-  "persona": "owner",
+  "persona": "core_group",
   "screen": "kpi_detail",
   "section": "kpi_detail",
   "kpi_id": "str-001",

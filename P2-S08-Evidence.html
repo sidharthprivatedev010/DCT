@@ -37,9 +37,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006114220"></script>
-<script src="js/data/resolve.js?v=20261006114220"></script>
-<script src="js/persona.js?v=20261006114220"></script>
+<script src="js/data/base-data.js?v=20261006120919"></script>
+<script src="js/data/resolve.js?v=20261006120919"></script>
+<script src="js/data/core-group-verdicts.js?v=20261006120919"></script>
+<script src="js/persona.js?v=20261006120919"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -174,11 +175,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                     </div>
                   
                     <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Superseded versions</div><div style="font-weight:600;font-size:22px;line-height:1.3">1</div>
-                    </div>
-                  
-                    <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Assurance sample</div><div style="font-weight:600;font-size:22px;line-height:1.3">Queued</div>
+                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Missing items</div><div style="font-weight:600;font-size:22px;line-height:1.3">0</div>
                     </div>
                   
                 </div>
@@ -232,23 +229,23 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                   <div role="row" style="display:grid;grid-template-columns:140px minmax(0,2fr) minmax(0,1.3fr) 150px;background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:9px 10px">ID</div><div role="columnheader" style="padding:9px 10px">Item</div><div role="columnheader" style="padding:9px 10px">Submitted by (role)</div><div role="columnheader" style="padding:9px 10px">State</div></div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:140px minmax(0,2fr) minmax(0,1.3fr) 150px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0501</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Plant 02 P06 production (CERT)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">System</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
+                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0501</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Entity A1 (A1) Sep production (CERT)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">System</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:140px minmax(0,2fr) minmax(0,1.3fr) 150px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0502</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">RM-1 stock report</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Superseded by v2</div>
+                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0502</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-red-700,#A4231C);font-weight:600">Critical-material stock report</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Superseded by v2</div>
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:140px minmax(0,2fr) minmax(0,1.3fr) 150px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0502 v2</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">RM-1 stock report (corrected)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
+                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0502 v2</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-red-700,#A4231C);font-weight:600">Critical-material stock report (corrected)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:140px minmax(0,2fr) minmax(0,1.3fr) 150px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0503</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Supplier S-07 delay notice</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
+                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0503</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-red-700,#A4231C);font-weight:600">Critical supplier delay notice</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:140px minmax(0,2fr) minmax(0,1.3fr) 150px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0504</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Freight disruption notice [EXT — PH]</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
+                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">EVD-SYN-0504</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Freight disruption notice</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Functional Leader (supply)</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Accepted</div>
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:140px minmax(0,2fr) minmax(0,1.3fr) 150px;border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
@@ -338,7 +335,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:110px minmax(0,1.4fr) minmax(0,1fr) minmax(0,1.4fr);border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
-                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">D+1 14:00</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Escalated ACT-SYN-1108 to L1</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Rule</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">Blocked &gt; [PH] h</div>
+                      <div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">D+1 14:00</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Escalated ACT-SYN-1108 to L1</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Rule</div><div role="cell" style="padding:9px 10px;background:transparent;color:var(--ct-amber-700,#8A5300);font-weight:600">Blocked beyond the escalation-rule limit</div>
                     </div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:110px minmax(0,1.4fr) minmax(0,1fr) minmax(0,1.4fr);border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13.5px">
@@ -381,75 +378,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
             </section>
           
-
-            <section class="ct-sec " role="region" aria-label="Assurance actions" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Assurance actions</h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-                  
-                    
-                    <button type="button" class="ct-btn ct-pri" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-navy-900,#0E1B33);border-radius:4px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">Sample closure</button>
-                  
-                    
-                    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">Challenge item</button>
-                  
-                    
-                    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);font:inherit;font-weight:600;font-size:13.5px;cursor:pointer">Reopen (D-18)</button>
-                  
-                </div>
-                <div style="font-size:12.5px;color:var(--ct-ink-3,#5B6576);display:flex;gap:6px;align-items:flex-start"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h8v7H4zM5.5 7V5a2.5 2.5 0 0 1 5 0v2"></path></svg><span>Assurance Reviewer: comment, challenge, sample, reopen. No edit of evidence or values (GR-05).</span></div>
-              
-
-              
-            </section>
-          
         </div>
       
      </div>
@@ -460,8 +388,8 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplE.js?v=20261006114220"></script>
-<script src="js/c/P2-S08-Evidence.js?v=20261006114220"></script>
+<script src="js/c/TplE.js?v=20261006120919"></script>
+<script src="js/c/P2-S08-Evidence.js?v=20261006120919"></script>
 <script>DCLite.mount("dc-root", "P2-S08-Evidence", {});</script>
 </body>
 </html>
