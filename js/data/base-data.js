@@ -41314,6 +41314,51 @@ var DCTData = {
     "note": ""
    },
    {
+    "screen": "P2-G01-Portfolio",
+    "type": "multi",
+    "title": "ROCE by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "FIN-005 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "multi",
+    "title": "Production vs plan by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "OPS-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "multi",
+    "title": "Certified KPI percentage by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "TRU-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "multi",
+    "title": "Overdue EHS actions by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "EHS-007 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "multi",
+    "title": "Production at risk by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "SIG-007 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
     "screen": "P2-G01b-PortfolioCertified",
     "type": "bars",
     "title": "Entity contribution to projected EBITDA variance · P07–P12 · ₹ m",
@@ -41342,6 +41387,15 @@ var DCTData = {
    },
    {
     "screen": "P2-G02-EntityComparison",
+    "type": "multi",
+    "title": "EBITDA YTD by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "FIN-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
     "type": "bars",
     "title": "DSO · days",
     "ask": "Where are customers paying slowest?",
@@ -41351,12 +41405,30 @@ var DCTData = {
    },
    {
     "screen": "P2-G02-EntityComparison",
+    "type": "multi",
+    "title": "DSO by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "WCP-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
     "type": "bars",
     "title": "ROCE vs 12% target by entity · pts",
     "ask": "",
     "source": "model",
     "from": "FIN-005 − 12% target, by entity",
     "note": ""
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "multi",
+    "title": "ROCE by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "FIN-005 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
    },
    {
     "screen": "P2-G03-Financial",
@@ -41377,6 +41449,24 @@ var DCTData = {
     "note": "ROCE target 12% shown as the base line."
    },
    {
+    "screen": "P2-G03-Financial",
+    "type": "multi",
+    "title": "Cost per tonne by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "CST-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "multi",
+    "title": "Net debt by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "FIN-006 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
     "screen": "P2-G04-CashWC",
     "type": "bars",
     "title": "DSO by entity · days",
@@ -41386,6 +41476,42 @@ var DCTData = {
     "note": ""
    },
    {
+    "screen": "P2-G04-CashWC",
+    "type": "multi",
+    "title": "Cash position by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "CSH-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "multi",
+    "title": "FCF conversion (FCF ÷ EBITDA) by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "FIN-008 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "multi",
+    "title": "Covenant headroom by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "LIQ-002 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "multi",
+    "title": "FX exposure, unhedged by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "TRS-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
     "screen": "P2-G05-OpsBenchmark",
     "type": "bars",
     "title": "Production vs plan · Sep 2026 · by entity",
@@ -41393,6 +41519,24 @@ var DCTData = {
     "source": "live",
     "from": "OPS-001 for the plant, entity or Group in each row label",
     "note": ""
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "multi",
+    "title": "Unplanned downtime by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "REL-003 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "multi",
+    "title": "Supplier on-time delivery by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "SUP-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
    },
    {
     "screen": "P2-G06-CapexPortfolio",
@@ -41413,6 +41557,24 @@ var DCTData = {
     "note": ""
    },
    {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "multi",
+    "title": "Capex physical progress by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "CPX-004 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "multi",
+    "title": "Benefits realisation by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "PRG-002 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
     "screen": "P2-G07-Risk",
     "type": "bars",
     "title": "Open audit findings by entity",
@@ -41420,6 +41582,78 @@ var DCTData = {
     "source": "live",
     "from": "GOV-004 for the plant, entity or Group in each row label",
     "note": ""
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "multi",
+    "title": "Regulatory deadlines, next 30 days by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "REG-002 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "multi",
+    "title": "Open EHS corrective actions by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "EHS-006 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "multi",
+    "title": "Manual overrides YTD by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "CTL-010 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "multi",
+    "title": "Contract-compliance rate by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "CON-002 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "multi",
+    "title": "Energy intensity by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "SUS-003 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "multi",
+    "title": "Certified KPI percentage by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "TRU-001 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "multi",
+    "title": "Flash-to-MIS reconciliation rate by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "TRU-009 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "multi",
+    "title": "Average finding-closure time by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "GOV-009 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
    },
    {
     "screen": "P2-G08o-OwnerTrust",
@@ -41438,6 +41672,24 @@ var DCTData = {
     "source": "model",
     "from": "EFF-008 resolution time, EFF-010 repeat issues, EFF-011 root causes eliminated (Group)",
     "note": ""
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "multi",
+    "title": "Average resolution time by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "EFF-008 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "multi",
+    "title": "Repeat issues, last 90 days by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "EFF-010 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
    },
    {
     "screen": "P2-O01-EnterpriseHealth",
@@ -41609,6 +41861,69 @@ var DCTData = {
     "source": "scaled",
     "from": "Upstreaming = CSH-006",
     "note": "Billing, dispatch and collection leakage are hand-set."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "multi",
+    "title": "Production at risk by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "SIG-007 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "multi",
+    "title": "Probability of production plan miss, next month by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "PRD-002 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "multi",
+    "title": "Unplanned downtime by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "REL-003 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "multi",
+    "title": "Covenant headroom by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "LIQ-002 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "multi",
+    "title": "Dispatch delays by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "SIG-012 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "multi",
+    "title": "Power-cost exposure (power cost per tonne, MoM) by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "SIG-018 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "multi",
+    "title": "Overdue EHS actions by entity · per month",
+    "ask": "Is the gap between the entities opening or closing?",
+    "source": "live",
+    "from": "EHS-007 for the plant, entity or Group in each row label",
+    "note": "Core Group sub-themes (2026-10-06)."
    },
    {
     "screen": "P2-S12e-Signals",
@@ -42702,6 +43017,96 @@ var DCTData = {
     "note": "Columns: Entity · Leadership KPIs certified · Open breaks · Overdue certifications · Pending"
    },
    {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Financial performance · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on financial performance?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: EBITDA YTD = FIN-001, Revenue YTD = FIN-003, Free cash flow YTD = FIN-004, ROCE = FIN-005, FCF conversion (FCF ÷ EBITDA) = FIN-008, Projected EBITDA gap, rest of year = PRD-003",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Plants with a variation · Financial performance",
+    "ask": "Which plants sit behind the financial performance numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Operations · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on operations?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Production vs plan = OPS-001, Sales vs plan = OPS-002, Capacity utilization = OPS-003, OEE = PLT-002, Cost per tonne = CST-001, Unplanned downtime = REL-003",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Plants with a variation · Operations",
+    "ask": "Which plants sit behind the operations numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Data reliability · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on data reliability?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Certified KPI percentage = TRU-001, Open reconciliation breaks = TRU-004, KPI certification coverage = TRU-005, Material reconciliation breaks = TRU-007, Flash-to-MIS reconciliation rate = TRU-009, Evidence completeness rate = GOV-008",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Risk · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on risk?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Open critical alerts = EFF-002, TRIR = EHS-001, Overdue EHS actions = EHS-007, Overdue regulatory obligations = REG-005, Open audit findings = GOV-004, Critical-material shortage risk = SIG-009",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Plants with a variation · Risk",
+    "ask": "Which plants sit behind the risk numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Signals behind the last 24 hours · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on signals behind the last 24 hours?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Production at risk = SIG-007, Critical-material shortage risk = SIG-009, Dispatch delays = SIG-012, Probability of production plan miss, next month = PRD-002",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G01-Portfolio",
+    "type": "table",
+    "title": "Plants with a variation · Signals behind the last 24 hours",
+    "ask": "Which plants sit behind the signals behind the last 24 hours numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
     "screen": "P2-G01b-PortfolioCertified",
     "type": "table",
     "title": "24-hour changes · portfolio scope (CX-07)",
@@ -42769,12 +43174,72 @@ var DCTData = {
    {
     "screen": "P2-G02-EntityComparison",
     "type": "table",
+    "title": "Operating profit · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on operating profit?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: EBITDA YTD = FIN-001, EBIT YTD = FIN-002, Revenue YTD = FIN-003, Projected EBITDA gap, rest of year = PRD-003",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Plants with a variation · Operating profit",
+    "ask": "Which plants sit behind the operating profit numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Days to get paid · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on days to get paid?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: DSO = WCP-001, DPO = WCP-002, Inventory days = WCP-003, Cash-conversion cycle = CSH-004, Collections slippage = SIG-004, Payment delays = SIG-005",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Plants with a variation · Days to get paid",
+    "ask": "Which plants sit behind the days to get paid numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
     "title": "Return on capital and cash conversion by entity · YTD",
     "ask": "",
     "source": "live",
     "from": "Columns filled from the model for the scope in each row label: ROCE = FIN-005, FCF conversion = FIN-008",
     "kpis": [],
     "note": "Columns: Entity · ROCE · FCF conversion"
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Return on capital · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on return on capital?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: ROCE = FIN-005, FCF conversion (FCF ÷ EBITDA) = FIN-008, Free cash flow YTD = FIN-004, Net debt = FIN-006",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G02-EntityComparison",
+    "type": "table",
+    "title": "Plants with a variation · Return on capital",
+    "ask": "Which plants sit behind the return on capital numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
    },
    {
     "screen": "P2-G03-Financial",
@@ -42809,6 +43274,46 @@ var DCTData = {
      "FIN-008"
     ],
     "note": "Columns: KPI · Measure · Value · Plan · Status"
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Value drivers · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on value drivers?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Revenue YTD = FIN-003, Sales vs plan = OPS-002, Cost per tonne = CST-001, Pricing pressure = SIG-013, Fuel exposure (fuel cost per tonne, MoM) = SIG-017",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Plants with a variation · Value drivers",
+    "ask": "Which plants sit behind the value drivers numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Shareholder value · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on shareholder value?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: ROCE = FIN-005, Net debt = FIN-006, FCF conversion (FCF ÷ EBITDA) = FIN-008, Projected EBITDA gap, rest of year = PRD-003",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G03-Financial",
+    "type": "table",
+    "title": "Plants with a variation · Shareholder value",
+    "ask": "Which plants sit behind the shareholder value numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
    },
    {
     "screen": "P2-G03-Financial",
@@ -42860,12 +43365,52 @@ var DCTData = {
    {
     "screen": "P2-G04-CashWC",
     "type": "table",
+    "title": "Cash · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on cash?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Cash position = CSH-001, Cash released YTD = CSH-002, Cash-conversion cycle = CSH-004, Cash-upstream exposure = CSH-006, Net working capital = WCP-004",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Plants with a variation · Cash",
+    "ask": "Which plants sit behind the cash numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
     "title": "Free cash flow and FCF conversion by entity · YTD",
     "ask": "Which entity turns EBITDA into cash?",
     "source": "live",
     "from": "Columns filled from the model for the scope in each row label: Free cash flow YTD = FIN-004, FCF conversion = FIN-008",
     "kpis": [],
     "note": "Columns: Entity · Free cash flow YTD · FCF conversion"
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Free cash flow · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on free cash flow?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Free cash flow YTD = FIN-004, FCF conversion (FCF ÷ EBITDA) = FIN-008, EBITDA YTD = FIN-001",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Plants with a variation · Free cash flow",
+    "ask": "Which plants sit behind the free cash flow numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
    },
    {
     "screen": "P2-G04-CashWC",
@@ -42886,6 +43431,16 @@ var DCTData = {
    {
     "screen": "P2-G04-CashWC",
     "type": "table",
+    "title": "Liquidity and debt · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on liquidity and debt?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Liquidity runway = LIQ-001, Covenant headroom = LIQ-002, Debt-maturity exposure, next 12 months = LIQ-003, Financing exposure (floating-rate debt) = LIQ-004, Net debt = FIN-006",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
     "title": "Treasury",
     "ask": "",
     "source": "live",
@@ -42896,6 +43451,16 @@ var DCTData = {
      "TRS-004"
     ],
     "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G04-CashWC",
+    "type": "table",
+    "title": "Currency and interest · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on currency and interest?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: FX exposure, unhedged = TRS-001, Hedging effectiveness = TRS-002, Hedge cover, next 6 months = TRS-004, Commodity-price movement (RM-1 index) = SIG-014",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
    },
    {
     "screen": "P2-G04-CashWC",
@@ -42945,12 +43510,52 @@ var DCTData = {
    {
     "screen": "P2-G05-OpsBenchmark",
     "type": "table",
+    "title": "Reliability · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on reliability?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Unplanned downtime = REL-003, Production loss from downtime = REL-004, Production loss from downtime, next month = PRD-006, Capacity utilization = OPS-003, OEE = PLT-002",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Plants with a variation · Reliability",
+    "ask": "Which plants sit behind the reliability numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
     "title": "Supplier exposure by entity · Sep 2026",
     "ask": "Which entity's supply base puts output at risk?",
     "source": "live",
     "from": "Columns filled from the model for the scope in each row label: Supplier on-time delivery = SUP-001, Critical supplier exposure = SUP-005, Supplier EHS non-compliance = CON-003, Critical-material shortage risk = SIG-009, Single-source supply risk = SIG-010",
     "kpis": [],
     "note": "Columns: Entity · Supplier on-time delivery · Critical supplier exposure · Supplier EHS non-compliance · Critical-material shortage risk · Single-source supply risk"
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Supply · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on supply?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Supplier on-time delivery = SUP-001, Critical supplier exposure = SUP-005, Critical-material shortage risk = SIG-009, Single-source supply risk = SIG-010",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G05-OpsBenchmark",
+    "type": "table",
+    "title": "Plants with a variation · Supply",
+    "ask": "Which plants sit behind the supply numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
    },
    {
     "screen": "P2-G06-CapexPortfolio",
@@ -43000,6 +43605,16 @@ var DCTData = {
    {
     "screen": "P2-G06-CapexPortfolio",
     "type": "table",
+    "title": "Projects · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on projects?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Approved capex budget = CPX-001, Committed capex = CPX-002, Capex actual spend YTD = CPX-003, Capex physical progress = CPX-004, Delayed projects = PRG-003, Capex value at risk = SIG-011",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
     "title": "Value",
     "ask": "",
     "source": "live",
@@ -43010,6 +43625,16 @@ var DCTData = {
      "VAL-003"
     ],
     "note": "Columns: KPI · Measure · Value · Plan · Trust"
+   },
+   {
+    "screen": "P2-G06-CapexPortfolio",
+    "type": "table",
+    "title": "Benefits · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on benefits?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: EBITDA benefit YTD = VAL-001, Cash benefit YTD = VAL-002, Cost savings delivered YTD = VAL-003, Benefits realisation = PRG-002, Transformation progress = STR-002",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
    },
    {
     "screen": "P2-G07-Risk",
@@ -43049,6 +43674,26 @@ var DCTData = {
    {
     "screen": "P2-G07-Risk",
     "type": "table",
+    "title": "Permits and regulators · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on permits and regulators?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Regulatory deadlines, next 30 days = REG-002, Licence expirations, next 12 months = REG-003, Overdue regulatory obligations = REG-005, Regulatory breaches YTD = REG-010",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Plants with a variation · Permits and regulators",
+    "ask": "Which plants sit behind the permits and regulators numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
     "title": "EHS",
     "ask": "",
     "source": "live",
@@ -43064,6 +43709,26 @@ var DCTData = {
      "EHS-010"
     ],
     "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Health and safety · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on health and safety?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: TRIR = EHS-001, Severity incidents = EHS-002, Near misses = EHS-003, Open EHS corrective actions = EHS-006, Overdue EHS actions = EHS-007, EHS investigation completion rate YTD = EHS-010",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Plants with a variation · Health and safety",
+    "ask": "Which plants sit behind the health and safety numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
    },
    {
     "screen": "P2-G07-Risk",
@@ -43085,6 +43750,16 @@ var DCTData = {
    {
     "screen": "P2-G07-Risk",
     "type": "table",
+    "title": "Checks and controls · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on checks and controls?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Control failures YTD = CTL-002, High-severity control failures YTD = CTL-004, Policy exceptions YTD = CTL-005, Manual overrides YTD = CTL-010, Open audit findings = GOV-004",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
     "title": "Contracts",
     "ask": "",
     "source": "live",
@@ -43099,6 +43774,26 @@ var DCTData = {
    {
     "screen": "P2-G07-Risk",
     "type": "table",
+    "title": "Contracts · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on contracts?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Contracts expiring, next 90 days = CON-001, Contract-compliance rate = CON-002, Supplier EHS non-compliance = CON-003, Supplier on-time delivery = SUP-001",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Plants with a variation · Contracts",
+    "ask": "Which plants sit behind the contracts numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
     "title": "Sustainability (shared KPIs)",
     "ask": "",
     "source": "live",
@@ -43109,6 +43804,26 @@ var DCTData = {
      "SUS-003"
     ],
     "note": "Columns: KPI · Measure · Value · Status · Trust"
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Environment · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on environment?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Water usage = SUS-001, Emissions = SUS-002, Energy intensity = SUS-003, Environmental excursions = EHS-005",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G07-Risk",
+    "type": "table",
+    "title": "Plants with a variation · Environment",
+    "ask": "Which plants sit behind the environment numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
    },
    {
     "screen": "P2-G08-CertGovernance",
@@ -43173,6 +43888,46 @@ var DCTData = {
      "GOV-007"
     ],
     "note": "Columns: KPI · Measure · Value · Trust"
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Sign-off status · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on sign-off status?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Certified KPI percentage = TRU-001, Uncertified KPI count = TRU-002, KPI certification coverage = TRU-005, Overdue certifications = TRU-006, Ageing certification approvals = GOV-001",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Plants with a data variation · Sep",
+    "ask": "Which plant's data is behind an open break?",
+    "source": "layout",
+    "from": "1 row of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": "Only plants with a data variation are listed; Plants 01, 03, 04, 05 and 06 reconcile within tolerance."
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Reconciliation · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on reconciliation?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Open reconciliation breaks = TRU-004, Material reconciliation breaks = TRU-007, Flash-to-MIS reconciliation rate = TRU-009, Flash-to-close variance = TRU-010, Largest entity variance against Board numbers = TRU-011, Variance against Board number (EBITDA) = TRU-003",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G08-CertGovernance",
+    "type": "table",
+    "title": "Data ownership · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on data ownership?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: KPI overrides = GOV-002, Recurring data-quality issues = GOV-003, Overdue assurance actions = GOV-005, Repeat findings = GOV-006, Evidence completeness rate = GOV-008, Average finding-closure time = GOV-009",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
    },
    {
     "screen": "P2-G08-CertGovernance",
@@ -43284,6 +44039,36 @@ var DCTData = {
     "from": "2 rows of workflow, status or reference text; no KPI values",
     "kpis": [],
     "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "table",
+    "title": "Open escalations · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on open escalations?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Open critical alerts = EFF-002, Alerts without accepted owners = EFF-006, Overdue actions = EFF-007, Average resolution time = EFF-008",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "table",
+    "title": "Plants with a variation · Open escalations",
+    "ask": "Which plants sit behind the open escalations numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-G09-Escalations",
+    "type": "table",
+    "title": "Closure effectiveness · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on closure effectiveness?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Average resolution time = EFF-008, Closed escalations, last 30 days = EFF-009, Repeat issues, last 90 days = EFF-010, Root causes eliminated YTD = EFF-011",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
    },
    {
     "screen": "P2-G10-Briefing",
@@ -44404,6 +45189,146 @@ var DCTData = {
      "SIG-004"
     ],
     "note": "Columns: Signal · Change"
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Signals changed in 24 h · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on signals changed in 24 h?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Production at risk = SIG-007, Critical-material shortage risk = SIG-009, Single-source supply risk = SIG-010, Dispatch delays = SIG-012",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Plants with a variation · Signals changed in 24 h",
+    "ask": "Which plants sit behind the signals changed in 24 h numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Forecasts · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on forecasts?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Days to breach (earliest plant) = PRD-001, Probability of production plan miss, next month = PRD-002, Projected EBITDA gap, rest of year = PRD-003, Production loss from downtime, next month = PRD-006",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Plants with a variation · Forecasts",
+    "ask": "Which plants sit behind the forecasts numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Operations signals · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on operations signals?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Production vs plan = OPS-001, Capacity utilization = OPS-003, Unplanned downtime = REL-003, Production loss from downtime = REL-004, Production loss from downtime, next month = PRD-006",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Plants with a variation · Operations signals",
+    "ask": "Which plants sit behind the operations signals numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Finance signals · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on finance signals?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Collections slippage = SIG-004, Payment delays = SIG-005, Covenant headroom = LIQ-002, Cash-upstream exposure = CSH-006, Projected EBITDA gap, rest of year = PRD-003",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Plants with a variation · Finance signals",
+    "ask": "Which plants sit behind the finance signals numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Sales and delivery · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on sales and delivery?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Sales vs plan = OPS-002, Dispatch delays = SIG-012, Pricing pressure = SIG-013, Revenue YTD = FIN-003",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Plants with a variation · Sales and delivery",
+    "ask": "Which plants sit behind the sales and delivery numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Outside factors · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on outside factors?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Commodity-price movement (RM-1 index) = SIG-014, Freight exposure (lanes disrupted) = SIG-016, Fuel exposure (fuel cost per tonne, MoM) = SIG-017, Power-cost exposure (power cost per tonne, MoM) = SIG-018, FX exposure, unhedged = TRS-001",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Plants with a variation · Outside factors",
+    "ask": "Which plants sit behind the outside factors numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Risk signals · Entity A1 vs Entity A2 · Sep",
+    "ask": "How do the two entities compare on risk signals?",
+    "source": "live",
+    "from": "Columns filled from the model for the scope in each row label: Regulatory deadlines, next 30 days = REG-002, Licence expirations, next 12 months = REG-003, Overdue regulatory obligations = REG-005, Environmental excursions = EHS-005, Overdue EHS actions = EHS-007, Supplier on-time delivery = SUP-001",
+    "kpis": [],
+    "note": "Model values; Group is recalculated from both entities' inputs."
+   },
+   {
+    "screen": "P2-S12-Signals",
+    "type": "table",
+    "title": "Plants with a variation · Risk signals",
+    "ask": "Which plants sit behind the risk signals numbers?",
+    "source": "layout",
+    "from": "0 rows of workflow, status or reference text; no KPI values",
+    "kpis": [],
+    "note": ""
    },
    {
     "screen": "P2-S12-Signals",

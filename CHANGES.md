@@ -201,3 +201,13 @@ Each sub-theme now goes one level deeper than the screen above it (Entity Overvi
 - Question picker "Questions on the top Overview KPIs" (a `seg` block) with 4 mocked questions on EBITDA YTD, EBIT YTD and production vs plan. Each answer is tagged by provenance (CERT, FCST, DECLINED, AI · NOT APPROVED) and has charts: EBITDA by month and the E-11 plan-to-actual bridge; EBITDA → EBIT waterfall and monthly EBITDA vs EBIT; production shortfall by plant and the plant trend (model-bound); EBITDA/EBIT upside by Plant 02 output level with its calculation.
 - All figures come from the model (contribution ₹886/t; Plant 02 needs about 85.9% of plan to close the ₹48.5 m PRD-003 gap). The same 4 questions are in the Ask box.
 - The Ask box answer "Where can I release cash?" now uses the E-05 cash levers from the model (it still quoted the old ₹41.3/31.3/17.3 m).
+
+## Core Group persona: plants with a variation, named codes, sub-theme detail (2026-10-06)
+
+Relaxes MANIFEST06 1A/1B (plants only in the watchlist): Core Group now shows plants wherever they **show a variation**, never the full plant detail (that stays in the Entity lens). No root causes in this lens.
+
+- **Variation rule** (`DCTEntityCards.variations`, js/data/entity-cards.js): a plant misses the KPI target by more than 2% of it (any amount for a zero target); without a target, a 10%+ adverse move vs Aug or 25%+ worse than the plant median (not for size-driven totals: water, emissions, revenue, cost totals); pricing pressure Medium/High.
+- **KPI cards** (all Core Group screens): stand-alone (no links); existing one-line justification kept; "Plants with a variation" rows (plant, value, gap to target or trend) and a note grouping them by entity. Entity-only KPIs use their plant driver (as in the Entity lens) or say they have no plant split.
+- **Tables**: names against every KPI code, plant codes P01–P06, watchlist rows read "Plant 02 (P02) · Entity A1 (A1)", identifiers semi-bold (same rule as Entity).
+- **Sub-themes** (G-01, G-02, G-03, G-04, G-05, G-06, G-07, G-08, G-09, S-12; 35 sub-themes): entity comparison (Entity A1 vs Entity A2 vs Group, model-bound), "Plants with a variation" table (new `kvar` table, filled from the model), trend by entity, and a reading computed from the model. Nothing removed.
+- Engine: `kvar` tables; `plantOk` marks plant-variation content that the Core Group cap keeps. `tools/check_core_group.js` allows plants only there, in watchlists and in card variation fields, and now also checks named codes in tables and stand-alone cards without root causes.

@@ -102,11 +102,13 @@ var DCTEntityCards = (function () {
   function hasFields(o, fs) { return o && fs.every(function (f) { return o[f.replace(/^-/, "")] != null; }); }
 
   // Plant rows for a plant-level KPI. kind: ratio | sum | min | values | text
-  function plantRows(id) {
-    var k = K(id); if (!k || !k.val || !k.val[KIDS[0]]) return null;
-    var dp = dpOf(id), rows = [], ent = scaled(id, "A1"), r = RATIO[canon(id)] || RATIO[id], kind;
+  // e: the entity whose plants are shown (default Entity A1; the Core Group lens also asks for A2)
+  function plantRows(id, e) {
+    e = e || "A1"; var kids = (P.children || {})[e] || KIDS;
+    var k = K(id); if (!k || !k.val || !k.val[kids[0]]) return null;
+    var dp = dpOf(id), rows = [], ent = scaled(id, e), r = RATIO[canon(id)] || RATIO[id], kind;
     var rule = k.rules ? Object.keys(k.rules).map(function (f) { return k.rules[f]; }) : [];
-    var eIn = inp(id, "A1");
+    var eIn = inp(id, e);
     if (typeof ent === "string") kind = "text";
     else if (r && hasFields(eIn, r[0].concat([r[1]])) && k.target != null) kind = "ratio";
     else if (r && hasFields(eIn, r[0].concat([r[1]]))) kind = "weight";
@@ -114,7 +116,7 @@ var DCTEntityCards = (function () {
     else if (rule.length === 1 && rule[0] === "SUM") kind = "sum";
     else kind = "values";
     var dEnt = kind === "ratio" || kind === "weight" ? +eIn[r[1]] : 0;
-    KIDS.forEach(function (s) {
+    kids.forEach(function (s) {
       var v = scaled(id, s), row = {s: s, pl: sn(s), v: show(id, s).replace(/ (% of plan|% late|% weighted)$/, "%"), raw: v, tr: trendTxt(id, s), off: meets(id, v) === false, eff: null, c: ""};
       if (!/\d/.test(row.v)) row.tr = "";                 // e.g. "Not expected": no trend to show
       var pi = inp(id, s);
@@ -256,5 +258,97 @@ var DCTEntityCards = (function () {
     c.hasRoot = !!c.root;
     c.fb = "";                             // the breakdown replaces the single-plant flag chip
   }
-  return {attach: attach, plantRows: function (id) { return init() ? plantRows(id) : null; }, rootIds: function () { return Object.keys(ROOT); }};
+  // ---- Core Group lens: summarised plant detail, only plants with a variation, no root cause ------------------
+  // A plant has a variation when it misses the KPI target by more than 2% of the target (any amount for a zero target);
+  // for a KPI without a target, when it moved the wrong way by 10% or more vs last month, or sits 25% or more on the wrong
+  // side of the plant median. Text KPIs: only pricing pressure (Medium or High) counts.
+  var TOL = 0.02, MOVE = 0.10, PEER = 0.25;
+  var SIZE = {"SUS-001": 1, "SUS-002": 1, "FIN-003": 1, "CST-002": 1, "CST-003": 1, "CST-005": 1};   // totals that scale with plant size: no peer test
+  function plantsOf(scope) { var c = P.children || {}; if (scope && c[scope] && !/^Plant/.test(c[scope][0] || "")) return [].concat.apply([], c[scope].map(function (e) { return c[e] || []; })); return c[scope] || []; }
+  function entityOf(s) { var c = P.children || {}; for (var e in c) if (c[e].indexOf(s) >= 0 && e !== "Group") return e; return ""; }
+  function median(a) { a = a.slice().sort(function (x, y) { return x - y; }); var m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; }
+  function varOf(id, s, peers) {
+    var k = K(id); if (!k || !k.val || !k.val[s]) return null;
+    var v = last(id, s), c = card(id, s), dq = Math.max(dpOf(id), 1);
+    if (typeof v !== "number") return canon(id) === "SIG-013" && /^(Medium|High)/.test(String(v)) ? {c: String(v).split(" ")[0] + " pressure", sev: /^High/.test(v) ? 2 : 1} : null;
+    if (c && c.v != null && !/\d/.test(String(c.v))) return null;                        // e.g. "Not expected"
+    if (k.target != null) {
+      var gap = v - k.target, tol = Math.abs(k.target) * TOL;
+      var bad = k.better === "down" ? gap > tol : gap < -tol; if (!bad) return null;
+      var du = dUnit(id); if (Math.abs(gap) === 1) du = du.replace(/([a-z])s$/, "$1");
+      return {c: sgn(gap, isPct(id) ? 1 : dpOf(id)) + du + " vs target", sev: Math.abs(gap) / (Math.abs(k.target) || 1)};
+    }
+    if (!k.better) return null;
+    var p = prev(id, s), med = median(peers), down = k.better === "down";
+    if (num(p) && p !== 0) { var rel = (v - p) / Math.abs(p); if (down ? rel >= MOVE : rel <= -MOVE) return {c: (rel > 0 ? "+" : "−") + Math.round(Math.abs(rel) * 100) + "% vs Aug", sev: Math.abs(rel)}; }
+    if (!SIZE[canon(id)] && num(med) && med !== 0) { var r2 = (v - med) / Math.abs(med); if (down ? r2 >= PEER : r2 <= -PEER) return {c: (down ? (v / med).toFixed(1) + "× plant median" : Math.round(Math.abs(r2) * 100) + "% below median"), sev: Math.abs(r2)}; }
+    return null;
+  }
+  function variations(id, scope) {
+    if (!init()) return null; var k = K(id); if (!k || !k.val) return null;
+    var ps = plantsOf(scope || "Group").filter(function (s) { return k.val[s]; }); if (!ps.length) return null;
+    var peers = ps.map(function (s) { return last(id, s); }).filter(num);
+    var out = ps.map(function (s) { var x = varOf(id, s, peers); return x && {s: s, pl: sn(s), ent: entityOf(s), id: canon(id) === id ? id : id, v: show(id, s).replace(/ (% of plan|% late|% weighted)$/, "%"), tr: trendTxt(id, s), c: x.c, sev: x.sev}; }).filter(Boolean);
+    out.sort(function (a, b) { return b.sev - a.sev; });
+    return {rows: out, of: ps.length};
+  }
+  /* Core Group cards show the plant values behind each entity number (manager review 2026-10-06): for a Group card both
+     entities, each followed by its plants; for an entity card that entity's plants. Each plant shows its Sep value and its
+     effect on the entity (ratio KPIs: the plant effects add up to the entity gap to target; sums: share; MIN: the plant that
+     sets it). Plants with a variation (rule above) are in red. Entity-only KPIs show their plant driver (DRIVER) or say the
+     model holds no plant split. Values are the model's (js/data/base-data.js), the same as data/KPI-Lineage-Model.xlsx. */
+  function pcode(s) { return sn(s) + " (P" + s.slice(-2) + ")"; }
+  function attachGroup(c, scope) {
+    if (!init() || !c) return;
+    c.noInfo = true; delete c.href;                       // stand-alone cards, as in the Entity lens
+    var id = c.id || "";
+    if (!/^[A-Z]{3}-\d{3}$/.test(id) || c.pending) return;
+    scope = /^(A\d|Group)$/.test(scope || "") ? scope : "Group";
+    var ents = scope === "Group" ? ((P.children || {}).Group || ["A1", "A2"]) : [scope];
+    var vid = id;
+    if (!plantRows(id, ents[0]) && DRIVER[id] && plantRows(DRIVER[id], ents[0])) vid = DRIVER[id];
+    c.fb = ""; c.hasRoot = false;
+    var prs = ents.map(function (e) { return {e: e, pr: plantRows(vid, e)}; }).filter(function (x) { return x.pr; });
+    if (!prs.length) { c.hasPl = false; c.plN = "Kept at entity level only; no plant breakdown."; c.hasPlN = true; return; }
+    var k = K(vid) || {}, vr = variations(vid, scope), vary = {};
+    (vr ? vr.rows : []).forEach(function (x) { vary[x.s] = x.c; });
+    var rows = [], kind = prs[0].pr.kind, dq = Math.max(dpOf(vid), 1);
+    prs.forEach(function (x) {
+      var ev = scaled(vid, x.e), ec = "";
+      if (kind === "ratio" && num(ev)) ec = sgn(ev - k.target, dq) + dUnit(vid);
+      else if (kind === "sum" || kind === "weight") ec = "100%";
+      rows.push({pl: sn(x.e), v: show(vid, x.e).replace(/ (% of plan|% late|% weighted)$/, "%"), tr: "", c: ec, fw: "600",
+        vc: meets(vid, ev) === false ? "var(--ct-red-700,#A4262C)" : "var(--ct-ink,#121A2B)", cc: "var(--ct-ink-2,#3B4558)"});
+      rowsOut(x.pr, vid).forEach(function (r, i) {
+        var s = x.pr.rows[i].s;
+        r.pl = " " + pcode(s); r.fw = vary[s] ? "600" : "400"; r.tr = "";
+        if (vary[s]) r.vc = "var(--ct-red-700,#A4262C)";
+        rows.push(r);
+      });
+    });
+    c.hasPl = true; c.plK = vid;                        // plK: the KPI whose plant values are shown (tools/check_core_group_plants.js)
+    c.plT = (vid === id ? "Plant values" : "Plant values for " + lc(nameOf(vid))) + " · Sep";
+    c.plH = {ratio: "Pull on entity", weight: "Share of entity", sum: "Share of entity", min: "", values: "", text: ""}[kind] || "";
+    c.plRows = rows;
+    // plain-English notes (review 2026-10-06)
+    var rule = {ratio: "Entity = its plants combined (not averaged). Red = off target.",
+      weight: "Entity = its plants combined (not averaged).", sum: "Entity = total of its plants.",
+      min: "Entity = its lowest plant.", values: "", text: ""}[kind] || "";
+    var vs = vr ? vr.rows : [];
+    c.plN = (vid === id ? "" : "Plants shown for " + lc(nameOf(vid)) + ", which drives it. ") + rule;
+    c.plN = c.plN.trim();
+    c.hasPlN = true;
+  }
+  /* One-line plant values for an entity cell in a Core Group table: "P01 96.0% · P02 78.4% · P03 99.5%".
+     Group: "A1: P01 … · P03 … | A2: P04 … · P06 …". Empty for entity-only and text KPIs. */
+  function plantVals(id, e) {
+    if (!init()) return ""; var k = K(id), kids = (P.children || {})[e];
+    if (!k || !k.val || !kids || !k.val[kids[0]] || !kids.every(function (s) { return num(last(id, s)); })) return "";
+    return kids.map(function (s) { return "P" + s.slice(-2) + " " + show(id, s).replace(/ (% of plan|% late|% weighted)$/, "%"); }).join(" · ");
+  }
+  function groupVals(id) {
+    if (!init()) return ""; var es = (P.children || {}).Group || ["A1", "A2"], out = es.map(function (e) { var v = plantVals(id, e); return v ? e + ": " + v : ""; });
+    return out.every(Boolean) ? out.join(" | ") : "";
+  }
+  return {attach: attach, attachGroup: attachGroup, variations: variations, plantVals: plantVals, groupVals: groupVals, plantRows: function (id) { return init() ? plantRows(id) : null; }, rootIds: function () { return Object.keys(ROOT); }};
 })();

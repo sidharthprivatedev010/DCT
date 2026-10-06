@@ -13,6 +13,8 @@ for (const f of files) {
   for (const q of [""].concat(extra[n] || [])) {
     let p; try { p = load(n, q); } catch (e) { fail(n + q + " did not load: " + e.message); continue; }
     walk(p, "", (pt, s, o) => {
+      // Core Group review 2026-10-06: table entity cells and the plant-code legend read "Entity A1" without the code
+      if (s != null && p.lens === "Core Group" && ((/\.rows\.\d+(\.c)?\.\d+(\.t)?$/.test(pt) && /^Entity A[12]( = .*)?$/.test(s)) || /\.leg\.\d+\.l$/.test(pt))) return;
       if (s != null && !SK.test(pt) && BARE.test(s)) fail(n + q + " bare entity at " + pt + ": " + s.slice(0, 110));
       if (o && ["h", "href"].some((k) => typeof o[k] === "string" && (/KPIDetail|KPIReference/.test(o[k]) || KID.test(o.t || o.l || "")))) fail(n + q + " KPI link at " + pt + ": " + (o.t || o.l || "").slice(0, 60) + " → " + (o.h || o.href));
     });
@@ -23,3 +25,5 @@ console.log(bad ? bad + " problem(s)" : "All-persona checks passed (" + files.le
 console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_entity.js")], {encoding: "utf8"}).trim());
 // MANIFEST06: Core Group acceptance checks
 console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_core_group.js")], {encoding: "utf8"}).trim());
+// Core Group plant values vs data/KPI-Lineage-Model.xlsx (manager review 2026-10-06)
+console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_core_group_plants.js")], {encoding: "utf8"}).trim());

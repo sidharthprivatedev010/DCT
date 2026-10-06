@@ -8,11 +8,12 @@ const ctx = vm.createContext({}); vm.runInContext(fs.readFileSync(root + "js/dat
 const D = ctx.D;
 const ENTITY = fs.readdirSync(root).filter((f) => /^P2-.*\.html$/.test(f) && /js\/data\/entity-cards\.js/.test(fs.readFileSync(root + f, "utf8"))).map((f) => f.replace(/\.html$/, ""));
 const dump = process.argv.includes("--dump");
-let bad = 0, n = 0; const fail = (m) => { bad++; console.log("FAIL", m); };
+let bad = 0, n = 0, pages = 0; const fail = (m) => { bad++; console.log("FAIL", m); };
 const num = (s) => +String(s).replace(/[−–]/g, "-").replace(/[^\d.-]/g, "");
 for (const name of ENTITY) {
   let p; try { p = load(name, ""); } catch (e) { fail(name + " did not load: " + e.message); continue; }
   if (p.lens !== "Entity") continue;
+  pages++;
   const cards = [];
   (function nest(o, isK) { if (Array.isArray(o)) return o.forEach((x) => nest(x, isK)); if (!o || typeof o !== "object") return; if (isK) cards.push(o); Object.keys(o).forEach((k) => { if (k !== "equiv" && k !== "access") nest(o[k], k === "kpis" || (k === "items" && o.type === "kpis")); }); })(p, false);
   if (dump && cards.length) console.log("\n#### " + name + " · " + p.title);
@@ -57,5 +58,5 @@ for (const name of ENTITY) {
     Object.keys(o).forEach((k) => { if (k !== "equiv" && k !== "access") walk(o[k], where); });
   })(p, name);
 }
-console.log(bad ? bad + " Entity problem(s)" : "Entity checks passed (" + n + " cards on " + ENTITY.length + " screens)");
+console.log(bad ? bad + " Entity problem(s)" : "Entity checks passed (" + n + " cards on " + pages + " screens)");
 process.exitCode = bad ? 1 : 0;

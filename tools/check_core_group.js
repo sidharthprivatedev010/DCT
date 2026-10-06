@@ -10,7 +10,7 @@ fs.readFileSync(path.join(__dirname, "../data/MANIFEST06-core-group-persona.md")
 });
 const PLANT = /\bPlants? ?0?\d\d?\b/;
 let bad = 0; const fail = (m) => { bad++; console.log("FAIL", m); };
-const strings = (o, out, p) => { if (typeof o === "string") out.push([p, o]); else if (Array.isArray(o)) o.forEach((x, i) => strings(x, out, p + "." + i)); else if (o && typeof o === "object") { if (o.type === "watchlist") return out; for (const k in o) { if (/^(equiv|access|_h)$/.test(k)) continue; strings(o[k], out, p + "." + k); } } return out; };
+const strings = (o, out, p) => { if (typeof o === "string") out.push([p, o]); else if (Array.isArray(o)) o.forEach((x, i) => strings(x, out, p + "." + i)); else if (o && typeof o === "object") { if (o.type === "watchlist" || o.plantOk) return out; for (const k in o) { if (/^(equiv|access|_h|plRows|plN|plT|leg|kpiLeg)$/.test(k)) continue; strings(o[k], out, p + "." + k); } } return out; };
 const blocks = (o, f) => { if (Array.isArray(o)) return o.forEach((x) => blocks(x, f)); if (!o || typeof o !== "object") return; if (o.type) f(o); for (const k in o) if (!/^(equiv|access)$/.test(k)) blocks(o[k], f); };
 const pages = {};
 for (const n of CG) pages[n] = load(n);
@@ -18,7 +18,7 @@ for (const [n, q] of [["P2-S03-KPIDetail", "?kpi=OPS-001&scope=Plant02"], ["P2-S
 const ids = {};
 for (const n in pages) {
   const p = pages[n], vis = Object.assign({}, p, {equiv: null, access: null});
-  // 1A / 1B: plant names only inside a watchlist block
+  // 1A / 1B: plant names only inside a watchlist block, a plant-variation block (plantOk) or a card's plant-variation fields (2026-10-06)
   strings(vis, [], "").forEach(([pt, s]) => { if (PLANT.test(s) && !/\.(h|href|src|infoH)$/.test(pt)) fail(n + " plant reference at " + pt + ": " + s.slice(0, 120)); });
   blocks(vis, (b) => { if (b.type !== "watchlist") return;
     if ((b.rows || []).length > 5) fail(n + " watchlist has " + b.rows.length + " rows");
@@ -42,5 +42,15 @@ for (const n of CG) { if (/R01|S03/.test(n)) continue; (pages[n].kpis || []).for
 const seen = {};
 for (const n of CG) (pages[n].kpis || []).forEach((k) => { if (!/^[A-Z]{3}-\d{3}$/.test(k.id || "") || !k.v) return; const key = k.id + "@" + (k.scope || "Group"); (seen[key] = seen[key] || []).push([String(k.v), n]); });
 for (const k in seen) if (new Set(seen[k].map((x) => x[0])).size > 1) fail("KPI " + k + " differs: " + seen[k].map((x) => x[0] + " (" + x[1] + ")").join(" · "));
+// Tables: every KPI code carries its name and every plant its code (2026-10-06)
+for (const n in pages) blocks(Object.assign({}, pages[n], {equiv: null, access: null}), (b) => {
+  if (!(b.type === "table" || b.type === "watchlist") || !Array.isArray(b.rows)) return;
+  const paired = /^(KPI|ID)$/i.test(String(b.cols && b.cols[0])) && /measure|name/i.test(String(b.cols && b.cols[1]));
+  b.rows.forEach((r) => (Array.isArray(r) ? r : r.c || []).forEach((c, i) => { const t = txt(c);
+    if (/\bPlant \d\d\b(?! \(P\d\d\))/.test(t)) fail(n + " table '" + b.title + "' plant without code: " + t.slice(0, 70));
+    if (!(i === 0 && paired) && /(?<![-\w])[A-Z]{3}-\d{3}\s*$/.test(t)) fail(n + " table '" + b.title + "' bare KPI code: " + t.slice(0, 70)); }));
+});
+// Cards: stand-alone, no root cause (plant values per entity are checked against the workbook in check_core_group_plants.js)
+for (const n of CG) (pages[n].kpis || []).forEach((k) => { if (k.href || !k.noInfo) fail(n + " card " + k.id + " still links"); if (k.root) fail(n + " card " + k.id + " has a root cause"); });
 module.exports = {pages, REG};
 if (require.main === module) console.log(bad ? bad + " problem(s)" : "Core Group checks passed");
