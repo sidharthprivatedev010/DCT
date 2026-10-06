@@ -79,6 +79,43 @@ var DCTResolve = (function () {
     var pl = worst((P.children || {})[e] || []);
     return P.scopes[e] + (pl ? " · " + P.scopes[pl] : "");
   }
+  /* Owner: where a KPI's number comes from. srcOf(id) → {t, d}: t names the entities (and their plants) that feed the
+     Group value in the model; d lists each entity's and plant's latest value. Scope narrows it to one entity. */
+  function srcOf(id, scope) {
+    var P = PM(), K = P && P.kpi && P.kpi[id], ch = (P && P.children) || {};
+    var ents = scope && scope !== "Group" ? [scope] : (ch.Group || []);
+    var nm = function (sc) { return P.scopes[sc] || sc; };
+    var range = function (ps) { var n = ps.map(function (x) { return x.replace(/\D/g, ""); });
+      var run = n.every(function (x, i) { return i === 0 || +x === +n[i - 1] + 1; });
+      return (ps.length > 1 ? "Plants " : "Plant ") + (run && n.length > 2 ? n[0] + "–" + n[n.length - 1] : n.join(", ")); };
+    if (!K || !K.val) return {t: ents.map(function (e) { return nm(e) + ": " + range(ch[e] || []); }).join(" + "), d: ""};
+    var has = function (sc) { var a = K.val[sc]; return !!(a && a.length && a[a.length - 1] != null); };
+    var dp = K.dp != null ? K.dp : 1;
+    var fmt = function (sc) { var a = K.val[sc], v = a[a.length - 1]; if (id === "PRD-001" && v >= 99) return "not expected";
+      return Number(v).toLocaleString("en-US", {minimumFractionDigits: dp, maximumFractionDigits: dp}); };
+    var es = ents.filter(has); if (!es.length) return {t: "Group level only (no entity split in the model)", d: ""};
+    var pl = function (e) { return (ch[e] || []).filter(has); }, anyPl = es.some(function (e) { return pl(e).length; });
+    var t = es.map(function (e) { return nm(e) + (pl(e).length ? ": " + range(pl(e)) : ""); }).join(" + ") + (anyPl ? "" : " · entity level, no plant split");
+    var d = es.map(function (e) { return nm(e) + " " + fmt(e) + (pl(e).length ? " (" + pl(e).map(function (q) { return nm(q) + " " + fmt(q); }).join(", ") + ")" : ""); }).join(" · ");
+    var lab = "Values (Sep" + (K.unit ? ", " + K.unit : "") + "): ";   // unit once; Group is recalculated from its own inputs, not summed
+    return {t: t, d: lab + (scope && scope !== "Group" ? "" : "Group " + (has("Group") ? fmt("Group") : "—") + " · ") + d + "."};
+  }
+  var SRCH = "Source · entity · plant", SRCT = /^(Operational|Strategic|Risk) measures$/;
+  function ownerSrc(p) {
+    var cells = function (r) { return Array.isArray(r) ? r : (r && r.c) || []; };
+    (function w(o) { if (Array.isArray(o)) return o.forEach(w); if (!o || typeof o !== "object") return;
+      if (p.rid === "O-01" && o.type === "table" && SRCT.test(o.title || "") && Array.isArray(o.cols) && o.cols.indexOf(SRCH) < 0) {
+        var vi = o.cols.indexOf("Value"), at = vi >= 0 ? vi + 1 : o.cols.length;
+        o.cols = o.cols.slice(); o.cols.splice(at, 0, SRCH);
+        o.rows = (o.rows || []).map(function (r) { var a = cells(r).slice(), m = (txt(a[0]) + " " + txt(a[1])).match(/\b[A-Z]{2,4}-\d{3}\b/), x = m ? srcOf(m[0]) : {t: "—", d: ""};
+          a.splice(at, 0, x.d ? {t: x.t, more: x.d} : x.t);
+          return Array.isArray(r) ? {c: a} : Object.assign({}, r, {c: a}); });
+        o.gtc = o.cols.map(function (c) { return c === SRCH ? "minmax(200px,2fr)" : /Business status|Measure/.test(c) ? "minmax(0,1.3fr)" : "minmax(0,1fr)"; }).join(" ");
+        o.minW = Math.max(o.minW || 0, 1100); }
+      if (p.rid === "O-02" && o.type === "heat" && Array.isArray(o.items)) o.items.forEach(function (x) { var k = x.kpi || (/^[A-Z]{2,4}-\d{3}$/.test(x.id || "") ? x.id : ""), y = srcOf(k, x.scope);
+        x.src = y.t; x.srcD = y.d; });
+      Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && o[k] && typeof o[k] === "object") w(o[k]); }); })(p);
+  }
   function ownerCtx(o) {
     if (Array.isArray(o)) { o.forEach(ownerCtx); return; }
     if (!o || typeof o !== "object") return;
@@ -493,7 +530,8 @@ var DCTResolve = (function () {
     if (OWN) { Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access") capOwner(p[k]); }); if (typeof DCTVerdicts !== "undefined") DCTVerdicts.attach(p);
       delete p.banner;          // MANIFEST02 1C: no critical notification banner on any Owner screen
       noActions(p);             // MANIFEST02 Screen 8: Actions & Escalations is not reachable for the Owner
-      Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access" && p[k] && typeof p[k] === "object") ownerCtx(p[k]); }); }   // entity · plant context on KPI tables (after the plant cap)
+      Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access" && p[k] && typeof p[k] === "object") ownerCtx(p[k]); });   // entity · plant context on KPI tables (after the plant cap)
+      ownerSrc(p); }            // where each KPI's number comes from: entities and plants (O-01 tables, heat-map signals)
     /* exceptOnly: a KPI table lists only measures that are non-zero or off target, with the full count in its caption */
     (function exc(o) { if (Array.isArray(o)) return o.forEach(exc); if (!o || typeof o !== "object") return;
       if (o.type === "table" && o.exceptOnly && o.rows) { var all = o.rows.length, si = (o.cols || []).indexOf("Status"), vi = (o.cols || []).indexOf("Value");

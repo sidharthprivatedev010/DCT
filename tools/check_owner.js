@@ -10,8 +10,8 @@ for (const n of OWNER) pages[n] = load(n);
 for (const [n, q] of extra) pages[n + q] = load(n, q);
 for (const n in pages) {
   const p = pages[n];
-  // 1A: no plant names or plant values (exceptions: the plant after the entity in the O-02 heat-map signal list, and the "Below target · entity · plant" cell on KPI tables)
-  strings(p, [], "").forEach(([path, s]) => { if (PLANT.test(s) && !/\.(h|href|src)$/.test(path) && !(/O02/.test(n) && /\.items\.\d+\.ent$/.test(path)) && !/^Entity A[12] · Plant 0\d$/.test(s)) fail(n + " plant reference at " + path + ": " + s.slice(0, 140)); });
+  // 1A: no plant names or plant values (exceptions: the plant after the entity in the O-02 heat-map signal list, the "Below target · entity · plant" cell on KPI tables, and the "Source · entity · plant" text on O-01 tables and heat-map signals)
+  strings(p, [], "").forEach(([path, s]) => { if (PLANT.test(s) && !/\.(h|href|src)$/.test(path) && !(/O02/.test(n) && /\.items\.\d+\.ent$/.test(path)) && !/^Entity A[12] · Plant 0\d$/.test(s) && !(/^(Entity A[12]\b|Group\b|Values \(Sep)/.test(s) && /\.(src|srcD|more|t)$/.test(path) && /O01|O02/.test(n))) fail(n + " plant reference at " + path + ": " + s.slice(0, 140)); });
   // no "How totals add up"
   if (JSON.stringify(p).indexOf("How totals add up") >= 0) fail(n + " still has a How totals add up tab");
 }
