@@ -48,7 +48,7 @@ var DCTResolve = (function () {
     });
     var title = root === "Group" ? "Plant → entity → Group" : sn(root) + " by plant";
     // "—" = the KPI has no value at that level (entity-only inputs such as finance or governance)
-    return {n: "Roll-up · " + P.period, blocks: [{type: "table", title: title + " · " + P.periodL, cols: cols, rows: rows, minW: 300 + 90 * sc.length,
+    return {n: "How totals add up · " + P.periodL.split(" (")[0].replace(/^P\d+ · /, ""), blocks: [{type: "table", title: title + " · " + P.periodL, cols: cols, rows: rows, minW: 300 + 90 * sc.length,
       ask: root === "Group" ? "Which entity and which plant drive each Group number?" : "Which plant is driving each entity number?",
       cap: "Parent values (Σ) are recalculated from their children's summed inputs, never averaged. Click any value for its calculation."}]};
   }
@@ -238,7 +238,11 @@ var DCTResolve = (function () {
       var ids = [], add = function (id) { if (isPlantKpi(id) && ids.indexOf(id) < 0) ids.push(id); };
       (p.kpis || []).forEach(function (k) { add(k.id); });
       JSON.stringify(Object.assign({}, p, {access: null, equiv: null, kpis: null})).replace(/"(?:l":")?([A-Z]{3}-\d{3})[" ]/g, function (_, id) { add(id); });
-      if (ids.length) { p.drill = (p.drill || []).slice(); p.drill.unshift(plantTab(p, ids)); }
+      if (ids.length) {
+        p.drill = (p.drill || []).slice(); p.drill.unshift(plantTab(p, ids));
+        // Page tabs point at drill tabs by index; shift them past the roll-up tab; the roll-up becomes its own tab
+        if (p.tabs) p.tabs = p.tabs.map(function (t) { return {n: t.n, has: (t.has || []).map(function (h) { return /^drill\.\d+$/.test(h) ? "drill." + (+h.slice(6) + 1) : h; })}; });
+      }
     }
     Object.keys(p).forEach(function (k) { if (k !== "kpis" && p[k] && typeof p[k] === "object") walk(p, p[k], D, at); });
     return p;

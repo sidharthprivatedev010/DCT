@@ -64,7 +64,7 @@ node tools/regen.js
 **How the UI uses it (`js/data/resolve.js`):**
 - **Model values everywhere:** cards, KPI tables (ID in column 1 or 2) and tiles take model values. Scope comes from the label: "Plant NN", "A1/A2", otherwise the lens default.
 - **Model-bound blocks:** a table with `kcols` {header: KPI} or a bar chart with `kpi` fills each row from the model, using the scope in the row label.
-- **Roll-up tab:** every E-, G-, O- and S- page (except S-03) gets a "Roll-up · P06" tab.
+- **Roll-up tab:** every E-, G-, O- and S- page (except S-03) gets a "How totals add up · Sep 2026" tab (plant roll-up).
 - **Click-through:** every model value links to `P2-S03e/S03/S03o-KPIDetail.html?kpi=ID&scope=…`, built by `DCTResolve.kpiDetail`.
 - **(i) buttons:** KPI cards, KPI cells in tables (columns 1–2), KPI tiles and the titles of graphs, tables and tiles link to R-01 with `?kpi=ID` or `?graph=<title>&on=<screen>`. Only IDs in the model get one; none on R-01 itself.
 - **KPI Reference (R-01):** `js/c/P2-R01-KPIReference.js` is one file for three lens pages. Lens, Scope, Theme and Period dropdowns use the `menus` block; filters are URL params.
@@ -91,7 +91,12 @@ Run `node tools/regen.js`. It re-renders every page's static HTML and bumps the 
 
 ## Layout conventions
 
-- Home pages (O-01, G-01, E-01) use `sections: [{n, kpis:[ids], blocks:["drivers", "drivers.1", …]}]` (TplA only). The sections render as numbered theme headings; any KPI not listed falls into "Other measures".
+- **Page tabs** (all six templates, `ptabs()`): a numbered tab bar at the top of the body; only the selected tab's content is shown. Opt-in per page:
+  - `tabs: [{n, has:[refs]}]`. Refs: `"kpis:ID,ID"`, `"key"` (all of it), `"key.N"`, `"drill.N"`. Blocks show in `has` order.
+  - or `tab0: "Overview"`: headline content in a first tab, then one tab per drill tab.
+  - Anything not referenced goes to the first tab; an unreferenced drill tab becomes its own tab. Header, banner, tour and the source/lineage link row stay outside the tabs.
+  - Single-case pages (S- pages, war room, closure, AI Insights) have no page tabs.
+- `sections` (TplA, older form of the same idea) still works on pages without `tabs`: numbered headings, unlisted KPIs under "Other measures".
 - There is no Status overview bar (status strip and four-way summary); it was removed from all six templates.
 - Don't remove content when restructuring; move it into sections or tabs.
 
