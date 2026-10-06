@@ -1412,7 +1412,9 @@ if (!pal.hidden) {
 (function () {
   var PAPER = window.__THEME.css.ledgerPaper, RULE = window.__THEME.css.ledgerRule, MARG = window.__THEME.css.ledgerMarg;
   // narrow enough that a band's heading and its marginalia both clear the HUD
-  var PER_ROW = 10, XGAP = 140, YGAP = 46, HEAD = 74, PAD = 44;
+  var PER_ROW = 10, XGAP = 172, YGAP = 58, HEAD = 84, PAD = 44;
+  var widest = 1;       // most nodes in any one row, so the bands hug the content
+  function halfW() { return (widest * XGAP) / 2 + 270; }
   var ORDER = ['kpi', 'principle', 'entity', 'fn', 'cause'];
 
   var band = {};        // rank → { y0, y1, rows, count }
@@ -1431,9 +1433,16 @@ if (!pal.hidden) {
     hint:'Top band is what we see.<br>Bottom band is why it happens.',
 
     // the bands carry a heading above their first row, so bias the frame down
-    init:function (H) {
-      H.fit();
-      H.S.cam.y -= 26 / H.S.cam.k;
+    init:function (H) { this.frame(H); },
+
+    // frame the bands themselves (gutter number, axis and marginalia included),
+    // not just the nodes, so nothing is cut off at the edges
+    frame:function (H) {
+      var lastY = 0; Object.keys(band).forEach(function (k) { lastY = Math.max(lastY, band[k].y1); });
+      var x0 = -halfW() - 90, x1 = halfW() + 10, y0 = -20, y1 = lastY + 20;
+      H.S.cam.x = (x0 + x1) / 2; H.S.cam.y = (y0 + y1) / 2;
+      H.S.cam.k = Math.max(0.3, Math.min(1.4, Math.min(H.W / (x1 - x0), (H.H - 70) / (y1 - y0))));
+      H.S.cam.y -= 10 / H.S.cam.k;
     },
 
     place:function (H) {
@@ -1444,6 +1453,7 @@ if (!pal.hidden) {
 
       placed = {};
       band = {};
+      widest = 1;
       var y = 0;
 
       tiers.forEach(function (t) {
@@ -1455,6 +1465,7 @@ if (!pal.hidden) {
         // a single stranded node
         var rows = Math.max(1, Math.ceil(mine.length / PER_ROW));
         var per = Math.ceil(mine.length / rows) || 1;
+        widest = Math.max(widest, per);
         var h = HEAD + (rows - 1) * YGAP + PAD;
         // the unruled band is set apart — it is a footnote, not a fifth rung
         if (t.n === 0) y += 54;
@@ -1473,7 +1484,7 @@ if (!pal.hidden) {
     },
 
     render:function (ctx, H) {
-      var S = H.S, half = (PER_ROW * XGAP) / 2 + 40;
+      var S = H.S, half = halfW();
       var left = H.sx(-half), right = H.sx(half);
 
       /* ── the bands ─────────────────────────────────────────────────── */
@@ -1519,7 +1530,12 @@ if (!pal.hidden) {
         ctx.textAlign = 'right';
         H.sans(11.5, 400);
         ctx.fillStyle = H.hexA(MARG, a * 0.95);
-        ctx.fillText(t.rule, right - 18, y0 + 22);
+        var rw = t.rule.split(' '), rl = [''], rmax = 190 * S.cam.k;
+        rw.forEach(function (w) {
+          var cur = rl[rl.length - 1], next = cur ? cur + ' ' + w : w;
+          if (cur && ctx.measureText(next).width > rmax) rl.push(w); else rl[rl.length - 1] = next;
+        });
+        rl.forEach(function (l, i) { ctx.fillText(l, right - 18, y0 + 20 + i * 15); });
       });
 
       /* ── the axis: authority runs up the page ──────────────────────── */
@@ -1619,7 +1635,14 @@ if (!pal.hidden) {
         H.tracked(9, 1.2);
         ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
         ctx.fillStyle = H.hexA(PAPER, active ? 1 : Math.min(al, 0.78));
-        ctx.fillText(n.label.toUpperCase(), x, y - r - 8);
+        // wrap long labels onto two lines so neighbours never overlap
+        var words = n.label.toUpperCase().split(' '), lines = [''], maxW = (XGAP - 18) * S.cam.k;
+        words.forEach(function (w) {
+          var cur = lines[lines.length - 1], next = cur ? cur + ' ' + w : w;
+          if (cur && ctx.measureText(next).width > maxW && lines.length < 2) lines.push(w);
+          else lines[lines.length - 1] = next;
+        });
+        lines.forEach(function (l, i) { ctx.fillText(l, x, y - r - 8 - (lines.length - 1 - i) * 12); });
         H.clearTrack();
       });
     },
