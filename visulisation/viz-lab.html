@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual lab · Control Tower</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+:root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-surface-2:#F8F9FB;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-teal-700:#0B6B73;--ct-teal-100:#E1F1F2;--ct-green-700:#1E6B43;--ct-green-100:#E3F2E9;--ct-amber-700:#8A5300;--ct-amber-500:#C27C0E;--ct-amber-100:#FBF0DB;--ct-red-700:#A4231C;--ct-red-100:#FBE6E4;--ct-purple-700:#5A3E9E;--ct-purple-500:#7E63C7;--ct-purple-100:#EFEAF9;--ct-grey-600:#5F6B7A;--ct-grey-200:#E4E8ED;--ct-r-1:2px;--ct-r-2:4px;--ct-e1:0 2px 8px rgba(14,27,51,.12);--ct-e2:0 8px 24px rgba(14,27,51,.16);--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
+body{margin:0;background:var(--ct-bg)}
+.ct{-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+.ct a:focus-visible,.ct button:focus-visible{outline:2px solid var(--ct-navy-700)!important;outline-offset:2px}
+.ct-btn{transition:background-color var(--ct-dur) var(--ct-ease),border-color var(--ct-dur) var(--ct-ease)}
+.ct-btn:hover{border-color:var(--ct-navy-700)!important}
+.ct-panel{animation:ctIn 180ms var(--ct-ease)}
+@keyframes ctIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.ct-panel{animation:none}}
+</style>
+<script src="../js/data/base-data.js"></script>
+</head>
+<body>
+<!-- Lab page: kept outside the app root so tools/regen.js does not touch it. Rendered client-side by dc-lite. -->
+<div id="dc-root"></div>
+<script src="../js/dc-lite.js"></script>
+<script src="../js/c/dc-viz.js"></script>
+<script src="js/VizLab.js"></script>
+<script>DCLite.mount("dc-root", "VizLab");</script>
+</body>
+</html>
