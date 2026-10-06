@@ -25,6 +25,12 @@ for (const n in pages) {
       if (!ID.test(t)) { const m = /^([A-Z]{2,4}-\d{3}) /.exec(lab) || /^([A-Z]{2,4}-\d{3}) /.exec(t); if (!m) return; t = m[1]; }
       add(t, p, n, lab + " " + (o.title || ""));
     });
+    // dashboard blocks (O-03, O-09): KPI cards and their charts; a chart is live when its series are bound to a KPI
+    if (o.type === "dash") {
+      (o.cols || []).forEach((c) => [c.hero].concat(c.cards || []).forEach((k) => { if (k && ID.test(k.kpi || "")) add(k.kpi, p, n, (k.scope ? k.scope + " " : "") + k.l); }));
+      (o.charts || []).forEach((g) => { const ks = (g.series || []).map((s) => s.kpi).filter(Boolean); charts.push({screen: n, type: g.kind === "bars" ? "bars" : "line", title: g.t, ask: g.read || "", kpi: ks.length === (g.series || []).length ? ks[0] : ""}); });
+    }
+    if (o.type === "heat") (o.items || []).forEach((t) => { if (ID.test(t.kpi || "")) add(t.kpi, p, n, (t.scope || "") + " " + t.l); });
     if (["line", "multi", "bars", "waterfall"].includes(o.type) && o.title)
       charts.push({screen: n, type: o.type, title: o.title, ask: o.ask || "", kpi: o.kpi || ""});
     // tables and tiles: what each shows and which KPI IDs it carries (shown on R-01 behind the (i) buttons)
