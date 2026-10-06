@@ -37,7 +37,7 @@ var DCTResolve = (function () {
   function lastVal(k, s) { var v = k.val[s]; return v ? v[v.length - 1] : null; }
   function fmtV(k, v) { if (v == null) return "—"; if (typeof v === "string") return v; return Number(v).toLocaleString("en-US", {minimumFractionDigits: k.dp, maximumFractionDigits: k.dp}); }
   function plantTab(p, ids) {
-    var P = PM(), root = rootOf(p.lens); CURK = null; var sc = layout(root), sn = function (s) { return P.scopes[s]; };
+    var P = PM(), root = rootOf(p.lens); CURK = null; var sc = layout(root).filter(function (s) { return p.lens === "Entity" || kidsAll(s).length; }), sn = function (s) { return P.scopes[s]; };
     var cols = ["KPI", "Measure"].concat(sc.map(function (s) { return kidsOf(s).length ? sn(s) + " (Σ)" : sn(s); })).concat(["Unit", "How rolled up"]);
     var rows = ids.map(function (id) {
       var k = P.kpi[canon(id)];
@@ -46,11 +46,30 @@ var DCTResolve = (function () {
       return {c: [{t: id, h: detailHref(id, root, p.lens)}, k.name].concat(sc.map(function (s) { if (!k.val[s]) return "—"; return kidsAll(s).length ? {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens), b: true} : {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens)}; }))
         .concat([k.unit || "count", how])};
     });
-    var title = root === "Group" ? "Plant → entity → Group" : sn(root) + " by plant";
+    var title = root === "Group" ? "Entity → Group" : sn(root) + " by plant";
     // "—" = the KPI has no value at that level (entity-only inputs such as finance or governance)
     return {n: "How totals add up · " + P.periodL.split(" (")[0].replace(/^P\d+ · /, ""), blocks: [{type: "table", title: title + " · " + P.periodL, cols: cols, rows: rows, minW: 300 + 90 * sc.length,
-      ask: root === "Group" ? "Which entity and which plant drive each Group number?" : "Which plant is driving each entity number?",
+      ask: root === "Group" ? "Which entity drives each Group number?" : "Which plant is driving each entity number?",
       cap: "Parent values (Σ) are recalculated from their children's summed inputs, never averaged. Click any value for its calculation."}]};
+  }
+
+  /* Every table: drop columns that have no value in any row ("", "—"). Keeps the first column. */
+  var BLANK = /^\s*(—|–|-)?\s*$/;
+  function pruneCols(o) {
+    if (Array.isArray(o)) { o.forEach(pruneCols); return; }
+    if (!o || typeof o !== "object") return;
+    if (o.type === "table" && Array.isArray(o.cols) && Array.isArray(o.rows) && o.rows.length) {
+      var cells = function (r) { return Array.isArray(r) ? r : (r && r.c) || []; };
+      var keep = o.cols.map(function (_, i) { return i === 0 || o.rows.some(function (r) { return !BLANK.test(txt(cells(r)[i])); }); });
+      if (keep.indexOf(false) >= 0) {
+        var f = function (a) { return a.filter(function (_, i) { return keep[i] !== false; }); };
+        o.cols = f(o.cols);
+        o.rows = o.rows.map(function (r) { if (Array.isArray(r)) return f(r); if (r && r.c) r.c = f(r.c); return r; });
+        delete o.gtc;
+        if (o.minW) o.minW = Math.max(300, Math.round(o.minW * o.cols.length / keep.length));
+      }
+    }
+    Object.keys(o).forEach(function (k) { if (o[k] && typeof o[k] === "object") pruneCols(o[k]); });
   }
 
   function fillTable(p, b, D, at) {
@@ -211,6 +230,7 @@ var DCTResolve = (function () {
     if (typeof document !== "undefined") document.title = (page.rid || "S-03") + " " + p.title;
     p.dataAt = ""; p.period = P.period + " (SYN)";
     if (cid !== "OPS-001") { delete p.actions; delete p.forecast; delete p.drivers; }  // the base page's actions and signals are about OPS-001 only
+    pruneCols(p);
     return p;
   }
 
@@ -245,6 +265,7 @@ var DCTResolve = (function () {
       }
     }
     Object.keys(p).forEach(function (k) { if (k !== "kpis" && p[k] && typeof p[k] === "object") walk(p, p[k], D, at); });
+    pruneCols(p);
     return p;
   };
   R.kpiDetail = kpiDetail;
