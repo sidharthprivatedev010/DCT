@@ -211,3 +211,10 @@ Relaxes MANIFEST06 1A/1B (plants only in the watchlist): Core Group now shows pl
 - **Tables**: names against every KPI code, plant codes P01–P06, watchlist rows read "Plant 02 (P02) · Entity A1 (A1)", identifiers semi-bold (same rule as Entity).
 - **Sub-themes** (G-01, G-02, G-03, G-04, G-05, G-06, G-07, G-08, G-09, S-12; 35 sub-themes): entity comparison (Entity A1 vs Entity A2 vs Group, model-bound), "Plants with a variation" table (new `kvar` table, filled from the model), trend by entity, and a reading computed from the model. Nothing removed.
 - Engine: `kvar` tables; `plantOk` marks plant-variation content that the Core Group cap keeps. `tools/check_core_group.js` allows plants only there, in watchlists and in card variation fields, and now also checks named codes in tables and stand-alone cards without root causes.
+
+## Sign-in page (2026-10-07)
+
+- New `login.html`: enterprise sign-in card (username, password with show/hide, Caps Lock hint, "keep me signed in", inline errors) over the lighthouse dawn-light background (`img/login-lighthouse-dawn.svg`, copied from `data/Login Page/lighthouse/lighthouse-dawn-light-static.svg`; its palette is the app's tokens). No logo.
+- Credentials are in `login.html` itself (`DCT_USERS` at the top of its script), so sign-in works when the file is opened from disk. Only a successful sign-in opens the persona screen; `?next=` deep links are carried through.
+- The old persona chooser is now `personas.html` (sign-in gate, "Sign out" link, signed-in user shown). `js/persona.js` sends signed-out users to `login.html` and signed-in users without a persona to `personas.html`. The header "Sign out" chip signs out fully (back to `login.html`).
+- This is a prototype gate, not security: the credentials are readable in the page source.

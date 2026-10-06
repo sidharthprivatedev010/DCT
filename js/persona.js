@@ -1,12 +1,16 @@
-// Persona gate: every app screen belongs to one lens (Owner, Core Group, Entity).
-// The persona chosen on login.html is kept in localStorage ("dct-persona").
-// No persona → login. A screen from another lens → that screen's closest equivalent in the persona's own lens.
+// Sign-in and persona gate: every app screen belongs to one lens (Owner, Core Group, Entity).
+// login.html checks the credentials in creds.json and stores "dct-auth"; personas.html stores the persona ("dct-persona").
+// Not signed in → login. No persona → persona screen. A screen from another lens → that screen's closest equivalent in the persona's own lens.
 (function () {
   var HOME = {"Owner": "P2-O01-EnterpriseHealth.html", "Core Group": "P2-G01-Portfolio.html", "Entity": "P2-E01-EntityHome.html"};
   var persona = null;
   try { persona = localStorage.getItem("dct-persona"); } catch (e) {}
   var file = location.pathname.split("/").pop() || "";
-  if (!HOME[persona]) { location.replace("login.html?next=" + encodeURIComponent(file + location.search + location.hash)); return; }
+  var auth = null;
+  try { auth = localStorage.getItem("dct-auth") || sessionStorage.getItem("dct-auth"); } catch (e) {}
+  var back = "?next=" + encodeURIComponent(file + location.search + location.hash);
+  if (!auth) { location.replace("login.html" + back); return; }
+  if (!HOME[persona]) { location.replace("personas.html" + back); return; }
   // Removed for the Owner: Actions & Escalations (O-06, O-08; MANIFEST02) and Data Assurance (G-08o; MANIFEST03 S2)
   if (persona === "Owner" && /^P2-(O0[68]|G08o)-/.test(file)) { location.replace(HOME.Owner); return; }
   var html = document.documentElement;

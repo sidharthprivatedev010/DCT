@@ -6,81 +6,140 @@
 <title>Control Tower sign in</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-:root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
+/* Same tokens as the app (TplA–F, personas.html). Background: img/login-lighthouse-dawn.svg (dawn-light palette = these tokens). */
+:root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-red-700:#A4262C;--ct-red-50:#FBEEEE;--ct-green-700:#1E6B43;--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--ct-bg);font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ct-ink);font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
-header{display:flex;align-items:center;gap:10px;padding:10px 20px;background:var(--ct-navy-900);color:#fff;min-height:64px}
-header b{font-weight:600;letter-spacing:.02em;font-size:14px}
-.syn{margin-left:auto;display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border:1px dashed rgba(255,255,255,.55);border-radius:2px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em}
-main{flex:1;display:flex;align-items:center;justify-content:center;padding:48px 16px}
-.box{width:100%;max-width:980px}
-.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ct-ink-3);font-weight:500}
-h1{font-size:28px;line-height:36px;margin:6px 0 6px;color:var(--ct-navy-900);font-weight:600;letter-spacing:-.01em}
-.q{font-size:15px;line-height:22px;color:var(--ct-ink-2);margin:0 0 28px;max-width:640px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-button.p{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;background:var(--ct-surface);border:1px solid var(--ct-line);border-top:3px solid var(--ct-navy-900);border-radius:4px;padding:18px 18px 16px;transition:border-color var(--ct-dur) var(--ct-ease),box-shadow var(--ct-dur) var(--ct-ease),transform var(--ct-dur) var(--ct-ease),background-color var(--ct-dur) var(--ct-ease)}
-button.p:hover{border-color:var(--ct-navy-700);border-top-color:var(--ct-navy-700);background:var(--ct-navy-100,#E8EDF6);box-shadow:0 8px 22px rgba(14,27,51,.16);transform:translateY(-3px)}
-button.p:hover .go{text-decoration:underline;text-underline-offset:3px}
-@media (prefers-reduced-motion:reduce){button.p,button.p:hover{transform:none;transition:none}}
-button.p:focus-visible{outline:2px solid var(--ct-navy-700);outline-offset:2px}
-.p .k{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ct-ink-3);font-weight:600}
-.p .t{font-size:18px;line-height:24px;font-weight:600;color:var(--ct-navy-900)}
-.p .r{font-size:13px;color:var(--ct-ink-2)}
-.p ul{margin:4px 0 0;padding-left:18px;color:var(--ct-ink-2);font-size:13px;line-height:19px}
-.p .go{margin-top:auto;padding-top:10px;font-weight:600;font-size:13px;color:var(--ct-navy-700)}
-.foot{margin-top:22px;font-size:12px;color:var(--ct-ink-3)}
-.foot a{color:var(--ct-navy-700)}
+html,body{height:100%}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ct-ink);font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased;
+  background:#DCE1E8;min-height:100vh;display:flex;flex-direction:column;position:relative}
+.bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;object-position:50% 62%;pointer-events:none;user-select:none}
+.top{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:16px 24px}
+.syn{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border:1px dashed var(--ct-navy-700);border-radius:2px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:var(--ct-navy-900);background:rgba(255,255,255,.55)}
+main{flex:1;display:flex;align-items:center;padding:24px clamp(16px,7vw,120px) 56px}
+.card{width:100%;max-width:440px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--ct-line);border-top:3px solid var(--ct-navy-900);border-radius:6px;
+  box-shadow:0 1px 2px rgba(14,27,51,.06),0 18px 48px rgba(14,27,51,.18);padding:32px 32px 24px}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ct-ink-3);font-weight:500}
+h1{font-size:26px;line-height:32px;margin:8px 0 8px;color:var(--ct-navy-900);font-weight:600;letter-spacing:-.01em}
+.lead{margin:0 0 24px;color:var(--ct-ink-2);font-size:14px;line-height:21px}
+form{display:flex;flex-direction:column;gap:16px}
+label{display:block;font-size:12.5px;font-weight:600;color:var(--ct-ink-2);margin-bottom:6px}
+.ctl{position:relative}
+input[type=text],input[type=password]{width:100%;height:44px;padding:0 12px;border:1px solid var(--ct-line-strong);border-radius:4px;background:#fff;font:inherit;font-size:14.5px;color:var(--ct-ink);
+  transition:border-color var(--ct-dur) var(--ct-ease),box-shadow var(--ct-dur) var(--ct-ease)}
+input[type=password],#pw{padding-right:72px}
+input::placeholder{color:#8A93A3}
+input:hover{border-color:var(--ct-ink-3)}
+input:focus{outline:none;border-color:var(--ct-navy-700);box-shadow:0 0 0 3px rgba(36,64,110,.18)}
+.field.bad input{border-color:var(--ct-red-700)}
+.show{position:absolute;right:6px;top:50%;transform:translateY(-50%);height:32px;padding:0 10px;border:0;border-radius:3px;background:transparent;color:var(--ct-navy-700);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+.show:hover{background:var(--ct-navy-100)}
+.show:focus-visible{outline:2px solid var(--ct-navy-700);outline-offset:1px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--ct-ink-2)}
+.row input{width:16px;height:16px;margin:0 8px 0 0;accent-color:var(--ct-navy-700);vertical-align:-3px}
+.row label{display:inline;font-weight:400;font-size:13px;margin:0;color:var(--ct-ink-2);cursor:pointer}
+.caps{color:var(--ct-ink-3);font-size:12px;visibility:hidden}
+.caps.on{visibility:visible}
+.err{display:none;align-items:flex-start;gap:8px;padding:10px 12px;border-radius:4px;background:var(--ct-red-50);border:1px solid #E7B9BB;color:var(--ct-red-700);font-size:13px;line-height:18px}
+.err.on{display:flex}
+.err svg{flex:none;margin-top:1px}
+button.go{height:46px;border:0;border-radius:4px;background:var(--ct-navy-900);color:#fff;font:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  transition:background-color var(--ct-dur) var(--ct-ease),transform var(--ct-dur) var(--ct-ease)}
+button.go:hover{background:var(--ct-navy-700)}
+button.go:active{transform:translateY(1px)}
+button.go:focus-visible{outline:2px solid var(--ct-navy-700);outline-offset:2px}
+button.go[disabled]{background:var(--ct-ink-3);cursor:progress}
+.spin{width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .8s linear infinite;display:none}
+button.go[disabled] .spin{display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+.facts{list-style:none;margin:24px 0 0;padding:20px 0 0;border-top:1px solid var(--ct-line);display:grid;gap:12px}
+.facts li{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:19px;color:var(--ct-ink-2)}
+.facts b{display:block;font-weight:600;color:var(--ct-ink);font-size:13px}
+.ic{flex:none;width:30px;height:30px;border-radius:4px;background:var(--ct-navy-100);color:var(--ct-navy-700);display:inline-flex;align-items:center;justify-content:center}
+.legal{margin:20px 0 0;font-size:11.5px;line-height:17px;color:var(--ct-ink-3)}
+.foot{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);padding:4px 10px;border-radius:2px;background:rgba(255,255,255,.78);font-size:12px;color:var(--ct-navy-900);white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.card.shake{animation:sh .32s var(--ct-ease)}
+@keyframes sh{20%{transform:translateX(-6px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
+@media (max-width:720px),(max-height:760px){.foot{position:static;transform:none;align-self:center;margin:0 16px 16px}}
+@media (max-width:720px){main{justify-content:center;padding:8px 16px 24px}.card{padding:24px 20px 20px}h1{font-size:23px;line-height:29px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header>
-  <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.6"><rect x="3" y="3" width="16" height="16" rx="2"></rect><path d="M7 15V10M11 15V7M15 15v-3"></path></svg>
-  <b>Control Tower</b>
-  <span class="syn" title="All names, values, dates and sources are synthetic">SYNTHETIC DATA</span>
-</header>
+<img class="bg" src="img/login-lighthouse-dawn.svg" alt="" aria-hidden="true">
+<div class="top"><span class="syn" title="All names, values, dates and sources are synthetic">SYNTHETIC DATA</span></div>
 <main>
-  <div class="box">
-    <div class="eyebrow">Sign in · prototype</div>
-    <h1>Choose your persona</h1>
-    <p class="q">Each persona has its own screens, scope and navigation. You only see the lens your role is entitled to; sign out from the header to switch.</p>
-    <div class="grid">
-      <button class="p" type="button" data-persona="Owner">
-        <span class="k">Owner</span>
-        <span class="t">Owner</span>
-        <span class="r">Group · all businesses · summary depth</span>
-        <ul><li>Enterprise health and 24-hour changes</li><li>Cash, capex and risk at a glance</li><li>Decisions awaiting you and the daily brief</li></ul>
-        <span class="go">Sign in as Owner →</span>
-      </button>
-      <button class="p" type="button" data-persona="Core Group">
-        <span class="k">Core Group</span>
-        <span class="t">Core Group Executive</span>
-        <span class="r">Group · both entities · comparative depth</span>
-        <ul><li>Portfolio and entity comparison</li><li>Financial, cash, ops and capex benchmarks</li><li>Certification governance and escalations</li></ul>
-        <span class="go">Sign in as Core Group →</span>
-      </button>
-      <button class="p" type="button" data-persona="Entity">
-        <span class="k">Entity</span>
-        <span class="t">Entity Executive</span>
-        <span class="r">Entity A1 · its plants · working depth</span>
-        <ul><li>Entity home and plant performance</li><li>Reliability, supply, production and cash</li><li>Certification workbench and my work</li></ul>
-        <span class="go">Sign in as Entity →</span>
-      </button>
-    </div>
-    <p class="foot">No password in the prototype. <a href="index.html">Phase 1 architecture pack</a> · <a href="P2-00-Index.html">Screen tracker</a></p>
-  </div>
+  <section class="card" id="card" aria-labelledby="h">
+    <div class="eyebrow">Digital Control Tower · Secure sign-in</div>
+    <h1 id="h">Sign in to Control Tower</h1>
+    <p class="lead">One governed view of performance, cash, risk and data trust, from the Group down to each entity and plant. Sign in, then choose the persona your role is entitled to.</p>
+    <form id="f" novalidate>
+      <div class="field" id="fu">
+        <label for="u">Username</label>
+        <input type="text" id="u" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Enter your username" required>
+      </div>
+      <div class="field" id="fp">
+        <label for="pw">Password</label>
+        <div class="ctl">
+          <input type="password" id="pw" name="password" autocomplete="current-password" placeholder="Enter your password" required>
+          <button type="button" class="show" id="show" aria-controls="pw" aria-pressed="false">Show</button>
+        </div>
+      </div>
+      <div class="row">
+        <span><input type="checkbox" id="rem" checked><label for="rem">Keep me signed in on this device</label></span>
+        <span class="caps" id="caps" aria-live="polite">Caps Lock is on</span>
+      </div>
+      <div class="err" id="err" role="alert"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11h.01"/></svg><span id="errt"></span></div>
+      <button type="submit" class="go" id="go"><span class="spin" aria-hidden="true"></span><span id="gol">Sign in</span></button>
+    </form>
+    <ul class="facts">
+      <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="5" r="2.2"/><path d="M1.8 13c.4-2.3 1.9-3.6 3.7-3.6s3.3 1.3 3.7 3.6M10.5 3.5a2 2 0 1 1 0 3.9M11.6 9.6c1.5.3 2.4 1.5 2.7 3.4"/></svg></span>
+        <span><b>Role-based lenses</b>Owner, Core Group and Entity each see their own scope, depth and navigation.</span></li>
+      <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l5.2 2v4c0 3-2.2 5.4-5.2 6.2C5 13.2 2.8 10.8 2.8 7.8v-4z"/><path d="M5.6 8l1.7 1.7 3.2-3.4"/></svg></span>
+        <span><b>Certified numbers, traceable to source</b>Every KPI carries its trust state and lineage from plant to Group.</span></li>
+      <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L1.5 13.5h13z"/><path d="M8 6.5v3.2M8 11.8h.01"/></svg></span>
+        <span><b>No surprises</b>Early-warning signals and predictions flag issues before period end.</span></li>
+    </ul>
+    <p class="legal">Authorised users only. Access is managed by your Control Tower administrator. This prototype uses synthetic data.</p>
+  </section>
 </main>
+<div class="foot">Digital Control Tower · prototype environment</div>
 <script>
+/* ===== Sign-in credentials: edit here to change who can sign in. Add more users as extra { } entries. ===== */
+var DCT_USERS = [
+  {"username": "admin", "password": "ControlTower@2026"}
+];
+/* ========================================================================================================== */
+
+/* Sign-in: checks the username (not case-sensitive) and password (case-sensitive) against DCT_USERS above.
+   On success it stores "dct-auth" (localStorage when "keep me signed in" is ticked, otherwise this tab only) and opens the
+   persona screen, passing on ?next= so a deep link lands where it was going. Opening this page signs the user out.
+   Works when the file is opened directly from disk: nothing is fetched. */
 (function () {
-  var HOME = {"Owner": "P2-O01-EnterpriseHealth.html", "Core Group": "P2-G01-Portfolio.html", "Entity": "P2-E01-EntityHome.html"};
-  try { localStorage.removeItem("dct-persona"); } catch (e) {}
+  try { localStorage.removeItem("dct-auth"); sessionStorage.removeItem("dct-auth"); localStorage.removeItem("dct-persona"); } catch (e) {}
   var next = new URLSearchParams(location.search).get("next");
   if (next && !/^P[23]-[\w-]+\.html([?#].*)?$/.test(next)) next = null;
-  document.querySelectorAll("button[data-persona]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var p = b.getAttribute("data-persona");
-      try { localStorage.setItem("dct-persona", p); } catch (e) {}
-      location.href = next || HOME[p];
-    });
+  var $ = function (id) { return document.getElementById(id); };
+  var f = $("f"), u = $("u"), pw = $("pw"), go = $("go"), err = $("err");
+  u.focus();
+  $("show").addEventListener("click", function () { var on = pw.type === "password"; pw.type = on ? "text" : "password"; this.textContent = on ? "Hide" : "Show"; this.setAttribute("aria-pressed", on ? "true" : "false"); pw.focus(); });
+  pw.addEventListener("keyup", function (e) { $("caps").classList.toggle("on", !!(e.getModifierState && e.getModifierState("CapsLock"))); });
+  var fail = function (msg, which) {
+    $("errt").textContent = msg; err.classList.add("on");
+    ["fu", "fp"].forEach(function (id) { $(id).classList.toggle("bad", which.indexOf(id) >= 0); });
+    var c = $("card"); c.classList.remove("shake"); void c.offsetWidth; c.classList.add("shake");
+    go.disabled = false; $("gol").textContent = "Sign in";
+  };
+  [u, pw].forEach(function (x) { x.addEventListener("input", function () { err.classList.remove("on"); x.closest(".field").classList.remove("bad"); }); });
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var user = u.value.trim(), pass = pw.value;
+    if (!user || !pass) { fail("Enter your username and password.", [!user ? "fu" : "", !pass ? "fp" : ""]); (!user ? u : pw).focus(); return; }
+    var ok = DCT_USERS.some(function (x) { return x && String(x.username || "").toLowerCase() === user.toLowerCase() && String(x.password || "") === pass; });
+    if (!ok) { fail("The username or password is incorrect.", ["fu", "fp"]); pw.value = ""; pw.focus(); return; }
+    go.disabled = true; $("gol").textContent = "Signing in…";
+    try { ($("rem").checked ? localStorage : sessionStorage).setItem("dct-auth", JSON.stringify({u: user, at: new Date().toISOString()})); } catch (x) {}
+    location.href = "personas.html" + (next ? "?next=" + encodeURIComponent(next) : "");
   });
 })();
 </script>

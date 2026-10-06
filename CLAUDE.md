@@ -80,7 +80,8 @@ Run `node tools/regen.js`. It re-renders every page's static HTML and bumps the 
 
 ## Personas
 
-- `login.html` sets the persona; `js/persona.js` (in the head of each lens screen) gates pages to that lens. Templates render a hidden `[data-dct-lens]` with per-lens equivalent links that the gate uses. Add `js/persona.js` to any new lens screen.
+- Flow: `login.html` (sign-in over `img/login-lighthouse-dawn.svg`) checks the username and password against `DCT_USERS`, a list at the top of its script (edit it to change access), and stores `dct-auth`; then `personas.html` sets the persona (`dct-persona`). Opening `login.html` signs out. Nothing is fetched, so it works when opened straight from disk.
+- `js/persona.js` (in the head of each lens screen): not signed in → `login.html?next=…`; no persona → `personas.html?next=…`; it also gates pages to the persona's lens. Templates render a hidden `[data-dct-lens]` with per-lens equivalent links that the gate uses. Add `js/persona.js` to any new lens screen.
 
 ## Entity lens KPI cards
 
