@@ -64,7 +64,7 @@ node tools/regen.js
 **How the UI uses it (`js/data/resolve.js`):**
 - **Model values everywhere:** cards, KPI tables (ID in column 1 or 2) and tiles take model values. Scope comes from the label: "Plant NN", "A1/A2", otherwise the lens default.
 - **Model-bound blocks:** a table with `kcols` {header: KPI} a bar chart with `kpi` or a `multi` chart with `kpi` (series labelled Plant NN / Entity A1) fills each row or series from the model, using the scope in the row label.
-- **Roll-up tab:** every E-, G-, O- and S- page (except S-03, and pages with `noRollup: true`: E-02, E-05, E-06, E-07) gets a "How totals add up · Sep 2026" tab. Entity lens: plants → A1. Owner and Core Group: entities → Group only (no plant columns).
+- **Roll-up tab:** every E-, G-, O- and S- page (except S-03, and pages with `noRollup: true`: E-02, E-05, E-06, E-07) gets a "How totals add up · Sep 2026" tab. Entity lens: plants → A1. Owner: entities → Group only (no plant columns). Core Group: plants → entities → Group (plant cells not linked).
 - **Empty columns:** `pruneCols()` in resolve.js drops any table column that is blank or "—" in every row (first column always kept), on every page.
 - **Click-through:** every model value links to `P2-S03e/S03/S03o-KPIDetail.html?kpi=ID&scope=…`, built by `DCTResolve.kpiDetail`.
 - **(i) buttons:** KPI cards, KPI cells in tables (columns 1–2), KPI tiles and the titles of graphs, tables and tiles link to R-01 with `?kpi=ID` or `?graph=<title>&on=<screen>`. Only IDs in the model get one; none on R-01 itself.
@@ -91,9 +91,13 @@ Run `node tools/regen.js`. It re-renders every page's static HTML and bumps the 
 - Tables (Entity lens, `labelTables()` in resolve.js): plants show as "Plant 02 (P02)", bare KPI codes get their model name, and the identifying cells in the first three columns are semi-bold (cell flag `b`).
 - Check: `node tools/check_entity.js` (`--dump` prints every card's text), also run by `tools/check_all.js`.
 
-## Core Group lens: plants with a variation
+## Core Group lens: plant values behind entity numbers
 
-- Core Group cards and sub-themes show **only plants with a variation** (rule in `DCTEntityCards.variations`, js/data/entity-cards.js), with no root cause; full plant detail is the Entity lens. Cards use `attachGroup`; the existing justifications (core-group-verdicts.js) stay.
+- Manager review (2026-10-06): every entity number on a Core Group screen shows the plant values it is calculated from (Plants 01–03 → A1, 04–06 → A2; same values as `data/KPI-Lineage-Model.xlsx`).
+  - **Cards** (`attachGroup`, js/data/entity-cards.js): each entity in scope, then its plants with value and effect on the entity (ratio effects add up to the entity gap to target; sums show share; MIN marks the setting plant). Plants with a variation (rule in `DCTEntityCards.variations`) are red. Entity-only KPIs show their `DRIVER` KPI's plants, or "no plant split". No root cause; the justifications (core-group-verdicts.js) stay.
+  - **Tables:** entity cells in `kcols` tables and the Value cell of KPI rows carry a plant sub-line (`plantVals` / `groupVals`, added in resolve.js `fillModel` and `plantSubs`); the caption explains it.
+  - **Roll-up tab** and **S-03 Calculation** go plant → entity → Group (`plantOk`). S-03 itself still opens at entity scope.
+- Check: `node tools/check_core_group_plants.js` compares every plant value shown with the workbook's KPI Register (needs python + openpyxl). SIG-017/SIG-018 have no workbook row and are reported as WARN.
 - A table with `kvar: [KPI IDs]` is filled with the plants that vary on those KPIs. Blocks with plant content must carry `plantOk: true`, or the Core Group cap (`capOwner`) strips plant rows and `check_core_group.js` fails.
 
 ## Sidebar
