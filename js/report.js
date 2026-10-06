@@ -1,6 +1,7 @@
 /* Download report: builds a PDF for the signed-in persona (Owner, Core Group, Entity) from the same data the pages show.
    Loaded on first click of the header "Download report" button (TplA–TplF). Uses jsPDF + autoTable from js/vendor/.
-   Owner: a two-page portrait brief, chart-led (MANIFEST04 §7.1, buildOwner). Core Group and Entity, for now:
+   Owner: a two-page portrait brief, chart-led (MANIFEST04 §7.1). Core Group: a three-page brief in the same design with
+   entity comparison and an insight box per section (review 2026-10-06). Both are drawn by buildBrief. Entity, for now:
    the lens home page (strip, headline KPIs, forecast, actions, resolved through DCTResolve) and a scorecard from
    DCTData (js/data/base-data.js): Owner = Group, Core Group = Group vs Entity A1 / A2, Entity = Entity A1 and its plants. */
 var DCTReport = (function () {
@@ -235,10 +236,21 @@ var DCTReport = (function () {
     {t: "Cash and liquidity", s: "Cash and liquidity", k: ["FIN-004", "FIN-008", "FIN-006", "LIQ-002", "LIQ-001"], page: true},
     {t: "Operational performance", s: "Operational performance", k: ["OPS-001", "OPS-002", "CST-001", "EHS-001"]}
   ];
+  // Core Group brief (review 2026-10-06): same design as the Owner brief, five sections, entity comparison and an insight
+  // box per section. Values come from DCTData (js/data/base-data.js), the same numbers as data/KPI-Lineage-Model.xlsx.
+  var CORE = [
+    {t: "Financial performance and data trust", s: "Finance and trust", k: ["TRU-001", "TRU-007", "TRU-006", "FIN-003", "FIN-001", "FIN-005", "FIN-008"]},
+    {t: "Early warning", s: "Early warning", k: ["PRD-003", "PRD-002"]},
+    {t: "Cash and working capital", s: "Cash and WC", k: ["FIN-004", "WCP-001", "FIN-006", "LIQ-002", "LIQ-001", "CSH-001"]},
+    {t: "Operational performance", s: "Operations", k: ["OPS-001", "CST-001", "OPS-002", "PLT-002", "OPS-003"]},
+    {t: "Capital projects, risk and safety", s: "Projects, risk, safety", k: ["CPX-004", "PRG-002", "PRG-003", "GOV-004", "EHS-001", "EFF-002"]}
+  ];
   // Short names for the bottom line; anything else uses the model name.
   var SHORT = {"PRD-003": "Projected EBITDA gap", "PRD-002": "Plan-miss probability", "TRU-001": "Numbers certified", "FIN-005": "ROCE", "FIN-008": "FCF conversion", "LIQ-002": "Covenant headroom", "OPS-001": "Production vs plan", "OPS-002": "Sales vs plan", "CST-001": "Cost per tonne", "EHS-001": "Safety (TRIR)"};
 
-  function buildOwner(cfg, page) {
+  // One builder for both briefs: lens "Owner" (OWNER sections) or "Core Group" (CORE sections, coreBody below).
+  function buildBrief(cfg, page, lens) {
+    var isCore = lens === "Core Group", SECS = isCore ? CORE : OWNER, TITLE = isCore ? "Core Group brief" : "Owner brief";
     var jsPDF = window.jspdf.jsPDF, doc = new jsPDF({orientation: "portrait", unit: "pt", format: "a4"});
     var F = "helvetica", rich = false;
     if (window.DCTReportFonts && DCTReportFonts.regular) {
@@ -286,14 +298,14 @@ var DCTReport = (function () {
       if (first) {
         doc.rect(0, 0, W, 74, "F");
         font(false, 8, [196, 205, 222]); doc.setCharSpace(1.2); doc.text("CONTROL TOWER", M, 22); doc.setCharSpace(0);
-        font(true, 20, [255, 255, 255]); doc.text("Owner brief", M, 46);
+        font(true, 20, [255, 255, 255]); doc.text(TITLE, M, 46);
         font(false, 9.5, [226, 232, 242]); doc.text(tx(scopeL + " · " + per), M, 62);
         font(true, 7.5, [255, 255, 255]); doc.setCharSpace(0.8); doc.text("SYNTHETIC DATA", W - M, 22, {align: "right"}); doc.setCharSpace(0);
         font(false, 8, [196, 205, 222]); doc.text(gen, W - M, 62, {align: "right"});
         y = 92;
       } else {
         doc.rect(0, 0, W, 30, "F");
-        font(true, 9.5, [255, 255, 255]); doc.text("Owner brief", M, 19);
+        font(true, 9.5, [255, 255, 255]); doc.text(TITLE, M, 19);
         font(false, 8, [210, 218, 232]); doc.text(tx(scopeL + " · " + per), W - M, 19, {align: "right"});
         y = 50;
       }
@@ -305,8 +317,8 @@ var DCTReport = (function () {
 
     function scorecard() {
       caps("Scorecard · measures off target or declining", M, y); y += 9;
-      var n = OWNER.length, g = 8, w = (CW - g * (n - 1)) / n;
-      OWNER.forEach(function (sec, i) {
+      var n = SECS.length, g = 8, w = (CW - g * (n - 1)) / n;
+      SECS.forEach(function (sec, i) {
         var x = M + i * (w + g), t = tally(sec);
         doc.setDrawColor.apply(doc, PANEL); doc.setLineWidth(0.6); doc.setFillColor(255, 255, 255); doc.roundedRect(x, y, w, 40, 2, 2, "FD");
         doc.setFillColor.apply(doc, t.c); doc.rect(x, y, 2.5, 40, "F");
@@ -333,8 +345,8 @@ var DCTReport = (function () {
     }
     function legend(x, yy, items) {
       items.forEach(function (it) {
-        doc.setDrawColor.apply(doc, it.c); doc.setLineWidth(it.dash ? 0.8 : 2);
-        if (it.dash) doc.setLineDashPattern([2.5, 2], 0); doc.line(x, yy - 2.5, x + 12, yy - 2.5); doc.setLineDashPattern([], 0);
+        if (it.sq) { doc.setFillColor.apply(doc, it.c); doc.roundedRect(x + 2, yy - 6.5, 8, 7, 1, 1, "F"); } else { doc.setDrawColor.apply(doc, it.c); doc.setLineWidth(it.dash ? 0.8 : 2);
+        if (it.dash) doc.setLineDashPattern([2.5, 2], 0); doc.line(x, yy - 2.5, x + 12, yy - 2.5); doc.setLineDashPattern([], 0); }
         font(false, 7, SUBT); doc.text(tx(it.l), x + 16, yy); x += 22 + doc.getStringUnitWidth(tx(it.l)) * 7 / doc.internal.scaleFactor + 10;
       });
     }
@@ -342,6 +354,7 @@ var DCTReport = (function () {
       var span = hi - lo || Math.abs(hi) || 1, raw = span / 4, mag = Math.pow(10, Math.floor(Math.log10(raw))), st = [1, 2, 2.5, 5, 10].map(function (m) { return m * mag; }).filter(function (s) { return s >= raw; })[0];
       var a = Math.floor(lo / st) * st, b = Math.ceil(hi / st) * st, out = []; for (var v = a; v <= b + st / 2; v += st) out.push(+v.toFixed(6)); return out;
     }
+    var MON = ["Apr", "May", "Jun", "Jul", "Aug", "Sep"], xl = function (l) { var m = /^P0([1-6])$/.exec(l); return isCore && m ? MON[m[1] - 1] : l; };   // Core Group: months on the x axis
     var tickL = function (v) { return (v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-US", {maximumFractionDigits: 2}); };
     // Line chart: one y-axis, recessive grid, 1.5 pt lines, end dot + direct label (nudged ≥ 9 pt apart), dashed target.
     function lineChart(x, yy, w, h, series, target, fmt) {
@@ -350,7 +363,7 @@ var DCTReport = (function () {
       var px = x + 24, pw = w - 24 - 52, n = series[0].v.length;
       var X = function (i) { return px + pw * i / (n - 1); }, Y = function (v) { return yy + h - h * (v - lo) / (hi - lo); };
       tk.forEach(function (t) { doc.setDrawColor.apply(doc, GRID); doc.setLineWidth(0.4); doc.line(px, Y(t), px + pw, Y(t)); font(false, 6.5, SUBT); doc.text(tickL(t), px - 5, Y(t) + 2.2, {align: "right"}); });
-      P.x.forEach(function (l, i) { font(false, 6.5, SUBT); doc.text(l, X(i), yy + h + 10, {align: "center"}); });
+      P.x.forEach(function (l, i) { font(false, 6.5, SUBT); doc.text(xl(l), X(i), yy + h + 10, {align: "center"}); });
       if (target != null) { doc.setDrawColor.apply(doc, TGT); doc.setLineWidth(0.7); doc.setLineDashPattern([3, 2], 0); doc.line(px, Y(target), px + pw, Y(target)); doc.setLineDashPattern([], 0); }
       var ends = series.map(function (s) {
         doc.setDrawColor.apply(doc, s.c); doc.setLineWidth(1.5);
@@ -375,22 +388,22 @@ var DCTReport = (function () {
           if (si === series.length - 1) doc.roundedRect(cx - bw / 2, y1, bw, Math.max(0.5, y0 - y1 - 0.8), 1.5, 1.5, "F"); else doc.rect(cx - bw / 2, y1 + 0.8, bw, Math.max(0.5, y0 - y1 - 0.8), "F");
           base += v;
         });
-        font(false, 6.5, SUBT); doc.text(P.x[i], cx, yy + h + 10, {align: "center"});
+        font(false, 6.5, SUBT); doc.text(xl(P.x[i]), cx, yy + h + 10, {align: "center"});
       }
       font(true, 7.5, INK); doc.text(tx(fmt(tot[n - 1])), px + pw * (n - 0.5) / n, Y(tot[n - 1]) - 4, {align: "center"});
     }
     // Horizontal bars, one per scope from zero; value at the bar end; optional dashed target.
-    function hbars(x, yy, w, ids, id, target, targetL) {
+    function hbars(x, yy, w, ids, id, target, targetL, rh0) {   // rh0: row height (default 20 pt)
       var rows = ids.map(function (s) { var r = R(id, s); return {s: s, r: r, v: parseFloat(String(r.v).replace(/,/g, "").replace("−", "-"))}; });
       var vals = rows.map(function (r) { return r.v; }).concat(target != null ? [target] : []);
       var mx = Math.max(0, Math.max.apply(null, vals)), mn = Math.min(0, Math.min.apply(null, vals)), lx = x + 62 + (mn < 0 ? 40 : 0), lw = w - 62 - 46 - (mn < 0 ? 40 : 0);
-      var X = function (v) { return lx + lw * (v - mn) / ((mx - mn) || 1); }, z = X(0), rh = 20;
+      var X = function (v) { return lx + lw * (v - mn) / ((mx - mn) || 1); }, z = X(0), rh = rh0 || 20, bh = rh0 ? Math.min(10, rh0 - 5) : 10;
       if (target != null) { font(false, 6.5, SUBT); doc.text(tx(targetL), X(target), yy - 2, {align: "center"}); }
       rows.forEach(function (r, i) {
         var cy = yy + 6 + i * rh, a = X(Math.min(0, r.v)), b = X(Math.max(0, r.v));
         font(false, 7.5, INK); doc.text(tx(S[r.s] || r.s), x, cy + 7);
-        doc.setFillColor.apply(doc, SC[r.s]); doc.roundedRect(a, cy, Math.max(1, b - a), 10, 1.5, 1.5, "F");
-        font(true, 7.5, INK); var t = tx(vtxt(r.r));
+        doc.setFillColor.apply(doc, SC[r.s]); doc.roundedRect(a, cy, Math.max(1, b - a), bh, 1.5, 1.5, "F");
+        font(true, 7.5, INK); var t = tx(isCore && /%$/.test(parts(r.r)[0]) ? parts(r.r)[0] : vtxt(r.r));   // Core Group: "59.0%", not "59.0% weighted"
         if (r.v < 0) doc.text(t, a - 4, cy + 7.5, {align: "right"}); else doc.text(t, b + 4, cy + 7.5);
       });
       doc.setDrawColor.apply(doc, [190, 194, 202]); doc.setLineWidth(0.6); doc.line(z, yy + 2, z, yy + 8 + ids.length * rh - 6);
@@ -404,8 +417,12 @@ var DCTReport = (function () {
       font(true, 15, INK); doc.text(tx(p[0]), x, yy + 18);
       if (p[1]) { var bw = doc.getStringUnitWidth(tx(p[0])) * 15 / doc.internal.scaleFactor; font(false, 8.5, SUBT); doc.text(tx(p[1]), x + bw + 3, yy + 18); }
       var cx = x;
-      ["A1", "A2"].forEach(function (s) { var c = R(id, s); doc.setFillColor.apply(doc, col(c)); doc.circle(cx + 2, yy + 28.5, 1.8, "F"); font(false, 7, INK); var t = tx(s + " " + vtxt(c)); doc.text(t, cx + 6, yy + 31); cx += 12 + doc.getStringUnitWidth(t) * 7 / doc.internal.scaleFactor; });
-      font(false, 7, col(r)); doc.text(tx(statL(r)), x, yy + 43);
+      // Core Group: a line wider than its column drops the units (child values) or "vs target" (status), as in the reference brief
+      var tw = function (t) { return doc.getStringUnitWidth(t) * 7 / doc.internal.scaleFactor; }, ct = function (s, u) { var c = R(id, s); return tx(s + " " + (u ? vtxt(c) : parts(c)[0])); };
+      font(false, 7, INK); var units = !isCore || ["A1", "A2"].reduce(function (a, s) { return a + 12 + tw(ct(s, true)); }, 0) <= w;
+      ["A1", "A2"].forEach(function (s) { var c = R(id, s); doc.setFillColor.apply(doc, col(c)); doc.circle(cx + 2, yy + 28.5, 1.8, "F"); font(false, 7, INK); var t = ct(s, units); doc.text(t, cx + 6, yy + 31); cx += 12 + tw(t); });
+      var st = tx(statL(r)); if (isCore && tw(st) > w) st = st.replace(/ vs target$/, "");
+      font(false, 7, col(r)); doc.text(st, x, yy + 43);
     }
     function keyRow(items) {
       need(56); var n = items.length, w = CW / n;
@@ -418,9 +435,138 @@ var DCTReport = (function () {
     var num = function (v, d) { return (v < 0 ? "−" : "") + Math.abs(v).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d}); };
     var gw = (CW - 14) / 2, gx2 = M + gw + 14, Gs = function (id) { return "Group " + vtxt(R(id)); };
 
+    // ---------- Core Group body: five sections, entity comparison, an insight box per section ----------
+    // Every sentence is built from the records below (DCTData, same values as data/KPI-Lineage-Model.xlsx); no hand-set numbers.
+    function coreBody() {
+    var INS = [238, 242, 247];
+    var E = function (s) { return S[s] || s; };
+    var nv = function (r) { return r ? parseFloat(String(r.v == null ? r.val : r.v).replace(/,/g, "").replace("−", "-")) : NaN; };
+    var last = function (id, s) { var a = ser(id, s); return a.length ? a[a.length - 1] : nv(R(id, s)); };
+    var meets = function (id, s) { var k = K(id), v = last(id, s); if (k.target == null || isNaN(v)) return null; return k.better === "down" ? v <= k.target : v >= k.target; };
+    var tgtT = function (id) { return String((R(id) || {}).plan || "").replace(/^([≥≤])\s*/, "$1 "); };
+    // value as a sentence reads it: "82.1%", "52.0 days", "₹3,017 per t"
+    var iv = function (id, s) { var r = R(id, s); if (!r) return "—"; return /^₹\/t$/.test(r.u || "") ? "₹" + String(r.v).replace(/^[-−]/, "") + " per t" : vtxt(r); };
+    var both = function (id) { return ["A1", "A2"].map(function (s) { return E(s) + " (" + iv(id, s) + ")"; }).join(", "); };
+    // "X: Entity A1 (91.3% of plan) misses the ≥ 100.0% target; Entity A2 (100.3% of plan) meets it."
+    function vsTarget(label, id) {
+      var miss = ["A1", "A2"].filter(function (s) { return meets(id, s) === false; }), hit = ["A1", "A2"].filter(function (s) { return meets(id, s) === true; });
+      if (miss.length === 2) return label + ": neither meets the " + tgtT(id) + " target — " + both(id) + ".";
+      if (hit.length === 2) return label + ": both meet the " + tgtT(id) + " target — " + both(id) + ".";
+      if (!miss.length || !hit.length) return label + ": " + both(id) + ".";
+      return label + ": " + E(miss[0]) + " (" + iv(id, miss[0]) + ") misses the " + tgtT(id) + " target; " + E(hit[0]) + " (" + iv(id, hit[0]) + ") meets it.";
+    }
+    // "delayed projects: Entity A2 1; open audit findings: Entity A1 2, Entity A2 5" — entities with a non-zero count
+    function counts(items) {
+      return items.map(function (it, i) {
+        var nz = ["A1", "A2"].filter(function (s) { return nv(R(it[1], s)) !== 0; });
+        var l = i ? it[0].charAt(0).toLowerCase() + it[0].slice(1) : it[0];
+        return l + ": " + (nz.length ? nz.map(function (s) { return E(s) + " " + vtxt(R(it[1], s)); }).join(", ") : "none");
+      }).join("; ");
+    }
+    // "Entity A1 accounts for 51% of Group EBITDA year to date (₹890.6 m of ₹1,760.1 m)."
+    function share(id, what) {
+      var g = nv(R(id)), e = ["A1", "A2"].slice().sort(function (a, b) { return Math.abs(nv(R(id, b))) - Math.abs(nv(R(id, a))); })[0];
+      return E(e) + " accounts for " + Math.round(100 * nv(R(id, e)) / g) + "% of " + what + " (" + vtxt(R(id, e)) + " of " + vtxt(R(id)) + ").";
+    }
+    function monthsOff(id) {
+      var k = K(id), off = function (s) { return ser(id, s).filter(function (v) { return k.better === "down" ? v > k.target : v < k.target; }).length; }, n = P.x.length;
+      return K(id).name.split(",")[0] + " was off its " + tgtT(id) + " target in " + off("A1") + " of " + n + " months at " + E("A1") + " and " + off("A2") + " of " + n + " months at " + E("A2") + ".";
+    }
+    function insight(lines) {
+      var b = rich ? "• " : "- ";
+      font(false, 8, INK);
+      var wr = lines.filter(Boolean).map(function (t) { return doc.splitTextToSize(tx(b + t), CW - 30); });
+      var nl = wr.reduce(function (a, w) { return a + w.length; }, 0), h = 24 + nl * 9.8;
+      need(h + 4);
+      doc.setFillColor.apply(doc, INS); doc.rect(M, y, CW, h, "F"); doc.setFillColor.apply(doc, NAVY); doc.rect(M, y, 3, h, "F");
+      caps("Insight", M + 14, y + 13);
+      var yy = y + 25; wr.forEach(function (w) { font(false, 8, INK); doc.text(w, M + 14, yy); yy += w.length * 9.8; });
+      y += h + 13;
+    }
+    var hp = function (title, sub, x) { return [title, sub, x]; };
+    function pair(h, left, right) {   // two panels side by side, h high; left/right draw into (x, top)
+      need(h + 4);
+      panel(M, y, gw, h, left[0], left[1]); left[2](M, y);
+      panel(gx2, y, gw, h, right[0], right[1]); right[2](gx2, y);
+      y += h + 14;
+    }
+    var bars3 = function (id, target, targetL, h) { return function (x, top) {
+      legend(x + 10, top + 38, ["A1", "A2", "Group"].map(function (s) { return {l: S[s] || s, c: SC[s], sq: true}; }).concat(target != null ? [{l: targetL, c: TGT, dash: true}] : []));
+      hbars(x + 10, top + 46, gw - 20, ["A1", "A2", "Group"], id, target, target != null ? "" : targetL, h > 100 ? 17 : 14.5); }; };
+    var leg2 = function (x, top, extra) { legend(x + 10, top + 38, [{l: S.A1, c: SC.A1}, {l: S.A2, c: SC.A2}].concat(extra || [])); };
+    var pct = function (id) { return function (v) { return num(v, dp(id)) + "%"; }; };
+
+    // 1 · Financial performance and data trust
+    section(0, SECS[0]);
+    pair(104, hp("Numbers certified", "% of leadership KPIs · Group " + why(R("TRU-001")), bars3("TRU-001", K("TRU-001").target, "Target " + K("TRU-001").target + "%", 104)),
+      hp("Open trust issues", "Count · target 0", function (x, top) {
+        [["TRU-007", "Reconciliation breaks"], ["TRU-006", "Overdue certifications"]].forEach(function (it, i) { var xx = x + 10 + i * (gw - 20) / 2; if (i) { doc.setDrawColor.apply(doc, PANEL); doc.setLineWidth(0.6); doc.line(xx - 8, top + 34, xx - 8, top + 84); } keyFig(xx, top + 40, (gw - 20) / 2 - 12, it[0], it[1]); });
+      }));
+    keyRow([["FIN-003", "Revenue YTD"], ["FIN-001", "EBITDA YTD"], ["FIN-005", "ROCE (annualised)"], ["FIN-008", "FCF conversion"]]);
+    y -= 6;
+    pair(112, hp("EBITDA by month", "₹ m · certified · entities stack to Group", function (x, top) {
+        legend(x + 10, top + 38, [{l: S.A1, c: SC.A1, sq: true}, {l: S.A2, c: SC.A2, sq: true}]); stackChart(x + 10, top + 50, gw - 20, 46, [{v: diff(ser("FIN-001", "A1")), c: SC.A1}, {v: diff(ser("FIN-001", "A2")), c: SC.A2}], function (v) { return "₹" + num(v, 1) + " m"; });
+      }),
+      hp("ROCE, annualised", "% · " + Gs("FIN-005") + " · " + why(R("FIN-005")), function (x, top) {
+        leg2(x, top, [{l: "Target " + K("FIN-005").target + "%", c: TGT, dash: true}]);
+        lineChart(x + 10, top + 52, gw - 20, 44, [{v: ser("FIN-005", "A1"), c: SC.A1}, {v: ser("FIN-005", "A2"), c: SC.A2}], K("FIN-005").target, pct("FIN-005"));
+      }));
+    insight([
+      vsTarget("Numbers certified", "TRU-001") + " Open trust issues — " + counts([["Reconciliation breaks", "TRU-007"], ["Overdue certifications", "TRU-006"]]).replace(/^R/, "r") + ".",
+      share("FIN-001", "Group EBITDA year to date"),
+      monthsOff("FIN-005"),
+      vsTarget("FCF conversion", "FIN-008")
+    ]);
+
+    // 2 · Early warning
+    section(1, SECS[1]);
+    pair(104, hp("Projected EBITDA gap, rest of year", "₹ m forecast · Group " + (R("PRD-003").tr || ""), bars3("PRD-003", null, "", 104)),
+      hp("Chance of missing next month's plan", "% · model prediction · Group " + (R("PRD-002").tr || ""), bars3("PRD-002", null, "", 104)));
+    var hiE = ["A1", "A2"].sort(function (a, b) { return nv(R("PRD-002", b)) - nv(R("PRD-002", a)); });
+    insight([
+      share("PRD-003", "the projected EBITDA gap for the rest of the year"),
+      "Plan-miss risk is higher at " + E(hiE[0]) + " (" + vtxt(R("PRD-002", hiE[0])) + ") than at " + E(hiE[1]) + " (" + vtxt(R("PRD-002", hiE[1])) + "); the Group figure is " + vtxt(R("PRD-002")) + (R("PRD-002").tr ? " (" + R("PRD-002").tr + ")" : "") + "."
+    ]);
+
+    // 3 · Cash and working capital (new page)
+    newPage(); section(2, SECS[2]);
+    pair(112, hp("Free cash flow, year to date", "₹ m · " + Gs("FIN-004") + " · " + why(R("FIN-004")), function (x, top) {
+        leg2(x, top); lineChart(x + 10, top + 52, gw - 20, 44, [{v: ser("FIN-004", "A1"), c: SC.A1}, {v: ser("FIN-004", "A2"), c: SC.A2}], null, function (v) { return "₹" + num(v, 1) + " m"; });
+      }),
+      hp("Days sales outstanding", "days · Group " + why(R("WCP-001")), bars3("WCP-001", K("WCP-001").target, "Target " + K("WCP-001").target + " days", 112)));
+    keyRow([["FIN-006", "Net debt"], ["LIQ-002", "Covenant headroom"], ["LIQ-001", "Liquidity runway"], ["CSH-001", "Cash position"]]);
+    var dso = ["A1", "A2"].sort(function (a, b) { return nv(R("WCP-001", b)) - nv(R("WCP-001", a)); });
+    insight([
+      "Days sales outstanding: " + E(dso[0]) + " " + vtxt(R("WCP-001", dso[0])) + " against " + E(dso[1]) + " " + vtxt(R("WCP-001", dso[1])) + ", a gap of " + num(nv(R("WCP-001", dso[0])) - nv(R("WCP-001", dso[1])), dp("WCP-001")) + " " + (R("WCP-001").u || "") + ".",
+      vsTarget("Covenant headroom", "LIQ-002"),
+      vsTarget("Liquidity runway", "LIQ-001")
+    ]);
+
+    // 4 · Operational performance
+    section(3, SECS[3]);
+    pair(112, hp("Production vs plan", "% of plan · " + Gs("OPS-001") + " · " + why(R("OPS-001")), function (x, top) {
+        leg2(x, top, [{l: "Plan " + K("OPS-001").target + "%", c: TGT, dash: true}]);
+        lineChart(x + 10, top + 52, gw - 20, 44, [{v: ser("OPS-001", "A1"), c: SC.A1}, {v: ser("OPS-001", "A2"), c: SC.A2}], K("OPS-001").target, pct("OPS-001"));
+      }),
+      hp("Cost per tonne", "₹ per tonne · Group " + why(R("CST-001")), bars3("CST-001", K("CST-001").target, "Target ₹" + num(K("CST-001").target, 0), 112)));
+    keyRow([["OPS-002", "Sales vs plan"], ["PLT-002", "OEE"], ["OPS-003", "Capacity utilisation"]]);
+    insight([vsTarget("Production vs plan", "OPS-001"), vsTarget("Cost per tonne", "CST-001"), vsTarget("Capacity utilisation", "OPS-003")]);
+
+    // 5 · Capital projects, risk and safety (new page)
+    newPage(); section(4, SECS[4]);
+    pair(104, hp("Capex physical progress", "% weighted · " + Gs("CPX-004") + " · " + why(R("CPX-004")), bars3("CPX-004", null, "", 104)),
+      hp("Benefits realisation", "% of plan · Group " + why(R("PRG-002")), bars3("PRG-002", K("PRG-002").target, "Plan " + K("PRG-002").target + "%", 104)));
+    keyRow([["PRG-003", "Delayed projects"], ["GOV-004", "Open audit findings"], ["EHS-001", "Safety (TRIR)"], ["EFF-002", "Open critical alerts"]]);
+    var cl = counts([["Delayed projects", "PRG-003"], ["Open audit findings", "GOV-004"], ["Open critical alerts", "EFF-002"]]);
+    insight([vsTarget("Benefits realisation", "PRG-002"), cl + ".", vsTarget("Safety (TRIR)", "EHS-001")]);
+    y += 8;
+  }
+
     band(true);
     scorecard();
+    if (isCore) { font(false, 7, SUBT); doc.text(tx("How to read: P01–P06 are the months Apr–Sep 2026 (P05 = Aug, P06 = Sep, the latest certified month). Entity A1 = Plants 01–03, Entity A2 = Plants 04–06."), M, y + 2); y += 18; }
 
+    if (isCore) coreBody(); else {   // Owner body (Core Group: coreBody)
     // 1 · Enterprise health and data assurance
     section(0, OWNER[0]);
     caps("Data assurance · can we rely on the numbers?", M, y); y += 9;
@@ -468,9 +614,10 @@ var DCTReport = (function () {
     var half = CW / 2; need(56);
     keyFig(M, y, half - 16, "OPS-002", "Sales vs plan"); doc.setDrawColor.apply(doc, PANEL); doc.line(M + half - 8, y - 6, M + half - 8, y + 44);
     keyFig(M + half, y, half - 16, "EHS-001", "Safety (TRIR)"); y += 60;
+    }
 
     // Bottom line: counts, the most material items per entity with their numbers, then the home-page banner (if any).
-    var ids = []; OWNER.forEach(function (s) { ids = ids.concat(s.k); });
+    var ids = []; SECS.forEach(function (s) { ids = ids.concat(s.k); });
     var ok = ids.filter(function (id) { return !bad(R(id)); }).length;
     var off = function (s) { return ids.filter(function (id) { return bad(R(id, s)); }); };
     var lines = [{t: "Group: " + ok + " of " + ids.length + " headline measures are on target or improving. " + S.A1 + " is off target on " + off("A1").length + ", " + S.A2 + " on " + off("A2").length + "."}];
@@ -479,7 +626,7 @@ var DCTReport = (function () {
       var items = o.slice(0, 4).map(function (id) { var r = R(id, s); return (SHORT[id] || clean(K(id).name || id)) + " " + vtxt(r) + (why(r) ? " (" + why(r) + ")" : ""); });
       lines.push({t: S[s] + ": " + items.join(" · ") + (o.length > 4 ? " · and " + (o.length - 4) + " more." : ".")});
     });
-    if (page.banner && page.banner.t) lines.push({t: page.banner.t, red: true});
+    if (!isCore && page.banner && page.banner.t) lines.push({t: page.banner.t, red: true});
     font(false, 9, INK);
     var wrapped = lines.map(function (l) { return {l: doc.splitTextToSize(tx(l.t), CW - 30), red: l.red}; });
     var bh = 30 + wrapped.reduce(function (a, w) { return a + w.l.length * 12 + (w.red ? 10 : 0); }, 0);
@@ -492,7 +639,7 @@ var DCTReport = (function () {
     var n = doc.getNumberOfPages();
     for (var i = 1; i <= n; i++) {
       doc.setPage(i); font(false, 7, SUBT);
-      doc.text(tx("Control Tower · Owner brief · " + per + " · Values from the certified data set · Synthetic data, prototype only"), M, H - 18);
+      doc.text(tx("Control Tower · " + TITLE + " · " + per + " · Values from the certified data set · Synthetic data, prototype only"), M, H - 18);
       doc.text("Page " + i + " of " + n, W - M, H - 18, {align: "right"});
     }
     var d = now.getFullYear() + "-" + ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2);
@@ -510,9 +657,9 @@ var DCTReport = (function () {
     var label = btn && btn.querySelector("[data-report-label]"), was = label && label.textContent;
     if (label) label.textContent = "Preparing…";
     if (btn) btn.setAttribute("aria-busy", "true");
-    libs().then(function () { return homePage(cfg.home); }).then(function (page) { if (lens === "Owner") buildOwner(cfg, page); else build(cfg, page, lens); })
+    libs().then(function () { return homePage(cfg.home); }).then(function (page) { if (lens === "Owner" || lens === "Core Group") buildBrief(cfg, page, lens); else build(cfg, page, lens); })
       .catch(function (e) { console.error(e); alert("The report could not be created: " + e.message); })
       .then(function () { busy = false; if (label) label.textContent = was; if (btn) btn.removeAttribute("aria-busy"); });
   }
-  return {run: run};
+  return {run: run, brief: buildBrief};
 })();
