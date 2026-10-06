@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O-02 24-Hour Executive Change Report</title>
+<title>O-02 Early Warning · Risk Heat Map</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 :root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-surface-2:#F8F9FB;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-teal-700:#0B6B73;--ct-teal-100:#E1F1F2;--ct-green-700:#1E6B43;--ct-green-100:#E3F2E9;--ct-amber-700:#8A5300;--ct-amber-500:#C27C0E;--ct-amber-100:#FBF0DB;--ct-red-700:#A4231C;--ct-red-100:#FBE6E4;--ct-purple-700:#5A3E9E;--ct-purple-500:#7E63C7;--ct-purple-100:#EFEAF9;--ct-grey-600:#5F6B7A;--ct-grey-200:#E4E8ED;--ct-r-1:2px;--ct-r-2:4px;--ct-e1:0 2px 8px rgba(14,27,51,.12);--ct-e2:0 8px 24px rgba(14,27,51,.16);--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
@@ -37,9 +37,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006052506"></script>
-<script src="js/data/resolve.js?v=20261006052506"></script>
-<script src="js/persona.js?v=20261006052506"></script>
+<script src="js/data/base-data.js?v=20261006100039"></script>
+<script src="js/data/resolve.js?v=20261006100039"></script>
+<script src="js/data/owner-verdicts.js?v=20261006100039"></script>
+<script src="js/persona.js?v=20261006100039"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -77,8 +78,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
         <a class="ct-navi" href="P2-O01-EnterpriseHealth.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Enterprise Overview</a>
       
-        <a class="ct-navi" href="P2-G08o-OwnerTrust.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Data Assurance</a>
-      
         <a class="ct-navi" href="P2-O02-ChangeReport.html" aria-current="page" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:#FFFFFF;background:rgba(255,255,255,.12);box-shadow:inset 3px 0 0 #FFFFFF;font-weight:600;font-size:13.5px;border-radius:4px">Early Warning</a>
       
         <a class="ct-navi" href="P2-O03-CashLiquidity.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Cash &amp; Liquidity</a>
@@ -89,17 +88,9 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
         <a class="ct-navi" href="P2-O05-Risk.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Risk, Compliance &amp; EHS</a>
       
-        <a class="ct-navi" href="P2-O06-Decisions.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Actions &amp; Escalations</a>
-      
         <a class="ct-navi" href="P2-O07-Brief.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">AI Insights</a>
       
-      <div class="ct-legend" style="margin-top:18px;padding:12px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;line-height:18px;color:rgba(255,255,255,.82)">
-        <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">Two separate statuses</div>
-        <div><b style="color:#FFFFFF">Performance</b> · filled chip</div>
-        <div><b style="color:#FFFFFF">Trust</b> · outlined chip with shield</div>
-        <div style="margin-top:8px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6)">Lines</div>
-        <div>Navy solid = certified actual</div><div>Teal solid = preliminary actual</div><div>Grey thin = plan</div><div>Purple dashed = forecast</div><div>Purple dotted = scenario</div>
-      </div>
+      
       <a class="ct-refi" href="P2-R01o-KPIReference.html" title="KPI Reference · how every KPI is calculated" aria-label="KPI Reference" style="align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin:10px 0 0 12px;border:1px solid rgba(255,255,255,.14);border-radius:4px;color:rgba(255,255,255,.45);text-decoration:none"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="2" y="2.5" width="12" height="11" rx="1.5"></rect><path d="M2 6h12M6.5 6v7.5"></path><path d="M8.6 8.4h3.2M8.6 11h3.2"></path></svg></a>
     </nav>
     <main class="ct-main" style="flex:1 1 560px;min-width:0;padding:22px 28px 56px;box-sizing:border-box">
@@ -110,18 +101,17 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
       <div style="display:flex;flex-direction:column;gap:6px">
         
-        <h1 class="ct-h1" style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.005em">24-Hour Executive Change Report</h1>
-        <p class="ct-q" style="margin:0;font-size:15px;line-height:22px;color:var(--ct-ink-2,#3B4558)">What materially changed in the last 24 hours?</p>
+        <h1 class="ct-h1" style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.005em">Early Warning · Risk Heat Map</h1>
+        <p class="ct-q" style="margin:0;font-size:15px;line-height:22px;color:var(--ct-ink-2,#3B4558)">Where are risks building, and how serious are they?</p>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 14px;font-size:13px">
         <span><span style="color:var(--ct-ink-3,#5B6576)">Scope</span> <b style="font-weight:600">Group · all businesses</b></span>
         <span><span style="color:var(--ct-ink-3,#5B6576)">Period</span> <b style="font-weight:600">P07 MTD (SYN)</b></span>
         <span><span style="color:var(--ct-ink-3,#5B6576)">Last refresh</span> <b style="font-weight:600">06:25 (SYN)</b></span>
-        <span style="display:inline-flex;align-items:center;gap:6px;color:var(--ct-navy-900,#0E1B33)"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg><span style="color:var(--ct-ink-2,#3B4558)">Ranked items carry provenance; 1 item affects a leadership KPI's trust state</span></span>
+        <span style="display:inline-flex;align-items:center;gap:6px;color:var(--ct-navy-900,#0E1B33)"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg><span style="color:var(--ct-ink-2,#3B4558)">Signals carry their provenance; values from the governed KPI model where one exists</span></span>
         <a href="P2-S03o-KPIDetail.html" style="margin-left:auto;color:var(--ct-navy-700,#24406E);font-weight:600;display:inline-flex;align-items:center;gap:4px">Sources and lineage <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
       </div>
       
-            
       
       
       
@@ -132,249 +122,18 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
         <div style="display:flex;flex-direction:column;gap:24px">
           
 
-            <section class="ct-sec " role="region" aria-label="Page sections" style="background:transparent;border:0;border-top:0;border-radius:4px;padding:0;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                
-                
-                  <div role="tablist" aria-label="Sub-theme drill-downs" style="display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--ct-line,#DCE1E8)">
-                    <button type="button" role="tab" aria-label="01 Last 24 hours detail" aria-selected="true" data-dc-ev="0" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid var(--ct-navy-900,#0E1B33);background:transparent;color:var(--ct-navy-900,#0E1B33);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;margin-bottom:-1px">01 Last 24 hours</button><button type="button" role="tab" aria-label="02 Forecasts detail" aria-selected="false" data-dc-ev="1" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">02 Forecasts</button><button type="button" role="tab" aria-label="03 Operations detail" aria-selected="false" data-dc-ev="2" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">03 Operations</button><button type="button" role="tab" aria-label="04 Finance detail" aria-selected="false" data-dc-ev="3" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">04 Finance</button><button type="button" role="tab" aria-label="05 Sales and delivery detail" aria-selected="false" data-dc-ev="4" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">05 Sales and delivery</button><button type="button" role="tab" aria-label="06 Outside factors detail" aria-selected="false" data-dc-ev="5" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">06 Outside factors</button><button type="button" role="tab" aria-label="07 Risk detail" aria-selected="false" data-dc-ev="6" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">07 Risk</button><button type="button" role="tab" aria-label="08 How totals add up · Sep 2026 detail" aria-selected="false" data-dc-ev="7" class="ct-btn" style="min-height:42px;padding:0 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--ct-ink-2,#3B4558);font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;margin-bottom:-1px">08 How totals add up · Sep 2026</button>
-                  </div>
-                  
-                
-              
-
-              
-
-              
-
-              
-            </section>
-          
-
-            <section class="ct-sec " role="region" aria-label="Report details" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Report details</h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="border-top:1px solid var(--ct-line,#DCE1E8)"><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Window</div><div>D-1 06:40 → D0 06:40 (SYN)</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Scope</div><div>Group · all businesses (Owner)</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Ranking</div><div>By materiality (placeholder model), then exposure</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Generated</div><div>Executive Briefing Assistant draft 06:20 · released by Core Group Executive role 06:25</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Below threshold</div><div>4 changes are below the Owner threshold and are not pushed (D-04); available through Ask</div></div></div>
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-
-            <section class="ct-sec " role="region" aria-label="24-hour change tiles" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">24-hour change tiles <span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;graph=24-hour%20change%20tiles" title="What this is built from (KPI Reference)" aria-label="About 24-hour change tiles: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();var u=this.dataset.href+'&amp;on='+encodeURIComponent(location.pathname.split('/').pop().replace(/\.(dc\.)?html$/,''));location.href=u" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();var u=this.dataset.href+'&amp;on='+encodeURIComponent(location.pathname.split('/').pop().replace(/\.(dc\.)?html$/,''));location.href=u}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;vertical-align:2px;margin-left:4px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px">
-                  
-                    <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Material changes</div><div style="font-weight:600;font-size:22px;line-height:1.3">1</div>
-                    </div>
-                  
-                    <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">New critical alerts</div><div style="font-weight:600;font-size:22px;line-height:1.3">1</div>
-                    </div>
-                  
-                    <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Trust-state changes</div><div style="font-weight:600;font-size:22px;line-height:1.3">1</div>
-                    </div>
-                  
-                    <div style="border:1px dashed var(--ct-purple-500,#7E63C7);background:var(--ct-purple-100,#EFEAF9);color:var(--ct-purple-700,#5A3E9E);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-purple-700,#5A3E9E)">Forecast exposure change</div><div style="font-weight:600;font-size:15px;line-height:1.3">−₹56.2 m</div><div style="font-size:11.5px;color:var(--ct-purple-700,#5A3E9E)">EBITDA P07–P12 · PREDICTION</div>
-                    </div>
-                  
-                    <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Escalations overdue</div><div style="font-weight:600;font-size:22px;line-height:1.3">0</div>
-                    </div>
-                  
-                    <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;color:var(--ct-ink,#121A2B);border-radius:4px;padding:10px 12px;min-height:44px;display:flex;flex-direction:column;gap:3px">
-                      <div style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Decisions due today</div><div style="font-weight:600;font-size:22px;line-height:1.3">1</div>
-                    </div>
-                  
-                </div>
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-
-            <section class="ct-sec " role="region" aria-label="Summary" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0">
-              
-              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
-                <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
-                  
-                  <h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600">Summary</h2>
-                  
-                </div>
-                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
-              </div>
-              
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-                <div style="display:flex;flex-direction:column;gap:8px">
-                  
-                    <div style="border:1px dashed var(--ct-ink-3,#5B6576);background:var(--ct-surface-2,#F8F9FB);border-radius:4px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline">
-                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576);white-space:nowrap">AI · NOT APPROVED</span><span style="flex:1 1 320px;line-height:21px">One material change. Plant 02 breakdowns (MTTR 11.4 h, 78 h unplanned downtime) and a supplier delay on RM-1 are forecast to cut Plant 02 output by 24.3 kt from D+4 and defer billing. Entity A1 has accepted ownership, and an alternate-sourcing decision is due at 11:00. This is an interpretation; the facts are in the ledger below.</span>
-                      <a href="P2-S07-AIExplain.html" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;color:var(--ct-navy-700,#24406E)">ALT-SYN-2041 →</a>
-                    </div>
-                  
-                    <div style="border:2px solid var(--ct-navy-900,#0E1B33);background:#FFFFFF;border-radius:4px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline">
-                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">HUMAN · REVIEWED</span><span style="flex:1 1 320px;line-height:21px">Released by Core Group Executive role at 06:25 (SYN).</span>
-                      
-                    </div>
-                  
-                </div>
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-
-              
-            </section>
-          
-
-            <section class="ct-sec " role="region" aria-label="Change report · Cause → Impact → Action · ranked by materiality" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
+            <section class="ct-sec " role="region" aria-label="Early-warning risk heat map · signals by category and risk level" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
               
               <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
                 <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
                   <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-navy-700,#24406E)">Focus of this page</span>
-                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">Change report · Cause → Impact → Action · ranked by materiality <span role="link" tabindex="0" class="ct-info" data-href="P2-R01o-KPIReference.html?set=all&amp;graph=Change%20report%20%C2%B7%20Cause%20%E2%86%92%20Impact%20%E2%86%92%20Action%20%C2%B7%20ranked%20by%20materiality" title="What this is built from (KPI Reference)" aria-label="About Change report · Cause → Impact → Action · ranked by materiality: open in KPI Reference" onclick="event.preventDefault();event.stopPropagation();var u=this.dataset.href+'&amp;on='+encodeURIComponent(location.pathname.split('/').pop().replace(/\.(dc\.)?html$/,''));location.href=u" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();var u=this.dataset.href+'&amp;on='+encodeURIComponent(location.pathname.split('/').pop().replace(/\.(dc\.)?html$/,''));location.href=u}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;vertical-align:2px;margin-left:4px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);cursor:pointer">i</span></h2>
-                  
+                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">Early-warning risk heat map · signals by category and risk level</h2>
+                  <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>Where are the risks, and how serious are they?</p>
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
               
-              
+              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">Each cell counts the signals in that category at that risk level; darker = more signals. Select a cell to list its signals below. Last 24 Hours holds what changed since yesterday; those signals are not counted again in their topic row.</p>
 
               
 
@@ -389,28 +148,21 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
-                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="Change report · Cause → Impact → Action · ranked by materiality" style="min-width:760px">
-                  <div role="row" style="display:grid;grid-template-columns:repeat(7, minmax(0, 1fr));background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:11px 12px">#</div><div role="columnheader" style="padding:11px 12px">What changed</div><div role="columnheader" style="padding:11px 12px">Cause</div><div role="columnheader" style="padding:11px 12px">Impact</div><div role="columnheader" style="padding:11px 12px">Action (owner · due)</div><div role="columnheader" style="padding:11px 12px">Provenance</div><div role="columnheader" style="padding:11px 12px">Materiality</div></div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(7, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:var(--ct-navy-100,#E8EDF6);font-size:14px">
-                      <div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600">1</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600"><a href="P2-S04-Alert.html" style="color:var(--ct-navy-700,#24406E);font-weight:600">ALT-SYN-2041 · Plant 02 forecast shortfall</a></div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600">RM-1 supplier S-07 delayed two shipments; cover fell to 3.5 d</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600">−24.3 kt · −₹56.2 m EBITDA · ₹27.2 m upstream at risk</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600">Decide DEC-SYN-0219 alternate sourcing · Owner · D0 11:00</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600">FCST · LEADING</div><div role="cell" style="padding:11px 12px;background:var(--ct-red-100,#FBE6E4);color:var(--ct-red-700,#A4231C);font-weight:600">Critical</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(7, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:14px">
-                      <div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">2</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400"><a href="P2-S12-Signals.html" style="color:var(--ct-navy-700,#24406E);font-weight:600">SIG-009 RM-1 shortage risk</a><a class="ct-info" href="P2-R01o-KPIReference.html?set=all&amp;kpi=SIG-009" title="How SIG-009 is calculated (KPI Reference)" aria-label="How SIG-009 is calculated (KPI Reference)" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:1px;margin-left:5px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);text-decoration:none;cursor:pointer">i</a></div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Single-source supplier (S-07) lane disruption</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Stock-out from D+4 at Plant 02</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Qualify S-12 · Functional Leader (supply) · D+1</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">LEADING · PRELIM</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Linked to #1</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(7, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:14px">
-                      <div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">3</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400"><a href="P2-S11-CashExposure.html" style="color:var(--ct-navy-700,#24406E);font-weight:600">CSH-006 Cash-upstream exposure · Entity A1</a><a class="ct-info" href="P2-R01o-KPIReference.html?set=all&amp;kpi=CSH-006" title="How CSH-006 is calculated (KPI Reference)" aria-label="How CSH-006 is calculated (KPI Reference)" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:1px;margin-left:5px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);text-decoration:none;cursor:pointer">i</a></div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Lower dispatch from #1 delays billing</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹27.2 m of P08 upstream at risk; runway unaffected</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Re-phase upstream schedule · Group Treasury · D+2</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">FCST</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Linked to #1</div>
-                    </div>
-                  
-                    <div role="row" class="ct-row" style="display:grid;grid-template-columns:repeat(7, minmax(0, 1fr));border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:14px">
-                      <div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">4</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400"><a href="P2-S03o-KPIDetail.html" style="color:var(--ct-navy-700,#24406E);font-weight:600">OPS-001 Production vs plan · Entity A1</a><a class="ct-info" href="P2-R01o-KPIReference.html?set=all&amp;kpi=OPS-001" title="How OPS-001 is calculated (KPI Reference)" aria-label="How OPS-001 is calculated (KPI Reference)" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;vertical-align:1px;margin-left:5px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:50%;font-family:Georgia,serif;font-style:italic;font-size:10.5px;font-weight:600;line-height:1;color:var(--ct-navy-700,#24406E);background:var(--ct-surface,#FFFFFF);text-decoration:none;cursor:pointer">i</a></div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">L2 meter mapping changed (M-SYN-L2); flash ≠ MIS</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Leadership KPI not defensible until fixed</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Fix mapping, re-certify · Metric Owner · D0 12:00</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">PRELIM</div><div role="cell" style="padding:11px 12px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Trust change</div>
-                    </div>
-                  
-                  
+
+              
+
+              
+
+              
+
+              
+                <div class="ct-heat" style="overflow-x:auto;contain:layout"><div role="grid" aria-label="Early-warning risk heat map · signals by category and risk level" style="display:grid;grid-auto-rows:minmax(44px,auto);grid-template-columns:minmax(150px,1.3fr) repeat(4,minmax(84px,1fr)) 70px;gap:4px;min-width:600px">
+                  <div role="columnheader" style="font-size:12px;font-weight:600;color:var(--ct-ink-3,#5B6576);padding:6px 8px">Category / risk level</div><div role="columnheader" style="font-size:12px;font-weight:600;text-align:center;padding:6px 8px;border-bottom:3px solid #1E6B43">Low</div><div role="columnheader" style="font-size:12px;font-weight:600;text-align:center;padding:6px 8px;border-bottom:3px solid #C27C0E">Medium</div><div role="columnheader" style="font-size:12px;font-weight:600;text-align:center;padding:6px 8px;border-bottom:3px solid #B4541A">High</div><div role="columnheader" style="font-size:12px;font-weight:600;text-align:center;padding:6px 8px;border-bottom:3px solid #A4262C">Critical</div><div role="columnheader" style="font-size:12px;font-weight:600;text-align:right;padding:6px 8px;color:var(--ct-ink-3,#5B6576)">Total</div>
+                  <div role="rowheader" style="font-size:13px;font-weight:600;padding:10px 8px;display:flex;align-items:center">Last 24 Hours</div><button type="button" data-dc-ev="0" aria-pressed="false" aria-label="Last 24 Hours, Low: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="1" aria-pressed="false" aria-label="Last 24 Hours, Medium: 2 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(194,124,14,0.66);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer">2</button><button type="button" data-dc-ev="2" aria-pressed="false" aria-label="Last 24 Hours, High: 2 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(180,84,26,0.66);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer">2</button><button type="button" data-dc-ev="3" aria-pressed="false" aria-label="Last 24 Hours, Critical: 1 signal" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(164,38,44,0.42);color:var(--ct-ink,#121A2B);font:inherit;font-size:16px;font-weight:600;cursor:pointer">1</button><div style="font-size:13px;text-align:right;padding:10px 8px;color:var(--ct-ink-2,#3B4558)">5</div><div role="rowheader" style="font-size:13px;font-weight:600;padding:10px 8px;display:flex;align-items:center">Forecast</div><button type="button" data-dc-ev="4" aria-pressed="false" aria-label="Forecast, Low: 2 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(30,107,67,0.66);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer">2</button><button type="button" data-dc-ev="5" aria-pressed="false" aria-label="Forecast, Medium: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="6" aria-pressed="false" aria-label="Forecast, High: 3 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(180,84,26,0.90);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer">3</button><button type="button" data-dc-ev="7" aria-pressed="false" aria-label="Forecast, Critical: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><div style="font-size:13px;text-align:right;padding:10px 8px;color:var(--ct-ink-2,#3B4558)">5</div><div role="rowheader" style="font-size:13px;font-weight:600;padding:10px 8px;display:flex;align-items:center">Operations</div><button type="button" data-dc-ev="8" aria-pressed="false" aria-label="Operations, Low: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="9" aria-pressed="false" aria-label="Operations, Medium: 1 signal" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(194,124,14,0.42);color:var(--ct-ink,#121A2B);font:inherit;font-size:16px;font-weight:600;cursor:pointer">1</button><button type="button" data-dc-ev="10" aria-pressed="false" aria-label="Operations, High: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="11" aria-pressed="false" aria-label="Operations, Critical: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><div style="font-size:13px;text-align:right;padding:10px 8px;color:var(--ct-ink-2,#3B4558)">1</div><div role="rowheader" style="font-size:13px;font-weight:600;padding:10px 8px;display:flex;align-items:center">Finance</div><button type="button" data-dc-ev="12" aria-pressed="false" aria-label="Finance, Low: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="13" aria-pressed="false" aria-label="Finance, Medium: 1 signal" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(194,124,14,0.42);color:var(--ct-ink,#121A2B);font:inherit;font-size:16px;font-weight:600;cursor:pointer">1</button><button type="button" data-dc-ev="14" aria-pressed="false" aria-label="Finance, High: 1 signal" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(180,84,26,0.42);color:var(--ct-ink,#121A2B);font:inherit;font-size:16px;font-weight:600;cursor:pointer">1</button><button type="button" data-dc-ev="15" aria-pressed="false" aria-label="Finance, Critical: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><div style="font-size:13px;text-align:right;padding:10px 8px;color:var(--ct-ink-2,#3B4558)">2</div><div role="rowheader" style="font-size:13px;font-weight:600;padding:10px 8px;display:flex;align-items:center">Sales &amp; Delivery</div><button type="button" data-dc-ev="16" aria-pressed="false" aria-label="Sales &amp; Delivery, Low: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="17" aria-pressed="false" aria-label="Sales &amp; Delivery, Medium: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="18" aria-pressed="false" aria-label="Sales &amp; Delivery, High: 1 signal" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(180,84,26,0.42);color:var(--ct-ink,#121A2B);font:inherit;font-size:16px;font-weight:600;cursor:pointer">1</button><button type="button" data-dc-ev="19" aria-pressed="false" aria-label="Sales &amp; Delivery, Critical: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><div style="font-size:13px;text-align:right;padding:10px 8px;color:var(--ct-ink-2,#3B4558)">1</div><div role="rowheader" style="font-size:13px;font-weight:600;padding:10px 8px;display:flex;align-items:center">Outside Factors</div><button type="button" data-dc-ev="20" aria-pressed="false" aria-label="Outside Factors, Low: 2 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(30,107,67,0.66);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer">2</button><button type="button" data-dc-ev="21" aria-pressed="false" aria-label="Outside Factors, Medium: 2 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(194,124,14,0.66);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer">2</button><button type="button" data-dc-ev="22" aria-pressed="false" aria-label="Outside Factors, High: 1 signal" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(180,84,26,0.42);color:var(--ct-ink,#121A2B);font:inherit;font-size:16px;font-weight:600;cursor:pointer">1</button><button type="button" data-dc-ev="23" aria-pressed="false" aria-label="Outside Factors, Critical: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><div style="font-size:13px;text-align:right;padding:10px 8px;color:var(--ct-ink-2,#3B4558)">5</div><div role="rowheader" style="font-size:13px;font-weight:600;padding:10px 8px;display:flex;align-items:center">Risk</div><button type="button" data-dc-ev="24" aria-pressed="false" aria-label="Risk, Low: 2 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(30,107,67,0.66);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer">2</button><button type="button" data-dc-ev="25" aria-pressed="false" aria-label="Risk, Medium: 1 signal" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:rgba(194,124,14,0.42);color:var(--ct-ink,#121A2B);font:inherit;font-size:16px;font-weight:600;cursor:pointer">1</button><button type="button" data-dc-ev="26" aria-pressed="false" aria-label="Risk, High: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><button type="button" data-dc-ev="27" aria-pressed="false" aria-label="Risk, Critical: 0 signals" class="ct-btn ct-hcell" style="height:44px;min-height:44px;box-sizing:border-box;border-radius:4px;border:0;box-shadow:none;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-3,#5B6576);font:inherit;font-size:16px;font-weight:600;cursor:default">0</button><div style="font-size:13px;text-align:right;padding:10px 8px;color:var(--ct-ink-2,#3B4558)">3</div>
+                  <div style="font-size:12px;font-weight:600;padding:6px 8px;color:var(--ct-ink-3,#5B6576)">Total</div><div style="font-size:13px;text-align:center;padding:6px 8px;color:var(--ct-ink-2,#3B4558)">6</div><div style="font-size:13px;text-align:center;padding:6px 8px;color:var(--ct-ink-2,#3B4558)">7</div><div style="font-size:13px;text-align:center;padding:6px 8px;color:var(--ct-ink-2,#3B4558)">8</div><div style="font-size:13px;text-align:center;padding:6px 8px;color:var(--ct-ink-2,#3B4558)">1</div><div style="font-size:13px;font-weight:600;text-align:right;padding:6px 8px">22</div>
                 </div></div>
-                <button type="button" data-dc-ev="8" aria-expanded="false" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;background:var(--ct-surface,#FFFFFF);color:var(--ct-navy-700,#24406E);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none">Show all 5 rows</button>
+                
+                <p style="margin:0;font-size:12.5px;color:var(--ct-ink-3,#5B6576)">Select a cell to list its signals here.</p>
               
 
               
@@ -442,8 +194,8 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplF.js?v=20261006052506"></script>
-<script src="js/c/P2-O02-ChangeReport.js?v=20261006052506"></script>
+<script src="js/c/TplF.js?v=20261006100039"></script>
+<script src="js/c/P2-O02-ChangeReport.js?v=20261006100039"></script>
 <script>DCLite.mount("dc-root", "P2-O02-ChangeReport", {});</script>
 </body>
 </html>
