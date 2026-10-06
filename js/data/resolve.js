@@ -67,6 +67,34 @@ var DCTResolve = (function () {
 
   /* Every table: drop columns that have no value in any row ("", "—"). Keeps the first column. */
   var BLANK = /^\s*(—|–|-)?\s*$/;
+  /* Owner KPI tables: a "Below target · entity · plant" column gives each KPI row its context, from the model
+     (DCTData.plant): the entity furthest below the KPI's target (by its better-direction), then that entity's plant
+     furthest below target. "—" when the KPI has no target or no entity misses it; entity only when no plant misses it. */
+  var CTXH = "Below target · entity · plant";
+  function weakest(id) {
+    var P = PM(), K = P && P.kpi && P.kpi[id]; if (!K || !K.val || !K.better || typeof K.target !== "number") return "—";
+    var gap = function (sc) { var a = K.val[sc], v = a && a.length ? a[a.length - 1] : null; return v == null ? null : (K.better === "up" ? K.target - v : v - K.target); };
+    var worst = function (scs) { var w = null, wg = 0; scs.forEach(function (sc) { var g = gap(sc); if (g != null && g > 1e-9 && g > wg) { w = sc; wg = g; } }); return w; };
+    var e = worst((P.children || {}).Group || []); if (!e) return "—";
+    var pl = worst((P.children || {})[e] || []);
+    return P.scopes[e] + (pl ? " · " + P.scopes[pl] : "");
+  }
+  function ownerCtx(o) {
+    if (Array.isArray(o)) { o.forEach(ownerCtx); return; }
+    if (!o || typeof o !== "object") return;
+    if (o.type === "table" && Array.isArray(o.cols) && Array.isArray(o.rows) && o.rows.length && !o.cols.some(function (c) { return /Entity|Plant|Scope/.test(c); })) {
+      var cells = function (r) { return Array.isArray(r) ? r : (r && r.c) || []; };
+      var idOf = function (r) { var a = cells(r), m = (txt(a[0]) + " " + txt(a[1])).match(/\b[A-Z]{2,4}-\d{3}\b/); return m ? m[0] : ""; };
+      if (o.rows.some(idOf)) {
+        var vi = o.cols.indexOf("Value"), at = vi >= 0 ? vi + 1 : o.cols.length;
+        o.cols = o.cols.slice(); o.cols.splice(at, 0, CTXH);
+        o.rows = o.rows.map(function (r) { var id = idOf(r), v = id ? weakest(id) : "—";
+          if (Array.isArray(r)) { r = r.slice(); r.splice(at, 0, v); return r; } r.c = r.c.slice(); r.c.splice(at, 0, v); return r; });
+        delete o.gtc; if (o.minW) o.minW += 150;
+      }
+    }
+    Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && o[k] && typeof o[k] === "object") ownerCtx(o[k]); });
+  }
   function pruneCols(o) {
     if (Array.isArray(o)) { o.forEach(pruneCols); return; }
     if (!o || typeof o !== "object") return;
@@ -464,7 +492,8 @@ var DCTResolve = (function () {
     if (CAP && !OWN) { Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access") capOwner(p[k]); }); if (typeof DCTVerdicts !== "undefined") DCTVerdicts.attach(p); }
     if (OWN) { Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access") capOwner(p[k]); }); if (typeof DCTVerdicts !== "undefined") DCTVerdicts.attach(p);
       delete p.banner;          // MANIFEST02 1C: no critical notification banner on any Owner screen
-      noActions(p); }           // MANIFEST02 Screen 8: Actions & Escalations is not reachable for the Owner
+      noActions(p);             // MANIFEST02 Screen 8: Actions & Escalations is not reachable for the Owner
+      Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access" && p[k] && typeof p[k] === "object") ownerCtx(p[k]); }); }   // entity · plant context on KPI tables (after the plant cap)
     /* exceptOnly: a KPI table lists only measures that are non-zero or off target, with the full count in its caption */
     (function exc(o) { if (Array.isArray(o)) return o.forEach(exc); if (!o || typeof o !== "object") return;
       if (o.type === "table" && o.exceptOnly && o.rows) { var all = o.rows.length, si = (o.cols || []).indexOf("Status"), vi = (o.cols || []).indexOf("Value");
