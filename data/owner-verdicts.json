@@ -10,7 +10,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "EBITDA YTD 1,760.1 ₹ m, up 397.0 vs Aug; largest move Entity A1 (A1), up 201.4.",
+  "justification": "EBITDA YTD 1,760.1 ₹ m, up 397.0 vs Aug; largest move Entity A1, up 201.4.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -25,7 +25,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "EBIT YTD 1,228.1 ₹ m, up 307.5 vs Aug; largest move Entity A1 (A1), up 154.1.",
+  "justification": "EBIT YTD 1,228.1 ₹ m, up 307.5 vs Aug; largest move Entity A1, up 154.1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -40,7 +40,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Free cash flow YTD 606.2 ₹ m, up 157.4 vs Aug; largest move Entity A1 (A1), up 94.3.",
+  "justification": "Free cash flow YTD 606.2 ₹ m, up 157.4 vs Aug; largest move Entity A1, up 94.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -55,7 +55,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "ROCE 11.6% against a ≥12.0% target; Entity A1 (A1) at 11.1% (capital employed outpacing EBIT) drives the gap.",
+  "justification": "ROCE 11.6% against a ≥12.0% target; Entity A1 at 11.1% (capital employed outpacing EBIT) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -70,7 +70,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1 (A1), down 38.0.",
+  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1, down 38.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -85,7 +85,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 (A1) at 91.3% of plan drives the gap.",
+  "justification": "Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 at 91.3% of plan drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -100,7 +100,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.",
+  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2, up 5.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -115,7 +115,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
+  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 at 89.2% of plan drives the gap.",
   "source_type": "table_row",
   "row_id": "OPS-002"
  },
@@ -130,7 +130,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.",
+  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 at 79.8% (unplanned downtime) drives the gap.",
   "source_type": "table_row",
   "row_id": "OPS-003"
  },
@@ -145,7 +145,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
+  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 at 89.2% of plan drives the gap.",
   "source_type": "table_row",
   "row_id": "OPS-004"
  },
@@ -160,7 +160,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.",
+  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 at 79.8% (unplanned downtime) drives the gap.",
   "source_type": "table_row",
   "row_id": "OPS-005"
  },
@@ -175,7 +175,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.",
+  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2, up 5.0.",
   "source_type": "table_row",
   "row_id": "CPX-004"
  },
@@ -190,7 +190,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
+  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2, up 6.3.",
   "source_type": "table_row",
   "row_id": "STR-002"
  },
@@ -205,7 +205,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
+  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2, up 6.3.",
   "source_type": "table_row",
   "row_id": "PRG-004"
  },
@@ -220,7 +220,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 (A1) at 1 (ALT-SYN-2041) drives the gap.",
+  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 at 1 (ALT-SYN-2041) drives the gap.",
   "source_type": "table_row",
   "row_id": "EFF-002"
  },
@@ -235,7 +235,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 2).",
+  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 1, Entity A2 2).",
   "source_type": "table_row",
   "row_id": "EHS-002"
  },
@@ -250,7 +250,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "table_row",
   "row_id": "RSK-003"
  },
@@ -265,7 +265,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "table_row",
   "row_id": "CMP-005"
  },
@@ -280,7 +280,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 (A1) at 1 (flash break BRK-SYN-0071) drives the gap.",
+  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 at 1 (flash break BRK-SYN-0071) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -325,7 +325,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Flash-to-close variance 0.38% against a ≤0.50% target; Entity A2 (A2) at 0.52% misses it.",
+  "justification": "Flash-to-close variance 0.38% against a ≤0.50% target; Entity A2 at 0.52% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -340,7 +340,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Source-to-Lake reconciliation rate 99.0% against a ≥99.0% target; Entity A1 (A1) at 98.9% misses it.",
+  "justification": "Source-to-Lake reconciliation rate 99.0% against a ≥99.0% target; Entity A1 at 98.9% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -355,7 +355,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Flash-to-MIS reconciliation rate 96.0% against a ≥98.0% target; both entities miss it (Entity A1 (A1) 94.3%, Entity A2 (A2) 97.6%).",
+  "justification": "Flash-to-MIS reconciliation rate 96.0% against a ≥98.0% target; both entities miss it (Entity A1 94.3%, Entity A2 97.6%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -385,7 +385,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "KPI overrides 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "KPI overrides 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -415,7 +415,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1 (A1), down 1.",
+  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1, down 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -430,7 +430,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Overdue assurance actions 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Overdue assurance actions 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -475,7 +475,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Evidence completeness rate 88.0% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 86.0%, Entity A2 (A2) 89.7%).",
+  "justification": "Evidence completeness rate 88.0% against a ≥95.0% target; both entities miss it (Entity A1 86.0%, Entity A2 89.7%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -490,7 +490,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Average finding-closure time 32.8 days against a ≤30.0 days target; Entity A2 (A2) at 37.8 days drives the gap.",
+  "justification": "Average finding-closure time 32.8 days against a ≤30.0 days target; Entity A2 at 37.8 days drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -505,7 +505,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Certified KPI percentage 83.9% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 82.1%, Entity A2 (A2) 85.7%).",
+  "justification": "Certified KPI percentage 83.9% against a ≥95.0% target; both entities miss it (Entity A1 82.1%, Entity A2 85.7%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -535,7 +535,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 (A1) at 1 (flash break BRK-SYN-0071) drives the gap.",
+  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 at 1 (flash break BRK-SYN-0071) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -580,7 +580,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Flash-to-close variance 0.38% against a ≤0.50% target; Entity A2 (A2) at 0.52% misses it.",
+  "justification": "Flash-to-close variance 0.38% against a ≤0.50% target; Entity A2 at 0.52% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -595,7 +595,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1 (A1), up 76.6.",
+  "justification": "Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1, up 76.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -625,7 +625,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1 (A1), down 38.0.",
+  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1, down 38.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -640,7 +640,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Debt-maturity exposure 891.4 ₹ m, up 25.3 vs Aug; largest move Entity A1 (A1), up 56.3.",
+  "justification": "Debt-maturity exposure 891.4 ₹ m, up 25.3 vs Aug; largest move Entity A1, up 56.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -655,7 +655,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "DSO 47.0 days against a ≤45.0 days target; Entity A1 (A1) at 52.0 days (slower collections) drives the gap.",
+  "justification": "DSO 47.0 days against a ≤45.0 days target; Entity A1 at 52.0 days (slower collections) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -670,7 +670,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Net working capital 2,781.0 ₹ m, up 17.3 vs Aug; largest move Entity A2 (A2), up 26.5.",
+  "justification": "Net working capital 2,781.0 ₹ m, up 17.3 vs Aug; largest move Entity A2, up 26.5.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -685,7 +685,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Hedge cover 70.7% against a ≥70.0% target; Entity A2 (A2) at 61.1% misses it.",
+  "justification": "Hedge cover 70.7% against a ≥70.0% target; Entity A2 at 61.1% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -700,7 +700,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Financing exposure 2,720.8 ₹ m, up 93.3 vs Aug; largest move Entity A2 (A2), up 87.2.",
+  "justification": "Financing exposure 2,720.8 ₹ m, up 93.3 vs Aug; largest move Entity A2, up 87.2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -715,7 +715,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1 (A1), up 1.6.",
+  "justification": "Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1, up 1.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -730,7 +730,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 (A1) at 91.3% of plan drives the gap.",
+  "justification": "Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 at 91.3% of plan drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -745,7 +745,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "MTBF 270 h against a ≥200 h target; Entity A1 (A1) at 165 h misses it.",
+  "justification": "MTBF 270 h against a ≥200 h target; Entity A1 at 165 h misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -760,7 +760,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Cost per tonne 2,934 ₹/t against a ≤2,900 ₹/t target; Entity A2 (A2) at 3,017 ₹/t drives the gap.",
+  "justification": "Cost per tonne 2,934 ₹/t against a ≤2,900 ₹/t target; Entity A2 at 3,017 ₹/t drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -790,7 +790,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Committed capex 1,347.7 ₹ m, up 109.2 vs Aug; largest move Entity A2 (A2), up 58.1.",
+  "justification": "Committed capex 1,347.7 ₹ m, up 109.2 vs Aug; largest move Entity A2, up 58.1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -805,7 +805,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Capex actual spend YTD 879.7 ₹ m, up 144.9 vs Aug; largest move Entity A1 (A1), up 79.2.",
+  "justification": "Capex actual spend YTD 879.7 ₹ m, up 144.9 vs Aug; largest move Entity A1, up 79.2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -820,7 +820,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.",
+  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2, up 5.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -850,7 +850,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Capex value at risk 148.0 ₹ m, down 5.1 vs Aug; largest move Entity A2 (A2), down 4.3.",
+  "justification": "Capex value at risk 148.0 ₹ m, down 5.1 vs Aug; largest move Entity A2, down 4.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -865,7 +865,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "EBITDA benefit YTD 14.2 ₹ m, up 2.4 vs Aug; largest move Entity A2 (A2), up 1.3.",
+  "justification": "EBITDA benefit YTD 14.2 ₹ m, up 2.4 vs Aug; largest move Entity A2, up 1.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -880,7 +880,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Cash benefit YTD 8.7 ₹ m, up 1.4 vs Aug; largest move Entity A2 (A2), up 1.0.",
+  "justification": "Cash benefit YTD 8.7 ₹ m, up 1.4 vs Aug; largest move Entity A2, up 1.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -895,7 +895,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Cost savings delivered YTD 11.3 ₹ m, up 1.9 vs Aug; largest move Entity A2 (A2), up 1.2.",
+  "justification": "Cost savings delivered YTD 11.3 ₹ m, up 1.9 vs Aug; largest move Entity A2, up 1.2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -925,7 +925,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
+  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2, up 6.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -940,7 +940,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Delayed projects 1 against a ≤0 target; Entity A2 (A2) at 1 (MP03 milestone slip) drives the gap.",
+  "justification": "Delayed projects 1 against a ≤0 target; Entity A2 at 1 (MP03 milestone slip) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -970,7 +970,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
+  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2, up 6.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -985,7 +985,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Critical safety incidents 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Critical safety incidents 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1000,7 +1000,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 (A1) at 0.91 per 200k h misses it.",
+  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 at 0.91 per 200k h misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1015,7 +1015,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Overdue regulatory obligations 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Overdue regulatory obligations 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1030,7 +1030,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Licence or permit expiry clock 65 days vs ≥90 days; Entity A1 (A1) at 65 days drives the gap.",
+  "justification": "Licence or permit expiry clock 65 days vs ≥90 days; Entity A1 at 65 days drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1075,7 +1075,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 2).",
+  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 1, Entity A2 2).",
   "source_type": "table_row",
   "row_id": "EHS-002"
  },
@@ -1090,7 +1090,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Environmental excursions 2 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 1).",
+  "justification": "Environmental excursions 2 against a ≤0 target; both entities miss it (Entity A1 1, Entity A2 1).",
   "source_type": "table_row",
   "row_id": "EHS-005"
  },
@@ -1105,7 +1105,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Overdue EHS actions 9 against a ≤0 target; both entities miss it (Entity A1 (A1) 7, Entity A2 (A2) 2).",
+  "justification": "Overdue EHS actions 9 against a ≤0 target; both entities miss it (Entity A1 7, Entity A2 2).",
   "source_type": "table_row",
   "row_id": "EHS-007"
  },
@@ -1120,7 +1120,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Near misses 41, down 1 vs Aug; largest move Entity A2 (A2), down 2.",
+  "justification": "Near misses 41, down 1 vs Aug; largest move Entity A2, down 2.",
   "source_type": "table_row",
   "row_id": "EHS-003"
  },
@@ -1135,7 +1135,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 (A1) at 0.91 per 200k h misses it.",
+  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 at 0.91 per 200k h misses it.",
   "source_type": "table_row",
   "row_id": "EHS-001"
  },
@@ -1165,7 +1165,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "table_row",
   "row_id": "REG-010"
  },
@@ -1180,7 +1180,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1 (A1), down 1.",
+  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1, down 1.",
   "source_type": "table_row",
   "row_id": "GOV-004"
  },
@@ -1195,7 +1195,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Control failures YTD 4, up 1 vs Aug; largest move Entity A2 (A2), up 1.",
+  "justification": "Control failures YTD 4, up 1 vs Aug; largest move Entity A2, up 1.",
   "source_type": "table_row",
   "row_id": "CTL-002"
  },
@@ -1210,7 +1210,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Manual overrides YTD 14, up 3 vs Aug; largest move Entity A2 (A2), up 2.",
+  "justification": "Manual overrides YTD 14, up 3 vs Aug; largest move Entity A2, up 2.",
   "source_type": "table_row",
   "row_id": "CTL-010"
  },
@@ -1225,7 +1225,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Policy exceptions YTD 4, up 1 vs Aug; largest move Entity A1 (A1), up 1.",
+  "justification": "Policy exceptions YTD 4, up 1 vs Aug; largest move Entity A1, up 1.",
   "source_type": "table_row",
   "row_id": "CTL-005"
  },
@@ -1255,7 +1255,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Unauthorised-vendor usage YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Unauthorised-vendor usage YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "table_row",
   "row_id": "CTL-006"
  },
@@ -1270,7 +1270,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Unauthorised-access events YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Unauthorised-access events YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "table_row",
   "row_id": "CTL-008"
  },
@@ -1285,7 +1285,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Data-sharing exceptions YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Data-sharing exceptions YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "table_row",
   "row_id": "CTL-009"
  },
@@ -1315,7 +1315,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Contract-compliance rate 95.7% against a ≥95.0% target; both entities meet it (Entity A1 (A1) 95.8%, Entity A2 (A2) 95.6%).",
+  "justification": "Contract-compliance rate 95.7% against a ≥95.0% target; both entities meet it (Entity A1 95.8%, Entity A2 95.6%).",
   "source_type": "table_row",
   "row_id": "CON-002"
  },
@@ -1330,7 +1330,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Supplier EHS non-compliance 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Supplier EHS non-compliance 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "table_row",
   "row_id": "CON-003"
  },
@@ -1345,7 +1345,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Water usage 1,450.1 '000 m³, up 86.4 vs Aug; largest move Entity A1 (A1), up 67.9.",
+  "justification": "Water usage 1,450.1 '000 m³, up 86.4 vs Aug; largest move Entity A1, up 67.9.",
   "source_type": "table_row",
   "row_id": "SUS-001"
  },
@@ -1360,7 +1360,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Emissions 427.7 kt CO2e, up 17.3 vs Aug; largest move Entity A2 (A2), up 14.2.",
+  "justification": "Emissions 427.7 kt CO2e, up 17.3 vs Aug; largest move Entity A2, up 14.2.",
   "source_type": "table_row",
   "row_id": "SUS-002"
  },
@@ -1375,7 +1375,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Energy intensity 3.42 GJ/t against a ≤3.50 GJ/t target; Entity A1 (A1) at 3.61 GJ/t misses it.",
+  "justification": "Energy intensity 3.42 GJ/t against a ≤3.50 GJ/t target; Entity A1 at 3.61 GJ/t misses it.",
   "source_type": "table_row",
   "row_id": "SUS-003"
  },
@@ -1510,7 +1510,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1 (A1), up 1.6.",
+  "justification": "Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1, up 1.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1540,7 +1540,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "■ Critical",
-  "justification": "Production and liquidity both High, raised one level as Entity A1 (A1) breaches plan in 4 days.",
+  "justification": "Production and liquidity both High, raised one level as Entity A1 breaches plan in 4 days.",
   "source_type": "table_row",
   "row_id": "INC-SYN-0142 · Composite"
  },
@@ -1555,7 +1555,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Medium",
-  "justification": "Hedge cover 70.7% sits just above the 70.0% floor; Entity A2 (A2) at 61.1% is below it.",
+  "justification": "Hedge cover 70.7% sits just above the 70.0% floor; Entity A2 at 61.1% is below it.",
   "source_type": "table_row",
   "row_id": "Hedge cover close to policy floor (70.7% vs ≥70.0%) · Composite"
  },
@@ -1570,7 +1570,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "High",
-  "justification": "Entity A1 (A1) at 91.3% of plan, with 24.3 kt more at risk from RM-1 cover.",
+  "justification": "Entity A1 at 91.3% of plan, with 24.3 kt more at risk from RM-1 cover.",
   "source_type": "table_row",
   "row_id": "Production exposure · Rating"
  },
@@ -1585,7 +1585,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "High",
-  "justification": "27.2 ₹ m of upstream cash at risk in Entity A1 (A1); runway still 16.7 months.",
+  "justification": "27.2 ₹ m of upstream cash at risk in Entity A1; runway still 16.7 months.",
   "source_type": "table_row",
   "row_id": "Liquidity / cash · Rating"
  },
@@ -1660,7 +1660,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "+1 level (≤ [PH] d)",
-  "justification": "Entity A1 (A1) breaches its production plan in 4 days, inside the escalation window.",
+  "justification": "Entity A1 breaches its production plan in 4 days, inside the escalation window.",
   "source_type": "table_row",
   "row_id": "Time-to-breach modifier · Rating"
  },
@@ -1690,7 +1690,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 (A1) at 91.3% of plan drives the gap.",
+  "justification": "Production vs plan 95.5% of plan against a ≥100.0% target; Entity A1 at 91.3% of plan drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1735,7 +1735,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.",
+  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 at 79.8% (unplanned downtime) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1780,7 +1780,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Asset utilization 93.6% against a ≥90.0% target; both entities meet it (Entity A1 (A1) 91.9%, Entity A2 (A2) 95.4%).",
+  "justification": "Asset utilization 93.6% against a ≥90.0% target; both entities meet it (Entity A1 91.9%, Entity A2 95.4%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1825,7 +1825,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "OEE 84.1% against a ≥80.0% target; both entities meet it (Entity A1 (A1) 80.2%, Entity A2 (A2) 88.4%).",
+  "justification": "OEE 84.1% against a ≥80.0% target; both entities meet it (Entity A1 80.2%, Entity A2 88.4%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1870,7 +1870,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Recovery percentage 87.4% against a ≥88.0% target; both entities miss it (Entity A1 (A1) 87.5%, Entity A2 (A2) 87.2%).",
+  "justification": "Recovery percentage 87.4% against a ≥88.0% target; both entities miss it (Entity A1 87.5%, Entity A2 87.2%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1915,7 +1915,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Yield 91.9% against a ≥92.0% target; Entity A1 (A1) at 91.5% drives the gap.",
+  "justification": "Yield 91.9% against a ≥92.0% target; Entity A1 at 91.5% drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -1960,7 +1960,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "MTBF 270 h against a ≥200 h target; Entity A1 (A1) at 165 h misses it.",
+  "justification": "MTBF 270 h against a ≥200 h target; Entity A1 at 165 h misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2050,7 +2050,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Unplanned downtime 154 h, down 10 vs Aug; largest move Entity A2 (A2), down 34.",
+  "justification": "Unplanned downtime 154 h, down 10 vs Aug; largest move Entity A2, down 34.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2095,7 +2095,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Production loss from downtime 27.2 kt, down 2.9 vs Aug; largest move Entity A2 (A2), down 6.6.",
+  "justification": "Production loss from downtime 27.2 kt, down 2.9 vs Aug; largest move Entity A2, down 6.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2140,7 +2140,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Preventive-maintenance compliance 95.6% against a ≥95.0% target; Entity A1 (A1) at 93.4% misses it.",
+  "justification": "Preventive-maintenance compliance 95.6% against a ≥95.0% target; Entity A1 at 93.4% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2185,7 +2185,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Cost per tonne 2,934 ₹/t against a ≤2,900 ₹/t target; Entity A2 (A2) at 3,017 ₹/t drives the gap.",
+  "justification": "Cost per tonne 2,934 ₹/t against a ≤2,900 ₹/t target; Entity A2 at 3,017 ₹/t drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2230,7 +2230,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Variable cost 1,827.8 ₹ m, down 98.3 vs Aug; largest move Entity A1 (A1), down 85.8.",
+  "justification": "Variable cost 1,827.8 ₹ m, down 98.3 vs Aug; largest move Entity A1, down 85.8.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2275,7 +2275,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Fuel cost 459.4 ₹ m, down 85.5 vs Aug; largest move Entity A1 (A1), down 79.6.",
+  "justification": "Fuel cost 459.4 ₹ m, down 85.5 vs Aug; largest move Entity A1, down 79.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2320,7 +2320,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Water usage 1,450.1 '000 m³, up 86.4 vs Aug; largest move Entity A1 (A1), up 67.9.",
+  "justification": "Water usage 1,450.1 '000 m³, up 86.4 vs Aug; largest move Entity A1, up 67.9.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2365,7 +2365,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Emissions 427.7 kt CO2e, up 17.3 vs Aug; largest move Entity A2 (A2), up 14.2.",
+  "justification": "Emissions 427.7 kt CO2e, up 17.3 vs Aug; largest move Entity A2, up 14.2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2410,7 +2410,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Energy intensity 3.42 GJ/t against a ≤3.50 GJ/t target; Entity A1 (A1) at 3.61 GJ/t misses it.",
+  "justification": "Energy intensity 3.42 GJ/t against a ≤3.50 GJ/t target; Entity A1 at 3.61 GJ/t misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2455,7 +2455,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Production at risk 36.8 kt, down 8.0 vs Aug; largest move Entity A1 (A1), down 7.3.",
+  "justification": "Production at risk 36.8 kt, down 8.0 vs Aug; largest move Entity A1, down 7.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2635,7 +2635,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Environmental violations 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Environmental violations 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2680,7 +2680,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 (A1) at 0.91 per 200k h misses it.",
+  "justification": "TRIR 0.47 per 200k h vs ≤0.50 per 200k h; Entity A1 at 0.91 per 200k h misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2725,7 +2725,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 2).",
+  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 1, Entity A2 2).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2770,7 +2770,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Near misses 41, down 1 vs Aug; largest move Entity A2 (A2), down 2.",
+  "justification": "Near misses 41, down 1 vs Aug; largest move Entity A2, down 2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2815,7 +2815,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Critical safety incidents 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Critical safety incidents 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2860,7 +2860,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Environmental excursions 2 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 1).",
+  "justification": "Environmental excursions 2 against a ≤0 target; both entities miss it (Entity A1 1, Entity A2 1).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2905,7 +2905,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Open EHS corrective actions 45, up 1 vs Aug; largest move Entity A1 (A1), up 10.",
+  "justification": "Open EHS corrective actions 45, up 1 vs Aug; largest move Entity A1, up 10.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2950,7 +2950,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Overdue EHS actions 9 against a ≤0 target; both entities miss it (Entity A1 (A1) 7, Entity A2 (A2) 2).",
+  "justification": "Overdue EHS actions 9 against a ≤0 target; both entities miss it (Entity A1 7, Entity A2 2).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -2995,7 +2995,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "EHS investigation completion 75% against a ≥100% target; Entity A1 (A1) at 75% drives the gap.",
+  "justification": "EHS investigation completion 75% against a ≥100% target; Entity A1 at 75% drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3040,7 +3040,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Licence or permit expiry clock 65 days vs ≥90 days; Entity A1 (A1) at 65 days drives the gap.",
+  "justification": "Licence or permit expiry clock 65 days vs ≥90 days; Entity A1 at 65 days drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3085,7 +3085,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 (A1) at 79.8% (unplanned downtime) drives the gap.",
+  "justification": "Capacity utilization 83.4% against a ≥85.0% target; Entity A1 at 79.8% (unplanned downtime) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3130,7 +3130,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "OEE 84.1% against a ≥80.0% target; both entities meet it (Entity A1 (A1) 80.2%, Entity A2 (A2) 88.4%).",
+  "justification": "OEE 84.1% against a ≥80.0% target; both entities meet it (Entity A1 80.2%, Entity A2 88.4%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3175,7 +3175,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
+  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 at 89.2% of plan drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3220,7 +3220,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 (A1) at 89.2% of plan drives the gap.",
+  "justification": "Sales vs plan 95.2% of plan against a ≥100.0% target; Entity A1 at 89.2% of plan drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3310,7 +3310,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "EBITDA YTD 1,760.1 ₹ m, up 397.0 vs Aug; largest move Entity A1 (A1), up 201.4.",
+  "justification": "EBITDA YTD 1,760.1 ₹ m, up 397.0 vs Aug; largest move Entity A1, up 201.4.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3355,7 +3355,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "EBIT YTD 1,228.1 ₹ m, up 307.5 vs Aug; largest move Entity A1 (A1), up 154.1.",
+  "justification": "EBIT YTD 1,228.1 ₹ m, up 307.5 vs Aug; largest move Entity A1, up 154.1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3400,7 +3400,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Revenue YTD 13,811.3 ₹ m, up 2,335.8 vs Aug; largest move Entity A2 (A2), up 1,180.1.",
+  "justification": "Revenue YTD 13,811.3 ₹ m, up 2,335.8 vs Aug; largest move Entity A2, up 1,180.1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3445,7 +3445,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Free cash flow YTD 606.2 ₹ m, up 157.4 vs Aug; largest move Entity A1 (A1), up 94.3.",
+  "justification": "Free cash flow YTD 606.2 ₹ m, up 157.4 vs Aug; largest move Entity A1, up 94.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3490,7 +3490,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "ROCE 11.6% against a ≥12.0% target; Entity A1 (A1) at 11.1% (capital employed outpacing EBIT) drives the gap.",
+  "justification": "ROCE 11.6% against a ≥12.0% target; Entity A1 at 11.1% (capital employed outpacing EBIT) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3535,7 +3535,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1 (A1), down 38.0.",
+  "justification": "Net debt 6,650.0 ₹ m, down 70.0 vs Aug; largest move Entity A1, down 38.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3625,7 +3625,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "FCF conversion 34.4% against a ≥35.0% target; Entity A2 (A2) at 30.9% drives the gap.",
+  "justification": "FCF conversion 34.4% against a ≥35.0% target; Entity A2 at 30.9% drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3670,7 +3670,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1 (A1), up 76.6.",
+  "justification": "Cash position 2,141.8 ₹ m, up 114.5 vs Aug; largest move Entity A1, up 76.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3715,7 +3715,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Cash released YTD 22.0 ₹ m, up 3.4 vs Aug; largest move Entity A2 (A2), up 2.6.",
+  "justification": "Cash released YTD 22.0 ₹ m, up 3.4 vs Aug; largest move Entity A2, up 2.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3760,7 +3760,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Daily collections 76.8 ₹ m/day, up 3.2 vs Aug; largest move Entity A2 (A2), up 2.4.",
+  "justification": "Daily collections 76.8 ₹ m/day, up 3.2 vs Aug; largest move Entity A2, up 2.4.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3805,7 +3805,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Cash-conversion cycle 32.6 days against a ≤35.0 days target; Entity A1 (A1) at 52.3 days misses it.",
+  "justification": "Cash-conversion cycle 32.6 days against a ≤35.0 days target; Entity A1 at 52.3 days misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3850,7 +3850,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1 (A1), up 1.6.",
+  "justification": "Cash-upstream exposure 27.2 ₹ m, up 1.6 vs Aug; largest move Entity A1, up 1.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3895,7 +3895,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "DSO 47.0 days against a ≤45.0 days target; Entity A1 (A1) at 52.0 days (slower collections) drives the gap.",
+  "justification": "DSO 47.0 days against a ≤45.0 days target; Entity A1 at 52.0 days (slower collections) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3940,7 +3940,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "DPO 52.2 days against a ≥50.0 days target; Entity A1 (A1) at 40.2 days misses it.",
+  "justification": "DPO 52.2 days against a ≥50.0 days target; Entity A1 at 40.2 days misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -3985,7 +3985,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Inventory days 37.8 days against a ≤40.0 days target; Entity A1 (A1) at 40.5 days misses it.",
+  "justification": "Inventory days 37.8 days against a ≤40.0 days target; Entity A1 at 40.5 days misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4030,7 +4030,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Net working capital 2,781.0 ₹ m, up 17.3 vs Aug; largest move Entity A2 (A2), up 26.5.",
+  "justification": "Net working capital 2,781.0 ₹ m, up 17.3 vs Aug; largest move Entity A2, up 26.5.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4075,7 +4075,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Working-capital movement 17.3 ₹ m, up 46.3 vs Aug; largest move Entity A2 (A2), up 84.8.",
+  "justification": "Working-capital movement 17.3 ₹ m, up 46.3 vs Aug; largest move Entity A2, up 84.8.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4120,7 +4120,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Working-capital days 35.7 days against a ≤35.0 days target; Entity A1 (A1) at 52.2 days (slower collections) drives the gap.",
+  "justification": "Working-capital days 35.7 days against a ≤35.0 days target; Entity A1 at 52.2 days (slower collections) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4210,7 +4210,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Covenant headroom 24.4% against a ≥20.0% target; Entity A1 (A1) at 18.9% misses it.",
+  "justification": "Covenant headroom 24.4% against a ≥20.0% target; Entity A1 at 18.9% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4255,7 +4255,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Debt-maturity exposure 891.4 ₹ m, up 25.3 vs Aug; largest move Entity A1 (A1), up 56.3.",
+  "justification": "Debt-maturity exposure 891.4 ₹ m, up 25.3 vs Aug; largest move Entity A1, up 56.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4300,7 +4300,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Financing exposure 2,720.8 ₹ m, up 93.3 vs Aug; largest move Entity A2 (A2), up 87.2.",
+  "justification": "Financing exposure 2,720.8 ₹ m, up 93.3 vs Aug; largest move Entity A2, up 87.2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4345,7 +4345,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "FX exposure 221.7 ₹ m, down 3.8 vs Aug; largest move Entity A1 (A1), down 7.9.",
+  "justification": "FX exposure 221.7 ₹ m, down 3.8 vs Aug; largest move Entity A1, down 7.9.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4390,7 +4390,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Hedging effectiveness 91.7% against a ≥80.0% target; both entities meet it (Entity A1 (A1) 91.6%, Entity A2 (A2) 92.0%).",
+  "justification": "Hedging effectiveness 91.7% against a ≥80.0% target; both entities meet it (Entity A1 91.6%, Entity A2 92.0%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4435,7 +4435,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "USD share of unhedged FX exposure 75.8%, up 4.5 vs Aug; largest move Entity A1 (A1), up 11.9.",
+  "justification": "USD share of unhedged FX exposure 75.8%, up 4.5 vs Aug; largest move Entity A1, up 11.9.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4480,7 +4480,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Hedge cover 70.7% against a ≥70.0% target; Entity A2 (A2) at 61.1% misses it.",
+  "justification": "Hedge cover 70.7% against a ≥70.0% target; Entity A2 at 61.1% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4525,7 +4525,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "FX sensitivity 8.4 ₹ m, up 0.4 vs Aug; largest move Entity A1 (A1), up 0.5.",
+  "justification": "FX sensitivity 8.4 ₹ m, up 0.4 vs Aug; largest move Entity A1, up 0.5.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4615,7 +4615,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Committed capex 1,347.7 ₹ m, up 109.2 vs Aug; largest move Entity A2 (A2), up 58.1.",
+  "justification": "Committed capex 1,347.7 ₹ m, up 109.2 vs Aug; largest move Entity A2, up 58.1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4660,7 +4660,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Capex actual spend YTD 879.7 ₹ m, up 144.9 vs Aug; largest move Entity A1 (A1), up 79.2.",
+  "justification": "Capex actual spend YTD 879.7 ₹ m, up 144.9 vs Aug; largest move Entity A1, up 79.2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4705,7 +4705,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.",
+  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2, up 5.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4750,7 +4750,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Capex value at risk 148.0 ₹ m, down 5.1 vs Aug; largest move Entity A2 (A2), down 4.3.",
+  "justification": "Capex value at risk 148.0 ₹ m, down 5.1 vs Aug; largest move Entity A2, down 4.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4885,7 +4885,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Delayed projects 1 against a ≤0 target; Entity A2 (A2) at 1 (MP03 milestone slip) drives the gap.",
+  "justification": "Delayed projects 1 against a ≤0 target; Entity A2 at 1 (MP03 milestone slip) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4930,7 +4930,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
+  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2, up 6.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -4975,7 +4975,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2 (A2), up 6.3.",
+  "justification": "Transformation progress 54.0%, up 4.8 vs Aug; largest move Entity A2, up 6.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5110,7 +5110,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "EBITDA benefit YTD 14.2 ₹ m, up 2.4 vs Aug; largest move Entity A2 (A2), up 1.3.",
+  "justification": "EBITDA benefit YTD 14.2 ₹ m, up 2.4 vs Aug; largest move Entity A2, up 1.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5155,7 +5155,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Cash benefit YTD 8.7 ₹ m, up 1.4 vs Aug; largest move Entity A2 (A2), up 1.0.",
+  "justification": "Cash benefit YTD 8.7 ₹ m, up 1.4 vs Aug; largest move Entity A2, up 1.0.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5200,7 +5200,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Cost savings delivered YTD 11.3 ₹ m, up 1.9 vs Aug; largest move Entity A2 (A2), up 1.2.",
+  "justification": "Cost savings delivered YTD 11.3 ₹ m, up 1.9 vs Aug; largest move Entity A2, up 1.2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5245,7 +5245,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Supplier on-time delivery 91.4% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 90.4%, Entity A2 (A2) 92.3%).",
+  "justification": "Supplier on-time delivery 91.4% against a ≥95.0% target; both entities miss it (Entity A1 90.4%, Entity A2 92.3%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5290,7 +5290,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Supplier fill rate 96.8% against a ≥98.0% target; both entities miss it (Entity A1 (A1) 97.0%, Entity A2 (A2) 96.6%).",
+  "justification": "Supplier fill rate 96.8% against a ≥98.0% target; both entities miss it (Entity A1 97.0%, Entity A2 96.6%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5335,7 +5335,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Supplier quality-rejection rate 1.12% against a ≤1.50% target; both entities meet it (Entity A1 (A1) 0.97%, Entity A2 (A2) 1.28%).",
+  "justification": "Supplier quality-rejection rate 1.12% against a ≤1.50% target; both entities meet it (Entity A1 0.97%, Entity A2 1.28%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5380,7 +5380,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Supplier lead-time variance 5.3% against a ≤5.0% target; Entity A1 (A1) at 6.9% drives the gap.",
+  "justification": "Supplier lead-time variance 5.3% against a ≤5.0% target; Entity A1 at 6.9% drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5470,7 +5470,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Single-source spend share 35.2% against a ≤30.0% target; both entities miss it (Entity A1 (A1) 34.8%, Entity A2 (A2) 35.6%).",
+  "justification": "Single-source spend share 35.2% against a ≤30.0% target; both entities miss it (Entity A1 34.8%, Entity A2 35.6%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5605,7 +5605,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Contract-compliance rate 95.7% against a ≥95.0% target; both entities meet it (Entity A1 (A1) 95.8%, Entity A2 (A2) 95.6%).",
+  "justification": "Contract-compliance rate 95.7% against a ≥95.0% target; both entities meet it (Entity A1 95.8%, Entity A2 95.6%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5650,7 +5650,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Supplier EHS non-compliance 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Supplier EHS non-compliance 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5740,7 +5740,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory deadlines 3, up 3 vs Aug; largest move Entity A1 (A1), up 2.",
+  "justification": "Regulatory deadlines 3, up 3 vs Aug; largest move Entity A1, up 2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5785,7 +5785,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Licence expirations 1, down 1 vs Aug; largest move Entity A2 (A2), down 1.",
+  "justification": "Licence expirations 1, down 1 vs Aug; largest move Entity A2, down 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5830,7 +5830,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory obligations due 2, down 2 vs Aug; largest move Entity A1 (A1), down 1.",
+  "justification": "Regulatory obligations due 2, down 2 vs Aug; largest move Entity A1, down 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5875,7 +5875,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Overdue regulatory obligations 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Overdue regulatory obligations 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5920,7 +5920,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Open regulatory actions 0, down 1 vs Aug; largest move Entity A2 (A2), down 1.",
+  "justification": "Open regulatory actions 0, down 1 vs Aug; largest move Entity A2, down 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -5965,7 +5965,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Overdue compliance actions 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Overdue compliance actions 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6055,7 +6055,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6100,7 +6100,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6145,7 +6145,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Regulatory breaches YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6280,7 +6280,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Control failures YTD 4, up 1 vs Aug; largest move Entity A2 (A2), up 1.",
+  "justification": "Control failures YTD 4, up 1 vs Aug; largest move Entity A2, up 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6370,7 +6370,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Policy exceptions YTD 4, up 1 vs Aug; largest move Entity A1 (A1), up 1.",
+  "justification": "Policy exceptions YTD 4, up 1 vs Aug; largest move Entity A1, up 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6415,7 +6415,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Unauthorised-vendor usage YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Unauthorised-vendor usage YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6505,7 +6505,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Unauthorised-access events YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Unauthorised-access events YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6550,7 +6550,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Data-sharing exceptions YTD 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Data-sharing exceptions YTD 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6595,7 +6595,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Manual overrides YTD 14, up 3 vs Aug; largest move Entity A2 (A2), up 2.",
+  "justification": "Manual overrides YTD 14, up 3 vs Aug; largest move Entity A2, up 2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6640,7 +6640,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Assurance reviews completed 6 of 8; Entity A1 (A1) 2 of 4, Entity A2 (A2) 4 of 4.",
+  "justification": "Assurance reviews completed 6 of 8; Entity A1 2 of 4, Entity A2 4 of 4.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6730,7 +6730,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "KPI overrides 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "KPI overrides 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6820,7 +6820,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1 (A1), down 1.",
+  "justification": "Open audit findings 7, down 1 vs Aug; largest move Entity A1, down 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -6865,7 +6865,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Overdue assurance actions 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Overdue assurance actions 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7000,7 +7000,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Open reconciliation breaks 1 against a ≤0 target; Entity A1 (A1) at 1 drives the gap.",
+  "justification": "Open reconciliation breaks 1 against a ≤0 target; Entity A1 at 1 drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7045,7 +7045,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Overdue certifications 2 against a ≤0 target; Entity A2 (A2) at 2 drives the gap.",
+  "justification": "Overdue certifications 2 against a ≤0 target; Entity A2 at 2 drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7090,7 +7090,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 (A1) at 1 (flash break BRK-SYN-0071) drives the gap.",
+  "justification": "Material reconciliation breaks 1 against a ≤0 target; Entity A1 at 1 (flash break BRK-SYN-0071) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7135,7 +7135,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Evidence completeness rate 88.0% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 86.0%, Entity A2 (A2) 89.7%).",
+  "justification": "Evidence completeness rate 88.0% against a ≥95.0% target; both entities miss it (Entity A1 86.0%, Entity A2 89.7%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7180,7 +7180,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Average finding-closure time 32.8 days against a ≤30.0 days target; Entity A2 (A2) at 37.8 days drives the gap.",
+  "justification": "Average finding-closure time 32.8 days against a ≤30.0 days target; Entity A2 at 37.8 days drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7225,7 +7225,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Certified KPI percentage 83.9% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 82.1%, Entity A2 (A2) 85.7%).",
+  "justification": "Certified KPI percentage 83.9% against a ≥95.0% target; both entities miss it (Entity A1 82.1%, Entity A2 85.7%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7315,7 +7315,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "KPI certification coverage 92.9% against a ≥95.0% target; both entities miss it (Entity A1 (A1) 92.9%, Entity A2 (A2) 92.9%).",
+  "justification": "KPI certification coverage 92.9% against a ≥95.0% target; both entities miss it (Entity A1 92.9%, Entity A2 92.9%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7360,7 +7360,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Source-to-Lake reconciliation rate 99.0% against a ≥99.0% target; Entity A1 (A1) at 98.9% misses it.",
+  "justification": "Source-to-Lake reconciliation rate 99.0% against a ≥99.0% target; Entity A1 at 98.9% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7405,7 +7405,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Flash-to-MIS reconciliation rate 96.0% against a ≥98.0% target; both entities miss it (Entity A1 (A1) 94.3%, Entity A2 (A2) 97.6%).",
+  "justification": "Flash-to-MIS reconciliation rate 96.0% against a ≥98.0% target; both entities miss it (Entity A1 94.3%, Entity A2 97.6%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7450,7 +7450,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Flash-to-close variance 0.38% against a ≤0.50% target; Entity A2 (A2) at 0.52% misses it.",
+  "justification": "Flash-to-close variance 0.38% against a ≤0.50% target; Entity A2 at 0.52% misses it.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7495,7 +7495,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Variance against Board number -0.2%, down 0.2 vs Aug; largest move Entity A1 (A1), down 0.4.",
+  "justification": "Variance against Board number -0.2%, down 0.2 vs Aug; largest move Entity A1, down 0.4.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7585,7 +7585,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 (A1) at 1 (ALT-SYN-2041) drives the gap.",
+  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 at 1 (ALT-SYN-2041) drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7630,7 +7630,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Alerts without accepted owners 1 against a ≤0 target; Entity A2 (A2) at 1 drives the gap.",
+  "justification": "Alerts without accepted owners 1 against a ≤0 target; Entity A2 at 1 drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7675,7 +7675,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Overdue actions 0 against a ≤0 target; both entities meet it (Entity A1 (A1) 0, Entity A2 (A2) 0).",
+  "justification": "Overdue actions 0 against a ≤0 target; both entities meet it (Entity A1 0, Entity A2 0).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -7855,7 +7855,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Root causes eliminated YTD 8 of 9; Entity A1 (A1) 4 of 4, Entity A2 (A2) 4 of 5.",
+  "justification": "Root causes eliminated YTD 8 of 9; Entity A1 4 of 4, Entity A2 4 of 5.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8035,7 +8035,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Pricing pressure low (-0.4% vs plan price); Entity A1 (A1) low, Entity A2 (A2) low (0% vs plan price).",
+  "justification": "Pricing pressure low (-0.4% vs plan price); Entity A1 low, Entity A2 low (0% vs plan price).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8080,7 +8080,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Days to breach 4 days, down 6 vs Aug; largest move Entity A1 (A1), down 6 (RM-1 cover).",
+  "justification": "Days to breach 4 days, down 6 vs Aug; largest move Entity A1, down 6 (RM-1 cover).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8125,7 +8125,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Probability of production plan miss 69.7%, up 8.6 vs Aug; largest move Entity A1 (A1), up 6.6.",
+  "justification": "Probability of production plan miss 69.7%, up 8.6 vs Aug; largest move Entity A1, up 6.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8305,7 +8305,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Production loss from downtime 28.0 kt, down 0.3 vs Aug; largest move Entity A2 (A2), down 6.1.",
+  "justification": "Production loss from downtime 28.0 kt, down 0.3 vs Aug; largest move Entity A2, down 6.1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8350,7 +8350,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Probability OEE below 78% 0.0%, flat; largest move Entity A1 (A1), up 0.5.",
+  "justification": "Probability OEE below 78% 0.0%, flat; largest move Entity A1, up 0.5.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8395,7 +8395,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Fixed cost YTD 44.6 ₹ m, up 7.7 vs Aug; largest move Entity A2 (A2), up 3.9.",
+  "justification": "Fixed cost YTD 44.6 ₹ m, up 7.7 vs Aug; largest move Entity A2, up 3.9.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8485,7 +8485,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "ROCE at P12 11.3% against a ≥12.0% target; Entity A1 (A1) at 10.5% drives the gap.",
+  "justification": "ROCE at P12 11.3% against a ≥12.0% target; Entity A1 at 10.5% drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8530,7 +8530,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Revenue per FTE YTD 5.25 ₹ m, up 0.89 vs Aug; largest move Entity A2 (A2), up 0.93.",
+  "justification": "Revenue per FTE YTD 5.25 ₹ m, up 0.89 vs Aug; largest move Entity A2, up 0.93.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8575,7 +8575,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Tonnes per FTE 238 t, up 5 vs Aug; largest move Entity A2 (A2), up 9.",
+  "justification": "Tonnes per FTE 238 t, up 5 vs Aug; largest move Entity A2, up 9.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8665,7 +8665,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Disclosure clock 38 h remaining, down 961 vs Aug; largest move Entity A1 (A1), down 961.",
+  "justification": "Disclosure clock 38 h remaining, down 961 vs Aug; largest move Entity A1, down 961.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8710,7 +8710,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Single-source supply risk 1 suppliers against a ≤0 suppliers target; Entity A1 (A1) at 1 suppliers drives the gap.",
+  "justification": "Single-source supply risk 1 suppliers against a ≤0 suppliers target; Entity A1 at 1 suppliers drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8755,7 +8755,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Commodity-price movement 2.1% MoM, up 1.4 vs Aug; largest move Entity A1 (A1), up 1.3.",
+  "justification": "Commodity-price movement 2.1% MoM, up 1.4 vs Aug; largest move Entity A1, up 1.3.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8800,7 +8800,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Freight exposure 1 lanes against a ≤0 lanes target; Entity A1 (A1) at 1 lanes drives the gap.",
+  "justification": "Freight exposure 1 lanes against a ≤0 lanes target; Entity A1 at 1 lanes drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8845,7 +8845,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Fuel exposure -17.7% MoM, down 18.5 vs Aug; largest move Entity A1 (A1), down 50.4.",
+  "justification": "Fuel exposure -17.7% MoM, down 18.5 vs Aug; largest move Entity A1, down 50.4.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8890,7 +8890,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Power-cost exposure -7.1% MoM, down 16.5 vs Aug; largest move Entity A1 (A1), down 32.6.",
+  "justification": "Power-cost exposure -7.1% MoM, down 16.5 vs Aug; largest move Entity A1, down 32.6.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8935,7 +8935,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Unplanned downtime 154.4 h, down 9.6 vs Aug; largest move Entity A2 (A2), down 34.",
+  "justification": "Unplanned downtime 154.4 h, down 9.6 vs Aug; largest move Entity A2, down 34.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -8980,7 +8980,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Yield 91.9%, up 0.8 vs Aug; Entity A1 (A1) at 91.5% drives the gap.",
+  "justification": "Yield 91.9%, up 0.8 vs Aug; Entity A1 at 91.5% drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -9025,7 +9025,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Recovery percentage 87.4%, down 1.2 vs Aug; both entities miss it (Entity A1 (A1) 87.5%, Entity A2 (A2) 87.2%).",
+  "justification": "Recovery percentage 87.4%, down 1.2 vs Aug; both entities miss it (Entity A1 87.5%, Entity A2 87.2%).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -9070,7 +9070,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "FX exposure 221.7 ₹ m, down 3.8 vs Aug; largest move Entity A1 (A1), down 7.9.",
+  "justification": "FX exposure 221.7 ₹ m, down 3.8 vs Aug; largest move Entity A1, down 7.9.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -9115,7 +9115,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Regulatory deadlines 3, up 3 vs Aug; largest move Entity A1 (A1), up 2.",
+  "justification": "Regulatory deadlines 3, up 3 vs Aug; largest move Entity A1, up 2.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -9160,7 +9160,7 @@
   "verdict": "on_track",
   "status_color": "green",
   "display_verdict": "On track",
-  "justification": "Licence expirations 1, down 1 vs Aug; largest move Entity A2 (A2), down 1.",
+  "justification": "Licence expirations 1, down 1 vs Aug; largest move Entity A2, down 1.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -9205,7 +9205,7 @@
   "verdict": "intervention_required",
   "status_color": "red",
   "display_verdict": "Intervention required",
-  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 (A1) at 1 drives the gap.",
+  "justification": "Open critical alerts 1 against a ≤0 target; Entity A1 at 1 drives the gap.",
   "source_type": "kpi",
   "row_id": null
  },
@@ -9250,7 +9250,7 @@
   "verdict": "watch",
   "status_color": "amber",
   "display_verdict": "Declining",
-  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 (A1) 1, Entity A2 (A2) 2).",
+  "justification": "Severity incidents 3 against a ≤0 target; both entities miss it (Entity A1 1, Entity A2 2).",
   "source_type": "kpi",
   "row_id": null
  },
@@ -9295,7 +9295,7 @@
   "verdict": "improving",
   "status_color": "green",
   "display_verdict": "Improving",
-  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2 (A2), up 5.0.",
+  "justification": "Capex physical progress 60.9% weighted, up 4.6 vs Aug; largest move Entity A2, up 5.0.",
   "source_type": "kpi",
   "row_id": null
  },

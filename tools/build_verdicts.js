@@ -9,7 +9,7 @@ const ctx = vm.createContext({}); vm.runInContext(fs.readFileSync(root + "js/dat
 const P = ctx.DCTData.plant, D = ctx.DCTData.kpi;
 const ENTS = P.children.Group;                       // entity ids from the data layer (A1, A2)
 // 1D: entity name with its code, "<Name> (<CODE>)", as the screens show it
-const codes = (t) => { const re = new RegExp("\\b(" + ENTS.map((c) => P.scopes[c]).concat(ENTS.map((c) => "(?<!" + P.scopes[c].replace(c, "") + ")" + c + "(?!\\))")).join("|") + ")\\b(?! \\()", "g"); const code = {}; ENTS.forEach((c) => { code[c] = c; code[P.scopes[c]] = c; }); return t.replace(re, (m) => P.scopes[code[m]] + " (" + code[m] + ")"); };
+const codes = (t) => { const re = new RegExp("\\b(" + ENTS.map((c) => P.scopes[c]).concat(ENTS.map((c) => "(?<!" + P.scopes[c].replace(c, "") + ")" + c + "(?!\\))")).join("|") + ")\\b(?! \\()", "g"); const code = {}; ENTS.forEach((c) => { code[c] = c; code[P.scopes[c]] = c; }); return t.replace(re, (m) => { const c = code[m], n = P.scopes[c]; return new RegExp("\\b" + c + "\\b").test(n) ? n : n + " (" + c + ")"; }); };   // no "(A1)" when the name holds the code
 const MON = {P01: "Apr", P02: "May", P03: "Jun", P04: "Jul", P05: "Aug", P06: "Sep", P07: "Oct", P08: "Nov", P09: "Dec", P10: "Jan", P11: "Feb", P12: "Mar"};
 
 // The cause behind a KPI when its main driver is known from the case record (entity level only).

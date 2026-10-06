@@ -247,7 +247,8 @@ var DCTResolve = (function () {
     var esc = function (x) { return x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); };
     var re = new RegExp("\\b(" + kids.map(function (c) { return esc(P.scopes[c]); }).concat(kids.map(function (c) { return "(?<!" + esc(P.scopes[c].replace(c, "")) + ")" + esc(c) + "(?!\\))"; })).join("|") + ")\\b(?! \\()", "g");
     var code = {}; kids.forEach(function (c) { code[c] = c; code[P.scopes[c]] = c; });
-    var f = function (v) { return v.replace(re, function (m) { var c = code[m]; return P.scopes[c] + " (" + c + ")"; }); };
+    var f = function (v) { return v.replace(re, function (m) { var c = code[m], n = P.scopes[c];
+      return new RegExp("\\b" + esc(c) + "\\b").test(n) ? n : n + " (" + c + ")"; }); };   // no "(A1)" when the name already holds the code
     var walk = function (o) {
       if (Array.isArray(o)) { for (var i = 0; i < o.length; i++) { if (typeof o[i] === "string") o[i] = f(o[i]); else walk(o[i]); } return; }
       if (!o || typeof o !== "object") return;

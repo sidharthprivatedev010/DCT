@@ -33,16 +33,31 @@ const S = [
 ];
 const vm = require("vm"); const ctx = vm.createContext({}); vm.runInContext(fs.readFileSync(root + "js/data/base-data.js", "utf8"), ctx);
 const P = ctx.DCTData.plant, VERD = {low: ["on_track", "green"], medium: ["watch", "amber"], high: ["intervention_required", "red"], critical: ["intervention_required", "red"]};
-const name = (t) => t.replace(/\[\[(\w+)\]\]/g, (m, k) => P.scopes[k] ? (k === "Group" ? P.scopes[k] : P.scopes[k] + " (" + k + ")") : m);   // 1D: "<Name> (<CODE>)"
+const name = (t) => t.replace(/\[\[(\w+)\]\]/g, (m, k) => P.scopes[k] ? (k === "Group" || new RegExp("\\b" + k + "\\b").test(P.scopes[k]) ? P.scopes[k] : P.scopes[k] + " (" + k + ")") : m);   // 1D: "<Name> (<CODE>)", or just the name when it holds the code
 const json = S.map(([cat, lvl, id, title, sc, kpi, v, j]) => ({persona: "owner", screen: "early_warning", section: "risk_heat_map", kpi_id: (kpi || id).toLowerCase(), signal_id: id, title,
   level: sc === "Group" ? "group" : "entity", entity_code: sc === "Group" ? null : sc, entity_name: sc === "Group" ? null : P.scopes[sc], verdict: VERD[lvl][0], status_color: VERD[lvl][1], justification: name(j), category: cat, risk_level: lvl}));
+// Worst plant behind a signal: the plant(s) under its scope with the worst P06 value, by the KPI's better-direction.
+// Shown only for Medium risk and above: a Low signal has no problem plant. Zero (for "down" KPIs) and 99 = not expected (PRD-001) mean no issue. Entity-only KPIs have no plant values → none shown.
+const plantOf = (kpi, sc) => { const K = kpi && P.kpi[kpi]; if (!K) return null;
+  const ps = (P.children[sc] || []).flatMap((c) => P.children[c] || [c]);
+  const vs = ps.map((p) => { const a = (K.val || {})[p]; return [p, a ? a[a.length - 1] : null]; }).filter(([, v]) => v != null && (K.better === "up" ? v < 99 : v > 0));
+  if (!vs.length) return null;
+  const w = K.better === "up" ? Math.min(...vs.map((x) => x[1])) : Math.max(...vs.map((x) => x[1]));
+  const hit = vs.filter((x) => x[1] === w).map((x) => x[0]);
+  return hit.length === ps.length ? null : hit; };
+const parentOf = (p) => Object.keys(P.children).find((e) => e !== "Group" && P.children[e].includes(p));
+const entL = (sc, kpi, lvl) => { const h = lvl === "low" ? null : plantOf(kpi, sc), e = sc === "Group" ? "[[Group]]" : "[[" + sc + "]]"; if (!h) return e;
+  if (sc !== "Group") return e + " (" + h.map((p) => P.scopes[p]).join(", ") + ")";
+  const by = {}; h.forEach((p) => (by[parentOf(p)] = by[parentOf(p)] || []).push(P.scopes[p]));   // "Group · Entity A1 (Plant 02)"
+  return e + " · " + Object.keys(by).map((k) => "[[" + k + "]] (" + by[k].join(", ") + ")").join(", "); };
+json.forEach((e) => { const h = e.risk_level === "low" ? null : plantOf(e.kpi_id.toUpperCase(), e.entity_code || "Group"); e.plant_codes = h || []; e.plant_names = (h || []).map((p) => P.scopes[p]); });
 const words = (s) => s.split(/\s+/).length;
 json.forEach((e) => { if (words(e.justification) > 20) console.log("CHECK >20 words", e.signal_id); if (/\bPlant/.test(e.justification)) console.log("CHECK plant", e.signal_id); });
 fs.writeFileSync(root + "data/owner-signals.json", JSON.stringify(json, null, 1) + "\n");
 const block = {type: "heat", title: "Early-warning risk heat map · signals by category and risk level", ask: "Where are the risks, and how serious are they?",
   cap: "Each cell counts the signals in that category at that risk level; darker = more signals. Select a cell to list its signals below. Last 24 Hours holds what changed since yesterday; those signals are not counted again in their topic row.",
   cats: CATS.map((c) => ({k: c[0], l: c[1]})), levels: LEVELS.map((l) => ({k: l[0], l: l[1]})),
-  items: S.map(([cat, lvl, id, title, sc, kpi, v, j, h]) => Object.assign({cat, lvl, id, l: title, scope: sc, ent: sc === "Group" ? "[[Group]]" : "[[" + sc + "]]", why: j}, kpi ? {kpi} : {v}, h ? {h} : {}))};
+  items: S.map(([cat, lvl, id, title, sc, kpi, v, j, h]) => Object.assign({cat, lvl, id, l: title, scope: sc, ent: entL(sc, kpi, lvl), why: j}, kpi ? {kpi} : {v}, h ? {h} : {}))};
 const p = J.read("P2-O02-ChangeReport");
 // The heat map is the only primary element: the change ledger, tiles and indicator boards are replaced by it
 ["meta", "counters", "summary", "body", "tabs", "strip"].forEach((k) => delete p[k]);
