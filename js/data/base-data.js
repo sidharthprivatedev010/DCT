@@ -28763,9 +28763,9 @@ var DCTData = {
      "dio_d"
     ],
     "rules": {
-     "dso_d": "SUM",
-     "dpo_d": "SUM",
-     "dio_d": "SUM"
+     "dso_d": "CALC",
+     "dpo_d": "CALC",
+     "dio_d": "CALC"
     },
     "val": {
      "Group": [
@@ -28930,7 +28930,7 @@ var DCTData = {
      "dso_d"
     ],
     "rules": {
-     "dso_d": "SUM"
+     "dso_d": "CALC"
     },
     "val": {
      "Group": [
@@ -29009,7 +29009,7 @@ var DCTData = {
      "dpo_d"
     ],
     "rules": {
-     "dpo_d": "SUM"
+     "dpo_d": "CALC"
     },
     "val": {
      "Group": [
@@ -29084,7 +29084,7 @@ var DCTData = {
      "dio_d"
     ],
     "rules": {
-     "dio_d": "SUM"
+     "dio_d": "CALC"
     },
     "val": {
      "Group": [
@@ -37332,7 +37332,7 @@ var DCTData = {
      "price_vs_plan_pct"
     ],
     "rules": {
-     "price_vs_plan_pct": "SUM"
+     "price_vs_plan_pct": "CALC"
     },
     "val": {
      "Group": [

@@ -188,8 +188,15 @@ def main():
             if (kid, sc) in FB: rec["fb"] = FB[(kid, sc)]
         if ent["inp"]:
             ent["fields"] = list(next(iter(ent["inp"].values())).keys())
-            # building blocks (EBITDA, NWC …) are calculated from summed inputs, so they add up like a SUM
-            ent["rules"] = {f: {"CALC": "SUM", "INPUT": "SUM"}.get(M["rules"].get(f.replace(" (YTD)", ""), "SUM"), M["rules"].get(f.replace(" (YTD)", ""), "SUM")) for f in ent["fields"]}
+            # building blocks (EBITDA, NWC …) are calculated from summed inputs, so they add up like a SUM;
+            # calculated ratios (DSO, DPO, DIO, price vs plan) do not, so they keep CALC
+            def adds_up(f):
+                I = ent["inp"]
+                return all(abs(I[par][f] - sum(I[c][f] for c in kids)) <= 1e-6 * abs(I[par][f]) + 0.01
+                           for par, kids in (("Group", ("A1", "A2")), ("A1", ("Plant01", "Plant02", "Plant03")), ("A2", ("Plant04", "Plant05", "Plant06")))
+                           if par in I and all(c in I for c in kids) and isinstance(I[par].get(f), (int, float)))
+            rule = lambda f: M["rules"].get(f.replace(" (YTD)", ""), "SUM")
+            ent["rules"] = {f: ("SUM" if rule(f) == "INPUT" or (rule(f) == "CALC" and adds_up(f)) else rule(f)) for f in ent["fields"]}
         g = ent["val"]
         if "A1" in g and "A2" in g:
             ent["excl"]["A1"], ent["excl"]["A2"] = g["A2"][-1], g["A1"][-1]

@@ -41,7 +41,7 @@ var DCTResolve = (function () {
     var cols = ["KPI", "Measure"].concat(sc.map(function (s) { return kidsOf(s).length ? sn(s) + " (Σ)" : sn(s); })).concat(["Unit", "How rolled up"]);
     var rows = ids.map(function (id) {
       var k = P.kpi[canon(id)];
-      var how = (k.level === "entity" ? "Entity inputs → " : "") + (k.fields.length > 1 || /÷|\/|×/.test(k.formula || "") ? "recomputed from summed inputs" : (k.rules[k.fields[0]] === "MIN" ? "lowest of children" : "sum of children"));
+      var how = (k.level === "entity" ? "Entity inputs → " : "") + (k.fields.length > 1 || /÷|\/|×/.test(k.formula || "") ? "recomputed from summed inputs" : (k.rules[k.fields[0]] === "MIN" ? "lowest of children" : k.rules[k.fields[0]] === "CALC" ? "recalculated at each level" : "sum of children"));
       how = how.charAt(0).toUpperCase() + how.slice(1);
       return {c: [{t: id, h: detailHref(id, root, p.lens)}, k.name].concat(sc.map(function (s) { if (!k.val[s]) return "—"; return kidsAll(s).length ? {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens), b: true} : {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens)}; }))
         .concat([k.unit || "count", how])};
@@ -58,7 +58,7 @@ var DCTResolve = (function () {
     (b.rows || []).forEach(function (row) {
       var a = Array.isArray(row) ? row : row.c; if (!a || !a.length) return;
       var id = txt(a[0]).trim();
-      if (!ID.test(id)) { var m2 = /^([A-Z]{3}-\d{3}) /.exec(txt(a[1])); if (!m2 || !isPlantKpi(m2[1])) return; id = m2[1]; if (typeof a[1] !== "object") a[1] = {t: txt(a[1]), h: detailHref(id, rowScope(p, b, ""), p.lens)}; }
+      if (!ID.test(id)) { var m2 = /^([A-Z]{3}-\d{3}) /.exec(txt(a[1])); if (!m2 || !isPlantKpi(m2[1])) return; id = m2[1]; if (typeof a[1] !== "object") a[1] = {t: txt(a[1]), h: detailHref(id, rowScope(p, b, txt(a[1])), p.lens)}; }
       var sc0 = rowScope(p, b, txt(a[1]));
       if (isPlantKpi(id) && typeof a[0] !== "object" && txt(a[0]).trim() === id) a[0] = {t: id, h: detailHref(id, sc0, p.lens)};
       var r = look(D, id, sc0, at); if (!r) return;
@@ -138,6 +138,7 @@ var DCTResolve = (function () {
     var meets = function (v) { return k.target == null || typeof v !== "number" ? null : (k.better === "up" ? v >= k.target : v <= k.target); };
     var D = (typeof DCTData !== "undefined" && DCTData.kpi[id]) || {};
     var roll = k.fields.map(function (f) { return k.rules[f]; }).filter(function (x, i, a) { return a.indexOf(x) === i; }).join("/");
+    var calc = roll === "CALC", rollOf = calc ? "recalculated from" : roll + " of";   // CALC inputs (DSO, price vs plan …) do not add up
     var ratio = k.fields.length > 1 || /÷|\//.test(k.formula);
     var level = function (s) { return s === "Group" ? "Group" : (kidsAll(s).length ? "Entity" : "Plant"); };
     var inpNote = function (s) { return k.fields.map(function (f) { return f + " " + raw((k.inp[s] || {})[f]); }).join("\n"); };
@@ -152,17 +153,17 @@ var DCTResolve = (function () {
       .map(function (s) { return {id: id, name: k.name + " · " + sn(s), scope: s, href: H(s), own: own}; });
     p.trustbox = {type: "tiles", title: "How this number is built", tileW: 200, items: [
       {l: "Formula", v: k.formula}, {l: "Level", v: level(scope) + (kids.length ? " · rolled up from " + kids.map(sn).join(" + ") : " (atomic input level)")},
-      {l: "Roll-up", v: k.fields.map(function (f) { return f + " = " + k.rules[f]; }).join(" · ")},
+      {l: "Roll-up", v: k.fields.map(function (f) { return f + " = " + (k.rules[f] === "CALC" ? "recalculated at each level" : k.rules[f]); }).join(" · ")},
       {l: "Target", v: k.target == null ? "None set" : (k.better === "up" ? "≥ " : "≤ ") + nf(k.target, k.dp) + " " + (k.unit || "")},
       {l: "Period", v: P.periodL}, {l: "Source", v: P.src}]};
     // Dominant: the roll-up of the focus parent (children → parent)
     p.dominant = {type: "chain", kl: level(focus).toUpperCase() + " ROLL-UP", title: id + " " + k.name + " · " + fk.map(sn).join(" + ") + " → " + sn(focus) + " · " + P.periodL,
       ask: "Which " + (level(focus) === "Group" ? "entities" : "plants") + " make up this number, and which one is pulling it?",
-      cap: ratio ? "Not an average: inputs are " + (roll === "SUM" ? "summed" : roll) + " and the formula is applied once to the totals." : "The parent value is the " + (roll === "MIN" ? "lowest" : "sum") + " of its children.",
+      cap: calc ? "Not a sum or an average: each level recalculates " + k.fields.join(", ") + " from its own inputs." : ratio ? "Not an average: inputs are " + (roll === "SUM" ? "summed" : roll) + " and the formula is applied once to the totals." : "The parent value is the " + (roll === "MIN" ? "lowest" : "sum") + " of its children.",
       nodes: fk.map(function (s) {
         var v = last(s), m = meets(v), tr = (D[s] || {}).tr || "";
         return {n: sn(s), s: U(v), note: inpNote(s) + "\n" + (m == null ? "" : (m ? "Meets target" : "Misses target")) + (tr ? " · " + tr : ""), k: s === scope || m === false ? "hi" : ""};
-      }).concat([{n: fk.length ? sn(focus) + " (" + roll + " of " + (level(focus) === "Group" ? "entities" : "plants") + ")" : sn(focus) + " (entity-level inputs)", s: U(last(focus)), note: inpNote(focus) + "\n" + ((D[focus] || {}).bs || ""), k: focus === scope ? "hi" : ""}])};
+      }).concat([{n: fk.length ? sn(focus) + " (" + rollOf + " " + (level(focus) === "Group" ? "entities" : "plants") + ")" : sn(focus) + " (entity-level inputs)", s: U(last(focus)), note: inpNote(focus) + "\n" + ((D[focus] || {}).bs || ""), k: focus === scope ? "hi" : ""}])};
     // Every plant under the focus, grouped by entity
     var leaves = layout(focus === "Group" ? "Group" : focus).filter(function (s) { return !kidsOf(s).length; });
     var bars = leaves.map(function (s) { return {l: sn(s) + (focus === "Group" && level(s) === "Plant" ? " · " + sn(parentOf(s)) : ""), v: last(s), d: U(last(s)), hi: meets(last(s)) === false || s === scope, note: meets(last(s)) == null ? "" : (meets(last(s)) ? "meets target" : "misses target")}; })
@@ -171,7 +172,7 @@ var DCTResolve = (function () {
     var cols = ["Scope", "Level"].concat(k.fields).concat([id + " (" + unit + ")"]);
     var rows = layout(focus).map(function (s) {
       var parent = kidsOf(s).length;
-      return {c: [{t: parent ? sn(s) + " = " + roll + " of " + kidsOf(s).map(sn).join(" + ") : sn(s), h: H(s)}, level(s)].concat(k.fields.map(function (f) { return raw((k.inp[s] || {})[f]); })).concat([fmtV(k, last(s))]), hi: s === scope || !!parent};
+      return {c: [{t: parent ? sn(s) + " = " + rollOf + " " + kidsOf(s).map(sn).join(" + ") : sn(s), h: H(s)}, level(s)].concat(k.fields.map(function (f) { return raw((k.inp[s] || {})[f]); })).concat([fmtV(k, last(s))]), hi: s === scope || !!parent};
     });
     var share = [level(fk[0] || scope)].concat(k.fields.filter(function (f) { return k.rules[f] === "SUM"; }).map(function (f) { return "Share of " + f; }))
       .concat([id, sn(focus) + " without it", "Effect on " + sn(focus)]);
@@ -189,17 +190,17 @@ var DCTResolve = (function () {
     p.drill = [
       {n: fk.length ? (level(focus) === "Group" ? "By entity and plant" : "By plant") : "Calculation", blocks: [{type: "bars", title: id + " " + k.name + " by plant" + (focus === "Group" ? " and entity" : "") + " · " + P.periodL, rows: bars, ask: "Which plant is furthest from target?"},
         {type: "table", title: "Calculation · plant inputs → " + (focus === "Group" ? "entity → Group" : sn(focus)) + " · " + P.periodL, cols: cols, rows: rows, minW: 640,
-          ask: "How is each level calculated from the one below?", cap: "Plant rows are raw inputs. Each parent row " + (roll === "MIN" ? "takes the lowest of" : "sums") + " its children's inputs, then applies the same formula. Full trace: data/plant-model/kpi_calculations.csv"}]},
+          ask: "How is each level calculated from the one below?", cap: "Plant rows are raw inputs. " + (calc ? "Each parent row recalculates the measure from its own underlying inputs; it is not the sum of its children." : "Each parent row " + (roll === "MIN" ? "takes the lowest of" : "sums") + " its children's inputs, then applies the same formula.") + " Full trace: data/plant-model/kpi_calculations.csv"}]},
       {n: (level(fk[0] || scope) === "Entity" ? "Entity" : "Plant") + " contribution", blocks: [{type: "table", title: "How much each " + level(fk[0] || scope).toLowerCase() + " moves " + sn(focus) + " · " + P.periodL, cols: share, rows: srows,
         ask: "If this one performed like the others, where would " + sn(focus) + " be?", cap: "'Without it' recalculates " + sn(focus) + " from the other children's inputs. The effect column is how far this child moves the parent."}]},
       {n: "Monthly", blocks: [trend, {type: "table", title: id + " by scope and month · " + unit, cols: ["Scope"].concat(P.x), rows: mrows}]},
       {n: "Definition", blocks: [{type: "kv", title: "Definition (working assumption; catalogue definition pending approval)", rows: [["KPI", id + " " + k.name + alias], ["Formula", k.formula],
-        ["Display unit", unit + (k.div !== 1 ? " (base value ÷ " + k.div + ")" : "")], ["Roll-up", k.fields.map(function (f) { return (k.rules[f] === "MIN" ? "lowest " : "Σ ") + f; }).join(", ") + " · plant → entity → Group, then the formula at each level"],
+        ["Display unit", unit + (k.div !== 1 ? " (base value ÷ " + k.div + ")" : "")], ["Roll-up", k.fields.map(function (f) { return (k.rules[f] === "MIN" ? "lowest " : k.rules[f] === "CALC" ? "recalculated " : "Σ ") + f; }).join(", ") + " · plant → entity → Group, then the formula at each level"],
         ["Better direction", k.better === "up" ? "Higher is better" : k.better === "down" ? "Lower is better" : "Context only"], ["Methodology", "data/plant-model/Data-Model-Methodology.md"]]}]},
       {n: "Lineage", blocks: [{type: "chain", kl: "LINEAGE", title: "Plant source → plant inputs → entity → Group → screens", ask: "Where does this number come from?",
         nodes: [{n: "Plant sources", s: "[PLANT SYSTEMS — PH]", note: "Plants 01–06"}, {n: "Plant inputs", s: k.fields.length + " base measure(s)", note: k.fields.join("\n")},
-          {n: "Plant " + id, s: "Formula per plant", note: k.formula}, {n: "Entity A1 · A2", s: roll + " of plant inputs", note: "Same formula on totals", k: scope.indexOf("A") === 0 ? "hi" : ""},
-          {n: "Group", s: roll + " of entity inputs", note: "Same formula on totals", k: scope === "Group" ? "hi" : ""}, {n: "Screens", s: "Cards · roll-up tabs", note: "Click any value to return here"}]}]},
+          {n: "Plant " + id, s: "Formula per plant", note: k.formula}, {n: "Entity A1 · A2", s: rollOf + " plant inputs", note: "Same formula on totals", k: scope.indexOf("A") === 0 ? "hi" : ""},
+          {n: "Group", s: rollOf + " entity inputs", note: "Same formula on totals", k: scope === "Group" ? "hi" : ""}, {n: "Screens", s: "Cards · roll-up tabs", note: "Click any value to return here"}]}]},
       {n: "Trust", blocks: [{type: "table", title: "Trust status by scope", cols: ["Scope", "Level", "Trust", "Provenance"], rows: layout(focus).map(tr)}]}
     ];
     var isText = typeof last(scope) === "string";
