@@ -13,7 +13,9 @@
   "status_color": "red",
   "justification": "Forecast shortfall of 24.3 kt crossed the Owner threshold at 05:10; drives the −₹56.2 m EBITDA gap.",
   "category": "last_24_hours",
-  "risk_level": "critical"
+  "risk_level": "critical",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -27,9 +29,15 @@
   "entity_name": "Entity A1",
   "verdict": "intervention_required",
   "status_color": "red",
-  "justification": "4 materials short in Entity A1 (A1); RM-1 cover fell from 9.0 to 3.5 days against a 9-day lead time.",
+  "justification": "4 materials short in Entity A1; RM-1 cover fell from 9.0 to 3.5 days against a 9-day lead time.",
   "category": "last_24_hours",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [
+   "Plant01"
+  ],
+  "plant_names": [
+   "Plant 01"
+  ]
  },
  {
   "persona": "owner",
@@ -45,7 +53,9 @@
   "status_color": "red",
   "justification": "27.2 ₹ m of Nov upstream at risk as lower dispatch defers billing; runway unaffected.",
   "category": "last_24_hours",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -59,9 +69,15 @@
   "entity_name": "Entity A1",
   "verdict": "watch",
   "status_color": "amber",
-  "justification": "L2 meter mapping change broke flash vs MIS; Entity A1 (A1) Oct flash not defensible until fixed.",
+  "justification": "L2 meter mapping change broke flash vs MIS; Entity A1 Oct flash not defensible until fixed.",
   "category": "last_24_hours",
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "plant_codes": [
+   "Plant02"
+  ],
+  "plant_names": [
+   "Plant 02"
+  ]
  },
  {
   "persona": "owner",
@@ -77,7 +93,9 @@
   "status_color": "amber",
   "justification": "Opened because ALT-SYN-2041 crossed Critical; coordinates the response under one commander.",
   "category": "last_24_hours",
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -91,9 +109,15 @@
   "entity_name": "Entity A1",
   "verdict": "intervention_required",
   "status_color": "red",
-  "justification": "Entity A1 (A1) breaches its production plan in 4 days unless RM-1 cover recovers.",
+  "justification": "Entity A1 breaches its production plan in 4 days unless RM-1 cover recovers.",
   "category": "forecast",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [
+   "Plant02"
+  ],
+  "plant_names": [
+   "Plant 02"
+  ]
  },
  {
   "persona": "owner",
@@ -107,9 +131,15 @@
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "justification": "69.7% chance the Group misses next month's production plan; Entity A1 (A1) at 79.4% drives it.",
+  "justification": "69.7% chance the Group misses next month's production plan; Entity A1 at 79.4% drives it.",
   "category": "forecast",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [
+   "Plant02"
+  ],
+  "plant_names": [
+   "Plant 02"
+  ]
  },
  {
   "persona": "owner",
@@ -123,9 +153,11 @@
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "justification": "Oct–Mar EBITDA forecast -56.2 ₹ m below plan; Entity A1 (A1) accounts for -48.5 ₹ m.",
+  "justification": "Oct–Mar EBITDA forecast -56.2 ₹ m below plan; Entity A1 accounts for -48.5 ₹ m.",
   "category": "forecast",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -141,7 +173,9 @@
   "status_color": "green",
   "justification": "No liquidity gap forecast within 90 days; runway 16.7 months.",
   "category": "forecast",
-  "risk_level": "low"
+  "risk_level": "low",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -157,7 +191,9 @@
   "status_color": "green",
   "justification": "No covenant breach forecast; headroom 24.4% against a 20.0% floor.",
   "category": "forecast",
-  "risk_level": "low"
+  "risk_level": "low",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -171,9 +207,15 @@
   "entity_name": null,
   "verdict": "watch",
   "status_color": "amber",
-  "justification": "154.4 h unplanned downtime in Sep; Entity A1 (A1) accounts for 120.7 h from repeat breakdowns.",
+  "justification": "154.4 h unplanned downtime in Sep; Entity A1 accounts for 120.7 h from repeat breakdowns.",
   "category": "operations",
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "plant_codes": [
+   "Plant02"
+  ],
+  "plant_names": [
+   "Plant 02"
+  ]
  },
  {
   "persona": "owner",
@@ -187,9 +229,15 @@
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "justification": "36.8 kt of planned output at risk; Entity A1 (A1) holds 30.9 kt, mostly the RM-1 incident.",
+  "justification": "36.8 kt of planned output at risk; Entity A1 holds 30.9 kt, mostly the RM-1 incident.",
   "category": "finance",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [
+   "Plant02"
+  ],
+  "plant_names": [
+   "Plant 02"
+  ]
  },
  {
   "persona": "owner",
@@ -203,9 +251,11 @@
   "entity_name": null,
   "verdict": "watch",
   "status_color": "amber",
-  "justification": "Collections slipping 1.1 days at Group; Entity A1 (A1) at 1.9 days, Entity A2 (A2) at 0.2 days.",
+  "justification": "Collections slipping 1.1 days at Group; Entity A1 at 1.9 days, Entity A2 at 0.2 days.",
   "category": "finance",
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -219,9 +269,15 @@
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "justification": "8.7% of dispatches late against a 5.0% limit; Entity A1 (A1) at 10.9% from RM-1 constraints.",
+  "justification": "8.7% of dispatches late against a 5.0% limit; Entity A1 at 10.9% from RM-1 constraints.",
   "category": "sales_and_delivery",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [
+   "Plant02"
+  ],
+  "plant_names": [
+   "Plant 02"
+  ]
  },
  {
   "persona": "owner",
@@ -237,7 +293,9 @@
   "status_color": "amber",
   "justification": "RM-1 index up 2.1% month on month; adds about ₹1.8 m cost per quarter.",
   "category": "outside_factors",
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -253,7 +311,9 @@
   "status_color": "amber",
   "justification": "221.7 ₹ m USD exposure unhedged; a 5% USD move changes EBITDA by about 8.4 ₹ m.",
   "category": "outside_factors",
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -267,9 +327,11 @@
   "entity_name": null,
   "verdict": "intervention_required",
   "status_color": "red",
-  "justification": "1 freight lane disrupted (supplier S-07); RM-1 lead time up 5 days for Entity A1 (A1).",
+  "justification": "1 freight lane disrupted (supplier S-07); RM-1 lead time up 5 days for Entity A1.",
   "category": "outside_factors",
-  "risk_level": "high"
+  "risk_level": "high",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -285,7 +347,9 @@
   "status_color": "green",
   "justification": "Fuel cost per tonne down 17.7% month on month; no exposure flagged.",
   "category": "outside_factors",
-  "risk_level": "low"
+  "risk_level": "low",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -301,7 +365,9 @@
   "status_color": "green",
   "justification": "Power cost per tonne down 7.1% month on month; peak-tariff exposure eased.",
   "category": "outside_factors",
-  "risk_level": "low"
+  "risk_level": "low",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -317,7 +383,9 @@
   "status_color": "green",
   "justification": "3 regulatory deadlines in 30 days, all owned and none overdue.",
   "category": "risk",
-  "risk_level": "low"
+  "risk_level": "low",
+  "plant_codes": [],
+  "plant_names": []
  },
  {
   "persona": "owner",
@@ -331,9 +399,15 @@
   "entity_name": null,
   "verdict": "watch",
   "status_color": "amber",
-  "justification": "1 licence expires within 12 months in Entity A1 (A1); nearest permit expiry in 65 days.",
+  "justification": "1 licence expires within 12 months in Entity A1; nearest permit expiry in 65 days.",
   "category": "risk",
-  "risk_level": "medium"
+  "risk_level": "medium",
+  "plant_codes": [
+   "Plant02"
+  ],
+  "plant_names": [
+   "Plant 02"
+  ]
  },
  {
   "persona": "owner",
@@ -349,6 +423,8 @@
   "status_color": "green",
   "justification": "No environmental violations in either entity (0).",
   "category": "risk",
-  "risk_level": "low"
+  "risk_level": "low",
+  "plant_codes": [],
+  "plant_names": []
  }
 ]

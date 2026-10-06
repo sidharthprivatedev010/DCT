@@ -37,11 +37,12 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006201541"></script>
-<script src="js/data/resolve.js?v=20261006201541"></script>
-<script src="js/data/entity-cards.js?v=20261006201541"></script>
-<script src="js/data/core-group-verdicts.js?v=20261006201541"></script>
-<script src="js/persona.js?v=20261006201541"></script>
+<script src="js/data/base-data.js?v=20261006202858"></script>
+<script src="js/data/resolve.js?v=20261006202858"></script>
+<script src="js/data/entity-cards.js?v=20261006202858"></script>
+
+<script src="js/data/core-group-verdicts.js?v=20261006202858"></script>
+<script src="js/persona.js?v=20261006202858"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -56,23 +57,17 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.6"><rect x="3" y="3" width="16" height="16" rx="2"></rect><path d="M7 15V10M11 15V7M15 15v-3"></path></svg>
       <span style="font-weight:600;letter-spacing:.02em;font-size:14px">Control Tower</span>
     </div>
-    <span title="All names, values, dates and sources on this page are synthetic" style="display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border:1px dashed rgba(255,255,255,.55);border-radius:2px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:#FFFFFF">SYNTHETIC DATA</span>
     <a href="login.html" class="ct-btn ct-persona" title="Signed in persona. Select to sign out (you will sign in again and choose a persona)." style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font-size:13px;text-decoration:none"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a3 3 0 1 0 0-6a3 3 0 1 0 0 6M2.5 14.5c.8-2.6 3-4 5.5-4s4.7 1.4 5.5 4"></path></svg><b>Core Group Executive</b><span style="color:rgba(255,255,255,.7);padding-left:6px;margin-left:2px;border-left:1px solid rgba(255,255,255,.28)">Sign out</span></a>
     <span hidden data-dct-lens="Core Group"><a hidden data-lens="Owner" href="P2-S07-AIExplain.html"></a><a hidden data-lens="Core Group" href="P2-S07c-AIExplain.html"></a><a hidden data-lens="Entity" href="P2-S13-Ask.html"></a></span>
     <button type="button" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><span style="color:rgba(255,255,255,.7)">Scope</span><b>Group · all entities</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></button>
-    <button type="button" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><span style="color:rgba(255,255,255,.7)">Period</span><b>P07 MTD (SYN)</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></button>
     <button type="button" class="ct-btn ct-report" data-report-lens="Core Group" title="Download a PDF report of this persona's data" onclick="if(window.DCTReport){DCTReport.run(this)}else{var b=this,s=document.createElement('script');s.src='js/report.js?t='+Date.now();s.onload=function(){DCTReport.run(b)};document.head.appendChild(s)}" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid #FFFFFF;border-radius:4px;font:inherit;font-size:13px;font-weight:600;cursor:pointer"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.5 6.5L8 10l3.5-3.5M2.5 13.5h11"></path></svg><span data-report-label>Download report</span></button>
-    <span class="ct-hide-s" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;color:rgba(255,255,255,.72)">Refreshed 06:25 (SYN)</span>
     <div class="ct-hide-s" style="flex:1 1 220px;min-width:180px;position:relative;display:flex;align-items:center">
       <span style="position:absolute;left:10px;color:rgba(255,255,255,.6);display:flex"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12.5a5.5 5.5 0 1 0 0-11a5.5 5.5 0 1 0 0 11M11 11l3.5 3.5"></path></svg></span>
       <input type="search" aria-label="Search or ask Control Tower" placeholder="Search or ask Control Tower" style="width:100%;box-sizing:border-box;min-height:40px;padding:0 12px 0 34px;border:1px solid rgba(255,255,255,.28);border-radius:4px;background:rgba(255,255,255,.08);color:#FFFFFF;font:inherit;font-size:13.5px">
     </div>
     <a href="P2-S07c-AIExplain.html" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l1.6 4.9 4.9 1.6-4.9 1.6L8 14.5l-1.6-4.9L1.5 8l4.9-1.6z"></path></svg>Ask</a>
-    <button type="button" aria-label="Notifications, 3 unread" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V7a4 4 0 0 1 8 0v4l1.5 2h-11zM6.5 14.5h3"></path></svg><b style="background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border-radius:2px;padding:0 6px;font-size:12px">3</b></button>
     <details class="ct-tourmenu ct-hide-s" style="position:relative"><summary aria-label="Guided tours" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font-size:13px;cursor:pointer;list-style:none">Tour ▾</summary><div style="position:absolute;top:46px;right:0;z-index:30;min-width:260px;background:#FFFFFF;color:var(--ct-ink,#121A2B);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;box-shadow:0 8px 24px rgba(14,27,51,.18);padding:6px;display:flex;flex-direction:column"><a href="P2-O01-EnterpriseHealth.html#tour" style="padding:10px 12px;color:var(--ct-navy-900,#0E1B33);text-decoration:none;font-size:13.5px"><b>Primary business journey</b><br><span style="color:var(--ct-ink-3,#5B6576);font-size:12px">Owner · 10 steps · alert to closure</span></a><a href="P2-G01-Portfolio.html#tour" style="padding:10px 12px;color:var(--ct-navy-900,#0E1B33);text-decoration:none;font-size:13.5px"><b>Data Assurance journey</b><br><span style="color:var(--ct-ink-3,#5B6576);font-size:12px">Core Group · 8 steps · break to certification</span></a></div></details>
-    <button type="button" aria-label="Help" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 1 0 0 13M6.2 6.2a1.9 1.9 0 1 1 2.6 1.8c-.5.2-.8.6-.8 1.1v.6M8 11.5v.4"></path></svg></button>
-    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a3 3 0 1 0 0-6a3 3 0 1 0 0 6M2.5 14.5c.7-2.8 2.9-4.5 5.5-4.5s4.8 1.7 5.5 4.5"></path></svg><span class="ct-hide-s">Core Group Executive</span></button>
-  </header>
+    </header>
   <div class="ct-body" style="display:flex;align-items:stretch;flex:1 0 auto">
     <nav class="ct-nav ct-dark" aria-label="Global navigation" style="flex:0 0 232px;box-sizing:border-box;padding:16px 10px;background:var(--ct-navy-900,#0E1B33);border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:2px">
       <div class="ct-lensl" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.62);padding:0 12px 10px">Core Group lens · comparative</div>
@@ -108,7 +103,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
       <div style="display:flex;flex-direction:column;gap:6px">
         
-        <h1 class="ct-h1" style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.005em">AI Explanation · Why did the Entity A1 (A1) production forecast fall?</h1>
+        <h1 class="ct-h1" style="margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.005em">AI Explanation · Why did the Entity A1 production forecast fall?</h1>
         <p class="ct-q" style="margin:0;font-size:15px;line-height:22px;color:var(--ct-ink-2,#3B4558)">Why did this change?</p>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;padding:10px 14px;font-size:13px">
@@ -118,6 +113,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
         <span style="display:inline-flex;align-items:center;gap:6px;color:var(--ct-navy-900,#0E1B33)"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l5.5 2v4.2c0 3.4-2.4 5.9-5.5 6.8C4.9 13.6 2.5 11.1 2.5 7.7V3.5zM5.5 8l1.8 1.8L10.8 6.3"></path></svg><span style="color:var(--ct-ink-2,#3B4558)">Eight separated sections; AI interpretation labelled; no approval authority</span></span>
         <a href="P2-S03-KPIDetail.html" style="margin-left:auto;color:var(--ct-navy-700,#24406E);font-weight:600;display:inline-flex;align-items:center;gap:4px">Sources and lineage <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
       </div>
+      
       
       
       
@@ -141,7 +137,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               </div>
               
               
-
               
 
               
@@ -167,7 +162,9 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
-                <div style="border-top:1px solid var(--ct-line,#DCE1E8)"><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Generated by</div><div>Explanation Assistant · D0 06:41 (AI-generated)</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Scope</div><div>Requester's scope only (Core Group)</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Question</div><div>Why did the Entity A1 (A1) production forecast fall below plan from D+4?</div></div></div>
+
+              
+                <div style="border-top:1px solid var(--ct-line,#DCE1E8)"><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Generated by</div><div>Explanation Assistant · D0 06:41 (AI-generated)</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Scope</div><div>Requester's scope only (Core Group)</div></div><div class="ct-kv" style="display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr);gap:4px 16px;padding:9px 0;border-bottom:1px solid var(--ct-line,#DCE1E8)"><div style="color:var(--ct-ink-3,#5B6576);font-size:13px">Question</div><div>Why did the Entity A1 production forecast fall below plan from D+4?</div></div></div>
               
 
               
@@ -198,6 +195,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               </div>
               
               
+              
 
               
 
@@ -208,7 +206,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                   <input id="ct-ask-1" type="text" aria-label="Ask a question" placeholder="Ask about any KPI in your scope" style="flex:1 1 320px;min-height:40px;padding:0 12px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;font:inherit;font-size:13.5px;box-sizing:border-box">
                   <button type="button" data-dc-ev="0" class="ct-btn ct-pri" style="min-height:40px;padding:0 16px;border:1px solid var(--ct-navy-900,#0E1B33);border-radius:4px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer">Ask</button>
                 </div>
-                <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Try:</span><button type="button" data-dc-ev="1" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">What is Group EBITDA YTD?</button><button type="button" data-dc-ev="2" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">What was P07 production at Entity A1 (A1)?</button><button type="button" data-dc-ev="3" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">Why is free cash flow lagging EBITDA?</button><button type="button" data-dc-ev="4" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">Are we going to breach a covenant?</button></div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Try:</span><button type="button" data-dc-ev="1" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">What is Group EBITDA YTD?</button><button type="button" data-dc-ev="2" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">What was P07 production at Entity A1?</button><button type="button" data-dc-ev="3" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">Why is free cash flow lagging EBITDA?</button><button type="button" data-dc-ev="4" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">Are we going to breach a covenant?</button></div>
                 
                 
               
@@ -261,6 +259,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               </div>
               
               
+              
 
               
 
@@ -292,7 +291,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 <div style="display:flex;flex-direction:column;gap:8px">
                   
                     <div style="border:1px solid var(--ct-line,#DCE1E8);background:#FFFFFF;border-radius:4px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline">
-                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT</span><span style="flex:1 1 320px;line-height:21px">Entity A1 (A1) delivered 91.3% of plan in Sep (−30.3 kt); Group 95.5%.</span>
+                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid var(--ct-navy-900,#0E1B33);white-space:nowrap">CERT</span><span style="flex:1 1 320px;line-height:21px">Entity A1 delivered 91.3% of plan in Sep (−30.3 kt); Group 95.5%.</span>
                       <a href="#" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;color:var(--ct-navy-700,#24406E)">OPS-001 →</a>
                     </div>
                   
@@ -323,6 +322,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
+              
               
               
 
@@ -389,6 +389,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               </div>
               
               
+              
 
               
 
@@ -451,6 +452,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
+              
               
               
 
@@ -517,6 +519,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               </div>
               
               
+              
 
               
 
@@ -581,6 +584,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               </div>
               
               
+              
 
               
 
@@ -612,7 +616,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 <div style="display:flex;flex-direction:column;gap:8px">
                   
                     <div style="border:1px dashed var(--ct-ink-3,#5B6576);background:var(--ct-surface-2,#F8F9FB);border-radius:4px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline">
-                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576);white-space:nowrap">AI · NOT APPROVED</span><span style="flex:1 1 320px;line-height:21px">Entity A1 (A1)'s forecast fall is driven by one single-source material, with reliability losses as the second cause. Sales cover is unchanged. Confidence Medium.</span>
+                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576);white-space:nowrap">AI · NOT APPROVED</span><span style="flex:1 1 320px;line-height:21px">Entity A1's forecast fall is driven by one single-source material, with reliability losses as the second cause. Sales cover is unchanged. Confidence Medium.</span>
                       
                     </div>
                   
@@ -643,6 +647,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
+              
               
               
 
@@ -681,7 +686,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                     </div>
                   
                     <div style="border:1px dashed var(--ct-ink-3,#5B6576);background:var(--ct-surface-2,#F8F9FB);border-radius:4px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline">
-                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576);white-space:nowrap">AI</span><span style="flex:1 1 320px;line-height:21px">What does Entity A1 (A1) give up if it releases material internally (Option B)?</span>
+                      <span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;line-height:16px;font-weight:600;padding:3px 8px;border-radius:2px;background:var(--ct-surface-2,#F8F9FB);color:var(--ct-ink-2,#3B4558);border:1px dashed var(--ct-ink-3,#5B6576);white-space:nowrap">AI</span><span style="flex:1 1 320px;line-height:21px">What does Entity A1 give up if it releases material internally (Option B)?</span>
                       <a href="P2-S06-Scenario.html" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;color:var(--ct-navy-700,#24406E)">S-06 →</a>
                     </div>
                   
@@ -712,6 +717,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
+              
               
               
 
@@ -775,8 +781,8 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplF.js?v=20261006201541"></script>
-<script src="js/c/P2-S07c-AIExplain.js?v=20261006201541"></script>
+<script src="js/c/TplF.js?v=20261006202858"></script>
+<script src="js/c/P2-S07c-AIExplain.js?v=20261006202858"></script>
 <script>DCLite.mount("dc-root", "P2-S07c-AIExplain", {});</script>
 </body>
 </html>

@@ -40893,6 +40893,12 @@ var DCTData = {
     "title": "Operations Command View",
     "file": "P2-O09-Operations.html"
    },
+   "P2-O10-KnowledgeMap": {
+    "lens": "Owner",
+    "rid": "O-10",
+    "title": "Knowledge Map · KPI tree for root cause",
+    "file": "P2-O10-KnowledgeMap.html"
+   },
    "P2-S03-KPIDetail": {
     "lens": "Core Group",
     "rid": "S-03",
@@ -41716,7 +41722,7 @@ var DCTData = {
     "screen": "P2-O03-CashLiquidity",
     "type": "line",
     "title": "DSO trend",
-    "ask": "DSO fell from 48.7 days in May to 47.0 in Sep but is still above the 45-day target.",
+    "ask": "Group DSO fell from 48.7 days in May to 47.0 in Sep but is still above the 45-day target. [[A1]] (52.0 days) is above target; [[A2]] (42.0) is within it. Group is recalculated from total receivables and revenue, not averaged.",
     "source": "live",
     "from": "WCP-001 for the plant, entity or Group in each row label",
     "note": ""
@@ -43479,7 +43485,7 @@ var DCTData = {
     "source": "layout",
     "from": "1 row of workflow, status or reference text; no KPI values",
     "kpis": [],
-    "note": "L0 · Entity A1 (A1) · 1 item (dispatch re-prioritisation), owned in the Entity lens."
+    "note": "L0 · Entity A1 · 1 item (dispatch re-prioritisation), owned in the Entity lens."
    },
    {
     "screen": "P2-G05-OpsBenchmark",
@@ -44174,17 +44180,7 @@ var DCTData = {
     "source": "layout",
     "from": "2 rows of workflow, status or reference text; no KPI values",
     "kpis": [],
-    "note": "Composite = highest dimension, raised one level when time-to-breach ≤ [PH] days. Bands are placeholders pending approval (D-03)."
-   },
-   {
-    "screen": "P2-O05-Risk",
-    "type": "table",
-    "title": "What drives the rating of INC-SYN-0142 · materiality dimensions (placeholder model)",
-    "ask": "",
-    "source": "layout",
-    "from": "7 rows of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Dimension · Rating · Measures used"
+    "note": "Composite = highest dimension, raised one level when time-to-breach ≤ [PH] days. Bands are placeholders pending approval (D-03). Select Show details on a row to see why each rating was given and the measures behind it."
    },
    {
     "screen": "P2-O05-Risk",
@@ -44195,16 +44191,6 @@ var DCTData = {
     "from": "3 tiles of workflow, status or reference text; no KPI values",
     "kpis": [],
     "note": ""
-   },
-   {
-    "screen": "P2-O05-Risk",
-    "type": "table",
-    "title": "Named actions on material risks",
-    "ask": "",
-    "source": "layout",
-    "from": "1 row of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
    },
    {
     "screen": "P2-O05-Risk",

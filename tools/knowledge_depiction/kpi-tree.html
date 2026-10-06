@@ -1,0 +1,1677 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KPI tree for RCA — strata</title>
+<meta name="description" content="KPI to guiding principle to entity to function to root cause.">
+<script>
+/* Node-only colour palettes. Background is controlled separately below. */
+window.__NODE_PALETTES = {
+ semantic: {
+  name: 'Dark Semantic',
+  kpi: '#FF4D6D',
+  principle: '#FF9F1C',
+  entity: '#FFD166',
+  fn: '#06D6A0',
+  cause: '#4CC9F0',
+  pastel: {
+    kpi: '#FF4D6D',
+    principle: '#FF9F1C',
+    entity: '#FFD166',
+    fn: '#06D6A0',
+    cause: '#4CC9F0'
+  }
+}
+};
+window.__BG_THEMES={
+  light:{name:'Black',css:{
+    void:'#000000',deep:'#000000',panel:'#000000',rule:'#333333',rule2:'#555555',
+    text:'#FFFFFF',text2:'#FFFFFF',text3:'#FFFFFF',amber:'#FFFFFF',rose:'#FF3B30',
+    violet:'#8B5CF6',green:'#06D6A0',ice:'#4CC9F0',teal:'#06D6A0',grey:'#FFFFFF',
+    ledgerPaper:'#FFFFFF',ledgerOxide:'#FFFFFF',ledgerSlate:'#FFFFFF',ledgerMarg:'#FFFFFF',
+    ledgerRule:'#333333',agentPastel:'#8B5CF6'
+  }}
+};
+window.__ACTIVE_NODE='semantic';
+window.__ACTIVE_BG='light';
+window.__NODE=window.__NODE_PALETTES.semantic;
+window.__BG=window.__BG_THEMES.light;
+window.__THEME={
+  name:window.__NODE.name,
+  kpi:window.__NODE.kpi, principle:window.__NODE.principle, entity:window.__NODE.entity,
+  fn:window.__NODE.fn, cause:window.__NODE.cause, pastel:window.__NODE.pastel,
+  css:window.__BG.css
+};
+</script>
+<style>/* ══ THE ESTATE ═══════════════════════════════════════════════════════════
+   An instrument for exploring the S.C.A.L.A knowledge base.
+   Single visual world, deliberately: this is a dark screen you look *into*,
+   not a document that adapts to your OS. Colour is encoding, never mood. */
+
+:root{
+  --void:#000000;          /* ground */
+  --deep:#000000;
+  --panel:#000000;
+  --rule:#333333;
+  --rule-2:#555555;
+  --text:#ffffff;
+  --text-2:#ffffff;
+  --text-3:#ffffff;
+
+  --amber:#ffffff;         /* the money spine: steps, forms, tracks */
+  --rose:#e2557b;          /* authority: DoA, PRG, CER, the gates */
+  --violet:#a98be8;        /* the agent estate */
+  --green:#06D6A0;         /* people */
+  --ice:#4CC9F0;           /* systems */
+  --teal:#06D6A0;          /* SAP objects */
+  --grey:#ffffff;          /* screens */
+
+  /* the ladder — Engineering Ledger, direction B of the moodboard.
+     A second encoding on a second axis: immutability, not kind. Ledger
+     values lifted off the paper so they hold on the dark ground. */
+  --ledger-paper:#ffffff;  /* rank 1 · Principles — immutable */
+  --ledger-oxide:#ffffff;  /* rank 2 · SOP — formal revision only */
+  --ledger-slate:#ffffff;  /* rank 3 · Suggestions — advisory */
+  --ledger-marg:#ffffff;   /* rank 4 · Conventions — freely changed */
+  --ledger-rule:#333333;
+
+  /* the pastel set — see graph-data.js. Used by the force-directed reading,
+     where the saturated encoding above reads as noise in constant motion. */
+  --agent-pastel:#cbbaf0;
+
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --disp:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  --body:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--void); color:var(--text);
+  font-family:var(--body); overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:1px solid var(--amber);outline-offset:2px}
+
+/* micro-label: the one type gesture the whole instrument is built on */
+.ml{
+  font:400 9.5px/1 var(--mono); letter-spacing:.19em; text-transform:uppercase;
+  color:var(--text-3);
+}
+
+/* ── stage ───────────────────────────────────────────────────────────── */
+#stage{position:fixed;inset:0}
+#c{display:block;width:100%;height:100%;cursor:grab}
+#c.grabbing{cursor:grabbing}
+#c.on-node{cursor:pointer}
+
+/* ── HUD chrome: corner brackets, no borders-all-round ───────────────── */
+.hud{ position:fixed; background:rgba(0,0,0,.82); backdrop-filter:blur(9px); }
+.hud::before,.hud::after{
+  content:""; position:absolute; width:9px; height:9px; pointer-events:none;
+  border:1px solid var(--rule-2);
+}
+.hud::before{ top:-1px; left:-1px; border-right:0; border-bottom:0 }
+.hud::after{ bottom:-1px; right:-1px; border-left:0; border-top:0 }
+
+/* titleblock */
+.title{ top:20px; left:20px; padding:15px 18px 14px; max-width:290px; }
+.title h1{
+  margin:0; font:700 15px/1 var(--disp); letter-spacing:.26em; text-transform:uppercase;
+}
+.title h1 b{ color:var(--amber); font-weight:700 }
+.title p{ margin:9px 0 0; font:400 11px/1.6 var(--mono); color:var(--text-3);
+          letter-spacing:.04em; }
+.title .counts{ margin-top:11px; display:flex; gap:14px; }
+.title .counts span{ font:400 10px/1 var(--mono); letter-spacing:.1em; color:var(--text-3) }
+.title .counts b{ color:var(--text-2); font-weight:400 }
+
+/* legend / filters — the legend does real work: every row is a switch */
+.legend{ top:20px; right:20px; width:216px; padding:14px 0 8px; }
+.legend .ml{ padding:0 16px 10px; display:block; border-bottom:1px solid var(--rule) }
+.lrow{
+  display:flex; align-items:center; gap:10px; width:100%; padding:7px 16px;
+  text-align:left; border-bottom:1px solid var(--rule);
+}
+.lrow:hover{ background:rgba(255,255,255,.03) }
+.lrow .dot{ width:9px; height:9px; border-radius:50%; flex:none; box-shadow:0 0 7px currentColor }
+.lrow .nm{ font:400 11.5px/1 var(--disp); letter-spacing:.04em; flex:1; color:var(--text-2) }
+.lrow .ct{ font:400 10px/1 var(--mono); color:var(--text-3); font-variant-numeric:tabular-nums }
+.lrow[aria-pressed="false"]{ opacity:.34 }
+.lrow[aria-pressed="false"] .dot{ box-shadow:none; background:transparent!important;
+  border:1px solid currentColor }
+
+.legend .states{ padding:12px 16px 4px; display:flex; flex-direction:column; gap:8px }
+.legend .states div{ display:flex; align-items:center; gap:9px;
+  font:400 10px/1.3 var(--mono); letter-spacing:.06em; color:var(--text-3) }
+.legend .states i{ width:9px; height:9px; border-radius:50%; flex:none }
+.st-in{ background:var(--text-2) }
+.st-ctx{ border:1px solid var(--text-3) }
+.st-gap{ border:1px dashed var(--rose) }
+
+
+
+/* ══ GLASS ════════════════════════════════════════════════════════════════
+   Scoped to body.glass — the layered force-directed reading only. Everywhere
+   else the HUD is a hard-edged instrument panel with corner brackets; here it
+   is glass sitting over a lit field, because the picture underneath is soft,
+   pastel and always moving. Frost needs something coloured behind it to
+   refract, so the stage carries a field of slow pastel light. */
+.glass #stage::before{
+  content:""; position:absolute; inset:-12%; pointer-events:none;
+  background:
+    radial-gradient(38vw 38vw at 22% 24%, rgba(203,186,240,.15), transparent 62%),
+    radial-gradient(34vw 34vw at 78% 30%, rgba(177,218,239,.13), transparent 62%),
+    radial-gradient(40vw 40vw at 62% 82%, rgba(171,226,192,.10), transparent 62%),
+    radial-gradient(30vw 30vw at 16% 78%, rgba(242,203,161,.10), transparent 62%);
+  filter:blur(26px);
+}
+
+.glass .hud,
+.glass .switch,
+.glass .pal-box,
+.glass .reader{
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(26px) saturate(1.5);
+  -webkit-backdrop-filter:blur(26px) saturate(1.5);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  box-shadow:0 10px 34px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.13);
+}
+/* the corner brackets belong to the hard-edged pages, not to glass */
+.glass .hud::before, .glass .hud::after{ content:none }
+
+.glass .reader{ border-radius:22px 0 0 22px; border-right:0 }
+.glass .switch{ overflow:hidden }
+.glass .switch a[aria-current="page"]{ background:rgba(255,255,255,.10) }
+.glass .controls{ overflow:hidden }
+.glass .lrow:last-child, .glass .trow:last-child, .glass .frow:last-child{ border-bottom:0 }
+.glass .legend .ml, .glass .ladder .ml, .glass .forces .ml,
+.glass .lrow, .glass .trow, .glass .frow{ border-color:rgba(255,255,255,.07) }
+.glass .controls > *{ border-color:rgba(255,255,255,.07) }
+.glass .rd-head{ border-bottom-color:rgba(255,255,255,.09) }
+@media (prefers-reduced-transparency:reduce){
+  .glass .hud, .glass .switch, .glass .pal-box, .glass .reader{
+    background:rgba(0,0,0,.93); backdrop-filter:none; -webkit-backdrop-filter:none;
+  }
+  .glass #stage::before{ display:none }
+}
+
+/* ── forces panel (Web) ──────────────────────────────────────────────────
+   The constants of the layout, exposed rather than hidden. Sits under the
+   ladder in the left column. */
+.forces{ top:474px; left:20px; width:262px; padding:13px 0 11px;
+         max-height:calc(100vh - 548px); overflow:auto; }
+.forces .ml{ padding:0 14px 9px; display:block; border-bottom:1px solid var(--rule) }
+.frow{ display:grid; grid-template-columns:72px 1fr 36px; align-items:center;
+       gap:9px; padding:6px 14px; border-bottom:1px solid var(--rule); cursor:pointer }
+.frow span{ font:400 10.5px/1.2 var(--disp); letter-spacing:.03em; color:var(--text-2) }
+.frow output{ font:400 9.5px/1 var(--mono); color:var(--text-3); text-align:right;
+              font-variant-numeric:tabular-nums }
+.frow input[type=range]{ width:100%; accent-color:var(--agent-pastel) }
+.forces .act{ margin:9px 14px 0; padding:7px 9px; width:calc(100% - 28px);
+              border:1px solid var(--rule-2); text-align:center }
+@media (max-height:700px){ .forces{ display:none } }
+
+/* ══ COSMOS ═══════════════════════════════════════════════════════════════
+   Scoped to body.cosmos, which also carries .glass — the frosted HUD is
+   right for this one too, but the field behind it is not a pastel daylight
+   wash. It is deep space: a cold ground, two or three slow clouds of gas at
+   the edges of the visible, and nothing bright enough to compete with the
+   galaxies drawn on the canvas above it. Everything here is CSS on purpose —
+   it sits *behind* the transparent canvas, so it costs nothing per frame. */
+.cosmos{ background:#000000 }
+.cosmos #stage::before{
+  content:""; position:absolute; inset:-20%; pointer-events:none;
+  background:
+    radial-gradient(46vw 46vw at 16% 12%, rgba(126,106,208,.30), transparent 64%),
+    radial-gradient(40vw 40vw at 86% 26%, rgba(60,132,182,.26), transparent 64%),
+    radial-gradient(52vw 52vw at 64% 74%, rgba(162,88,158,.23), transparent 66%),
+    radial-gradient(38vw 38vw at 10% 88%, rgba(54,142,152,.20), transparent 64%),
+    radial-gradient(70vw 70vw at 50% 50%, rgba(18,22,50,.55), transparent 72%);
+  filter:blur(44px);
+}
+/* the deep vignette — the field has to fall off at the edges or the whole
+   page reads as a poster rather than as a plate */
+.cosmos #stage::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(120% 88% at 50% 46%, transparent 42%, rgba(0,0,0,.72) 100%);
+}
+.cosmos .hud, .cosmos .switch, .cosmos .pal-box, .cosmos .reader{
+  background:rgba(0,0,0,.85);
+  border-color:rgba(255,255,255,.12);
+  box-shadow:0 12px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.14);
+}
+.cosmos .switch a[aria-current="page"]{ color:#ffffff; background:rgba(255,255,255,.10) }
+.cosmos .frow input[type=range]{ accent-color:#b9c6ff }
+
+/* the galaxies panel — the constants of the field, and a way in to each one */
+.galaxies{ top:414px; left:20px; width:262px; padding:12px 0 10px;
+           max-height:calc(100vh - 488px); overflow:auto; }
+.galaxies .ml{ padding:0 14px 8px; display:block; border-bottom:1px solid var(--rule) }
+.galaxies .frow{ padding:5px 14px }
+.galaxies .act{ margin:8px 14px 0; padding:7px 9px; width:calc(100% - 28px);
+                border:1px solid var(--rule-2); text-align:center }
+.gjumps{ padding:8px 14px 3px; display:flex; flex-direction:column; gap:4px }
+.gjump{
+  display:flex; align-items:center; gap:9px; width:100%; padding:5px 8px;
+  border:1px solid transparent; border-radius:9px; text-align:left;
+  background:linear-gradient(90deg, color-mix(in srgb, var(--gc) 13%, transparent), transparent 86%);
+}
+.gjump:hover{ border-color:color-mix(in srgb, var(--gc) 42%, transparent) }
+.gjump .gk{ width:15px; height:15px; flex:none; border-radius:50%;
+            font:400 9px/15px var(--mono); text-align:center; color:#000000;
+            background:var(--gc); box-shadow:0 0 11px color-mix(in srgb, var(--gc) 62%, transparent) }
+.gjump .gn{ flex:1; font:400 11px/1.25 var(--disp); letter-spacing:.02em; color:var(--text-2);
+            overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+.gjump .gc{ font:400 9.5px/1 var(--mono); color:var(--text-3); font-variant-numeric:tabular-nums }
+@media (max-height:760px){ .galaxies{ display:none } }
+
+/* ══ PLATE ════════════════════════════════════════════════════════════════
+   Scoped to body.plate. The one page that is not an instrument looking into
+   a dark room — it is a print. So: a true black ground with a single cold
+   light falling from the top right, hairline rules everywhere, and chrome
+   pulled down almost to nothing so that the only thing with any ink in it is
+   the plate itself. */
+.plate{ background:#000000 }
+.plate #stage::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(72vw 52vw at 88% -6%, rgba(255,255,255,.075), transparent 62%),
+    radial-gradient(60vw 60vw at 12% 104%, rgba(255,255,255,.045), transparent 60%);
+}
+.plate .hud, .plate .switch, .plate .pal-box{
+  background:rgba(0,0,0,.80); backdrop-filter:blur(7px);
+  border-color:rgba(255,255,255,.11);
+}
+.plate .hud::before, .plate .hud::after{ border-color:rgba(255,255,255,.24) }
+.plate .reader{ background:#000000; border-left-color:rgba(255,255,255,.14) }
+.plate .switch a[aria-current="page"]{ color:#ffffff; background:rgba(255,255,255,.09) }
+.plate .lrow, .plate .trow, .plate .frow, .plate .controls > *,
+.plate .legend .ml, .plate .ladder .ml, .plate .forces .ml{
+  border-color:rgba(255,255,255,.08);
+}
+.plate .seg button[aria-pressed="true"]{ color:#ffffff; background:rgba(255,255,255,.09) }
+
+/* the plate's own control block — same furniture as the forces panel */
+.plate .forces{ top:414px; max-height:calc(100vh - 488px) }
+.plate .forces .seg{ margin:0 0 4px; border-bottom:1px solid rgba(255,255,255,.08) }
+.plate .forces .seg button{ flex:1; padding:9px 6px; letter-spacing:.12em }
+.plate .frow input[type=range]{ accent-color:#e2557b }
+
+/* the stratum band in the reader — set as marginalia on ledger paper */
+.rd-tier{
+  margin-top:16px; padding:11px 13px 12px; border-left:2px solid var(--tc);
+  background:linear-gradient(90deg, color-mix(in srgb, var(--tc) 11%, transparent), transparent 78%);
+}
+.rd-tier .tk{ font:400 9.5px/1 var(--mono); letter-spacing:.19em;
+              text-transform:uppercase; color:var(--tc) }
+.rd-tier .tn{ display:block; margin-top:7px; font:400 14px/1.2 var(--disp);
+              letter-spacing:.01em; color:var(--ledger-paper) }
+.rd-tier .te{ display:inline-block; margin-top:7px; padding:3px 7px;
+              border:1px solid var(--tc); font:400 9px/1 var(--mono);
+              letter-spacing:.15em; text-transform:uppercase; color:var(--tc) }
+.rd-tier .tr{ margin:9px 0 0; font:400 11.5px/1.55 var(--mono);
+              letter-spacing:.02em; color:var(--ledger-marg) }
+
+.readout .rt{ margin-top:6px; font:400 9.5px/1.4 var(--mono); letter-spacing:.15em }
+
+/* control bar */
+.controls{ bottom:20px; left:20px; display:flex; align-items:stretch; }
+.controls > *{ border-right:1px solid var(--rule) }
+.controls > *:last-child{ border-right:0 }
+.seg{ display:flex }
+.seg button{ padding:11px 15px; font:400 10px/1 var(--mono); letter-spacing:.15em;
+             text-transform:uppercase; color:var(--text-3) }
+.seg button[aria-pressed="true"]{ color:var(--amber); background:rgba(255,255,255,.08) }
+.seg button:hover{ color:var(--text) }
+.depth{ display:flex; align-items:center; gap:10px; padding:0 15px }
+.depth label{ font:400 9.5px/1 var(--mono); letter-spacing:.15em; text-transform:uppercase;
+              color:var(--text-3) }
+.depth input{ width:78px; accent-color:var(--amber) }
+.depth output{ font:400 10px/1 var(--mono); color:var(--amber); width:26px }
+.act{ padding:11px 15px; font:400 10px/1 var(--mono); letter-spacing:.15em;
+      text-transform:uppercase; color:var(--text-3) }
+.act:hover{ color:var(--text) }
+.act kbd{ color:var(--rule-2); margin-left:7px }
+
+/* readout — follows the cursor's node */
+.readout{ bottom:20px; right:20px; width:216px; padding:12px 16px 14px; }
+.readout .ml{ display:block; margin-bottom:8px }
+.readout .rn{ font:400 14px/1.25 var(--disp); letter-spacing:.01em; color:var(--text) }
+.readout .rs{ margin-top:5px; font:400 10.5px/1.5 var(--mono); color:var(--text-3);
+              letter-spacing:.04em }
+.readout .hint{ font:400 10.5px/1.6 var(--mono); color:var(--text-3); letter-spacing:.03em }
+
+/* variant switcher — six readings of one estate */
+.switch{
+  position:fixed; top:20px; left:50%; transform:translateX(-50%); display:flex;
+  background:rgba(0,0,0,.82); backdrop-filter:blur(9px);
+  border:1px solid var(--rule); z-index:10;
+}
+.switch a{
+  padding:10px 17px; text-decoration:none; color:var(--text-3);
+  font:400 10px/1 var(--mono); letter-spacing:.17em; text-transform:uppercase;
+  border-right:1px solid var(--rule);
+}
+.switch a:last-child{ border-right:0 }
+.switch a:hover{ color:var(--text) }
+.switch a[aria-current="page"]{ color:var(--amber); background:rgba(255,255,255,.09) }
+
+.variant-blurb{ max-width:33ch }
+
+/* ── reader ──────────────────────────────────────────────────────────── */
+.reader{
+  position:fixed; top:0 ; right:0; bottom:0; width:min(560px,46vw);
+  background:var(--deep); border-left:1px solid var(--rule-2);
+  transform:translateX(101%); transition:transform .34s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column; z-index:20;
+}
+.reader.open{ transform:none }
+@media (prefers-reduced-motion:reduce){ .reader{ transition:none } }
+.rd-head{ padding:22px 26px 18px; border-bottom:1px solid var(--rule); flex:none }
+.rd-kind{ display:flex; align-items:center; gap:9px }
+.rd-kind i{ width:9px;height:9px;border-radius:50%;box-shadow:0 0 8px currentColor }
+.rd-head h2{ margin:12px 0 0; font:700 27px/1.12 var(--disp); letter-spacing:-.02em }
+.rd-sub{ margin:8px 0 0; font:400 11px/1 var(--mono); letter-spacing:.13em;
+         text-transform:uppercase; color:var(--text-3) }
+.rd-close{ position:absolute; top:20px; right:22px; padding:6px 9px;
+           font:400 10px/1 var(--mono); letter-spacing:.14em; color:var(--text-3) }
+.rd-close:hover{ color:var(--text) }
+.rd-body{ overflow-y:auto; padding:22px 26px 60px; flex:1 }
+.rd-body p.lead{ margin:0; font:400 16px/1.62 var(--body); color:var(--text) }
+
+.rd-sec{ margin-top:28px }
+.rd-sec > .ml{ display:block; padding-bottom:9px; border-bottom:1px solid var(--rule) }
+.link{
+  display:flex; gap:11px; align-items:baseline; width:100%; text-align:left;
+  padding:9px 2px; border-bottom:1px solid var(--rule);
+}
+.link:hover{ background:rgba(255,255,255,.03) }
+.link .rel{ font:400 9.5px/1.5 var(--mono); letter-spacing:.09em; text-transform:uppercase;
+            color:var(--text-3); width:106px; flex:none; text-align:right }
+.link .to{ font:400 14px/1.4 var(--body); color:var(--text) }
+.link .dot{ width:7px;height:7px;border-radius:50%;flex:none;position:relative;top:5px }
+
+.rd-open{ margin-top:26px; width:100%; padding:12px; border:1px solid var(--rule-2);
+          font:400 10px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase;
+          color:var(--text-2) }
+.rd-open:hover{ border-color:var(--amber); color:var(--amber) }
+
+/* full chapter prose, rendered from v2/ */
+.sheet-body{ margin-top:26px; border-top:1px solid var(--rule); padding-top:22px;
+             font:400 15px/1.68 var(--body); color:var(--text-2) }
+.sheet-body h2{ margin:34px 0 0; font:700 19px/1.25 var(--disp); letter-spacing:-.01em; color:var(--text) }
+.sheet-body h3{ margin:24px 0 0; font:700 15px/1.3 var(--disp); color:var(--text) }
+.sheet-body h4{ margin:20px 0 0; font:400 10px/1 var(--mono); letter-spacing:.15em;
+                text-transform:uppercase; color:var(--text-3) }
+.sheet-body p{ margin:13px 0 0 }
+.sheet-body strong{ color:var(--text); font-weight:600 }
+.sheet-body em{ color:var(--text-2) }
+.sheet-body a{ color:var(--amber); text-decoration:none; border-bottom:1px solid rgba(255,255,255,.3) }
+.sheet-body hr{ border:0; border-top:1px solid var(--rule); margin:26px 0 0 }
+.sheet-body ul,.sheet-body ol{ margin:13px 0 0; padding-left:0; list-style:none }
+.sheet-body li{ position:relative; padding-left:19px; margin-top:7px }
+.sheet-body ul>li::before{ content:""; position:absolute; left:2px; top:.72em;
+  width:6px; height:1px; background:var(--rule-2) }
+.sheet-body ol{ counter-reset:o }
+.sheet-body ol>li{ counter-increment:o }
+.sheet-body ol>li::before{ content:counter(o,decimal-leading-zero); position:absolute;
+  left:0; top:.1em; font:400 10px/1.7 var(--mono); color:var(--text-3) }
+.sheet-body li.forbid::before{ content:"✗"; width:auto;height:auto;background:none;
+  font:400 12px/1.55 var(--mono); color:var(--rose); top:0 }
+.sheet-body code{ font:400 .86em/1.5 var(--mono); background:var(--panel);
+                  padding:1.5px 4px; color:var(--ice) }
+.sheet-body blockquote{ margin:20px 0 0; padding:14px 16px; background:var(--panel);
+  border-left:2px solid var(--amber) }
+.sheet-body blockquote p:first-child{ margin-top:0 }
+.sheet-body figure{ margin:20px 0 0; border:1px solid var(--rule); background:var(--panel) }
+.sheet-body pre{ margin:0; padding:14px; overflow-x:auto;
+                 font:400 11.5px/1.5 var(--mono); color:var(--text-3) }
+.sheet-body .tw{ margin:20px 0 0; overflow-x:auto; border:1px solid var(--rule) }
+.sheet-body table{ width:100%; border-collapse:collapse; font-size:13px }
+.sheet-body th{ text-align:left; padding:8px 11px; border-bottom:1px solid var(--rule-2);
+  font:400 9.5px/1.3 var(--mono); letter-spacing:.13em; text-transform:uppercase;
+  color:var(--text-3); white-space:nowrap }
+.sheet-body td{ padding:8px 11px; border-bottom:1px solid var(--rule); vertical-align:top }
+.sheet-body .tag{ display:inline-block; font:400 9px/1 var(--mono); letter-spacing:.1em;
+  text-transform:uppercase; padding:3px 5px; border:1px solid currentColor; margin:0 2px }
+.sheet-body .t-in{ color:var(--green) } .sheet-body .t-ctx{ color:var(--ice) }
+.sheet-body .t-off{ color:var(--text-3) }
+.sheet-body .warn{ color:var(--rose); margin-right:.3em }
+.sheet-body .yes{ color:var(--green) } .sheet-body .no-m,.sheet-body .dot{ color:var(--rose) }
+.sheet-body .ext{ font:400 .85em/1 var(--mono); color:var(--text-3); word-break:break-all }
+
+/* ── command palette ─────────────────────────────────────────────────── */
+.palette{ position:fixed; inset:0; z-index:40; background:rgba(0,0,0,.72);
+          display:flex; justify-content:center; padding:13vh 20px 20px }
+.palette[hidden]{ display:none }
+.pal-box{ width:100%; max-width:560px; height:max-content; max-height:70vh;
+  background:var(--deep); border:1px solid var(--rule-2); display:flex; flex-direction:column }
+#pq{ width:100%; padding:17px 20px; background:none; border:0;
+     border-bottom:1px solid var(--rule); color:var(--text);
+     font:400 16px/1 var(--body) }
+#pq:focus{ outline:0 }
+#presults{ overflow-y:auto }
+.pres{ display:flex; gap:11px; align-items:center; width:100%; text-align:left;
+       padding:11px 20px; border-bottom:1px solid var(--rule) }
+.pres .dot{ width:8px;height:8px;border-radius:50%;flex:none }
+.pres .pn{ font:400 14px/1.3 var(--body); color:var(--text); flex:1 }
+.pres .pt{ font:400 9.5px/1 var(--mono); letter-spacing:.13em; text-transform:uppercase;
+           color:var(--text-3) }
+.pres.on,.pres:hover{ background:rgba(255,255,255,.09) }
+.pal-foot{ padding:9px 20px; border-top:1px solid var(--rule);
+           font:400 9.5px/1.8 var(--mono); letter-spacing:.13em; text-transform:uppercase;
+           color:var(--text-3) }
+.pal-empty{ padding:20px; color:var(--text-3); font:400 13px/1.5 var(--body) }
+
+/* ── first-run cue, retired after one interaction ────────────────────── */
+.cue{ position:fixed; left:50%; bottom:92px; transform:translateX(-50%);
+      font:400 10px/1 var(--mono); letter-spacing:.19em; text-transform:uppercase;
+      color:var(--text-3); pointer-events:none; transition:opacity .6s }
+.cue.gone{ opacity:0 }
+
+@media (max-width:900px){
+  .legend{ display:none }
+  .ladder{ display:none }
+  .readout{ display:none }
+  .title{ max-width:210px; padding:12px 14px }
+  .reader{ width:100% }
+  .controls{ left:12px; right:12px; bottom:12px; overflow-x:auto }
+}
+
+/* ── background modes: independent from node palette ───────────────── */
+html[data-strata-bg="dark"]{--void:#000000;--deep:#000000;--panel:#000000;--rule:#333333;--rule-2:#555555;--text:#FFFFFF;--text-2:#FFFFFF;--text-3:#FFFFFF;--amber:#FFFFFF;--rose:#E2557B;--violet:#A98BE8;--green:#06D6A0;--ice:#4CC9F0;--teal:#06D6A0;--grey:#FFFFFF;--ledger-paper:#FFFFFF;--ledger-oxide:#FFFFFF;--ledger-slate:#FFFFFF;--ledger-marg:#FFFFFF;--ledger-rule:#333333;--agent-pastel:#CBBaf0}
+html[data-strata-bg="light"]{--void:#000000;--deep:#000000;--panel:#000000;--rule:#333333;--rule-2:#555555;--text:#FFFFFF;--text-2:#FFFFFF;--text-3:#FFFFFF;--amber:#FFFFFF;--rose:#C9365E;--violet:#6941C6;--green:#06D6A0;--ice:#4CC9F0;--teal:#06D6A0;--grey:#FFFFFF;--ledger-paper:#FFFFFF;--ledger-oxide:#FFFFFF;--ledger-slate:#FFFFFF;--ledger-marg:#FFFFFF;--ledger-rule:#333333;--agent-pastel:#E4E7EC}
+html[data-strata-bg="light"] .hud{background:rgba(0,0,0,.84)}
+/* Professional node-palette selector */
+.node-picker{
+  width:330px;
+  padding:14px 15px;
+  border-radius:10px;
+  background:rgba(0,0,0,.94);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 16px 48px rgba(0,0,0,.34);
+}
+.node-picker .np-title{
+  font:600 9px/1 var(--mono);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--text);
+  margin-bottom:11px;
+}
+.node-picker .np-section{
+  font:500 8px/1 var(--mono);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-3);
+  margin:12px 0 7px;
+}
+.node-picker .np-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.node-picker .np-bg{
+  grid-template-columns:1fr 1fr;
+}
+.node-picker button{
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 9px;
+  border:1px solid var(--rule);
+  border-radius:5px;
+  color:var(--text-2);
+  background:rgba(255,255,255,.015);
+  font:400 10px/1 var(--mono);
+  text-align:left;
+  transition:border-color .16s,background .16s,color .16s,transform .16s;
+}
+.node-picker button:hover{
+  border-color:var(--rule-2);
+  background:rgba(255,255,255,.055);
+  color:var(--text);
+  transform:translateY(-1px);
+}
+.node-picker button.active{
+  border-color:var(--amber);
+  color:var(--text);
+  background:rgba(255,255,255,.075);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.10);
+}
+.node-picker .swatches{
+  display:flex;
+  gap:3px;
+  flex:none;
+}
+.node-picker .swatches i{
+  display:block;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  box-shadow:0 0 6px currentColor;
+}
+.node-picker .bg-dot{
+  width:10px!important;
+  height:10px!important;
+  border-radius:2px!important;
+  border:1px solid var(--rule-2);
+  box-shadow:none!important;
+}
+html[data-strata-bg="light"] .node-picker{
+  background:rgba(0,0,0,.96);
+  box-shadow:0 16px 48px rgba(0,0,0,.16);
+}
+@media(max-width:700px){
+  .node-picker{right:10px;bottom:10px;width:285px}
+}
+
+</style>
+
+<style id="semantic-white-fixed">
+html,body{background:#000000!important;color:#FFFFFF!important}
+html[data-strata-bg="light"]{--void:#000000;--deep:#000000;--panel:#000000;--rule:#333333;--rule-2:#555555;--text:#FFFFFF;--text-2:#FFFFFF;--text-3:#FFFFFF;--amber:#FFFFFF;--rose:#ff3b30;--violet:#8b5cf6;--green:#06D6A0;--ice:#4CC9F0;--teal:#06D6A0;--grey:#FFFFFF;--ledger-paper:#FFFFFF;--ledger-oxide:#FFFFFF;--ledger-slate:#FFFFFF;--ledger-marg:#FFFFFF;--ledger-rule:#333333;--agent-pastel:#8b5cf6}
+html[data-strata-bg="light"] .hud,html[data-strata-bg="light"] .switch,html[data-strata-bg="light"] .reader,html[data-strata-bg="light"] .pal-box{background:#000000;color:#FFFFFF}
+html[data-strata-bg="light"] .switch a,html[data-strata-bg="light"] .hud p,html[data-strata-bg="light"] .counts,html[data-strata-bg="light"] .legend,html[data-strata-bg="light"] .ladder,html[data-strata-bg="light"] .controls,html[data-strata-bg="light"] .reader{color:#FFFFFF}
+</style>
+
+<style>
+/* Relationship labels: always white */
+.relation-label,
+.edge-label,
+.link-label,
+.rel-label {
+  color:#FFFFFF !important;
+  fill:#FFFFFF !important;
+}
+</style>
+
+<style>.switch{display:none !important;}</style>
+
+<style>
+/* Clean UI: layer counts are not displayed. */
+.layer-count, .layer-counts, .count-badge, .layer-meta .count,
+.layer-subtitle .count, .layer-kicker .count, .layer-header .count {
+  display:none !important;
+}
+</style>
+
+
+<style>
+/* Final clean UI */
+.hud.controls, .controls, .depth { display:none !important; }
+</style>
+
+<style>
+/* ── compact layer selector + centered page title ─────────────────────── */
+.layer-select-wrap{
+  position:fixed;
+  z-index:50;
+  top:18px;
+  left:20px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.layer-select-wrap label{
+  font:500 9px/1 var(--mono);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#ffffff;
+}
+#layer-select{
+  appearance:auto;
+  min-width:205px;
+  height:34px;
+  padding:0 30px 0 11px;
+  border:1px solid #555555;
+  border-radius:3px;
+  background:#000000;
+  color:#ffffff;
+  font:500 10px/1 var(--mono);
+  letter-spacing:.04em;
+  cursor:pointer;
+  outline:none;
+}
+#layer-select:hover,
+#layer-select:focus{
+  border-color:#ffffff;
+}
+.page-title{
+  position:fixed;
+  z-index:50;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#ffffff;
+  font:600 18px/34px var(--disp);
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  pointer-events:none;
+}
+.page-title span{
+  color:#ffffff;
+}
+@media(max-width:700px){
+  .layer-select-wrap{left:12px;top:12px}
+  #layer-select{min-width:175px}
+  .page-title{top:58px;font-size:15px}
+}
+</style>
+
+
+<style id="force-black-layer-dropdown">
+/* Force the layer selector and its label to white text on black background. */
+.layer-select-wrap label,
+.layer-select-wrap #layer-select,
+.layer-select-wrap #layer-select option {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+.layer-select-wrap #layer-select {
+  background: #000000 !important;
+  border: 1px solid #555555 !important;
+}
+.layer-select-wrap #layer-select option {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+}
+</style>
+
+</head>
+<body class="">
+
+<div id="stage"><canvas id="c"></canvas></div>
+
+<div class="layer-select-wrap">
+  <label for="layer-select">LAYER</label>
+  <select id="layer-select" aria-label="Select layer">
+    <option value="all">All layers</option>
+    <option value="1">1 · KPI</option>
+    <option value="2">2 · Guiding principles</option>
+    <option value="3">3 · Entity</option>
+    <option value="4">4 · Function</option>
+    <option value="5">5 · Root cause</option>
+  </select>
+</div>
+
+<div class="page-title">KPI <span>TREE</span></div>
+
+<aside class="hud readout">
+  <span class="ml">Readout</span>
+  <div id="ro-body"></div>
+</aside>
+
+
+
+<section class="reader" id="reader" aria-label="Detail">
+  <button class="rd-close" id="rd-close">Close ESC</button>
+  <div class="rd-head" id="rd-head"></div>
+  <div class="rd-body" id="rd-body"></div>
+</section>
+
+<div class="palette" id="palette" hidden>
+  <div class="pal-box" role="dialog" aria-modal="true" aria-label="Find in the estate">
+    <input id="pq" type="search" placeholder="Find anything — ROCE, Entity A2, a root cause…" autocomplete="off">
+    <div id="presults"></div>
+    <div class="pal-foot">↑↓ move · ↵ open · esc close</div>
+  </div>
+</div>
+
+<script>window.SHEETS_HTML={};</script>
+<script>/* ══ THE ESTATE — KPI tree for root-cause analysis ════════════════════════
+   Sources: Control Tower owner brief (P06 Sep 2026) and KPI-Model.xlsx.
+   The six KPIs below are the six measures needing attention across the
+   Early warning, Cash and liquidity, and Operational performance sections.
+   Values and KPI definitions are taken from KPI-Model.xlsx; PDF values are
+   used to preserve the owner-brief framing.
+─────────────────────────────────────────────────────────────────────────── */
+(function(){
+var C={kpi:window.__THEME.kpi,principle:window.__THEME.principle,entity:window.__THEME.entity,fn:window.__THEME.fn,cause:window.__THEME.cause};
+function T(id,n,label,color,edit,rule,gloss){var typeColor={1:window.__THEME.principle,2:window.__THEME.entity,3:window.__THEME.fn,4:window.__THEME.cause}[n]||color; return {id:id,n:n,label:label,color:color,pastel:typeColor,edit:edit,rule:rule,gloss:gloss};}
+var PH='Placeholder — confirm with the owner. ';
+window.GRAPH={
+ types:{
+  kpi:{label:'KPI',color:C.kpi,pastel:window.__THEME.pastel.kpi},
+  principle:{label:'Guiding principle',color:C.principle,pastel:window.__THEME.pastel.principle},
+  entity:{label:'Entity',color:C.entity,pastel:window.__THEME.pastel.entity},
+  fn:{label:'Function',color:C.fn,pastel:window.__THEME.pastel.fn},
+  cause:{label:'Root cause',color:C.cause,pastel:window.__THEME.pastel.cause}
+ },
+ tiers:[
+  T('t1',1,'KPI',C.kpi,'What is off target','The measure that is missing its target.','Six owner-brief measures needing attention, with P06 values and definitions from KPI-Model.xlsx.'),
+  T('t2',2,'Guiding principles',C.principle,'The rule it breaks','The principle the KPI is meant to protect.','The standing rule each KPI exists to uphold. Placeholders to confirm.'),
+  T('t3',3,'Entity',C.entity,'Where it breaks','Which business carries the miss.','Entity A1 and Entity A2. Group is their roll-up.'),
+  T('t4',4,'Function',C.fn,'Who owns the lever','The function that can move it.','The function inside the entity that owns the lever. Placeholders to confirm.'),
+  T('t5',5,'Root cause',C.cause,'Why it happens','What to fix. Dashed means not yet proven.','Evidenced causes cite figures from the model. Dashed ones are gaps or hypotheses.')
+ ],
+ tier:{
+  k_fcf:1,k_gap:1,k_prod:1,k_sales:1,k_miss:1,k_cost:1,
+  p_cashconv:2,p_earnings:2,p_volume:2,p_sales:2,p_forward:2,p_unit:2,
+  e_a1:3,e_a2:3,
+  f_fpa:4,f_ops1:4,f_com:4,f_tre:4,f_ops2:4,f_pro:4,
+  c_down:5,c_sales:5,c_fcst:5,c_wc:5,c_fuel:5,g_break:5,g_fuel:5
+ },
+ /* id, label, type, ring, clock, state, sheet, sub, summary */
+ nodes:[
+  ['k_fcf','FCF conversion','kpi',0,0,'in','FIN-008','34.44%','FIN-008 · Free cash flow since April ÷ EBITDA since April × 100. Group 34.44%; Entity A1 37.91%; Entity A2 30.88%. The owner brief shows 34.4%, 0.6 pts short of target.'],
+  ['k_gap','EBITDA gap','kpi',0,1,'in','PRD-003','−₹56.18 m','PRD-003 · (Forecast EBITDA − planned EBITDA, rest of year) ÷ 1000. Group −₹56.18 m; Entity A1 −₹48.53 m; Entity A2 −₹7.65 m.'],
+  ['k_prod','Production vs plan','kpi',0,2,'in','OPS-001','95.51% of plan','OPS-001 · Good output ÷ planned production × 100. Group 95.51%; Entity A1 91.27%; Entity A2 100.29%.'],
+  ['k_sales','Sales vs plan','kpi',0,3,'in','OPS-002','95.23% of plan','OPS-002 · Sales volume ÷ planned sales volume × 100. Group 95.23%; Entity A1 89.21%; Entity A2 102.04%.'],
+  ['k_miss','Plan-miss probability','kpi',0,4,'in','PRD-002','69.69%','PRD-002 · Chance that next month output falls below plan using the model distribution. Group 69.69%; Entity A1 79.36%; Entity A2 45.13%.'],
+  ['k_cost','Cost per tonne','kpi',0,5,'in','CST-001','₹2,933.74 /t','CST-001 · (Variable cost + fixed cost) × 1000 ÷ good output. Group ₹2,933.74/t; Entity A1 ₹2,853.05/t; Entity A2 ₹3,016.50/t. The owner brief target is ₹2,900/t.'],
+
+  ['p_cashconv','Turn earnings into cash','principle',0,0,'ctx','','cash generation',PH+'Finance principle: EBITDA should convert into free cash. Protects cash generation and the quality of earnings.'],
+  ['p_earnings','Protect the earnings plan','principle',0,1,'ctx','','EBITDA delivery',PH+'Finance principle: forecast earnings should deliver against the committed plan. Protects EBITDA and the financial outlook.'],
+  ['p_volume','Deliver the volume plan','principle',0,2,'ctx','','volume delivery',PH+'Finance principle: planned production volume is a key driver of revenue and EBITDA. Protects operating leverage and earnings delivery.'],
+  ['p_sales','Convert output into sales','principle',0,3,'ctx','','revenue conversion',PH+'Finance principle: produced volume should translate into planned sales. Protects revenue realization and demand execution.'],
+  ['p_forward','Protect future earnings delivery','principle',0,4,'ctx','','forward earnings risk',PH+'Finance principle: forward-looking operating risk should be identified before it becomes an earnings miss. Protects future revenue and EBITDA delivery.'],
+  ['p_unit','Protect unit economics','principle',0,5,'ctx','','margin protection',PH+'Finance principle: unit cost should remain within target so volume growth creates, rather than destroys, margin. Protects profitability and cost competitiveness.'],
+
+  ['e_a1','Entity A1','entity',0,0,'in','',' off target','Off target on  headline measures. The six selected KPIs show A1 misses on production (91.27%), sales (89.21%), EBITDA gap (−₹48.53 m) and plan-miss probability (79.36%).'],
+  ['e_a2','Entity A2','entity',0,1,'in','',' off target','Off target on  headline measures. For the selected KPIs, A2 is below the Group on FCF conversion (30.88%) and above target on cost per tonne (₹3,016.50/t); production and sales are above plan.'],
+
+  ['f_fpa','FP&A · A1','fn',0,0,'ctx','','plan & forecast',PH+'Owns plan, forecast and variance at Entity A1.'],
+  ['f_ops1','Operations · A1','fn',0,1,'ctx','','plant uptime',PH+'Owns plant availability and output at Entity A1.'],
+  ['f_com','Commercial · A1','fn',0,2,'ctx','','sales volume',PH+'Owns sales volume and realisation at Entity A1.'],
+  ['f_tre','Treasury · A2','fn',0,3,'ctx','','working capital',PH+'Owns cash, receivables, payables and inventory at Entity A2.'],
+  ['f_ops2','Operations · A2','fn',0,4,'ctx','','fuel & unit cost',PH+'Owns production cost and fuel use at Entity A2.'],
+  ['f_pro','Procurement · A2','fn',0,5,'ctx','','fuel price',PH+'Owns fuel and input prices at Entity A2.'],
+
+  ['c_down','Plant downtime','cause',0,0,'in','','evidenced','Entity A1 lost 120.7 h to unplanned downtime in P06 against 33.7 h at A2, with 12 breakdowns against 3. This is the model-supported operational driver connected to the A1 production, sales and forecast misses.'],
+  ['c_sales','Sales follow output','cause',0,1,'in','','evidenced','Entity A1 sold 89.21% of planned tonnes while producing 91.27%; the model links the volume shortfall to output.'],
+  ['c_fcst','Downtime in forecast','cause',0,2,'in','','evidenced','The Entity A1 forecast carries 22,295 t of downtime loss next month, with forecast output below plan. The model therefore connects continuing downtime with the EBITDA gap and plan-miss risk.'],
+  ['c_wc','Working capital absorbed cash','cause',0,3,'in','','evidenced','Entity A2 net working capital rose ₹9.5 m since 31 Mar while Entity A1 released ₹97.4 m; the model connects this swing with A2’s lower FCF conversion.'],
+  ['c_fuel','Fuel cost per tonne','cause',0,4,'in','','evidenced','Entity A2 fuel cost is ₹779 per good tonne against ₹690 at A1, 13% higher. The model attributes the unit-cost difference to variable cost.'],
+  ['g_break','Breakdown driver ?','cause',0,5,'gap','','not in the model','The model counts breakdowns but does not identify why they happen: equipment age, maintenance, feed quality and supply remain open questions.'],
+  ['g_fuel','Fuel price or usage ?','cause',0,6,'gap','','not in the model','The model gives fuel cost but not the split between price and usage; procurement or operations needs to establish which drives the variance.']
+ ],
+ edges:[]
+};
+var G=window.GRAPH;
+/* Each chain is one RCA path: KPI > principle > entity > function > root cause */
+G.paths=[
+ ['k_fcf','p_cashconv','e_a2','f_tre','c_wc'],
+ ['k_gap','p_earnings','e_a1','f_fpa','c_fcst'],
+ ['k_gap','p_earnings','e_a1','f_ops1','c_down'],
+ ['k_prod','p_volume','e_a1','f_ops1','c_down'],
+ ['k_prod','p_volume','e_a1','f_ops1','g_break'],
+ ['k_sales','p_sales','e_a1','f_com','c_sales'],
+ ['k_sales','p_sales','e_a1','f_ops1','c_down'],
+ ['k_miss','p_forward','e_a1','f_ops1','c_down'],
+ ['k_miss','p_forward','e_a1','f_fpa','c_fcst'],
+ ['k_cost','p_unit','e_a2','f_ops2','c_fuel'],
+ ['k_cost','p_unit','e_a2','f_pro','g_fuel']
+];
+var REL=['protects','applies to','owned by','driven by'],seen={};
+G.paths.forEach(function(p){for(var i=0;i<4;i++){var k=p[i]+'>'+p[i+1];if(!seen[k]){seen[k]=1;G.edges.push([p[i],p[i+1],REL[i]]);}}});
+})();
+</script>
+<script>/* ══ EXPLORE CORE ══════════════════════════════════════════════════════════
+   Shared machinery behind the variations: model, camera, input, reader,
+   palette, filters. A variation supplies a spec:
+
+     place(H)          write n.tx / n.ty (targets); core springs nodes to them
+     render(ctx, H)    draw everything — the variation owns the picture
+     pick(x, y, H)     optional; default is nearest node
+     drag              optional 'free' | 'axis' | false      (default 'free')
+     spring            optional false to place nodes instantly
+     onSelect(n, H)    optional hook
+
+   H is the helper bag: nodes, edges, adj, S, W, H, sx, sy, wx, wy, hexA,
+   tracked, clearTrack, visible, focus, alphaOf, select, byId.
+─────────────────────────────────────────────────────────────────────────── */
+
+window.Explore = function (spec) {
+  'use strict';
+
+  var D = window.GRAPH, SHEETS = window.SHEETS_HTML || {};
+
+  /* A page may ask for an alternate palette (spec.palette:'pastel'). Resolve it
+     in one place so canvas, legend, reader and search all agree. */
+  function paint(rec) { return (spec.palette && rec[spec.palette]) || rec.color; }
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var RADIUS = { kpi:9, principle:8, entity:11, fn:8, cause:7 };
+
+  /* ── model ─────────────────────────────────────────────────────────── */
+  var nodes = D.nodes.map(function (n) {
+    return {
+      id:n[0], label:n[1], type:n[2], ring:n[3], clock:n[4], state:n[5],
+      sheet:n[6], sub:n[7], text:n[8],
+      x:0, y:0, tx:0, ty:0, vx:0, vy:0, pinned:false,
+      r:RADIUS[n[2]] || 5, color:paint(D.types[n[2]]), deg:0,
+      rank:(D.tier && D.tier[n[0]]) || 0,
+    };
+  });
+
+  /* the ladder: rank → its stratum record, 0 = unruled */
+  var TIERS = D.tiers || [];
+  var tierOf = {};
+  TIERS.forEach(function (t) { tierOf[t.n] = t; });
+  var byId = {};
+  nodes.forEach(function (n) { byId[n.id] = n; });
+
+  var edges = D.edges.filter(function (e) { return byId[e[0]] && byId[e[1]]; })
+    .map(function (e) { return { a:byId[e[0]], b:byId[e[1]], rel:e[2] }; });
+
+  var adj = {};
+  nodes.forEach(function (n) { adj[n.id] = []; });
+  edges.forEach(function (e) {
+    adj[e.a.id].push({ node:e.b, rel:e.rel, out:true });
+    adj[e.b.id].push({ node:e.a, rel:e.rel, out:false });
+    e.a.deg++; e.b.deg++;
+  });
+
+  var S = {
+    depth:0, gaps:true, on:{}, onR:{}, sel:null, hover:null, drag:null,
+    cam:{ x:0, y:0, k:1 }, panning:false, t0:performance.now(), reveal:RM ? 1e5 : 0,
+  };
+  Object.keys(D.types).forEach(function (t) { S.on[t] = true; });
+  TIERS.forEach(function (t) { S.onR[t.n] = true; });
+
+  var KEY = 'estate:' + (spec.id || 'v');
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    if (typeof saved.gaps === 'boolean') S.gaps = saved.gaps;
+    if (saved.on) Object.keys(saved.on).forEach(function (t) { if (t in S.on) S.on[t] = saved.on[t]; });
+    if (saved.onR) Object.keys(saved.onR).forEach(function (r) { if (r in S.onR) S.onR[r] = saved.onR[r]; });
+    if (saved.pins) nodes.forEach(function (n) {
+      var p = saved.pins[n.id];
+      if (p) { n.x = n.tx = p[0]; n.y = n.ty = p[1]; n.pinned = true; }
+    });
+  } catch (e) {}
+
+  function save() {
+    var pins = {};
+    nodes.forEach(function (n) { if (n.pinned) pins[n.id] = [Math.round(n.x), Math.round(n.y)]; });
+    try { localStorage.setItem(KEY, JSON.stringify({ gaps:S.gaps, on:S.on, onR:S.onR, pins:pins })); } catch (e) {}
+  }
+
+  /* ── visibility ────────────────────────────────────────────────────── */
+  var visible = {}, focus = null, focusEdge = null;
+
+  function hops(from, d) {
+    var seen = {}, frontier = [from];
+    seen[from.id] = 0;
+    for (var i = 1; i <= d; i++) {
+      var next = [];
+      frontier.forEach(function (n) {
+        adj[n.id].forEach(function (l) {
+          if (!(l.node.id in seen)) { seen[l.node.id] = i; next.push(l.node); }
+        });
+      });
+      frontier = next;
+    }
+    return seen;
+  }
+
+  function recompute() {
+    var scope = (S.sel && S.depth > 0) ? hops(S.sel, S.depth) : null;
+    nodes.forEach(function (n) {
+      visible[n.id] = S.on[n.type] && S.onR[n.rank] !== false &&
+        (n.state !== 'gap' || S.gaps) && (!scope || n.id in scope);
+    });
+    if (S.sel) visible[S.sel.id] = true;
+    var active = S.hover || S.sel;
+    if (!active) { focus = null; focusEdge = null; return; }
+    focus = {}; focusEdge = {};
+    focus[active.id] = 1;
+    (D.paths || []).forEach(function (p) {
+      if (p.indexOf(active.id) < 0) return;
+      p.forEach(function (id, i) { focus[id] = 1; if (i) focusEdge[p[i - 1] + '>' + id] = 1; });
+    });
+  }
+
+  /* ── canvas ────────────────────────────────────────────────────────── */
+  var cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  var W = 0, Hh = 0, dpr = 1;
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; Hh = cv.clientHeight;
+    cv.width = W * dpr; cv.height = Hh * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    H.W = W; H.H = Hh;
+    relayout();
+    if (spec.spring === false) nodes.forEach(function (n) { n.x = n.tx; n.y = n.ty; });
+  }
+
+  // layouts read `visible`, so visibility must be resolved before placing
+  function relayout() {
+    recompute();
+    if (spec.place) spec.place(H);
+  }
+
+  function sx(x) { return (x - S.cam.x) * S.cam.k + W / 2; }
+  function sy(y) { return (y - S.cam.y) * S.cam.k + Hh / 2; }
+  function wx(x) { return (x - W / 2) / S.cam.k + S.cam.x; }
+  function wy(y) { return (y - Hh / 2) / S.cam.k + S.cam.y; }
+
+  function tracked(size, sp, weight) {
+    ctx.font = (weight || 400) + ' ' + size + 'px ui-monospace, "SF Mono", Menlo, monospace';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = sp + 'px';
+  }
+  function clearTrack() { if ('letterSpacing' in ctx) ctx.letterSpacing = '0px'; }
+  function sans(size, weight) {
+    ctx.font = (weight || 400) + ' ' + size + 'px "Helvetica Neue", Helvetica, Arial, sans-serif';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+  }
+
+  function hexA(hex, a) {
+    var v = parseInt(hex.slice(1), 16);
+    return 'rgba(' + (v >> 16 & 255) + ',' + (v >> 8 & 255) + ',' + (v & 255) + ',' + a + ')';
+  }
+
+  function alphaOf(n) {
+    if (!visible[n.id]) return 0;
+    if (!focus) return 1;
+    return focus[n.id] ? 1 : 0.12;
+  }
+
+  var H = {
+    nodes:nodes, edges:edges, adj:adj, byId:byId, types:D.types, S:S, ctx:ctx,
+    W:W, H:Hh, sx:sx, sy:sy, wx:wx, wy:wy, hexA:hexA, tracked:tracked,
+    clearTrack:clearTrack, sans:sans, visible:visible, alphaOf:alphaOf,
+    tiers:TIERS, tierOf:tierOf, paint:paint,
+    get focus() { return focus; }, get focusEdge() { return focusEdge; },
+    select:function (n) { select(n); }, save:save,
+    relayout:function () { relayout(); },
+  };
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  /* ── loop ──────────────────────────────────────────────────────────── */
+  function integrate() {
+    if (spec.spring === false) {
+      nodes.forEach(function (n) { if (n !== S.drag && !n.pinned) { n.x = n.tx; n.y = n.ty; } });
+      return;
+    }
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (n === S.drag || n.pinned) { n.vx = n.vy = 0; continue; }
+      n.vx = (n.vx + (n.tx - n.x) * 0.16) * 0.68;
+      n.vy = (n.vy + (n.ty - n.y) * 0.16) * 0.68;
+      n.x += n.vx; n.y += n.vy;
+    }
+  }
+
+  function loop() {
+    if (!RM) S.reveal = Math.min(1e5, (performance.now() - S.t0) * 0.9);
+    integrate();
+    recompute();
+    ctx.clearRect(0, 0, W, Hh);
+    // A throw inside a variation's render used to kill the rAF chain and freeze
+    // the whole instrument silently — no motion, no hover, no clue why.
+    try { spec.render(ctx, H); }
+    catch (err) { if (!loop.warned) { loop.warned = 1; console.error('render:', err); } }
+    requestAnimationFrame(loop);
+  }
+
+  /* ── picking & pointer ─────────────────────────────────────────────── */
+  function px(e) { return e.clientX - cv.getBoundingClientRect().left; }
+  function py(e) { return e.clientY - cv.getBoundingClientRect().top; }
+
+  function pick(x, y) {
+    if (spec.pick) return spec.pick(x, y, H);
+    var best = null, bd = 1e9;
+    for (var i = nodes.length - 1; i >= 0; i--) {
+      var n = nodes[i];
+      if (!visible[n.id]) continue;
+      var dx = x - sx(n.x), dy = y - sy(n.y), d2 = dx * dx + dy * dy;
+      var hit = Math.max(11, n.r * S.cam.k + 6);
+      if (d2 < hit * hit && d2 < bd) { bd = d2; best = n; }
+    }
+    return best;
+  }
+
+  var down = null, moved = false;
+  var dragMode = spec.drag === undefined ? 'free' : spec.drag;
+
+  cv.addEventListener('pointerdown', function (e) {
+    try { cv.setPointerCapture(e.pointerId); } catch (err) {}
+    moved = false;
+    var n = pick(px(e), py(e));
+    down = { x:px(e), y:py(e), node:n };
+    if (n && dragMode) S.drag = n;
+    else { S.panning = true; cv.classList.add('grabbing'); }
+    retireCue();
+  });
+
+  cv.addEventListener('pointermove', function (e) {
+    var x = px(e), y = py(e);
+    if (down && (Math.abs(x - down.x) > 3 || Math.abs(y - down.y) > 3)) moved = true;
+    if (S.drag) {
+      if (dragMode === 'axis' && spec.constrain) spec.constrain(S.drag, wx(x), wy(y), H);
+      else { S.drag.x = S.drag.tx = wx(x); S.drag.y = S.drag.ty = wy(y); }
+      S.drag.vx = S.drag.vy = 0;
+      return;
+    }
+    if (S.panning && down) {
+      // a variation may claim the background drag — a 3-D one needs it to orbit
+      if (spec.pan) spec.pan(x - down.x, y - down.y, H);
+      else {
+        S.cam.x -= (x - down.x) / S.cam.k;
+        S.cam.y -= (y - down.y) / S.cam.k;
+      }
+      down.x = x; down.y = y;
+      return;
+    }
+    var n = pick(x, y);
+    if (n !== S.hover) { S.hover = n; readout(n); cv.classList.toggle('on-node', !!n); }
+  });
+
+  cv.addEventListener('pointerup', function () {
+    if (S.drag) {
+      if (moved) { S.drag.pinned = true; save(); }
+      else select(S.drag);
+      S.drag = null;
+    } else if (down && !moved) {
+      // no drag mode: the node never became S.drag, so the click resolves here
+      select(down.node || null);
+    }
+    S.panning = false; down = null;
+    cv.classList.remove('grabbing');
+  });
+
+  cv.addEventListener('dblclick', function (e) {
+    var n = pick(px(e), py(e));
+    if (n && n.pinned) { n.pinned = false; save(); }
+  });
+
+  cv.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    var b = { x:wx(px(e)), y:wy(py(e)) };
+    S.cam.k = Math.max(0.24, Math.min(4, S.cam.k * Math.pow(0.999, e.deltaY * 1.4)));
+    S.cam.x += b.x - wx(px(e));
+    S.cam.y += b.y - wy(py(e));
+    retireCue();
+  }, { passive:false });
+
+  /* ── reader ────────────────────────────────────────────────────────── */
+  var reader = document.getElementById('reader');
+
+  function select(n) {
+    S.sel = n;
+    if (!n) { reader.classList.remove('open'); if (spec.onSelect) spec.onSelect(null, H); return; }
+    renderReader(n);
+    reader.classList.add('open');
+    if (S.depth > 0) relayout();
+    if (spec.onSelect) spec.onSelect(n, H);
+    else panTo(n);
+  }
+
+  function panTo(n) {
+    var panel = window.innerWidth > 900 ? Math.min(560, window.innerWidth * 0.46) : 0;
+    S.cam.x = n.x + (panel / 2) / S.cam.k;
+    S.cam.y = n.y;
+  }
+  H.panTo = panTo;
+
+  function el(tag, cls, html) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+
+  function stateLabel(s) {
+    return s === 'in' ? 'Evidenced — figure in the model'
+         : s === 'ctx' ? 'Hypothesis — to validate'
+         : 'Gap — not in the model';
+  }
+  function subtitle(n) {
+    var st = stateLabel(n.state);
+    if (!n.sub || st.toLowerCase().indexOf(n.sub.toLowerCase()) > -1) return st;
+    return n.sub + ' · ' + st;
+  }
+
+  function tierBand(n) {
+    var t = tierOf[n.rank];
+    if (!t) return '';
+    return '<div class="rd-tier" style="--tc:' + paint(t) + '">' +
+      '<span class="tk">' + (t.n ? 'Layer ' + t.n : 'Off-ladder') + '</span>' +
+      '<span class="tn">' + t.label + '</span>' +
+      '<span class="te">' + t.edit + '</span>' +
+      '<p class="tr">' + t.rule + '</p></div>';
+  }
+  H.tierBand = tierBand;
+
+  function renderReader(n) {
+    var t = D.types[n.type];
+    document.getElementById('rd-head').innerHTML =
+      '<div class="rd-kind" style="color:' + n.color + '"><i style="background:' + n.color + '"></i>' +
+      '<span class="ml" style="color:' + n.color + '">' + t.label + '</span></div>' +
+      '<h2>' + n.label + '</h2><p class="rd-sub">' + subtitle(n) + '</p>' + tierBand(n);
+
+    var body = document.getElementById('rd-body');
+    body.innerHTML = '';
+    body.scrollTop = 0;
+    body.appendChild(el('p', 'lead', n.text));
+
+    var links = adj[n.id].slice().sort(function (a, b) { return a.rel.localeCompare(b.rel); });
+    if (links.length) {
+      var sec = el('div', 'rd-sec');
+      sec.appendChild(el('span', 'ml', links.length + ' connections'));
+      links.forEach(function (l) {
+        var b = el('button', 'link');
+        b.innerHTML = '<span class="rel">' + (l.out ? '' : '← ') + l.rel + '</span>' +
+          '<span class="dot" style="background:' + l.node.color + '"></span>' +
+          '<span class="to">' + l.node.label + '</span>';
+        b.addEventListener('click', function () { select(l.node); });
+        sec.appendChild(b);
+      });
+      body.appendChild(sec);
+    }
+
+    if (n.sheet && SHEETS[n.sheet]) {
+      var s = SHEETS[n.sheet];
+      var btn = el('button', 'rd-open', 'Read ' + s.sheet + ' · ' + s.title);
+      var holder = el('div', 'sheet-body');
+      holder.hidden = true;
+      btn.addEventListener('click', function () {
+        holder.hidden = !holder.hidden;
+        if (!holder.hidden && !holder.innerHTML) holder.innerHTML = s.html;
+        btn.textContent = (holder.hidden ? 'Read ' : 'Hide ') + s.sheet + ' · ' + s.title;
+      });
+      body.appendChild(btn);
+      body.appendChild(holder);
+    }
+  }
+
+  document.getElementById('rd-close').addEventListener('click', function () { select(null); });
+
+  /* ── readout ───────────────────────────────────────────────────────── */
+  var ro = document.getElementById('ro-body');
+  function readout(n) {
+    if (!n) { ro.innerHTML = '<p class="hint">' + (spec.hint || 'Click anything to open it.') + '</p>'; return; }
+    var t = tierOf[n.rank];
+    ro.innerHTML = '<div class="rn">' + n.label + '</div><div class="rs">' +
+      D.types[n.type].label.toUpperCase() + ' · ' + adj[n.id].length + ' links' +
+      (n.pinned ? ' · PINNED' : '') + '</div>' +
+      (t ? '<div class="rt" style="color:' + paint(t) + '">' +
+        (t.n ? 'LAYER ' + t.n + ' · ' : '') + t.label.toUpperCase() + '</div>' : '');
+  }
+  readout(null);
+
+  /* ── legend ────────────────────────────────────────────────────────── */
+  var legend = document.getElementById('legend-rows');
+  if (legend) {
+    Object.keys(D.types).forEach(function (t) {
+      var count = nodes.filter(function (n) { return n.type === t; }).length;
+      if (!count) return;
+      var b = el('button', 'lrow');
+      b.dataset.t = t;
+      b.setAttribute('aria-pressed', String(S.on[t]));
+      b.innerHTML = '<span class="dot" style="background:' + paint(D.types[t]) + ';color:' +
+        paint(D.types[t]) + '"></span><span class="nm">' + D.types[t].label +
+        '</span><span class="ct">' + count + '</span>';
+      b.addEventListener('click', function () {
+        S.on[t] = !S.on[t];
+        b.setAttribute('aria-pressed', String(S.on[t]));
+        relayout();
+        save();
+      });
+      legend.appendChild(b);
+    });
+  }
+
+  /* ── layer dropdown ─────────────────────────────────────────────────── */
+  var layerSelect = document.getElementById('layer-select');
+  if (layerSelect) {
+    layerSelect.value = 'all';
+
+    layerSelect.addEventListener('change', function () {
+      var v = layerSelect.value;
+
+      /* "All layers" restores every layer; otherwise show only the chosen layer. */
+      TIERS.forEach(function (t) {
+        S.onR[t.n] = (v === 'all' || String(t.n) === v);
+      });
+
+      relayout();
+      save();
+    });
+  }
+
+  /* ── controls ──────────────────────────────────────────────────────── */
+  var depth = document.getElementById('depth'), depthOut = document.getElementById('depth-out');
+  if (depth) depth.addEventListener('input', function () {
+    S.depth = +depth.value;
+    depthOut.textContent = S.depth === 0 ? 'all' : S.depth;
+    relayout();
+  });
+
+  var gapsBtn = document.getElementById('btn-gaps');
+  if (gapsBtn) {
+    gapsBtn.style.color = S.gaps ? 'var(--rose)' : '';
+    gapsBtn.addEventListener('click', function () {
+      S.gaps = !S.gaps;
+      gapsBtn.style.color = S.gaps ? 'var(--rose)' : '';
+      relayout();
+      save();
+    });
+  }
+
+  function fit() {
+    var xs = [], ys = [];
+    nodes.forEach(function (n) { if (visible[n.id]) { xs.push(n.tx); ys.push(n.ty); } });
+    if (!xs.length) return;
+    var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs);
+    var y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+    var pad = spec.fitPad || 220;
+    S.cam.x = (x0 + x1) / 2; S.cam.y = (y0 + y1) / 2;
+    S.cam.k = Math.max(0.24, Math.min(2, Math.min(W / (x1 - x0 + pad), Hh / (y1 - y0 + pad))));
+  }
+  H.fit = fit;
+  // a variation whose furniture is bigger than its nodes can frame itself
+  function doFit() { if (spec.frame) spec.frame(H); else fit(); }
+  H.doFit = doFit;
+
+  var fitBtn = document.getElementById('btn-fit');
+  if (fitBtn) fitBtn.addEventListener('click', doFit);
+  var resetBtn = document.getElementById('btn-reset');
+  if (resetBtn) resetBtn.addEventListener('click', function () {
+    nodes.forEach(function (n) { n.pinned = false; });
+    relayout();
+    save();
+  });
+
+  /* ── palette ───────────────────────────────────────────────────────── */
+  var pal = document.getElementById('palette'), pq = document.getElementById('pq');
+  var presults = document.getElementById('presults'), pcur = 0, phits = [];
+
+  function openPal() { pal.hidden = false; pq.value = ''; renderPal(''); pq.focus(); retireCue(); }
+  function closePal() { pal.hidden = true; }
+
+  function renderPal(q) {
+    q = q.trim().toLowerCase();
+    phits = nodes.filter(function (n) {
+      return !q || (n.label + ' ' + n.sub + ' ' + n.text).toLowerCase().indexOf(q) > -1;
+    }).slice(0, 40);
+    pcur = 0;
+    if (!phits.length) { presults.innerHTML = '<p class="pal-empty">Nothing in the estate matches that.</p>'; return; }
+    presults.innerHTML = phits.map(function (n, i) {
+      return '<button class="pres' + (i === 0 ? ' on' : '') + '" data-i="' + i + '">' +
+        '<span class="dot" style="background:' + n.color + '"></span>' +
+        '<span class="pn">' + n.label + '</span>' +
+        '<span class="pt">' + D.types[n.type].label + '</span></button>';
+    }).join('');
+  }
+
+  function movePal(d) {
+    var els = presults.querySelectorAll('.pres');
+    if (!els.length) return;
+    els[pcur].classList.remove('on');
+    pcur = (pcur + d + els.length) % els.length;
+    els[pcur].classList.add('on');
+    els[pcur].scrollIntoView({ block:'nearest' });
+  }
+
+  function reveal(n) {
+    if (!n) return;
+    S.on[n.type] = true;
+    S.onR[n.rank] = true;
+    var row = document.querySelector('.lrow[data-t="' + n.type + '"]');
+    if (row) row.setAttribute('aria-pressed', 'true');
+    var trow = document.querySelector('.trow[data-r="' + n.rank + '"]');
+    if (trow) trow.setAttribute('aria-pressed', 'true');
+    if (n.state === 'gap' && !S.gaps && gapsBtn) gapsBtn.click();
+    relayout();
+    select(n);
+  }
+
+  pq.addEventListener('input', function () { renderPal(pq.value); });
+  presults.addEventListener('click', function (e) {
+    var b = e.target.closest('.pres');
+    if (b) { closePal(); reveal(phits[+b.dataset.i]); }
+  });
+  pal.addEventListener('mousedown', function (e) { if (e.target === pal) closePal(); });
+  var searchBtn = document.getElementById('searchBtn');
+  if (searchBtn) searchBtn.addEventListener('click', openPal);
+
+  document.addEventListener('keydown', function (e) {
+if (!pal.hidden) {
+      if (e.key === 'Escape') closePal();
+      else if (e.key === 'ArrowDown') { e.preventDefault(); movePal(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); movePal(-1); }
+      else if (e.key === 'Enter') { e.preventDefault(); closePal(); reveal(phits[pcur]); }
+      return;
+    }
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === '/') { e.preventDefault(); openPal(); }
+    else if (e.key === 'Escape') select(null);
+    else if (e.key === 'f') doFit();
+    else if (e.key === 'g' && gapsBtn) gapsBtn.click();
+    else if (/^[0-3]$/.test(e.key) && depth) { depth.value = e.key; depth.dispatchEvent(new Event('input')); }
+    else if (e.key.indexOf('Arrow') === 0 && S.sel) { e.preventDefault(); walk(e.key); }
+    else if (spec.key) spec.key(e, H);
+  });
+
+  function walk(key) {
+    var want = { ArrowUp:-Math.PI / 2, ArrowRight:0, ArrowDown:Math.PI / 2, ArrowLeft:Math.PI }[key];
+    var best = null, bs = Infinity;
+    adj[S.sel.id].forEach(function (l) {
+      if (!visible[l.node.id]) return;
+      var a = Math.atan2(l.node.y - S.sel.y, l.node.x - S.sel.x);
+      var d = Math.abs(Math.atan2(Math.sin(a - want), Math.cos(a - want)));
+      if (d < bs) { bs = d; best = l.node; }
+    });
+    if (best && bs < 1.3) select(best);
+  }
+
+  /* ── cue ───────────────────────────────────────────────────────────── */
+  var cue = document.getElementById('cue'), cued = false;
+  function retireCue() {
+    if (cued || !cue) return;
+    cued = true;
+    cue.classList.add('gone');
+    setTimeout(function () { if (cue.parentNode) cue.remove(); }, 700);
+  }
+  setTimeout(retireCue, 11000);
+
+  /* ── go ────────────────────────────────────────────────────────────── */
+  var nN = document.getElementById('n-nodes'), nE = document.getElementById('n-edges'),
+      nG = document.getElementById('n-gaps');
+  if (nN) nN.textContent = nodes.length;
+  if (nE) nE.textContent = edges.length;
+  if (nG) nG.textContent = nodes.filter(function (n) { return n.state === 'gap'; }).length;
+
+  relayout();
+  nodes.forEach(function (n) { if (!n.pinned) { n.x = n.tx; n.y = n.ty; } });
+  if (spec.init) spec.init(H); else fit();
+  loop();
+
+  window.ESTATE = H;
+  return H;
+};
+</script>
+<script>/* ══ VARIATION · STRATA ════════════════════════════════════════════════════
+   The estate sorted by how hard it is to change. Four bands, hardest at the
+   top: Principles · Standard Operating Procedure · Suggestions · Conventions,
+   with everything that is an actor rather than a rule laid below the line.
+
+   The other five readings answer "what is this, and what does it touch?"
+   This one answers the question an auditor actually asks: "if we disagree
+   with this, can we override it — and who says so?"
+
+   Vertical position is authority. An edge that climbs the page is a thing
+   deferring to something it cannot argue with; an edge that descends is
+   authority being applied. Same 112 nodes, ranked instead of arranged.
+
+   Colour here is the Engineering Ledger direction from moodboard.html —
+   ledger paper, oxide, slate, marginalia — because a hierarchy of authority
+   is a document, not a diagram.
+─────────────────────────────────────────────────────────────────────────── */
+
+(function () {
+  var PAPER = window.__THEME.css.ledgerPaper, RULE = window.__THEME.css.ledgerRule, MARG = window.__THEME.css.ledgerMarg;
+  // narrow enough that a band's heading and its marginalia both clear the HUD
+  var PER_ROW = 10, XGAP = 172, YGAP = 58, HEAD = 84, PAD = 44;
+  var widest = 1;       // most nodes in any one row, so the bands hug the content
+  function halfW() { return (widest * XGAP) / 2 + 270; }
+  var ORDER = ['kpi', 'principle', 'entity', 'fn', 'cause'];
+
+  var band = {};        // rank → { y0, y1, rows, count }
+  var placed = {};      // id  → rank, for the render pass
+
+  function rankSort(a, b) {
+    var d = ORDER.indexOf(a.type) - ORDER.indexOf(b.type);
+    if (d) return d;
+    if (a.ring !== b.ring) return a.ring - b.ring;
+    return a.clock - b.clock;
+  }
+
+  window.Explore({
+    id:'strata-rca',
+    fitPad:300,
+    hint:'Top band is what we see.<br>Bottom band is why it happens.',
+
+    // the bands carry a heading above their first row, so bias the frame down
+    init:function (H) { this.frame(H); },
+
+    // frame the bands themselves (gutter number, axis and marginalia included),
+    // not just the nodes, so nothing is cut off at the edges
+    frame:function (H) {
+      var lastY = 0; Object.keys(band).forEach(function (k) { lastY = Math.max(lastY, band[k].y1); });
+      var x0 = -halfW() - 90, x1 = halfW() + 10, y0 = -20, y1 = lastY + 20;
+      H.S.cam.x = (x0 + x1) / 2; H.S.cam.y = (y0 + y1) / 2;
+      H.S.cam.k = Math.max(0.3, Math.min(1.4, Math.min(H.W / (x1 - x0), (H.H - 70) / (y1 - y0))));
+      H.S.cam.y -= 10 / H.S.cam.k;
+    },
+
+    place:function (H) {
+      var tiers = H.tiers.slice().sort(function (a, b) {
+        // rank 0 is not a rung — it sits below the ladder, not above rank 1
+        return (a.n || 99) - (b.n || 99);
+      });
+
+      placed = {};
+      band = {};
+      widest = 1;
+      var y = 0;
+
+      tiers.forEach(function (t) {
+        var mine = H.nodes.filter(function (n) {
+          return n.rank === t.n && H.visible[n.id];
+        }).sort(rankSort);
+
+        // balance the rows rather than filling them, so a band never ends on
+        // a single stranded node
+        var rows = Math.max(1, Math.ceil(mine.length / PER_ROW));
+        var per = Math.ceil(mine.length / rows) || 1;
+        widest = Math.max(widest, per);
+        var h = HEAD + (rows - 1) * YGAP + PAD;
+        // the unruled band is set apart — it is a footnote, not a fifth rung
+        if (t.n === 0) y += 54;
+        band[t.n] = { y0:y, y1:y + h, rows:rows, count:mine.length, tier:t };
+
+        mine.forEach(function (n, i) {
+          placed[n.id] = t.n;
+          if (n.pinned) return;
+          var row = Math.floor(i / per), col = i % per;
+          var wide = Math.min(mine.length - row * per, per);
+          n.tx = (col - (wide - 1) / 2) * XGAP;
+          n.ty = y + HEAD + row * YGAP;
+        });
+        y += h;
+      });
+    },
+
+    render:function (ctx, H) {
+      var S = H.S, half = halfW();
+      var left = H.sx(-half), right = H.sx(half);
+
+      /* ── the bands ─────────────────────────────────────────────────── */
+      Object.keys(band).forEach(function (k) {
+        var b = band[k], t = b.tier;
+        var y0 = H.sy(b.y0), y1 = H.sy(b.y1);
+        var dim = S.onR[t.n] === false;
+
+        ctx.fillStyle = H.hexA(t.color, dim ? 0.012 : (t.n === 0 ? 0.018 : 0.042 - t.n * 0.006));
+        ctx.fillRect(left, y0, right - left, y1 - y0);
+
+        // the top rule carries the weight: solid and thick for a principle,
+        // hairline and broken by the time you reach a convention
+        ctx.beginPath();
+        ctx.moveTo(left, y0); ctx.lineTo(right, y0);
+        if (t.n === 0) ctx.setLineDash([2, 6]);
+        else if (t.n === 5) ctx.setLineDash([9, 4]);
+        ctx.strokeStyle = H.hexA(t.color, dim ? 0.22 : 0.72);
+        ctx.lineWidth = t.n === 1 ? 2.4 : t.n === 2 ? 1.6 : 1;
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        var a = dim ? 0.3 : 1;
+
+        // the rank, set large in the gutter like a sheet number
+        ctx.textAlign = 'right'; ctx.textBaseline = 'top';
+        H.sans(30, 700);
+        ctx.fillStyle = H.hexA(t.color, a * (t.n === 0 ? 0.3 : 0.9));
+        ctx.fillText(t.n ? String(t.n) : '—', left - 22, y0 + 20);
+
+        ctx.textAlign = 'left';
+        H.sans(16, 700);
+        ctx.fillStyle = H.hexA(t.n === 0 ? MARG : PAPER, a * 0.92);
+        ctx.fillText(t.label, left + 18, y0 + 18);
+
+        H.tracked(9, 1.9);
+        ctx.fillStyle = H.hexA(t.color, a * 0.85);
+        ctx.fillText(t.edit.toUpperCase(),
+          left + 18, y0 + 41);
+        H.clearTrack();
+
+        // the rule itself, in the right margin — marginalia, as the ledger does
+        ctx.textAlign = 'right';
+        H.sans(11.5, 400);
+        ctx.fillStyle = H.hexA(MARG, a * 0.95);
+        var rw = t.rule.split(' '), rl = [''], rmax = 190 * S.cam.k;
+        rw.forEach(function (w) {
+          var cur = rl[rl.length - 1], next = cur ? cur + ' ' + w : w;
+          if (cur && ctx.measureText(next).width > rmax) rl.push(w); else rl[rl.length - 1] = next;
+        });
+        rl.forEach(function (l, i) { ctx.fillText(l, right - 18, y0 + 20 + i * 15); });
+      });
+
+      /* ── the axis: authority runs up the page ──────────────────────── */
+      var lastY = 0; Object.keys(band).forEach(function (k) { lastY = Math.max(lastY, band[k].y1); });
+      var top = H.sy(band[1] ? band[1].y0 : 0), bot = H.sy(lastY);
+      ctx.beginPath();
+      ctx.moveTo(left - 62, top); ctx.lineTo(left - 62, bot);
+      ctx.strokeStyle = H.hexA(RULE, 0.16); ctx.lineWidth = 1; ctx.stroke();
+      ctx.save();
+      ctx.translate(left - 68, (top + bot) / 2);
+      ctx.rotate(-Math.PI / 2);
+      H.tracked(9, 2.4);
+      ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+      ctx.fillStyle = H.hexA(MARG, 0.8);
+      ctx.fillText('↓  WHY IT HAPPENS   ·   WHAT WE SEE  ↑', 0, 0);
+      H.clearTrack();
+      ctx.restore();
+
+      /* ── edges ─────────────────────────────────────────────────────── */
+      var act = S.hover || S.sel;
+      H.edges.forEach(function (e) {
+        if (!H.visible[e.a.id] || !H.visible[e.b.id]) return;
+        var ra = placed[e.a.id], rb = placed[e.b.id];
+        if (ra === undefined || rb === undefined) return;
+
+        var touches = act && H.focusEdge && H.focusEdge[e.a.id + '>' + e.b.id];
+        // an edge between strata is the interesting one: it is a deferral
+        var crosses = ra !== rb && ra !== 0 && rb !== 0;
+        var al = !H.focus ? 0.45 : (touches ? 0.95 : 0.03);
+        if (al < 0.02) return;
+
+        // colour a crossing by the harder of the two ends — authority's colour
+        var hard = H.tierOf[Math.min(ra || 9, rb || 9)];
+        var col = touches ? e.a.color : (crosses && hard ? hard.color : RULE);
+
+        var x1 = H.sx(e.a.x), y1 = H.sy(e.a.y), x2 = H.sx(e.b.x), y2 = H.sy(e.b.y);
+        var lift = 0;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.bezierCurveTo(x1 + lift, (y1 + y2) / 2, x2 + lift, (y1 + y2) / 2, x2, y2);
+        ctx.strokeStyle = H.hexA(col, al);
+        ctx.lineWidth = touches ? 2 : 1.1;
+        ctx.stroke();
+
+        if (touches && S.cam.k > 0.66) {
+          H.tracked(8.5, 1.3);
+          var tx = (x1 + x2) / 2 + lift * 0.62, ty = (y1 + y2) / 2;
+          var lbl = e.rel.toUpperCase();
+          var w = ctx.measureText(lbl).width;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.fillStyle = 'rgba(0,0,0,.86)';
+          ctx.fillRect(tx - w / 2 - 4, ty - 6, w + 8, 12);
+          ctx.fillStyle = H.hexA(PAPER, 0.86);
+          ctx.fillText(lbl, tx, ty);
+          H.clearTrack();
+        }
+      });
+
+      /* ── nodes: type in the core, stratum in the ring ──────────────── */
+      H.nodes.forEach(function (n) {
+        var al = H.alphaOf(n);
+        if (al <= 0 || placed[n.id] === undefined) return;
+        var t = H.tierOf[n.rank];
+        var x = H.sx(n.x), y = H.sy(n.y);
+        var r = Math.max(3.6, n.r * 0.7) * Math.max(0.72, Math.min(1.5, S.cam.k));
+        var active = (n === S.hover || n === S.sel);
+        var lit = active || (H.focus && H.focus[n.id]);
+
+        if (active) {
+          ctx.beginPath(); ctx.arc(x, y, r + 9, 0, Math.PI * 2);
+          ctx.strokeStyle = H.hexA(t ? t.color : n.color, 0.5);
+          ctx.lineWidth = 1; ctx.stroke();
+        }
+
+        // the stratum ring — solid for a principle, dashed by the time it is habit
+        if (t) {
+          ctx.beginPath(); ctx.arc(x, y, r + 3.4, 0, Math.PI * 2);
+          if (n.state === 'ctx' || n.state === 'gap') ctx.setLineDash([5, 3]);
+          ctx.strokeStyle = H.hexA(t.color, al * (n.rank === 1 ? 0.95 : n.rank === 0 ? 0.3 : 0.55));
+          ctx.lineWidth = n.rank === 1 ? 1.9 : 1.1;
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+
+        ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+        if (n.state === 'gap') {
+          ctx.setLineDash([3, 3]); ctx.strokeStyle = H.hexA(window.__THEME.cause, al * 0.9);
+          ctx.lineWidth = 1.2; ctx.stroke(); ctx.setLineDash([]);
+        } else if (n.state === 'ctx') {
+          ctx.strokeStyle = H.hexA(n.color, al * 0.9); ctx.lineWidth = 1.3; ctx.stroke();
+        } else {
+          if (lit) { ctx.shadowColor = H.hexA(n.color, 0.8); ctx.shadowBlur = 11; }
+          ctx.fillStyle = H.hexA(n.color, al); ctx.fill(); ctx.shadowBlur = 0;
+        }
+
+        if (!(lit || S.cam.k > 0.45)) return;
+        H.tracked(9, 1.2);
+        ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+        ctx.fillStyle = H.hexA(PAPER, active ? 1 : Math.min(al, 0.78));
+        // wrap long labels onto two lines so neighbours never overlap
+        var words = n.label.toUpperCase().split(' '), lines = [''], maxW = (XGAP - 18) * S.cam.k;
+        words.forEach(function (w) {
+          var cur = lines[lines.length - 1], next = cur ? cur + ' ' + w : w;
+          if (cur && ctx.measureText(next).width > maxW && lines.length < 2) lines.push(w);
+          else lines[lines.length - 1] = next;
+        });
+        lines.forEach(function (l, i) { ctx.fillText(l, x, y - r - 8 - (lines.length - 1 - i) * 12); });
+        H.clearTrack();
+      });
+    },
+  });
+})();
+</script>
+
+
+
+
+<script>
+/* Keep RCA relationship labels white on the fixed presentation. */
+(function(){
+  var REL_LABELS = {'protects':1,'applies to':1,'owned by':1,'driven by':1};
+  var oldFillText = CanvasRenderingContext2D.prototype.fillText;
+  CanvasRenderingContext2D.prototype.fillText = function(text, x, y, maxWidth){
+    if (REL_LABELS[String(text).toLowerCase()]) {
+      var oldFill = this.fillStyle;
+      this.fillStyle = '#FFFFFF';
+      if (arguments.length >= 4) oldFillText.call(this, text, x, y, maxWidth);
+      else oldFillText.call(this, text, x, y);
+      this.fillStyle = oldFill;
+      return;
+    }
+    if (arguments.length >= 4) return oldFillText.call(this, text, x, y, maxWidth);
+    return oldFillText.call(this, text, x, y);
+  };
+})();
+</script>
+
+</body>
+</html>

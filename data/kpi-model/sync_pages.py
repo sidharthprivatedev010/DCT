@@ -103,16 +103,23 @@ def diag(sc):
     e, rev = ebitda[sc], m(sc, "revenue_k")
     mg = [r1(100 * x / y) for x, y in zip(e, rev)]
     f8 = [r1(kv("FIN-008", sc, i)) for i in range(6)]; f5 = [r1(kv("FIN-005", sc, i)) for i in range(6)]
-    read = (f"EBITDA margin is {mg[-1]:.1f}% in P06 ({mg[0]:.1f}% in P01). FCF conversion year to date is {f8[-1]:.0f}% (FIN-008): about "
-            f"{'a third' if 28 <= f8[-1] <= 40 else f'{f8[-1]:.0f}%'} of EBITDA reaches free cash after tax, working capital and capex. "
-            f"ROCE is {f5[-1]:.1f}% annualised against {f5[0]:.1f}% in P01 (FIN-005; target 12%).")
+    # Answers the chart's question first, then one sentence per line: margin, cash conversion, return on capital
+    part = "only partly" if f8[-1] < 50 else "largely" if f8[-1] < 80 else "fully"
+    share = "about a third" if 28 <= f8[-1] <= 40 else "about half" if 45 <= f8[-1] <= 55 else f"{f8[-1]:.0f}%"
+    read = (f"Profit is {'improving' if mg[-1] > mg[0] else 'weaker'}, but it is {part} turning into cash. "
+            f"EBITDA margin {'rose' if mg[-1] > mg[0] else 'fell'} from {mg[0]:.1f}% in P01 to {mg[-1]:.1f}% in P06. "
+            f"Since P01, {share} of EBITDA ({f8[-1]:.0f}%, FIN-008) has become free cash flow after tax, working capital and capex. "
+            f"Return on capital employed is {f5[-1]:.1f}% annualised, {'below' if f5[-1] < 12 else 'above'} the 12% target "
+            f"and {'down' if f5[-1] < f5[0] else 'up'} from {f5[0]:.1f}% in P01 (FIN-005).")
     return {"title": "EBITDA margin → FCF conversion → ROCE · " + ("Group" if sc == "Group" else "Entity A1") + " · %", "x": X6, "base": 12, "baseL": "ROCE target 12%",
             "series": [{"l": "EBITDA margin", "v": mg, "tag": "CERT"}, {"l": "FCF conversion YTD", "v": f8, "tag": "CERT"},
                        {"l": "ROCE annualised", "v": f5, "tag": "CERT", "dash": True}], "read": read, "cap": "Certified P01–P06 (model)."}
 def diag_edit(sc):
     def fn(o):
-        for b in blocks(o, lambda x: x.get("type") == "multi" and ("EBITDA → FCF → ROCE" in str(x.get("title", "")) or "EBITDA margin → FCF" in str(x.get("title", "")))):
-            b.update(diag(sc))
+        for b in blocks(o, lambda x: x.get("type") == "multi" and ("EBITDA → FCF → ROCE" in str(x.get("title", "")) or "EBITDA margin → FCF" in str(x.get("title", "")) or "Is profit turning into cash?" in str(x.get("title", "")))):
+            d = diag(sc)
+            if "Is profit turning into cash?" in str(b.get("title", "")): d = {"read": d["read"]}   # O-01 keeps its own title, months and caption
+            b.update(d)
     return fn
 for n, sc in (("P2-O01-EnterpriseHealth", "Group"), ("P2-G03-Financial", "Group"), ("P2-E01-EntityHome", "A1"), ("P2-E11-Financial", "A1"),
               ("P3-L-LargeDisplay", "Group"), ("P2-X-States", "Group")):

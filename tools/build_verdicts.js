@@ -9,7 +9,7 @@ const ctx = vm.createContext({}); vm.runInContext(fs.readFileSync(root + "js/dat
 const P = ctx.DCTData.plant, D = ctx.DCTData.kpi;
 const ENTS = P.children.Group;                       // entity ids from the data layer (A1, A2)
 // 1D: entity name with its code, "<Name> (<CODE>)", as the screens show it
-const codes = (t) => { const re = new RegExp("\\b(" + ENTS.map((c) => P.scopes[c]).concat(ENTS.map((c) => "(?<!" + P.scopes[c].replace(c, "") + ")" + c + "(?!\\))")).join("|") + ")\\b(?! \\()", "g"); const code = {}; ENTS.forEach((c) => { code[c] = c; code[P.scopes[c]] = c; }); return t.replace(re, (m) => P.scopes[code[m]] + " (" + code[m] + ")"); };
+const codes = (t) => { const re = new RegExp("\\b(" + ENTS.map((c) => P.scopes[c]).concat(ENTS.map((c) => "(?<!" + P.scopes[c].replace(c, "") + ")" + c + "(?!\\))")).join("|") + ")\\b(?! \\()", "g"); const code = {}; ENTS.forEach((c) => { code[c] = c; code[P.scopes[c]] = c; }); return t.replace(re, (m) => { const c = code[m], n = P.scopes[c]; return new RegExp("\\b" + c + "\\b").test(n) ? n : n + " (" + c + ")"; }); };   // no "(A1)" when the name holds the code
 const MON = {P01: "Apr", P02: "May", P03: "Jun", P04: "Jul", P05: "Aug", P06: "Sep", P07: "Oct", P08: "Nov", P09: "Dec", P10: "Jan", P11: "Feb", P12: "Mar"};
 
 // The cause behind a KPI when its main driver is known from the case record (entity level only).
@@ -81,6 +81,38 @@ function justify(id, scope, bs) {
   return cands.filter((x) => words(x) <= 20)[0];
 }
 
+/* Core Group (review 2026-10-06): one short plain-English line under the card (the card already shows the KPI name):
+   "95.5% of plan, below the 100.0% target, mainly Entity A1 (91.3%)."  "Up ₹397.0 m since August, mostly Entity A1 (A1)." */
+const money = (t) => String(t).replace(/^([−-]?)([\d,.]+) ₹ m\b/, "$1₹$2 m");
+function plain(id, scope, bs) {
+  const k = kOf(id), r = (D[id] || {})[scope] || {}, v = last(k, scope), val = shown(id, scope);
+  if (val == null) return null;
+  const V = money(val), tgt = r.plan && r.plan !== "—" ? money(r.plan.replace(/^[≥≤] ?/, "")) : null, down = k.better === "down";
+  const short = (s) => money(shown(id, s)).replace(/% of plan$/, "%");
+  let t;
+  if (typeof v === "string") { t = val.replace(/\s*\(.*\)$/, "");      // e.g. "9 on track · 2 at risk · 0 off track", "Low"
+    if (scope === "Group" && !/·/.test(t) && ENTS.every((s) => shown(id, s) === val)) t += " in both entities"; }
+  else if (k.target != null && tgt) {
+    if (meets(k, v)) t = V + ", meets the " + tgt + " target";
+    else {
+      t = V + ", " + (down ? "above" : "below") + " the " + tgt + " target";
+      if (scope === "Group") { const miss = ENTS.filter((s) => meets(k, last(k, s)) === false && shown(id, s) != null);
+        if (miss.length === 1) t += ", mainly " + sn(miss[0]) + " (" + short(miss[0]) + ")"; else if (miss.length > 1) t += " in both entities"; }
+    }
+  } else {
+    const p0 = prev(k, scope), eps = Math.pow(10, -k.dp) / 2, d = typeof p0 === "number" ? v - p0 : 0, u = r.u || "";
+    const amt = Math.abs(d).toLocaleString("en-US", {minimumFractionDigits: k.dp, maximumFractionDigits: k.dp});
+    const by = /₹ m/.test(u) ? "₹" + amt + " m" : amt + (/^%/.test(u) ? " pts" : u ? " " + u.replace(/ ·.*$/, "") : "");
+    if (Math.abs(d) < eps) t = "No change since August";
+    else {
+      t = (d > 0 ? "Up " : "Down ") + by + " since August";
+      if (scope === "Group") { const mv = ENTS.map((s) => ({s, d: typeof last(k, s) === "number" && typeof prev(k, s) === "number" ? Math.abs(last(k, s) - prev(k, s)) : 0})).sort((x, y) => y.d - x.d);
+        if (mv[0].d > 0) t += ", mostly " + sn(mv[0].s); }
+    }
+  }
+  return tidy(codes(t.charAt(0).toUpperCase() + t.slice(1) + "."));
+}
+
 const VC = require("./verdicts_collect.js"), {collect} = VC;
 // Usage: node tools/build_verdicts.js [owner|core_group]
 const PERSONA = process.argv[2] === "core_group" ? "core_group" : "owner";
@@ -90,7 +122,7 @@ const OUT = PERSONA === "core_group" ? "core-group-verdicts" : "owner-verdicts";
 const out = [], key = {};
 const push = (e) => { const kk = [e.screen, e.section, e.kpi_id, e.level, e.entity_code, e.row_id].join("|"); if (key[kk]) return; key[kk] = 1; out.push(e); };
 const entry = (screen, section, id, scope, bs, src) => {
-  let j = justify(id, scope, bs); if (!j) return;
+  let j = PERSONA === "core_group" ? plain(id, scope, bs) : justify(id, scope, bs); if (!j) return;
   if (PERSONA === "core_group") j = j.replace(/RM-1 /g, "critical-material ").replace(/supplier S-07/g, "a critical supplier");   // MANIFEST06 1G: no material or supplier codes
   const [verdict, color] = verdictOf(bs);
   push({persona: PERSONA, screen, section, kpi_id: id.toLowerCase(), level: scope === "Group" ? "group" : "entity", entity_code: scope === "Group" ? null : scope, entity_name: scope === "Group" ? null : sn(scope),
@@ -103,7 +135,7 @@ const {load} = require("./owner_pages.js");
 const LVL = (t) => /Critical|High|War room|Breach|Intervention/i.test(t) ? ["intervention_required", "red"] : /Medium|Declining|Watch/i.test(t) ? ["watch", "amber"] : ["on_track", "green"];
 Object.keys(SCREENS).forEach((n) => { let p; try { p = load(n); } catch (e) { return; }
   const walk = (o, sec) => { if (Array.isArray(o)) return o.forEach((x) => walk(x, sec)); if (!o || typeof o !== "object") return;
-    if (o.type === "table" && o.rows) o.rows.forEach((r) => { const a = Array.isArray(r) ? r : r.c; a.forEach((c, i) => { if (!c || typeof c !== "object" || !c.sub) return;
+    if (o.type === "table" && o.rows) o.rows.forEach((r) => { const a = Array.isArray(r) ? r : r.c; a.forEach((c, i) => { if (!c || typeof c !== "object" || !c.sub || /\bP0[1-6] /.test(c.sub)) return;   // plant-value sub-lines are not status explanations
       const first = (typeof a[0] === "object" ? a[0].t : String(a[0])) || ""; if (/^[A-Z]{3}-\d{3}$/.test(first.trim())) return;
       const rid = (first.match(/^[A-Z]+-[A-Z]*-?\d+/) || [first])[0], [verdict, color] = LVL(c.t);
       push({persona: PERSONA, screen: SCREENS[n], section: (o.title || sec).toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, ""), kpi_id: null, level: "group", entity_code: null, entity_name: null,
@@ -114,7 +146,7 @@ Object.keys(SCREENS).forEach((n) => { let p; try { p = load(n); } catch (e) { re
 Object.keys(P.kpi).forEach((id) => ["Group"].concat(ENTS).forEach((s) => { const r = (D[id] || {})[s]; if (r && r.bs) entry("kpi_detail", "kpi_detail", id, s, r.bs); }));
 
 // Checks: ≤ 20 words, no plant names, colour agrees with the verdict
-const bad = out.filter((e) => words(e.justification) > 20 || /\bPlant/.test(e.justification));
+const bad = out.filter((e) => words(e.justification) > (PERSONA === "core_group" ? 16 : 20) || /\bPlant/.test(e.justification));
 bad.forEach((e) => console.log("CHECK", e.kpi_id, e.justification));
 fs.writeFileSync(root + "data/" + OUT + ".json", JSON.stringify(out, null, 1) + "\n");
 fs.writeFileSync(root + "js/data/" + OUT + ".js", "/* Generated by tools/build_verdicts.js" + (PERSONA === "owner" ? "" : " core_group") + " from data/" + OUT + ".json. Do not edit by hand.\n" +

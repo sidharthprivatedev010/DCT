@@ -10,8 +10,8 @@ for (const n of OWNER) pages[n] = load(n);
 for (const [n, q] of extra) pages[n + q] = load(n, q);
 for (const n in pages) {
   const p = pages[n];
-  // 1A: no plant names or plant values
-  strings(p, [], "").forEach(([path, s]) => { if (PLANT.test(s) && !/\.(h|href|src)$/.test(path)) fail(n + " plant reference at " + path + ": " + s.slice(0, 140)); });
+  // 1A: no plant names or plant values (exceptions: the plant after the entity in the O-02 heat-map signal list, the "Below target · entity · plant" cell on KPI tables, and the "Source · entity · plant" text on O-01 tables and heat-map signals)
+  strings(p, [], "").forEach(([path, s]) => { if (PLANT.test(s) && !/\.(h|href|src)$/.test(path) && !(/O02/.test(n) && /\.items\.\d+\.ent$/.test(path)) && !/^Entity A[12] · Plant 0\d$/.test(s) && !(/^(Entity A[12]\b|Group\b|Values \(Sep)/.test(s) && /\.(src|srcD|more|t)$/.test(path) && /O01|O02/.test(n))) fail(n + " plant reference at " + path + ": " + s.slice(0, 140)); });
   // no "How totals add up"
   if (JSON.stringify(p).indexOf("How totals add up") >= 0) fail(n + " still has a How totals add up tab");
 }
@@ -65,8 +65,8 @@ const fs2 = require("fs");
 for (const n in pages) {
   const p = pages[n];
   if (p.banner) fail(n + " still has a critical notification banner (1C)");
-  // 1D: every entity code or name appears as "<Name> (<CODE>)"
-  const bare = /\b(Entity A[12]|(?<!Entity )A[12](?!\)))\b(?! \()/;
+  // 1D: every entity reads by name; a bare code ("A1") is not allowed, and the code is not repeated after a name that holds it ("Entity A1 (A1)")
+  const bare = /(?<!Entity |\()\bA[12]\b(?!\))(?! \()|\bEntity A[12] \(A[12]\)/;
   const SK = /\.(h|href|infoH|scope|kpi|kcols\.[^.]+|id|cat|lvl|k|tag|lens|rid|nav|equiv\..*|access\..*)$/;
   strings(p, [], "").forEach(([path, s]) => { if (!SK.test(path) && !/^\.(equiv|access)/.test(path) && bare.test(s)) fail(n + " entity without code/name at " + path + ": " + s.slice(0, 120)); });
   // Screen 8: nothing links to Actions & Escalations

@@ -1,5 +1,5 @@
 // Sign-in and persona gate: every app screen belongs to one lens (Owner, Core Group, Entity).
-// login.html checks the credentials in creds.json and stores "dct-auth"; personas.html stores the persona ("dct-persona").
+// login.html checks the credentials (DCT_USERS in its script) and stores "dct-auth"; personas.html stores the persona ("dct-persona").
 // Not signed in → login. No persona → persona screen. A screen from another lens → that screen's closest equivalent in the persona's own lens.
 (function () {
   var HOME = {"Owner": "P2-O01-EnterpriseHealth.html", "Core Group": "P2-G01-Portfolio.html", "Entity": "P2-E01-EntityHome.html"};

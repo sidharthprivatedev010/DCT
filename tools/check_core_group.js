@@ -10,7 +10,7 @@ fs.readFileSync(path.join(__dirname, "../data/MANIFEST06-core-group-persona.md")
 });
 const PLANT = /\bPlants? ?0?\d\d?\b/;
 let bad = 0; const fail = (m) => { bad++; console.log("FAIL", m); };
-const strings = (o, out, p) => { if (typeof o === "string") out.push([p, o]); else if (Array.isArray(o)) o.forEach((x, i) => strings(x, out, p + "." + i)); else if (o && typeof o === "object") { if (o.type === "watchlist" || o.plantOk) return out; for (const k in o) { if (/^(equiv|access|_h|plRows|plN|plT)$/.test(k)) continue; strings(o[k], out, p + "." + k); } } return out; };
+const strings = (o, out, p) => { if (typeof o === "string") out.push([p, o]); else if (Array.isArray(o)) o.forEach((x, i) => strings(x, out, p + "." + i)); else if (o && typeof o === "object") { if (o.type === "watchlist" || o.plantOk) return out; for (const k in o) { if (/^(equiv|access|_h|plRows|plN|plT|leg|kpiLeg)$/.test(k)) continue; strings(o[k], out, p + "." + k); } } return out; };
 const blocks = (o, f) => { if (Array.isArray(o)) return o.forEach((x) => blocks(x, f)); if (!o || typeof o !== "object") return; if (o.type) f(o); for (const k in o) if (!/^(equiv|access)$/.test(k)) blocks(o[k], f); };
 const pages = {};
 for (const n of CG) pages[n] = load(n);
@@ -50,7 +50,7 @@ for (const n in pages) blocks(Object.assign({}, pages[n], {equiv: null, access: 
     if (/\bPlant \d\d\b(?! \(P\d\d\))/.test(t)) fail(n + " table '" + b.title + "' plant without code: " + t.slice(0, 70));
     if (!(i === 0 && paired) && /(?<![-\w])[A-Z]{3}-\d{3}\s*$/.test(t)) fail(n + " table '" + b.title + "' bare KPI code: " + t.slice(0, 70)); }));
 });
-// Cards: stand-alone, no root cause, plant rows only for plants with a variation
+// Cards: stand-alone, no root cause (plant values per entity are checked against the workbook in check_core_group_plants.js)
 for (const n of CG) (pages[n].kpis || []).forEach((k) => { if (k.href || !k.noInfo) fail(n + " card " + k.id + " still links"); if (k.root) fail(n + " card " + k.id + " has a root cause"); });
 module.exports = {pages, REG};
 if (require.main === module) console.log(bad ? bad + " problem(s)" : "Core Group checks passed");

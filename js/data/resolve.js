@@ -48,21 +48,27 @@ var DCTResolve = (function () {
   function layout(root) { var out = []; kidsOf(root).forEach(function (c) { if (kidsOf(c).length) out = out.concat(layout(c)); else out.push(c); }); out.push(root); return out; }
   function lastVal(k, s) { var v = k.val[s]; return v ? v[v.length - 1] : null; }
   function fmtV(k, v) { if (v == null) return "—"; if (typeof v === "string") return v; return Number(v).toLocaleString("en-US", {minimumFractionDigits: k.dp, maximumFractionDigits: k.dp}); }
+  /* Core Group (manager review 2026-10-06): the roll-up also shows the plants, plant → entity → Group, so every entity
+     number can be traced to its plant values. Plant cells are not links (KPI detail stays at entity scope). */
   function plantTab(p, ids) {
-    var P = PM(), root = rootOf(p.lens); CURK = null; var sc = layout(root).filter(function (s) { return p.lens === "Entity" || kidsAll(s).length || (CAP && parentOf(s) === root); }), sn = function (s) { return P.scopes[s]; };
-    var cols = ["KPI", "Measure"].concat(sc.map(function (s) { return kidsOf(s).length ? sn(s) + " (Σ)" : sn(s); })).concat(["Unit", "How rolled up"]);
+    var PV = p.lens === "Core Group", cap0 = CAP; if (PV) CAP = false;
+    var P = PM(), root = rootOf(p.lens); CURK = null; var sc = layout(root).filter(function (s) { return p.lens === "Entity" || PV || kidsAll(s).length || (CAP && parentOf(s) === root); }), sn = function (s) { return P.scopes[s]; };
+    var pl = function (s) { return /^Plant/.test(s); };
+    var cols = ["KPI", "Measure"].concat(sc.map(function (s) { return kidsOf(s).length ? sn(s) + " (Σ)" : PV && pl(s) ? sn(s) + " (P" + s.slice(-2) + ")" : sn(s); })).concat(["Unit", "How rolled up"]);
     var rows = ids.map(function (id) {
       var k = P.kpi[canon(id)];
       var how = (k.level === "entity" ? "Entity inputs → " : "") + (k.fields.length > 1 || /÷|\/|×/.test(k.formula || "") ? "recomputed from summed inputs" : (k.rules[k.fields[0]] === "MIN" ? "lowest of children" : k.rules[k.fields[0]] === "CALC" ? "recalculated at each level" : "sum of children"));
       how = how.charAt(0).toUpperCase() + how.slice(1);
-      return {c: [{t: id, h: detailHref(id, root, p.lens)}, k.name].concat(sc.map(function (s) { if (!k.val[s]) return "—"; return kidsAll(s).length ? {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens), b: true} : {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens)}; }))
+      return {c: [{t: id, h: detailHref(id, root, p.lens)}, k.name].concat(sc.map(function (s) { if (!k.val[s]) return "—"; if (PV && pl(s)) return fmtV(k, lastVal(k, s)); return kidsAll(s).length ? {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens), b: true} : {t: fmtV(k, lastVal(k, s)), h: detailHref(id, s, p.lens)}; }))
         .concat([k.unit || "count", how])};
     });
-    var title = root === "Group" ? "Entity → Group" : sn(root) + " by plant";
+    var title = root === "Group" ? (PV ? "Plant → Entity → Group" : "Entity → Group") : sn(root) + " by plant";
+    CAP = cap0;
     // "—" = the KPI has no value at that level (entity-only inputs such as finance or governance)
-    return {n: "How totals add up · " + P.periodL.split(" (")[0].replace(/^P\d+ · /, ""), blocks: [{type: "table", title: title + " · " + P.periodL, cols: cols, rows: rows, minW: 300 + 90 * sc.length,
-      ask: root === "Group" ? "Which entity drives each Group number?" : "Which plant is driving each entity number?",
-      cap: "Parent values (Σ) are recalculated from their children's summed inputs, never averaged. Click any value for its calculation."}]};
+    return {n: "How totals add up · " + P.periodL.split(" (")[0].replace(/^P\d+ · /, ""), blocks: [{type: "table", title: title + " · " + P.periodL, cols: cols, rows: rows, minW: 300 + 90 * sc.length, plantOk: PV || undefined,
+      ask: root === "Group" ? (PV ? "Which plants and entities drive each Group number?" : "Which entity drives each Group number?") : "Which plant is driving each entity number?",
+      cap: PV ? "Each entity (Σ) is recalculated from its plants' summed inputs (Plants 01–03 → Entity A1, Plants 04–06 → Entity A2) and Group from the entities', never averaged. \"—\" in a plant column: the KPI is booked at entity level (finance, cash, governance) and has no plant value. Click an entity or Group value for its calculation."
+        : "Parent values (Σ) are recalculated from their children's summed inputs, never averaged. Click any value for its calculation."}]};
   }
 
   /* Entity lens tables: a code never stands alone.
@@ -90,7 +96,7 @@ var DCTResolve = (function () {
     if (!o || typeof o !== "object") return;
     if ((o.type === "table" || o.type === "watchlist") && Array.isArray(o.rows)) {
       var cols = o.cols || [], pairedCol = /^(KPI|ID)$/i.test(txt(cols[0])) && /measure|name/i.test(txt(cols[1]));
-      o.cols = cols.map(function (c) { return typeof c === "string" ? nameCodes(c, true).replace(/\bEntity (A\d) \(Σ\)/, "Entity $1 ($1) · Σ") : c; });
+      o.cols = cols.map(function (c) { return typeof c === "string" ? nameCodes(c, true).replace(/\bEntity (A\d) \(Σ\)/, "Entity $1 · Σ") : c; });
       o.rows.forEach(function (r) {
         var a = Array.isArray(r) ? r : r && r.c; if (!a) return;
         a.forEach(function (c, i) {
@@ -107,6 +113,71 @@ var DCTResolve = (function () {
 
   /* Every table: drop columns that have no value in any row ("", "—"). Keeps the first column. */
   var BLANK = /^\s*(—|–|-)?\s*$/;
+  /* Owner KPI tables: a "Below target · entity · plant" column gives each KPI row its context, from the model
+     (DCTData.plant): the entity furthest below the KPI's target (by its better-direction), then that entity's plant
+     furthest below target. "—" when the KPI has no target or no entity misses it; entity only when no plant misses it. */
+  var CTXH = "Below target · entity · plant";
+  function weakest(id) {
+    var P = PM(), K = P && P.kpi && P.kpi[id]; if (!K || !K.val || !K.better || typeof K.target !== "number") return "—";
+    var gap = function (sc) { var a = K.val[sc], v = a && a.length ? a[a.length - 1] : null; return v == null ? null : (K.better === "up" ? K.target - v : v - K.target); };
+    var worst = function (scs) { var w = null, wg = 0; scs.forEach(function (sc) { var g = gap(sc); if (g != null && g > 1e-9 && g > wg) { w = sc; wg = g; } }); return w; };
+    var e = worst((P.children || {}).Group || []); if (!e) return "—";
+    var pl = worst((P.children || {})[e] || []);
+    return P.scopes[e] + (pl ? " · " + P.scopes[pl] : "");
+  }
+  /* Owner: where a KPI's number comes from. srcOf(id) → {t, d}: t names the entities (and their plants) that feed the
+     Group value in the model; d lists each entity's and plant's latest value. Scope narrows it to one entity. */
+  function srcOf(id, scope) {
+    var P = PM(), K = P && P.kpi && P.kpi[id], ch = (P && P.children) || {};
+    var ents = scope && scope !== "Group" ? [scope] : (ch.Group || []);
+    var nm = function (sc) { return P.scopes[sc] || sc; };
+    var range = function (ps) { var n = ps.map(function (x) { return x.replace(/\D/g, ""); });
+      var run = n.every(function (x, i) { return i === 0 || +x === +n[i - 1] + 1; });
+      return (ps.length > 1 ? "Plants " : "Plant ") + (run && n.length > 2 ? n[0] + "–" + n[n.length - 1] : n.join(", ")); };
+    if (!K || !K.val) return {t: ents.map(function (e) { return nm(e) + ": " + range(ch[e] || []); }).join(" + "), d: ""};
+    var has = function (sc) { var a = K.val[sc]; return !!(a && a.length && a[a.length - 1] != null); };
+    var dp = K.dp != null ? K.dp : 1;
+    var fmt = function (sc) { var a = K.val[sc], v = a[a.length - 1]; if (id === "PRD-001" && v >= 99) return "not expected";
+      return Number(v).toLocaleString("en-US", {minimumFractionDigits: dp, maximumFractionDigits: dp}); };
+    var es = ents.filter(has); if (!es.length) return {t: "Group level only (no entity split in the model)", d: ""};
+    var pl = function (e) { return (ch[e] || []).filter(has); }, anyPl = es.some(function (e) { return pl(e).length; });
+    var t = es.map(function (e) { return nm(e) + (pl(e).length ? ": " + range(pl(e)) : ""); }).join(" + ") + (anyPl ? "" : " · entity level, no plant split");
+    var d = es.map(function (e) { return nm(e) + " " + fmt(e) + (pl(e).length ? " (" + pl(e).map(function (q) { return nm(q) + " " + fmt(q); }).join(", ") + ")" : ""); }).join(" · ");
+    var lab = "Values (Sep" + (K.unit ? ", " + K.unit : "") + "): ";   // unit once; Group is recalculated from its own inputs, not summed
+    return {t: t, d: lab + (scope && scope !== "Group" ? "" : "Group " + (has("Group") ? fmt("Group") : "—") + " · ") + d + "."};
+  }
+  var SRCH = "Source · entity · plant", SRCT = /^(Operational|Strategic|Risk) measures$/;
+  function ownerSrc(p) {
+    var cells = function (r) { return Array.isArray(r) ? r : (r && r.c) || []; };
+    (function w(o) { if (Array.isArray(o)) return o.forEach(w); if (!o || typeof o !== "object") return;
+      if (p.rid === "O-01" && o.type === "table" && SRCT.test(o.title || "") && Array.isArray(o.cols) && o.cols.indexOf(SRCH) < 0) {
+        var vi = o.cols.indexOf("Value"), at = vi >= 0 ? vi + 1 : o.cols.length;
+        o.cols = o.cols.slice(); o.cols.splice(at, 0, SRCH);
+        o.rows = (o.rows || []).map(function (r) { var a = cells(r).slice(), m = (txt(a[0]) + " " + txt(a[1])).match(/\b[A-Z]{2,4}-\d{3}\b/), x = m ? srcOf(m[0]) : {t: "—", d: ""};
+          a.splice(at, 0, x.d ? {t: x.t, more: x.d} : x.t);
+          return Array.isArray(r) ? {c: a} : Object.assign({}, r, {c: a}); });
+        o.gtc = o.cols.map(function (c) { return c === SRCH ? "minmax(200px,2fr)" : /Business status|Measure/.test(c) ? "minmax(0,1.3fr)" : "minmax(0,1fr)"; }).join(" ");
+        o.minW = Math.max(o.minW || 0, 1100); }
+      if (p.rid === "O-02" && o.type === "heat" && Array.isArray(o.items)) o.items.forEach(function (x) { var k = x.kpi || (/^[A-Z]{2,4}-\d{3}$/.test(x.id || "") ? x.id : ""), y = srcOf(k, x.scope);
+        x.src = y.t; x.srcD = y.d; });
+      Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && o[k] && typeof o[k] === "object") w(o[k]); }); })(p);
+  }
+  function ownerCtx(o) {
+    if (Array.isArray(o)) { o.forEach(ownerCtx); return; }
+    if (!o || typeof o !== "object") return;
+    if (o.type === "table" && Array.isArray(o.cols) && Array.isArray(o.rows) && o.rows.length && !o.cols.some(function (c) { return /Entity|Plant|Scope/.test(c); })) {
+      var cells = function (r) { return Array.isArray(r) ? r : (r && r.c) || []; };
+      var idOf = function (r) { var a = cells(r), m = (txt(a[0]) + " " + txt(a[1])).match(/\b[A-Z]{2,4}-\d{3}\b/); return m ? m[0] : ""; };
+      if (o.rows.some(idOf)) {
+        var vi = o.cols.indexOf("Value"), at = vi >= 0 ? vi + 1 : o.cols.length;
+        o.cols = o.cols.slice(); o.cols.splice(at, 0, CTXH);
+        o.rows = o.rows.map(function (r) { var id = idOf(r), v = id ? weakest(id) : "—";
+          if (Array.isArray(r)) { r = r.slice(); r.splice(at, 0, v); return r; } r.c = r.c.slice(); r.c.splice(at, 0, v); return r; });
+        delete o.gtc; if (o.minW) o.minW += 150;
+      }
+    }
+    Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && o[k] && typeof o[k] === "object") ownerCtx(o[k]); });
+  }
   function pruneCols(o) {
     if (Array.isArray(o)) { o.forEach(pruneCols); return; }
     if (!o || typeof o !== "object") return;
@@ -170,7 +241,7 @@ var DCTResolve = (function () {
       b.rows = out.map(function (x) { return {c: x.c}; });
       b.plantOk = true; b.minW = b.minW || 820;
       b.empty = "No plant shows a variation on these measures: all within target or normal range.";
-      b.cap = b.cap || "Only plants with a variation are listed: off target by more than 2%, or a 10%+ adverse move vs Aug, or 25%+ worse than the plant median. Plant detail and root causes are in the Entity lens.";
+      if (/^Only plants with a variation are listed/.test(b.cap || "")) delete b.cap;   // review 2026-10-06: no rule text under the table
     }
     if (b.type === "table" && b.kcols) {
       var cols = b.cols || [];
@@ -181,6 +252,9 @@ var DCTResolve = (function () {
           var id = b.kcols[h]; if (!id) return; var m = modelCell(id, sc); if (!m) return;
           var cell = {t: m.t, h: detailHref(id, sc, p.lens)};
           if (a[i] && typeof a[i] === "object") cell = Object.assign({}, a[i], cell);
+          // Core Group: an entity cell names the plant values behind it (P01–P03 → A1, P04–P06 → A2)
+          var pv = p.lens === "Core Group" && /^A\d$/.test(sc || "") && typeof DCTEntityCards !== "undefined" ? DCTEntityCards.plantVals(id, sc) : "";
+          if (pv) { cell.sub = (cell.sub ? cell.sub + " · " : "") + pv; b.pvals = true; }
           a[i] = cell;
         });
       });
@@ -308,7 +382,8 @@ var DCTResolve = (function () {
     var esc = function (x) { return x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); };
     var re = new RegExp("\\b(" + kids.map(function (c) { return esc(P.scopes[c]); }).concat(kids.map(function (c) { return "(?<!" + esc(P.scopes[c].replace(c, "")) + ")" + esc(c) + "(?!\\))"; })).join("|") + ")\\b(?! \\()", "g");
     var code = {}; kids.forEach(function (c) { code[c] = c; code[P.scopes[c]] = c; });
-    var f = function (v) { return v.replace(re, function (m) { var c = code[m]; return P.scopes[c] + " (" + c + ")"; }); };
+    var f = function (v) { return v.replace(re, function (m) { var c = code[m], n = P.scopes[c];
+      return new RegExp("\\b" + esc(c) + "\\b").test(n) ? n : n + " (" + c + ")"; }); };   // no "(A1)" when the name already holds the code
     var walk = function (o) {
       if (Array.isArray(o)) { for (var i = 0; i < o.length; i++) { if (typeof o[i] === "string") o[i] = f(o[i]); else walk(o[i]); } return; }
       if (!o || typeof o !== "object") return;
@@ -396,10 +471,13 @@ var DCTResolve = (function () {
       .concat(layout(focus).filter(function (s) { return kidsOf(s).length; }).map(function (s) { return {l: sn(s) + " (rolled up)", v: last(s), d: U(last(s)), note: level(s).toLowerCase()}; }));
     // Calculation: plant inputs, entity sums, Group sum — the whole chain
     var cols = ["Scope", "Level"].concat(k.fields).concat([id + " (" + unit + ")"]);
+    // Core Group (manager review 2026-10-06): the calculation starts at the plant inputs, though the page stays at entity scope
+    var PV = lens === "Core Group" && !!k.val[(P.children[(P.children.Group || [])[0]] || [])[0]], cap0 = CAP; if (PV) CAP = false;
     var rows = layout(focus).map(function (s) {
-      var parent = kidsOf(s).length;
-      return {c: [{t: parent ? sn(s) + " = " + rollOf + " " + kidsOf(s).map(sn).join(" + ") : sn(s), h: H(s)}, level(s)].concat(k.fields.map(function (f) { return raw((k.inp[s] || {})[f]); })).concat([fmtV(k, last(s))]), hi: s === scope || !!parent};
+      var parent = kidsOf(s).length, pl = PV && level(s) === "Plant";
+      return {c: [pl ? sn(s) : {t: parent ? sn(s) + " = " + rollOf + " " + kidsOf(s).map(sn).join(" + ") : sn(s), h: H(s)}, level(s)].concat(k.fields.map(function (f) { return raw((k.inp[s] || {})[f]); })).concat([fmtV(k, last(s))]), hi: s === scope || !!parent};
     });
+    CAP = cap0;
     var share = [level(fk[0] || scope)].concat(k.fields.filter(function (f) { return k.rules[f] === "SUM"; }).map(function (f) { return "Share of " + f; }))
       .concat([id, sn(focus) + " without it", "Effect on " + sn(focus)]);
     var srows = fk.map(function (s) {
@@ -415,8 +493,8 @@ var DCTResolve = (function () {
     var tr = function (s) { var r = D[s] || {}; return [sn(s), level(s), r.ts || "—", r.prov || "—"]; };
     p.drill = [
       {n: fk.length ? (CAP ? "By entity" : level(focus) === "Group" ? "By entity and plant" : "By plant") : "Calculation", blocks: [{type: "bars", title: id + " " + k.name + (CAP ? " by entity" : " by plant" + (focus === "Group" ? " and entity" : "")) + " · " + P.periodL, rows: bars, ask: "Which " + LOW + " is furthest from target?"},
-        {type: "table", title: "Calculation · " + LOW + " inputs → " + (CAP ? "Group" : focus === "Group" ? "entity → Group" : sn(focus)) + " · " + P.periodL, cols: cols, rows: rows, minW: 640,
-          ask: "How is each level calculated from the one below?", cap: (CAP ? "Entity rows are each entity's own inputs. " : "Plant rows are raw inputs. ") + (calc ? "Each parent row recalculates the measure from its own underlying inputs; it is not the sum of its children." : "Each parent row " + (roll === "MIN" ? "takes the lowest of" : "sums") + " its children's inputs, then applies the same formula.") + (CAP ? "" : " Full trace: data/plant-model/kpi_calculations.csv")}]},
+        {type: "table", title: "Calculation · " + (PV ? "plant inputs → entity → Group" : LOW + " inputs → " + (CAP ? "Group" : focus === "Group" ? "entity → Group" : sn(focus))) + " · " + P.periodL, cols: cols, rows: rows, minW: 640, plantOk: PV || undefined,
+          ask: "How is each level calculated from the one below?", cap: (PV ? "Plant rows are each plant's raw inputs (Plants 01–03 → Entity A1, Plants 04–06 → Entity A2). " : CAP ? "Entity rows are each entity's own inputs. " : "Plant rows are raw inputs. ") + (calc ? "Each parent row recalculates the measure from its own underlying inputs; it is not the sum of its children." : "Each parent row " + (roll === "MIN" ? "takes the lowest of" : "sums") + " its children's inputs, then applies the same formula.") + (CAP ? "" : " Full trace: data/plant-model/kpi_calculations.csv")}]},
       {n: (level(fk[0] || scope) === "Entity" ? "Entity" : "Plant") + " contribution", blocks: [{type: "table", title: "How much each " + level(fk[0] || scope).toLowerCase() + " moves " + sn(focus) + " · " + P.periodL, cols: share, rows: srows,
         ask: "If this one performed like the others, where would " + sn(focus) + " be?", cap: "'Without it' recalculates " + sn(focus) + " from the other children's inputs. The effect column is how far this child moves the parent."}]},
       {n: "Monthly", blocks: [trend, {type: "table", title: id + " by scope and month · " + unit, cols: ["Scope"].concat(P.x), rows: mrows}]},
@@ -478,6 +556,60 @@ var DCTResolve = (function () {
       cap: b.cap || "Plants that miss target on " + (b.kpis || []).join(", ") + ", sorted by gap to target (at most 5). Plant values are shown here only to explain the entity number; working detail is in the Entity lens.",
       ask: b.ask || "Which plants explain the entity numbers?"});
   }
+  /* Core Group: plant values behind the numbers (manager review 2026-10-06). A KPI row's Value cell gets the plant values
+     under the row's scope as a sub-line: an entity lists its plants, Group lists each entity's plants. Entity cells in
+     kcols tables get theirs in fillModel. Every table with plant values says so in its caption. */
+  var PVCAP = "Small lines under each entity: its plant values for Sep.";
+  function plantSubs(p, o) {
+    if (Array.isArray(o)) { o.forEach(function (x) { plantSubs(p, x); }); return; }
+    if (!o || typeof o !== "object" || o.type === "watchlist" || o.plantOk) return;
+    if (o.type === "table" && Array.isArray(o.rows) && !o.kcols) {
+      var vi = (o.cols || []).indexOf("Value");
+      if (vi > 1) o.rows.forEach(function (r) {
+        var a = Array.isArray(r) ? r : r.c; if (!a) return;
+        var m = /^([A-Z]{3}-\d{3})\b/.exec(txt(a[0])) || /^([A-Z]{3}-\d{3})\b/.exec(txt(a[1])); if (!m || !isPlantKpi(m[1])) return;
+        var sc = rowScope(p, o, txt(a[1])), pv = sc === "Group" ? DCTEntityCards.groupVals(m[1]) : /^A\d$/.test(sc) ? DCTEntityCards.plantVals(m[1], sc) : "";
+        if (!pv) return;
+        var c = a[vi] && typeof a[vi] === "object" ? a[vi] : {t: txt(a[vi])};
+        c.sub = (c.sub ? c.sub + " · " : "") + pv; a[vi] = c; o.pvals = true;
+      });
+    }
+    if (o.pvals) { o.cap = (o.cap ? o.cap.replace(/\s*$/, " ") : "") + PVCAP; delete o.pvals; }
+    Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && o[k] && typeof o[k] === "object") plantSubs(p, o[k]); });
+  }
+  /* Core Group finishing pass (reviews 2026-10-06), run last on every Core Group page:
+     - legends only where the graph does not already say it (line charts label each line and the target on the chart):
+       the highlighted bar of a bar chart, and the plant-code key where bare codes ("P01 96.0%") appear;
+     - graph axes and card trend lines read months (Apr … Sep) instead of period codes (P01 … P06);
+     - each KPI card: a small legend under its trend line, and no Refreshed / Owner footer;
+     - table entity cells read "Entity A1" without the repeated code. */
+  var PLEG = {k: "text", l: "P01 = Plant 1, P02 = Plant 2, P03 = Plant 3 (Entity A1) · P04 = Plant 4, P05 = Plant 5, P06 = Plant 6 (Entity A2)"};
+  var CODES = /\bP0[1-6] [−-]?[\d₹]/;   // a plant sub-line "P02 78.4%"; "Plant 02 (P02)" names itself; periods (P01 = Apr …) are months
+  var MON = {P01: "Apr", P02: "May", P03: "Jun", P04: "Jul", P05: "Aug", P06: "Sep", P07: "Oct", P08: "Nov", P09: "Dec", P10: "Jan", P11: "Feb", P12: "Mar"};
+  function month(x) { return typeof x === "string" && MON[x] ? MON[x] : x; }
+  function finishCG(p) {
+    var hasCodes = function (o) { return CODES.test(JSON.stringify(o, function (k, v) { return k === "leg" || k === "equiv" || k === "access" || k === "h" || k === "href" ? undefined : v; })); };
+    var card = function (k) { if (!k || typeof k !== "object") return; k.noFoot = true; if (Array.isArray(k.spx)) k.spx = k.spx.map(month); };   // the card trend legend (Actual · Apr–Sep / Plan) is in TplA–F
+    (p.kpis || []).forEach(card);
+    var ENT = /\b(Entity A\d) \(A\d\)/g;   // main's naming rule: entities without the repeated code
+    (function walkL(o) {
+      if (Array.isArray(o)) return o.forEach(walkL);
+      if (!o || typeof o !== "object") return;
+      var leg = [], rows = o.rows || [];
+      if (o.type === "kpis" && Array.isArray(o.items)) o.items.forEach(card);
+      if ((o.type === "multi" || o.type === "line") && Array.isArray(o.x)) o.x = o.x.map(month);
+      if (o.type === "bars") { var hi = rows.filter(function (r) { return r.hi; });
+        if (hi.length && hi.length < rows.length && !rows.some(function (r) { return /\bPlant \d\d\b/.test(txt(r.l)); }))
+          leg.push({k: "box", c: "#0E1B33", l: "Needs attention"}, {k: "box", c: "#0B6B73", l: "Others"}); }
+      if ((o.type === "table" || o.type === "watchlist") && Array.isArray(o.rows)) {
+        o.rows.forEach(function (r) { var a = Array.isArray(r) ? r : r.c || []; a.forEach(function (c, i) {
+          if (typeof c === "string") a[i] = c.replace(ENT, "$1"); else if (c && typeof c.t === "string") c.t = c.t.replace(ENT, "$1"); }); });
+      }
+      if (o.type && hasCodes(o)) leg.push(PLEG);
+      if (leg.length) o.leg = leg; else delete o.leg;
+      Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && k !== "leg" && o[k] && typeof o[k] === "object") walkL(o[k]); });
+    })(Object.assign({}, p, {kpis: null}));
+  }
   function fillWatch(o) {
     if (Array.isArray(o)) { for (var i = 0; i < o.length; i++) { if (o[i] && o[i].type === "watchlist") o[i] = watchlist(o[i]); else fillWatch(o[i]); } return; }
     if (!o || typeof o !== "object") return;
@@ -525,10 +657,13 @@ var DCTResolve = (function () {
       }
     }
     Object.keys(p).forEach(function (k) { if (k !== "kpis" && p[k] && typeof p[k] === "object") walk(p, p[k], D, at); });
+    if (p.lens === "Core Group" && typeof DCTEntityCards !== "undefined") Object.keys(p).forEach(function (k) { if (k !== "kpis" && k !== "equiv" && k !== "access") plantSubs(p, p[k]); });
     if (CAP && !OWN) { Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access") capOwner(p[k]); }); if (typeof DCTVerdicts !== "undefined") DCTVerdicts.attach(p); }
     if (OWN) { Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access") capOwner(p[k]); }); if (typeof DCTVerdicts !== "undefined") DCTVerdicts.attach(p);
       delete p.banner;          // MANIFEST02 1C: no critical notification banner on any Owner screen
-      noActions(p); }           // MANIFEST02 Screen 8: Actions & Escalations is not reachable for the Owner
+      noActions(p);             // MANIFEST02 Screen 8: Actions & Escalations is not reachable for the Owner
+      Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access" && p[k] && typeof p[k] === "object") ownerCtx(p[k]); });   // entity · plant context on KPI tables (after the plant cap)
+      ownerSrc(p); }            // where each KPI's number comes from: entities and plants (O-01 tables, heat-map signals)
     /* exceptOnly: a KPI table lists only measures that are non-zero or off target, with the full count in its caption */
     (function exc(o) { if (Array.isArray(o)) return o.forEach(exc); if (!o || typeof o !== "object") return;
       if (o.type === "table" && o.exceptOnly && o.rows) { var all = o.rows.length, si = (o.cols || []).indexOf("Status"), vi = (o.cols || []).indexOf("Value");
@@ -547,6 +682,7 @@ var DCTResolve = (function () {
     noKpiLinks(p);              // MANIFEST03 G2: a KPI never links to another KPI, screen or section
     if (p.lens === "Entity" || p.lens === "Core Group") labelTables(p);   // every code in a table carries its name; identifiers semi-bold
     pruneCols(p);
+    if (p.lens === "Core Group") finishCG(p);   // legends, month labels, card footer, entity names (finishCG)
     return p;
   };
   R.kpiDetail = kpiDetail;

@@ -37,10 +37,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006201541"></script>
-<script src="js/data/resolve.js?v=20261006201541"></script>
-<script src="js/data/entity-cards.js?v=20261006201541"></script>
-<script src="js/persona.js?v=20261006201541"></script>
+<script src="js/data/base-data.js?v=20261006202858"></script>
+<script src="js/data/resolve.js?v=20261006202858"></script>
+<script src="js/data/entity-cards.js?v=20261006202858"></script>
+<script src="js/persona.js?v=20261006202858"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -55,23 +55,17 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="#FFFFFF" stroke-width="1.6"><rect x="3" y="3" width="16" height="16" rx="2"></rect><path d="M7 15V10M11 15V7M15 15v-3"></path></svg>
       <span style="font-weight:600;letter-spacing:.02em;font-size:14px">Control Tower</span>
     </div>
-    <span title="All names, values, dates and sources on this page are synthetic" style="display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border:1px dashed rgba(255,255,255,.55);border-radius:2px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:#FFFFFF">SYNTHETIC DATA</span>
-    <a href="login.html" class="ct-btn ct-persona" title="Signed in persona. Select to sign out (you will sign in again and choose a persona)." style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font-size:13px;text-decoration:none"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a3 3 0 1 0 0-6a3 3 0 1 0 0 6M2.5 14.5c.8-2.6 3-4 5.5-4s4.7 1.4 5.5 4"></path></svg><b>Entity Executive · Entity A1 (A1)</b><span style="color:rgba(255,255,255,.7);padding-left:6px;margin-left:2px;border-left:1px solid rgba(255,255,255,.28)">Sign out</span></a>
+    <a href="login.html" class="ct-btn ct-persona" title="Signed in persona. Select to sign out (you will sign in again and choose a persona)." style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font-size:13px;text-decoration:none"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a3 3 0 1 0 0-6a3 3 0 1 0 0 6M2.5 14.5c.8-2.6 3-4 5.5-4s4.7 1.4 5.5 4"></path></svg><b>Entity Executive · Entity A1</b><span style="color:rgba(255,255,255,.7);padding-left:6px;margin-left:2px;border-left:1px solid rgba(255,255,255,.28)">Sign out</span></a>
     <span hidden data-dct-lens="Entity"><a hidden data-lens="Owner" href="P2-R01o-KPIReference.html"></a><a hidden data-lens="Core Group" href="P2-R01-KPIReference.html"></a><a hidden data-lens="Entity" href="P2-R01e-KPIReference.html"></a></span>
     <button type="button" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><span style="color:rgba(255,255,255,.7)">Scope</span><b>Entity A1 (own entity)</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></button>
-    <button type="button" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><span style="color:rgba(255,255,255,.7)">Period</span><b>P06 (SYN)</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></button>
     <button type="button" class="ct-btn ct-report" data-report-lens="Entity" title="Download a PDF report of this persona's data" onclick="if(window.DCTReport){DCTReport.run(this)}else{var b=this,s=document.createElement('script');s.src='js/report.js?t='+Date.now();s.onload=function(){DCTReport.run(b)};document.head.appendChild(s)}" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border:1px solid #FFFFFF;border-radius:4px;font:inherit;font-size:13px;font-weight:600;cursor:pointer"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M4.5 6.5L8 10l3.5-3.5M2.5 13.5h11"></path></svg><span data-report-label>Download report</span></button>
-    <span class="ct-hide-s" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;color:rgba(255,255,255,.72)">Refreshed 06:25 (SYN)</span>
     <div class="ct-hide-s" style="flex:1 1 220px;min-width:180px;position:relative;display:flex;align-items:center">
       <span style="position:absolute;left:10px;color:rgba(255,255,255,.6);display:flex"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12.5a5.5 5.5 0 1 0 0-11a5.5 5.5 0 1 0 0 11M11 11l3.5 3.5"></path></svg></span>
       <input type="search" aria-label="Search or ask Control Tower" placeholder="Search or ask Control Tower" style="width:100%;box-sizing:border-box;min-height:40px;padding:0 12px 0 34px;border:1px solid rgba(255,255,255,.28);border-radius:4px;background:rgba(255,255,255,.08);color:#FFFFFF;font:inherit;font-size:13.5px">
     </div>
     <a href="P2-S13-Ask.html" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5l1.6 4.9 4.9 1.6-4.9 1.6L8 14.5l-1.6-4.9L1.5 8l4.9-1.6z"></path></svg>Ask</a>
-    <button type="button" aria-label="Notifications, 3 unread" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V7a4 4 0 0 1 8 0v4l1.5 2h-11zM6.5 14.5h3"></path></svg><b style="background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);border-radius:2px;padding:0 6px;font-size:12px">3</b></button>
     <details class="ct-tourmenu ct-hide-s" style="position:relative"><summary aria-label="Guided tours" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font-size:13px;cursor:pointer;list-style:none">Tour ▾</summary><div style="position:absolute;top:46px;right:0;z-index:30;min-width:260px;background:#FFFFFF;color:var(--ct-ink,#121A2B);border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;box-shadow:0 8px 24px rgba(14,27,51,.18);padding:6px;display:flex;flex-direction:column"><a href="P2-O01-EnterpriseHealth.html#tour" style="padding:10px 12px;color:var(--ct-navy-900,#0E1B33);text-decoration:none;font-size:13.5px"><b>Primary business journey</b><br><span style="color:var(--ct-ink-3,#5B6576);font-size:12px">Owner · 10 steps · alert to closure</span></a><a href="P2-G01-Portfolio.html#tour" style="padding:10px 12px;color:var(--ct-navy-900,#0E1B33);text-decoration:none;font-size:13.5px"><b>Data Assurance journey</b><br><span style="color:var(--ct-ink-3,#5B6576);font-size:12px">Core Group · 8 steps · break to certification</span></a></div></details>
-    <button type="button" aria-label="Help" class="ct-btn ct-hide-s" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 1 0 0 13M6.2 6.2a1.9 1.9 0 1 1 2.6 1.8c-.5.2-.8.6-.8 1.1v.6M8 11.5v.4"></path></svg></button>
-    <button type="button" class="ct-btn" style="display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;background:transparent;color:#FFFFFF;border:1px solid rgba(255,255,255,.28);border-radius:4px;font:inherit;font-size:13px;cursor:pointer;text-decoration:none"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8a3 3 0 1 0 0-6a3 3 0 1 0 0 6M2.5 14.5c.7-2.8 2.9-4.5 5.5-4.5s4.8 1.7 5.5 4.5"></path></svg><span class="ct-hide-s">Entity Executive · Entity A1 (A1)</span></button>
-  </header>
+    </header>
   <div class="ct-body" style="display:flex;align-items:stretch;flex:1 0 auto">
     <nav class="ct-nav ct-dark" aria-label="Global navigation" style="flex:0 0 232px;box-sizing:border-box;padding:16px 10px;background:var(--ct-navy-900,#0E1B33);border-top:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:2px">
       <div class="ct-lensl" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.62);padding:0 12px 10px">Entity lens · operational detail</div>
@@ -125,6 +119,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
       
       
+      
         <div style="display:flex;flex-direction:column;gap:14px">
           
 
@@ -138,6 +133,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
+              
               
               
 
@@ -179,7 +175,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start">
                   
                     <details class="ct-menu" style="position:relative">
-                      <summary class="ct-btn" aria-label="Scope: Entity A1 (A1)" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);font-size:13.5px;cursor:pointer;list-style:none"><span style="color:var(--ct-ink-3,#5B6576)">Scope</span><b>Entity A1 (A1)</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></summary>
+                      <summary class="ct-btn" aria-label="Scope: Entity A1" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:4px;background:#FFFFFF;color:var(--ct-navy-900,#0E1B33);font-size:13.5px;cursor:pointer;list-style:none"><span style="color:var(--ct-ink-3,#5B6576)">Scope</span><b>Entity A1</b><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"></path></svg></summary>
                       <div style="position:absolute;top:44px;left:0;z-index:30;min-width:260px;max-height:380px;overflow:auto;background:#FFFFFF;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px;box-shadow:var(--ct-e1,0 2px 8px rgba(14,27,51,.12));padding:6px;display:flex;flex-direction:column;gap:2px">
                         <a href="#" aria-current="true" class="ct-hov" style="display:block;padding:8px 10px;border-radius:3px;text-decoration:none;color:var(--ct-ink,#121A2B);background:var(--ct-navy-100,#E8EDF6);font-weight:600;font-size:13.5px">Entity A1 (its plants + entity inputs)</a><a href="#" aria-current="false" class="ct-hov" style="display:block;padding:8px 10px;border-radius:3px;text-decoration:none;color:var(--ct-ink,#121A2B);background:transparent;font-weight:400;font-size:13.5px">Plant 01 (plant inputs)</a><a href="#" aria-current="false" class="ct-hov" style="display:block;padding:8px 10px;border-radius:3px;text-decoration:none;color:var(--ct-ink,#121A2B);background:transparent;font-weight:400;font-size:13.5px">Plant 02 (plant inputs)</a><a href="#" aria-current="false" class="ct-hov" style="display:block;padding:8px 10px;border-radius:3px;text-decoration:none;color:var(--ct-ink,#121A2B);background:transparent;font-weight:400;font-size:13.5px">Plant 03 (plant inputs)</a>
                       </div>
@@ -200,7 +196,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                     </details>
                   
                 </div>
-                <div style="margin-top:8px;font-size:12.5px;color:var(--ct-ink-3,#5B6576)">Lens: Entity (your sign-in). Entity A1 (A1) and its plants only (C-05). Values are recalculated for the selected scope and month from its own inputs; YTD measures run from April to the selected month.</div>
+                <div style="margin-top:8px;font-size:12.5px;color:var(--ct-ink-3,#5B6576)">Lens: Entity (your sign-in). Entity A1 and its plants only (C-05). Values are recalculated for the selected scope and month from its own inputs; YTD measures run from April to the selected month.</div>
               
 
               
@@ -219,6 +215,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
+              
               
               
 
@@ -296,19 +293,18 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
             </section>
           
 
-            <section class="ct-sec " role="region" aria-label="147 KPIs · Entity lens · Entity A1 (A1) · P06 (2026)" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
+            <section class="ct-sec " role="region" aria-label="147 KPIs · Entity lens · Entity A1 · P06 (2026)" style="background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#DCE1E8);border-top:3px solid var(--ct-navy-900,#0E1B33);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;min-width:0">
               
               <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:flex-start">
                 <div style="display:flex;flex-direction:column;gap:3px;min-width:0;flex:1 1 360px">
                   <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-navy-700,#24406E)">Focus of this page</span>
-                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">147 KPIs · Entity lens · Entity A1 (A1) · P06 (2026)</h2>
+                  <h2 style="margin:0;font-size:18px;line-height:1.4;font-weight:600">147 KPIs · Entity lens · Entity A1 · P06 (2026)</h2>
                   <p style="margin:0;font-size:13px;line-height:19px;color:var(--ct-ink-2,#3B4558)"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);margin-right:6px">Answers</span>How is each KPI calculated, and what is its value here?</p>
                 </div>
                 <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ct-ink-3,#5B6576);padding-top:3px"></span>
               </div>
               
-              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">Formula and inputs are the same at every level; the value is recalculated from Entity A1 (A1)'s own inputs, never averaged. Inputs show how each one rolls up (Σ = sum of children, lowest = MIN). Highlighted rows were added by the model. Click a KPI ID for what its number is saying, where the problem sits and what moves it; click a value for its full lineage.</p>
-
+              <p style="margin:0;color:var(--ct-ink-3,#5B6576);font-size:12.5px;line-height:18px">Formula and inputs are the same at every level; the value is recalculated from Entity A1's own inputs, never averaged. Inputs show how each one rolls up (Σ = sum of children, lowest = MIN). Highlighted rows were added by the model. Click a KPI ID for what its number is saying, where the problem sits and what moves it; click a value for its full lineage.</p>
               
 
               
@@ -322,8 +318,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
               
 
               
-                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="147 KPIs · Entity lens · Entity A1 (A1) · P06 (2026)" style="min-width:1240px">
-                  <div role="row" style="display:grid;grid-template-columns:76px minmax(120px,1.1fr) minmax(180px,1.8fr) 52px 100px minmax(170px,1.9fr) minmax(140px,1.4fr) 112px 70px minmax(90px,.8fr);background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:6px 8px">KPI</div><div role="columnheader" style="padding:6px 8px">Measure</div><div role="columnheader" style="padding:6px 8px">Definition</div><div role="columnheader" style="padding:6px 8px">Theme</div><div role="columnheader" style="padding:6px 8px">Unit · basis</div><div role="columnheader" style="padding:6px 8px">Formula</div><div role="columnheader" style="padding:6px 8px">Inputs (roll-up)</div><div role="columnheader" style="padding:6px 8px">Value · Entity A1 (A1) · P06</div><div role="columnheader" style="padding:6px 8px">vs P05</div><div role="columnheader" style="padding:6px 8px">Shown on</div></div>
+
+              
+                <div style="overflow-x:auto;border:1px solid var(--ct-line,#DCE1E8);border-radius:4px"><div role="table" aria-label="147 KPIs · Entity lens · Entity A1 · P06 (2026)" style="min-width:1240px">
+                  <div role="row" style="display:grid;grid-template-columns:76px minmax(120px,1.1fr) minmax(180px,1.8fr) 52px 100px minmax(170px,1.9fr) minmax(140px,1.4fr) 112px 70px minmax(90px,.8fr);background:var(--ct-surface-2,#F8F9FB);font-weight:600;font-size:12px;color:var(--ct-ink-2,#3B4558)"><div role="columnheader" style="padding:6px 8px">KPI</div><div role="columnheader" style="padding:6px 8px">Measure</div><div role="columnheader" style="padding:6px 8px">Definition</div><div role="columnheader" style="padding:6px 8px">Theme</div><div role="columnheader" style="padding:6px 8px">Unit · basis</div><div role="columnheader" style="padding:6px 8px">Formula</div><div role="columnheader" style="padding:6px 8px">Inputs (roll-up)</div><div role="columnheader" style="padding:6px 8px">Value · Entity A1 · P06</div><div role="columnheader" style="padding:6px 8px">vs P05</div><div role="columnheader" style="padding:6px 8px">Shown on</div></div>
                   
                     <div role="row" class="ct-row" style="display:grid;grid-template-columns:76px minmax(120px,1.1fr) minmax(180px,1.8fr) 52px 100px minmax(170px,1.9fr) minmax(140px,1.4fr) 112px 70px minmax(90px,.8fr);border-top:1px solid var(--ct-line,#DCE1E8);background:transparent;font-size:13px">
                       <div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600">FIN-001</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:600">EBITDA YTD</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Earnings before interest, tax, depreciation and amortisation since April: core operating profit.</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">T1</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">₹ m · Year to date</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">Sum of monthly EBITDA since April ÷ 1000</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">ebitda_k (YTD) (Σ)</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">890.6 ₹ m</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-green-700,#1E6B43);font-weight:400">▲ 201.4</div><div role="cell" style="padding:6px 8px;background:transparent;color:var(--ct-ink,#121A2B);font-weight:400">E-01 · E-11</div>
@@ -955,8 +953,8 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplC.js?v=20261006201541"></script>
-<script src="js/c/P2-R01-KPIReference.js?v=20261006201541"></script>
+<script src="js/c/TplC.js?v=20261006202858"></script>
+<script src="js/c/P2-R01-KPIReference.js?v=20261006202858"></script>
 <script>DCLite.mount("dc-root", "P2-R01e-KPIReference", {});</script>
 </body>
 </html>
