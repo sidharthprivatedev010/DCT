@@ -3,7 +3,7 @@
 var DCTResolve = (function () {
   "use strict";
   var ID = /^[A-Z]{2,4}-\d{3}$/;
-  var BIZ = {"On track": "✓ On track", "Improving": "▲ Improving", "Deteriorating": "▼ Deteriorating", "Intervention required": "■ Intervention required", "Breached": "■ Breached", "Forecast breach": "◇ Forecast breach", "—": "—"};
+  var BIZ = {"On track": "✓ On track", "Improving": "▲ Improving", "Declining": "▼ Declining", "Intervention required": "■ Intervention required", "Breached": "■ Breached", "Forecast breach": "◇ Forecast breach", "—": "—"};
   var TRUST = {"Certified": ["◆ Certified", "◆"], "Certified with exception": ["◆ Certified · exception", "◆"], "Pending certification": ["◇ Pending certification", "◇"], "Reconciliation break": ["⊘ Reconciliation break", "⊘"], "System count": ["# System count", "#"], "Stale": ["◇ Stale", "◇"], "Missing": ["— Missing", "—"], "Restricted": ["Restricted", "—"]};
   var CARD = ["v", "u", "plan", "var", "tr", "fc", "bs", "ts", "prov", "cf", "cfWhy", "sp", "spp", "spx", "fb", "own"];
 
@@ -81,7 +81,7 @@ var DCTResolve = (function () {
   function modelCell(id, scope) {
     var P = PM(); if (!P || !scope) return null; var k = P.kpi[canon(id)]; if (!k || !k.val[scope]) return null;
     var D = (typeof DCTData !== "undefined" && DCTData.kpi[id] && DCTData.kpi[id][scope]) || {};
-    var mark = {"On track": "✓ ", "Improving": "▲ ", "Deteriorating": "▼ ", "Intervention required": "▼ "}[D.bs] || "";
+    var mark = {"On track": "✓ ", "Improving": "▲ ", "Declining": "▼ ", "Intervention required": "▼ "}[D.bs] || "";
     if (typeof lastVal(k, scope) === "string") return {v: 0, t: lastVal(k, scope), raw: lastVal(k, scope)};
     return {v: lastVal(k, scope), t: mark + fmtV(k, lastVal(k, scope)) + (k.unit && !/^%/.test(k.unit) ? " " + k.unit : (/^%/.test(k.unit) ? "%" : "")), raw: fmtV(k, lastVal(k, scope)) + (k.unit ? " " + k.unit : "")};
   }

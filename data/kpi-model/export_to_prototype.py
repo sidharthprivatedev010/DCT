@@ -109,13 +109,13 @@ def card(kid, series, unit):
     base = s[0] if s[0] else None
     if base: out["sp"] = [round(100 * v / base, 1) for v in s]
     if tgt is None:
-        out.update(plan="—", var="—", bs="Deteriorating" if worse else ("Improving" if better and abs(d) >= 10 ** -dp / 2 else "On track"))
+        out.update(plan="—", var="—", bs="Declining" if worse else ("Improving" if better and abs(d) >= 10 ** -dp / 2 else "On track"))
     else:
         ok = cur >= tgt if better == "up" else cur <= tgt
         gap = cur - tgt
         out.update(plan=("≥ " if better == "up" else "≤ ") + fmt(tgt, dp) + ("%" if pct else (" " + du if du else "")),
                    var=("+" if gap >= 0 else "−") + fmt(abs(gap), dp) + (" pts" if pct else (" " + du if du else "")),
-                   bs="On track" if ok else ("Deteriorating" if worse else "Intervention required"))
+                   bs="On track" if ok else ("Declining" if worse else "Intervention required"))
         if base: out["spp"] = [round(100 * tgt / base, 1)] * len(s)
     return out
 

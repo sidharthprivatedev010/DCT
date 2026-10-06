@@ -996,7 +996,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Pending certification",
     "prov": "FCST",
     "own": "Group Treasury (role)"
@@ -1012,7 +1012,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Pending certification",
     "prov": "FCST",
     "own": "Group Treasury (role)"
@@ -1240,7 +1240,7 @@ var DCTData = {
     ],
     "plan": "≤ 2,900 ₹/t",
     "var": "+376 ₹/t",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      93.4,
      93.4,
@@ -1404,7 +1404,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -1473,7 +1473,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -1496,7 +1496,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -1682,7 +1682,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -1876,7 +1876,7 @@ var DCTData = {
     ],
     "plan": "≤ 180 ₹/t",
     "var": "+36 ₹/t",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      88.5,
      88.5,
@@ -1938,7 +1938,7 @@ var DCTData = {
     ],
     "plan": "≤ 180 ₹/t",
     "var": "+18 ₹/t",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      115.3,
      115.3,
@@ -2033,7 +2033,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified"
    },
    "Group": {
@@ -2055,7 +2055,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2078,7 +2078,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2101,7 +2101,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2124,7 +2124,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2147,7 +2147,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2170,7 +2170,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2193,7 +2193,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2216,7 +2216,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -2722,7 +2722,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -2752,7 +2752,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -3290,7 +3290,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+3",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -3321,7 +3321,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -3374,7 +3374,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+2",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -3404,7 +3404,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -3419,7 +3419,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -3791,7 +3791,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -3822,7 +3822,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+2",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -3860,7 +3860,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -4008,7 +4008,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06",
     "own": "EHS (role)"
@@ -4032,7 +4032,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -4055,7 +4055,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -4101,7 +4101,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -4218,7 +4218,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+7",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -4250,7 +4250,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+9",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -4281,7 +4281,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+4",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -4343,7 +4343,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+2",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -4451,7 +4451,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -4653,7 +4653,7 @@ var DCTData = {
     ],
     "plan": "≥ 100%",
     "var": "−25 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      150.0,
      150.0,
@@ -4715,7 +4715,7 @@ var DCTData = {
     ],
     "plan": "≥ 100%",
     "var": "−50 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      100.0,
      100.0,
@@ -4871,7 +4871,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−9.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      142.5,
      142.5,
@@ -4902,7 +4902,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−13.2 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      126.7,
      126.7,
@@ -4995,7 +4995,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−20.0 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      95.0,
      95.0,
@@ -6423,7 +6423,7 @@ var DCTData = {
     ],
     "plan": "≤ 30.0 days",
     "var": "+2.8 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      90.4,
      90.4,
@@ -6484,7 +6484,7 @@ var DCTData = {
     ],
     "plan": "≤ 30.0 days",
     "var": "+7.8 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      81.1,
      81.1,
@@ -6707,7 +6707,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified"
    },
    "A1": {
@@ -6729,7 +6729,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified"
    },
    "A2": {
@@ -6776,7 +6776,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified"
    },
    "A1": {
@@ -6798,7 +6798,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -6821,7 +6821,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -6912,7 +6912,7 @@ var DCTData = {
     ],
     "plan": "≥ 100.0%",
     "var": "−21.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      119.0,
      119.0,
@@ -7258,7 +7258,7 @@ var DCTData = {
     ],
     "plan": "≥ 100.0%",
     "var": "−7.2 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      102.1,
      102.1,
@@ -7289,7 +7289,7 @@ var DCTData = {
     ],
     "plan": "≥ 100.0%",
     "var": "−22.4 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      116.7,
      116.7,
@@ -7510,7 +7510,7 @@ var DCTData = {
     ],
     "plan": "≥ 85.0%",
     "var": "−2.1 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      96.4,
      96.4,
@@ -7821,7 +7821,7 @@ var DCTData = {
     ],
     "plan": "≥ 100.0%",
     "var": "−7.2 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      102.1,
      102.1,
@@ -7852,7 +7852,7 @@ var DCTData = {
     ],
     "plan": "≥ 100.0%",
     "var": "−22.4 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      116.7,
      116.7,
@@ -8104,7 +8104,7 @@ var DCTData = {
     ],
     "plan": "≥ 85.0%",
     "var": "−2.1 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      96.4,
      96.4,
@@ -9234,7 +9234,7 @@ var DCTData = {
     ],
     "plan": "≥ 88.0%",
     "var": "−2.3 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      99.0,
      99.0,
@@ -9265,7 +9265,7 @@ var DCTData = {
     ],
     "plan": "≥ 88.0%",
     "var": "−0.7 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      101.2,
      101.2,
@@ -9296,7 +9296,7 @@ var DCTData = {
     ],
     "plan": "≥ 88.0%",
     "var": "−0.8 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      101.1,
      101.1,
@@ -9389,7 +9389,7 @@ var DCTData = {
     ],
     "plan": "≥ 88.0%",
     "var": "−3.4 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      103.2,
      103.2,
@@ -9454,7 +9454,7 @@ var DCTData = {
     ],
     "plan": "≥ 92.0%",
     "var": "−0.5 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      101.0,
      101.0,
@@ -9516,7 +9516,7 @@ var DCTData = {
     ],
     "plan": "≥ 92.0%",
     "var": "−1.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      102.9,
      102.9,
@@ -9609,7 +9609,7 @@ var DCTData = {
     ],
     "plan": "≥ 92.0%",
     "var": "−1.4 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      99.1,
      99.1,
@@ -9704,7 +9704,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -9727,7 +9727,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06",
     "own": "Planning (role)"
@@ -9751,7 +9751,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -9842,7 +9842,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Pending certification",
     "prov": "PREDICTION",
     "own": "Planning (role)"
@@ -9866,7 +9866,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Pending certification",
     "prov": "PREDICTION",
     "own": "Planning (role)"
@@ -9890,7 +9890,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -9936,7 +9936,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -9959,7 +9959,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -9982,7 +9982,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10028,7 +10028,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -10053,7 +10053,7 @@ var DCTData = {
     ],
     "plan": "≥ 0.0 ₹ m",
     "var": "−56.2 ₹ m",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      -0.0,
      -0.0,
@@ -10085,7 +10085,7 @@ var DCTData = {
     ],
     "plan": "≥ 0.0 ₹ m",
     "var": "−48.5 ₹ m",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      -0.0,
      -0.0,
@@ -10246,7 +10246,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10292,7 +10292,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10315,7 +10315,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10361,7 +10361,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10447,7 +10447,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10493,7 +10493,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10516,7 +10516,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10539,7 +10539,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10562,7 +10562,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -10608,7 +10608,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -10633,7 +10633,7 @@ var DCTData = {
     ],
     "plan": "≥ 0.0 ₹ m",
     "var": "−101.3 ₹ m",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      -0.0,
      -0.0,
@@ -10664,7 +10664,7 @@ var DCTData = {
     ],
     "plan": "≥ 0.0 ₹ m",
     "var": "−120.1 ₹ m",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      -0.0,
      -0.0,
@@ -10695,7 +10695,7 @@ var DCTData = {
     ],
     "plan": "≥ 0.0 ₹ m",
     "var": "−18.8 ₹ m",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      -0.0,
      -0.0,
@@ -10997,7 +10997,7 @@ var DCTData = {
     ],
     "plan": "≥ 100.0%",
     "var": "−52.0 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      214.2,
      214.2,
@@ -11029,7 +11029,7 @@ var DCTData = {
     ],
     "plan": "≥ 100.0%",
     "var": "−30.7 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      138.5,
      138.5,
@@ -12119,7 +12119,7 @@ var DCTData = {
     ],
     "plan": "≥ 90 days",
     "var": "−25 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      41.9,
      41.9,
@@ -12151,7 +12151,7 @@ var DCTData = {
     ],
     "plan": "≥ 90 days",
     "var": "−25 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      41.9,
      41.9,
@@ -12214,7 +12214,7 @@ var DCTData = {
     ],
     "plan": "≥ 90 days",
     "var": "−25 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      41.9,
      41.9,
@@ -12245,7 +12245,7 @@ var DCTData = {
     ],
     "plan": "≥ 90 days",
     "var": "−22 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      41.3,
      41.3,
@@ -12974,7 +12974,7 @@ var DCTData = {
     ],
     "plan": "≥ 200 h",
     "var": "−35 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      88.0,
      88.0,
@@ -13037,7 +13037,7 @@ var DCTData = {
     ],
     "plan": "≥ 200 h",
     "var": "−34 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      57.8,
      57.8,
@@ -13068,7 +13068,7 @@ var DCTData = {
     ],
     "plan": "≥ 200 h",
     "var": "−96 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      148.1,
      148.1,
@@ -13256,7 +13256,7 @@ var DCTData = {
     ],
     "plan": "≤ 6.0 h",
     "var": "+2.2 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      114.1,
      114.1,
@@ -13288,7 +13288,7 @@ var DCTData = {
     ],
     "plan": "≤ 6.0 h",
     "var": "+1.8 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      118.1,
      118.1,
@@ -13412,7 +13412,7 @@ var DCTData = {
     ],
     "plan": "≤ 6.0 h",
     "var": "+0.2 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      126.1,
      126.1,
@@ -13443,7 +13443,7 @@ var DCTData = {
     ],
     "plan": "≤ 6.0 h",
     "var": "+0.8 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      176.5,
      176.5,
@@ -13505,7 +13505,7 @@ var DCTData = {
     ],
     "plan": "≤ 6.0 h",
     "var": "+0.5 h",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      193.5,
      193.5,
@@ -13538,7 +13538,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06",
     "own": "Maintenance (role)"
@@ -13586,7 +13586,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -13609,7 +13609,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -13678,7 +13678,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -13749,7 +13749,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06",
     "own": "Maintenance (role)"
@@ -13796,7 +13796,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -13819,7 +13819,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -13888,7 +13888,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -13959,7 +13959,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−1.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      101.6,
      101.6,
@@ -14022,7 +14022,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−1.5 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      97.6,
      97.6,
@@ -14053,7 +14053,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−13.2 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      111.8,
      111.8,
@@ -14208,7 +14208,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−0.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      100.1,
      100.1,
@@ -14994,7 +14994,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06",
     "own": "Production (role)"
@@ -15018,7 +15018,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -15148,7 +15148,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -15236,7 +15236,7 @@ var DCTData = {
     ],
     "plan": "≤ 0 alerts",
     "var": "+4 alerts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -15439,7 +15439,7 @@ var DCTData = {
     ],
     "plan": "≤ 0 materials",
     "var": "+4 materials",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -15518,7 +15518,7 @@ var DCTData = {
     ],
     "plan": "≤ 0 materials",
     "var": "+1 materials",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -15633,7 +15633,7 @@ var DCTData = {
     ],
     "plan": "≤ 0 materials",
     "var": "+1 materials",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -15778,7 +15778,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+5.9 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      95.1,
      95.1,
@@ -15810,7 +15810,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+3.7 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      83.6,
      83.6,
@@ -15873,7 +15873,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+11.0 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      85.0,
      85.0,
@@ -15904,7 +15904,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+2.5 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      129.9,
      129.9,
@@ -15935,7 +15935,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+1.1 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      75.8,
      75.8,
@@ -15997,7 +15997,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+2.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      67.0,
      67.0,
@@ -16480,7 +16480,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−2.7 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      103.7,
      103.7,
@@ -16604,7 +16604,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−1.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      102.8,
      102.8,
@@ -16666,7 +16666,7 @@ var DCTData = {
     ],
     "plan": "≥ 95.0%",
     "var": "−4.3 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      105.0,
      105.0,
@@ -16731,7 +16731,7 @@ var DCTData = {
     ],
     "plan": "≥ 98.0%",
     "var": "−1.2 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      102.1,
      102.1,
@@ -16762,7 +16762,7 @@ var DCTData = {
     ],
     "plan": "≥ 98.0%",
     "var": "−1.4 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      102.5,
      102.5,
@@ -16793,7 +16793,7 @@ var DCTData = {
     ],
     "plan": "≥ 98.0%",
     "var": "−1.9 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      101.3,
      101.3,
@@ -16948,7 +16948,7 @@ var DCTData = {
     ],
     "plan": "≥ 98.0%",
     "var": "−2.9 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      99.9,
      99.9,
@@ -17168,7 +17168,7 @@ var DCTData = {
     ],
     "plan": "≤ 1.50%",
     "var": "+0.11 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      148.5,
      148.5,
@@ -17263,7 +17263,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+1.9 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      82.6,
      82.6,
@@ -17295,7 +17295,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+0.3 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      94.5,
      94.5,
@@ -17480,7 +17480,7 @@ var DCTData = {
     ],
     "plan": "≤ 5.0%",
     "var": "+1.7 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      68.1,
      68.1,
@@ -17678,7 +17678,7 @@ var DCTData = {
     ],
     "plan": "≤ 0.0 days",
     "var": "+1.3 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -17772,7 +17772,7 @@ var DCTData = {
     ],
     "plan": "≤ 30.0%",
     "var": "+5.6 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      96.8,
      96.8,
@@ -17927,7 +17927,7 @@ var DCTData = {
     ],
     "plan": "≤ 30.0%",
     "var": "+5.5 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      97.5,
      97.5,
@@ -17958,7 +17958,7 @@ var DCTData = {
     ],
     "plan": "≤ 30.0%",
     "var": "+9.9 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      94.4,
      94.4,
@@ -17983,7 +17983,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+3",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "System count"
    },
    "A1": {
@@ -17997,7 +17997,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+2",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18012,7 +18012,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18027,7 +18027,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+2",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18087,7 +18087,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18127,7 +18127,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18150,7 +18150,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18196,7 +18196,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18219,7 +18219,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18242,7 +18242,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18311,7 +18311,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -18336,7 +18336,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18359,7 +18359,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18382,7 +18382,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18405,7 +18405,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18451,7 +18451,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18474,7 +18474,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18497,7 +18497,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -18520,7 +18520,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -18545,7 +18545,7 @@ var DCTData = {
     ],
     "plan": "≤ 3.50 GJ/t",
     "var": "+0.11 GJ/t",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      104.8,
      104.8,
@@ -18608,7 +18608,7 @@ var DCTData = {
     ],
     "plan": "≤ 3.50 GJ/t",
     "var": "+0.04 GJ/t",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      98.0,
      98.0,
@@ -18670,7 +18670,7 @@ var DCTData = {
     ],
     "plan": "≤ 3.50 GJ/t",
     "var": "+0.06 GJ/t",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      115.5,
      115.5,
@@ -18871,7 +18871,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -19152,7 +19152,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Pending certification"
    },
    "A1": {
@@ -19174,7 +19174,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -19795,7 +19795,7 @@ var DCTData = {
     ],
     "plan": "≥ 99.0%",
     "var": "−0.1 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      99.6,
      99.6,
@@ -19891,7 +19891,7 @@ var DCTData = {
     ],
     "plan": "≥ 98.0%",
     "var": "−2.0 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      101.2,
      101.2,
@@ -19922,7 +19922,7 @@ var DCTData = {
     ],
     "plan": "≥ 98.0%",
     "var": "−3.8 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      102.9,
      102.9,
@@ -19952,7 +19952,7 @@ var DCTData = {
     ],
     "plan": "≥ 98.0%",
     "var": "−0.4 pts",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      99.7,
      99.7,
@@ -20358,7 +20358,7 @@ var DCTData = {
     ],
     "plan": "≤ 45.0 days",
     "var": "+7.0 days",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      88.7,
      88.7,
@@ -20645,7 +20645,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06",
     "own": "Finance (role)"
@@ -20691,7 +20691,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -20716,7 +20716,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Pending"
    },
    "A1": {
@@ -20760,7 +20760,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -21199,7 +21199,7 @@ var DCTData = {
     ],
     "plan": "≤ 0 lanes",
     "var": "+1 lanes",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -21214,7 +21214,7 @@ var DCTData = {
     ],
     "plan": "≤ 0 lanes",
     "var": "+1 lanes",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -21574,7 +21574,7 @@ var DCTData = {
     ],
     "plan": "—",
     "var": "—",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }
@@ -22000,7 +22000,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+3",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -22054,7 +22054,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+2",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -22077,7 +22077,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "spp": [
      0.0,
      0.0,
@@ -22145,7 +22145,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    },
@@ -22160,7 +22160,7 @@ var DCTData = {
     ],
     "plan": "≤ 0",
     "var": "+1",
-    "bs": "Deteriorating",
+    "bs": "Declining",
     "ts": "Certified",
     "prov": "CERT P06"
    }

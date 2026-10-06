@@ -194,7 +194,7 @@
       var ok = up ? v >= k.target : v <= k.target, gap = v - k.target;
       return {l: ok ? "On or better than target" : "Worse than target", c: ok ? "teal" : "red", gap: gap};
     }
-    if (typeof pv === "number" && (up || dn) && v !== pv) { var better = up ? v > pv : v < pv; return {l: better ? "Improving" : "Deteriorating", c: better ? "teal" : "amber"}; }
+    if (typeof pv === "number" && (up || dn) && v !== pv) { var better = up ? v > pv : v < pv; return {l: better ? "Improving" : "Declining", c: better ? "teal" : "amber"}; }
     return {l: up || dn ? "No target set" : "Context measure (no better direction)", c: "grey"};
   }
   function sparkSvg(k, ser, pi) {

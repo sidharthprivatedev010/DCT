@@ -73,7 +73,7 @@ class Component extends DCLogic {
     const j = p.journey || null;
     return {
       refH: ({"Owner": "P2-R01o-KPIReference.html", "Core Group": "P2-R01-KPIReference.html", "Entity": "P2-R01e-KPIReference.html"})[p.lens] || "P2-R01-KPIReference.html", p: p, nav: nav, lensUp: String(p.lens), depthL: den.depthL, tplLabel: TPL, gap: den.gap,
-      strip: strip, hasStrip: strip.length > 0, stripSum: (function () { const c = {}; (p.strip || []).forEach(function (x) { c[x.s] = (c[x.s] || 0) + 1; }); const o = ["Intervention required","Breached","Forecast breach","Deteriorating","Improving","On track"].filter(function (k) { return c[k]; }).map(function (k) { return c[k] + " " + k.toLowerCase(); }); return (p.strip || []).length + " areas · " + o.join(" · "); })(), four: this.four(p.strip || []), hasFour: (p.strip || []).length > 0 && p.four !== false, crumbs: crumbs, hasCrumbs: crumbs.length > 0,
+      strip: strip, hasStrip: strip.length > 0, stripSum: (function () { const c = {}; (p.strip || []).forEach(function (x) { c[x.s] = (c[x.s] || 0) + 1; }); const o = ["Intervention required","Breached","Forecast breach","Declining","Improving","On track"].filter(function (k) { return c[k]; }).map(function (k) { return c[k] + " " + k.toLowerCase(); }); return (p.strip || []).length + " areas · " + o.join(" · "); })(), four: this.four(p.strip || []), hasFour: (p.strip || []).length > 0 && p.four !== false, crumbs: crumbs, hasCrumbs: crumbs.length > 0,
       banner: p.banner || {t: "", h: "#", l: ""}, hasBanner: !!p.banner,
       stTag: SB[S] ? SB[S][0] : "", stBanner: SB[S] ? SB[S][1] : "", hasStBanner: !!SB[S],
       isLoading: S === "loading", isEmpty: S === "empty", isError: S === "error", isRestricted: S === "restricted",
@@ -466,14 +466,14 @@ class Component extends DCLogic {
     const path = function (arr) { let d = ""; arr.forEach(function (q, i) { if (q == null) return; d += (d ? " L" : "M") + X(i).toFixed(1) + " " + Y(q).toFixed(1); }); return d || "M0 0"; };
     const da = path(a);
     const ar = da + " L" + X(a.length - 1).toFixed(1) + " 38 L2 38 Z";
-    const C = {"On track": "var(--ct-navy-900,#0E1B33)", "Improving": "var(--ct-green-700,#1E6B43)", "Deteriorating": "var(--ct-amber-500,#C27C0E)", "Breached": "var(--ct-red-700,#A4231C)", "Intervention required": "var(--ct-red-700,#A4231C)", "Forecast breach": "var(--ct-purple-500,#7E63C7)"};
+    const C = {"On track": "var(--ct-navy-900,#0E1B33)", "Improving": "var(--ct-green-700,#1E6B43)", "Declining": "var(--ct-amber-500,#C27C0E)", "Breached": "var(--ct-red-700,#A4231C)", "Intervention required": "var(--ct-red-700,#A4231C)", "Forecast breach": "var(--ct-purple-500,#7E63C7)"};
     const c = unv ? "var(--ct-grey-600,#5F6B7A)" : (C[k.bs] || "var(--ct-navy-900,#0E1B33)");
     const sx = k.spx || [];
     return {a: da, p: pl.length ? path(pl) : "M0 0", ar: ar, c: c, from: sx[0] || "", to: sx[1] || ""};
   }
   four(strip) {
     const B = [["On track", ["On track"], "var(--ct-green-100,#E3F2E9)", "var(--ct-green-700,#1E6B43)"],
-      ["Deteriorating", ["Deteriorating", "Forecast breach"], "var(--ct-amber-100,#FBF0DB)", "var(--ct-amber-700,#8A5300)"],
+      ["Declining", ["Declining", "Forecast breach"], "var(--ct-amber-100,#FBF0DB)", "var(--ct-amber-700,#8A5300)"],
       ["Improving", ["Improving"], "var(--ct-teal-100,#E1F1F2)", "var(--ct-teal-700,#0B6B73)"],
       ["Requires intervention", ["Intervention required", "Breached"], "var(--ct-red-100,#FBE6E4)", "var(--ct-red-700,#A4231C)"]];
     return B.map(function (b) {
@@ -486,7 +486,7 @@ class Component extends DCLogic {
   const M = {
     "On track": [I.check, "var(--ct-green-100,#E3F2E9)", "var(--ct-green-700,#1E6B43)", "var(--ct-green-100,#E3F2E9)", "solid"],
     "Improving": [I.up, "var(--ct-green-100,#E3F2E9)", "var(--ct-green-700,#1E6B43)", "var(--ct-green-100,#E3F2E9)", "solid"],
-    "Deteriorating": [I.down, "var(--ct-amber-100,#FBF0DB)", "var(--ct-amber-700,#8A5300)", "var(--ct-amber-100,#FBF0DB)", "solid"],
+    "Declining": [I.down, "var(--ct-amber-100,#FBF0DB)", "var(--ct-amber-700,#8A5300)", "var(--ct-amber-100,#FBF0DB)", "solid"],
     "Breached": [I.breach, "var(--ct-red-700,#A4231C)", "#FFFFFF", "var(--ct-red-700,#A4231C)", "solid"],
     "Forecast breach": [I.clock, "var(--ct-purple-100,#EFEAF9)", "var(--ct-purple-700,#5A3E9E)", "var(--ct-purple-500,#7E63C7)", "dashed"],
     "Intervention required": [I.breach, "var(--ct-red-100,#FBE6E4)", "var(--ct-red-700,#A4231C)", "var(--ct-red-700,#A4231C)", "solid"],

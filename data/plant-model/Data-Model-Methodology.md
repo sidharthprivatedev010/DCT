@@ -177,8 +177,8 @@ Targets are working assumptions. They are set only where one target makes sense 
 | `v` | P06 value ÷ display divisor, rounded to the display precision |
 | `var` | value − target, shown in pts for % KPIs and in the KPI's unit otherwise |
 | `tr` | P06 − P05, with ▲/▼ showing the direction of change (not good or bad) |
-| `bs` (with a target) | Meets target → On track. Misses target and moved the wrong way since P05 → Deteriorating. Otherwise → Intervention required |
-| `bs` (no target) | Moved the wrong way → Deteriorating. Moved the right way → Improving. Flat → On track |
+| `bs` (with a target) | Meets target → On track. Misses target and moved the wrong way since P05 → Declining. Otherwise → Intervention required |
+| `bs` (no target) | Moved the wrong way → Declining. Moved the right way → Improving. Flat → On track |
 | `sp` / `spp` | P01–P06 actual and target, indexed to P01 = 100 |
 | `ts` / `prov` | Certified / CERT P06 (every model value is a certified month) |
 | `fb` (footer) | Only where a model fact belongs on the card (OPS-001 Group/A1/Plant 02) |

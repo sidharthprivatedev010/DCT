@@ -75,7 +75,7 @@ class Component extends DCLogic {
       glossary: [
         {t:"Lens", d:"A depth of view (Owner, Core Group, Entity). It never grants scope."},
         {t:"Scope", d:"The hierarchy nodes and domains a user is entitled to see."},
-        {t:"Business status", d:"How a measure performs: On track, Improving, Deteriorating, Breached, Forecast breach."},
+        {t:"Business status", d:"How a measure performs: On track, Improving, Declining, Breached, Forecast breach."},
         {t:"Trust status", d:"Whether a number is defensible: Certified, Certified with exception, Pending certification, Reconciliation break, Stale, Missing, Restricted."},
         {t:"Provenance", d:"Class of a value: certified actual, preliminary actual, forecast, scenario, external signal, AI-generated."},
         {t:"Leading signal", d:"An early indicator that may predict an outcome; not itself an outcome."},
