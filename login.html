@@ -3,114 +3,146 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Control Tower sign in</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<title>Digital Control Tower · Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap">
 <style>
-/* Same tokens as the app (TplA–F, personas.html). Background: img/login-lighthouse-dawn.svg (dawn-light palette = these tokens). */
-:root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-red-700:#A4262C;--ct-red-50:#FBEEEE;--ct-green-700:#1E6B43;--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
+/* App tokens (TplA–F, personas.html) + the lantern amber from the lighthouse scene as the accent.
+   Background: img/login-lighthouse-dawn-wide.svg (dawn-light palette = these tokens). Title face: Source Serif 4. Flat and matte: no shadows, glows or gradients. */
+:root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-800:#16294A;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-red-700:#A4262C;--ct-red-50:#FBEEEE;--ct-amber:#F2C66D;--ct-lantern:#FBF0DB;--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1);--display:'Source Serif 4',Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ct-ink);font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased;
-  background:var(--ct-bg);min-height:100vh}
-.split{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
-.art{position:sticky;top:0;height:100vh;overflow:hidden;background:#DCE1E8;border-right:1px solid var(--ct-line-strong)}
-.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:71% 100%;pointer-events:none;user-select:none}
-.panel{display:flex;flex-direction:column;min-height:100vh;background:var(--ct-bg)}
-.top{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:16px 24px 0}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ct-ink);font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased;background:#DCE1E8;min-height:100vh}
+.bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;object-position:0% 100%;background:#DCE1E8;pointer-events:none;user-select:none}
+.page{min-height:100vh;display:flex;flex-direction:column}
+.top{display:flex;justify-content:flex-end;padding:16px 24px 0}
 .syn{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border:1px dashed var(--ct-navy-700);border-radius:2px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:var(--ct-navy-900);background:rgba(255,255,255,.7)}
-main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px clamp(16px,5vw,64px)}
-.card{width:100%;max-width:440px;background:var(--ct-surface);border:1px solid var(--ct-line);border-top:3px solid var(--ct-navy-900);border-radius:6px;
-  box-shadow:0 1px 2px rgba(14,27,51,.06),0 18px 48px rgba(14,27,51,.18);padding:32px 32px 24px}
-.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ct-ink-3);font-weight:500}
-h1{font-size:26px;line-height:32px;margin:8px 0 8px;color:var(--ct-navy-900);font-weight:600;letter-spacing:-.01em}
-.lead{margin:0 0 24px;color:var(--ct-ink-2);font-size:14px;line-height:21px}
+main{flex:1;display:flex;align-items:center;justify-content:flex-end;padding:20px clamp(16px,3vw,64px)}
+
+/* Card: two panels side by side */
+.card{position:relative;width:min(880px,64vw);display:grid;grid-template-columns:1fr 1.05fr;border-radius:8px;overflow:hidden;background:var(--ct-surface);border:1px solid var(--ct-line-strong)}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;z-index:2;background:var(--ct-navy-700)}
+
+/* Left: brand and information */
+.info{position:relative;padding:44px 40px 32px;color:var(--ct-ink-2);background:var(--ct-bg);border-right:1px solid var(--ct-line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ct-ink-3)}
+.kicker i{width:6px;height:6px;border-radius:1px;background:var(--ct-navy-700)}
+h1{font-family:var(--display);font-weight:600;font-size:38px;line-height:42px;letter-spacing:-.01em;margin:14px 0 0;color:var(--ct-navy-900)}
+h1 span{display:block;color:var(--ct-navy-700)}
+.rule{width:48px;height:2px;margin:18px 0 16px;background:var(--ct-navy-700)}
+.lead{margin:0;font-size:14px;line-height:21px;color:var(--ct-ink-2);max-width:360px}
+.facts{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.facts li{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:18px;color:var(--ct-ink-3)}
+.facts b{display:block;font-weight:600;color:var(--ct-navy-700);font-size:13px;margin-bottom:1px}
+.ic{flex:none;width:30px;height:30px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:var(--ct-navy-700);background:var(--ct-navy-100)}
+.legal{margin:26px 0 0;padding-top:16px;border-top:1px solid var(--ct-line);font-size:11.5px;line-height:16px;color:var(--ct-ink-3)}
+
+/* Right: sign-in form */
+.form{padding:44px 40px 32px;display:flex;flex-direction:column;justify-content:center;background:var(--ct-surface)}
+.form .step{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ct-ink-3)}
+h2{font-family:var(--display);font-weight:600;font-size:26px;line-height:32px;letter-spacing:-.005em;margin:6px 0 4px;color:var(--ct-navy-700)}
+.sub{margin:0 0 22px;color:var(--ct-ink-3);font-size:13.5px;line-height:19px}
 form{display:flex;flex-direction:column;gap:16px}
 label{display:block;font-size:12.5px;font-weight:600;color:var(--ct-ink-2);margin-bottom:6px}
 .ctl{position:relative}
-input[type=text],input[type=password]{width:100%;height:44px;padding:0 12px;border:1px solid var(--ct-line-strong);border-radius:4px;background:#fff;font:inherit;font-size:14.5px;color:var(--ct-ink);
+.ctl svg.lead-ic{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#8A93A3;pointer-events:none}
+input[type=text],input[type=password]{width:100%;height:44px;padding:0 12px 0 38px;border:1px solid var(--ct-line-strong);border-radius:4px;background:#fff;font:inherit;font-size:14.5px;color:var(--ct-ink);
   transition:border-color var(--ct-dur) var(--ct-ease),box-shadow var(--ct-dur) var(--ct-ease)}
-input[type=password],#pw{padding-right:72px}
+#pw{padding-right:72px}
 input::placeholder{color:#8A93A3}
 input:hover{border-color:var(--ct-ink-3)}
-input:focus{outline:none;border-color:var(--ct-navy-700);box-shadow:0 0 0 3px rgba(36,64,110,.18)}
+input:focus{outline:none;border-color:var(--ct-navy-700);box-shadow:inset 0 0 0 1px var(--ct-navy-700)}
+.ctl:focus-within svg.lead-ic{color:var(--ct-navy-700)}
 .field.bad input{border-color:var(--ct-red-700)}
-.show{position:absolute;right:6px;top:50%;transform:translateY(-50%);height:32px;padding:0 10px;border:0;border-radius:3px;background:transparent;color:var(--ct-navy-700);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+.show{position:absolute;right:6px;top:50%;transform:translateY(-50%);height:32px;padding:0 10px;border:0;border-radius:4px;background:transparent;color:var(--ct-navy-700);font:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
 .show:hover{background:var(--ct-navy-100)}
 .show:focus-visible{outline:2px solid var(--ct-navy-700);outline-offset:1px}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--ct-ink-2)}
 .row input{width:16px;height:16px;margin:0 8px 0 0;accent-color:var(--ct-navy-700);vertical-align:-3px}
 .row label{display:inline;font-weight:400;font-size:13px;margin:0;color:var(--ct-ink-2);cursor:pointer}
-.caps{color:var(--ct-ink-3);font-size:12px;visibility:hidden}
-.caps.on{visibility:visible}
+.caps{color:var(--ct-ink-3);font-size:12px;display:none;white-space:nowrap}
+.caps.on{display:inline}
 .err{display:none;align-items:flex-start;gap:8px;padding:10px 12px;border-radius:4px;background:var(--ct-red-50);border:1px solid #E7B9BB;color:var(--ct-red-700);font-size:13px;line-height:18px}
 .err.on{display:flex}
 .err svg{flex:none;margin-top:1px}
-button.go{height:46px;border:0;border-radius:4px;background:var(--ct-navy-900);color:#fff;font:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  transition:background-color var(--ct-dur) var(--ct-ease),transform var(--ct-dur) var(--ct-ease)}
+button.go{position:relative;height:46px;border:0;border-radius:4px;background:var(--ct-navy-900);color:#fff;font:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  transition:background-color var(--ct-dur) var(--ct-ease),transform var(--ct-dur) var(--ct-ease),box-shadow var(--ct-dur) var(--ct-ease)}
 button.go:hover{background:var(--ct-navy-700)}
 button.go:active{transform:translateY(1px)}
 button.go:focus-visible{outline:2px solid var(--ct-navy-700);outline-offset:2px}
 button.go[disabled]{background:var(--ct-ink-3);cursor:progress}
+button.go .arr{transition:transform var(--ct-dur) var(--ct-ease)}
+button.go:hover .arr{transform:translateX(3px)}
 .spin{width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .8s linear infinite;display:none}
 button.go[disabled] .spin{display:inline-block}
+button.go[disabled] .arr{display:none}
 @keyframes sp{to{transform:rotate(360deg)}}
-.facts{list-style:none;margin:24px 0 0;padding:20px 0 0;border-top:1px solid var(--ct-line);display:grid;gap:12px}
-.facts li{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:19px;color:var(--ct-ink-2)}
-.facts b{display:block;font-weight:600;color:var(--ct-ink);font-size:13px}
-.ic{flex:none;width:30px;height:30px;border-radius:4px;background:var(--ct-navy-100);color:var(--ct-navy-700);display:inline-flex;align-items:center;justify-content:center}
-.legal{margin:20px 0 0;font-size:11.5px;line-height:17px;color:var(--ct-ink-3)}
-.foot{padding:0 24px 18px;text-align:center;font-size:12px;color:var(--ct-ink-3)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.secure{display:flex;align-items:center;gap:8px;margin:18px 0 0;font-size:12px;color:var(--ct-ink-3)}
+.secure svg{flex:none;color:var(--ct-navy-700)}
+.foot{align-self:flex-end;margin:0 clamp(16px,3vw,64px) 16px;padding:3px 10px;border-radius:2px;background:rgba(255,255,255,.8);font-size:12px;color:var(--ct-navy-900)}
 .card.shake{animation:sh .32s var(--ct-ease)}
 @keyframes sh{20%{transform:translateX(-6px)}40%{transform:translateX(5px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
-@media (min-width:901px) and (max-height:820px){main{padding:6px 32px}.top{padding-top:12px}.card{padding:22px 28px 16px}h1{font-size:23px;line-height:29px;margin:6px 0}.lead{margin-bottom:14px;font-size:13.5px;line-height:19px}form{gap:10px}input[type=text],input[type=password]{height:40px}button.go{height:42px}.facts{margin-top:14px;padding-top:12px;gap:8px}.facts li{font-size:12.5px;line-height:17px}.legal{margin-top:10px}.foot{padding-bottom:10px}}
-@media (max-width:900px){.split{grid-template-columns:1fr;grid-template-rows:auto 1fr}.art{position:relative;height:32vh;min-height:200px;border-right:0;border-bottom:1px solid var(--ct-line-strong)}.art img{object-position:50% 88%}.panel{min-height:0}.top{position:absolute;top:0;right:0}}
-@media (max-width:720px){main{padding:20px 16px 24px}.card{padding:24px 20px 20px}h1{font-size:23px;line-height:29px}}
+
+/* Short laptop screens */
+@media (min-width:1025px) and (max-height:760px){main{padding-top:8px;padding-bottom:8px}.info,.form{padding:32px 32px 24px}h1{font-size:32px;line-height:36px}.facts{margin-top:18px;gap:10px}.legal{margin-top:18px}}
+/* Narrow: stack the two panels */
+@media (max-width:1024px){main{justify-content:center;padding:12px 16px 20px}.card{grid-template-columns:1fr;width:min(560px,100%)}.info{padding:28px 24px 22px;border-right:0;border-bottom:1px solid var(--ct-line)}.facts,.legal{display:none}.lead{max-width:none}h1{font-size:30px;line-height:34px}.form{padding:26px 24px 24px}.foot{align-self:center}.bg{object-position:22% 100%}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="split">
-<aside class="art" aria-hidden="true"><img src="img/login-lighthouse-dawn.svg" alt=""></aside>
-<div class="panel">
+<img class="bg" src="img/login-lighthouse-dawn-wide.svg" alt="" aria-hidden="true">
+<div class="page">
 <div class="top"><span class="syn" title="All names, values, dates and sources are synthetic">SYNTHETIC DATA</span></div>
 <main>
   <section class="card" id="card" aria-labelledby="h">
-    <div class="eyebrow">Digital Control Tower · Secure sign-in</div>
-    <h1 id="h">Sign in to Control Tower</h1>
-    <p class="lead">One governed view of performance, cash, risk and data trust, from the Group down to each entity and plant. Sign in, then choose the persona your role is entitled to.</p>
-    <form id="f" novalidate>
-      <div class="field" id="fu">
-        <label for="u">Username</label>
-        <input type="text" id="u" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Enter your username" required>
-      </div>
-      <div class="field" id="fp">
-        <label for="pw">Password</label>
-        <div class="ctl">
-          <input type="password" id="pw" name="password" autocomplete="current-password" placeholder="Enter your password" required>
-          <button type="button" class="show" id="show" aria-controls="pw" aria-pressed="false">Show</button>
+    <div class="info">
+      <div class="kicker"><i aria-hidden="true"></i>Leadership control tower</div>
+      <h1 id="h">Digital<span>Control Tower</span></h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="lead">One governed view of performance, cash, risk and data trust, from the Group down to each entity and plant.</p>
+      <ul class="facts">
+        <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="5" r="2.2"/><path d="M1.8 13c.4-2.3 1.9-3.6 3.7-3.6s3.3 1.3 3.7 3.6M10.5 3.5a2 2 0 1 1 0 3.9M11.6 9.6c1.5.3 2.4 1.5 2.7 3.4"/></svg></span>
+          <span><b>Role-based lenses</b>Owner, Core Group and Entity each see their own scope, depth and navigation.</span></li>
+        <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l5.2 2v4c0 3-2.2 5.4-5.2 6.2C5 13.2 2.8 10.8 2.8 7.8v-4z"/><path d="M5.6 8l1.7 1.7 3.2-3.4"/></svg></span>
+          <span><b>Certified numbers, traceable to source</b>Every KPI carries its trust state and lineage from plant to Group.</span></li>
+        <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L1.5 13.5h13z"/><path d="M8 6.5v3.2M8 11.8h.01"/></svg></span>
+          <span><b>No surprises</b>Early-warning signals and predictions flag issues before period end.</span></li>
+      </ul>
+      <p class="legal">Authorised users only. Access is managed by your Control Tower administrator. This prototype uses synthetic data.</p>
+    </div>
+    <div class="form">
+      <div class="step">Secure sign-in · step 1 of 2</div>
+      <h2>Welcome back</h2>
+      <p class="sub">Sign in with your Control Tower account, then choose the persona your role is entitled to.</p>
+      <form id="f" novalidate>
+        <div class="field" id="fu">
+          <label for="u">Username</label>
+          <div class="ctl">
+            <svg class="lead-ic" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="5.5" r="2.8"/><path d="M2.8 14c.5-2.9 2.6-4.5 5.2-4.5s4.7 1.6 5.2 4.5"/></svg>
+            <input type="text" id="u" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Enter your username" required>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <span><input type="checkbox" id="rem" checked><label for="rem">Keep me signed in on this device</label></span>
-        <span class="caps" id="caps" aria-live="polite">Caps Lock is on</span>
-      </div>
-      <div class="err" id="err" role="alert"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11h.01"/></svg><span id="errt"></span></div>
-      <button type="submit" class="go" id="go"><span class="spin" aria-hidden="true"></span><span id="gol">Sign in</span></button>
-    </form>
-    <ul class="facts">
-      <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="5" r="2.2"/><path d="M1.8 13c.4-2.3 1.9-3.6 3.7-3.6s3.3 1.3 3.7 3.6M10.5 3.5a2 2 0 1 1 0 3.9M11.6 9.6c1.5.3 2.4 1.5 2.7 3.4"/></svg></span>
-        <span><b>Role-based lenses</b>Owner, Core Group and Entity each see their own scope, depth and navigation.</span></li>
-      <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l5.2 2v4c0 3-2.2 5.4-5.2 6.2C5 13.2 2.8 10.8 2.8 7.8v-4z"/><path d="M5.6 8l1.7 1.7 3.2-3.4"/></svg></span>
-        <span><b>Certified numbers, traceable to source</b>Every KPI carries its trust state and lineage from plant to Group.</span></li>
-      <li><span class="ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L1.5 13.5h13z"/><path d="M8 6.5v3.2M8 11.8h.01"/></svg></span>
-        <span><b>No surprises</b>Early-warning signals and predictions flag issues before period end.</span></li>
-    </ul>
-    <p class="legal">Authorised users only. Access is managed by your Control Tower administrator. This prototype uses synthetic data.</p>
+        <div class="field" id="fp">
+          <label for="pw">Password</label>
+          <div class="ctl">
+            <svg class="lead-ic" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>
+            <input type="password" id="pw" name="password" autocomplete="current-password" placeholder="Enter your password" required>
+            <button type="button" class="show" id="show" aria-controls="pw" aria-pressed="false">Show</button>
+          </div>
+        </div>
+        <div class="row">
+          <span><input type="checkbox" id="rem" checked><label for="rem">Keep me signed in on this device</label></span>
+          <span class="caps" id="caps" aria-live="polite">Caps Lock is on</span>
+        </div>
+        <div class="err" id="err" role="alert"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11h.01"/></svg><span id="errt"></span></div>
+        <button type="submit" class="go" id="go"><span class="spin" aria-hidden="true"></span><span id="gol">Sign in</span><svg class="arr" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </form>
+      <p class="secure"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8l5.2 2v4c0 3-2.2 5.4-5.2 6.2C5 13.2 2.8 10.8 2.8 7.8v-4z"/></svg>Your session stays on this device. Sign out from the header at any time.</p>
+    </div>
   </section>
 </main>
 <div class="foot">Digital Control Tower · prototype environment</div>
-</div>
 </div>
 <script>
 /* ===== Sign-in credentials: edit here to change who can sign in. Add more users as extra { } entries. ===== */
