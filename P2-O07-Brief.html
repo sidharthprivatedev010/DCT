@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>O-07 Daily Executive Brief</title>
+<title>O-07 AI Insights · Ask about this brief</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 :root{--ct-bg:#F5F6F8;--ct-surface:#FFFFFF;--ct-surface-2:#F8F9FB;--ct-line:#DCE1E8;--ct-line-strong:#B4BDCA;--ct-ink:#121A2B;--ct-ink-2:#3B4558;--ct-ink-3:#5B6576;--ct-navy-900:#0E1B33;--ct-navy-700:#24406E;--ct-navy-100:#E8EDF6;--ct-teal-700:#0B6B73;--ct-teal-100:#E1F1F2;--ct-green-700:#1E6B43;--ct-green-100:#E3F2E9;--ct-amber-700:#8A5300;--ct-amber-500:#C27C0E;--ct-amber-100:#FBF0DB;--ct-red-700:#A4231C;--ct-red-100:#FBE6E4;--ct-purple-700:#5A3E9E;--ct-purple-500:#7E63C7;--ct-purple-100:#EFEAF9;--ct-grey-600:#5F6B7A;--ct-grey-200:#E4E8ED;--ct-r-1:2px;--ct-r-2:4px;--ct-e1:0 2px 8px rgba(14,27,51,.12);--ct-e2:0 8px 24px rgba(14,27,51,.16);--ct-dur:160ms;--ct-ease:cubic-bezier(.2,0,0,1)}
@@ -37,10 +37,11 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 @media (max-width:639px){.ct-main{padding:14px 14px 40px!important}.ct-hdr{padding:8px 12px!important}.ct-hide-s{display:none!important}.ct-h1{font-size:20px!important;line-height:26px!important}.ct-q{font-size:14px!important}.ct-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.ct-kpis .ct-val{font-size:22px!important}.ct-kv{grid-template-columns:1fr!important}.ct-sec{padding:14px!important}.ct-strip{grid-template-columns:1fr 1fr!important}}
 @media (min-width:1600px){.ct-main{padding:28px 40px 56px!important}.ct-inner{max-width:1720px}}
 </style>
-<script src="js/data/base-data.js?v=20261006084810"></script>
-<script src="js/data/resolve.js?v=20261006084810"></script>
-<script src="js/data/owner-verdicts.js?v=20261006084810"></script>
-<script src="js/persona.js?v=20261006084810"></script>
+<script src="js/data/base-data.js?v=20261006092827"></script>
+<script src="js/data/resolve.js?v=20261006092827"></script>
+<script src="js/data/owner-verdicts.js?v=20261006092827"></script>
+<script src="js/data/owner-ai-history.js?v=20261006092827"></script>
+<script src="js/persona.js?v=20261006092827"></script>
 </head>
 <body>
 <div id="dc-root">
@@ -78,8 +79,6 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
         <a class="ct-navi" href="P2-O01-EnterpriseHealth.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Enterprise Overview</a>
       
-        <a class="ct-navi" href="P2-G08o-OwnerTrust.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Data Assurance</a>
-      
         <a class="ct-navi" href="P2-O02-ChangeReport.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Early Warning</a>
       
         <a class="ct-navi" href="P2-O03-CashLiquidity.html" aria-current="false" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:rgba(255,255,255,.82);background:transparent;box-shadow:none;font-weight:400;font-size:13.5px;border-radius:4px">Cash &amp; Liquidity</a>
@@ -92,13 +91,7 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
       
         <a class="ct-navi" href="P2-O07-Brief.html" aria-current="page" style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;text-decoration:none;color:#FFFFFF;background:rgba(255,255,255,.12);box-shadow:inset 3px 0 0 #FFFFFF;font-weight:600;font-size:13.5px;border-radius:4px">AI Insights</a>
       
-      <div class="ct-legend" style="margin-top:18px;padding:12px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;line-height:18px;color:rgba(255,255,255,.82)">
-        <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px">Two separate statuses</div>
-        <div><b style="color:#FFFFFF">Performance</b> · filled chip</div>
-        <div><b style="color:#FFFFFF">Trust</b> · outlined chip with shield</div>
-        <div style="margin-top:8px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;line-height:16px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6)">Lines</div>
-        <div>Navy solid = certified actual</div><div>Teal solid = preliminary actual</div><div>Grey thin = plan</div><div>Purple dashed = forecast</div><div>Purple dotted = scenario</div>
-      </div>
+      
       <a class="ct-refi" href="P2-R01o-KPIReference.html" title="KPI Reference · how every KPI is calculated" aria-label="KPI Reference" style="align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin:10px 0 0 12px;border:1px solid rgba(255,255,255,.14);border-radius:4px;color:rgba(255,255,255,.45);text-decoration:none"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><rect x="2" y="2.5" width="12" height="11" rx="1.5"></rect><path d="M2 6h12M6.5 6v7.5"></path><path d="M8.6 8.4h3.2M8.6 11h3.2"></path></svg></a>
     </nav>
     <main class="ct-main" style="flex:1 1 560px;min-width:0;padding:22px 28px 56px;box-sizing:border-box">
@@ -153,7 +146,10 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
                   <button type="button" data-dc-ev="0" class="ct-btn ct-pri" style="min-height:40px;padding:0 16px;border:1px solid var(--ct-navy-900,#0E1B33);border-radius:4px;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer">Ask</button>
                 </div>
                 <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span style="font-size:12px;color:var(--ct-ink-3,#5B6576)">Try:</span><button type="button" data-dc-ev="1" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">What is Group EBITDA YTD?</button><button type="button" data-dc-ev="2" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">What was P07 production in Entity A1 (A1)?</button><button type="button" data-dc-ev="3" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">Why is free cash flow lagging EBITDA?</button><button type="button" data-dc-ev="4" class="ct-opt" style="padding:4px 10px;border:1px solid var(--ct-line-strong,#B4BDCA);border-radius:12px;background:#FFFFFF;color:var(--ct-navy-700,#24406E);font:inherit;font-size:12.5px;cursor:pointer">Are we going to breach a covenant?</button></div>
+                <div role="log" aria-label="Previously asked questions" style="display:flex;flex-direction:column;gap:10px"><div style="font-size:12px;font-weight:600;color:var(--ct-ink-3,#5B6576);text-transform:uppercase;letter-spacing:.04em">Earlier questions</div><div style="display:flex;flex-direction:column;gap:6px"><div style="align-self:flex-end;max-width:80%;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;border-radius:10px 10px 2px 10px;padding:8px 12px;font-size:13.5px">Can I rely on the October production flash?<span style="display:block;font-size:11px;opacity:.75;margin-top:2px">You · 1 hour ago</span></div><div style="align-self:flex-start;max-width:85%;background:var(--ct-surface-2,#F8F9FB);border:1px solid var(--ct-line,#DCE1E8);border-radius:10px 10px 10px 2px;padding:8px 12px;font-size:13.5px;line-height:19px">Not yet. Entity A1 (A1)'s October flash has reconciliation break BRK-SYN-0071 open, so it is not defensible. The last certified figure is September: Group 95.5% of plan.<span style="display:block;font-size:11px;color:var(--ct-ink-3,#5B6576);margin-top:2px">Explanation Assistant · 1 hour ago</span></div></div><div style="display:flex;flex-direction:column;gap:6px"><div style="align-self:flex-end;max-width:80%;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;border-radius:10px 10px 2px 10px;padding:8px 12px;font-size:13.5px">How far behind plan is production?<span style="display:block;font-size:11px;opacity:.75;margin-top:2px">You · 5 hours ago</span></div><div style="align-self:flex-start;max-width:85%;background:var(--ct-surface-2,#F8F9FB);border:1px solid var(--ct-line,#DCE1E8);border-radius:10px 10px 10px 2px;padding:8px 12px;font-size:13.5px;line-height:19px">Group production was 95.5% of plan in September (29.4 kt short). Entity A1 (A1) was at 91.3%, 30.3 kt short; Entity A2 (A2) was slightly ahead at 100.3%.<span style="display:block;font-size:11px;color:var(--ct-ink-3,#5B6576);margin-top:2px">Explanation Assistant · 5 hours ago</span></div></div><div style="display:flex;flex-direction:column;gap:6px"><div style="align-self:flex-end;max-width:80%;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;border-radius:10px 10px 2px 10px;padding:8px 12px;font-size:13.5px">Which entity is driving the cash shortfall?<span style="display:block;font-size:11px;opacity:.75;margin-top:2px">You · 1 day ago</span></div><div style="align-self:flex-start;max-width:85%;background:var(--ct-surface-2,#F8F9FB);border:1px solid var(--ct-line,#DCE1E8);border-radius:10px 10px 10px 2px;padding:8px 12px;font-size:13.5px;line-height:19px">Entity A1 (A1). Its 27.2 ₹ m cash-upstream exposure comes from billing deferred as dispatch slows, and its DSO is 52.0 days against a 45.0-day target. Group runway stays at 16.7 months.<span style="display:block;font-size:11px;color:var(--ct-ink-3,#5B6576);margin-top:2px">Explanation Assistant · 1 day ago</span></div></div><div style="display:flex;flex-direction:column;gap:6px"><div style="align-self:flex-end;max-width:80%;background:var(--ct-navy-900,#0E1B33);color:#FFFFFF;border-radius:10px 10px 2px 10px;padding:8px 12px;font-size:13.5px">Why is EBITDA below plan for the rest of the year?<span style="display:block;font-size:11px;opacity:.75;margin-top:2px">You · 2 days ago</span></div><div style="align-self:flex-start;max-width:85%;background:var(--ct-surface-2,#F8F9FB);border:1px solid var(--ct-line,#DCE1E8);border-radius:10px 10px 10px 2px;padding:8px 12px;font-size:13.5px;line-height:19px">The Oct–Mar forecast is 56.2 ₹ m below plan. Entity A1 (A1) accounts for 48.5 ₹ m of it, from reliability losses and RM-1 supply cover; Entity A2 (A2) accounts for 7.7 ₹ m.<span style="display:block;font-size:11px;color:var(--ct-ink-3,#5B6576);margin-top:2px">Explanation Assistant · 2 days ago</span></div></div></div>
                 
+              
+
               
 
               
@@ -197,8 +193,8 @@ a.ct-hov:hover{border-color:var(--ct-line-strong)!important}
 
 </div>
 <script src="js/dc-lite.js"></script>
-<script src="js/c/TplF.js?v=20261006084810"></script>
-<script src="js/c/P2-O07-Brief.js?v=20261006084810"></script>
+<script src="js/c/TplF.js?v=20261006092827"></script>
+<script src="js/c/P2-O07-Brief.js?v=20261006092827"></script>
 <script>DCLite.mount("dc-root", "P2-O07-Brief", {});</script>
 </body>
 </html>

@@ -142,7 +142,9 @@ var DCTResolve = (function () {
     fillModel(p, o);
     if (o.type === "table") fillTable(p, o, D, at);
     if (o.type === "tiles") fillTiles(p, o, D, at);
-    if (o.type === "heat") (o.items || []).forEach(function (t) { if (!t.kpi) return; var r = look(D, t.kpi, t.scope || baseScope(p), at); if (r) { t.v = display(r); if (!t.h && isPlantKpi(t.kpi)) t.h = detailHref(t.kpi, t.scope || baseScope(p), p.lens); } });
+    if (o.type === "ask" && o.histKey && typeof DCTHistory !== "undefined") o.hist = (DCTHistory[o.histKey] || []).map(function (x) { return names({q: x.q, when: x.when, a: x.a}); });
+    if (o.type === "timeline") (o.stats || []).forEach(function (t) { var r = t.kpi && look(D, t.kpi, "Group", at); if (r) { t.v = display(r); t.bs = r.bs || ""; } });
+    if (o.type === "heat") (o.items || []).forEach(function (t) { if (!t.kpi) return; var r = look(D, t.kpi, t.scope || baseScope(p), at); if (r) t.v = display(r); });
     Object.keys(o).forEach(function (k) { if (o[k] && typeof o[k] === "object") walk(p, o[k], D, at); });
   }
 
@@ -174,7 +176,7 @@ var DCTResolve = (function () {
 
   /* Owner lens: Actions & Escalations (O-06 Decisions, O-08 War room) is removed. Links to it become plain text,
      buttons and alert cards that only lead there are dropped. */
-  var ACTS = /P2-O0[68]-/;
+  var ACTS = /P2-(O0[68]|G08o)-/;   // also Data Assurance (G-08o), removed for the Owner in MANIFEST03 S2
   function noActions(o) {
     if (Array.isArray(o)) { for (var i = o.length - 1; i >= 0; i--) { var x = o[i]; if (x && typeof x === "object" && !x.type && (ACTS.test(x.h || "") || ACTS.test(x.href || "")) && (x.cta || (x.l && !x.t && !x.id))) o.splice(i, 1); else noActions(x); } return; }
     if (!o || typeof o !== "object") return;
@@ -196,8 +198,20 @@ var DCTResolve = (function () {
       if (!o || typeof o !== "object") return;
       Object.keys(o).forEach(function (k) { if (SKIP[k]) return; if (typeof o[k] === "string") o[k] = f(o[k]); else if (o[k] && typeof o[k] === "object") walk(o[k]); });
     };
-    Object.keys(p).forEach(function (k) { if (SKIP[k] || k === "lens" || k === "rid" || k === "nav") return; if (typeof p[k] === "string") p[k] = f(p[k]); else walk(p[k]); });
+    Object.keys(p).forEach(function (k) { if ((SKIP[k] && k !== "scope") || k === "lens" || k === "rid" || k === "nav") return; if (typeof p[k] === "string") p[k] = f(p[k]); else walk(p[k]); });
+    if (typeof document !== "undefined" && document.title) document.title = f(document.title);
     return p;
+  }
+
+  /* No KPI click-throughs (all personas): links to KPI detail / KPI Reference are removed, and so is any link on a
+     KPI card, a KPI table cell (text starting with a KPI ID) or a KPI tile. Navigation, case/alert links and in-page
+     interactions (heat map, timeline, KPI Reference explainer) stay. */
+  var KLINK = /KPIDetail|KPIReference/, KID = /^\s*[A-Z]{2,4}-\d{3}\b/;
+  function noKpiLinks(o, isCard) {
+    if (Array.isArray(o)) { o.forEach(function (x) { noKpiLinks(x, isCard); }); return; }
+    if (!o || typeof o !== "object") return;
+    ["h", "href"].forEach(function (k) { if (typeof o[k] === "string" && (isCard || KLINK.test(o[k]) || KID.test(o.t || o.l || ""))) delete o[k]; });
+    Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && o[k] && typeof o[k] === "object") noKpiLinks(o[k], k === "kpis" || (k === "items" && o.type === "kpis")); });
   }
 
   /* The "System count" trust label is not shown: table cells that only carry it are blanked (empty Trust columns are
@@ -359,8 +373,9 @@ var DCTResolve = (function () {
       var mo = function (o) { if (typeof o === "string") return o.replace(/\bP(0[1-9]|1[0-2])\b/g, function (_, n) { return MON[+n - 1]; });
         if (Array.isArray(o)) return o.map(mo); if (o && typeof o === "object") { Object.keys(o).forEach(function (k) { if (k !== "equiv" && k !== "access" && typeof o[k] !== "function") o[k] = mo(o[k]); }); } return o; };
       Object.keys(p).forEach(function (k) { if (k !== "equiv" && k !== "access" && k !== "period") p[k] = mo(p[k]); }); }
-    if (own) withCodes(p);
-    noSystemCount(p);           // "System count" trust label is not shown anywhere      // MANIFEST02 1D: entity name shown with its code, last so scope detection above is unaffected
+    withCodes(p);               // 1D / MANIFEST03 G1, all personas: entity name with its code (last, so scope detection is unaffected)
+    noSystemCount(p);           // "System count" trust label is not shown anywhere
+    noKpiLinks(p);              // MANIFEST03 G2: a KPI never links to another KPI, screen or section
     pruneCols(p);
     return p;
   };

@@ -7,8 +7,8 @@
   try { persona = localStorage.getItem("dct-persona"); } catch (e) {}
   var file = location.pathname.split("/").pop() || "";
   if (!HOME[persona]) { location.replace("login.html?next=" + encodeURIComponent(file + location.search + location.hash)); return; }
-  // MANIFEST02 Screen 8: Actions & Escalations (O-06, O-08) is removed for the Owner
-  if (persona === "Owner" && /^P2-O0[68]-/.test(file)) { location.replace(HOME.Owner); return; }
+  // Removed for the Owner: Actions & Escalations (O-06, O-08; MANIFEST02) and Data Assurance (G-08o; MANIFEST03 S2)
+  if (persona === "Owner" && /^P2-(O0[68]|G08o)-/.test(file)) { location.replace(HOME.Owner); return; }
   var html = document.documentElement;
   html.classList.add("dct-gate");
   var st = document.createElement("style");

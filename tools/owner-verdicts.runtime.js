@@ -19,6 +19,7 @@
     var walk = function (o) {
       if (Array.isArray(o)) { o.forEach(walk); return; }
       if (!o || typeof o !== "object") return;
+      if (o.type === "timeline") (o.stats || []).forEach(function (s) { var w = find(s.kpi || s.id, "Group", s.bs); if (w) s.why = w; });
       if (o.type === "kpis" && Array.isArray(o.items)) o.items.forEach(function (k) { var w = find(k.id, k.scope || ent(k.name) || "Group", k.bs); if (w) k.why = w; });
       if (o.type === "table" && o.cols && o.rows) {
         var si = -1; o.cols.forEach(function (c, i) { if (/^(Status|Business status)$/.test(c)) si = i; });

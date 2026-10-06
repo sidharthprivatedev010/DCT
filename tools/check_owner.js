@@ -70,16 +70,17 @@ for (const n in pages) {
   const SK = /\.(h|href|infoH|scope|kpi|kcols\.[^.]+|id|cat|lvl|k|tag|lens|rid|nav|equiv\..*|access\..*)$/;
   strings(p, [], "").forEach(([path, s]) => { if (!SK.test(path) && !/^\.(equiv|access)/.test(path) && bare.test(s)) fail(n + " entity without code/name at " + path + ": " + s.slice(0, 120)); });
   // Screen 8: nothing links to Actions & Escalations
-  if (/P2-O0[68]-/.test(JSON.stringify(Object.assign({}, p, {equiv: null})))) fail(n + " still links to Actions & Escalations");
+  if (!/G08o/.test(n) && /P2-(O0[68]|G08o)-/.test(JSON.stringify(Object.assign({}, p, {equiv: null})))) fail(n + " still links to Actions & Escalations or Data Assurance");
 }
 for (const f of fs2.readdirSync(__dirname + "/..").filter((f) => /^P2-(O|G08o|S0[3-9]o?-|S1[01]|R01o)/.test(f) && f.endsWith(".html"))) {
   const h = fs2.readFileSync(__dirname + "/../" + f, "utf8"); const lens = (h.match(/data-dct-lens="([^"]+)"/) || [])[1];
-  if (lens === "Owner" && !/^P2-O0[68]-/.test(f) && /href="P2-O0[68]-[^"]*"(?![^<]*hidden)/.test(h.replace(/<span hidden data-dct-lens[\s\S]*?<\/span>/, ""))) fail(f + " (Owner) renders a link to Actions & Escalations");
+  if (lens === "Owner" && !/^P2-(O0[68]|G08o)-/.test(f) && /href="P2-(O0[68]|G08o)-[^"]*"(?![^<]*hidden)/.test(h.replace(/<span hidden data-dct-lens[\s\S]*?<\/span>/, ""))) fail(f + " (Owner) renders a link to Actions & Escalations");
 }
 // Screen 1.3: every Data Assurance KPI is a card on Enterprise Overview, value as on Data Assurance
 { const p = pages["P2-O01-EnterpriseHealth"], da = pages["P2-G08o-OwnerTrust"];
   const daIds = new Set(); (da.kpis || []).forEach((k) => daIds.add(k.id));
   JSON.stringify(da.drill || []).replace(/"([A-Z]{3}-\d{3})"/g, (m, id) => daIds.add(id));
+  daIds.delete("TRU-001");   // MANIFEST03 S1: the Summary block (TRU-001) is dropped with its filter
   const cards = []; const w = (o) => { if (Array.isArray(o)) return o.forEach(w); if (!o || typeof o !== "object") return; if (o.type === "kpis" && o.grp) cards.push(...o.items.map((k) => [o.grp, k])); for (const k in o) w(o[k]); }; w(p.drill);
   if (cards.length !== daIds.size) fail("O-01 has " + cards.length + " Data Assurance cards; Data Assurance has " + daIds.size + " KPIs");
   daIds.forEach((id) => { if (!cards.some(([g, k]) => k.id === id)) fail("O-01 is missing Data Assurance KPI " + id); });
@@ -87,6 +88,23 @@ for (const f of fs2.readdirSync(__dirname + "/..").filter((f) => /^P2-(O|G08o|S0
   (p.kpis || []).forEach((k) => { if (!k.noProv || !k.noFoot) fail("O-01 card " + k.id + " shows a refreshed or period/status tag"); }); }
 // Screen 9: only "Ask about this brief"
 { const p = pages["P2-O07-Brief"]; if (p.meta || (p.body || []).length !== 1 || p.body[0].type !== "ask") fail("O-07 must show only Ask about this brief"); }
+
+// MANIFEST03
+{ const p = pages["P2-O01-EnterpriseHealth"], d = (p.drill || []).find((x) => x.n === "Data assurance");
+  const seg = d && d.blocks.find((b) => b.type === "seg"), grps = d ? d.blocks.filter((b) => b.grp).map((b) => b.grp) : [];
+  if (!seg || seg.opts.map((o) => o.k).join() !== "reliability,ownership" || seg.def !== "reliability") fail("O-01 Data assurance filters must be Data Reliability (default) and Data Ownership & Rules only");
+  if (grps.indexOf("ownership") < grps.lastIndexOf("reliability")) fail("O-01 Data Reliability must come before Data Ownership & Rules");
+  if (JSON.stringify(d).indexOf("Numbers on your pages") >= 0) fail("O-01 still has the trust table"); }
+{ const p = pages["P2-O05-Risk"];
+  if ((p.tabs || []).map((t) => t.n).join() !== "Material Risk,Compliance,EHS") fail("O-05 must have exactly Material Risk, Compliance, EHS");
+  if (/Biggest risks/i.test(JSON.stringify(p))) fail("O-05 still has Biggest Risks");
+  const walk = (o) => { if (Array.isArray(o)) return o.forEach(walk); if (!o || typeof o !== "object") return;
+    if (o.type === "table" && /Materiality|materiality|Named actions/.test(o.title || "")) o.rows.forEach((r) => { const a = Array.isArray(r) ? r : r.c; const st = a.filter((c) => c && typeof c === "object" && (c.dark || c.mid || c.sub)); if (/Composite|Rating|Status/.test(o.cols.join()) && !a.some((c) => c && c.sub)) fail("O-05 row without justification: " + txt(a[0])); });
+    for (const k in o) walk(o[k]); }; walk([p.dominant, p.drivers, p.actions]); }
+{ const p = pages["P2-O04-Capex"], names = (p.drill || []).map((d) => d.n);
+  if (names.includes("Projects") || names.includes("Benefits delivered")) fail("O-04 still has the Projects / Benefits delivered sub-themes");
+  const t = JSON.stringify(p.drill).indexOf('"type":"timeline"') >= 0; if (!t) fail("O-04 has no timeline"); }
+{ const a = pages["P2-O07-Brief"].body[0]; if (!a.hist || a.hist.length < 3 || a.hist.length > 5) fail("O-07 needs 3–5 seeded questions"); }
 
 module.exports = {pages, fail};
 if (require.main === module) console.log(bad ? bad + " problem(s)" : "Owner checks passed");

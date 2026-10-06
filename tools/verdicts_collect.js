@@ -24,6 +24,7 @@ function collect(name, page) {
   const walk = (o, ref, title) => {
     if (Array.isArray(o)) return o.forEach((x, i) => walk(x, ref + "." + i, title));
     if (!o || typeof o !== "object") return;
+    if (o.type === "timeline") (o.stats || []).forEach((k) => { if (k.bs && k.kpi) out.push({where: "card", screen, section: slug(o.title || title), kpi_id: k.kpi, scope: "Group", name: k.l, verdict: k.bs, v: k.v}); });
     if (o.type === "kpis" && Array.isArray(o.items)) o.items.forEach((k) => { if (!k.bs || !/^[A-Z]{3}-\d{3}$/.test(k.id || "")) return;
       out.push({where: "card", screen, section: slug(o.title || title), kpi_id: k.id, scope: k.scope || entOf(k.name) || "Group", name: k.name, verdict: k.bs, v: k.v, u: k.u, plan: k.plan, "var": k["var"], tr: k.tr}); });
     if (o.type === "table" && o.cols && o.rows) {

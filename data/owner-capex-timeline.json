@@ -1,0 +1,233 @@
+{
+ "_note": "Capital Projects timeline (MANIFEST03 S4). Months are FY Apr 2026–Mar 2027; index 0 = Apr, 6 = Oct (today). Project figures come from the Capital Projects progress chain; benefit values from the Benefits Delivered sub-theme (VAL-001/002/003 are model KPIs). Built into P2-O04 by tools/build_timeline.js.",
+ "months": [
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+  "Jan",
+  "Feb",
+  "Mar"
+ ],
+ "now": 6,
+ "stats": [
+  {
+   "id": "PRG-001",
+   "kpi": "PRG-001",
+   "l": "Initiative status"
+  },
+  {
+   "id": "STR-002",
+   "kpi": "STR-002",
+   "l": "Transformation progress"
+  },
+  {
+   "id": "PRG-003",
+   "kpi": "PRG-003",
+   "l": "Delayed projects"
+  },
+  {
+   "id": "PRG-005",
+   "kpi": "PRG-005",
+   "l": "Initiative status · 24 initiatives"
+  },
+  {
+   "id": "PRG-004",
+   "kpi": "PRG-004",
+   "l": "Transformation progress (weighted)"
+  }
+ ],
+ "items": [
+  {
+   "id": "MP01",
+   "name": "Major Project 01 (SYN)",
+   "ent": "[[A1]]",
+   "plan": [
+    0,
+    8
+   ],
+   "act": [
+    0,
+    6
+   ],
+   "status": "on_track",
+   "budget": "₹246 m",
+   "committed": "₹218 m",
+   "spend": "₹157 m (64%)",
+   "progress": "62%",
+   "why": "Spend 64% tracks 62% physical progress; on course for the planned Dec finish.",
+   "benefits": [
+    {
+     "id": "MP01-B1",
+     "l": "MP01 throughput benefit",
+     "plan": {
+      "m": 9,
+      "v": "₹4 m"
+     },
+     "status": "planned",
+     "why": "Due in Jan after commissioning; no benefit is expected before the project finishes."
+    }
+   ]
+  },
+  {
+   "id": "MP02",
+   "name": "Major Project 02 (SYN)",
+   "ent": "[[A2]]",
+   "plan": [
+    1,
+    10
+   ],
+   "act": [
+    1,
+    6
+   ],
+   "status": "on_track",
+   "budget": "₹450 m",
+   "committed": "₹404 m",
+   "spend": "₹230 m (51%)",
+   "progress": "55%",
+   "why": "Progress 55% is ahead of 51% spend; ₹6 m of ₹9 m benefit already delivered.",
+   "benefits": [
+    {
+     "id": "MP02-B1",
+     "l": "MP02 energy-cost benefit",
+     "plan": {
+      "m": 5,
+      "v": "₹9 m"
+     },
+     "act": {
+      "m": 4,
+      "v": "₹6 m"
+     },
+     "status": "behind",
+     "why": "₹6 m delivered in Aug against ₹9 m planned by Sep; the rest follows full ramp-up."
+    }
+   ]
+  },
+  {
+   "id": "MP03",
+   "name": "Major Project 03 (SYN)",
+   "ent": "[[A2]]",
+   "plan": [
+    0,
+    7
+   ],
+   "act": [
+    2,
+    6
+   ],
+   "fcEnd": 9,
+   "status": "delayed",
+   "budget": "₹266 m",
+   "committed": "₹197 m",
+   "spend": "₹189 m (71%)",
+   "progress": "48%",
+   "why": "Spend 71% is ahead of 48% progress and milestone M4 is six weeks late; finish now forecast for Jan.",
+   "benefits": [
+    {
+     "id": "MP03-B1",
+     "l": "MP03 capacity benefit",
+     "plan": {
+      "m": 10,
+      "v": "₹7 m"
+     },
+     "status": "at_risk",
+     "why": "Planned for Feb but at risk while milestone M4 runs six weeks late."
+    }
+   ]
+  },
+  {
+   "id": "MP04",
+   "name": "Major Project 04 (SYN)",
+   "ent": "[[A1]]",
+   "plan": [
+    3,
+    11
+   ],
+   "act": [
+    4,
+    6
+   ],
+   "status": "on_track",
+   "budget": "₹174 m",
+   "committed": "₹62 m",
+   "spend": "₹35 m (20%)",
+   "progress": "20%",
+   "why": "Spend and physical progress both at 20%, in line with a Mar finish.",
+   "benefits": [
+    {
+     "id": "MP04-B1",
+     "l": "MP04 yield benefit",
+     "plan": {
+      "m": 11,
+      "v": "₹3 m"
+     },
+     "status": "planned",
+     "why": "Planned for Mar at project completion; not yet due."
+    }
+   ]
+  },
+  {
+   "id": "PORT",
+   "name": "Benefits delivered · whole portfolio",
+   "ent": "[[Group]]",
+   "status": "on_track",
+   "why": "Portfolio-wide benefits from all capex projects and initiatives, year to date.",
+   "benefits": [
+    {
+     "id": "VAL-001",
+     "kpi": "VAL-001",
+     "l": "EBITDA benefit delivered YTD",
+     "plan": {
+      "m": 5,
+      "v": "₹16 m"
+     },
+     "act": {
+      "m": 5,
+      "v": "14.2 ₹ m"
+     },
+     "status": "behind",
+     "why": "14.2 ₹ m delivered by Sep against ₹16 m planned; benefits book in margin before cash.",
+     "dx": -0.3
+    },
+    {
+     "id": "VAL-002",
+     "kpi": "VAL-002",
+     "l": "Cash benefit delivered YTD",
+     "plan": {
+      "m": 5,
+      "v": "₹10 m"
+     },
+     "act": {
+      "m": 5,
+      "v": "8.7 ₹ m"
+     },
+     "status": "behind",
+     "why": "8.7 ₹ m delivered by Sep against ₹10 m planned; cash lags the EBITDA benefit.",
+     "dx": 0
+    },
+    {
+     "id": "VAL-003",
+     "kpi": "VAL-003",
+     "l": "Cost savings delivered YTD",
+     "plan": {
+      "m": 5,
+      "v": "₹12 m"
+     },
+     "act": {
+      "m": 5,
+      "v": "11.3 ₹ m"
+     },
+     "status": "behind",
+     "why": "11.3 ₹ m saved by Sep against ₹12 m planned, close to plan.",
+     "dx": 0.3
+    }
+   ]
+  }
+ ]
+}
