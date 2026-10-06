@@ -24788,8 +24788,7 @@ var DCTData = {
      "P2-E07-RegEHS",
      "P2-G05-OpsBenchmark",
      "P2-G07-Risk",
-     "P2-O05-Risk",
-     "P2-O09-Operations"
+     "P2-O05-Risk"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -30741,8 +30740,7 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E06-Capex",
-     "P2-G06-CapexPortfolio",
-     "P2-O04-Capex"
+     "P2-G06-CapexPortfolio"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -41420,24 +41418,6 @@ var DCTData = {
     "note": "Gross exposure and hedged amount; unhedged = exposure − hedged (TRS-001)."
    },
    {
-    "screen": "P2-O04-Capex",
-    "type": "multi",
-    "title": "Value delivered vs plan · cumulative ₹ m",
-    "ask": "Is the capex and initiative portfolio delivering the value it promised?",
-    "source": "model",
-    "from": "Cumulative VAL-001 EBITDA benefit, VAL-002 cash benefit, VAL-003 cost savings",
-    "note": "Plan line is hand-set (8% above delivered)."
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "bars",
-    "title": "Spend % minus physical progress % · positive = spending ahead of progress",
-    "ask": "Which projects are spending ahead of what they have built?",
-    "source": "layout",
-    "from": "Spend % minus physical progress % from the project table on the same page",
-    "note": ""
-   },
-   {
     "screen": "P2-O06-Decisions",
     "type": "multi",
     "title": "Escalation effectiveness · Group",
@@ -43186,39 +43166,6 @@ var DCTData = {
      "CMP-005"
     ],
     "note": "Critical alerts, EHS events and regulatory breaches that could stop the business."
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "table",
-    "title": "Progress chain per major project · Approved → Committed → Spent → Physical progress → Benefit realized",
-    "ask": "Is each major project turning spend into physical progress and benefit?",
-    "source": "layout",
-    "from": "4 rows of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Spend is always shown next to physical progress; project health is never inferred from spend alone."
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "tiles",
-    "title": "Forecast exposure",
-    "ask": "",
-    "source": "live",
-    "from": "2 of 3 tiles are KPIs filled from the model (PRG-003, SIG-011); scope from the row label",
-    "kpis": [
-     "PRG-003",
-     "SIG-011"
-    ],
-    "note": ""
-   },
-   {
-    "screen": "P2-O04-Capex",
-    "type": "table",
-    "title": "Named actions on major projects",
-    "ask": "",
-    "source": "layout",
-    "from": "1 row of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Columns: Issue · Severity · Exposure · Named owner (role) · Due · Status · Escalation · Next action"
    },
    {
     "screen": "P2-O05-Risk",

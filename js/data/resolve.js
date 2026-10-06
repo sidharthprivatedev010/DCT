@@ -152,6 +152,16 @@ var DCTResolve = (function () {
         if (typeof a === "number" && typeof b === "number" && b) { var pc = 100 * (a - b) / b; c.mom = (pc >= 0 ? "▲ " : "▼ ") + Math.abs(pc).toFixed(1) + "% vs " + xs[xs.length - 2] + " (" + (a - b >= 0 ? "+" : "−") + Math.abs(a - b).toFixed(k.dp) + " " + (k.unit || "") + ")"; } }
     };
     (o.cols || []).forEach(function (col) { if (col.hero) { col.hero.isHero = true; fill(col.hero); } (col.cards || []).forEach(fill); });
+    // Alert bar (O-09): shortfall from the production inputs (planned_production_t − good_output_t) of the alert scope and the Group,
+    // plus the measures in "also" that are High risk at that scope. Ticker: Group values of the listed KPIs. Nothing is typed on the page.
+    if (o.alert) {
+      var al = o.alert, sc = al.scope || "A1", k1 = P.kpi["OPS-001"] || {}, inp = k1.inp || {}, kt = function (s) { var x = inp[s] || {}; return (x.planned_production_t - x.good_output_t) / 1000; };
+      var r1 = look(D, "OPS-001", sc, at), nm = P.scopes[sc] || sc, f1 = function (v) { return Math.abs(v).toLocaleString("en-US", {minimumFractionDigits: 1, maximumFractionDigits: 1}); };
+      var hi = (al.also || []).map(function (id) { var r = look(D, id, sc, at), k = P.kpi[canon(id)]; return r && /Interv|Breach/.test(r.bs || "") ? (al.names && al.names[id] || (k && k.name) || id) + " " + display(r) : null; }).filter(Boolean);
+      var g = kt("Group");
+      o.alertT = "ALERT: " + nm + " at " + (r1 ? display(r1) : "—") + " in " + (P.periodL || "").split(" · ")[1].split(" (")[0].replace(/ \d{4}$/, "") + " · shortfall " + f1(kt(sc)) + " kt (" + f1((inp[sc] || {}).good_output_t / 1000) + " of " + f1((inp[sc] || {}).planned_production_t / 1000) + " kt) · Group " + (g >= 0 ? f1(g) + " kt short" : f1(g) + " kt over") + (hi.length ? " | " + hi.join(" and ") + " below target" : "");
+      o.ticker = (al.ticker || []).map(function (t) { var r = look(D, t.kpi, "Group", at); if (!r) return null; var tr = monthsOf(r.tr || ""); return {l: t.l, v: t.dir ? (/▲/.test(tr) ? "rising" : /▼/.test(tr) ? "falling" : "flat") + " (" + tr + ")" : display(r)}; }).filter(Boolean);
+    }
     (o.charts || []).forEach(function (g) {
       if (g.x) g.x = g.x.map(monthsOf); else g.x = xs;
       (g.series || []).forEach(function (s) { if (!s.kpi) return; var k = P.kpi[canon(s.kpi)]; var ss = s.scope || "Group"; if (k && k.val && k.val[ss]) s.v = k.val[ss].slice(); if (g.target === true && k) { g.target = k.target; } });
