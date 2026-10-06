@@ -144,3 +144,12 @@ Everything changed against the original prototype (`e104438 first commit`), grou
 
 - Removed the collapsed **Status overview** bar (status strip and four-way summary) from all six templates, so it no longer appears on any page.
 - `docs/Control Tower Screen Reference.docx` updated to match.
+
+## Download report per persona
+
+- **Download report** button in the header of all six templates (shown wherever the page has a lens). It downloads a PDF for the signed-in persona: `Control-Tower-Owner-Report-<date>.pdf`, `…-Core-Group-…`, `…-Entity-A1-…`.
+- `js/report.js` builds the PDF in the browser (jsPDF + autoTable, bundled in `js/vendor/`, loaded on first click). Content comes from the lens home page (O-01, G-01, E-01: status by area, headline KPI cards, forecast, actions) resolved through `DCTResolve`, and from `base-data.js`: a summary count, exceptions, and the persona scorecard by theme.
+  - Owner: Group scorecard.
+  - Core Group: Group vs Entity A1 vs Entity A2, with status per entity.
+  - Entity: Entity A1 scorecard plus plant comparison (Plant 01–03).
+- The PDF uses the standard fonts, so `₹` prints as `INR` and the status symbols (▲ ◆ …) are written out or dropped.
