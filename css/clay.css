@@ -1,62 +1,62 @@
-/* Clay design system (graphite + amber). Source of truth: design/DESIGN-CLAY.md.
+/* Clay design system (warm clay). Source of truth: design/DESIGN-CLAY.md.
    Loaded after each page's inline <style>, so it re-points every --ct-* token and
    adds the clay elevation rules. Light is default; dark follows the OS unless the
    viewer picks one (html[data-theme], set by js/theme.js). */
 :root{
   color-scheme:light;
-  --ct-bg:#E6E1DB;--ct-surface:#FAF8F5;--ct-surface-2:#FFFFFF;
-  --ct-line:#DDD7D0;--ct-line-strong:#BDB5AC;
-  --ct-ink:#1C1814;--ct-ink-2:#3D3832;--ct-ink-3:#5C564F;--ct-ink-4:#6B655E;
-  --ct-navy-900:#231F1B;--ct-navy-700:#7F5000;--ct-navy-100:#ECE6DE;
-  --ct-accent:#C08200;--ct-accent-text:#7F5000;--ct-on-fill:#FFFFFF;
-  --ct-teal-700:#365C84;--ct-teal-100:#DCE6F1;--ct-data:#5A7FA6;
-  --ct-green-700:#00703A;--ct-green-100:#D3EBDB;
-  --ct-amber-700:#865A00;--ct-amber-500:#C08200;--ct-amber-100:#F7E5BE;
-  --ct-red-700:#B0001F;--ct-red-100:#F8D9D6;
-  --ct-purple-700:#4F4A8C;--ct-purple-500:#6D68B0;--ct-purple-100:#E5E2F3;
-  --ct-grey-600:#6B655E;--ct-grey-200:#DED8D0;
-  --ct-chrome:#2A2622;--ct-chrome-ink:#F5F3F1;
+  --ct-bg:#F8EEEA;--ct-surface:#F8EEEA;--ct-surface-2:#FCF5F2;
+  --ct-line:#EADBD4;--ct-line-strong:#D0BCB2;
+  --ct-ink:#3B2921;--ct-ink-2:#6D5950;--ct-ink-3:#786861;--ct-ink-4:#786861;
+  --ct-navy-900:#3B2921;--ct-navy-700:#AE4E1A;--ct-navy-100:#F0E1DA;
+  --ct-accent:#AE4E1A;--ct-accent-text:#AE4E1A;--ct-on-fill:#FFFFFF;
+  --ct-teal-700:#4F6A86;--ct-teal-100:#E8E6E8;--ct-data:#D28A69;
+  --ct-green-700:#277A40;--ct-green-100:#E6EDE3;
+  --ct-amber-700:#956100;--ct-amber-500:#B07A1A;--ct-amber-100:#F5E8D6;
+  --ct-red-700:#B74441;--ct-red-100:#F6E0DC;
+  --ct-purple-700:#5C5884;--ct-purple-500:#7C78A6;--ct-purple-100:#EDE6EC;
+  --ct-grey-600:#786861;--ct-grey-200:#EEE0DA;
+  --ct-chrome:#F8EEEA;--ct-chrome-ink:#3B2921;
   --ct-r-1:8px;--ct-r-2:14px;
-  --sh-up:8px 8px 18px rgba(95,78,60,.26),-6px -6px 16px rgba(255,255,255,.95);
-  --sh-up-sm:3px 3px 8px rgba(95,78,60,.26),-3px -3px 7px rgba(255,255,255,.95);
-  --sh-in:inset 3px 3px 7px rgba(95,78,60,.26),inset -3px -3px 6px rgba(255,255,255,.9);
+  --sh-up:-5px -5px 12px rgba(255,255,255,.95),5px 5px 14px #3B292126;
+  --sh-up-sm:-3px -3px 7px rgba(255,255,255,.9),3px 3px 8px #3B292122;
+  --sh-in:inset -3px -3px 8px rgba(255,255,255,.9),inset 4px 4px 10px #3B29212E;
   --ct-e1:var(--sh-up-sm);--ct-e2:var(--sh-up)
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   color-scheme:dark;
-  --ct-bg:#181512;--ct-surface:#1F1C19;--ct-surface-2:#292623;
-  --ct-line:#34302C;--ct-line-strong:#4A4540;
-  --ct-ink:#EAE7E4;--ct-ink-2:#C0BDBA;--ct-ink-3:#A09E9B;--ct-ink-4:#7F7D7A;
-  --ct-navy-900:#EAE7E4;--ct-navy-700:#E9B452;--ct-navy-100:#302D2A;
-  --ct-accent:#E6AC3D;--ct-accent-text:#E9B452;--ct-on-fill:#181512;
-  --ct-teal-700:#7DA2C9;--ct-teal-100:#222A32;--ct-data:#7DA2C9;
-  --ct-green-700:#63D18F;--ct-green-100:#1C2A21;
-  --ct-amber-700:#E7B643;--ct-amber-500:#E6AC3D;--ct-amber-100:#2F2717;
-  --ct-red-700:#FF7D7C;--ct-red-100:#35201F;
-  --ct-purple-700:#B2ADDF;--ct-purple-500:#8E89BF;--ct-purple-100:#272536;
-  --ct-grey-600:#8C8A87;--ct-grey-200:#302D2A;
-  --ct-chrome:#12100E;--ct-chrome-ink:#EAE7E4;
-  --sh-up:6px 6px 16px rgba(0,0,0,.55),-5px -5px 14px rgba(255,236,210,.045);
-  --sh-up-sm:3px 3px 8px rgba(0,0,0,.55),-3px -3px 7px rgba(255,236,210,.045);
-  --sh-in:inset 3px 3px 7px rgba(0,0,0,.55),inset -2px -2px 5px rgba(255,236,210,.05)
+  --ct-bg:#1C1512;--ct-surface:#1C1512;--ct-surface-2:#261D19;
+  --ct-line:#3A2D27;--ct-line-strong:#54433B;
+  --ct-ink:#F1E6E1;--ct-ink-2:#C9B6AD;--ct-ink-3:#A8958C;--ct-ink-4:#A8958C;
+  --ct-navy-900:#F1E6E1;--ct-navy-700:#E88A55;--ct-navy-100:#2C221E;
+  --ct-accent:#E88A55;--ct-accent-text:#E88A55;--ct-on-fill:#1C1512;
+  --ct-teal-700:#8FAACB;--ct-teal-100:#24262C;--ct-data:#DE9C7E;
+  --ct-green-700:#5FC487;--ct-green-100:#1E2820;
+  --ct-amber-700:#E2B24E;--ct-amber-500:#E2B24E;--ct-amber-100:#2F2418;
+  --ct-red-700:#F2837A;--ct-red-100:#37201D;
+  --ct-purple-700:#B9AEDC;--ct-purple-500:#9289BF;--ct-purple-100:#2A2232;
+  --ct-grey-600:#A8958C;--ct-grey-200:#2C221E;
+  --ct-chrome:#1C1512;--ct-chrome-ink:#F1E6E1;
+  --sh-up:-4px -4px 10px rgba(255,225,210,.045),5px 5px 14px rgba(0,0,0,.6);
+  --sh-up-sm:-2px -2px 6px rgba(255,225,210,.04),3px 3px 8px rgba(0,0,0,.55);
+  --sh-in:inset -3px -3px 8px rgba(255,225,210,.045),inset 4px 4px 10px rgba(0,0,0,.6)
 }}
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --ct-bg:#181512;--ct-surface:#1F1C19;--ct-surface-2:#292623;
-  --ct-line:#34302C;--ct-line-strong:#4A4540;
-  --ct-ink:#EAE7E4;--ct-ink-2:#C0BDBA;--ct-ink-3:#A09E9B;--ct-ink-4:#7F7D7A;
-  --ct-navy-900:#EAE7E4;--ct-navy-700:#E9B452;--ct-navy-100:#302D2A;
-  --ct-accent:#E6AC3D;--ct-accent-text:#E9B452;--ct-on-fill:#181512;
-  --ct-teal-700:#7DA2C9;--ct-teal-100:#222A32;--ct-data:#7DA2C9;
-  --ct-green-700:#63D18F;--ct-green-100:#1C2A21;
-  --ct-amber-700:#E7B643;--ct-amber-500:#E6AC3D;--ct-amber-100:#2F2717;
-  --ct-red-700:#FF7D7C;--ct-red-100:#35201F;
-  --ct-purple-700:#B2ADDF;--ct-purple-500:#8E89BF;--ct-purple-100:#272536;
-  --ct-grey-600:#8C8A87;--ct-grey-200:#302D2A;
-  --ct-chrome:#12100E;--ct-chrome-ink:#EAE7E4;
-  --sh-up:6px 6px 16px rgba(0,0,0,.55),-5px -5px 14px rgba(255,236,210,.045);
-  --sh-up-sm:3px 3px 8px rgba(0,0,0,.55),-3px -3px 7px rgba(255,236,210,.045);
-  --sh-in:inset 3px 3px 7px rgba(0,0,0,.55),inset -2px -2px 5px rgba(255,236,210,.05)
+  --ct-bg:#1C1512;--ct-surface:#1C1512;--ct-surface-2:#261D19;
+  --ct-line:#3A2D27;--ct-line-strong:#54433B;
+  --ct-ink:#F1E6E1;--ct-ink-2:#C9B6AD;--ct-ink-3:#A8958C;--ct-ink-4:#A8958C;
+  --ct-navy-900:#F1E6E1;--ct-navy-700:#E88A55;--ct-navy-100:#2C221E;
+  --ct-accent:#E88A55;--ct-accent-text:#E88A55;--ct-on-fill:#1C1512;
+  --ct-teal-700:#8FAACB;--ct-teal-100:#24262C;--ct-data:#DE9C7E;
+  --ct-green-700:#5FC487;--ct-green-100:#1E2820;
+  --ct-amber-700:#E2B24E;--ct-amber-500:#E2B24E;--ct-amber-100:#2F2418;
+  --ct-red-700:#F2837A;--ct-red-100:#37201D;
+  --ct-purple-700:#B9AEDC;--ct-purple-500:#9289BF;--ct-purple-100:#2A2232;
+  --ct-grey-600:#A8958C;--ct-grey-200:#2C221E;
+  --ct-chrome:#1C1512;--ct-chrome-ink:#F1E6E1;
+  --sh-up:-4px -4px 10px rgba(255,225,210,.045),5px 5px 14px rgba(0,0,0,.6);
+  --sh-up-sm:-2px -2px 6px rgba(255,225,210,.04),3px 3px 8px rgba(0,0,0,.55);
+  --sh-in:inset -3px -3px 8px rgba(255,225,210,.045),inset 4px 4px 10px rgba(0,0,0,.6)
 }
 html,body{background:var(--ct-bg)!important;color:var(--ct-ink)}
 body{transition:background-color .2s}
@@ -64,9 +64,9 @@ body{transition:background-color .2s}
 
 /* Chrome (header + sidebar): follows the theme. Light = clay ground, dark = graphite.
    Inline styles in the templates use white-on-navy values; these rules re-point them. */
-:root{--chrome-bg:#DAD3CA;--chrome-ink:#1C1814;--chrome-ink-2:#3D3832;--chrome-line:#C4BBB0;--chrome-fill:rgba(28,24,20,.07);--chrome-active:rgba(192,130,0,.18);--chrome-active-ink:#6E4500}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--chrome-bg:#12100E;--chrome-ink:#EAE7E4;--chrome-ink-2:#B5B2AE;--chrome-line:rgba(255,255,255,.16);--chrome-fill:rgba(255,255,255,.06);--chrome-active:rgba(230,172,61,.12);--chrome-active-ink:#F2C46A}}
-:root[data-theme="dark"]{--chrome-bg:#12100E;--chrome-ink:#EAE7E4;--chrome-ink-2:#B5B2AE;--chrome-line:rgba(255,255,255,.16);--chrome-fill:rgba(255,255,255,.06);--chrome-active:rgba(230,172,61,.12);--chrome-active-ink:#F2C46A}
+:root{--chrome-bg:#F8EEEA;--chrome-ink:#3B2921;--chrome-ink-2:#6D5950;--chrome-line:#EADBD4;--chrome-fill:rgba(59,41,33,.06);--chrome-active:rgba(174,78,26,.10);--chrome-active-ink:#AE4E1A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--chrome-bg:#1C1512;--chrome-ink:#F1E6E1;--chrome-ink-2:#C9B6AD;--chrome-line:rgba(255,225,210,.14);--chrome-fill:rgba(255,225,210,.06);--chrome-active:rgba(232,138,85,.13);--chrome-active-ink:#F0A174}}
+:root[data-theme="dark"]{--chrome-bg:#1C1512;--chrome-ink:#F1E6E1;--chrome-ink-2:#C9B6AD;--chrome-line:rgba(255,225,210,.14);--chrome-fill:rgba(255,225,210,.06);--chrome-active:rgba(232,138,85,.13);--chrome-active-ink:#F0A174}
 .ct-hdr,.ct-nav,body>header{background:var(--chrome-bg)!important;color:var(--chrome-ink)!important;--ct-on-fill:var(--chrome-ink);--ct-navy-900:var(--chrome-bg);--ct-surface-2:var(--chrome-ink)}
 .ct-hdr{box-shadow:0 1px 0 var(--chrome-line)}
 .ct-nav{border-top:0!important;box-shadow:1px 0 0 var(--chrome-line)}
@@ -114,9 +114,9 @@ body>header .syn{color:var(--chrome-ink)!important}
 .ct-main .ct-btn:not([role="tab"]):active,.ct-main .ct-opt:active{box-shadow:var(--sh-in)!important;transform:translateY(1px)}
 
 /* Tabs: sunken well, accent on the active tab */
-.ct-main [role="tablist"]{border-bottom:0!important;background:var(--ct-bg);box-shadow:var(--sh-in);border-radius:14px;padding:5px;gap:4px!important}
-.ct-main [role="tab"]{border-bottom:0!important;border-radius:10px!important;min-height:36px!important;color:var(--ct-ink-3)!important}
-.ct-main [role="tab"][aria-selected="true"]{background:var(--ct-surface)!important;color:var(--ct-accent-text)!important;box-shadow:var(--sh-up-sm),inset 0 -2px 0 var(--ct-accent)!important}
+.ct-main [role="tablist"]{border-bottom:0!important;background:var(--ct-bg);box-shadow:var(--sh-in);border-radius:999px;padding:4px;gap:4px!important;align-self:flex-start;max-width:100%}
+.ct-main [role="tab"]{border-bottom:0!important;border-radius:999px!important;min-height:34px!important;color:var(--ct-ink-2)!important;background:transparent!important}
+.ct-main [role="tab"][aria-selected="true"]{background:var(--ct-accent)!important;color:var(--ct-on-fill)!important;box-shadow:var(--sh-up-sm)!important;font-weight:600}
 
 /* Sunken: inputs, wells, meter tracks, open detail */
 .ct-main input:not([type=checkbox]):not([type=radio]),.ct-main textarea,.ct-main select,
@@ -126,9 +126,9 @@ body>header .syn{color:var(--chrome-ink)!important}
 
 /* Links and focus use the accent text tone */
 .ct-main a:not(.ct-btn):not(.ct-hov){color:var(--ct-accent-text)}
-.ct a:focus-visible,.ct button:focus-visible,.ct input:focus-visible,.ct textarea:focus-visible,.ct summary:focus-visible{outline:2px solid var(--ct-accent)!important;outline-offset:2px;box-shadow:0 0 0 5px rgba(178,122,0,.22)!important}
+.ct a:focus-visible,.ct button:focus-visible,.ct input:focus-visible,.ct textarea:focus-visible,.ct summary:focus-visible{outline:2px solid var(--ct-accent)!important;outline-offset:2px;box-shadow:0 0 0 5px rgba(174,78,26,.22)!important}
 .ct-skel{background:var(--ct-grey-200)!important}
-::selection{background:rgba(230,172,61,.35)}
+::selection{background:rgba(232,138,85,.30)}
 
 /* Login */
 button.p{border:0!important;border-radius:22px!important;box-shadow:var(--sh-up)!important;background:var(--ct-surface)!important;transition:transform .16s}
