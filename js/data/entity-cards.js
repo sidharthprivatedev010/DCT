@@ -230,8 +230,7 @@ var DCTEntityCards = (function () {
   }
   function attach(c, scope) {
     if (!init() || !c) return;
-    c.noInfo = true;                       // Entity cards are stand-alone: no click-through, no (i) link
-    delete c.href;
+    delete c.href;                         // Entity cards are stand-alone: no click-through; the (i) links to R-01e
     var id = c.id || "";
     if (!/^[A-Z]{3}-\d{3}$/.test(id) || c.pending || (scope && scope !== "A1")) return;
     var pr = plantRows(id), drv = null;
@@ -300,7 +299,7 @@ var DCTEntityCards = (function () {
   function pcode(s) { return sn(s) + " (P" + s.slice(-2) + ")"; }
   function attachGroup(c, scope) {
     if (!init() || !c) return;
-    c.noInfo = true; delete c.href;                       // stand-alone cards, as in the Entity lens
+    delete c.href;                                        // stand-alone cards, as in the Entity lens; the (i) links to R-01
     var id = c.id || "";
     if (!/^[A-Z]{3}-\d{3}$/.test(id) || c.pending) return;
     scope = /^(A\d|Group)$/.test(scope || "") ? scope : "Group";

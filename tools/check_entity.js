@@ -1,4 +1,4 @@
-// Entity persona checks (js/data/entity-cards.js): every KPI card on an Entity screen is stand-alone (no link, no (i)),
+// Entity persona checks (js/data/entity-cards.js): every KPI card on an Entity screen is stand-alone (no click-through; its (i) opens R-01e),
 // carries a one-line justification, shows its plant breakdown or says why it has none, and gives a root cause when off
 // target or worsening. Plant effects on a ratio KPI must add up to the Entity A1 gap to target.
 // Usage: node tools/check_entity.js [--dump]   (--dump prints every card's text for review)
@@ -22,7 +22,7 @@ for (const name of ENTITY) {
     n++;
     const id = c.id || "";
     if (c.href || c.h) fail(name + " " + id + " card still links to " + (c.href || c.h));
-    if (!c.noInfo) fail(name + " " + id + " card keeps its (i) link");
+    if (c.noInfo && /^[A-Z]{3}-\d{3}$/.test(id)) fail(name + " " + id + " card has no (i) link to R-01e");
     if (!/^[A-Z]{3}-\d{3}$/.test(id) || c.pending) continue;
     if (!c.why) fail(name + " " + id + " has no justification");
     if (!c.hasPl && !c.plN) fail(name + " " + id + " has no plant breakdown and no note");

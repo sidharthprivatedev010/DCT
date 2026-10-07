@@ -33,6 +33,7 @@ class Component extends DCLogic {
     this._kpiHref = LH.src;
     this._rid = p.rid || "";
     this._noInfo = true;   // MANIFEST03 G2: no KPI click-throughs from tables and charts
+    this._noKpiInfo = ["Core Group", "Entity"].indexOf(p.lens) < 0 || p.nav === "KPI Reference";   // KPI cells and tiles keep an (i) to R-01 on Core Group and Entity screens
     this._noCardInfo = p.nav === "KPI Reference";   // KPI cards keep their (i) link to KPI Reference
     this._refH = ({"Owner": "P2-R01o-KPIReference.html", "Core Group": "P2-R01-KPIReference.html", "Entity": "P2-R01e-KPIReference.html"})[p.lens] || "P2-R01-KPIReference.html";
     const HOMEL = {"Core Group": "Group Portfolio", "Entity": "Entity Overview"};
@@ -173,7 +174,7 @@ class Component extends DCLogic {
   // first KPI ID in a label that the model knows, for the (i) link to KPI Reference
   infoId(s) {
     const P = typeof DCTData !== "undefined" && DCTData.plant && DCTData.plant.kpi;
-    if (!P || this._noInfo) return "";
+    if (!P || this._noKpiInfo) return "";
     return (String(s || "").match(/[A-Z]{3}-\d{3}/g) || []).filter(function (id) { return P[id]; })[0] || "";
   }
   infoHref(id) { return (this._refH || "P2-R01-KPIReference.html") + "?set=all&kpi=" + encodeURIComponent(id); }

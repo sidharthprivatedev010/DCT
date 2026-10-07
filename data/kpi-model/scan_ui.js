@@ -46,7 +46,29 @@ for (const n in pages) {
     for (const k in o) if (!["equiv", "access", "nav"].includes(k)) w(o[k]);
   })(p);
 }
-const out = Object.keys(ids).sort().map((id) => {
+// Core Group and Entity screens as rendered: js/data/resolve.js adds KPI rows the page files don't hold (signal tables,
+// kvar plant tables, S-13 answers). Their cards, KPI cells (columns 1–2) and tiles carry an (i) link to R-01, so R-01
+// must list those screens too. Only KPIs already in the model are added.
+try {
+  const {load} = require(path.join(root, "tools/owner_pages.js")), vm = require("vm"), cx = vm.createContext({});
+  vm.runInContext(fs.readFileSync(path.join(root, "js/data/base-data.js"), "utf8") + ";this.D=DCTData", cx);
+  const K = (cx.D.plant && cx.D.plant.kpi) || {};
+  for (const n in screens) {
+    if (!["Core Group", "Entity"].includes(screens[n].lens) || !fs.existsSync(path.join(root, n + ".html"))) continue;
+    let p; try { p = load(n, ""); } catch (e) { continue; }
+    const hit = (s, lab) => { const m = (String(s || "").match(/[A-Z]{3}-\d{3}/g) || []).filter((x) => K[x])[0]; if (m) add(m, p, n, lab); };
+    (function w(o, inK) {
+      if (!o || typeof o !== "object") return;
+      if (Array.isArray(o)) { o.forEach((x) => w(x, inK)); return; }
+      if (inK && ID.test(o.id || "") && K[o.id]) add(o.id, p, n, o.name);
+      if (o.type === "table") (o.rows || []).forEach((r) => { const a = Array.isArray(r) ? r : (r.c || []), lab = a.slice(0, 3).map((c) => String((c && c.t) || c || "")).join(" ");
+        a.slice(0, 2).forEach((c) => hit((c && c.t) || c, lab + " " + (o.title || ""))); });
+      if (o.type === "tiles") (o.items || []).forEach((t) => hit((/^[A-Z]{3}-\d{3}\b/.exec(t.l || "") || [""])[0], t.l));
+      for (const k in o) if (!["equiv", "access", "nav"].includes(k)) w(o[k], k === "kpis" || inK);
+    })(p, false);
+  }
+} catch (e) { console.log("rendered screens not read: " + e.message); }
+const out =Object.keys(ids).sort().map((id) => {
   const xs = [...ids[id]];
   return {id, scopes: [...new Set(xs.map((x) => x.split("|")[0]))].sort().join(","),
     pages: [...new Set(xs.map((x) => x.split("|")[1].replace(/^P[23]-/, "").replace(/-.*/, "")))].join(" "),

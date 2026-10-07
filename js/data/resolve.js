@@ -636,9 +636,9 @@ var DCTResolve = (function () {
       if (CAP && PLANT.test(k.fb || "")) k.fb = "";   // model flags such as "Plant 02 at 78.4%" stay below the Owner cap
     });
     // Entity lens: every card is stand-alone (no links) and shows how Entity A1's value is built from its plants (js/data/entity-cards.js)
-    if (p.lens === "Entity") cards.forEach(function (k) { if (typeof DCTEntityCards !== "undefined") DCTEntityCards.attach(k, ID.test(k.id || "") ? cardScope(p, k) : null); else { k.noInfo = true; delete k.href; } });
+    if (p.lens === "Entity") cards.forEach(function (k) { if (typeof DCTEntityCards !== "undefined") DCTEntityCards.attach(k, ID.test(k.id || "") ? cardScope(p, k) : null); else delete k.href; });
     // Core Group: stand-alone cards with only the plants that show a variation (no root cause)
-    if (p.lens === "Core Group") cards.forEach(function (k) { if (typeof DCTEntityCards !== "undefined") DCTEntityCards.attachGroup(k, ID.test(k.id || "") ? cardScope(p, k) : null); else { k.noInfo = true; delete k.href; } });
+    if (p.lens === "Core Group") cards.forEach(function (k) { if (typeof DCTEntityCards !== "undefined") DCTEntityCards.attachGroup(k, ID.test(k.id || "") ? cardScope(p, k) : null); else delete k.href; });
     // Trust header "N of M cards certified …" is recomputed from the cards actually shown
     if (/^\d+ of \d+ cards certified/.test(p.trust || "") && (p.kpis || []).length) {
       var ks = p.kpis.filter(function (k) { return ID.test(k.id || ""); }), cert = ks.filter(function (k) { return /^Certified/.test(k.ts || ""); });

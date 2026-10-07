@@ -27,3 +27,5 @@ console.log(require("child_process").execFileSync("node", [path.join(__dirname, 
 console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_core_group.js")], {encoding: "utf8"}).trim());
 // Core Group plant values vs data/KPI-Lineage-Model.xlsx (manager review 2026-10-06)
 console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_core_group_plants.js")], {encoding: "utf8"}).trim());
+// (i) links on Core Group and Entity KPIs, and their R-01 entries vs data/kpi-model
+console.log(require("child_process").execFileSync("node", [path.join(__dirname, "check_kpi_info.js")], {encoding: "utf8"}).trim().split("\n").pop());

@@ -22455,8 +22455,10 @@ var DCTData = {
      "P2-S03-KPIDetail",
      "P2-S03e-KPIDetail",
      "P2-S03o-KPIDetail",
+     "P2-S04e-Alert",
      "P2-S10-OpsImpact",
      "P2-S12e-Signals",
+     "P2-S13-Ask",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -23566,7 +23568,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E03-Reliability",
-     "P2-O09-Operations"
+     "P2-O09-Operations",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -23715,7 +23718,8 @@ var DCTData = {
      "P2-E03-Reliability",
      "P2-G05-OpsBenchmark",
      "P2-O09-Operations",
-     "P2-S12-Signals"
+     "P2-S12-Signals",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -25241,7 +25245,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E03-Reliability",
-     "P2-S12e-Signals"
+     "P2-S12e-Signals",
+     "P2-S13-Ask"
     ],
     "cat": {
      "type": "LEADING",
@@ -25390,9 +25395,11 @@ var DCTData = {
      "P2-E01-EntityHome",
      "P2-E04-Supply",
      "P2-O02-ChangeReport",
+     "P2-S05e-Case",
      "P2-S10-OpsImpact",
      "P2-S12-Signals",
-     "P2-S12e-Signals"
+     "P2-S12e-Signals",
+     "P2-S13-Ask"
     ],
     "cat": {
      "type": "LEADING",
@@ -25861,7 +25868,6 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk",
-     "P2-G08-CertGovernance",
      "P2-O05-Risk"
     ],
     "cat": {
@@ -27825,7 +27831,8 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E02-Plants",
-     "P2-O09-Operations"
+     "P2-O09-Operations",
+     "P2-S12e-Signals"
     ],
     "def": "Power cost for each tonne of good output."
    },
@@ -27896,9 +27903,9 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-G02-EntityComparison",
      "P2-G03-Financial",
-     "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust",
      "P2-O01-EnterpriseHealth",
+     "P2-S13-Ask",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -28131,7 +28138,7 @@ var DCTData = {
      "P2-G01b-PortfolioCertified",
      "P2-G02-EntityComparison",
      "P2-G03-Financial",
-     "P2-G08-CertGovernance",
+     "P2-S12e-Signals",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -28460,7 +28467,6 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-G03-Financial",
-     "P2-G08-CertGovernance",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -28610,7 +28616,6 @@ var DCTData = {
     "screens": [
      "P2-E05-ProductionCash",
      "P2-G04-CashWC",
-     "P2-G08-CertGovernance",
      "P2-G08o-OwnerTrust",
      "P2-O03-CashLiquidity"
     ],
@@ -29012,7 +29017,6 @@ var DCTData = {
      "P2-E05-ProductionCash",
      "P2-G02-EntityComparison",
      "P2-G04-CashWC",
-     "P2-G08-CertGovernance",
      "P2-O03-CashLiquidity",
      "P2-S11-CashExposure"
     ],
@@ -32265,7 +32269,9 @@ var DCTData = {
     "theme": "T5",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [],
+    "screens": [
+     "P2-S12e-Signals"
+    ],
     "def": "EHS incidents involving suppliers or contractors since April."
    },
    "CON-001": {
@@ -32785,7 +32791,8 @@ var DCTData = {
     "screens": [
      "P2-E07-RegEHS",
      "P2-G07-Risk",
-     "P2-S12-Signals"
+     "P2-S12-Signals",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -33079,7 +33086,8 @@ var DCTData = {
     "source": "workbook",
     "aliasOf": "",
     "screens": [
-     "P2-E07-RegEHS"
+     "P2-E07-RegEHS",
+     "P2-S12e-Signals"
     ],
     "cat": {
      "type": "ACTUAL",
@@ -37237,7 +37245,6 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
      "P2-O02-ChangeReport",
      "P2-S12-Signals",
      "P2-S12e-Signals"
@@ -37315,7 +37322,6 @@ var DCTData = {
     "aliasOf": "",
     "screens": [
      "P2-E05-ProductionCash",
-     "P2-G04-CashWC",
      "P2-S12-Signals",
      "P2-S12e-Signals"
     ],
@@ -37685,6 +37691,7 @@ var DCTData = {
      "P2-S10-OpsImpact",
      "P2-S12-Signals",
      "P2-S12e-Signals",
+     "P2-S13-Ask",
      "P2-X-States",
      "P3-L-LargeDisplay"
     ],
@@ -38427,7 +38434,9 @@ var DCTData = {
     "theme": "T3",
     "source": "workbook",
     "aliasOf": "",
-    "screens": [],
+    "screens": [
+     "P2-S12e-Signals"
+    ],
     "def": "Forecast chance that OEE falls below 78% next month."
    },
    "CST-005": {
@@ -39003,7 +39012,8 @@ var DCTData = {
     "source": "added",
     "aliasOf": "",
     "screens": [
-     "P2-E07-RegEHS"
+     "P2-E07-RegEHS",
+     "P2-S12e-Signals"
     ],
     "def": "Hours left before the nearest open disclosure deadline."
    },
@@ -40806,7 +40816,7 @@ var DCTData = {
    "P2-G06-CapexPortfolio": {
     "lens": "Core Group",
     "rid": "G-06",
-    "title": "Capex Portfolio",
+    "title": "Major Capex and Strategic Initiatives",
     "file": "P2-G06-CapexPortfolio.html"
    },
    "P2-G07-Risk": {
@@ -41514,8 +41524,8 @@ var DCTData = {
    {
     "screen": "P2-G05-OpsBenchmark",
     "type": "bars",
-    "title": "Production vs plan · Sep 2026 · by entity",
-    "ask": "Which entity will under-produce, and by how much?",
+    "title": "Production vs plan · Sep 2026 · by entity and plant",
+    "ask": "Which entity will under-produce, and which of its plants causes it?",
     "source": "live",
     "from": "OPS-001 for the plant, entity or Group in each row label",
     "note": ""
@@ -43418,12 +43428,13 @@ var DCTData = {
     "title": "Liquidity",
     "ask": "",
     "source": "live",
-    "from": "5 of 5 rows are KPIs filled from the model (LIQ-001, LIQ-002, LIQ-003, LIQ-004, PRD-005); scope from the row label",
+    "from": "6 of 6 rows are KPIs filled from the model (LIQ-001, LIQ-002, LIQ-003, LIQ-004, PRD-004, PRD-005); scope from the row label",
     "kpis": [
      "LIQ-001",
      "LIQ-002",
      "LIQ-003",
      "LIQ-004",
+     "PRD-004",
      "PRD-005"
     ],
     "note": "Columns: KPI · Measure · Value · Status · Trust"
@@ -43461,21 +43472,6 @@ var DCTData = {
     "from": "Columns filled from the model for the scope in each row label: FX exposure, unhedged = TRS-001, Hedging effectiveness = TRS-002, Hedge cover, next 6 months = TRS-004, Commodity-price movement (RM-1 index) = SIG-014",
     "kpis": [],
     "note": "Model values; Group is recalculated from both entities' inputs."
-   },
-   {
-    "screen": "P2-G04-CashWC",
-    "type": "tiles",
-    "title": "Forecast exposure",
-    "ask": "",
-    "source": "live",
-    "from": "4 of 4 tiles are KPIs filled from the model (PRD-004, PRD-005, SIG-004, SIG-005); scope from the row label",
-    "kpis": [
-     "PRD-004",
-     "PRD-005",
-     "SIG-004",
-     "SIG-005"
-    ],
-    "note": ""
    },
    {
     "screen": "P2-G04-CashWC",
@@ -43828,24 +43824,6 @@ var DCTData = {
    {
     "screen": "P2-G08-CertGovernance",
     "type": "table",
-    "title": "Certification matrix · leadership KPIs × entity (trust state)",
-    "ask": "Which leadership numbers cannot yet be defended, and where?",
-    "source": "live",
-    "from": "7 of 7 rows are KPIs filled from the model (FIN-001, FIN-003, OPS-001, WCP-001, CSH-001, EHS-001, FIN-007); scope from the row label",
-    "kpis": [
-     "FIN-001",
-     "FIN-003",
-     "OPS-001",
-     "WCP-001",
-     "CSH-001",
-     "EHS-001",
-     "FIN-007"
-    ],
-    "note": "◆ certified · ◇ pending · ⊘ break · — definition pending approval."
-   },
-   {
-    "screen": "P2-G08-CertGovernance",
-    "type": "table",
     "title": "Certification status by entity · P07 close",
     "ask": "",
     "source": "layout",
@@ -43898,16 +43876,6 @@ var DCTData = {
     "from": "Columns filled from the model for the scope in each row label: Certified KPI percentage = TRU-001, Uncertified KPI count = TRU-002, KPI certification coverage = TRU-005, Overdue certifications = TRU-006, Ageing certification approvals = GOV-001",
     "kpis": [],
     "note": "Model values; Group is recalculated from both entities' inputs."
-   },
-   {
-    "screen": "P2-G08-CertGovernance",
-    "type": "table",
-    "title": "Plants with a data variation · Sep",
-    "ask": "Which plant's data is behind an open break?",
-    "source": "layout",
-    "from": "1 row of workflow, status or reference text; no KPI values",
-    "kpis": [],
-    "note": "Only plants with a data variation are listed; Plants 01, 03, 04, 05 and 06 reconcile within tolerance."
    },
    {
     "screen": "P2-G08-CertGovernance",

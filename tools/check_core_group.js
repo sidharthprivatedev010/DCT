@@ -51,6 +51,6 @@ for (const n in pages) blocks(Object.assign({}, pages[n], {equiv: null, access: 
     if (!(i === 0 && paired) && /(?<![-\w])[A-Z]{3}-\d{3}\s*$/.test(t)) fail(n + " table '" + b.title + "' bare KPI code: " + t.slice(0, 70)); }));
 });
 // Cards: stand-alone, no root cause (plant values per entity are checked against the workbook in check_core_group_plants.js)
-for (const n of CG) (pages[n].kpis || []).forEach((k) => { if (k.href || !k.noInfo) fail(n + " card " + k.id + " still links"); if (k.root) fail(n + " card " + k.id + " has a root cause"); });
+for (const n of CG) (pages[n].kpis || []).forEach((k) => { if (k.href) fail(n + " card " + k.id + " still links"); if (k.noInfo) fail(n + " card " + k.id + " has no (i) link to R-01"); if (k.root) fail(n + " card " + k.id + " has a root cause"); });
 module.exports = {pages, REG};
 if (require.main === module) console.log(bad ? bad + " problem(s)" : "Core Group checks passed");
